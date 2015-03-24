@@ -22,7 +22,7 @@ def main():
     genders=generateValuesByProbability(genderType, [0.6, 0.4], populationSize)
     #ages=generateValuesByProbability(ageNumber, range(5, ), populationSize)#50% each
     
-    generateRating(genres, occupations, genders)
+    print generateRating(genres, occupations, genders)
 
     
 def generateValuesByProbability(collection, weights, size):
@@ -45,4 +45,7 @@ def generateRating(genres, occupations, genders):
         elif (combination == combinations[1]):
             ratings.append(generateValuesByProbability(ratingsNumber, [0.1, 0.1, 0.2, 0.4, 0.2], 1))
 
+    return ratings
+    
+    
 main()
