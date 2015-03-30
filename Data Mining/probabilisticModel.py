@@ -6,6 +6,9 @@ Created on Tue Mar 24 15:55:08 2015
 """
 
 from numpy.random import choice
+import os
+directory = os.path.dirname(__file__)
+#pathToMovieLensDatabase = os.path.join(directory, '/ml-100k')
 
 #globals
 genreType = ['action', 'romance']
@@ -24,7 +27,17 @@ def main():
     
     print generateRating(genres, occupations, genders)
 
+
+def generateMeanAndVarianceOfDistribution(collection, genderType):
+    n=collection.len    
+    mean = []
     
+    for i in range(0, len(collectionType)):
+       mean.append(collection.count(i)/n) 
+       variance
+    return mean, variance
+   
+   
 def generateValuesByProbability(collection, weights, size):
     population = []
     for i in range(0, size):
@@ -47,5 +60,28 @@ def generateRating(genres, occupations, genders):
 
     return ratings
     
+
+def loadMovieLensDatabase(path):
+    path=path+'/ml-100k/'
     
-main()
+    movies = {}
+    for line in open(path+'/u.item'):
+        (id, title) = line.split('|')[0:2]
+        movies[id] = title
+    
+    prefs = {}
+    for line in open(path+'/u.data'):
+        (userId, movieId, rating, timestamp) = line.split('\t')
+        prefs.setdefault(userId,{})
+        prefs[userId][movies[movieId]] = float(rating)
+    
+    users={}
+    for line in open(path+'/u.user'):
+        (uId, age, gender, occupation) = line.split('|')[0:4]
+        users.setdefault(uId, {})
+        users[uId][age][gender]=prefs[uId]
+        
+    
+    return users
+    
+loadMovieLensDatabase(directory)
