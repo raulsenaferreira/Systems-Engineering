@@ -7,7 +7,7 @@ import nltk
 import os
 import logging
 from xml.dom.minidom import parse
-import xml.dom.minidom
+from pprint import pprint as pp
 
 #globals
 path = os.path.dirname(__file__)
@@ -33,26 +33,21 @@ def processData(configFile):
         line = line.strip().replace(" ","")
         lines.append(line.split('='))
         
-        #read xml file and returns a dictionary
         if str(lines[i][0]) == 'LEIA':
+            #read xml file and returns a dictionary
             dictionary=readData(path+str(lines[i][1]))
+            #creates a inverted index
             invertedIndex=invertedIndexGenerator(dictionary, [])
-            #print(dictionary)    
-        elif str(lines[i][0]) == 'ESCREVA':
-            #test
-            print (readData(path+str(lines[i-1][1])))
-            #end test
-            #writeData(dictionary)
             
+        elif str(lines[i][0]) == 'ESCREVA':
+            writeData(path+str(lines[i][1]), invertedIndex)
         i+=1
-     
     directory.close()
-    print(invertedIndex)
  
 
 def readData(filename):
     dictionary = {}
-    DOMTree = xml.dom.minidom.parse(filename)
+    DOMTree = parse(filename)
     collection = DOMTree.documentElement
     
     records = collection.getElementsByTagName("RECORD")
@@ -66,13 +61,17 @@ def readData(filename):
             try:
                 dictionary[recordNumber] = record.getElementsByTagName('EXTRACT')[0].childNodes[0].data
             except IndexError:
-                print("Document["+recordNumber+"] don't have abstract neither extract. Going to the next!")
-    
+                pp("Document["+recordNumber+"] don't have abstract neither extract!")
     return dictionary
     
 
-def writeData():
-    return 0        
+def writeData(filepath, invertedIndex):
+    f = open(filepath, 'w+')
+    
+    for key in invertedIndex.keys():
+        listString=','.join(str(i) for i in invertedIndex[key])
+        f.write(key.upper()+';['+listString+']\n')
+    f.close()
     
 
 def invertedIndexGenerator(dictionaries, stopWords):
@@ -88,7 +87,6 @@ def invertedIndexGenerator(dictionaries, stopWords):
                 except KeyError:
                     tokenList.append(key)
                     invertedIndex.update({token:tokenList})
-                    
     return invertedIndex
 
     
