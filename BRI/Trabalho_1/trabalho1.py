@@ -2,10 +2,11 @@
 """
 @author: raul
 """
-
+import math
 import nltk
 import os
 import logging
+import re
 from xml.dom.minidom import parse
 from pprint import pprint as pp
 
@@ -13,39 +14,87 @@ from pprint import pprint as pp
 path = os.path.dirname(__file__)
 
 def main():
-    #InvertedIndexGenerator config file
+    pathVector = []
+    '''     ***** InvertedIndexGenerator *****     ''' 
     configFile = path+'/InvertedIndexGenerator/gli.cfg'
+    pathVector = readData(configFile, '=')
     #log
     log(path+'/InvertedIndexGenerator/invertedIndexGenerator.log')
-    #process all data based on config file
-    processData(configFile)
+    processInvertedIndexGenerator(pathVector)
     
     
-def processData(configFile):
-    dictionary = {}
-    invertedIndex = {}
-    i=0
-    directory = open(configFile, 'r')
+    '''     ****** Indexer *****    '''
+    configFile = path+'/Indexer/index.cfg'
+    pathVector = readData(configFile, '=')
+    invertedIndex = readData(path+pathVector[0][1], ';')
+    tf_idf_metric(invertedIndex)  
+    #processIndexer(metric, list)
+
+
+def readData(filepath, symbol):
+    directory = open(filepath, 'r')
     lines=[]
     
-    #read filename from config file    
     for line in directory:
         line = line.strip().replace(" ","")
-        lines.append(line.split('='))
-        
-        if str(lines[i][0]) == 'LEIA':
-            #read xml file and returns a dictionary
-            dictionary=readData(path+str(lines[i][1]))
-            #creates a inverted index
-            invertedIndex=invertedIndexGenerator(dictionary, [])
-            
-        elif str(lines[i][0]) == 'ESCREVA':
-            writeData(path+str(lines[i][1]), invertedIndex)
-        i+=1
+        lines.append(line.split(symbol))
+    
     directory.close()
+    return lines
+
+
+
+def tf_idf_metric(invertedIndex, minLength=2, regex="^[A-Z]+$"):
+    '''
+    regex by defult only allows uppercase ASCII words
+    minimun length of word by default to be analyzed = 2
+    N = total of collections
+    n_i = number of documents where the ki term occurs
+    freq_ij = frequence of ki term in dj document
+    
+    tf = (freq_ij[k]/maxFreq_ij[0][1])
+    idf = math.log(N/n_i)
+    w_ij = term-document weight, e.g. w_ij = tf * idf
+    '''
+    regex = re.compile(regex)
+    N = set()
+    w_ij = {}
+    
+    for ind in invertedIndex:
+        if len(ind[0]) >= minLength and regex.match(ind[0]):
+            N = N | set(ind[1].split(','))
+        
+    N = len(N)
+
+    for ind in invertedIndex:
+        if len(ind[0]) >= minLength and regex.match(ind[0]):
+            term = ind[0]
+            docs = ind[1].split(',')
+            diffDocs = set(docs)
+            
+            freq_ij = nltk.FreqDist(docs)
+            maxFreq_ij = freq_ij.most_common(1)
+            n_i = len(diffDocs)
+            w_ij.update({term: [(freq_ij[k]/maxFreq_ij[0][1]) * math.log(N/n_i) for k in freq_ij.keys()]})
+        
+    return w_ij
+    
+
+    
+def processInvertedIndexGenerator(vectorPath):
+    dictionary = {}
+    invertedIndex = {}
+    
+    for line in vectorPath:
+        if str(line[0]) == 'LEIA':
+            dictionary=readXML(path+str(line[1]))
+            invertedIndex=invertedIndexGenerator(dictionary, [])
+        elif str(line[0]) == 'ESCREVA':
+            writeInvertedIndex(path+str(line[1]), invertedIndex)
  
 
-def readData(filename):
+
+def readXML(filename):
     dictionary = {}
     DOMTree = parse(filename)
     collection = DOMTree.documentElement
@@ -65,14 +114,17 @@ def readData(filename):
     return dictionary
     
 
-def writeData(filepath, invertedIndex):
+
+def writeInvertedIndex(filepath, invertedIndex):
     f = open(filepath, 'w+')
     
     for key in invertedIndex.keys():
         listString=','.join(str(i) for i in invertedIndex[key])
-        f.write(key.upper()+';['+listString+']\n')
+        #f.write(key.upper()+';['+listString+']\n')
+        f.write(key.upper()+';'+listString+'\n')
     f.close()
     
+
 
 def invertedIndexGenerator(dictionaries, stopWords):
     invertedIndex = {}
@@ -89,7 +141,8 @@ def invertedIndexGenerator(dictionaries, stopWords):
                     invertedIndex.update({token:tokenList})
     return invertedIndex
 
-    
+
+
 def log(logFile):
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.INFO)
@@ -102,6 +155,7 @@ def log(logFile):
     # add the handlers to the logger
     logger.addHandler(handler)
     logger.info('Logging iniated')
+
 
                       
 main() 
