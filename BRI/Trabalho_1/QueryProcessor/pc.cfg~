@@ -1,4 +1,4 @@
 LEIA=/data/cfquery.xml
-CONSULTAS=/QueryProcessor/queries.csv
+CONSULTAS=/QueryProcessor/querys.csv
 ESPERADOS=/QueryProcessor/expectedResults.csv
 ESCREVA=<nome de arquivo>

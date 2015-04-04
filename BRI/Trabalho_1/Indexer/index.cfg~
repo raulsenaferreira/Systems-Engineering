@@ -1,2 +1,2 @@
 LEIA=/InvertedIndexGenerator/invertedIndexOut.csv
-ESCREVA=/Indexer/vectorModel.csv
+ESCREVA=/Indexer/indexerOut.csv

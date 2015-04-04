@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: raul
+@author: Raul Sena Ferreira
 """
 import math
 import nltk
@@ -14,28 +14,42 @@ from pprint import pprint as pp
 path = os.path.dirname(__file__)
 
 def main():
-    pathVector = []
     '''     ***** InvertedIndexGenerator *****     
     configFile = path+'/InvertedIndexGenerator/gli.cfg'
     pathVector = readData(configFile, '=')
     #log
     #log(path+'/InvertedIndexGenerator/invertedIndexGenerator.log')
     processInvertedIndexGenerator(pathVector)
-    ''' 
-    '''     ****** Indexer *****    
+    '''
+    '''     ****** Indexer *****    '''
     configFile = path+'/Indexer/index.cfg'
     pathVector = readData(configFile, '=')
     invertedIndex = readData(path+pathVector[0][1], ';')
-    tf_idf_metric(invertedIndex)  
-    '''
-    '''     ****** QueryProcessor *****    ''' 
+    listOfWeights = tf_idf_metric(invertedIndex)
+    writeVectorModel(listOfWeights, path+pathVector[1][1])
+    
+    '''     ****** QueryProcessor *****     
     configFile = path+'/QueryProcessor/pc.cfg'
     pathVector = readData(configFile, '=')
     excuteQueryProcessor(pathVector)
+    '''
+    '''     ****** Searcher *****     
+    configFile = path+'/Searcher/busca.cfg'
+    pathVector = readData(configFile, '=')
+    '''
+
+
+
+def writeVectorModel(listOfWeights, filename):
+    f = open(filename, 'w+')
+    for k in listOfWeights.keys():
+        #strLOW = str(listOfWeights[k])
+        f.write(k+";%s\n" % listOfWeights[k])
+    f.close()
     
-    
+  
+  
 def excuteQueryProcessor(pathVector):
-    queries = {}
     queries = readQueriesXML(path+pathVector[0][1])
     writeQueryProcessorData(pathVector, queries)
     
@@ -52,11 +66,7 @@ def writeQueryProcessorData(pathVector, queries):
         elif str(line[0]) == 'ESPERADOS':
             f = open(path+str(line[1]), 'w+')
             for key in queries.keys():
-                listString = ''
-                for i in queries[key][1].keys():
-                    listString+= i+':'+str(queries[key][1][i]+',')
-                    #listString = ','.join(i+':'+queries[key][1].strip())
-                f.write(key+';'+listString+'\n')
+                f.write(key+';%s\n' % queries[key][1])
             f.close()
         
 
@@ -112,8 +122,6 @@ def tf_idf_metric(invertedIndex, minLength=2, regex="^[A-Z]+$"):
 
     
 def processInvertedIndexGenerator(vectorPath):
-    dictionary = {}
-    invertedIndex = {}
     
     for line in vectorPath:
         if str(line[0]) == 'LEIA':
@@ -180,9 +188,7 @@ def writeInvertedIndex(filepath, invertedIndex):
     f = open(filepath, 'w+')
     
     for key in invertedIndex.keys():
-        listString=','.join(str(i) for i in invertedIndex[key])
-        #f.write(key.upper()+';['+listString+']\n')
-        f.write(key.upper()+';'+listString+'\n')
+        f.write(key.upper()+";%s\n" % invertedIndex[key])        
     f.close()
     
 
