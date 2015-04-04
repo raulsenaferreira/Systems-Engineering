@@ -7,50 +7,72 @@ import nltk
 import os
 import logging
 import re
+import ast
 from xml.dom.minidom import parse
 from pprint import pprint as pp
 
 #globals
-path = os.path.dirname(__file__)
+PATH = os.path.dirname(__file__)
 
 def main():
     '''     ***** InvertedIndexGenerator *****     
-    configFile = path+'/InvertedIndexGenerator/gli.cfg'
+    configFile = '/InvertedIndexGenerator/gli.cfg'
     pathVector = readData(configFile, '=')
     #log
-    #log(path+'/InvertedIndexGenerator/invertedIndexGenerator.log')
+    #log(PATH+'/InvertedIndexGenerator/invertedIndexGenerator.log')
     processInvertedIndexGenerator(pathVector)
     '''
-    '''     ****** Indexer *****    '''
-    configFile = path+'/Indexer/index.cfg'
+    '''     ****** Indexer *****    
+    configFile = '/Indexer/index.cfg'
     pathVector = readData(configFile, '=')
-    invertedIndex = readData(path+pathVector[0][1], ';')
+    invertedIndex = readData(pathVector[0][1], ';')
     listOfWeights = tf_idf_metric(invertedIndex)
-    writeVectorModel(listOfWeights, path+pathVector[1][1])
-    
+    writeVectorModel(listOfWeights, PATH+pathVector[1][1])
+    '''
     '''     ****** QueryProcessor *****     
-    configFile = path+'/QueryProcessor/pc.cfg'
+    configFile = '/QueryProcessor/pc.cfg'
     pathVector = readData(configFile, '=')
     excuteQueryProcessor(pathVector)
     '''
-    '''     ****** Searcher *****     
-    configFile = path+'/Searcher/busca.cfg'
+    '''     ****** Searcher *****     '''
+    configFile = '/Searcher/busca.cfg'
     pathVector = readData(configFile, '=')
-    '''
+    indexes = readData(pathVector[0][1], ';')
+    indexes = strToDict(indexes)
+    queries = readData(pathVector[1][1], ';')
+    queries = strToDict(queries, False)
+    makeSearch(indexes, queries)
+    #pp(indexes)
+    
+
+
+def makeSearch(indexes, queries):
+    
+
+
+
+def strToDict(listString, hasListInside=True):
+    dictionary = {}
+    if hasListInside is True:
+        for s in listString:
+            dictionary.update({s[0]: ast.literal_eval(s[1])})
+    else:
+        for s in listString:
+            dictionary.update({s[0]: s[1]})
+    return dictionary
 
 
 
 def writeVectorModel(listOfWeights, filename):
     f = open(filename, 'w+')
     for k in listOfWeights.keys():
-        #strLOW = str(listOfWeights[k])
         f.write(k+";%s\n" % listOfWeights[k])
     f.close()
     
   
   
 def excuteQueryProcessor(pathVector):
-    queries = readQueriesXML(path+pathVector[0][1])
+    queries = readQueriesXML(PATH+pathVector[0][1])
     writeQueryProcessorData(pathVector, queries)
     
 
@@ -59,12 +81,12 @@ def writeQueryProcessorData(pathVector, queries):
     
     for line in pathVector:
         if str(line[0]) == 'CONSULTAS':
-            f = open(path+str(line[1]), 'w+')
+            f = open(PATH+str(line[1]), 'w+')
             for key in queries.keys():
                 f.write(key+';'+queries[key][0]+'\n')
             f.close()
         elif str(line[0]) == 'ESPERADOS':
-            f = open(path+str(line[1]), 'w+')
+            f = open(PATH+str(line[1]), 'w+')
             for key in queries.keys():
                 f.write(key+';%s\n' % queries[key][1])
             f.close()
@@ -72,11 +94,11 @@ def writeQueryProcessorData(pathVector, queries):
 
 
 def readData(filepath, symbol):
-    directory = open(filepath, 'r')
+    directory = open(PATH+filepath.strip(), 'r')
     lines=[]
     
     for line in directory:
-        line = line.strip().replace(" ","")
+        line = line.strip()
         lines.append(line.split(symbol))
     
     directory.close()
@@ -125,10 +147,10 @@ def processInvertedIndexGenerator(vectorPath):
     
     for line in vectorPath:
         if str(line[0]) == 'LEIA':
-            dictionary=readXML(path+str(line[1]))
+            dictionary=readXML(PATH+str(line[1]).strip())
             invertedIndex=invertedIndexGenerator(dictionary, [])
         elif str(line[0]) == 'ESCREVA':
-            writeInvertedIndex(path+str(line[1]), invertedIndex)
+            writeInvertedIndex(PATH+str(line[1]).strip(), invertedIndex)
  
 
 

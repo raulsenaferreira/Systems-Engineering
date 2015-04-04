@@ -1,3 +1,0 @@
-MODELO=<nome de arquivo>
-CONSULTAS=/QueryProcessor/queries.csv
-RESULTADOS=/Searcher/results.csv
