@@ -4,6 +4,7 @@
 """
 import math
 import nltk
+from nltk.corpus import stopwords
 import os
 import logging
 import re
@@ -47,7 +48,7 @@ def main():
 
 
 def makeSearch(indexes, queries):
-    
+    return 0
 
 
 
@@ -106,6 +107,21 @@ def readData(filepath, symbol):
 
 
 
+def readInvertedIndex(filepath):
+    directory = open(PATH+filepath.strip(), 'r')
+    lines=[]
+    
+    for line in directory:
+        line = line.strip()
+        line = line.split(';')
+        line = ast.literal_eval(line[1])
+        lines.append(line.split(';'))
+    
+    directory.close()
+    return lines
+
+
+
 def tf_idf_metric(invertedIndex, minLength=2, regex="^[A-Z]+$"):
     '''
     regex by defult only allows uppercase ASCII words
@@ -123,32 +139,32 @@ def tf_idf_metric(invertedIndex, minLength=2, regex="^[A-Z]+$"):
     w_ij = {}
     
     for ind in invertedIndex:
+        ind[1] = ast.literal_eval(ind[1])
         if len(ind[0]) >= minLength and regex.match(ind[0]):
-            N = N | set(ind[1].split(','))
+            N = N | set(ind[1])
         
     N = len(N)
 
     for ind in invertedIndex:
         if len(ind[0]) >= minLength and regex.match(ind[0]):
             term = ind[0]
-            docs = ind[1].split(',')
-            diffDocs = set(docs)
+            docs = ind[1]
             
             freq_ij = nltk.FreqDist(docs)
             maxFreq_ij = freq_ij.most_common(1)
-            n_i = len(diffDocs)
-            w_ij.update({term: [(freq_ij[k]/maxFreq_ij[0][1]) * math.log(N/n_i) for k in freq_ij.keys()]})
+            n_i = len(set(docs))
+            w_ij.update({term: [{k: (freq_ij[k]/maxFreq_ij[0][1]) * math.log(N/n_i)} for k in freq_ij.keys()]})
         
     return w_ij
     
 
     
 def processInvertedIndexGenerator(vectorPath):
-    
+    stop = stopwords.words('english')
     for line in vectorPath:
         if str(line[0]) == 'LEIA':
             dictionary=readXML(PATH+str(line[1]).strip())
-            invertedIndex=invertedIndexGenerator(dictionary, [])
+            invertedIndex=invertedIndexGenerator(dictionary, stop)
         elif str(line[0]) == 'ESCREVA':
             writeInvertedIndex(PATH+str(line[1]).strip(), invertedIndex)
  
@@ -220,8 +236,9 @@ def invertedIndexGenerator(dictionaries, stopWords):
     
     for key in dictionaries.keys():
         for token in nltk.word_tokenize(dictionaries[key]):
+            key = key.strip()
             tokenList = []
-            if token not in stopWords:
+            if token not in stopWords and len(token) > 1:
                 try:
                     invertedIndex[token].append(key)
                     invertedIndex.update({token:invertedIndex[token]})
