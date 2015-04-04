@@ -15,20 +15,50 @@ path = os.path.dirname(__file__)
 
 def main():
     pathVector = []
-    '''     ***** InvertedIndexGenerator *****     ''' 
+    '''     ***** InvertedIndexGenerator *****     
     configFile = path+'/InvertedIndexGenerator/gli.cfg'
     pathVector = readData(configFile, '=')
     #log
-    log(path+'/InvertedIndexGenerator/invertedIndexGenerator.log')
+    #log(path+'/InvertedIndexGenerator/invertedIndexGenerator.log')
     processInvertedIndexGenerator(pathVector)
-    
-    
-    '''     ****** Indexer *****    '''
+    ''' 
+    '''     ****** Indexer *****    
     configFile = path+'/Indexer/index.cfg'
     pathVector = readData(configFile, '=')
     invertedIndex = readData(path+pathVector[0][1], ';')
     tf_idf_metric(invertedIndex)  
-    #processIndexer(metric, list)
+    '''
+    '''     ****** QueryProcessor *****    ''' 
+    configFile = path+'/QueryProcessor/pc.cfg'
+    pathVector = readData(configFile, '=')
+    excuteQueryProcessor(pathVector)
+    
+    
+def excuteQueryProcessor(pathVector):
+    queries = {}
+    queries = readQueriesXML(path+pathVector[0][1])
+    writeQueryProcessorData(pathVector, queries)
+    
+
+
+def writeQueryProcessorData(pathVector, queries):
+    
+    for line in pathVector:
+        if str(line[0]) == 'CONSULTAS':
+            f = open(path+str(line[1]), 'w+')
+            for key in queries.keys():
+                f.write(key+';'+queries[key][0]+'\n')
+            f.close()
+        elif str(line[0]) == 'ESPERADOS':
+            f = open(path+str(line[1]), 'w+')
+            for key in queries.keys():
+                listString = ''
+                for i in queries[key][1].keys():
+                    listString+= i+':'+str(queries[key][1][i]+',')
+                    #listString = ','.join(i+':'+queries[key][1].strip())
+                f.write(key+';'+listString+'\n')
+            f.close()
+        
 
 
 def readData(filepath, symbol):
@@ -94,6 +124,37 @@ def processInvertedIndexGenerator(vectorPath):
  
 
 
+def readQueriesXML(filename):
+    dictionary = {}
+    
+    DOMTree = parse(filename)
+    collection = DOMTree.documentElement
+    
+    queries = collection.getElementsByTagName("QUERY")
+    
+    for query in queries:
+        queryNumber = query.getElementsByTagName('QueryNumber')[0].childNodes[0].data
+        expected = {}
+        try:
+            queryText = query.getElementsByTagName('QueryText')[0].childNodes[0].data
+            queryText = queryText.replace('\n', '').upper()
+            try:
+                records = query.getElementsByTagName('Item')
+                for record in records:
+                    if record.hasAttribute("score"):
+                        score = record.getAttribute("score")
+                        key = record.childNodes[0].data
+                        expected.update({key: score})
+                dictionary[queryNumber] = [queryText, expected]
+            except IndexError:
+                pp("Document["+queryNumber+"] doesn't have records!")
+        except IndexError:
+            pp("Document["+queryNumber+"] doesn't have query text!")
+        
+    return dictionary
+    
+    
+    
 def readXML(filename):
     dictionary = {}
     DOMTree = parse(filename)
@@ -110,7 +171,7 @@ def readXML(filename):
             try:
                 dictionary[recordNumber] = record.getElementsByTagName('EXTRACT')[0].childNodes[0].data
             except IndexError:
-                pp("Document["+recordNumber+"] don't have abstract neither extract!")
+                pp("Document["+recordNumber+"] doesn't have abstract neither extract!")
     return dictionary
     
 
