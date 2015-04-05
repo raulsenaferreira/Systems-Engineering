@@ -9,6 +9,7 @@ import os
 import logging
 import re
 import ast
+import operator
 from xml.dom.minidom import parse
 from pprint import pprint as pp
 
@@ -33,7 +34,7 @@ def main():
     '''     ****** QueryProcessor *****     
     configFile = '/QueryProcessor/pc.cfg'
     pathVector = readData(configFile, '=')
-    excuteQueryProcessor(pathVector)
+    executeQueryProcessor(pathVector)
     '''
     '''     ****** Searcher *****     '''
     configFile = '/Searcher/busca.cfg'
@@ -42,14 +43,56 @@ def main():
     indexes = strToDict(indexes)
     queries = readData(pathVector[1][1], ';')
     queries = strToDict(queries, False)
-    makeSearch(indexes, queries)
-    #pp(indexes)
+    stop = stopwords.words('english')
+    rankings = makeSearch(indexes, queries, stop)
+    writeResults(rankings, pathVector[2][1])
+    
+    
+    
+def writeResults(rankings, path):
+    f = open(PATH+path, 'w+')
+    for ident in rankings.keys():
+        line = ''
+        line+= ident+';'
+        i=0
+        for docNum in rankings[ident]:
+            i+=1
+            line+='['            
+            line+= str(i)+','           
+            line+= str(docNum[0])+','
+            line+= '0'#distance
+            line+='],'
+        line=line.rstrip(',')+'\n'
+        f.write(line)
+    f.close()
     
 
 
-def makeSearch(indexes, queries):
-    return 0
-
+def makeSearch(indexes, queries, stop=[]):
+    rankings = {}
+    for queryNumber in queries.keys():
+        tokens = nltk.word_tokenize(queries[queryNumber])
+        freq_iq = nltk.FreqDist(tokens)
+        #using only valid and unique tokens and cleaning invalid ones, e.g. (?, brackets and etc)
+        ranking = {}
+        for token in set(tokens):
+            if token in stop or len(token) < 2:
+                tokens.remove(token)
+        for token in set(tokens):        
+            #updating weights based on terms frequence
+            try:   
+                for doc in indexes[token]:
+                    for d in doc.keys():
+                        try:
+                            val = ranking[d]+(doc[d]*freq_iq[token])
+                            ranking.update({d: val})
+                        except KeyError:
+                            ranking.update({d: (doc[d]*freq_iq[token])})
+            except KeyError:
+                pp("word '"+token+"' not found!")
+        rankings.update({queryNumber: sorted(ranking.items(), key=operator.itemgetter(1), reverse=True)})   
+    return rankings
+        
 
 
 def strToDict(listString, hasListInside=True):
@@ -72,7 +115,7 @@ def writeVectorModel(listOfWeights, filename):
     
   
   
-def excuteQueryProcessor(pathVector):
+def executeQueryProcessor(pathVector):
     queries = readQueriesXML(PATH+pathVector[0][1])
     writeQueryProcessorData(pathVector, queries)
     
@@ -156,9 +199,9 @@ def tf_idf_metric(invertedIndex, minLength=2, regex="^[A-Z]+$"):
             w_ij.update({term: [{k: (freq_ij[k]/maxFreq_ij[0][1]) * math.log(N/n_i)} for k in freq_ij.keys()]})
         
     return w_ij
-    
 
-    
+
+
 def processInvertedIndexGenerator(vectorPath):
     stop = stopwords.words('english')
     for line in vectorPath:
