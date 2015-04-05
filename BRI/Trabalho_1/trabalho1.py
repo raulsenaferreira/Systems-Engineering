@@ -17,6 +17,8 @@ from pprint import pprint as pp
 PATH = os.path.dirname(__file__)
 
 def main():
+    ''' you can execute each module separated if you want '''
+    
     '''     ***** InvertedIndexGenerator *****     
     configFile = '/InvertedIndexGenerator/gli.cfg'
     pathVector = readData(configFile, '=')
@@ -71,6 +73,7 @@ def writeResults(rankings, path):
 def makeSearch(indexes, queries, stop=[]):
     rankings = {}
     for queryNumber in queries.keys():
+        N = len(queries)
         tokens = nltk.word_tokenize(queries[queryNumber])
         freq_iq = nltk.FreqDist(tokens)
         #using only valid and unique tokens and cleaning invalid ones, e.g. (?, brackets and etc)
@@ -83,11 +86,15 @@ def makeSearch(indexes, queries, stop=[]):
             try:   
                 for doc in indexes[token]:
                     for d in doc.keys():
+                        n_q = len(doc)
+                        maxFreq_iq = freq_iq.most_common(1)
+                        tf_idf = 1 #(freq_iq[token]/maxFreq_iq[0][1])*math.log(N/n_q)
+                        w_iq = doc[d]*tf_idf
                         try:
-                            val = ranking[d]+(doc[d]*freq_iq[token])
+                            val = ranking[d] + w_iq
                             ranking.update({d: val})
                         except KeyError:
-                            ranking.update({d: (doc[d]*freq_iq[token])})
+                            ranking.update({d: w_iq})
             except KeyError:
                 pp("word '"+token+"' not found!")
         rankings.update({queryNumber: sorted(ranking.items(), key=operator.itemgetter(1), reverse=True)})   
