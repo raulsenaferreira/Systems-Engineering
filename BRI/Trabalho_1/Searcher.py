@@ -2,17 +2,51 @@
 """
 Created on Sun Apr  5 23:44:07 2015
 
-@author: raul
+@author: Raul Sena Ferreira
 """
 import ast
 import nltk
 import operator
-import os
-from pprint import pprint as pp
-#globals
-PATH = os.path.dirname(__file__)
+import math
+import logging
 
+#globals
+searcher = ''
+
+def processSearcher(path, indexes, queries, pathVector, stop):
+    global searcher
+    #log
+    logPath = path+'/Searcher/searcher.log'
+    log('searcher', logPath)
+    searcher = logging.getLogger('searcher')
+    searcher.info('Processing Searcher Module...')
+    
+    indexes = strToDict(indexes)
+    queries = strToDict(queries, False)
+    rankings = makeSearch(indexes, queries, stop)
+    writeResults(path, rankings, pathVector[2][1])
+    
+    searcher.info('End of Searcher Module processing.')
+    #v1,v2 = [3, 45, 7, 2], [2, 54, 13, 15]
+    #pp(cosine_similarity(v1,v2))
+    
+    
+
+def cosine_similarity(v1,v2):
+    searcher.info('Calculating Cosine Similarity of array...')
+    sumxx, sumxy, sumyy = 0, 0, 0
+    for i in range(len(v1)):
+        x = v1[i]; y = v2[i]
+        sumxx += x*x
+        sumyy += y*y
+        sumxy += x*y
+    return sumxy/math.sqrt(sumxx*sumyy)
+    
+    
+    
 def strToDict(listString, hasListInside=True):
+    searcher.info('Transforming String to Dictionary...')
+    
     dictionary = {}
     if hasListInside is True:
         for s in listString:
@@ -25,6 +59,8 @@ def strToDict(listString, hasListInside=True):
     
     
 def makeSearch(indexes, queries, stop=[]):
+    searcher.info('Making search and calculating rankings...')
+    
     rankings = {}
     for queryNumber in queries.keys():
         #N = len(queries)
@@ -52,14 +88,16 @@ def makeSearch(indexes, queries, stop=[]):
                     except KeyError:
                         ranking.update({k: 1/tf_idf})
             except KeyError:
-                pp("word '"+token+"' not found!")
+                searcher.warning("word '"+token+"' not found!")
         rankings.update({queryNumber: sorted(ranking.items(), key=operator.itemgetter(1), reverse=False)})
     return rankings
     
     
     
-def writeResults(rankings, path):
-    f = open(PATH+path, 'w+')
+def writeResults(rootPath, rankings, path):
+    searcher.info('Writing search results on file...')
+    
+    f = open(rootPath+path, 'w+')
     for ident in rankings.keys():
         line = ''
         line+= ident+';'
@@ -76,3 +114,20 @@ def writeResults(rankings, path):
         line=line.rstrip(',')+'\n'
         f.write(line)
     f.close()
+
+
+
+def log(name, logFile):
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.INFO)
+    # create a file handler
+    handler = logging.FileHandler(logFile)
+    handler.setLevel(logging.INFO)
+    # create a logging format
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    streamHandler = logging.StreamHandler()
+    streamHandler.setFormatter(formatter)
+    # add the handlers to the logger
+    logger.addHandler(handler)
+    logger.addHandler(streamHandler) 

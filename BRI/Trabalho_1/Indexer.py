@@ -8,8 +8,29 @@ import re
 import ast
 import nltk
 import math
+import logging
+
+#global
+indexer = ''
+
+def processIndexer(invertedIndex, path, pathVector):
+    global indexer
+    #logging instantiate
+    logPath = path+'/Indexer/indexer.log'
+    log('indexer', logPath)
+    indexer = logging.getLogger('indexer')
+    indexer.info('Processing Indexer module...')
+    
+    listOfWeights = tf_idf_metric(invertedIndex)
+    writeVectorModel(listOfWeights, path+pathVector[1][1])
+    
+    indexer.info('End of Inverted Index Generator processing.')
+
+
 
 def tf_idf_metric(invertedIndex, minLength=2, regex="^[A-Z]+$"):
+    indexer.info('Using TF_IDF Metric to calculate weights...')
+    
     '''
     regex by defult only allows uppercase ASCII words
     minimun length of word by default to be analyzed = 2
@@ -38,10 +59,10 @@ def tf_idf_metric(invertedIndex, minLength=2, regex="^[A-Z]+$"):
             docs = ind[1]
             w = {}
             freq_ij = nltk.FreqDist(docs)
-            maxFreq_ij = freq_ij.most_common(1)#/maxFreq_ij[0][1]
+            #maxFreq_ij = freq_ij.most_common(1)
             n_i = len(set(docs))
             for k in freq_ij.keys():
-                #r = (freq_ij[k]/maxFreq_ij) * math.log(N/n_i, 10)
+                #r = (freq_ij[k]/maxFreq_ij[0][1]) * math.log(N/n_i, 10)
                 r = (1+math.log(freq_ij[k], 10)) * math.log(N/n_i, 10)
                 w.update({k: r})
             w_ij.update({term: w})
@@ -50,7 +71,26 @@ def tf_idf_metric(invertedIndex, minLength=2, regex="^[A-Z]+$"):
     
     
 def writeVectorModel(listOfWeights, filename):
+    indexer.info('Writing Vector Model on file.')
+    
     f = open(filename, 'w+')
     for k in listOfWeights.keys():
         f.write(k+";%s\n" % listOfWeights[k])
     f.close()
+    
+    
+    
+def log(name, logFile):
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.INFO)
+    # create a file handler
+    handler = logging.FileHandler(logFile)
+    handler.setLevel(logging.INFO)
+    # create a logging format
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    streamHandler = logging.StreamHandler()
+    streamHandler.setFormatter(formatter)
+    # add the handlers to the logger
+    logger.addHandler(handler)
+    logger.addHandler(streamHandler)

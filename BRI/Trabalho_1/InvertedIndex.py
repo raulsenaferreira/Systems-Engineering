@@ -2,29 +2,40 @@
 """
 Created on Sun Apr  5 23:22:42 2015
 
-@author: raul
+@author: Raul Sena Ferreira
 """
-import os
 import nltk
+import logging
 from nltk.corpus import stopwords
 from xml.dom.minidom import parse
-from pprint import pprint as pp
 
-PATH = os.path.dirname(__file__)
+#global
+invIndGen = ''
 
-def processInvertedIndexGenerator(vectorPath):
+def processInvertedIndexGenerator(path, vectorPath):
+    global invIndGen
+    #logging instantiate
+    logPath = path+'/InvertedIndexGenerator/invertedIndexGenerator.log'
+    log('invIndGen', logPath)
+    invIndGen = logging.getLogger('invIndGen')
+    
+    invIndGen.info('Processing Inverted Index Generator Module...')
     invertedIndex = {}
     stop = stopwords.words('english')
     for line in vectorPath:
         if str(line[0]) == 'LEIA':
-            dictionary=readXML(PATH+str(line[1]).strip())
+            dictionary=readXML(path+str(line[1]).strip())
             invertedIndex.update(invertedIndexGenerator(dictionary, stop))
         elif str(line[0]) == 'ESCREVA':
-            writeInvertedIndex(PATH+str(line[1]).strip(), invertedIndex)
+            writeInvertedIndex(path+str(line[1]).strip(), invertedIndex)
+    
+    invIndGen.info('End of Inverted Index Generator processing.')
             
             
             
 def invertedIndexGenerator(dictionaries, stopWords):
+    invIndGen.info('Making inverted index...')
+    
     invertedIndex = {}
     
     for key in dictionaries.keys():
@@ -43,15 +54,21 @@ def invertedIndexGenerator(dictionaries, stopWords):
     
     
 def writeInvertedIndex(filepath, invertedIndex):
+    invIndGen.info('Writing Inverted Index on file...')
+    
     f = open(filepath, 'w+')
     
     for key in invertedIndex.keys():
         f.write(key.upper()+";%s\n" % invertedIndex[key])        
     f.close()
     
+    invIndGen.info('Write operation finished.')
+    
     
     
 def readXML(filename):
+    invIndGen.info('Reading '+filename+' file')
+    
     dictionary = {}
     DOMTree = parse(filename)
     collection = DOMTree.documentElement
@@ -67,5 +84,22 @@ def readXML(filename):
             try:
                 dictionary[recordNumber] = record.getElementsByTagName('EXTRACT')[0].childNodes[0].data
             except IndexError:
-                pp("Document["+recordNumber+"] doesn't have abstract neither extract!")
+                invIndGen.warning("Document["+recordNumber+"] doesn't have abstract neither extract!")
     return dictionary
+    
+    
+    
+def log(name, logFile):
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.INFO)
+    # create a file handler
+    handler = logging.FileHandler(logFile)
+    handler.setLevel(logging.INFO)
+    # create a logging format
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    streamHandler = logging.StreamHandler()
+    streamHandler.setFormatter(formatter)
+    # add the handlers to the logger
+    logger.addHandler(handler)
+    logger.addHandler(streamHandler) 
