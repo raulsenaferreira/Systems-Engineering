@@ -19,25 +19,25 @@ PATH = os.path.dirname(__file__)
 def main():
     ''' you can execute each module separated if you want '''
     
-    '''     ***** InvertedIndexGenerator *****     
+    '''     ***** InvertedIndexGenerator *****     '''
     configFile = '/InvertedIndexGenerator/gli.cfg'
     pathVector = readData(configFile, '=')
     #log
     #log(PATH+'/InvertedIndexGenerator/invertedIndexGenerator.log')
     processInvertedIndexGenerator(pathVector)
-    '''
-    '''     ****** Indexer *****    
+    
+    '''     ****** Indexer *****    '''
     configFile = '/Indexer/index.cfg'
     pathVector = readData(configFile, '=')
     invertedIndex = readData(pathVector[0][1], ';')
     listOfWeights = tf_idf_metric(invertedIndex)
     writeVectorModel(listOfWeights, PATH+pathVector[1][1])
-    '''
-    '''     ****** QueryProcessor *****     
+    
+    '''     ****** QueryProcessor *****     '''
     configFile = '/QueryProcessor/pc.cfg'
     pathVector = readData(configFile, '=')
     executeQueryProcessor(pathVector)
-    '''
+    
     '''     ****** Searcher *****     '''
     configFile = '/Searcher/busca.cfg'
     pathVector = readData(configFile, '=')
@@ -48,8 +48,21 @@ def main():
     stop = stopwords.words('english')
     rankings = makeSearch(indexes, queries, stop)
     writeResults(rankings, pathVector[2][1])
+    #v1,v2 = [3, 45, 7, 2], [2, 54, 13, 15]
+    #pp(cosine_similarity(v1,v2))
     
     
+
+def cosine_similarity(v1,v2):
+    sumxx, sumxy, sumyy = 0, 0, 0
+    for i in range(len(v1)):
+        x = v1[i]; y = v2[i]
+        sumxx += x*x
+        sumyy += y*y
+        sumxy += x*y
+    return sumxy/math.sqrt(sumxx*sumyy)
+    
+
     
 def writeResults(rankings, path):
     f = open(PATH+path, 'w+')
@@ -58,12 +71,14 @@ def writeResults(rankings, path):
         line+= ident+';'
         i=0
         for docNum in rankings[ident]:
-            i+=1
-            line+='['            
-            line+= str(i)+','           
-            line+= str(docNum[0])+','
-            line+= '0'#distance
-            line+='],'
+            #don't print documents umbers with 0 weight (e.g. no occurrence)            
+            if docNum[1] > 0.0:
+                i+=1
+                line+='['            
+                line+= str(i)+', '           
+                line+= str(docNum[0])+', '
+                line+= str('%.2f' % round(docNum[1], 2))#distance
+                line+='],'
         line=line.rstrip(',')+'\n'
         f.write(line)
     f.close()
@@ -73,31 +88,33 @@ def writeResults(rankings, path):
 def makeSearch(indexes, queries, stop=[]):
     rankings = {}
     for queryNumber in queries.keys():
-        N = len(queries)
+        #N = len(queries)
         tokens = nltk.word_tokenize(queries[queryNumber])
-        freq_iq = nltk.FreqDist(tokens)
-        #using only valid and unique tokens and cleaning invalid ones, e.g. (?, brackets and etc)
+        #freq_iq = nltk.FreqDist(tokens)
+        #using only valid tokens and cleaning invalid ones, e.g. (?, brackets and etc)
         ranking = {}
-        for token in set(tokens):
+        for token in tokens:
             if token in stop or len(token) < 2:
                 tokens.remove(token)
-        for token in set(tokens):        
+        for token in tokens:
             #updating weights based on terms frequence
-            try:   
-                for doc in indexes[token]:
-                    for d in doc.keys():
-                        n_q = len(doc)
-                        maxFreq_iq = freq_iq.most_common(1)
-                        tf_idf = 1 #(freq_iq[token]/maxFreq_iq[0][1])*math.log(N/n_q)
-                        w_iq = doc[d]*tf_idf
-                        try:
-                            val = ranking[d] + w_iq
-                            ranking.update({d: val})
-                        except KeyError:
-                            ranking.update({d: w_iq})
+            try:
+                for k in indexes[token].keys():
+                    #n_q = len(indexes[token])
+                    #maxFreq_iq = freq_iq.most_common(1)
+                    w_iq = 1 
+                    #w_iq=(freq_iq[token]/maxFreq_iq[0][1])*math.log(N/n_q)
+                    tf_idf = indexes[token][k]*w_iq
+                    #cosine = math.sqrt(math.pow(w_iq, 2))*math.sqrt(math.pow(indexes[token][k], 2))
+                    #sim=tf_idf/cosine
+                    try:
+                        weight = ranking[k] + tf_idf
+                        ranking.update({k: 1/weight})
+                    except KeyError:
+                        ranking.update({k: 1/tf_idf})
             except KeyError:
                 pp("word '"+token+"' not found!")
-        rankings.update({queryNumber: sorted(ranking.items(), key=operator.itemgetter(1), reverse=True)})   
+        rankings.update({queryNumber: sorted(ranking.items(), key=operator.itemgetter(1), reverse=False)})
     return rankings
         
 
@@ -187,34 +204,38 @@ def tf_idf_metric(invertedIndex, minLength=2, regex="^[A-Z]+$"):
     regex = re.compile(regex)
     N = set()
     w_ij = {}
-    
-    for ind in invertedIndex:
+    invInd = invertedIndex
+    for ind in invInd:
         ind[1] = ast.literal_eval(ind[1])
         if len(ind[0]) >= minLength and regex.match(ind[0]):
             N = N | set(ind[1])
         
-    N = len(N)
-
+    N = len(N)#1183 documents with abstrac or extract
+    #N = 1239
     for ind in invertedIndex:
         if len(ind[0]) >= minLength and regex.match(ind[0]):
             term = ind[0]
             docs = ind[1]
-            
+            w = {}
             freq_ij = nltk.FreqDist(docs)
-            maxFreq_ij = freq_ij.most_common(1)
+            maxFreq_ij = freq_ij.most_common(1)#/maxFreq_ij[0][1]
             n_i = len(set(docs))
-            w_ij.update({term: [{k: (freq_ij[k]/maxFreq_ij[0][1]) * math.log(N/n_i)} for k in freq_ij.keys()]})
-        
+            for k in freq_ij.keys():
+                #r = (freq_ij[k]/maxFreq_ij) * math.log(N/n_i, 10)
+                r = (1+math.log(freq_ij[k], 10)) * math.log(N/n_i, 10)
+                w.update({k: r})
+            w_ij.update({term: w})
     return w_ij
 
 
 
 def processInvertedIndexGenerator(vectorPath):
+    invertedIndex = {}
     stop = stopwords.words('english')
     for line in vectorPath:
         if str(line[0]) == 'LEIA':
             dictionary=readXML(PATH+str(line[1]).strip())
-            invertedIndex=invertedIndexGenerator(dictionary, stop)
+            invertedIndex.update(invertedIndexGenerator(dictionary, stop))
         elif str(line[0]) == 'ESCREVA':
             writeInvertedIndex(PATH+str(line[1]).strip(), invertedIndex)
  
