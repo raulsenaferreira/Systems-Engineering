@@ -4,6 +4,8 @@ Created on Sun Apr  5 23:40:08 2015
 
 @author: raul
 """
+import operator
+import ast
 import os
 from pprint import pprint as pp
 from xml.dom.minidom import parse
@@ -27,10 +29,18 @@ def writeQueryProcessorData(pathVector, queries):
         elif str(line[0]) == 'ESPERADOS':
             f = open(PATH+str(line[1]), 'w+')
             for key in queries.keys():
-                f.write(key+';%s\n' % queries[key][1])
+                f.write(key+';%s\n' % sorted(queries[key][1].items(), key=operator.itemgetter(1), reverse=True))
             f.close()
             
             
+
+def scoreCounter(scoreList):
+    score = 0  
+    s = list(scoreList)
+    for i in s:
+        score += int(i)
+    return score
+
             
 def readQueriesXML(filename):
     dictionary = {}
@@ -52,8 +62,8 @@ def readQueriesXML(filename):
                     if record.hasAttribute("score"):
                         score = record.getAttribute("score")
                         key = record.childNodes[0].data
-                        expected.update({key: score})
-                dictionary[queryNumber] = [queryText, expected]
+                        expected.update({key: scoreCounter(score)})
+                dictionary[queryNumber] = [queryText, expected]#sorted(expected.items, key=operator.itemgetter(1), reverse=False)
             except IndexError:
                 pp("Document["+queryNumber+"] doesn't have records!")
         except IndexError:

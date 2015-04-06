@@ -19,9 +19,9 @@ import logging
 PATH = os.path.dirname(__file__)
 
 def main():
-    ''' you can execute each module separated if you want '''
+    ''' You can execute each module separated if you want '''
     #log
-    #log(PATH+'/InvertedIndexGenerator/invertedIndexGenerator.log')
+    log(PATH+'/InvertedIndexGenerator/invertedIndexGenerator.log')
     
     '''     ***** InvertedIndexGenerator *****     '''
     configFile = '/InvertedIndexGenerator/gli.cfg'
