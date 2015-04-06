@@ -9,6 +9,7 @@ from Searcher import processSearcher
 from nltk.corpus import stopwords
 import os
 import logging
+import time
 
 #globals
 PATH = os.path.dirname(__file__)
@@ -16,7 +17,17 @@ PATH = os.path.dirname(__file__)
 def main():
     ''' You can execute each module separated if you want '''
     
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+    handler = logging.FileHandler('main.log')
+    handler.setLevel(logging.INFO)
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    logger.info('System initiated!')
     
+    s = time.time()
+
     '''     ***** InvertedIndexGenerator *****     '''
     configFile = '/InvertedIndexGenerator/gli.cfg'
     pathVector = readData(configFile, '=')
@@ -34,7 +45,7 @@ def main():
     configFile = '/QueryProcessor/pc.cfg'
     pathVector = readData(configFile, '=')
     executeQueryProcessor(PATH, pathVector)
-
+    
     
     '''     ****** Searcher *****     '''
     configFile = '/Searcher/busca.cfg'
@@ -43,7 +54,9 @@ def main():
     queries = readData(pathVector[1][1], ';')
     stop = stopwords.words('english')
     processSearcher(PATH, indexes, queries, pathVector, stop)
-
+    
+    
+    logger.info('End of System. Total of %s elapsed.' % str(time.time() - s))
  
 # ******    Main Methods 
     
@@ -60,20 +73,5 @@ def readData(filepath, symbol):
     
 
 
-def log(name, logFile):
-    logger = logging.getLogger(name)
-    logger.setLevel(logging.INFO)
-    # create a file handler
-    handler = logging.FileHandler(logFile)
-    handler.setLevel(logging.INFO)
-    # create a logging format
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    handler.setFormatter(formatter)
-    streamHandler = logging.StreamHandler()
-    streamHandler.setFormatter(formatter)
-    # add the handlers to the logger
-    logger.addHandler(handler)
-    logger.addHandler(streamHandler) 
-                      
 if __name__ == '__main__':
     main() 

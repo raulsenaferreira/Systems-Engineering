@@ -2,35 +2,47 @@
 """
 Created on Sun Apr  5 23:33:52 2015
 
-@author: raul
+@author: Raul Sena Ferreira
 """
 import re
 import ast
 import nltk
 import math
 import logging
+import time
 
 #global
 indexer = ''
 
 def processIndexer(invertedIndex, path, pathVector):
+    begin = time.time()
     global indexer
     #logging instantiate
     logPath = path+'/Indexer/indexer.log'
     log('indexer', logPath)
     indexer = logging.getLogger('indexer')
     indexer.info('Processing Indexer module...')
+    indexer.info('Using TF_IDF Metric to calculate weights...')
+    
+    ini = time.time()
     
     listOfWeights = tf_idf_metric(invertedIndex)
-    writeVectorModel(listOfWeights, path+pathVector[1][1])
     
-    indexer.info('End of Inverted Index Generator processing.')
+    timeElapsed = time.time()-ini
+    indexer.info('Total time of the weight calculus: %s' % str(timeElapsed))
+    indexer.info('Writing Vector Model on file.')
+    ini = time.time()
+    
+    writeVectorModel(listOfWeights, path+pathVector[1][1])
+    timeElapsed = time.time()-ini
+    indexer.info('Total time to write Vector Model on file: %s' % str(timeElapsed))
+    
+    end = time.time() - begin
+    indexer.info('End of Indexer Module. Total of %s elapsed.' % str(end))
 
 
 
 def tf_idf_metric(invertedIndex, minLength=2, regex="^[A-Z]+$"):
-    indexer.info('Using TF_IDF Metric to calculate weights...')
-    
     '''
     regex by defult only allows uppercase ASCII words
     minimun length of word by default to be analyzed = 2
@@ -71,7 +83,6 @@ def tf_idf_metric(invertedIndex, minLength=2, regex="^[A-Z]+$"):
     
     
 def writeVectorModel(listOfWeights, filename):
-    indexer.info('Writing Vector Model on file.')
     
     f = open(filename, 'w+')
     for k in listOfWeights.keys():

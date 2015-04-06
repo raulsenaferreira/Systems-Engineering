@@ -9,24 +9,35 @@ import nltk
 import operator
 import math
 import logging
+import time
 
 #globals
 searcher = ''
 
 def processSearcher(path, indexes, queries, pathVector, stop):
+    begin = time.time()    
     global searcher
     #log
     logPath = path+'/Searcher/searcher.log'
-    log('searcher', logPath)
-    searcher = logging.getLogger('searcher')
+    log('Searcher', logPath)
+    searcher = logging.getLogger('Searcher')
     searcher.info('Processing Searcher Module...')
     
     indexes = strToDict(indexes)
     queries = strToDict(queries, False)
+    
+    searcher.info('Making search and calculating rankings...')
+    ini = time.time()
+    
     rankings = makeSearch(indexes, queries, stop)
+    
+    timeElapsed = time.time()-ini
+    searcher.info('Searching and ranking calculus operation finished with %s' % str(timeElapsed))
+    
     writeResults(path, rankings, pathVector[2][1])
     
-    searcher.info('End of Searcher Module processing.')
+    end = time.time() - begin
+    searcher.info('End of Searcher Module processing. Total of %s elapsed.' % str(end))
     #v1,v2 = [3, 45, 7, 2], [2, 54, 13, 15]
     #pp(cosine_similarity(v1,v2))
     
@@ -59,7 +70,6 @@ def strToDict(listString, hasListInside=True):
     
     
 def makeSearch(indexes, queries, stop=[]):
-    searcher.info('Making search and calculating rankings...')
     
     rankings = {}
     for queryNumber in queries.keys():

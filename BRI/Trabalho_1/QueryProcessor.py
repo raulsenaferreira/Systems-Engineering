@@ -4,6 +4,7 @@ Created on Sun Apr  5 23:40:08 2015
 
 @author: Raul Sena Ferreira
 """
+import time
 import operator
 from xml.dom.minidom import parse
 import logging
@@ -12,22 +13,34 @@ import logging
 queryProcess = ''
 
 def executeQueryProcessor(path, pathVector):
+    begin = time.time()
     global queryProcess
     #log
     logPath = path+'/QueryProcessor/queryProcessor.log'
-    log('queryProcess', logPath)
-    queryProcess = logging.getLogger('queryProcess')
+    log('queryProcessor', logPath)
+    queryProcess = logging.getLogger('queryProcessor')
     queryProcess.info('Processing Query Processor Module...')
+    ini = time.time()
     
     queries = readQueriesXML(path+pathVector[0][1])
+    
+    timeElapsed = time.time()-ini
+    queryProcess.info('Read queries operation finished with %s' % str(timeElapsed))
+    
+    queryProcess.info('Writing Query Processor and Expected results on their respective files...')
+    ini = time.time()
+    
     writeQueryProcessorData(path, pathVector, queries)
     
-    queryProcess.info('End of Query Processor Module.')
+    timeElapsed = time.time()-ini
+    queryProcess.info('Write operation finished with %s' % str(timeElapsed))
+    
+    end = time.time() - begin
+    queryProcess.info('End of Query Processor Module. Total of %s elapsed.' % str(end))
     
     
     
 def writeQueryProcessorData(path, pathVector, queries):
-    queryProcess.info('Writing Query Processor and Expected results on their respective files...')
     
     for line in pathVector:
         if str(line[0]) == 'CONSULTAS':
@@ -44,8 +57,6 @@ def writeQueryProcessorData(path, pathVector, queries):
             
 
 def scoreCounter(scoreList):
-    queryProcess.info('Processing score list of Expected results...')
-    
     score = 0  
     s = list(scoreList)
     for i in s:
@@ -63,6 +74,8 @@ def readQueriesXML(filename):
     collection = DOMTree.documentElement
     
     queries = collection.getElementsByTagName("QUERY")
+    
+    queryProcess.info('Processing score list of Expected results...')
     
     for query in queries:
         queryNumber = query.getElementsByTagName('QueryNumber')[0].childNodes[0].data

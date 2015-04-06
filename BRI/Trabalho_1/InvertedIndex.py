@@ -4,6 +4,7 @@ Created on Sun Apr  5 23:22:42 2015
 
 @author: Raul Sena Ferreira
 """
+import time
 import nltk
 import logging
 from nltk.corpus import stopwords
@@ -13,23 +14,44 @@ from xml.dom.minidom import parse
 invIndGen = ''
 
 def processInvertedIndexGenerator(path, vectorPath):
+    begin = time.time()
     global invIndGen
     #logging instantiate
     logPath = path+'/InvertedIndexGenerator/invertedIndexGenerator.log'
-    log('invIndGen', logPath)
-    invIndGen = logging.getLogger('invIndGen')
-    
+    log('invertedIndexGenerator', logPath)
+    invIndGen = logging.getLogger('invertedIndexGenerator')
     invIndGen.info('Processing Inverted Index Generator Module...')
+    meanTimeXML = 0
+    meanTimeIIG = 0
+    
     invertedIndex = {}
     stop = stopwords.words('english')
     for line in vectorPath:
         if str(line[0]) == 'LEIA':
+            ini = time.time()
+            
             dictionary=readXML(path+str(line[1]).strip())
+            
+            meanTimeXML+=time.time()-ini
+            ini = time.time()
+            
             invertedIndex.update(invertedIndexGenerator(dictionary, stop))
+            
+            meanTimeIIG+=time.time()-ini
         elif str(line[0]) == 'ESCREVA':
+            invIndGen.info('Writing Inverted Index on file...')
+            ini = time.time()
+            
             writeInvertedIndex(path+str(line[1]).strip(), invertedIndex)
+            
+            timeElapsed = time.time()-ini
+            invIndGen.info('Write operation finished with %s' % str(timeElapsed))
+            
+    invIndGen.info('XML reading operation finished with %s of time average.' % str(meanTimeXML/len(line)-1))        
+    invIndGen.info('Inverted Index Generator Method finished with %s of time average.' % str(meanTimeIIG/len(line)-1))
     
-    invIndGen.info('End of Inverted Index Generator processing.')
+    end = time.time() - begin
+    invIndGen.info('End of Inverted Index Generator Module. Total of %s elapsed.' % str(end))
             
             
             
@@ -54,15 +76,12 @@ def invertedIndexGenerator(dictionaries, stopWords):
     
     
 def writeInvertedIndex(filepath, invertedIndex):
-    invIndGen.info('Writing Inverted Index on file...')
     
     f = open(filepath, 'w+')
     
     for key in invertedIndex.keys():
         f.write(key.upper()+";%s\n" % invertedIndex[key])        
     f.close()
-    
-    invIndGen.info('Write operation finished.')
     
     
     
@@ -85,6 +104,8 @@ def readXML(filename):
                 dictionary[recordNumber] = record.getElementsByTagName('EXTRACT')[0].childNodes[0].data
             except IndexError:
                 invIndGen.warning("Document["+recordNumber+"] doesn't have abstract neither extract!")
+    
+    invIndGen.info('%s records read succesfully.' % str(len(dictionary)))
     return dictionary
     
     
