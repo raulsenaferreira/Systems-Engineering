@@ -4,3 +4,9 @@
 2015-04-06 17:57:07,762 - indexer - INFO - Writing Vector Model on file.
 2015-04-06 17:57:07,815 - indexer - INFO - Total time to write Vector Model on file: 0.05215597152709961
 2015-04-06 17:57:07,815 - indexer - INFO - End of Indexer Module. Total of 0.5606248378753662 elapsed.
+2015-04-06 18:45:59,529 - indexer - INFO - Processing Indexer module...
+2015-04-06 18:45:59,529 - indexer - INFO - Using TF_IDF Metric to calculate weights...
+2015-04-06 18:46:00,032 - indexer - INFO - Total time of the weight calculus: 0.5033230781555176
+2015-04-06 18:46:00,032 - indexer - INFO - Writing Vector Model on file.
+2015-04-06 18:46:00,083 - indexer - INFO - Total time to write Vector Model on file: 0.05109882354736328
+2015-04-06 18:46:00,084 - indexer - INFO - End of Indexer Module. Total of 0.5551459789276123 elapsed.
