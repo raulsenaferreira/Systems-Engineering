@@ -1,7 +1,7 @@
-##Implementations of discipline Busca e Recuperação da Informação (Information Retrieval)
-####Student: Raul Sena Ferreira
-####Coursing Masters in Systems Engineering and Computing - PESC/COPPE/UFRJ
-####Professor: DSc. Geraldo B. Xexéo
+####Implementations of discipline Information Retrieval (Busca e Recuperação da Informação)
+######Student: Raul Sena Ferreira
+######Coursing Masters in Systems Engineering and Computing - PESC/COPPE/UFRJ
+######Professor: DSc. Geraldo B. Xexéo
 
 ####References:
 http://programeempython.blog.br/blog/manipulando-arquivos-com-python/
