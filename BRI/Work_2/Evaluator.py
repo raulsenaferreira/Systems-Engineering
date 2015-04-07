@@ -13,8 +13,8 @@ import ast
 PATH = os.path.dirname(__file__)
 
 def main():
-    configFile = '/main.cfg'
-    pathVector = readData(configFile, '=')
+    configFile = '/Evaluator/evaluator.cfg'
+    pathVector = readData(PATH+configFile, '=')
     #STEMMER OR NOSTEMMER    
     use_mode = pathVector[0][1]
     
@@ -37,14 +37,18 @@ def main():
 
 
 def strToDictResults(resultsStr):
-    return 0
+    results = {}
+    for r in resultsStr:
+        l = r[1].lstrip('[').rstrip(']').split('],[')
+        results.update({r: l})
+    return results
     
     
     
 def strToDictExpectedResults(expResStr):
     expectedResults = {}
-    
-    pp(expectedResults)
+    for e in expResStr:
+        expectedResults.update({e[0]: ast.literal_eval(e[1])})
     return expectedResults
 
 
@@ -60,7 +64,7 @@ def compareResults(results, expectedResults):
 
 
 def readData(filepath, symbol):
-    directory = open(PATH+filepath.strip(), 'r')
+    directory = open(filepath.strip(), 'r')
     lines=[]
     
     for line in directory:

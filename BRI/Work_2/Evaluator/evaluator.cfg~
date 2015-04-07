@@ -1,4 +1,4 @@
-MODO_DE_USO=NOSTEMMER
+MODO_DE_USO=STEMMER
 LEIA=/QueryProcessor/expectedResults.csv
 LEIA=/Searcher/No_Stemmer/results.csv
 LEIA=/Searcher/With_Stemmer/results.csv
