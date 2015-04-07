@@ -8,11 +8,22 @@ from nltk.stem.porter import *
 from pprint import pprint as pp
 import os
 import ast
+import logging
+import time
 
 #globals
 PATH = os.path.dirname(__file__)
+evaluatorLog = ''
 
 def main():
+    begin = time.time()
+    global evaluatorLog
+    #logging instantiate
+    logPath = path+'/Evaluator/evaluator.log'
+    log('evaluator', logPath)
+    evaluatorLog = logging.getLogger('evaluator')
+    evaluatorLog.info('Processing Evaluator module...')
+    
     configFile = '/Evaluator/evaluator.cfg'
     pathVector = readData(PATH+configFile, '=')
     #STEMMER OR NOSTEMMER    
@@ -34,6 +45,8 @@ def main():
     
     stemmer = PorterStemmer()
     #stemmer.stem(lists)
+    end = time.time() - begin
+    evaluatorLog.info('End of Evaluator Module. Total of %s elapsed.' % str(end))
 
 
 def strToDictResults(resultsStr):
