@@ -1,4 +1,4 @@
-MODO_DE_USO=STEMMER
+MODO_DE_USO=NOSTEMMER
 LEIA= /data/cf74.xml
 LEIA= /data/cf75.xml
 LEIA= /data/cf76.xml

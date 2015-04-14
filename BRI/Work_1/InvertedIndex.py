@@ -7,13 +7,15 @@ Created on Sun Apr  5 23:22:42 2015
 import time
 import nltk
 import logging
+#from pprint import pprint as pp 
+from nltk.stem.porter import *
 from nltk.corpus import stopwords
 from xml.dom.minidom import parse
 
 #global
 invIndGen = ''
 
-def processInvertedIndexGenerator(path, vectorPath):
+def processInvertedIndexGenerator(path, vectorPath, use_mode):
     begin = time.time()
     global invIndGen
     #logging instantiate
@@ -23,9 +25,11 @@ def processInvertedIndexGenerator(path, vectorPath):
     invIndGen.info('Processing Inverted Index Generator Module...')
     meanTimeXML = 0
     meanTimeIIG = 0
-    
     invertedIndex = {}
+    
+    #stop words
     stop = stopwords.words('english')
+    
     for line in vectorPath:
         if str(line[0]) == 'LEIA':
             ini = time.time()
@@ -35,7 +39,15 @@ def processInvertedIndexGenerator(path, vectorPath):
             meanTimeXML+=time.time()-ini
             ini = time.time()
             
-            invertedIndex.update(invertedIndexGenerator(dictionary, stop))
+            #STEMMER OR NOSTEMMER
+            if use_mode == 'STEMMER':
+                stemmer = PorterStemmer()
+                invertedIndex.update(invertedIndexGenerator(dictionary, stop, stemmer))
+                #stemmer.stem(lists)
+            elif use_mode == 'NOSTEMMER':
+                invertedIndex.update(invertedIndexGenerator(dictionary, stop, None))
+            else: print("Use mode undefined")
+            
             
             meanTimeIIG+=time.time()-ini
         elif str(line[0]) == 'ESCREVA':
@@ -55,16 +67,23 @@ def processInvertedIndexGenerator(path, vectorPath):
             
             
             
-def invertedIndexGenerator(dictionaries, stopWords):
+def invertedIndexGenerator(dictionaries, stopWords, stemmer):
     invIndGen.info('Making inverted index...')
     
     invertedIndex = {}
     
     for key in dictionaries.keys():
+        
+           
         for token in nltk.word_tokenize(dictionaries[key]):
+            
             key = key.strip()
+            key = str(int(key))
             tokenList = []
             if token not in stopWords and len(token) > 1:
+                if stemmer is not None:
+                    #pp("Using stemmer...")
+                    token=stemmer.stem(token)
                 try:
                     invertedIndex[token].append(key)
                     invertedIndex.update({token:invertedIndex[token]})

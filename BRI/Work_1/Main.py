@@ -6,6 +6,7 @@ from InvertedIndex import processInvertedIndexGenerator
 from Indexer import processIndexer
 from QueryProcessor import executeQueryProcessor
 from Searcher import processSearcher
+from Evaluator import executeEvaluator
 from nltk.corpus import stopwords
 import os
 import logging
@@ -31,7 +32,9 @@ def main():
     '''     ***** InvertedIndexGenerator *****     '''
     configFile = '/InvertedIndexGenerator/gli.cfg'
     pathVector = readData(configFile, '=')
-    processInvertedIndexGenerator(PATH, pathVector)
+    use_mode = pathVector[0][1]
+        
+    processInvertedIndexGenerator(PATH, pathVector, use_mode)
     
     
     '''     ****** Indexer *****    '''
@@ -53,11 +56,31 @@ def main():
     indexes = readData(pathVector[0][1], ';')
     queries = readData(pathVector[1][1], ';')
     stop = stopwords.words('english')
-    processSearcher(PATH, indexes, queries, pathVector, stop)
+    processSearcher(PATH, indexes, queries, pathVector, stop, use_mode)
+    
+    
+    '''     ****** Evaluator *****     '''
+    configFile = '/Evaluator/evaluator.cfg'
+    pathVector = readData(configFile, '=')
+    
+    #STEMMER OR NOSTEMMER    
+    resultsStr=''
+    
+    if use_mode == 'NOSTEMMER':
+        resultsStr = readData(pathVector[1][1], ';')
+    elif use_mode == 'STEMMER':
+        resultsStr = readData(pathVector[2][1], ';')
+    else:
+        print("Use mode undefined")
+    expectedResultsString = readData(pathVector[0][1], ';')
+    
+    executeEvaluator(PATH, pathVector, expectedResultsString, resultsStr, use_mode)
     
     
     logger.info('End of System. Total of %s elapsed.' % str(time.time() - s))
  
+
+
 # ******    Main Methods 
     
 def readData(filepath, symbol):

@@ -10,13 +10,16 @@ import operator
 import math
 import logging
 import time
+#from pprint import pprint as pp
+from nltk.stem.porter import *
 
 #globals
 searcher = ''
 
-def processSearcher(path, indexes, queries, pathVector, stop):
+def processSearcher(path, indexes, queries, pathVector, stop, use_mode):
     begin = time.time()    
     global searcher
+    
     #log
     logPath = path+'/Searcher/searcher.log'
     log('Searcher', logPath)
@@ -29,12 +32,26 @@ def processSearcher(path, indexes, queries, pathVector, stop):
     searcher.info('Making search and calculating rankings...')
     ini = time.time()
     
-    rankings = makeSearch(indexes, queries, stop)
+    rankings=''
+    if use_mode == 'STEMMER':
+        stemmer = PorterStemmer()
+        rankings = makeSearch(indexes, queries, stemmer, stop)
+    elif use_mode == 'NOSTEMMER':
+        rankings = makeSearch(indexes, queries, None, stop)
+    else: print("Use mode undefined")
     
     timeElapsed = time.time()-ini
     searcher.info('Searching and ranking calculus operation finished with %s' % str(timeElapsed))
     
-    writeResults(path, rankings, pathVector[2][1])
+    pathToSaveFile  = ''
+    if use_mode == 'NOSTEMMER':
+        pathToSaveFile = pathVector[2][1]
+    elif use_mode == 'STEMMER':
+        pathToSaveFile = pathVector[3][1]
+    else:
+        print("Use mode undefined")
+    
+    writeResults(path, rankings, pathToSaveFile)
     
     end = time.time() - begin
     searcher.info('End of Searcher Module processing. Total of %s elapsed.' % str(end))
@@ -69,7 +86,7 @@ def strToDict(listString, hasListInside=True):
     
     
     
-def makeSearch(indexes, queries, stop=[]):
+def makeSearch(indexes, queries, stemmer, stop=[]):
     
     rankings = {}
     for queryNumber in queries.keys():
@@ -82,6 +99,9 @@ def makeSearch(indexes, queries, stop=[]):
             if token in stop or len(token) < 2:
                 tokens.remove(token)
         for token in tokens:
+            if stemmer is not None:
+                #pp("Using stemmer...")
+                token=stemmer.stem(token)
             #updating weights based on terms frequence
             try:
                 for k in indexes[token].keys():

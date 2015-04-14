@@ -4,25 +4,20 @@ Created on Mon Apr  6 19:36:59 2015
 
 @author: Raul Sena Ferreira
 """
-from nltk.stem.porter import *
 from pprint import pprint as pp
-import os
 import ast
 import logging
 import time
 import math
 import numpy as np
+import operator
 #from sklearn.metrics import metrics
 
 #globals
-PATH = os.path.dirname(__file__)
 evaluatorLog = ''
 
 #def main():
-def executeEvaluator(PATH):
-    path=PATH
-    configFile = '/Evaluator/evaluator.cfg'
-    pathVector = readData(configFile, '=')
+def executeEvaluator(path, pathVector, expectedResultsString, resultsStr, use_mode):
     begin = time.time()
     global evaluatorLog
     #logging instantiate
@@ -31,86 +26,71 @@ def executeEvaluator(PATH):
     evaluatorLog = logging.getLogger('evaluator')
     evaluatorLog.info('Processing Evaluator module...')
     
-    configFile = '/Evaluator/evaluator.cfg'
-    pathVector = readData(configFile, '=')
-    #STEMMER OR NOSTEMMER    
-    use_mode = pathVector[0][1]
-    
-    expectedResultsString = readData('/'+pathVector[0][1], ';')
     expectedResults = strToDictExpectedResults(expectedResultsString)
-    use_mode = 'NOSTEMMER'
-    resultsStr = ''
-    if use_mode == 'NOSTEMMER':
-        resultsStr = readData(pathVector[1][1], ';')
-    elif use_mode == 'STEMMER':
-        resultsStr = readData(pathVector[2][1], ';')
-    else:
-        print("Use mode undefined")
-        
+    
     results = strToDictResults(resultsStr)
     
     relevanceList = selectRelevantDocs(expectedResults)
-    #pp(relevanceList)
-    graphic11points(results, relevanceList)
-    #executing metrics
-    #k=10 documents
-    #PK=[precisionK(results[query], relevanceList[query]) for query in expectedResults.keys() if precisionK(results[query], relevanceList[query]) is not None]#doc 1234 in query 00040 with problem
-    #pp(PK)    
-    #AVP=[averagePrecision(results[query], relevanceList[query]) for query in expectedResults.keys()]
-    #pp(AVP)
-    #MAP=meanAveragePrecision(AVP)
-    #pp(MAP)
-    #DCG=discountedCumulativeGain(results, expectedResults, range(4,8))
-    #pp(DCG)
-    #nDCG=normalizedDiscountedCumulativeGain(DCG, results, expectedResults, range(4,8))
-    #pp(nDCG)
-    #f1=[F1(results[query], relevanceList[query], query) for query in expectedResults.keys()]
-    #pp(f1)    
-    #writeReport(path+pathVector[4][1])
     
-    #stemmer = PorterStemmer()
-    #stemmer.stem(lists)
+    PK={}
+    F1={}
+    AVP=[]
+    #executing metrics
+    for query in expectedResults.keys():
+        if precisionK(results[query], relevanceList[query]) is not None:
+            PK.update({query: precisionK(results[query], relevanceList[query])})#k=10 documents
+            
+        
+        AVP.append(averagePrecision(results[query], relevanceList[query]))
+        
+        F1.update({query: f1Measure(results[query], relevanceList[query])})
+    
+    G11Pts=graphic11points(results, relevanceList)
+    
+    MAP=meanAveragePrecision(AVP)
+   
+    DCG=discountedCumulativeGain(results, expectedResults, range(4,8))
+
+    NDCG=normalizedDiscountedCumulativeGain(DCG, results, expectedResults, range(4,8))
+    
+    writeReport(PK, MAP, DCG, NDCG, F1, use_mode, path, pathVector[3][1])
+    
+    
+    writeMetricsOnFile(path, '/Searcher/'+use_mode+'/precicionk.csv', PK, use_mode)
+    writeMetricsOnFile(path, '/Searcher/'+use_mode+'/mean-average-precision.csv', MAP, use_mode)
+    writeMetricsOnFile(path, '/Searcher/'+use_mode+'/discount-cumulative-gain.csv', DCG, use_mode)
+    writeMetricsOnFile(path, '/Searcher/'+use_mode+'/normalized-discount-cumulative-gain.csv', NDCG, use_mode)
+    writeMetricsOnFile(path, '/Searcher/'+use_mode+'/f1-measure.csv', F1, use_mode)
+    
     end = time.time() - begin
     evaluatorLog.info('End of Evaluator Module. Total of %s elapsed.' % str(end))
-    
+
 
 
 def graphic11points(results, relevanceList):
-    globalRelevants = set()
-    globalResults = set()
-    arrayPoints = []
+    ListOfDocuments = [relevanceList[k] for k in relevanceList]
+    pp(listOfDocuments)
+'''    
+    listOfInterpoledResults = []
+    precision=0
+    recall=0
+    rel=0
+    nDoc=0
+    nRel=len(relevants)
     
-    for k in relevanceList:
-        for doc in relevanceList[k]:
-            globalRelevants.add(doc)
-        
-    kRels = math.ceil(len(globalRelevants)/10)
-    cont=kRels
-
-    for key in results:
-        for res in results[key]:
-            globalResults.add(res[1])
-    
-    nDocs = 0
-    nRels = 0
-    vetAux = []
-    for res in globalResults:
-        nDocs+=1
-        if res in globalRelevants:
-            nRels+=1
-            vetAux.append(nRels/nDocs)
-            if nRels == cont:
-                arrayPoints.append(max(vetAux))
-                vetAux = []
-                cont+=kRels
-        else:
-            if cont == kRels:
+    for doc in results:
+        nDoc+=1
+        if doc[1] in relevants:
+            rel+=1
             
-    if len(vetAux) > 0:
-        arrayPoints.append(nRels/nDocs)
-            
-    pp(arrayPoints)
-
+    if rel > 0:
+        precision=rel/nDoc
+        recall=rel/nRel
+        return 2 * ((precision*recall)/(precision+recall))
+    else:
+        return 0
+    return listOfInterpoledResults
+'''
     
 
 def selectRelevantDocs(expectedResults, minRelevanceScore=4):
@@ -218,8 +198,7 @@ def normalizedDiscountedCumulativeGain(dcg, results, expectedResults, relevanceS
 
 
 
-def F1(results, relevants, query):
-    f1List={}
+def f1Measure(results, relevants):
     precision=0
     recall=0
     rel=0
@@ -234,18 +213,42 @@ def F1(results, relevants, query):
     if rel > 0:
         precision=rel/nDoc
         recall=rel/nRel
-        f1 = 2 * ((precision*recall)/(precision+recall))
-        f1List.update({query: f1})
+        return 2 * ((precision*recall)/(precision+recall))
     else:
-        f1List.update({query: 0})
+        return 0
 
-    return f1List
     
     
+def writeMetricsOnFile(path, filename, metric, use_mode):
     
-def writeReport(pathReport):
-    return 0
+    f = open(path+filename, 'w+')
+    for key in metric.keys():
+        f.write(key+";%s\n" % metric[key])
+    f.close()
 
+
+
+def writeReport(PK, MAP, DCG, NDCG, F1, use_mode, path, pathVector):
+    evaluatorLog.info('Writing evaluator results on file report...')
+    
+    f = open(path+pathVector, 'w+')
+    f.write("########################    REPORT OF METRICS    -    "+use_mode+" MODE    ########################\n\n\n")
+    f.write("########################    Precision@10 - "+use_mode+"    ########################\n")
+    for key in PK.keys():
+        f.write(key+";%s\n" % PK[key])
+    f.write("########################    Mean Average Precision - "+use_mode+"    ########################\n")
+    f.write(MAP)
+    f.write("\n########################    Discounted Cumulative Gain - "+use_mode+"    ########################\n")
+    for key in DCG.keys():
+        f.write(key+";%s\n" % DCG[key])
+    f.write("########################    Normalized Discounted Cumulative Gain - "+use_mode+"    ########################\n")
+    for key in NDCG.keys():
+        f.write(key+";%s\n" % NDCG[key])
+    f.write("########################    F1 Measure - "+use_mode+"    ########################\n")
+    for key in F1.keys():
+        f.write(key+";%s\n" % F1[key])
+    f.close()
+    
 
 
 def compareResults(results, expectedResults):
@@ -324,19 +327,6 @@ def strToDictExpectedResults(expResStr):
     
     
     
-def readData(filepath, symbol):
-    directory = open(filepath.strip(), 'r')
-    lines=[]
-    
-    for line in directory:
-        line = line.strip()
-        lines.append(line.split(symbol))
-    
-    directory.close()
-    return lines
-
-
-
 def log(name, logFile):
     logger = logging.getLogger(name)
     logger.setLevel(logging.INFO)
@@ -353,17 +343,7 @@ def log(name, logFile):
     logger.addHandler(streamHandler)
     
     
-    
-def readData(filepath, symbol):
-    directory = open(PATH+filepath.strip(), 'r')
-    lines=[]
-    
-    for line in directory:
-        line = line.strip()
-        lines.append(line.split(symbol))
-    
-    directory.close()
-    return lines
-    
-
-executeEvaluator(PATH)
+'''    
+if __name__ == '__main__':
+    main()
+'''
