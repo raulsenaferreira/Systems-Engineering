@@ -516,3 +516,243 @@
 2015-04-14 23:38:14,803 - invertedIndexGenerator - INFO - XML reading operation finished with 1.7992445230484009 of time average.
 2015-04-14 23:38:14,803 - invertedIndexGenerator - INFO - Inverted Index Generator Method finished with 2.252248525619507 of time average.
 2015-04-14 23:38:14,803 - invertedIndexGenerator - INFO - End of Inverted Index Generator Module. Total of 12.265121936798096 elapsed.
+2015-04-15 09:50:09,801 - invertedIndexGenerator - INFO - Processing Inverted Index Generator Module...
+2015-04-15 09:50:09,845 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf74.xml file
+2015-04-15 09:50:10,195 - invertedIndexGenerator - WARNING - Document[00036 ] doesn't have abstract neither extract!
+2015-04-15 09:50:10,207 - invertedIndexGenerator - WARNING - Document[00128 ] doesn't have abstract neither extract!
+2015-04-15 09:50:10,207 - invertedIndexGenerator - WARNING - Document[00132 ] doesn't have abstract neither extract!
+2015-04-15 09:50:10,213 - invertedIndexGenerator - INFO - 164 records read succesfully.
+2015-04-15 09:50:10,213 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:50:10,792 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf75.xml file
+2015-04-15 09:50:11,221 - invertedIndexGenerator - WARNING - Document[00168] doesn't have abstract neither extract!
+2015-04-15 09:50:11,237 - invertedIndexGenerator - WARNING - Document[00298] doesn't have abstract neither extract!
+2015-04-15 09:50:11,242 - invertedIndexGenerator - WARNING - Document[00329] doesn't have abstract neither extract!
+2015-04-15 09:50:11,245 - invertedIndexGenerator - INFO - 185 records read succesfully.
+2015-04-15 09:50:11,245 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:50:11,830 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf76.xml file
+2015-04-15 09:50:12,529 - invertedIndexGenerator - WARNING - Document[00493 ] doesn't have abstract neither extract!
+2015-04-15 09:50:12,534 - invertedIndexGenerator - WARNING - Document[00512 ] doesn't have abstract neither extract!
+2015-04-15 09:50:12,540 - invertedIndexGenerator - WARNING - Document[00551 ] doesn't have abstract neither extract!
+2015-04-15 09:50:12,544 - invertedIndexGenerator - INFO - 224 records read succesfully.
+2015-04-15 09:50:12,544 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:50:13,234 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf77.xml file
+2015-04-15 09:50:13,773 - invertedIndexGenerator - WARNING - Document[00595 ] doesn't have abstract neither extract!
+2015-04-15 09:50:13,789 - invertedIndexGenerator - WARNING - Document[00712 ] doesn't have abstract neither extract!
+2015-04-15 09:50:13,791 - invertedIndexGenerator - WARNING - Document[00729 ] doesn't have abstract neither extract!
+2015-04-15 09:50:13,791 - invertedIndexGenerator - WARNING - Document[00735 ] doesn't have abstract neither extract!
+2015-04-15 09:50:13,797 - invertedIndexGenerator - INFO - 195 records read succesfully.
+2015-04-15 09:50:13,797 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:50:14,384 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf78.xml file
+2015-04-15 09:50:14,815 - invertedIndexGenerator - WARNING - Document[00839 ] doesn't have abstract neither extract!
+2015-04-15 09:50:14,821 - invertedIndexGenerator - WARNING - Document[00894 ] doesn't have abstract neither extract!
+2015-04-15 09:50:14,824 - invertedIndexGenerator - WARNING - Document[00932 ] doesn't have abstract neither extract!
+2015-04-15 09:50:14,826 - invertedIndexGenerator - WARNING - Document[00939 ] doesn't have abstract neither extract!
+2015-04-15 09:50:14,830 - invertedIndexGenerator - INFO - 195 records read succesfully.
+2015-04-15 09:50:14,830 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:50:15,392 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf79.xml file
+2015-04-15 09:50:15,918 - invertedIndexGenerator - WARNING - Document[01023 ] doesn't have abstract neither extract!
+2015-04-15 09:50:15,922 - invertedIndexGenerator - WARNING - Document[01069 ] doesn't have abstract neither extract!
+2015-04-15 09:50:15,926 - invertedIndexGenerator - WARNING - Document[01089 ] doesn't have abstract neither extract!
+2015-04-15 09:50:15,934 - invertedIndexGenerator - WARNING - Document[01150 ] doesn't have abstract neither extract!
+2015-04-15 09:50:15,935 - invertedIndexGenerator - WARNING - Document[01154 ] doesn't have abstract neither extract!
+2015-04-15 09:50:15,939 - invertedIndexGenerator - WARNING - Document[01187 ] doesn't have abstract neither extract!
+2015-04-15 09:50:15,944 - invertedIndexGenerator - WARNING - Document[01225 ] doesn't have abstract neither extract!
+2015-04-15 09:50:15,947 - invertedIndexGenerator - INFO - 252 records read succesfully.
+2015-04-15 09:50:15,947 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:50:16,697 - invertedIndexGenerator - INFO - Writing Inverted Index on file...
+2015-04-15 09:50:16,779 - invertedIndexGenerator - INFO - Write operation finished with 0.08133697509765625
+2015-04-15 09:50:16,779 - invertedIndexGenerator - INFO - XML reading operation finished with 0.5499603748321533 of time average.
+2015-04-15 09:50:16,779 - invertedIndexGenerator - INFO - Inverted Index Generator Method finished with 0.8763225078582764 of time average.
+2015-04-15 09:50:16,779 - invertedIndexGenerator - INFO - End of Inverted Index Generator Module. Total of 6.978280067443848 elapsed.
+2015-04-15 09:51:03,973 - invertedIndexGenerator - INFO - Processing Inverted Index Generator Module...
+2015-04-15 09:51:03,974 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf74.xml file
+2015-04-15 09:51:04,300 - invertedIndexGenerator - WARNING - Document[00036 ] doesn't have abstract neither extract!
+2015-04-15 09:51:04,311 - invertedIndexGenerator - WARNING - Document[00128 ] doesn't have abstract neither extract!
+2015-04-15 09:51:04,311 - invertedIndexGenerator - WARNING - Document[00132 ] doesn't have abstract neither extract!
+2015-04-15 09:51:04,317 - invertedIndexGenerator - INFO - 164 records read succesfully.
+2015-04-15 09:51:04,317 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:51:04,835 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf75.xml file
+2015-04-15 09:51:05,243 - invertedIndexGenerator - WARNING - Document[00168] doesn't have abstract neither extract!
+2015-04-15 09:51:05,259 - invertedIndexGenerator - WARNING - Document[00298] doesn't have abstract neither extract!
+2015-04-15 09:51:05,264 - invertedIndexGenerator - WARNING - Document[00329] doesn't have abstract neither extract!
+2015-04-15 09:51:05,267 - invertedIndexGenerator - INFO - 185 records read succesfully.
+2015-04-15 09:51:05,267 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:51:05,863 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf76.xml file
+2015-04-15 09:51:06,536 - invertedIndexGenerator - WARNING - Document[00493 ] doesn't have abstract neither extract!
+2015-04-15 09:51:06,541 - invertedIndexGenerator - WARNING - Document[00512 ] doesn't have abstract neither extract!
+2015-04-15 09:51:06,547 - invertedIndexGenerator - WARNING - Document[00551 ] doesn't have abstract neither extract!
+2015-04-15 09:51:06,551 - invertedIndexGenerator - INFO - 224 records read succesfully.
+2015-04-15 09:51:06,551 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:51:07,246 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf77.xml file
+2015-04-15 09:51:07,771 - invertedIndexGenerator - WARNING - Document[00595 ] doesn't have abstract neither extract!
+2015-04-15 09:51:07,786 - invertedIndexGenerator - WARNING - Document[00712 ] doesn't have abstract neither extract!
+2015-04-15 09:51:07,788 - invertedIndexGenerator - WARNING - Document[00729 ] doesn't have abstract neither extract!
+2015-04-15 09:51:07,788 - invertedIndexGenerator - WARNING - Document[00735 ] doesn't have abstract neither extract!
+2015-04-15 09:51:07,794 - invertedIndexGenerator - INFO - 195 records read succesfully.
+2015-04-15 09:51:07,794 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:51:08,384 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf78.xml file
+2015-04-15 09:51:08,783 - invertedIndexGenerator - WARNING - Document[00839 ] doesn't have abstract neither extract!
+2015-04-15 09:51:08,789 - invertedIndexGenerator - WARNING - Document[00894 ] doesn't have abstract neither extract!
+2015-04-15 09:51:08,793 - invertedIndexGenerator - WARNING - Document[00932 ] doesn't have abstract neither extract!
+2015-04-15 09:51:08,794 - invertedIndexGenerator - WARNING - Document[00939 ] doesn't have abstract neither extract!
+2015-04-15 09:51:08,798 - invertedIndexGenerator - INFO - 195 records read succesfully.
+2015-04-15 09:51:08,798 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:51:09,346 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf79.xml file
+2015-04-15 09:51:09,849 - invertedIndexGenerator - WARNING - Document[01023 ] doesn't have abstract neither extract!
+2015-04-15 09:51:09,854 - invertedIndexGenerator - WARNING - Document[01069 ] doesn't have abstract neither extract!
+2015-04-15 09:51:09,857 - invertedIndexGenerator - WARNING - Document[01089 ] doesn't have abstract neither extract!
+2015-04-15 09:51:09,863 - invertedIndexGenerator - WARNING - Document[01150 ] doesn't have abstract neither extract!
+2015-04-15 09:51:09,863 - invertedIndexGenerator - WARNING - Document[01154 ] doesn't have abstract neither extract!
+2015-04-15 09:51:09,866 - invertedIndexGenerator - WARNING - Document[01187 ] doesn't have abstract neither extract!
+2015-04-15 09:51:09,871 - invertedIndexGenerator - WARNING - Document[01225 ] doesn't have abstract neither extract!
+2015-04-15 09:51:09,873 - invertedIndexGenerator - INFO - 252 records read succesfully.
+2015-04-15 09:51:09,873 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:51:10,619 - invertedIndexGenerator - INFO - Writing Inverted Index on file...
+2015-04-15 09:51:10,700 - invertedIndexGenerator - INFO - Write operation finished with 0.08054709434509277
+2015-04-15 09:51:10,700 - invertedIndexGenerator - INFO - XML reading operation finished with 0.47645044326782227 of time average.
+2015-04-15 09:51:10,700 - invertedIndexGenerator - INFO - Inverted Index Generator Method finished with 0.8460499048233032 of time average.
+2015-04-15 09:51:10,700 - invertedIndexGenerator - INFO - End of Inverted Index Generator Module. Total of 6.727200031280518 elapsed.
+2015-04-15 09:52:00,342 - invertedIndexGenerator - INFO - Processing Inverted Index Generator Module...
+2015-04-15 09:52:00,344 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf74.xml file
+2015-04-15 09:52:00,681 - invertedIndexGenerator - WARNING - Document[00036 ] doesn't have abstract neither extract!
+2015-04-15 09:52:00,693 - invertedIndexGenerator - WARNING - Document[00128 ] doesn't have abstract neither extract!
+2015-04-15 09:52:00,693 - invertedIndexGenerator - WARNING - Document[00132 ] doesn't have abstract neither extract!
+2015-04-15 09:52:00,699 - invertedIndexGenerator - INFO - 164 records read succesfully.
+2015-04-15 09:52:00,699 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:52:01,250 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf75.xml file
+2015-04-15 09:52:01,677 - invertedIndexGenerator - WARNING - Document[00168] doesn't have abstract neither extract!
+2015-04-15 09:52:01,694 - invertedIndexGenerator - WARNING - Document[00298] doesn't have abstract neither extract!
+2015-04-15 09:52:01,699 - invertedIndexGenerator - WARNING - Document[00329] doesn't have abstract neither extract!
+2015-04-15 09:52:01,702 - invertedIndexGenerator - INFO - 185 records read succesfully.
+2015-04-15 09:52:01,702 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:52:02,346 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf76.xml file
+2015-04-15 09:52:03,066 - invertedIndexGenerator - WARNING - Document[00493 ] doesn't have abstract neither extract!
+2015-04-15 09:52:03,071 - invertedIndexGenerator - WARNING - Document[00512 ] doesn't have abstract neither extract!
+2015-04-15 09:52:03,077 - invertedIndexGenerator - WARNING - Document[00551 ] doesn't have abstract neither extract!
+2015-04-15 09:52:03,081 - invertedIndexGenerator - INFO - 224 records read succesfully.
+2015-04-15 09:52:03,081 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:52:03,834 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf77.xml file
+2015-04-15 09:52:04,393 - invertedIndexGenerator - WARNING - Document[00595 ] doesn't have abstract neither extract!
+2015-04-15 09:52:04,410 - invertedIndexGenerator - WARNING - Document[00712 ] doesn't have abstract neither extract!
+2015-04-15 09:52:04,412 - invertedIndexGenerator - WARNING - Document[00729 ] doesn't have abstract neither extract!
+2015-04-15 09:52:04,413 - invertedIndexGenerator - WARNING - Document[00735 ] doesn't have abstract neither extract!
+2015-04-15 09:52:04,418 - invertedIndexGenerator - INFO - 195 records read succesfully.
+2015-04-15 09:52:04,419 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:52:05,055 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf78.xml file
+2015-04-15 09:52:05,484 - invertedIndexGenerator - WARNING - Document[00839 ] doesn't have abstract neither extract!
+2015-04-15 09:52:05,490 - invertedIndexGenerator - WARNING - Document[00894 ] doesn't have abstract neither extract!
+2015-04-15 09:52:05,494 - invertedIndexGenerator - WARNING - Document[00932 ] doesn't have abstract neither extract!
+2015-04-15 09:52:05,496 - invertedIndexGenerator - WARNING - Document[00939 ] doesn't have abstract neither extract!
+2015-04-15 09:52:05,500 - invertedIndexGenerator - INFO - 195 records read succesfully.
+2015-04-15 09:52:05,500 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:52:06,084 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf79.xml file
+2015-04-15 09:52:06,632 - invertedIndexGenerator - WARNING - Document[01023 ] doesn't have abstract neither extract!
+2015-04-15 09:52:06,638 - invertedIndexGenerator - WARNING - Document[01069 ] doesn't have abstract neither extract!
+2015-04-15 09:52:06,643 - invertedIndexGenerator - WARNING - Document[01089 ] doesn't have abstract neither extract!
+2015-04-15 09:52:06,649 - invertedIndexGenerator - WARNING - Document[01150 ] doesn't have abstract neither extract!
+2015-04-15 09:52:06,650 - invertedIndexGenerator - WARNING - Document[01154 ] doesn't have abstract neither extract!
+2015-04-15 09:52:06,655 - invertedIndexGenerator - WARNING - Document[01187 ] doesn't have abstract neither extract!
+2015-04-15 09:52:06,659 - invertedIndexGenerator - WARNING - Document[01225 ] doesn't have abstract neither extract!
+2015-04-15 09:52:06,661 - invertedIndexGenerator - INFO - 252 records read succesfully.
+2015-04-15 09:52:06,662 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:52:07,479 - invertedIndexGenerator - INFO - Writing Inverted Index on file...
+2015-04-15 09:52:07,574 - invertedIndexGenerator - INFO - Write operation finished with 0.09416890144348145
+2015-04-15 09:52:07,574 - invertedIndexGenerator - INFO - XML reading operation finished with 0.5750764608383179 of time average.
+2015-04-15 09:52:07,574 - invertedIndexGenerator - INFO - Inverted Index Generator Method finished with 0.9927705526351929 of time average.
+2015-04-15 09:52:07,574 - invertedIndexGenerator - INFO - End of Inverted Index Generator Module. Total of 7.231957912445068 elapsed.
+2015-04-15 09:54:39,038 - invertedIndexGenerator - INFO - Processing Inverted Index Generator Module...
+2015-04-15 09:54:39,039 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf74.xml file
+2015-04-15 09:54:39,380 - invertedIndexGenerator - WARNING - Document[00036 ] doesn't have abstract neither extract!
+2015-04-15 09:54:39,392 - invertedIndexGenerator - WARNING - Document[00128 ] doesn't have abstract neither extract!
+2015-04-15 09:54:39,392 - invertedIndexGenerator - WARNING - Document[00132 ] doesn't have abstract neither extract!
+2015-04-15 09:54:39,398 - invertedIndexGenerator - INFO - 164 records read succesfully.
+2015-04-15 09:54:39,398 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:54:39,953 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf75.xml file
+2015-04-15 09:54:40,379 - invertedIndexGenerator - WARNING - Document[00168] doesn't have abstract neither extract!
+2015-04-15 09:54:40,396 - invertedIndexGenerator - WARNING - Document[00298] doesn't have abstract neither extract!
+2015-04-15 09:54:40,400 - invertedIndexGenerator - WARNING - Document[00329] doesn't have abstract neither extract!
+2015-04-15 09:54:40,403 - invertedIndexGenerator - INFO - 185 records read succesfully.
+2015-04-15 09:54:40,404 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:54:41,046 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf76.xml file
+2015-04-15 09:54:41,764 - invertedIndexGenerator - WARNING - Document[00493 ] doesn't have abstract neither extract!
+2015-04-15 09:54:41,768 - invertedIndexGenerator - WARNING - Document[00512 ] doesn't have abstract neither extract!
+2015-04-15 09:54:41,775 - invertedIndexGenerator - WARNING - Document[00551 ] doesn't have abstract neither extract!
+2015-04-15 09:54:41,779 - invertedIndexGenerator - INFO - 224 records read succesfully.
+2015-04-15 09:54:41,779 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:54:42,528 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf77.xml file
+2015-04-15 09:54:43,092 - invertedIndexGenerator - WARNING - Document[00595 ] doesn't have abstract neither extract!
+2015-04-15 09:54:43,107 - invertedIndexGenerator - WARNING - Document[00712 ] doesn't have abstract neither extract!
+2015-04-15 09:54:43,109 - invertedIndexGenerator - WARNING - Document[00729 ] doesn't have abstract neither extract!
+2015-04-15 09:54:43,110 - invertedIndexGenerator - WARNING - Document[00735 ] doesn't have abstract neither extract!
+2015-04-15 09:54:43,115 - invertedIndexGenerator - INFO - 195 records read succesfully.
+2015-04-15 09:54:43,116 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:54:43,752 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf78.xml file
+2015-04-15 09:54:44,177 - invertedIndexGenerator - WARNING - Document[00839 ] doesn't have abstract neither extract!
+2015-04-15 09:54:44,186 - invertedIndexGenerator - WARNING - Document[00894 ] doesn't have abstract neither extract!
+2015-04-15 09:54:44,190 - invertedIndexGenerator - WARNING - Document[00932 ] doesn't have abstract neither extract!
+2015-04-15 09:54:44,191 - invertedIndexGenerator - WARNING - Document[00939 ] doesn't have abstract neither extract!
+2015-04-15 09:54:44,195 - invertedIndexGenerator - INFO - 195 records read succesfully.
+2015-04-15 09:54:44,196 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:54:44,786 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf79.xml file
+2015-04-15 09:54:45,343 - invertedIndexGenerator - WARNING - Document[01023 ] doesn't have abstract neither extract!
+2015-04-15 09:54:45,348 - invertedIndexGenerator - WARNING - Document[01069 ] doesn't have abstract neither extract!
+2015-04-15 09:54:45,351 - invertedIndexGenerator - WARNING - Document[01089 ] doesn't have abstract neither extract!
+2015-04-15 09:54:45,357 - invertedIndexGenerator - WARNING - Document[01150 ] doesn't have abstract neither extract!
+2015-04-15 09:54:45,357 - invertedIndexGenerator - WARNING - Document[01154 ] doesn't have abstract neither extract!
+2015-04-15 09:54:45,361 - invertedIndexGenerator - WARNING - Document[01187 ] doesn't have abstract neither extract!
+2015-04-15 09:54:45,365 - invertedIndexGenerator - WARNING - Document[01225 ] doesn't have abstract neither extract!
+2015-04-15 09:54:45,367 - invertedIndexGenerator - INFO - 252 records read succesfully.
+2015-04-15 09:54:45,367 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:54:46,179 - invertedIndexGenerator - INFO - Writing Inverted Index on file...
+2015-04-15 09:54:46,270 - invertedIndexGenerator - INFO - Write operation finished with 0.0906069278717041
+2015-04-15 09:54:46,270 - invertedIndexGenerator - INFO - XML reading operation finished with 0.5773299932479858 of time average.
+2015-04-15 09:54:46,270 - invertedIndexGenerator - INFO - Inverted Index Generator Method finished with 0.992576003074646 of time average.
+2015-04-15 09:54:46,270 - invertedIndexGenerator - INFO - End of Inverted Index Generator Module. Total of 7.23231315612793 elapsed.
+2015-04-15 09:55:21,087 - invertedIndexGenerator - INFO - Processing Inverted Index Generator Module...
+2015-04-15 09:55:21,088 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf74.xml file
+2015-04-15 09:55:21,438 - invertedIndexGenerator - WARNING - Document[00036 ] doesn't have abstract neither extract!
+2015-04-15 09:55:21,450 - invertedIndexGenerator - WARNING - Document[00128 ] doesn't have abstract neither extract!
+2015-04-15 09:55:21,451 - invertedIndexGenerator - WARNING - Document[00132 ] doesn't have abstract neither extract!
+2015-04-15 09:55:21,456 - invertedIndexGenerator - INFO - 164 records read succesfully.
+2015-04-15 09:55:21,457 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:55:22,030 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf75.xml file
+2015-04-15 09:55:22,511 - invertedIndexGenerator - WARNING - Document[00168] doesn't have abstract neither extract!
+2015-04-15 09:55:22,528 - invertedIndexGenerator - WARNING - Document[00298] doesn't have abstract neither extract!
+2015-04-15 09:55:22,532 - invertedIndexGenerator - WARNING - Document[00329] doesn't have abstract neither extract!
+2015-04-15 09:55:22,536 - invertedIndexGenerator - INFO - 185 records read succesfully.
+2015-04-15 09:55:22,536 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:55:23,191 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf76.xml file
+2015-04-15 09:55:23,932 - invertedIndexGenerator - WARNING - Document[00493 ] doesn't have abstract neither extract!
+2015-04-15 09:55:23,937 - invertedIndexGenerator - WARNING - Document[00512 ] doesn't have abstract neither extract!
+2015-04-15 09:55:23,944 - invertedIndexGenerator - WARNING - Document[00551 ] doesn't have abstract neither extract!
+2015-04-15 09:55:23,948 - invertedIndexGenerator - INFO - 224 records read succesfully.
+2015-04-15 09:55:23,948 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:55:24,711 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf77.xml file
+2015-04-15 09:55:25,368 - invertedIndexGenerator - WARNING - Document[00595 ] doesn't have abstract neither extract!
+2015-04-15 09:55:25,384 - invertedIndexGenerator - WARNING - Document[00712 ] doesn't have abstract neither extract!
+2015-04-15 09:55:25,386 - invertedIndexGenerator - WARNING - Document[00729 ] doesn't have abstract neither extract!
+2015-04-15 09:55:25,387 - invertedIndexGenerator - WARNING - Document[00735 ] doesn't have abstract neither extract!
+2015-04-15 09:55:25,393 - invertedIndexGenerator - INFO - 195 records read succesfully.
+2015-04-15 09:55:25,393 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:55:26,035 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf78.xml file
+2015-04-15 09:55:26,477 - invertedIndexGenerator - WARNING - Document[00839 ] doesn't have abstract neither extract!
+2015-04-15 09:55:26,483 - invertedIndexGenerator - WARNING - Document[00894 ] doesn't have abstract neither extract!
+2015-04-15 09:55:26,488 - invertedIndexGenerator - WARNING - Document[00932 ] doesn't have abstract neither extract!
+2015-04-15 09:55:26,489 - invertedIndexGenerator - WARNING - Document[00939 ] doesn't have abstract neither extract!
+2015-04-15 09:55:26,493 - invertedIndexGenerator - INFO - 195 records read succesfully.
+2015-04-15 09:55:26,494 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:55:27,093 - invertedIndexGenerator - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_1/data/cf79.xml file
+2015-04-15 09:55:27,651 - invertedIndexGenerator - WARNING - Document[01023 ] doesn't have abstract neither extract!
+2015-04-15 09:55:27,656 - invertedIndexGenerator - WARNING - Document[01069 ] doesn't have abstract neither extract!
+2015-04-15 09:55:27,659 - invertedIndexGenerator - WARNING - Document[01089 ] doesn't have abstract neither extract!
+2015-04-15 09:55:27,666 - invertedIndexGenerator - WARNING - Document[01150 ] doesn't have abstract neither extract!
+2015-04-15 09:55:27,666 - invertedIndexGenerator - WARNING - Document[01154 ] doesn't have abstract neither extract!
+2015-04-15 09:55:27,669 - invertedIndexGenerator - WARNING - Document[01187 ] doesn't have abstract neither extract!
+2015-04-15 09:55:27,674 - invertedIndexGenerator - WARNING - Document[01225 ] doesn't have abstract neither extract!
+2015-04-15 09:55:27,676 - invertedIndexGenerator - INFO - 252 records read succesfully.
+2015-04-15 09:55:27,676 - invertedIndexGenerator - INFO - Making inverted index...
+2015-04-15 09:55:28,494 - invertedIndexGenerator - INFO - Writing Inverted Index on file...
+2015-04-15 09:55:28,590 - invertedIndexGenerator - INFO - Write operation finished with 0.09625411033630371
+2015-04-15 09:55:28,590 - invertedIndexGenerator - INFO - XML reading operation finished with 0.6775617599487305 of time average.
+2015-04-15 09:55:28,590 - invertedIndexGenerator - INFO - Inverted Index Generator Method finished with 1.025181531906128 of time average.
+2015-04-15 09:55:28,590 - invertedIndexGenerator - INFO - End of Inverted Index Generator Module. Total of 7.5035481452941895 elapsed.

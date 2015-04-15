@@ -9,9 +9,9 @@ import ast
 import logging
 import time
 import math
-import numpy as np
 import operator
-#from sklearn.metrics import metrics
+import matplotlib.pyplot as plt
+from pylab import *
 
 #globals
 evaluatorLog = ''
@@ -55,9 +55,9 @@ def executeEvaluator(path, pathVector, expectedResultsString, resultsStr, use_mo
     
     writeReport(PK, MAP, DCG, NDCG, F1, use_mode, path, pathVector[3][1])
     
-    
+    writeGraphic(path+'/Searcher/'+use_mode+'/interpolated-precision-recall-11pts.pdf', G11Pts)
     writeMetricsOnFile(path, '/Searcher/'+use_mode+'/precicionk.csv', PK, use_mode)
-    writeMetricsOnFile(path, '/Searcher/'+use_mode+'/mean-average-precision.csv', MAP, use_mode)
+    writeMetricsOnFile(path, '/Searcher/'+use_mode+'/mean-average-precision.csv', MAP, use_mode, False)
     writeMetricsOnFile(path, '/Searcher/'+use_mode+'/discount-cumulative-gain.csv', DCG, use_mode)
     writeMetricsOnFile(path, '/Searcher/'+use_mode+'/normalized-discount-cumulative-gain.csv', NDCG, use_mode)
     writeMetricsOnFile(path, '/Searcher/'+use_mode+'/f1-measure.csv', F1, use_mode)
@@ -69,7 +69,7 @@ def executeEvaluator(path, pathVector, expectedResultsString, resultsStr, use_mo
 
 def graphic11points(results, relevanceList):
     globalRelevants = set()
-    globalResults = set()
+    globalResults = []
     arrayPoints = []
     
     for k in relevanceList:
@@ -81,11 +81,14 @@ def graphic11points(results, relevanceList):
 
     for key in results:
         for res in results[key]:
-            globalResults.add(res[1])
+            if res[1] not in globalResults:
+                globalResults.append(res[1])
     
     nDocs = 0
     nRels = 0
     vetAux = []
+    arrayPoints.append(1.0)#initial precision
+    
     for res in globalResults:
         nDocs+=1
         if res in globalRelevants:
@@ -95,12 +98,10 @@ def graphic11points(results, relevanceList):
                 arrayPoints.append(max(vetAux))
                 vetAux = []
                 cont+=kRels
-            
-    if len(vetAux) > 0:
-        arrayPoints.append(nRels/nDocs)
-            
-    pp(arrayPoints)
+        
+    return arrayPoints
     
+
 
 def selectRelevantDocs(expectedResults, minRelevanceScore=4):
     relevantsByQuery = {}
@@ -228,11 +229,14 @@ def f1Measure(results, relevants):
 
     
     
-def writeMetricsOnFile(path, filename, metric, use_mode):
+def writeMetricsOnFile(path, filename, metric, use_mode, isDict=True):
     
     f = open(path+filename, 'w+')
-    for key in metric.keys():
-        f.write(key+";%s\n" % metric[key])
+    if isDict == True:
+        for key in metric.keys():
+            f.write(key+";%s\n" % metric[key])
+    else:
+        f.write(";%s\n" % metric)
     f.close()
 
 
@@ -246,7 +250,7 @@ def writeReport(PK, MAP, DCG, NDCG, F1, use_mode, path, pathVector):
     for key in PK.keys():
         f.write(key+";%s\n" % PK[key])
     f.write("########################    Mean Average Precision - "+use_mode+"    ########################\n")
-    f.write(MAP)
+    f.write(";%s\n" % MAP)
     f.write("\n########################    Discounted Cumulative Gain - "+use_mode+"    ########################\n")
     for key in DCG.keys():
         f.write(key+";%s\n" % DCG[key])
@@ -265,53 +269,14 @@ def compareResults(results, expectedResults):
 
 
 
-def interpolated_precision_recall_curve(queries_ranking, queries_similarities, relevants):
+def writeGraphic(filepath, arrayPoints):
+    plt.plot(arrayPoints)
+    plt.xlabel('Recall(Decil)')
+    plt.ylabel('Precision')
     
-    queries_count = np.shape(queries_ranking)[0]
-    interpolated_precision = np.zeros(11,dtype = np.float128) 
+    figure(1, figsize=(6,6))
     
-    for qindex in range(0,queries_count):
-
-        tp = 0
-        precision, recall = [0],[0]
-        
-        relevants_count = np.shape(np.nonzero(relevants[qindex]))[1]
-        retrieved_count = 1
-        
-        for ranki in queries_ranking[qindex]:
-            if (queries_similarities[qindex][ranki] > 0) and (relevants[qindex][ranki] == 1):
-                tp += 1
-                
-            precisioni = tp / retrieved_count
-            if relevants_count == 0:
-                recalli = 1
-            else:
-                recalli = tp / relevants_count
-            
-            retrieved_count += 1
-
-            precision += [precisioni]
-            recall += [recalli]
-              
-        # query's 11 levels of precision recall precision_levels[0] = max precision in recall > 0                  
-        precision_levels = []
-        
-        for rank in range(0,11):
-            prec_ati = 0
-            for j in range(0,len(recall)):
-                if rank <= recall[j]*10:
-                    prec_ati =  max(prec_ati,precision[j])
-                    
-            precision_levels.append(prec_ati)
-            interpolated_precision[rank] += prec_ati/queries_count
-            
-        del precision
-        del recall
-                 
-    
-    auc = float("{0:1.4f}".format(metrics.auc([0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1],interpolated_precision)))
-    
-    return interpolated_precision, auc
+    savefig(filepath, bbox_inches='tight')
     
     
     
