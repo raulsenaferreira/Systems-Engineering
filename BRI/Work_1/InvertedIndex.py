@@ -7,7 +7,7 @@ Created on Sun Apr  5 23:22:42 2015
 import time
 import nltk
 import logging
-#from pprint import pprint as pp 
+from pprint import pprint as pp 
 from nltk.stem.porter import *
 from nltk.corpus import stopwords
 from xml.dom.minidom import parse
@@ -25,7 +25,7 @@ def processInvertedIndexGenerator(path, vectorPath, use_mode):
     invIndGen.info('Processing Inverted Index Generator Module...')
     meanTimeXML = 0
     meanTimeIIG = 0
-    invertedIndex = {}
+    arrayOfDictionaries = []
     
     #stop words
     stop = stopwords.words('english')
@@ -42,22 +42,22 @@ def processInvertedIndexGenerator(path, vectorPath, use_mode):
             #STEMMER OR NOSTEMMER
             if use_mode == 'STEMMER':
                 stemmer = PorterStemmer()
-                invertedIndex.update(invertedIndexGenerator(dictionary, stop, stemmer))
+                arrayOfDictionaries.append(ListOfTermsByFile(dictionary, stop, stemmer))
                 #stemmer.stem(lists)
             elif use_mode == 'NOSTEMMER':
-                invertedIndex.update(invertedIndexGenerator(dictionary, stop, None))
+                arrayOfDictionaries.append(ListOfTermsByFile(dictionary, stop, None))
             else: print("Use mode undefined")
             
             
             meanTimeIIG+=time.time()-ini
-        elif str(line[0]) == 'ESCREVA':
-            invIndGen.info('Writing Inverted Index on file...')
-            ini = time.time()
-            
-            writeInvertedIndex(path+str(line[1]).strip(), invertedIndex)
-            
-            timeElapsed = time.time()-ini
-            invIndGen.info('Write operation finished with %s' % str(timeElapsed))
+        #elif str(line[0]) == 'ESCREVA':
+    invIndGen.info('Writing Inverted Index on file...')
+    ini = time.time()
+    
+    writeInvertedIndex(path+'/InvertedIndexGenerator/invertedIndexOut.csv', invertedIndexGenerator(arrayOfDictionaries))
+    
+    timeElapsed = time.time()-ini
+    invIndGen.info('Write operation finished with %s' % str(timeElapsed))
             
     invIndGen.info('XML reading operation finished with %s of time average.' % str(meanTimeXML/len(line)-1))        
     invIndGen.info('Inverted Index Generator Method finished with %s of time average.' % str(meanTimeIIG/len(line)-1))
@@ -67,29 +67,45 @@ def processInvertedIndexGenerator(path, vectorPath, use_mode):
             
             
             
-def invertedIndexGenerator(dictionaries, stopWords, stemmer):
+def ListOfTermsByFile(dictionaries, stopWords, stemmer):
     invIndGen.info('Making inverted index...')
     
-    invertedIndex = {}
+    arrayOfDictionaries = {}
     
     for key in dictionaries.keys():
-        
-           
-        for token in nltk.word_tokenize(dictionaries[key]):
-            
+        tokens = nltk.word_tokenize(dictionaries[key])
+        for token in tokens:
+            token = token.upper()
             key = key.strip()
             key = str(int(key))
-            tokenList = []
+            
             if token not in stopWords and len(token) > 1:
+                tokenList = []
                 if stemmer is not None:
                     #pp("Using stemmer...")
                     token=stemmer.stem(token)
                 try:
-                    invertedIndex[token].append(key)
-                    invertedIndex.update({token:invertedIndex[token]})
+                    arrayOfDictionaries[token].append(key)
+                    arrayOfDictionaries.update({token:arrayOfDictionaries[token]})
                 except KeyError:
                     tokenList.append(key)
-                    invertedIndex.update({token:tokenList})
+                    arrayOfDictionaries.update({token:tokenList})
+    return arrayOfDictionaries
+    
+    
+    
+def invertedIndexGenerator(arrayOfDictionaries):
+    
+    invertedIndex = {}
+    
+    for inv in arrayOfDictionaries:
+        for token in inv.keys():
+            try:
+                invertedIndex[token]+=inv[token]
+                invertedIndex.update({token:invertedIndex[token]})
+            except KeyError:
+                invertedIndex.update({token:inv[token]})
+    
     return invertedIndex
     
     

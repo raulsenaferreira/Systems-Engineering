@@ -68,29 +68,38 @@ def executeEvaluator(path, pathVector, expectedResultsString, resultsStr, use_mo
 
 
 def graphic11points(results, relevanceList):
-    ListOfDocuments = [relevanceList[k] for k in relevanceList]
-    pp(listOfDocuments)
-'''    
-    listOfInterpoledResults = []
-    precision=0
-    recall=0
-    rel=0
-    nDoc=0
-    nRel=len(relevants)
+    globalRelevants = set()
+    globalResults = set()
+    arrayPoints = []
     
-    for doc in results:
-        nDoc+=1
-        if doc[1] in relevants:
-            rel+=1
+    for k in relevanceList:
+        for doc in relevanceList[k]:
+            globalRelevants.add(doc)
+        
+    kRels = math.ceil(len(globalRelevants)/10)
+    cont=kRels
+
+    for key in results:
+        for res in results[key]:
+            globalResults.add(res[1])
+    
+    nDocs = 0
+    nRels = 0
+    vetAux = []
+    for res in globalResults:
+        nDocs+=1
+        if res in globalRelevants:
+            nRels+=1
+            vetAux.append(nRels/nDocs)
+            if nRels == cont:
+                arrayPoints.append(max(vetAux))
+                vetAux = []
+                cont+=kRels
             
-    if rel > 0:
-        precision=rel/nDoc
-        recall=rel/nRel
-        return 2 * ((precision*recall)/(precision+recall))
-    else:
-        return 0
-    return listOfInterpoledResults
-'''
+    if len(vetAux) > 0:
+        arrayPoints.append(nRels/nDocs)
+            
+    pp(arrayPoints)
     
 
 def selectRelevantDocs(expectedResults, minRelevanceScore=4):

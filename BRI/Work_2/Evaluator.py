@@ -38,7 +38,7 @@ def executeEvaluator(PATH):
     
     expectedResultsString = readData('/'+pathVector[0][1], ';')
     expectedResults = strToDictExpectedResults(expectedResultsString)
-    use_mode = 'NOSTEMMER'
+    use_mode = 'STEMMER'
     resultsStr = ''
     if use_mode == 'NOSTEMMER':
         resultsStr = readData(pathVector[1][1], ';')
@@ -103,8 +103,6 @@ def graphic11points(results, relevanceList):
                 arrayPoints.append(max(vetAux))
                 vetAux = []
                 cont+=kRels
-        else:
-            if cont == kRels:
             
     if len(vetAux) > 0:
         arrayPoints.append(nRels/nDocs)
