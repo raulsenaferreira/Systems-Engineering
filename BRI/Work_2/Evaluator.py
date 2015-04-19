@@ -51,16 +51,17 @@ def executeEvaluator(PATH):
     
     relevanceList = selectRelevantDocs(expectedResults)
     #pp(relevanceList)
-    GP11=graphic11points(results, relevanceList)
-    writeGraphic('/', GP11)
+   
     #executing metrics
     #k=10 documents
     #PK=[precisionK(results[query], relevanceList[query]) for query in expectedResults.keys() if precisionK(results[query], relevanceList[query]) is not None]#doc 1234 in query 00040 with problem
     #pp(PK)    
     #AVP=[averagePrecision(results[query], relevanceList[query]) for query in expectedResults.keys()]
-    #pp(AVP)
     #MAP=meanAveragePrecision(AVP)
     #pp(MAP)
+    GP11=graphic11points(results, relevanceList, expectedResults)
+        
+    writeGraphic('', GP11)
     #DCG=discountedCumulativeGain(results, expectedResults, range(4,8))
     #pp(DCG)
     #nDCG=normalizedDiscountedCumulativeGain(DCG, results, expectedResults, range(4,8))
@@ -76,39 +77,47 @@ def executeEvaluator(PATH):
     
 
 
-def graphic11points(results, relevanceList):
-    globalRelevants = set()
-    globalResults = []
-    arrayPoints = []
-    
-    for k in relevanceList:
-        for doc in relevanceList[k]:
-            globalRelevants.add(doc)
+def graphic11points(results, relevanceList, expectedResults):
+    interpolatedArray = []
+    interpolatedArray.append(1)
+    arrayPoints=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for query in expectedResults.keys():
+        vetAux = []
+        sizeRelevants=len(relevanceList[query])
+        bucket = math.ceil(sizeRelevants/10)
+        kRels=bucket
         
-    kRels = math.ceil(len(globalRelevants)/10)
-    cont=kRels
-
-    for key in results:
-        for res in results[key]:
-            if res[1] not in globalResults:
-                globalResults.append(res[1])
+        j=1
+        for i in range(0, sizeRelevants):
+            
+            precision = precisionK(results[query], relevanceList[query], kRels)
+            if precision is not None:
+                vetAux.append(precision)
+                if i==kRels-1:
+                    #arrayPoints.append(max(vetAux))
+                    num=arrayPoints[j]+sum(vetAux)
+                    arrayPoints.insert(j,num)
+                    vetAux=[]
+                    kRels+=bucket
+                    j+=1
+                    
+        if(len(vetAux)>0):
+            num=arrayPoints[j]
+            num+=sum(vetAux)
+            arrayPoints.insert(j,num)
     
-    nDocs = 0
-    nRels = 0
-    vetAux = []
-    arrayPoints.append(1.0)#initial precision
+    N = math.ceil(len(arrayPoints)/10)
+    lenAvg=N
+    for i in range(0, len(arrayPoints)):
+        vet=[]
+        vet.append(arrayPoints[i])
+        if i == lenAvg:
+            interpolatedArray.append(max(vet)/10)
+            lenAvg+=N
+    if len(vet) > 0:
+        interpolatedArray.append(max(vet)/10)
     
-    for res in globalResults:
-        nDocs+=1
-        if res in globalRelevants:
-            nRels+=1
-            vetAux.append(nRels/nDocs)
-            if nRels == cont:
-                arrayPoints.append(max(vetAux))
-                vetAux = []
-                cont+=kRels
-        
-    return arrayPoints
+    return interpolatedArray
 
     
 
@@ -246,8 +255,8 @@ def writeGraphic(filepath, arrayPoints):
     plt.plot(arrayPoints)
     plt.xlabel('Recall(Decil)')
     plt.ylabel('Precision')
-    
-    figure(1, figsize=(6,6))
+    plt.axis([1, 11, 0.0, 1.0])
+    figure(1, figsize=(10,10))
     
     savefig(filepath+'foo.png', bbox_inches='tight')
 

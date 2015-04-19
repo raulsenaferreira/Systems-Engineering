@@ -45,7 +45,7 @@ def executeEvaluator(path, pathVector, expectedResultsString, resultsStr, use_mo
         
         F1.update({query: f1Measure(results[query], relevanceList[query])})
     
-    G11Pts=graphic11points(results, relevanceList)
+    G11Pts=graphic11points(results, relevanceList, expectedResults)
     
     MAP=meanAveragePrecision(AVP)
    
@@ -55,51 +55,59 @@ def executeEvaluator(path, pathVector, expectedResultsString, resultsStr, use_mo
     
     writeReport(PK, MAP, DCG, NDCG, F1, use_mode, path, pathVector[3][1])
     
-    writeGraphic(path+'/Searcher/'+use_mode+'/interpolated-precision-recall-11pts.pdf', G11Pts)
-    writeMetricsOnFile(path, '/Searcher/'+use_mode+'/precicionk.csv', PK, use_mode)
-    writeMetricsOnFile(path, '/Searcher/'+use_mode+'/mean-average-precision.csv', MAP, use_mode, False)
-    writeMetricsOnFile(path, '/Searcher/'+use_mode+'/discount-cumulative-gain.csv', DCG, use_mode)
-    writeMetricsOnFile(path, '/Searcher/'+use_mode+'/normalized-discount-cumulative-gain.csv', NDCG, use_mode)
-    writeMetricsOnFile(path, '/Searcher/'+use_mode+'/f1-measure.csv', F1, use_mode)
+    writeGraphic(path+'/Evaluator/'+use_mode+'/interpolated-precision-recall-11pts.pdf', G11Pts)
+    writeMetricsOnFile(path, '/Evaluator/'+use_mode+'/precicionk.csv', PK, use_mode)
+    writeMetricsOnFile(path, '/Evaluator/'+use_mode+'/mean-average-precision.csv', MAP, use_mode, False)
+    writeMetricsOnFile(path, '/Evaluator/'+use_mode+'/discount-cumulative-gain.csv', DCG, use_mode)
+    writeMetricsOnFile(path, '/Evaluator/'+use_mode+'/normalized-discount-cumulative-gain.csv', NDCG, use_mode)
+    writeMetricsOnFile(path, '/Evaluator/'+use_mode+'/f1-measure.csv', F1, use_mode)
     
     end = time.time() - begin
     evaluatorLog.info('End of Evaluator Module. Total of %s elapsed.' % str(end))
 
 
 
-def graphic11points(results, relevanceList):
-    globalRelevants = set()
-    globalResults = []
-    arrayPoints = []
-    
-    for k in relevanceList:
-        for doc in relevanceList[k]:
-            globalRelevants.add(doc)
+def graphic11points(results, relevanceList, expectedResults):
+    interpolatedArray = []
+    interpolatedArray.append(1)
+    arrayPoints=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for query in expectedResults.keys():
+        vetAux = []
+        sizeRelevants=len(relevanceList[query])
+        bucket = math.ceil(sizeRelevants/10)
+        kRels=bucket
         
-    kRels = math.ceil(len(globalRelevants)/10)
-    cont=kRels
-
-    for key in results:
-        for res in results[key]:
-            if res[1] not in globalResults:
-                globalResults.append(res[1])
+        j=1
+        for i in range(0, sizeRelevants):
+            
+            precision = precisionK(results[query], relevanceList[query], kRels)
+            if precision is not None:
+                vetAux.append(precision)
+                if i==kRels-1:
+                    #arrayPoints.append(max(vetAux))
+                    num=arrayPoints[j]+sum(vetAux)
+                    arrayPoints.insert(j,num)
+                    vetAux=[]
+                    kRels+=bucket
+                    j+=1
+                    
+        if(len(vetAux)>0):
+            num=arrayPoints[j]
+            num+=sum(vetAux)
+            arrayPoints.insert(j,num)
     
-    nDocs = 0
-    nRels = 0
-    vetAux = []
-    arrayPoints.append(1.0)#initial precision
+    N = math.ceil(len(arrayPoints)/10)
+    lenAvg=N
+    for i in range(0, len(arrayPoints)):
+        vet=[]
+        vet.append(arrayPoints[i])
+        if i == lenAvg:
+            interpolatedArray.append(max(vet)/10)
+            lenAvg+=N
+    if len(vet) > 0:
+        interpolatedArray.append(max(vet)/10)
     
-    for res in globalResults:
-        nDocs+=1
-        if res in globalRelevants:
-            nRels+=1
-            vetAux.append(nRels/nDocs)
-            if nRels == cont:
-                arrayPoints.append(max(vetAux))
-                vetAux = []
-                cont+=kRels
-        
-    return arrayPoints
+    return interpolatedArray
     
 
 
@@ -273,8 +281,8 @@ def writeGraphic(filepath, arrayPoints):
     plt.plot(arrayPoints)
     plt.xlabel('Recall(Decil)')
     plt.ylabel('Precision')
-    
-    figure(1, figsize=(6,6))
+    plt.axis([1, 10, 0.1, 1.0])
+    figure(1, figsize=(10,10))
     
     savefig(filepath, bbox_inches='tight')
     
