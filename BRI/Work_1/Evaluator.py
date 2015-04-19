@@ -164,7 +164,7 @@ def meanAveragePrecision(avgPrecisionVector):
     
     
     
-def discountedCumulativeGain(results, expectedResults, relevanceScale=range(0,8)):
+def discountedCumulativeGain(results, expectedResults, relevanceScale=range(4,8)):
     arrayDCG = {}
     for query in expectedResults.keys():
         relevants={}
@@ -190,7 +190,7 @@ def discountedCumulativeGain(results, expectedResults, relevanceScale=range(0,8)
     
     
     
-def normalizedDiscountedCumulativeGain(dcg, results, expectedResults, relevanceScale=range(0,8)):
+def normalizedDiscountedCumulativeGain(dcg, results, expectedResults, relevanceScale=range(4,8)):
     arrayIDCG = {}
     for query in expectedResults.keys():
         relevants={}

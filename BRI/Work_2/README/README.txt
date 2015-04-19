@@ -4,6 +4,3 @@ doc 530 1010 --> 1+0+1+0=2 --> Non relevant
 doc 490 1110 --> 1+1+1+0=3 --> Non relevant
 doc 555 1111 --> 1+1+1+1=4 --> Relevant
 doc 490 2200 --> 2+2+0+0=4 --> Relevant
-
-Link for the method interpolated_precision_recall_curve used in this implementation:
-https://github.com/ygorcanalli/documenthandler/blob/master/DocumentHandler/src/compare/metrics.py
