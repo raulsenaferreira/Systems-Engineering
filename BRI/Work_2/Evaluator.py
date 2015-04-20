@@ -13,6 +13,7 @@ import time
 import math
 import matplotlib.pyplot as plt
 from pylab import *
+import operator
 
 #globals
 PATH = os.path.dirname(__file__)
@@ -59,12 +60,12 @@ def executeEvaluator(PATH):
     #AVP=[averagePrecision(results[query], relevanceList[query]) for query in expectedResults.keys()]
     #MAP=meanAveragePrecision(AVP)
     #pp(MAP)
-    GP11=graphic11points(results, relevanceList, expectedResults)
+    #GP11=graphic11points(results, relevanceList, expectedResults)
         
-    writeGraphic('', GP11)
-    #DCG=discountedCumulativeGain(results, expectedResults, range(4,8))
+    #writeGraphic('', GP11)
+    DCG=discountedCumulativeGain(results, expectedResults, range(4,8))
     #pp(DCG)
-    #nDCG=normalizedDiscountedCumulativeGain(DCG, results, expectedResults, range(4,8))
+    nDCG=normalizedDiscountedCumulativeGain(DCG, results, expectedResults, range(4,8))
     #pp(nDCG)
     #f1=[F1(results[query], relevanceList[query], query) for query in expectedResults.keys()]
     #pp(f1)    
@@ -208,20 +209,19 @@ def normalizedDiscountedCumulativeGain(dcg, results, expectedResults, relevanceS
         for doc in expectedResults[query]:
             if doc[1] in relevanceScale:
                 relevants.update({doc[0]: doc[1]})
-        relevants=sorted(relevants.items(),key=operator.itemgetter(1), reverse=True)
-        #pp(relevants) 
-        DCG=0
-        for doc in results[query]:
-            if doc[1] in relevants:
-                rank = float(doc[0])
-                if rank > 1:
-                    logRank = math.log(rank, 2)
-                else:
-                    logRank = 1
-                
-                scale = float(relevants[doc[1]])
-                DCG += scale/logRank
-        arrayIDCG.update({query: DCG})
+        sorted(relevants.items(),key=operator.itemgetter(1), reverse=True)
+        
+        IDCG=0
+        
+        for k in relevants.keys():
+            rank = float(relevants[k])
+            if rank > 1:
+                logRank = math.log(rank, 2)
+            else:
+                logRank = 1
+                    
+            IDCG += rank/logRank
+        arrayIDCG.update({query: dcg[query]/(IDCG+1)})
     return arrayIDCG
 
 

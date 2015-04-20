@@ -4462,3 +4462,174 @@
 2015-04-19 11:57:39,307 - Searcher - INFO - Searching and ranking calculus operation finished with 0.9786250591278076
 2015-04-19 11:57:39,307 - Searcher - INFO - Writing search results on file...
 2015-04-19 11:57:40,113 - Searcher - INFO - End of Searcher Module processing. Total of 2.6606860160827637 elapsed.
+2015-04-20 18:54:27,702 - Searcher - INFO - Processing Searcher Module...
+2015-04-20 18:54:27,734 - Searcher - INFO - Transforming String to Dictionary...
+2015-04-20 18:54:28,397 - Searcher - INFO - Transforming String to Dictionary...
+2015-04-20 18:54:28,398 - Searcher - INFO - Making search and calculating rankings...
+2015-04-20 18:54:28,411 - Searcher - WARNING - word 'AND/OR' not found!
+2015-04-20 18:54:28,425 - Searcher - WARNING - word 'EG' not found!
+2015-04-20 18:54:28,453 - Searcher - WARNING - word 'NON-INVAS' not found!
+2015-04-20 18:54:28,476 - Searcher - WARNING - word '?' not found!
+2015-04-20 18:54:28,484 - Searcher - WARNING - word '?' not found!
+2015-04-20 18:54:28,500 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 18:54:28,530 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 18:54:28,544 - Searcher - WARNING - word 'SECRETORi' not found!
+2015-04-20 18:54:28,557 - Searcher - WARNING - word '``' not found!
+2015-04-20 18:54:28,557 - Searcher - WARNING - word '''' not found!
+2015-04-20 18:54:28,560 - Searcher - WARNING - word '(' not found!
+2015-04-20 18:54:28,560 - Searcher - WARNING - word '``' not found!
+2015-04-20 18:54:28,560 - Searcher - WARNING - word '''' not found!
+2015-04-20 18:54:28,566 - Searcher - WARNING - word '.' not found!
+2015-04-20 18:54:28,571 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 18:54:28,586 - Searcher - WARNING - word 'ALLERGi' not found!
+2015-04-20 18:54:28,595 - Searcher - WARNING - word 'ANTIPROTEAS' not found!
+2015-04-20 18:54:28,611 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 18:54:28,622 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 18:54:28,631 - Searcher - WARNING - word '(' not found!
+2015-04-20 18:54:28,649 - Searcher - WARNING - word 'MUCOCILIARi' not found!
+2015-04-20 18:54:28,652 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 18:54:28,660 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 18:54:28,675 - Searcher - WARNING - word 'HEREDITARi' not found!
+2015-04-20 18:54:28,686 - Searcher - WARNING - word 'NON-CAUCASIAN' not found!
+2015-04-20 18:54:28,699 - Searcher - WARNING - word 'FATTi' not found!
+2015-04-20 18:54:28,710 - Searcher - WARNING - word '?' not found!
+2015-04-20 18:54:28,712 - Searcher - WARNING - word 'DIETARi' not found!
+2015-04-20 18:54:28,740 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 18:54:28,750 - Searcher - WARNING - word 'OSTEOARTHROPATHi' not found!
+2015-04-20 18:54:28,756 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 18:54:28,791 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 18:54:28,795 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 18:54:28,796 - Searcher - WARNING - word 'AND/OR' not found!
+2015-04-20 18:54:28,822 - Searcher - WARNING - word 'PHARMACODYNAM' not found!
+2015-04-20 18:54:28,828 - Searcher - WARNING - word '?' not found!
+2015-04-20 18:54:28,849 - Searcher - WARNING - word 'GIBSON-COOK' not found!
+2015-04-20 18:54:28,854 - Searcher - WARNING - word 'ANi' not found!
+2015-04-20 18:54:28,895 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 18:54:28,905 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 18:54:28,928 - Searcher - WARNING - word 'FAMILi' not found!
+2015-04-20 18:54:28,928 - Searcher - WARNING - word '?' not found!
+2015-04-20 18:54:28,941 - Searcher - WARNING - word 'EVER' not found!
+2015-04-20 18:54:28,994 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 18:54:28,998 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 18:54:29,068 - Searcher - WARNING - word 'SALIVARi' not found!
+2015-04-20 18:54:29,084 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 18:54:29,106 - Searcher - WARNING - word 'AND/OR' not found!
+2015-04-20 18:54:29,106 - Searcher - WARNING - word 'TRANSPORT/PERM' not found!
+2015-04-20 18:54:29,129 - Searcher - WARNING - word 'NON-CF' not found!
+2015-04-20 18:54:29,150 - Searcher - INFO - Searching and ranking calculus operation finished with 0.7518999576568604
+2015-04-20 18:54:29,150 - Searcher - INFO - Writing search results on file...
+2015-04-20 18:54:29,872 - Searcher - INFO - End of Searcher Module processing. Total of 2.1698319911956787 elapsed.
+2015-04-20 19:01:33,483 - Searcher - INFO - Processing Searcher Module...
+2015-04-20 19:01:33,483 - Searcher - INFO - Transforming String to Dictionary...
+2015-04-20 19:01:34,116 - Searcher - INFO - Transforming String to Dictionary...
+2015-04-20 19:01:34,116 - Searcher - INFO - Making search and calculating rankings...
+2015-04-20 19:01:34,129 - Searcher - WARNING - word 'AND/OR' not found!
+2015-04-20 19:01:34,143 - Searcher - WARNING - word 'EG' not found!
+2015-04-20 19:01:34,170 - Searcher - WARNING - word 'NON-INVAS' not found!
+2015-04-20 19:01:34,194 - Searcher - WARNING - word '?' not found!
+2015-04-20 19:01:34,202 - Searcher - WARNING - word '?' not found!
+2015-04-20 19:01:34,219 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 19:01:34,249 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 19:01:34,264 - Searcher - WARNING - word 'SECRETORi' not found!
+2015-04-20 19:01:34,277 - Searcher - WARNING - word '``' not found!
+2015-04-20 19:01:34,278 - Searcher - WARNING - word '''' not found!
+2015-04-20 19:01:34,281 - Searcher - WARNING - word '(' not found!
+2015-04-20 19:01:34,281 - Searcher - WARNING - word '``' not found!
+2015-04-20 19:01:34,282 - Searcher - WARNING - word '''' not found!
+2015-04-20 19:01:34,288 - Searcher - WARNING - word '.' not found!
+2015-04-20 19:01:34,293 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 19:01:34,309 - Searcher - WARNING - word 'ALLERGi' not found!
+2015-04-20 19:01:34,319 - Searcher - WARNING - word 'ANTIPROTEAS' not found!
+2015-04-20 19:01:34,336 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 19:01:34,347 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 19:01:34,355 - Searcher - WARNING - word '(' not found!
+2015-04-20 19:01:34,374 - Searcher - WARNING - word 'MUCOCILIARi' not found!
+2015-04-20 19:01:34,376 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 19:01:34,385 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 19:01:34,400 - Searcher - WARNING - word 'HEREDITARi' not found!
+2015-04-20 19:01:34,410 - Searcher - WARNING - word 'NON-CAUCASIAN' not found!
+2015-04-20 19:01:34,424 - Searcher - WARNING - word 'FATTi' not found!
+2015-04-20 19:01:34,434 - Searcher - WARNING - word '?' not found!
+2015-04-20 19:01:34,436 - Searcher - WARNING - word 'DIETARi' not found!
+2015-04-20 19:01:34,465 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 19:01:34,474 - Searcher - WARNING - word 'OSTEOARTHROPATHi' not found!
+2015-04-20 19:01:34,481 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 19:01:34,516 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 19:01:34,521 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 19:01:34,521 - Searcher - WARNING - word 'AND/OR' not found!
+2015-04-20 19:01:34,547 - Searcher - WARNING - word 'PHARMACODYNAM' not found!
+2015-04-20 19:01:34,554 - Searcher - WARNING - word '?' not found!
+2015-04-20 19:01:34,572 - Searcher - WARNING - word 'GIBSON-COOK' not found!
+2015-04-20 19:01:34,578 - Searcher - WARNING - word 'ANi' not found!
+2015-04-20 19:01:34,618 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 19:01:34,628 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 19:01:34,651 - Searcher - WARNING - word 'FAMILi' not found!
+2015-04-20 19:01:34,652 - Searcher - WARNING - word '?' not found!
+2015-04-20 19:01:34,664 - Searcher - WARNING - word 'EVER' not found!
+2015-04-20 19:01:34,710 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 19:01:34,714 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 19:01:34,775 - Searcher - WARNING - word 'SALIVARi' not found!
+2015-04-20 19:01:34,789 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 19:01:34,807 - Searcher - WARNING - word 'AND/OR' not found!
+2015-04-20 19:01:34,808 - Searcher - WARNING - word 'TRANSPORT/PERM' not found!
+2015-04-20 19:01:34,828 - Searcher - WARNING - word 'NON-CF' not found!
+2015-04-20 19:01:34,846 - Searcher - INFO - Searching and ranking calculus operation finished with 0.729435920715332
+2015-04-20 19:01:34,846 - Searcher - INFO - Writing search results on file...
+2015-04-20 19:01:35,414 - Searcher - INFO - End of Searcher Module processing. Total of 1.9313130378723145 elapsed.
+2015-04-20 19:02:33,375 - Searcher - INFO - Processing Searcher Module...
+2015-04-20 19:02:33,375 - Searcher - INFO - Transforming String to Dictionary...
+2015-04-20 19:02:33,999 - Searcher - INFO - Transforming String to Dictionary...
+2015-04-20 19:02:33,999 - Searcher - INFO - Making search and calculating rankings...
+2015-04-20 19:02:34,012 - Searcher - WARNING - word 'AND/OR' not found!
+2015-04-20 19:02:34,025 - Searcher - WARNING - word 'EG' not found!
+2015-04-20 19:02:34,053 - Searcher - WARNING - word 'NON-INVAS' not found!
+2015-04-20 19:02:34,076 - Searcher - WARNING - word '?' not found!
+2015-04-20 19:02:34,084 - Searcher - WARNING - word '?' not found!
+2015-04-20 19:02:34,099 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 19:02:34,128 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 19:02:34,142 - Searcher - WARNING - word 'SECRETORi' not found!
+2015-04-20 19:02:34,155 - Searcher - WARNING - word '``' not found!
+2015-04-20 19:02:34,155 - Searcher - WARNING - word '''' not found!
+2015-04-20 19:02:34,158 - Searcher - WARNING - word '(' not found!
+2015-04-20 19:02:34,158 - Searcher - WARNING - word '``' not found!
+2015-04-20 19:02:34,158 - Searcher - WARNING - word '''' not found!
+2015-04-20 19:02:34,164 - Searcher - WARNING - word '.' not found!
+2015-04-20 19:02:34,168 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 19:02:34,183 - Searcher - WARNING - word 'ALLERGi' not found!
+2015-04-20 19:02:34,192 - Searcher - WARNING - word 'ANTIPROTEAS' not found!
+2015-04-20 19:02:34,208 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 19:02:34,219 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 19:02:34,227 - Searcher - WARNING - word '(' not found!
+2015-04-20 19:02:34,245 - Searcher - WARNING - word 'MUCOCILIARi' not found!
+2015-04-20 19:02:34,247 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 19:02:34,255 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 19:02:34,270 - Searcher - WARNING - word 'HEREDITARi' not found!
+2015-04-20 19:02:34,280 - Searcher - WARNING - word 'NON-CAUCASIAN' not found!
+2015-04-20 19:02:34,293 - Searcher - WARNING - word 'FATTi' not found!
+2015-04-20 19:02:34,303 - Searcher - WARNING - word '?' not found!
+2015-04-20 19:02:34,305 - Searcher - WARNING - word 'DIETARi' not found!
+2015-04-20 19:02:34,334 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 19:02:34,342 - Searcher - WARNING - word 'OSTEOARTHROPATHi' not found!
+2015-04-20 19:02:34,349 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 19:02:34,384 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 19:02:34,388 - Searcher - WARNING - word 'PULMONARi' not found!
+2015-04-20 19:02:34,388 - Searcher - WARNING - word 'AND/OR' not found!
+2015-04-20 19:02:34,413 - Searcher - WARNING - word 'PHARMACODYNAM' not found!
+2015-04-20 19:02:34,420 - Searcher - WARNING - word '?' not found!
+2015-04-20 19:02:34,438 - Searcher - WARNING - word 'GIBSON-COOK' not found!
+2015-04-20 19:02:34,443 - Searcher - WARNING - word 'ANi' not found!
+2015-04-20 19:02:34,483 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 19:02:34,493 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 19:02:34,516 - Searcher - WARNING - word 'FAMILi' not found!
+2015-04-20 19:02:34,516 - Searcher - WARNING - word '?' not found!
+2015-04-20 19:02:34,528 - Searcher - WARNING - word 'EVER' not found!
+2015-04-20 19:02:34,574 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 19:02:34,578 - Searcher - WARNING - word 'THERAPi' not found!
+2015-04-20 19:02:34,638 - Searcher - WARNING - word 'SALIVARi' not found!
+2015-04-20 19:02:34,652 - Searcher - WARNING - word 'RESPIRATORi' not found!
+2015-04-20 19:02:34,670 - Searcher - WARNING - word 'AND/OR' not found!
+2015-04-20 19:02:34,670 - Searcher - WARNING - word 'TRANSPORT/PERM' not found!
+2015-04-20 19:02:34,689 - Searcher - WARNING - word 'NON-CF' not found!
+2015-04-20 19:02:34,707 - Searcher - INFO - Searching and ranking calculus operation finished with 0.707543134689331
+2015-04-20 19:02:34,707 - Searcher - INFO - Writing search results on file...
+2015-04-20 19:02:35,357 - Searcher - INFO - End of Searcher Module processing. Total of 1.98219895362854 elapsed.
