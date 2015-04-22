@@ -1,4 +1,0 @@
-MODELO=/Indexer/vectorModel.csv
-CONSULTAS=/QueryProcessor/queries.csv
-RESULTADOS=/Searcher/NOSTEMMER/results.csv
-RESULTADOS=/Searcher/NOSTEMMER/results.csv

@@ -1,9 +1,0 @@
-The objective is mining data in movie lens database and answer following questions:
-1) Who watched movie X watched Y one.
-2) Who liked X liked Y.
-3) Who disliked X disliked Y.
-4) Who disliked X but liked Y.(Try to find a interesting pattern)
-P.S.: From the questions above, find 10 most frequent patterns.
-This work uses SVD or PCA to reduce dimensionality data(about 5 or 10 colluns) and K-Means or DB Scan to clustering groups that watched the same movies(about 10 and 15 clusters).
-This work is under development using julia language.
-

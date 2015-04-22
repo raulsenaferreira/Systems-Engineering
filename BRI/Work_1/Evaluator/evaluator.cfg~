@@ -1,4 +1,0 @@
-LEIA=/QueryProcessor/expectedResults.csv
-LEIA=/Searcher/NOSTEMMER/results.csv
-LEIA=/Searcher/STEMMER/results.csv
-ESCREVA=/Evaluator/RELATORIO.txt
