@@ -236,3 +236,274 @@
 2015-04-21 23:14:40,659 - luceneSearcher - WARNING - Document[01187 ] doesn't have abstract neither extract!
 2015-04-21 23:14:40,673 - luceneSearcher - WARNING - Document[01225 ] doesn't have abstract neither extract!
 2015-04-21 23:14:40,678 - luceneSearcher - INFO - 252 records read succesfully.
+2015-04-23 09:19:20,245 - luceneSearcher - INFO - Processing Lucene...
+2015-04-23 09:19:20,292 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf74.xml file
+2015-04-23 09:19:20,974 - luceneSearcher - WARNING - Document[00036 ] doesn't have abstract neither extract!
+2015-04-23 09:19:21,008 - luceneSearcher - WARNING - Document[00128 ] doesn't have abstract neither extract!
+2015-04-23 09:19:21,009 - luceneSearcher - WARNING - Document[00132 ] doesn't have abstract neither extract!
+2015-04-23 09:19:21,025 - luceneSearcher - INFO - 164 records read succesfully.
+2015-04-23 09:19:52,568 - luceneSearcher - INFO - Processing Lucene...
+2015-04-23 09:19:52,577 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf74.xml file
+2015-04-23 09:19:53,184 - luceneSearcher - WARNING - Document[00036 ] doesn't have abstract neither extract!
+2015-04-23 09:19:53,218 - luceneSearcher - WARNING - Document[00128 ] doesn't have abstract neither extract!
+2015-04-23 09:19:53,219 - luceneSearcher - WARNING - Document[00132 ] doesn't have abstract neither extract!
+2015-04-23 09:19:53,236 - luceneSearcher - INFO - 164 records read succesfully.
+2015-04-23 09:19:53,236 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf75.xml file
+2015-04-23 09:19:54,047 - luceneSearcher - WARNING - Document[00168] doesn't have abstract neither extract!
+2015-04-23 09:19:54,099 - luceneSearcher - WARNING - Document[00298] doesn't have abstract neither extract!
+2015-04-23 09:19:54,114 - luceneSearcher - WARNING - Document[00329] doesn't have abstract neither extract!
+2015-04-23 09:19:54,122 - luceneSearcher - INFO - 185 records read succesfully.
+2015-04-23 09:19:54,123 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf76.xml file
+2015-04-23 09:19:55,383 - luceneSearcher - WARNING - Document[00493 ] doesn't have abstract neither extract!
+2015-04-23 09:19:55,398 - luceneSearcher - WARNING - Document[00512 ] doesn't have abstract neither extract!
+2015-04-23 09:19:55,417 - luceneSearcher - WARNING - Document[00551 ] doesn't have abstract neither extract!
+2015-04-23 09:19:55,430 - luceneSearcher - INFO - 224 records read succesfully.
+2015-04-23 09:19:55,430 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf77.xml file
+2015-04-23 09:19:56,389 - luceneSearcher - WARNING - Document[00595 ] doesn't have abstract neither extract!
+2015-04-23 09:19:56,435 - luceneSearcher - WARNING - Document[00712 ] doesn't have abstract neither extract!
+2015-04-23 09:19:56,441 - luceneSearcher - WARNING - Document[00729 ] doesn't have abstract neither extract!
+2015-04-23 09:19:56,443 - luceneSearcher - WARNING - Document[00735 ] doesn't have abstract neither extract!
+2015-04-23 09:19:56,460 - luceneSearcher - INFO - 195 records read succesfully.
+2015-04-23 09:19:56,460 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf78.xml file
+2015-04-23 09:19:57,200 - luceneSearcher - WARNING - Document[00839 ] doesn't have abstract neither extract!
+2015-04-23 09:19:57,218 - luceneSearcher - WARNING - Document[00894 ] doesn't have abstract neither extract!
+2015-04-23 09:19:57,229 - luceneSearcher - WARNING - Document[00932 ] doesn't have abstract neither extract!
+2015-04-23 09:19:57,232 - luceneSearcher - WARNING - Document[00939 ] doesn't have abstract neither extract!
+2015-04-23 09:19:57,245 - luceneSearcher - INFO - 195 records read succesfully.
+2015-04-23 09:19:57,245 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf79.xml file
+2015-04-23 09:19:58,162 - luceneSearcher - WARNING - Document[01023 ] doesn't have abstract neither extract!
+2015-04-23 09:19:58,176 - luceneSearcher - WARNING - Document[01069 ] doesn't have abstract neither extract!
+2015-04-23 09:19:58,184 - luceneSearcher - WARNING - Document[01089 ] doesn't have abstract neither extract!
+2015-04-23 09:19:58,202 - luceneSearcher - WARNING - Document[01150 ] doesn't have abstract neither extract!
+2015-04-23 09:19:58,203 - luceneSearcher - WARNING - Document[01154 ] doesn't have abstract neither extract!
+2015-04-23 09:19:58,213 - luceneSearcher - WARNING - Document[01187 ] doesn't have abstract neither extract!
+2015-04-23 09:19:58,226 - luceneSearcher - WARNING - Document[01225 ] doesn't have abstract neither extract!
+2015-04-23 09:19:58,231 - luceneSearcher - INFO - 252 records read succesfully.
+2015-04-23 09:31:25,205 - luceneSearcher - INFO - Processing Lucene...
+2015-04-23 09:31:25,205 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf74.xml file
+2015-04-23 09:31:25,824 - luceneSearcher - WARNING - Document[00036 ] doesn't have abstract neither extract!
+2015-04-23 09:31:25,858 - luceneSearcher - WARNING - Document[00128 ] doesn't have abstract neither extract!
+2015-04-23 09:31:25,859 - luceneSearcher - WARNING - Document[00132 ] doesn't have abstract neither extract!
+2015-04-23 09:31:25,876 - luceneSearcher - INFO - 164 records read succesfully.
+2015-04-23 09:31:25,876 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf75.xml file
+2015-04-23 09:31:26,622 - luceneSearcher - WARNING - Document[00168] doesn't have abstract neither extract!
+2015-04-23 09:31:26,673 - luceneSearcher - WARNING - Document[00298] doesn't have abstract neither extract!
+2015-04-23 09:31:26,686 - luceneSearcher - WARNING - Document[00329] doesn't have abstract neither extract!
+2015-04-23 09:31:26,695 - luceneSearcher - INFO - 185 records read succesfully.
+2015-04-23 09:31:26,695 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf76.xml file
+2015-04-23 09:31:27,952 - luceneSearcher - WARNING - Document[00493 ] doesn't have abstract neither extract!
+2015-04-23 09:31:27,966 - luceneSearcher - WARNING - Document[00512 ] doesn't have abstract neither extract!
+2015-04-23 09:31:27,984 - luceneSearcher - WARNING - Document[00551 ] doesn't have abstract neither extract!
+2015-04-23 09:31:27,996 - luceneSearcher - INFO - 224 records read succesfully.
+2015-04-23 09:31:27,996 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf77.xml file
+2015-04-23 09:31:28,952 - luceneSearcher - WARNING - Document[00595 ] doesn't have abstract neither extract!
+2015-04-23 09:31:28,999 - luceneSearcher - WARNING - Document[00712 ] doesn't have abstract neither extract!
+2015-04-23 09:31:29,006 - luceneSearcher - WARNING - Document[00729 ] doesn't have abstract neither extract!
+2015-04-23 09:31:29,008 - luceneSearcher - WARNING - Document[00735 ] doesn't have abstract neither extract!
+2015-04-23 09:31:29,025 - luceneSearcher - INFO - 195 records read succesfully.
+2015-04-23 09:31:29,025 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf78.xml file
+2015-04-23 09:31:29,760 - luceneSearcher - WARNING - Document[00839 ] doesn't have abstract neither extract!
+2015-04-23 09:31:29,778 - luceneSearcher - WARNING - Document[00894 ] doesn't have abstract neither extract!
+2015-04-23 09:31:29,789 - luceneSearcher - WARNING - Document[00932 ] doesn't have abstract neither extract!
+2015-04-23 09:31:29,793 - luceneSearcher - WARNING - Document[00939 ] doesn't have abstract neither extract!
+2015-04-23 09:31:29,806 - luceneSearcher - INFO - 195 records read succesfully.
+2015-04-23 09:31:29,806 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf79.xml file
+2015-04-23 09:31:30,703 - luceneSearcher - WARNING - Document[01023 ] doesn't have abstract neither extract!
+2015-04-23 09:31:30,717 - luceneSearcher - WARNING - Document[01069 ] doesn't have abstract neither extract!
+2015-04-23 09:31:30,726 - luceneSearcher - WARNING - Document[01089 ] doesn't have abstract neither extract!
+2015-04-23 09:31:30,744 - luceneSearcher - WARNING - Document[01150 ] doesn't have abstract neither extract!
+2015-04-23 09:31:30,745 - luceneSearcher - WARNING - Document[01154 ] doesn't have abstract neither extract!
+2015-04-23 09:31:30,754 - luceneSearcher - WARNING - Document[01187 ] doesn't have abstract neither extract!
+2015-04-23 09:31:30,768 - luceneSearcher - WARNING - Document[01225 ] doesn't have abstract neither extract!
+2015-04-23 09:31:30,774 - luceneSearcher - INFO - 252 records read succesfully.
+2015-04-23 10:08:32,474 - luceneSearcher - INFO - Processing Lucene...
+2015-04-23 10:08:32,482 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf74.xml file
+2015-04-23 10:08:33,090 - luceneSearcher - WARNING - Document[00036 ] doesn't have abstract neither extract!
+2015-04-23 10:08:33,125 - luceneSearcher - WARNING - Document[00128 ] doesn't have abstract neither extract!
+2015-04-23 10:08:33,127 - luceneSearcher - WARNING - Document[00132 ] doesn't have abstract neither extract!
+2015-04-23 10:08:33,143 - luceneSearcher - INFO - 164 records read succesfully.
+2015-04-23 10:09:17,553 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf75.xml file
+2015-04-23 10:09:18,328 - luceneSearcher - WARNING - Document[00168] doesn't have abstract neither extract!
+2015-04-23 10:09:18,379 - luceneSearcher - WARNING - Document[00298] doesn't have abstract neither extract!
+2015-04-23 10:09:18,393 - luceneSearcher - WARNING - Document[00329] doesn't have abstract neither extract!
+2015-04-23 10:09:18,402 - luceneSearcher - INFO - 185 records read succesfully.
+2015-04-23 10:10:04,525 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf76.xml file
+2015-04-23 10:10:05,820 - luceneSearcher - WARNING - Document[00493 ] doesn't have abstract neither extract!
+2015-04-23 10:10:05,834 - luceneSearcher - WARNING - Document[00512 ] doesn't have abstract neither extract!
+2015-04-23 10:10:05,852 - luceneSearcher - WARNING - Document[00551 ] doesn't have abstract neither extract!
+2015-04-23 10:10:05,864 - luceneSearcher - INFO - 224 records read succesfully.
+2015-04-23 10:10:53,521 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf77.xml file
+2015-04-23 10:10:54,511 - luceneSearcher - WARNING - Document[00595 ] doesn't have abstract neither extract!
+2015-04-23 10:10:54,557 - luceneSearcher - WARNING - Document[00712 ] doesn't have abstract neither extract!
+2015-04-23 10:10:54,564 - luceneSearcher - WARNING - Document[00729 ] doesn't have abstract neither extract!
+2015-04-23 10:10:54,566 - luceneSearcher - WARNING - Document[00735 ] doesn't have abstract neither extract!
+2015-04-23 10:10:54,582 - luceneSearcher - INFO - 195 records read succesfully.
+2015-04-23 10:11:39,625 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf78.xml file
+2015-04-23 10:11:40,380 - luceneSearcher - WARNING - Document[00839 ] doesn't have abstract neither extract!
+2015-04-23 10:11:40,399 - luceneSearcher - WARNING - Document[00894 ] doesn't have abstract neither extract!
+2015-04-23 10:11:40,410 - luceneSearcher - WARNING - Document[00932 ] doesn't have abstract neither extract!
+2015-04-23 10:11:40,414 - luceneSearcher - WARNING - Document[00939 ] doesn't have abstract neither extract!
+2015-04-23 10:11:40,427 - luceneSearcher - INFO - 195 records read succesfully.
+2015-04-23 10:12:22,673 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf79.xml file
+2015-04-23 10:12:23,619 - luceneSearcher - WARNING - Document[01023 ] doesn't have abstract neither extract!
+2015-04-23 10:12:23,633 - luceneSearcher - WARNING - Document[01069 ] doesn't have abstract neither extract!
+2015-04-23 10:12:23,642 - luceneSearcher - WARNING - Document[01089 ] doesn't have abstract neither extract!
+2015-04-23 10:12:23,660 - luceneSearcher - WARNING - Document[01150 ] doesn't have abstract neither extract!
+2015-04-23 10:12:23,661 - luceneSearcher - WARNING - Document[01154 ] doesn't have abstract neither extract!
+2015-04-23 10:12:23,671 - luceneSearcher - WARNING - Document[01187 ] doesn't have abstract neither extract!
+2015-04-23 10:12:23,685 - luceneSearcher - WARNING - Document[01225 ] doesn't have abstract neither extract!
+2015-04-23 10:12:23,690 - luceneSearcher - INFO - 252 records read succesfully.
+2015-04-23 13:12:26,970 - luceneSearcher - INFO - Processing Lucene...
+2015-04-23 13:12:26,971 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf74.xml file
+2015-04-23 13:12:27,600 - luceneSearcher - WARNING - Document[00036 ] doesn't have abstract neither extract!
+2015-04-23 13:12:27,634 - luceneSearcher - WARNING - Document[00128 ] doesn't have abstract neither extract!
+2015-04-23 13:12:27,635 - luceneSearcher - WARNING - Document[00132 ] doesn't have abstract neither extract!
+2015-04-23 13:12:27,651 - luceneSearcher - INFO - 164 records read succesfully.
+2015-04-23 13:12:48,987 - luceneSearcher - INFO - Processing Lucene...
+2015-04-23 13:12:48,987 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf74.xml file
+2015-04-23 13:12:49,582 - luceneSearcher - WARNING - Document[00036 ] doesn't have abstract neither extract!
+2015-04-23 13:12:49,617 - luceneSearcher - WARNING - Document[00128 ] doesn't have abstract neither extract!
+2015-04-23 13:12:49,618 - luceneSearcher - WARNING - Document[00132 ] doesn't have abstract neither extract!
+2015-04-23 13:12:49,634 - luceneSearcher - INFO - 164 records read succesfully.
+2015-04-23 13:12:49,634 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf75.xml file
+2015-04-23 13:12:50,410 - luceneSearcher - WARNING - Document[00168] doesn't have abstract neither extract!
+2015-04-23 13:12:50,462 - luceneSearcher - WARNING - Document[00298] doesn't have abstract neither extract!
+2015-04-23 13:12:50,476 - luceneSearcher - WARNING - Document[00329] doesn't have abstract neither extract!
+2015-04-23 13:12:50,485 - luceneSearcher - INFO - 185 records read succesfully.
+2015-04-23 13:12:50,485 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf76.xml file
+2015-04-23 13:12:51,763 - luceneSearcher - WARNING - Document[00493 ] doesn't have abstract neither extract!
+2015-04-23 13:12:51,777 - luceneSearcher - WARNING - Document[00512 ] doesn't have abstract neither extract!
+2015-04-23 13:12:51,795 - luceneSearcher - WARNING - Document[00551 ] doesn't have abstract neither extract!
+2015-04-23 13:12:51,808 - luceneSearcher - INFO - 224 records read succesfully.
+2015-04-23 13:12:51,808 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf77.xml file
+2015-04-23 13:12:52,763 - luceneSearcher - WARNING - Document[00595 ] doesn't have abstract neither extract!
+2015-04-23 13:12:52,811 - luceneSearcher - WARNING - Document[00712 ] doesn't have abstract neither extract!
+2015-04-23 13:12:52,818 - luceneSearcher - WARNING - Document[00729 ] doesn't have abstract neither extract!
+2015-04-23 13:12:52,819 - luceneSearcher - WARNING - Document[00735 ] doesn't have abstract neither extract!
+2015-04-23 13:12:52,836 - luceneSearcher - INFO - 195 records read succesfully.
+2015-04-23 13:12:52,836 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf78.xml file
+2015-04-23 13:12:53,574 - luceneSearcher - WARNING - Document[00839 ] doesn't have abstract neither extract!
+2015-04-23 13:12:53,593 - luceneSearcher - WARNING - Document[00894 ] doesn't have abstract neither extract!
+2015-04-23 13:12:53,604 - luceneSearcher - WARNING - Document[00932 ] doesn't have abstract neither extract!
+2015-04-23 13:12:53,607 - luceneSearcher - WARNING - Document[00939 ] doesn't have abstract neither extract!
+2015-04-23 13:12:53,621 - luceneSearcher - INFO - 195 records read succesfully.
+2015-04-23 13:12:53,621 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf79.xml file
+2015-04-23 13:12:54,513 - luceneSearcher - WARNING - Document[01023 ] doesn't have abstract neither extract!
+2015-04-23 13:12:54,526 - luceneSearcher - WARNING - Document[01069 ] doesn't have abstract neither extract!
+2015-04-23 13:12:54,536 - luceneSearcher - WARNING - Document[01089 ] doesn't have abstract neither extract!
+2015-04-23 13:12:54,553 - luceneSearcher - WARNING - Document[01150 ] doesn't have abstract neither extract!
+2015-04-23 13:12:54,554 - luceneSearcher - WARNING - Document[01154 ] doesn't have abstract neither extract!
+2015-04-23 13:12:54,564 - luceneSearcher - WARNING - Document[01187 ] doesn't have abstract neither extract!
+2015-04-23 13:12:54,578 - luceneSearcher - WARNING - Document[01225 ] doesn't have abstract neither extract!
+2015-04-23 13:12:54,583 - luceneSearcher - INFO - 252 records read succesfully.
+2015-04-23 13:15:54,156 - luceneSearcher - INFO - Processing Lucene...
+2015-04-23 13:15:54,157 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf74.xml file
+2015-04-23 13:15:54,750 - luceneSearcher - WARNING - Document[00036 ] doesn't have abstract neither extract!
+2015-04-23 13:15:54,784 - luceneSearcher - WARNING - Document[00128 ] doesn't have abstract neither extract!
+2015-04-23 13:15:54,786 - luceneSearcher - WARNING - Document[00132 ] doesn't have abstract neither extract!
+2015-04-23 13:15:54,802 - luceneSearcher - INFO - 164 records read succesfully.
+2015-04-23 13:15:54,802 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf75.xml file
+2015-04-23 13:15:55,565 - luceneSearcher - WARNING - Document[00168] doesn't have abstract neither extract!
+2015-04-23 13:15:55,617 - luceneSearcher - WARNING - Document[00298] doesn't have abstract neither extract!
+2015-04-23 13:15:55,630 - luceneSearcher - WARNING - Document[00329] doesn't have abstract neither extract!
+2015-04-23 13:15:55,639 - luceneSearcher - INFO - 185 records read succesfully.
+2015-04-23 13:15:55,639 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf76.xml file
+2015-04-23 13:15:56,907 - luceneSearcher - WARNING - Document[00493 ] doesn't have abstract neither extract!
+2015-04-23 13:15:56,921 - luceneSearcher - WARNING - Document[00512 ] doesn't have abstract neither extract!
+2015-04-23 13:15:56,942 - luceneSearcher - WARNING - Document[00551 ] doesn't have abstract neither extract!
+2015-04-23 13:15:56,955 - luceneSearcher - INFO - 224 records read succesfully.
+2015-04-23 13:15:56,956 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf77.xml file
+2015-04-23 13:15:57,910 - luceneSearcher - WARNING - Document[00595 ] doesn't have abstract neither extract!
+2015-04-23 13:15:57,957 - luceneSearcher - WARNING - Document[00712 ] doesn't have abstract neither extract!
+2015-04-23 13:15:57,964 - luceneSearcher - WARNING - Document[00729 ] doesn't have abstract neither extract!
+2015-04-23 13:15:57,966 - luceneSearcher - WARNING - Document[00735 ] doesn't have abstract neither extract!
+2015-04-23 13:15:57,984 - luceneSearcher - INFO - 195 records read succesfully.
+2015-04-23 13:15:57,984 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf78.xml file
+2015-04-23 13:15:58,721 - luceneSearcher - WARNING - Document[00839 ] doesn't have abstract neither extract!
+2015-04-23 13:15:58,741 - luceneSearcher - WARNING - Document[00894 ] doesn't have abstract neither extract!
+2015-04-23 13:15:58,753 - luceneSearcher - WARNING - Document[00932 ] doesn't have abstract neither extract!
+2015-04-23 13:15:58,757 - luceneSearcher - WARNING - Document[00939 ] doesn't have abstract neither extract!
+2015-04-23 13:15:58,771 - luceneSearcher - INFO - 195 records read succesfully.
+2015-04-23 13:15:58,771 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf79.xml file
+2015-04-23 13:15:59,663 - luceneSearcher - WARNING - Document[01023 ] doesn't have abstract neither extract!
+2015-04-23 13:15:59,677 - luceneSearcher - WARNING - Document[01069 ] doesn't have abstract neither extract!
+2015-04-23 13:15:59,687 - luceneSearcher - WARNING - Document[01089 ] doesn't have abstract neither extract!
+2015-04-23 13:15:59,705 - luceneSearcher - WARNING - Document[01150 ] doesn't have abstract neither extract!
+2015-04-23 13:15:59,706 - luceneSearcher - WARNING - Document[01154 ] doesn't have abstract neither extract!
+2015-04-23 13:15:59,717 - luceneSearcher - WARNING - Document[01187 ] doesn't have abstract neither extract!
+2015-04-23 13:15:59,732 - luceneSearcher - WARNING - Document[01225 ] doesn't have abstract neither extract!
+2015-04-23 13:15:59,738 - luceneSearcher - INFO - 252 records read succesfully.
+2015-04-23 13:16:25,552 - luceneSearcher - INFO - Processing Lucene...
+2015-04-23 13:16:25,552 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf74.xml file
+2015-04-23 13:16:26,138 - luceneSearcher - WARNING - Document[00036 ] doesn't have abstract neither extract!
+2015-04-23 13:16:26,172 - luceneSearcher - WARNING - Document[00128 ] doesn't have abstract neither extract!
+2015-04-23 13:16:26,173 - luceneSearcher - WARNING - Document[00132 ] doesn't have abstract neither extract!
+2015-04-23 13:16:26,190 - luceneSearcher - INFO - 164 records read succesfully.
+2015-04-23 13:16:26,190 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf75.xml file
+2015-04-23 13:16:26,945 - luceneSearcher - WARNING - Document[00168] doesn't have abstract neither extract!
+2015-04-23 13:16:26,996 - luceneSearcher - WARNING - Document[00298] doesn't have abstract neither extract!
+2015-04-23 13:16:27,010 - luceneSearcher - WARNING - Document[00329] doesn't have abstract neither extract!
+2015-04-23 13:16:27,019 - luceneSearcher - INFO - 185 records read succesfully.
+2015-04-23 13:16:27,019 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf76.xml file
+2015-04-23 13:16:28,275 - luceneSearcher - WARNING - Document[00493 ] doesn't have abstract neither extract!
+2015-04-23 13:16:28,289 - luceneSearcher - WARNING - Document[00512 ] doesn't have abstract neither extract!
+2015-04-23 13:16:28,307 - luceneSearcher - WARNING - Document[00551 ] doesn't have abstract neither extract!
+2015-04-23 13:16:28,319 - luceneSearcher - INFO - 224 records read succesfully.
+2015-04-23 13:16:28,320 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf77.xml file
+2015-04-23 13:16:29,275 - luceneSearcher - WARNING - Document[00595 ] doesn't have abstract neither extract!
+2015-04-23 13:16:29,322 - luceneSearcher - WARNING - Document[00712 ] doesn't have abstract neither extract!
+2015-04-23 13:16:29,329 - luceneSearcher - WARNING - Document[00729 ] doesn't have abstract neither extract!
+2015-04-23 13:16:29,331 - luceneSearcher - WARNING - Document[00735 ] doesn't have abstract neither extract!
+2015-04-23 13:16:29,348 - luceneSearcher - INFO - 195 records read succesfully.
+2015-04-23 13:16:29,348 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf78.xml file
+2015-04-23 13:16:30,074 - luceneSearcher - WARNING - Document[00839 ] doesn't have abstract neither extract!
+2015-04-23 13:16:30,093 - luceneSearcher - WARNING - Document[00894 ] doesn't have abstract neither extract!
+2015-04-23 13:16:30,104 - luceneSearcher - WARNING - Document[00932 ] doesn't have abstract neither extract!
+2015-04-23 13:16:30,108 - luceneSearcher - WARNING - Document[00939 ] doesn't have abstract neither extract!
+2015-04-23 13:16:30,121 - luceneSearcher - INFO - 195 records read succesfully.
+2015-04-23 13:16:30,121 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf79.xml file
+2015-04-23 13:16:31,014 - luceneSearcher - WARNING - Document[01023 ] doesn't have abstract neither extract!
+2015-04-23 13:16:31,028 - luceneSearcher - WARNING - Document[01069 ] doesn't have abstract neither extract!
+2015-04-23 13:16:31,036 - luceneSearcher - WARNING - Document[01089 ] doesn't have abstract neither extract!
+2015-04-23 13:16:31,055 - luceneSearcher - WARNING - Document[01150 ] doesn't have abstract neither extract!
+2015-04-23 13:16:31,056 - luceneSearcher - WARNING - Document[01154 ] doesn't have abstract neither extract!
+2015-04-23 13:16:31,065 - luceneSearcher - WARNING - Document[01187 ] doesn't have abstract neither extract!
+2015-04-23 13:16:31,079 - luceneSearcher - WARNING - Document[01225 ] doesn't have abstract neither extract!
+2015-04-23 13:16:31,085 - luceneSearcher - INFO - 252 records read succesfully.
+2015-04-23 13:19:04,559 - luceneSearcher - INFO - Processing Lucene...
+2015-04-23 13:19:04,560 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf74.xml file
+2015-04-23 13:19:05,156 - luceneSearcher - WARNING - Document[00036 ] doesn't have abstract neither extract!
+2015-04-23 13:19:05,190 - luceneSearcher - WARNING - Document[00128 ] doesn't have abstract neither extract!
+2015-04-23 13:19:05,191 - luceneSearcher - WARNING - Document[00132 ] doesn't have abstract neither extract!
+2015-04-23 13:19:05,207 - luceneSearcher - INFO - 164 records read succesfully.
+2015-04-23 13:19:05,207 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf75.xml file
+2015-04-23 13:19:05,948 - luceneSearcher - WARNING - Document[00168] doesn't have abstract neither extract!
+2015-04-23 13:19:05,998 - luceneSearcher - WARNING - Document[00298] doesn't have abstract neither extract!
+2015-04-23 13:19:06,012 - luceneSearcher - WARNING - Document[00329] doesn't have abstract neither extract!
+2015-04-23 13:19:06,021 - luceneSearcher - INFO - 185 records read succesfully.
+2015-04-23 13:19:06,021 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf76.xml file
+2015-04-23 13:19:07,289 - luceneSearcher - WARNING - Document[00493 ] doesn't have abstract neither extract!
+2015-04-23 13:19:07,304 - luceneSearcher - WARNING - Document[00512 ] doesn't have abstract neither extract!
+2015-04-23 13:19:07,321 - luceneSearcher - WARNING - Document[00551 ] doesn't have abstract neither extract!
+2015-04-23 13:19:07,333 - luceneSearcher - INFO - 224 records read succesfully.
+2015-04-23 13:19:07,334 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf77.xml file
+2015-04-23 13:19:08,285 - luceneSearcher - WARNING - Document[00595 ] doesn't have abstract neither extract!
+2015-04-23 13:19:08,330 - luceneSearcher - WARNING - Document[00712 ] doesn't have abstract neither extract!
+2015-04-23 13:19:08,337 - luceneSearcher - WARNING - Document[00729 ] doesn't have abstract neither extract!
+2015-04-23 13:19:08,339 - luceneSearcher - WARNING - Document[00735 ] doesn't have abstract neither extract!
+2015-04-23 13:19:08,355 - luceneSearcher - INFO - 195 records read succesfully.
+2015-04-23 13:19:08,355 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf78.xml file
+2015-04-23 13:19:09,082 - luceneSearcher - WARNING - Document[00839 ] doesn't have abstract neither extract!
+2015-04-23 13:19:09,100 - luceneSearcher - WARNING - Document[00894 ] doesn't have abstract neither extract!
+2015-04-23 13:19:09,111 - luceneSearcher - WARNING - Document[00932 ] doesn't have abstract neither extract!
+2015-04-23 13:19:09,115 - luceneSearcher - WARNING - Document[00939 ] doesn't have abstract neither extract!
+2015-04-23 13:19:09,128 - luceneSearcher - INFO - 195 records read succesfully.
+2015-04-23 13:19:09,128 - luceneSearcher - INFO - Reading /media/ED8E-DB71/GITHUB/Systems-Engineering/BRI/Work_3/data/cf79.xml file
+2015-04-23 13:19:10,019 - luceneSearcher - WARNING - Document[01023 ] doesn't have abstract neither extract!
+2015-04-23 13:19:10,032 - luceneSearcher - WARNING - Document[01069 ] doesn't have abstract neither extract!
+2015-04-23 13:19:10,041 - luceneSearcher - WARNING - Document[01089 ] doesn't have abstract neither extract!
+2015-04-23 13:19:10,059 - luceneSearcher - WARNING - Document[01150 ] doesn't have abstract neither extract!
+2015-04-23 13:19:10,060 - luceneSearcher - WARNING - Document[01154 ] doesn't have abstract neither extract!
+2015-04-23 13:19:10,070 - luceneSearcher - WARNING - Document[01187 ] doesn't have abstract neither extract!
+2015-04-23 13:19:10,083 - luceneSearcher - WARNING - Document[01225 ] doesn't have abstract neither extract!
+2015-04-23 13:19:10,089 - luceneSearcher - INFO - 252 records read succesfully.

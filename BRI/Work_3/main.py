@@ -11,8 +11,8 @@ import logging
 import os
 from pprint import pprint as pp 
 from nltk.stem.porter import *
-from nltk.corpus import stopwords
 from xml.dom.minidom import parse
+from Metrics import executeEvaluator
 from Indexer import indexer
 from Retriever import retriever
 
@@ -20,7 +20,7 @@ from Retriever import retriever
 PATH = os.path.dirname(__file__)
 luceneSearcher = ''
 def main():
-    begin = time.time()
+    results={}
     global luceneSearcher
     #logging instantiate
     logPath = PATH+'/luceneSearcher.log'
@@ -29,16 +29,23 @@ def main():
     luceneSearcher.info('Processing Lucene...')
     configFile = '/config.cfg'
     pathVector = readData(configFile, '=')
+    expectedResultsString=''
     
     for i in range(0, len(pathVector)):
         if pathVector[i][0] == "DOCS":
             dictionary=readXML(PATH+str(pathVector[i][1]).strip())
-            for k in dictionary.keys():
-                indexer(k, dictionary[k])
+            '''for k in dictionary.keys():
+                indexer(k, dictionary[k])'''
         elif pathVector[i][0] == "QUERIES":    
             queries = readData(str(pathVector[i][1]).strip(), ';')
             for q in queries:
-                retriever(q[0], q[1])
+                results.update({q[0]: retriever(q[0], q[1])})
+        elif pathVector[i][0] == "EXPECTED":
+            expectedResultsString = readData(str(pathVector[i][1]).strip(), ';')
+
+    executeEvaluator(PATH, '/REPORT.txt', expectedResultsString, results)
+    
+    
     
 #Utils
 def readData(filepath, symbol):
