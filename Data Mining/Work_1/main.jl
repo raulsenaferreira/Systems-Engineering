@@ -72,7 +72,7 @@ end
 
 
 conn = connect(Postgres, "localhost", "raul", "", "datamining", 5432)
-limit=50
+limit=30
 
 #First association rule
 subQuery="select movie_id from ratings group by movie_id order by count(movie_id) asc limit $limit"
@@ -181,10 +181,13 @@ transactions=transact'
 
 apriori(transactions, threshold, articles)
 
+
+
 disconnect(conn)
 
 
-
+select r.user_id, r.movie_id, r.rating, g.genre_id from ratings as r
+join genres_movies as g on r.movie_id=g.movie_id order by r.user_id
 #=
                   CLUSTERING
 =#

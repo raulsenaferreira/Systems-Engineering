@@ -34,8 +34,8 @@ def main():
     for i in range(0, len(pathVector)):
         if pathVector[i][0] == "DOCS":
             dictionary=readXML(PATH+str(pathVector[i][1]).strip())
-            '''for k in dictionary.keys():
-                indexer(k, dictionary[k])'''
+            for k in dictionary.keys():
+                indexer(k, dictionary[k])
         elif pathVector[i][0] == "QUERIES":    
             queries = readData(str(pathVector[i][1]).strip(), ';')
             for q in queries:
