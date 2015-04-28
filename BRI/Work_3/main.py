@@ -39,10 +39,10 @@ def main():
         elif pathVector[i][0] == "QUERIES":    
             queries = readData(str(pathVector[i][1]).strip(), ';')
             for q in queries:
-                results.update({q[0]: retriever(q[0], q[1])})
+                results.update({q[0].replace(' ',''): retriever(q[0].replace(' ',''), q[1])})
         elif pathVector[i][0] == "EXPECTED":
             expectedResultsString = readData(str(pathVector[i][1]).strip(), ';')
-
+    
     executeEvaluator(PATH, '/REPORT.txt', expectedResultsString, results)
     
     

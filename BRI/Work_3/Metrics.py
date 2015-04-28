@@ -4,6 +4,7 @@ Created on Mon Apr  6 19:36:59 2015
 
 @author: Raul Sena Ferreira
 """
+from __future__ import division
 from pprint import pprint as pp
 import ast
 import logging
@@ -13,6 +14,7 @@ import operator
 import matplotlib.pyplot as plt
 from pylab import *
 
+
 #globals
 evaluatorLog = ''
 
@@ -21,13 +23,13 @@ def executeEvaluator(path, pathReport, expectedResultsString, results):
     begin = time.time()
     global evaluatorLog
     #logging instantiate
-    logPath = path+'/metrics.log'
+    logPath = path+'/MetricResults/metrics.log'
     log('metrics', logPath)
     evaluatorLog = logging.getLogger('metrics')
     evaluatorLog.info('Processing Metric module...')
     
     expectedResults = strToDictExpectedResults(expectedResultsString)
-    
+    results = strToInt(results)
     relevanceList = selectRelevantDocs(expectedResults)
     
     PK={}
@@ -130,7 +132,7 @@ def precisionK(results, relevants, k=10):
     for doc in results:
         if k > 0:
             k-=1
-            if doc[1] in relevants:
+            if doc in relevants:
                 rels+=1
         else:
             return rels/numDocs
@@ -145,8 +147,8 @@ def averagePrecision(results, relevants):
     
     for docResults in results:
         total+=1
-        if docResults[1] in relevants:
-            relevantsOfK.append(docResults[1])
+        if docResults in relevants:
+            relevantsOfK.append(docResults)
             try: p+=precisionK(results, relevantsOfK, total)
             except TypeError: pp("")
     if len(relevantsOfK) > 0:
@@ -172,16 +174,16 @@ def discountedCumulativeGain(results, expectedResults, relevanceScale=range(4,8)
                 relevants.update({doc[0]: doc[1]})
         
         DCG=0
+        rank=0
         for doc in results[query]:
-            
-            if doc[1] in relevants:
-                rank = float(doc[0])
+            rank +=1
+            if doc in relevants:
                 if rank > 1:
                     logRank = math.log(rank, 2)
                 else:
                     logRank = 1
                 
-                scale = float(relevants[doc[1]])
+                scale = float(relevants[doc])
                 DCG += scale/logRank
         arrayDCG.update({query: DCG})
     return arrayDCG
@@ -222,10 +224,10 @@ def f1Measure(results, relevants):
     
     for doc in results:
         nDoc+=1
-        if doc[1] in relevants:
+        if doc in relevants:
             rel+=1
             
-    if rel > 0:
+    if rel > 0 and nRel > 0:
         precision=rel/nDoc
         recall=rel/nRel
         return 2 * ((precision*recall)/(precision+recall))
@@ -291,6 +293,17 @@ def strToDictExpectedResults(expResStr):
     for e in expResStr:
         expectedResults.update({e[0]: ast.literal_eval(e[1])})
     return expectedResults
+    
+    
+    
+def strToInt(results):
+    finalResults = {}
+    for k in results.keys():
+        lista=[]
+        for l in results[k]:
+            lista.append(str(int(l)))
+        finalResults.update({k: lista})
+    return finalResults
     
     
     

@@ -26,17 +26,11 @@ def retriever(queryNumber, queryText):
     query = QueryParser(Version.LUCENE_4_10_1, "docText", analyzer).parse(QueryParser.escape(queryText))
     MAX = 1000
     hits = searcher.search(query, MAX)
- 
-    #print "Found %d document(s) that matched query '%s':" % (hits.totalHits, query)
     #text.append("Found %d document(s) that matched query '%s':" % (hits.totalHits, query))
-    
     for hit in hits.scoreDocs:
-        #print hit.score, hit.doc, hit.toString()
         #text.append(hit.toString())
         doc = searcher.doc(hit.doc)
-        #print doc.get("docNumber").encode("utf-8")
-        text.append(doc.get("docNumber").encode("utf-8"))#documento onde o texto foi encontrado
-    #text.append("=========================================================================================")
+        text.append(doc.get("docNumber").encode("utf-8"))
     writeData(PATH+'/ResultsLucene/query-'+queryNumber+'.txt', text)
     return text
 

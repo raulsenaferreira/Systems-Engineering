@@ -1,8 +1,0 @@
-USE_MOD=STEMMER
-DOCS= /data/cf74.xml
-DOCS= /data/cf75.xml
-DOCS= /data/cf76.xml
-DOCS= /data/cf77.xml
-DOCS= /data/cf78.xml
-DOCS= /data/cf79.xml
-QUERIES= /queries.csv

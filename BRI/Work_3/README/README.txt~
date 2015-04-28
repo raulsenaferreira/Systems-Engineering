@@ -5,10 +5,11 @@ Next, compare new results with previous work results.
 Instructions:
 Delete all files in index directory and execute main.py
 
-Folders and files:
 Indexer.py -> Indexing implementation with PyLucene
 Retriever.py-> Retrieving implementation with PyLucene
 Metrics.py-> Metrics used to measure PyLucene results
+
+Folders:
 data-> Fibrose cystic xml files
 index-> Lucene indexed Files
 ResultsLucene-> Searcher results
