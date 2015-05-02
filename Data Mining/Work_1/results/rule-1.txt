@@ -1,0 +1,34 @@
+{{"Homage (1995)"=>{"Drama"}},{"Every Other Weekend (1990)"=>{"Drama"}}}
+{{"Hana-bi (1997)"=>{"Comedy","Crime","Drama"}},{"Land and Freedom (Tierra y libertad) (1995)"=>{"War"}}}
+{{"The Courtyard (1995)"=>{"Action","Thriller"}},{"Vie est belle, La (Life is Rosey) (1987)"=>{"Comedy","Drama"}}}
+{{"JLG/JLG - autoportrait de dйcembre (1994)"=>{"Documentary","Drama"}},{"Every Other Weekend (1990)"=>{"Drama"}}}
+{{"Damsel in Distress, A (1937)"=>{"Comedy","Musical","Romance"}},{"Angel on My Shoulder (1946)"=>{"Crime","Drama"}}}
+{{"T-Men (1947)"=>{"Film-Noir"}},{"Terror in a Texas Town (1958)"=>{"Western"}}}
+{{"T-Men (1947)"=>{"Film-Noir"}},{"Vie est belle, La (Life is Rosey) (1987)"=>{"Comedy","Drama"}}}
+{{"Eighth Day, The (1996)"=>{"Drama"}},{"Silence of the Palace, The (Saimt el Qusur) (1994)"=>{"Drama"}}}
+{{"Every Other Weekend (1990)"=>{"Drama"}},{"Bird of Prey (1996)"=>{"Action"}}}
+{{"Homage (1995)"=>{"Drama"}},{"Bird of Prey (1996)"=>{"Action"}}}
+{{"T-Men (1947)"=>{"Film-Noir"}},{"The Courtyard (1995)"=>{"Action","Thriller"}}}
+{{"Terror in a Texas Town (1958)"=>{"Western"}},{"Vie est belle, La (Life is Rosey) (1987)"=>{"Comedy","Drama"}}}
+{{"JLG/JLG - autoportrait de dйcembre (1994)"=>{"Documentary","Drama"}},{"Bird of Prey (1996)"=>{"Action"}}}
+{{"Land and Freedom (Tierra y libertad) (1995)"=>{"War"}},{"Silence of the Palace, The (Saimt el Qusur) (1994)"=>{"Drama"}}}
+{{"JLG/JLG - autoportrait de dйcembre (1994)"=>{"Documentary","Drama"}},{"Homage (1995)"=>{"Drama"}}}
+{{"Hana-bi (1997)"=>{"Comedy","Crime","Drama"}},{"Eighth Day, The (1996)"=>{"Drama"}}}
+{{"Land and Freedom (Tierra y libertad) (1995)"=>{"War"}},{"Eighth Day, The (1996)"=>{"Drama"}}}
+{{"Hana-bi (1997)"=>{"Comedy","Crime","Drama"}},{"Silence of the Palace, The (Saimt el Qusur) (1994)"=>{"Drama"}}}
+{{"The Courtyard (1995)"=>{"Action","Thriller"}},{"Terror in a Texas Town (1958)"=>{"Western"}}}
+{{"T-Men (1947)"=>{"Film-Noir"}},{"The Courtyard (1995)"=>{"Action","Thriller"}},{"Vie est belle, La (Life is Rosey) (1987)"=>{"Comedy","Drama"}}}
+{{"JLG/JLG - autoportrait de dйcembre (1994)"=>{"Documentary","Drama"}},{"Homage (1995)"=>{"Drama"}},{"Every Other Weekend (1990)"=>{"Drama"}}}
+{{"Hana-bi (1997)"=>{"Comedy","Crime","Drama"}},{"Land and Freedom (Tierra y libertad) (1995)"=>{"War"}},{"Eighth Day, The (1996)"=>{"Drama"}}}
+{{"Hana-bi (1997)"=>{"Comedy","Crime","Drama"}},{"Land and Freedom (Tierra y libertad) (1995)"=>{"War"}},{"Silence of the Palace, The (Saimt el Qusur) (1994)"=>{"Drama"}}}
+{{"T-Men (1947)"=>{"Film-Noir"}},{"Terror in a Texas Town (1958)"=>{"Western"}},{"Vie est belle, La (Life is Rosey) (1987)"=>{"Comedy","Drama"}}}
+{{"JLG/JLG - autoportrait de dйcembre (1994)"=>{"Documentary","Drama"}},{"Every Other Weekend (1990)"=>{"Drama"}},{"Bird of Prey (1996)"=>{"Action"}}}
+{{"Hana-bi (1997)"=>{"Comedy","Crime","Drama"}},{"Eighth Day, The (1996)"=>{"Drama"}},{"Silence of the Palace, The (Saimt el Qusur) (1994)"=>{"Drama"}}}
+{{"Land and Freedom (Tierra y libertad) (1995)"=>{"War"}},{"Eighth Day, The (1996)"=>{"Drama"}},{"Silence of the Palace, The (Saimt el Qusur) (1994)"=>{"Drama"}}}
+{{"T-Men (1947)"=>{"Film-Noir"}},{"The Courtyard (1995)"=>{"Action","Thriller"}},{"Terror in a Texas Town (1958)"=>{"Western"}}}
+{{"Homage (1995)"=>{"Drama"}},{"Every Other Weekend (1990)"=>{"Drama"}},{"Bird of Prey (1996)"=>{"Action"}}}
+{{"JLG/JLG - autoportrait de dйcembre (1994)"=>{"Documentary","Drama"}},{"Homage (1995)"=>{"Drama"}},{"Bird of Prey (1996)"=>{"Action"}}}
+{{"The Courtyard (1995)"=>{"Action","Thriller"}},{"Terror in a Texas Town (1958)"=>{"Western"}},{"Vie est belle, La (Life is Rosey) (1987)"=>{"Comedy","Drama"}}}
+{{"JLG/JLG - autoportrait de dйcembre (1994)"=>{"Documentary","Drama"}},{"Homage (1995)"=>{"Drama"}},{"Every Other Weekend (1990)"=>{"Drama"}},{"Bird of Prey (1996)"=>{"Action"}}}
+{{"Hana-bi (1997)"=>{"Comedy","Crime","Drama"}},{"Land and Freedom (Tierra y libertad) (1995)"=>{"War"}},{"Eighth Day, The (1996)"=>{"Drama"}},{"Silence of the Palace, The (Saimt el Qusur) (1994)"=>{"Drama"}}}
+{{"T-Men (1947)"=>{"Film-Noir"}},{"The Courtyard (1995)"=>{"Action","Thriller"}},{"Terror in a Texas Town (1958)"=>{"Western"}},{"Vie est belle, La (Life is Rosey) (1987)"=>{"Comedy","Drama"}}}

@@ -1,0 +1,23 @@
+{{"Liar Liar (1997)"=>{"Comedy"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}}}
+{{"Liar Liar (1997)"=>{"Comedy"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Liar Liar (1997)"=>{"Comedy"}},{"Independence Day (ID4) (1996)"=>{"Action","Sci-Fi","War"}}}
+{{"Independence Day (ID4) (1996)"=>{"Action","Sci-Fi","War"}},{"Broken Arrow (1996)"=>{"Action","Thriller"}}}
+{{"Liar Liar (1997)"=>{"Comedy"}},{"Saint, The (1997)"=>{"Action","Romance","Thriller"}}}
+{{"Saint, The (1997)"=>{"Action","Romance","Thriller"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}}}
+{{"Independence Day (ID4) (1996)"=>{"Action","Sci-Fi","War"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Evita (1996)"=>{"Drama","Musical"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}}}
+{{"Independence Day (ID4) (1996)"=>{"Action","Sci-Fi","War"}},{"Mission: Impossible (1996)"=>{"Action","Adventure","Mystery"}}}
+{{"Scream (1996)"=>{"Horror","Thriller"}},{"Mission: Impossible (1996)"=>{"Action","Adventure","Mystery"}}}
+{{"Broken Arrow (1996)"=>{"Action","Thriller"}},{"Mission: Impossible (1996)"=>{"Action","Adventure","Mystery"}}}
+{{"Liar Liar (1997)"=>{"Comedy"}},{"Dante's Peak (1997)"=>{"Action","Thriller"}}}
+{{"Independence Day (ID4) (1996)"=>{"Action","Sci-Fi","War"}},{"Mars Attacks! (1996)"=>{"Action","Comedy","Sci-Fi","War"}}}
+{{"Scream (1996)"=>{"Horror","Thriller"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}}}
+{{"Liar Liar (1997)"=>{"Comedy"}},{"Mission: Impossible (1996)"=>{"Action","Adventure","Mystery"}}}
+{{"Twister (1996)"=>{"Action","Adventure","Thriller"}},{"Mission: Impossible (1996)"=>{"Action","Adventure","Mystery"}}}
+{{"Independence Day (ID4) (1996)"=>{"Action","Sci-Fi","War"}},{"Twister (1996)"=>{"Action","Adventure","Thriller"}}}
+{{"Saint, The (1997)"=>{"Action","Romance","Thriller"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Independence Day (ID4) (1996)"=>{"Action","Sci-Fi","War"}},{"Twister (1996)"=>{"Action","Adventure","Thriller"}},{"Mission: Impossible (1996)"=>{"Action","Adventure","Mystery"}}}
+{{"Liar Liar (1997)"=>{"Comedy"}},{"Independence Day (ID4) (1996)"=>{"Action","Sci-Fi","War"}},{"Mission: Impossible (1996)"=>{"Action","Adventure","Mystery"}}}
+{{"Independence Day (ID4) (1996)"=>{"Action","Sci-Fi","War"}},{"Broken Arrow (1996)"=>{"Action","Thriller"}},{"Mission: Impossible (1996)"=>{"Action","Adventure","Mystery"}}}
+{{"Liar Liar (1997)"=>{"Comedy"}},{"Scream (1996)"=>{"Horror","Thriller"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}}}
+{{"Independence Day (ID4) (1996)"=>{"Action","Sci-Fi","War"}},{"Scream (1996)"=>{"Horror","Thriller"}},{"Mission: Impossible (1996)"=>{"Action","Adventure","Mystery"}}}

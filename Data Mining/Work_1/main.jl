@@ -1,9 +1,13 @@
 #=
-              ASSOCIATION RULES
+              LIBS
 =#
 #Pkg.clone("https://github.com/JuliaDB/DBI.jl.git")
 #Pkg.clone("https://github.com/iamed2/PostgreSQL.jl")
 #Pkg.clone("https://github.com/JuliaStats/MultivariateStats.jl.git")
+
+#=
+              ASSOCIATION RULES
+=#
 
 using DBI
 using PostgreSQL
@@ -11,7 +15,7 @@ using PostgreSQL
 macro pr(t)
     :(debugging == true && println($t))
 end
-debugging = true
+debugging = false
 
 function apriori(transactions, threshold, articles)
     combination_max_size = length(articles)
@@ -36,28 +40,80 @@ function apriori(transactions, threshold, articles)
         end
     end
     #@show transactions
-    @show result
+    #@show result
+    return result
 end
 
+function writingResults(resultOfApriori, arrayMovies, filename)
+  path=dirname(Base.source_path())
+  finalResults={}
 
+  for set in resultOfApriori
+    if length(set) > 1
+      results={}
+      for ind in set
+        push!(results, arrayMovies[ind])
+      end
+      push!(finalResults ,results)
+    end
+  end
+  writedlm("$path/results/$filename", finalResults)
+end
+
+function writingClustersResults(info, arrayMovies, filename)
+  path=dirname(Base.source_path())
+  results = Dict()
+
+  for i=1:length(info)
+    if haskey(results, info[i])
+      if isdefined(arrayMovies, i)
+        results[info[i]]=push!(results[info[i]],arrayMovies[i])
+      end
+    else
+      list={}
+      results[info[i]]=push!(list,arrayMovies[i])
+    end
+  end
+  writedlm("$path/results/$filename", results)
+end
 
 conn = connect(Postgres, "localhost", "raul", "", "datamining", 5432)
-limit=30
 
+#Movie properties
+SQL="select m.id, m.title, g.name from movies m join genres_movies as gm on gm.movie_id=m.id join genres as g on g.id = gm.genre_id;"
+stmt = prepare(conn, SQL)
+
+arrayMovies = Array(Dict,1682)
+arrayMovies[267]=Dict()#Existe um erro de um registro apenas no banco
+result = execute(stmt)
+moviesProp = Dict()
+for row in result
+  if haskey(moviesProp, row[2])
+    moviesProp[row[2]]=push!(moviesProp[row[2]],row[3])
+  else
+    moviesProp = Dict()
+    list={}
+    moviesProp[row[2]]=push!(list,row[3])
+  end
+  arrayMovies[row[1]]=moviesProp
+end
+finish(stmt)
+
+limit=20
 #First association rule
 subQuery="select movie_id from ratings group by movie_id order by count(movie_id) asc limit $limit"
-
 stmt = prepare(conn, subQuery)
 result=execute(stmt)
+
 most_freq={}
 for row in result
   push!(most_freq, row[1])
 end
 finish(stmt)
 
-#stmt = prepare(conn, "select array_agg(distinct(r.movie_id))::varchar from ratings r join genres_movies as gm on r.movie_id = gm.movie_id group by r.user_id")
 SQL="select user_id, movie_id from ratings where movie_id in ( $subQuery ) group by user_id, movie_id order by user_id;"
 stmt = prepare(conn, SQL)
+
 movies = Dict()
 result = execute(stmt)
 for row in result
@@ -73,16 +129,18 @@ transact={}
 for v = values(movies)
   push!(transact, v)
 end
-threshold = 0.3
+threshold = 0.10
 articles=most_freq
-transactions=transact'
+transactions=transact
 
-apriori(transactions, threshold, articles)
+resultOfApriori=apriori(transactions, threshold, articles)
+#writing results
+writingResults(resultOfApriori, arrayMovies, "rule-1.txt")
 
 
 
 #second association rule
-subQuery="select movie_id from ratings where rating > 3 group by movie_id order by count(movie_id) asc limit $limit"
+subQuery="select movie_id from ratings where rating > 3 group by movie_id order by count(movie_id) desc limit $limit"
 
 stmt = prepare(conn, subQuery)
 result=execute(stmt)
@@ -109,16 +167,18 @@ transact={}
 for v = values(movies)
   push!(transact, v)
 end
-threshold = 0.4
+threshold = 0.2
 articles=most_freq
-transactions=transact'
+transactions=transact
 
-apriori(transactions, threshold, articles)
+resultOfApriori=apriori(transactions, threshold, articles)
+#writing results
+writingResults(resultOfApriori, arrayMovies, "rule-2.txt")
 
 
 
 #third association rule
-subQuery="select movie_id from ratings where rating < 3 group by movie_id order by count(movie_id) asc limit $limit"
+subQuery="select movie_id from ratings where rating < 3 group by movie_id order by count(movie_id) desc limit $limit"
 
 stmt = prepare(conn, subQuery)
 result=execute(stmt)
@@ -145,13 +205,15 @@ transact={}
 for v = values(movies)
   push!(transact, v)
 end
-threshold = 0.4
+threshold = 0.2
 articles=most_freq
-transactions=transact'
+transactions=transact
 
-apriori(transactions, threshold, articles)
+resultOfApriori=apriori(transactions, threshold, articles)
+#writing results
+writingResults(resultOfApriori, arrayMovies, "rule-3.txt")
 
-
+#Data for clustering
 dataSet= zeros(943, 1682)
 SQL="select user_id, movie_id from ratings order by user_id;"
 stmt = prepare(conn, SQL)
@@ -175,6 +237,9 @@ R = kmeans(newMatrix, 10; maxiter=200)
 c = counts(R)
 # a[i] indicates which cluster the i-th sample is assigned to
 a = assignments(R)
+#Measuring how well each object lies within its cluster
+#silhouettes(R, newMatrix)
+writingClustersResults(a, arrayMovies, "clusterResults.txt")
 
 
 #=

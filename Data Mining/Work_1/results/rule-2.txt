@@ -1,0 +1,507 @@
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Titanic (1997)"=>{"Action","Drama","Romance"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}}}
+{{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}}}
+{{"Schindler's List (1993)"=>{"Drama","War"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Fugitive, The (1993)"=>{"Action","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Air Force One (1997)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Air Force One (1997)"=>{"Action","Thriller"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"English Patient, The (1996)"=>{"Drama","Romance","War"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Titanic (1997)"=>{"Action","Drama","Romance"}},{"Air Force One (1997)"=>{"Action","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"English Patient, The (1996)"=>{"Drama","Romance","War"}},{"Titanic (1997)"=>{"Action","Drama","Romance"}}}
+{{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}}}
+{{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Air Force One (1997)"=>{"Action","Thriller"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Schindler's List (1993)"=>{"Drama","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Fugitive, The (1993)"=>{"Action","Thriller"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Fugitive, The (1993)"=>{"Action","Thriller"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Air Force One (1997)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Air Force One (1997)"=>{"Action","Thriller"}}}
+{{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Titanic (1997)"=>{"Action","Drama","Romance"}}}
+{{"Titanic (1997)"=>{"Action","Drama","Romance"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}}}
+{{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Air Force One (1997)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}}}
+{{"English Patient, The (1996)"=>{"Drama","Romance","War"}},{"Air Force One (1997)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}}}
+{{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}}}
+{{"English Patient, The (1996)"=>{"Drama","Romance","War"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Scream (1996)"=>{"Horror","Thriller"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Air Force One (1997)"=>{"Action","Thriller"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Air Force One (1997)"=>{"Action","Thriller"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}}}
+{{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}},{"Air Force One (1997)"=>{"Action","Thriller"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}},{"Scream (1996)"=>{"Horror","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"English Patient, The (1996)"=>{"Drama","Romance","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Schindler's List (1993)"=>{"Drama","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Shawshank Redemption, The (1994)"=>{"Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Jerry Maguire (1996)"=>{"Drama","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Contact (1997)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Twelve Monkeys (1995)"=>{"Drama","Sci-Fi"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Godfather, The (1972)"=>{"Action","Crime","Drama"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Toy Story (1995)"=>{"Animation","Children's","Comedy"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Fargo (1996)"=>{"Crime","Drama","Thriller"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Princess Bride, The (1987)"=>{"Action","Adventure","Comedy","Romance"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Silence of the Lambs, The (1991)"=>{"Drama","Thriller"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}}}
+{{"Star Wars (1977)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Return of the Jedi (1983)"=>{"Action","Adventure","Romance","Sci-Fi","War"}},{"Raiders of the Lost Ark (1981)"=>{"Action","Adventure"}},{"Pulp Fiction (1994)"=>{"Crime","Drama"}},{"Empire Strikes Back, The (1980)"=>{"Action","Adventure","Drama","Romance","Sci-Fi","War"}},{"Fugitive, The (1993)"=>{"Action","Thriller"}}}
