@@ -115,10 +115,29 @@ function executeRecommender(file)
   model01 = Recsys.ImprovedRegularedSVD(train_data, 10);
   predictionsSVD = model01.predict(test_data[:,1:2]);
 
-  m1MAE = Recsys.mae(predictionsSVD, test_data[:,3]);
-  m1RMSE = Recsys.rmse(predictionsSVD, test_data[:,3]);
+  #m1MAE = Recsys.mae(predictionsSVD, test_data[:,3]);
+  #m1RMSE = Recsys.rmse(predictionsSVD, test_data[:,3]);
 
-  return m1MAE, m1RMSE
+  return predictionsSVD#m1MAE, m1RMSE
+end
+
+function executeRecommenderKFold(file, kfold)
+  resultsPredictions=zeros(1)
+  testDataAll = zero(1)
+  for i=1:kfold
+    data = Recsys.Dataset(file);
+
+    experiment = Recsys.HoldOut(0.9, data);
+    train_data = experiment.getTrainData();
+    test_data = experiment.getTestData();
+
+    model01 = Recsys.ImprovedRegularedSVD(train_data, 10);
+    predictionsSVD = model01.predict(test_data[:,1:2]);
+
+    resultsPredictions = vcat(resultsPredictions, predictionsSVD[:,1])
+    testDataAll = vcat(testDataAll, test_data[:,3])
+  end
+  return resultsPredictions[2:length(resultsPredictions)], testDataAll[2:length(testDataAll)]
 end
 
 #= Rodando individual
@@ -131,18 +150,31 @@ MAE, RMSE = executeRecommender("$path/results/$filename")
 #=
   Rodando o IRSVD para cada um dos clusteres criados
 =#
+kfold = 10
+resultsPredictionsTotal = zeros(1)
+testDataTotal = zeros(1)
+
 for k=1:numCluster
-  resultsMAE = zeros(10)
-  resultsRMSE = zeros(10)
+  resultsMAE = zeros(kfold)
+  resultsRMSE = zeros(kfold)
+  resultsPredictions=zeros(kfold)
+
   filename="cluster-$k"
   results = "-results"
-  for i=1:10
-    MAE, RMSE = executeRecommender("$path/results/$filename")
-    resultsMAE[i] = MAE
-    resultsRMSE[i] = RMSE
-  end
-  writedlm("$path/results/$filename$results", [mean(resultsMAE), mean(resultsRMSE)])
+
+  resultsPredictions, testData = executeRecommenderKFold("$path/results/$filename", kfold)
+
+  writedlm("$path/results/$filename$results", [Recsys.mae(resultsPredictions, testData), Recsys.rmse(resultsPredictions, testData)])
+
+  resultsPredictionsTotal = vcat(resultsPredictionsTotal, resultsPredictions)
+  testDataTotal = vcat(testDataTotal, testData)
+
 end
+
+MAE = Recsys.mae(resultsPredictionsTotal[2:length(resultsPredictionsTotal)], testDataTotal[2:length(testDataTotal)])
+RMSE = Recsys.rmse(resultsPredictionsTotal[2:length(resultsPredictionsTotal)], testDataTotal[2:length(testDataTotal)])
+
+writedlm("$path/results/all_results", [MAE, RMSE])
 
 #=
   Rodando o IRSVD para o dataset original
@@ -211,8 +243,31 @@ end
 finish(stmt)
 disconnect(conn)
 
+resultsPredictionsTotal = zeros(1)
+testDataTotal = zeros(1)
 
+for k=1:numGenero
+  resultsMAE = zeros(kfold)
+  resultsRMSE = zeros(kfold)
+  resultsPredictions=zeros(kfold)
 
+  filename="gender-$k"
+  results = "-results"
+
+  resultsPredictions, testData = executeRecommenderKFold("$path/results/original/$filename", kfold)
+
+  writedlm("$path/results/original/$filename$results", [Recsys.mae(resultsPredictions, testData), Recsys.rmse(resultsPredictions, testData)])
+
+  resultsPredictionsTotal = vcat(resultsPredictionsTotal, resultsPredictions)
+  testDataTotal = vcat(testDataTotal, testData)
+
+end
+
+MAE = Recsys.mae(resultsPredictionsTotal[2:length(resultsPredictionsTotal)], testDataTotal[2:length(testDataTotal)])
+RMSE = Recsys.rmse(resultsPredictionsTotal[2:length(resultsPredictionsTotal)], testDataTotal[2:length(testDataTotal)])
+
+writedlm("$path/results/original/all_results", [MAE, RMSE])
+#=
 for genero=1:numGenero
   resultsMAE = zeros(numGenero)
   resultsRMSE = zeros(numGenero)
@@ -225,6 +280,7 @@ for genero=1:numGenero
   end
   writedlm("$path/results/original/$filename$results", [mean(resultsMAE), mean(resultsRMSE)])
 end
+=#
 #=
 experiment = Recsys.KFold(10);
 
@@ -279,3 +335,50 @@ writedlm("$path/results/$filename$results", [m1MAE, m1RMSE])
 @show m1MAE
 
 m3MAE = Recsys.mae(predictionsUM, test_data[:,3]);
+
+
+
+
+
+
+
+# ----------------------Codigo Filipe-----------------------
+using Recsys
+using Clustering
+
+experiment = Recsys.KFold(10);
+
+dataset = experiment.getTrainData(1)
+
+matrix = experiment.getTrainData(1).getMatrix();
+
+(U, S, V) = svd(full(matrix));
+
+itemFeatures = V[:,1:10];
+
+numCluster = 10
+cluster = kmeans(itemFeatures', numCluster; maxiter=200)
+c = counts(cluster)
+a = assignments(cluster)
+
+for i=1:numCluster
+  index = find(r->r==i, a)
+
+  trainData = experiment.getTrainData(1).file
+
+  trainData = trainData[find(r->in(r, index),trainData[:item]),:]
+
+  datasetCluster = Recsys.Dataset(trainData, dataset.users, dataset.items, dataset.preferences)
+
+
+
+  model = Recsys.ImprovedRegularedSVD(datasetCluster, 10);
+
+  testData = experiment.getTestData(1)[:,1:2]
+
+  testData = testData[find(r->in(r, index),testData[:,2]),:]
+
+  predictions = model.predict(testData);
+end
+
+
