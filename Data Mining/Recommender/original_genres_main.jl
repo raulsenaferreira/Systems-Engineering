@@ -60,28 +60,37 @@ end
 finish(stmt)
 disconnect(conn)
 
-targets     = Float64[]
+targets     = Int64[]
 predictions = Float64[]
+
+predictedIds= Array{Int64}[]
 
 for (arrTest, arrRating) in zip(arrTests, arrRatings)
   for i=1:length(arrTest[:,1])
-    genres = d[arrTest[i,2]]
-    sum = 0.0
-    total = 0.0
-    for genre in genres
-      if genre != 19
-        model = arrModel[genre]
-        one_element = [arrTest[i,1] arrTest[i,2]]
-        sum += model.predict(one_element)
-        total += 1
+    if !findElement(predictedIds, [arrTest[i,1] arrTest[i,2]])
+      genres = d[arrTest[i,2]]
+      sum = 0.0
+      total = 0.0
+      for genre in genres
+        if genre != 19
+          model = arrModel[genre]
+          one_element = [arrTest[i,1] arrTest[i,2]]
+          sum += model.predict(one_element)
+          total += 1
+        end
       end
+
+      predicted_rating = sum/total
+      original_rating  = arrRating[i]
+      push!(predictions, round(predicted_rating[1], 3))
+      push!(targets, original_rating)
+      push!(predictedIds, [arrTest[i,1] arrTest[i,2]])
     end
-    predicted_rating = sum/total
-    original_rating  = arrRating[i]
-    push!(predictions, predicted_rating[1])
-    push!(targets, original_rating)
   end
 end
+
+predictions = reshape(predictions, length(predictedIds), 1)
+targets
 
 MAE = Recsys.mae(predictions, targets)
 RMSE = Recsys.rmse(predictions, targets)
@@ -162,8 +171,28 @@ function executeRecommender(file)
   return model, test_data[:,1:2], test_data[:,3]
 end
 
+function findElement(A, pair)
+  element1 = pair[1]
+  element2 = pair[2]
+  for a in A
+    if a[1] == element1 && a[2] == element2
+      return true
+    end
+  end
+  return false
+end
+
+# Test
 path=dirname(Base.source_path())
 data = Recsys.Dataset("$path/original/gender-1")
 experiment = Recsys.KFold(10);
 train_data = experiment.getTrainData(1);
 test_data = experiment.getTestData(1);
+
+model = Recsys.ImprovedRegularedSVD(train_data, 10)
+
+predictions = model.predict(test_data);
+targets = test_data[:,3]
+
+MAE = Recsys.mae(predictions, targets)
+RMSE = Recsys.rmse(predictions, targets)
