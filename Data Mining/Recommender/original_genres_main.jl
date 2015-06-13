@@ -3,13 +3,14 @@ Pkg.clone("https://github.com/JuliaDB/DBI.jl.git")
 Pkg.clone("https://github.com/iamed2/PostgreSQL.jl")
 Pkg.clone("https://github.com/JuliaStats/MultivariateStats.jl.git")
 Pkg.clone("https://github.com/JuliaStats/Clustering.jl")
+Pkg.clone("https://github.com/filipebraida/Recsys.jl.git")
 =#
 
 using DBI
 using PostgreSQL
 using Recsys
 using Clustering
-reload("Recsys")
+#reload("Recsys")
 
 isGrupo = false
 numGenero = 18
@@ -22,27 +23,30 @@ results = "-results"
 #file=string("$path/original/all_results-group-", isGrupo)
 file = "$path/original"
 
-arrTest=Array{Int64}[]
+arrTests=Array{Int64}[]
 arrModel=Recsys.ImprovedRegularedSVD[]
+arrRatings=Array{Int64}[]
 
 for i=1:numGenero
   filename = string(file, "/gender-$i")
 
-  model, test_data = executeRecommender(filename)
+  model, test_data, ratings = executeRecommender(filename)
 
-  push!(arrModel, model);
-  push!(arrTest, test_data)
+  push!(arrModel, model)
+  push!(arrTests, test_data)
+  push!(arrRatings, ratings)
 end
 
-arrTest
+arrTests
 arrModel
+arrRatings
 
 SQL = "SELECT movie_id, array_agg(genre_id)::text AS genres
         FROM genres_movies
         GROUP BY movie_id
         ORDER BY movie_id"
 
-conn = connect(Postgres, "localhost", "raul", "", "movielens", 5432)
+conn = connect(Postgres, "localhost", "postgres", "postgres", "movielens", 5432)
 stmt = prepare(conn, SQL)
 result = execute(stmt)
 
@@ -56,22 +60,31 @@ end
 finish(stmt)
 disconnect(conn)
 
-for arr in arrTest
-  for a in arr
-    genres = d[a]
+targets     = Float64[]
+predictions = Float64[]
+
+for (arrTest, arrRating) in zip(arrTests, arrRatings)
+  for i=1:length(arrTest[:,1])
+    genres = d[arrTest[i,2]]
     sum = 0.0
     total = 0.0
     for genre in genres
-      println(genre)
       if genre != 19
-        model = arrTest[genre]
-        sum += model.predict(testData)
+        model = arrModel[genre]
+        one_element = [arrTest[i,1] arrTest[i,2]]
+        sum += model.predict(one_element)
         total += 1
       end
     end
-    rating = sum/total
+    predicted_rating = sum/total
+    original_rating  = arrRating[i]
+    push!(predictions, predicted_rating[1])
+    push!(targets, original_rating)
   end
 end
+
+MAE = Recsys.mae(predictions, targets)
+RMSE = Recsys.rmse(predictions, targets)
 
   #=
   trainData = experiment.getTrainData(i).file
@@ -146,7 +159,7 @@ function executeRecommender(file)
   test_data = experiment.getTestData(1);
   model = Recsys.ImprovedRegularedSVD(train_data, 10)
 
-  return model, test_data[:,2:3]
+  return model, test_data[:,1:2], test_data[:,3]
 end
 
 path=dirname(Base.source_path())
