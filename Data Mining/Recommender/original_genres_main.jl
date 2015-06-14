@@ -79,18 +79,22 @@ for (arrTest, arrRating) in zip(arrTests, arrRatings)
           total += 1
         end
       end
-
-      predicted_rating = sum/total
-      original_rating  = arrRating[i]
-      push!(predictions, round(predicted_rating[1], 3))
-      push!(targets, original_rating)
-      push!(predictedIds, [arrTest[i,1] arrTest[i,2]])
+      if sum != 0.0 && total != 0.0
+        predicted_rating = sum/total
+        original_rating  = arrRating[i]
+        push!(predictions, round(predicted_rating[1], 3))
+        push!(targets, original_rating)
+        push!(predictedIds, [arrTest[i,1] arrTest[i,2]])
+      end
     end
   end
 end
 
 predictions = reshape(predictions, length(predictedIds), 1)
 targets
+
+writedlm("$path/predictions.txt", predictions)
+writedlm("$path/targets.txt", targets)
 
 MAE = Recsys.mae(predictions, targets)
 RMSE = Recsys.rmse(predictions, targets)
