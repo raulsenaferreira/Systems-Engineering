@@ -9,20 +9,25 @@ using PostgreSQL
 using Recsys
 using Clustering
 using MultivariateStats
-reload("Recsys")
+#reload("Recsys")
 
 
 
 SQL="select movie_id, user_id, rating from ratings;"
 numGenero = 18
-numCluster = 10
+#numCluster = 10
 kfold = 10
 arrayGenero = [1:2]
 
+inferior_limit = 2
+superior_limit = 18
 
 dataSet, originalDataSet = dataRetrieveAndNormalization(SQL)
-dataClustering(dataSet, originalDataSet, numCluster)
-maeRmseEvaluateClusters(kfold, numCluster)
+
+for numCluster=inferior_limit:superior_limit
+  dataClustering(dataSet, originalDataSet, numCluster)
+  maeRmseEvaluateClusters(kfold, numCluster)
+end
 
 SQLGenerateByGenreNumber(arrayGenero, true)
 maeRmseEvaluateGenres(arrayGenero, true)
@@ -78,7 +83,7 @@ end
 
 # Recuperando matriz original e normalizando
 function dataRetrieveAndNormalization(SQL)
-  conn = connect(Postgres, "localhost", "raul", "", "movielens", 5432)
+  conn = connect(Postgres, "localhost", "postgres", "postgres", "movielens", 5432)
   dataSet= zeros(1682, 943)
   stmt = prepare(conn, SQL)
   result = execute(stmt)
@@ -142,7 +147,10 @@ function dataClustering(dataSet, originalDataSet, numCluster)
         end
       end
     end
-    writedlm("$path/results/$filename", aux[2:length(aux[:,1]),:])
+    if !isdir("$path/results$numCluster/")
+      mkdir("$path/results$numCluster/")
+    end
+    writedlm("$path/results$numCluster/$filename", aux[2:length(aux[:,1]),:])
   end
 end
 
@@ -159,9 +167,9 @@ function maeRmseEvaluateClusters(kfold, numCluster)
     filename="cluster-$k"
     results = "-results"
 
-    resultsPredictions, testData = executeRecommenderKFold("$path/results/$filename", kfold)
+    resultsPredictions, testData = executeRecommenderKFold("$path/results$numCluster/$filename", kfold)
 
-    writedlm("$path/results/$filename$results", [Recsys.mae(resultsPredictions, testData), Recsys.rmse(resultsPredictions, testData)])
+    writedlm("$path/results$numCluster/$filename$results", [Recsys.mae(resultsPredictions, testData), Recsys.rmse(resultsPredictions, testData)])
 
     resultsPredictionsTotal = vcat(resultsPredictionsTotal, resultsPredictions)
     testDataTotal = vcat(testDataTotal, testData)
@@ -171,26 +179,26 @@ function maeRmseEvaluateClusters(kfold, numCluster)
   MAE = Recsys.mae(resultsPredictionsTotal[2:length(resultsPredictionsTotal)], testDataTotal[2:length(testDataTotal)])
   RMSE = Recsys.rmse(resultsPredictionsTotal[2:length(resultsPredictionsTotal)], testDataTotal[2:length(testDataTotal)])
 
-  writedlm("$path/results/all_results", [MAE, RMSE])
+  writedlm("$path/results$numCluster/all_results", [MAE, RMSE])
 end
 
 #Executa o recomendador k-vezes (kfold) e retorna as previsões
 function executeRecommenderKFold(file, kfold)
   resultsPredictions=zeros(1)
   testDataAll = zero(1)
-  for i=1:kfold
-    data = Recsys.Dataset(file);
 
-    experiment = Recsys.HoldOut(0.9, data);
-    train_data = experiment.getTrainData();
-    test_data = experiment.getTestData();
+  data = Recsys.Dataset(file);
+  experiment = Recsys.KFold(kfold);
 
-    model01 = Recsys.ImprovedRegularedSVD(train_data, 10);
-    predictionsSVD = model01.predict(test_data[:,1:2]);
+  train_data = experiment.getTrainData(1);
+  test_data = experiment.getTestData(1);
 
-    resultsPredictions = vcat(resultsPredictions, predictionsSVD[:,1])
-    testDataAll = vcat(testDataAll, test_data[:,3])
-  end
+  model01 = Recsys.ImprovedRegularedSVD(train_data, 10);
+  predictionsSVD = model01.predict(test_data[:,1:2]);
+
+  resultsPredictions = vcat(resultsPredictions, predictionsSVD[:,1])
+  testDataAll = vcat(testDataAll, test_data[:,3])
+
   return resultsPredictions[2:length(resultsPredictions)], testDataAll[2:length(testDataAll)]
 end
 
