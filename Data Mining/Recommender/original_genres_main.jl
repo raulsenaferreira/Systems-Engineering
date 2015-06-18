@@ -12,34 +12,9 @@ using Recsys
 using Clustering
 #reload("Recsys")
 
-isGrupo = false
 numGenero = 18
 arrayGenero = [1:numGenero]
 path=dirname(Base.source_path())
-
-SQLGenerateByGenreNumber(arrayGenero, isGrupo)
-
-results = "-results"
-#file=string("$path/original/all_results-group-", isGrupo)
-file = "$path/original"
-
-arrTests=Array{Int64}[]
-arrModel=Recsys.ImprovedRegularedSVD[]
-arrRatings=Array{Int64}[]
-
-for i=1:numGenero
-  filename = string(file, "/gender-$i")
-
-  model, test_data, ratings = executeRecommender(filename)
-
-  push!(arrModel, model)
-  push!(arrTests, test_data)
-  push!(arrRatings, ratings)
-end
-
-arrTests
-arrModel
-arrRatings
 
 SQL = "SELECT movie_id, array_agg(genre_id)::text AS genres
         FROM genres_movies
@@ -60,37 +35,42 @@ end
 finish(stmt)
 disconnect(conn)
 
+arrModel=Recsys.ImprovedRegularedSVD[]
+
+for i=1:numGenero
+  experiment = prepareExperiment()
+  model = executeRecommender(experiment, i, d)
+
+  push!(arrModel, model)
+end
+
+test_data = experiment.getTestData(1)
+
 targets     = Int64[]
 predictions = Float64[]
 
-predictedIds= Array{Int64}[]
-
-for (arrTest, arrRating) in zip(arrTests, arrRatings)
-  for i=1:length(arrTest[:,1])
-    if !findElement(predictedIds, [arrTest[i,1] arrTest[i,2]])
-      genres = d[arrTest[i,2]]
-      sum = 0.0
-      total = 0.0
-      for genre in genres
-        if genre != 19
-          model = arrModel[genre]
-          one_element = [arrTest[i,1] arrTest[i,2]]
-          sum += model.predict(one_element)
-          total += 1
-        end
-      end
-      if sum != 0.0 && total != 0.0
-        predicted_rating = sum/total
-        original_rating  = arrRating[i]
-        push!(predictions, round(predicted_rating[1], 3))
-        push!(targets, original_rating)
-        push!(predictedIds, [arrTest[i,1] arrTest[i,2]])
-      end
+for i=1:length(test_data[:,1])
+  genres = d[test_data[i,2]]
+  sum = 0.0
+  total = 0.0
+  for genre in genres
+    if genre != 19
+      model = arrModel[genre]
+      one_element = [test_data[i,1] test_data[i,2]]
+      println(test_data[i,:])
+      sum += model.predict(one_element)
+      total += 1
     end
+  end
+  if sum != 0.0 && total != 0.0
+    predicted_rating = sum/total
+    original_rating  = test_data[i,3]
+    push!(predictions, predicted_rating[1])
+    push!(targets, original_rating)
   end
 end
 
-predictions = reshape(predictions, length(predictedIds), 1)
+predictions = reshape(predictions, length(predictions), 1)
 targets
 
 writedlm("$path/predictions.txt", predictions)
@@ -98,22 +78,6 @@ writedlm("$path/targets.txt", targets)
 
 MAE = Recsys.mae(predictions, targets)
 RMSE = Recsys.rmse(predictions, targets)
-
-  #=
-  trainData = experiment.getTrainData(i).file
-
-  trainData = trainData[find(r->in(r, index),trainData[:item]),:]
-
-  datasetCluster = Recsys.Dataset(trainData, dataset.users, dataset.items, dataset.preferences)
-
-  model = Recsys.ImprovedRegularedSVD(datasetCluster, 10);
-  push!(arrModel, arrModel)
-  testData = experiment.getTestData(i)[:,1:2]
-
-  testData = testData[find(r->in(r, index),testData[:,2]),:]
-  push!(arr, arrayTestData)
-  predictions = model.predict(testData);
-  =#
 
 function SQLGenerateByGenreNumber(arrayGenero, isGrupo)
   SQL="SELECT	r.user_id, r.movie_id, r.rating
@@ -148,7 +112,6 @@ function SQLGenerateByGenreNumber(arrayGenero, isGrupo)
   end
 end
 
-
 # Cria cluster com os gêneros originais e salva em arquivo
 function clusteringCreate(SQL, filename)
   path=dirname(Base.source_path())
@@ -165,38 +128,32 @@ function clusteringCreate(SQL, filename)
   writedlm("$path/original/$filename", tuple[2:length(tuple[:,1]),:])
 end
 
-function executeRecommender(file)
-  data = Recsys.Dataset(file);
+function prepareExperiment()
+  data = Recsys.Dataset();
   experiment = Recsys.KFold(10);
+  return experiment
+end
+
+function executeRecommender(experiment, genre, item_genres)
+
   train_data = experiment.getTrainData(1);
   test_data = experiment.getTestData(1);
-  model = Recsys.ImprovedRegularedSVD(train_data, 10)
 
-  return model, test_data[:,1:2], test_data[:,3]
-end
+  item_data = train_data.file
 
-function findElement(A, pair)
-  element1 = pair[1]
-  element2 = pair[2]
-  for a in A
-    if a[1] == element1 && a[2] == element2
-      return true
+  # Gambis, descobrir como faz corretamente
+  genre_train_data = item_data[1,:]
+  for genres in item_genres
+    if in(genre, genres[2])
+      itens = find(x -> x == genre[1], item_data[2])
+      selected_data = [ [item_data[i,1] item_data[i,2] item_data[i,3] item_data[i,4]] for i in itens ]
+      for sd in selected_data
+        push!(genre_train_data, sd)
+      end
     end
   end
-  return false
+  genre_train_data = Recsys.Dataset(genre_train_data[2:length(genre_train_data),:], data.users, data.items, data.preferences)
+  model = Recsys.ImprovedRegularedSVD(genre_train_data, 10)
+
+  return model
 end
-
-# Test
-path=dirname(Base.source_path())
-data = Recsys.Dataset("$path/original/gender-1")
-experiment = Recsys.KFold(10);
-train_data = experiment.getTrainData(1);
-test_data = experiment.getTestData(1);
-
-model = Recsys.ImprovedRegularedSVD(train_data, 10)
-
-predictions = model.predict(test_data);
-targets = test_data[:,3]
-
-MAE = Recsys.mae(predictions, targets)
-RMSE = Recsys.rmse(predictions, targets)
