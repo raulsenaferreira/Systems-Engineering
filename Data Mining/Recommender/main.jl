@@ -19,14 +19,16 @@ numGenero = 18
 kfold = 10
 arrayGenero = [1:2]
 
+method = "holdout"
+
 inferior_limit = 2
 superior_limit = 18
 
 dataSet, originalDataSet = dataRetrieveAndNormalization(SQL)
 
 for numCluster=inferior_limit:superior_limit
-  dataClustering(dataSet, originalDataSet, numCluster)
-  maeRmseEvaluateClusters(kfold, numCluster)
+  dataClustering(dataSet, originalDataSet, method, numCluster)
+  maeRmseEvaluateClusters(kfold, numCluster, method)
 end
 
 SQLGenerateByGenreNumber(arrayGenero, true)
@@ -115,7 +117,7 @@ function dataRetrieveAndNormalization(SQL)
 end
 
 #Cria clusters e salva em arquivos
-function dataClustering(dataSet, originalDataSet, numCluster)
+function dataClustering(dataSet, originalDataSet, method, numCluster)
   M=fit(PCA, dataSet'; maxoutdim=10)
   newMatrix=transform(M, dataSet')
 
@@ -147,29 +149,37 @@ function dataClustering(dataSet, originalDataSet, numCluster)
         end
       end
     end
-    if !isdir("$path/results$numCluster/")
-      mkdir("$path/results$numCluster/")
+    if !isdir("$path/results-$method-$numCluster/")
+      mkdir("$path/results-$method-$numCluster/")
     end
-    writedlm("$path/results$numCluster/$filename", aux[2:length(aux[:,1]),:])
+    writedlm("$path/results-$method-$numCluster/$filename", aux[2:length(aux[:,1]),:])
   end
 end
 
 # calcula o RMSE e o MAE e roda o IRSVD para cada um dos clusteres criados e salva em arquivos
-function maeRmseEvaluateClusters(kfold, numCluster)
+function maeRmseEvaluateClusters(kfold, numCluster, method)
   resultsPredictionsTotal = zeros(1)
   testDataTotal = zeros(1)
 
+  path=dirname(Base.source_path())
+
   for k=1:numCluster
-    resultsMAE = zeros(kfold)
-    resultsRMSE = zeros(kfold)
+    #resultsMAE = zeros(kfold)
+    #resultsRMSE = zeros(kfold)
     resultsPredictions=zeros(kfold)
 
     filename="cluster-$k"
     results = "-results"
 
-    resultsPredictions, testData = executeRecommenderKFold("$path/results$numCluster/$filename", kfold)
+    if method == "kfold"
+      resultsPredictions, testData = executeRecommenderKFold("$path/results-$method-$numCluster/$filename", kfold)
+    elseif method == "holdout"
+      resultsPredictions, testData = executeRecommenderHoldOut("$path/results-$method-$numCluster/$filename", kfold)
+    else
+      throw(Exception())
+    end
 
-    writedlm("$path/results$numCluster/$filename$results", [Recsys.mae(resultsPredictions, testData), Recsys.rmse(resultsPredictions, testData)])
+    writedlm("$path/results-$method-$numCluster/$filename$results", [Recsys.mae(resultsPredictions, testData), Recsys.rmse(resultsPredictions, testData)])
 
     resultsPredictionsTotal = vcat(resultsPredictionsTotal, resultsPredictions)
     testDataTotal = vcat(testDataTotal, testData)
@@ -179,7 +189,7 @@ function maeRmseEvaluateClusters(kfold, numCluster)
   MAE = Recsys.mae(resultsPredictionsTotal[2:length(resultsPredictionsTotal)], testDataTotal[2:length(testDataTotal)])
   RMSE = Recsys.rmse(resultsPredictionsTotal[2:length(resultsPredictionsTotal)], testDataTotal[2:length(testDataTotal)])
 
-  writedlm("$path/results$numCluster/all_results", [MAE, RMSE])
+  writedlm("$path/results-$method-$numCluster/all_results", [MAE, RMSE])
 end
 
 #Executa o recomendador k-vezes (kfold) e retorna as previsões
@@ -202,8 +212,29 @@ function executeRecommenderKFold(file, kfold)
   return resultsPredictions[2:length(resultsPredictions)], testDataAll[2:length(testDataAll)]
 end
 
+#Executa o recomendador k-vezes em holdout e retorna as previsões
+function executeRecommenderHoldOut(file, times)
+  resultsPredictions=zeros(1)
+  testDataAll = zero(1)
+  for i=1:times
+    data = Recsys.Dataset(file);
+
+    experiment = Recsys.HoldOut(0.9, data);
+    train_data = experiment.getTrainData();
+    test_data = experiment.getTestData();
+
+    model01 = Recsys.ImprovedRegularedSVD(train_data, 10);
+    predictionsSVD = model01.predict(test_data[:,1:2]);
+
+    resultsPredictions = vcat(resultsPredictions, predictionsSVD[:,1])
+    testDataAll = vcat(testDataAll, test_data[:,3])
+  end
+  return resultsPredictions[2:length(resultsPredictions)], testDataAll[2:length(testDataAll)]
+end
+
 # calcula o RMSE e o MAE e roda o IRSVD para os gêneros originais agrupados ou não e salva em arquivos
 function maeRmseEvaluateGenres(arrayGenero, isGrupo)
+  path=dirname(Base.source_path())
   resultsPredictionsTotal = zeros(1)
   testDataTotal = zeros(1)
   nomeGenero = ""
