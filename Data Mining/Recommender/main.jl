@@ -19,7 +19,7 @@ numGenero = 18
 kfold = 10
 arrayGenero = [1:2]
 
-method = "holdout"
+method = "kfold"
 
 inferior_limit = 2
 superior_limit = 18
@@ -200,10 +200,27 @@ function executeRecommenderKFold(file, kfold)
   data = Recsys.Dataset(file);
   experiment = Recsys.KFold(kfold);
 
-  train_data = experiment.getTrainData(1);
-  test_data = experiment.getTestData(1);
+  trainMAEs = Float64[]
+  arrModel = Recsys.ImprovedRegularedSVD[]
 
-  model01 = Recsys.ImprovedRegularedSVD(train_data, 10);
+  for i=1:kfold
+    train_data = experiment.getTrainData(i);
+    model = Recsys.ImprovedRegularedSVD(train_data, 10);
+    train_data = train_data.file
+    train_data = [train_data[:,1] train_data[:,2] train_data[:,3] train_data[:,4]]
+    predictions = model.predict(train_data[:,1:2]);
+
+    MAE = Recsys.mae(predictions, train_data[:,3])
+
+    push!(arrModel, model)
+    push!(trainMAEs, MAE)
+  end
+
+  index = indmin(trainMAEs)
+  model01 = arrModel[index]
+
+  test_data = experiment.getTestData(index);
+
   predictionsSVD = model01.predict(test_data[:,1:2]);
 
   resultsPredictions = vcat(resultsPredictions, predictionsSVD[:,1])
