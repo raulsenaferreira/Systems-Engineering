@@ -16,6 +16,8 @@ numGenero = 18
 arrayGenero = [1:numGenero]
 path=dirname(Base.source_path())
 
+method = "holdout"
+
 SQL = "SELECT movie_id, array_agg(genre_id)::text AS genres
         FROM genres_movies
         GROUP BY movie_id
@@ -35,38 +37,91 @@ end
 finish(stmt)
 disconnect(conn)
 
-arrModel=Recsys.ImprovedRegularedSVD[]
+arrModel=Array{Recsys.ImprovedRegularedSVD}[]
+arrMAE = Array{Float64}[]
+experiment = prepareExperiment(method)
 
 for i=1:numGenero
-  experiment = prepareExperiment()
-  model = executeRecommender(experiment, i, d)
-
-  push!(arrModel, model)
+  if method == "holdout"
+    model, arrTest = executeRecommenderHoldOut(experiment, i, d)
+    if isempty(arrModel)
+      arrModel = model
+    else
+      arrModel = hcat(arrModel, model)
+    end
+  elseif method == "kfold"
+    model, maes = executeRecommenderKFold(experiment, i, d)
+    if isempty(arrMAE)
+      arrMAE = maes
+      arrModel = model
+    else
+      arrMAE = hcat(arrMAE, maes)
+      arrModel = hcat(arrModel, model)
+    end
+  end
 end
 
-test_data = experiment.getTestData(1)
+if method == "kfold"
+  trainMAEs = Float64[]
+  for i=1:length(arrMAE[:,1])
+    m = mean(arrMAE[:,i])
+    push!(trainMAEs, m)
+  end
+
+  index = indmin(trainMAEs)
+  models = arrModel[index,:]
+  arrMAE = models
+
+  test_data = experiment.getTestData(index)
+end
 
 targets     = Int64[]
 predictions = Float64[]
 
-for i=1:length(test_data[:,1])
-  genres = d[test_data[i,2]]
-  sum = 0.0
-  total = 0.0
-  for genre in genres
-    if genre != 19
-      model = arrModel[genre]
-      one_element = [test_data[i,1] test_data[i,2]]
-      println(test_data[i,:])
-      sum += model.predict(one_element)
-      total += 1
+if method == "kfold"
+  for i=1:length(test_data[:,1])
+    genres = d[test_data[i,2]]
+    sum = 0.0
+    total = 0.0
+    for genre in genres
+      if genre != 19
+        model = arrModel[genre]
+        one_element = [test_data[i,1] test_data[i,2]]
+        sum += model.predict(one_element)
+        total += 1
+      end
+    end
+    if sum != 0.0 && total != 0.0
+      predicted_rating = sum/total
+      original_rating  = test_data[i,3]
+      push!(predictions, predicted_rating[1])
+      push!(targets, original_rating)
     end
   end
-  if sum != 0.0 && total != 0.0
-    predicted_rating = sum/total
-    original_rating  = test_data[i,3]
-    push!(predictions, predicted_rating[1])
-    push!(targets, original_rating)
+elseif method == "holdout"
+  offset = 4
+  for k=1:10
+    test_data = arrTest[:,(k-1)*offset + 1:(k-1)*offset + offset]
+    models = arrModel[k,:]
+    for i=1:length(test_data[:,1])
+      genres = d[test_data[i,2]]
+      sum = 0.0
+      total = 0.0
+      for genre in genres
+        if genre != 19
+          model = models[genre]
+          one_element = [test_data[i,1] test_data[i,2]]
+          sum += model.predict(one_element)
+          total += 1
+        end
+      end
+      if sum != 0.0 && total != 0.0
+        predicted_rating = sum/total
+        original_rating  = test_data[i,3]
+        push!(predictions, predicted_rating[1])
+        push!(targets, original_rating)
+      end
+    end
   end
 end
 
@@ -128,32 +183,90 @@ function clusteringCreate(SQL, filename)
   writedlm("$path/original/$filename", tuple[2:length(tuple[:,1]),:])
 end
 
-function prepareExperiment()
+function prepareExperiment(method)
   data = Recsys.Dataset();
-  experiment = Recsys.KFold(10);
+  if method == "kfold"
+    experiment = Recsys.KFold(10);
+  elseif method == "holdout"
+    experiment = Recsys.HoldOut(0.9, data);
+  end
   return experiment
 end
 
-function executeRecommender(experiment, genre, item_genres)
+function executeRecommenderHoldOut(experiment, genre, item_genres)
+  data = Recsys.Dataset();
 
-  train_data = experiment.getTrainData(1);
-  test_data = experiment.getTestData(1);
+  arrModel=Recsys.ImprovedRegularedSVD[]
+  arrTest = Array{Float64}[]
+  for i=1:10
+    experiment = Recsys.HoldOut(0.9, data);
 
-  item_data = train_data.file
+    train_data = experiment.getTrainData();
+    test_data = experiment.getTestData();
 
-  # Gambis, descobrir como faz corretamente
-  genre_train_data = item_data[1,:]
-  for genres in item_genres
-    if in(genre, genres[2])
-      itens = find(x -> x == genre[1], item_data[2])
-      selected_data = [ [item_data[i,1] item_data[i,2] item_data[i,3] item_data[i,4]] for i in itens ]
-      for sd in selected_data
-        push!(genre_train_data, sd)
+    item_data = train_data.file
+
+    # Gambis, descobrir como faz corretamente
+    genre_train_data = item_data[1,:]
+    for genres in item_genres
+      if in(genre, genres[2])
+        itens = find(x -> x == genre[1], item_data[2])
+        selected_data = [ [item_data[i,1] item_data[i,2] item_data[i,3] item_data[i,4]] for i in itens ]
+        for sd in selected_data
+          push!(genre_train_data, sd)
+        end
       end
     end
-  end
-  genre_train_data = Recsys.Dataset(genre_train_data[2:length(genre_train_data),:], data.users, data.items, data.preferences)
-  model = Recsys.ImprovedRegularedSVD(genre_train_data, 10)
+    genre_train_data = Recsys.Dataset(genre_train_data[2:length(genre_train_data),:], data.users, data.items, data.preferences)
+    model = Recsys.ImprovedRegularedSVD(genre_train_data, 10)
 
-  return model
+    push!(arrModel, model)
+    if isempty(arrTest)
+      arrTest = test_data
+    else
+      arrTest = hcat(arrTest, test_data)
+    end
+  end
+
+  return arrModel, arrTest[2:length(arrTest[:,1]),:]
+end
+
+function executeRecommenderKFold(experiment, genre, item_genres)
+  data = Recsys.Dataset();
+
+  trainMAEs = Float64[]
+  arrModel = Recsys.ImprovedRegularedSVD[]
+  kfold = 10
+  for i=1:kfold
+    train_data = experiment.getTrainData(i);
+    #test_data = experiment.getTestData(i);
+
+    item_data = train_data.file
+
+    # Gambis, descobrir como faz corretamente
+    genre_train_data = item_data[1,:]
+    for genres in item_genres
+      if in(genre, genres[2])
+        itens = find(x -> x == genre[1], item_data[2])
+        selected_data = [ [item_data[i,1] item_data[i,2] item_data[i,3] item_data[i,4]] for i in itens ]
+        for sd in selected_data
+          push!(genre_train_data, sd)
+        end
+      end
+    end
+
+    genre_train_data = Recsys.Dataset(genre_train_data[2:length(genre_train_data),:], data.users, data.items, data.preferences)
+    model = Recsys.ImprovedRegularedSVD(genre_train_data, 10)
+
+    genre_train_data = genre_train_data.file
+    genre_train_data = [genre_train_data[:,1] genre_train_data[:,2] genre_train_data[:,3] genre_train_data[:,4]]
+    predictions = model.predict(genre_train_data[:,1:2]);
+
+    MAE = Recsys.mae(predictions, genre_train_data[:,3])
+
+    push!(arrModel, model)
+    push!(trainMAEs, MAE)
+  end
+
+  return arrModel, trainMAEs
 end
