@@ -1,0 +1,130 @@
+//grafico
+function drawChart(){
+    var mapCrm={};
+    var crm=0.0;
+    var masculino = 1;
+    var feminino = 1;
+    var seropedica = 0;
+    var ni = 0;
+    var tr = 0;
+    var crmMasculino = 0.0;
+    var crmFeminino = 0.0;
+
+    var coordenadas = "";
+    var tCoordenadas = $("#pontos").val();
+    
+    if(tCoordenadas != undefined && tCoordenadas != ""){
+        coordenadas = JSON.parse(tCoordenadas);
+    }
+    if(coordenadas[0] && coordenadas!=null){
+        
+        $.each(coordenadas , function(i){
+
+            if (coordenadas[i].sexo=="M" && (coordenadas[i].cra!="" && coordenadas[i].cra!=null)) {
+                crmMasculino+=parseFloat(coordenadas[i].cra);
+                masculino++;
+            }
+            else if (coordenadas[i].sexo=="F" && (coordenadas[i].cra!="" && coordenadas[i].cra!=null)) {
+                crmFeminino+=parseFloat(coordenadas[i].cra);
+                feminino++;
+            }
+            if (coordenadas[i].campus=="Seropédica") {
+                seropedica++;
+            }
+            else if (coordenadas[i].campus=="Nova Iguaçu") {
+                ni++;
+            }
+            else if (coordenadas[i].campus=="Três Rios") {
+                tr++;
+            }
+            //pegar CR médio de forma genérica independente da consulta
+            mapCrm[coordenadas[i].campus]=coordenadas[i].crm;
+        });
+    }
+    coordenadas="";
+
+    // For a pie chart
+    var genero = [
+        {
+            value: masculino,
+            color:"#F7464A",
+            highlight: "#FF5A5E",
+            label: "Masculino"
+        },
+        {
+            value: feminino,
+            color: "#46BFBD",
+            highlight: "#5AD3D1",
+            label: "Feminino"
+        }
+    ]
+
+    var html='<canvas id="graficoGenero" width="250" height="250"></canvas>';
+     $("#genero").html(html);               
+    var ctx = $("#graficoGenero").get(0).getContext("2d");
+    var myPieChart = new Chart(ctx).Pie(genero);
+    
+    // Doughnut
+    var campus = [
+        {
+            value: seropedica,
+            color:"#F7464A",
+            highlight: "#FF5A5E",
+            label: "Seropédica"
+        },
+        {
+            value: ni,
+            color: "#46BFBD",
+            highlight: "#5AD3D1",
+            label: "Nova Iguaçu"
+        },
+        {
+            value: tr,
+            color: "#FDB45C",
+            highlight: "#FFC870",
+            label: "Três Rios"
+        }
+    ]
+    
+    var html='<canvas id="graficoCampus" width="250" height="250"></canvas>';
+     $("#campus").html(html);               
+    // For a pie chart
+    var ctx = $("#graficoCampus").get(0).getContext("2d");
+    var myPieChart = new Chart(ctx).Doughnut(campus);
+
+    //Polar
+    //var myPieChart = new Chart(ctx).PolarArea(coordenadas);
+    //Radar
+    //var myPieChart = new Chart(ctx).Radar(data);
+    
+    //Bar
+    var count=0.0;
+    for(indice in mapCrm){
+        crm+=parseFloat(mapCrm[indice]);
+        count++;
+    }
+    crm /= count;
+    
+    crmMasculino = crmMasculino/masculino;
+    crmFeminino = crmFeminino/feminino;
+    
+    var crMedio = {
+        labels: ["Geral", "Masculino", "Feminino"],
+        datasets: [
+            {
+                label: "CRM",
+                fillColor: "rgba(220,220,220,0.5)",
+                strokeColor: "rgba(220,220,220,0.8)",
+                highlightFill: "rgba(220,220,220,0.75)",
+                highlightStroke: "rgba(220,220,220,1)",
+                data: [crm.toFixed(2), crmMasculino.toFixed(2), crmFeminino.toFixed(2)]
+            }
+        ]
+    };
+    var html='<canvas id="graficoCrm" width="250" height="250"></canvas>';
+     $("#crm").html(html);
+
+    //pie chart
+    var ctx = $("#graficoCrm").get(0).getContext("2d");
+    var myPieChart = new Chart(ctx).Bar(crMedio);
+}

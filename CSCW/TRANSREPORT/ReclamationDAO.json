@@ -1,0 +1,4392 @@
+{ "results": [
+    {
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "332",
+        "createdAt": "2014-11-26T05:24:32.703Z",
+        "date": "26/11/2014",
+        "objectId": "pKNsoEqRfc",
+        "time": "03:24",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:17.650Z"
+    },
+    {
+        "bus_com": "prestador ",
+        "bus_id": "",
+        "bus_num": "919",
+        "createdAt": "2014-11-25T20:54:19.890Z",
+        "date": "25/10/2013",
+        "objectId": "dIVKGexb3A",
+        "time": "18:27",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-22T14:00:49.418Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "529",
+        "createdAt": "2014-11-24T15:22:00.740Z",
+        "date": "24/11/2014",
+        "objectId": "dBGa5GPQIu",
+        "time": "13:21",
+        "type": "foi assaltado",
+        "type_id": 10,
+        "updatedAt": "2015-01-09T02:08:35.434Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "358",
+        "createdAt": "2014-11-24T02:44:17.145Z",
+        "date": "24/11/2014",
+        "objectId": "bwEKpQhDlf",
+        "time": "00:44",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:08:39.759Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "20771",
+        "bus_num": "616",
+        "createdAt": "2014-11-25T20:51:07.061Z",
+        "date": "25/10/2014",
+        "objectId": "WzXIYzVQbf",
+        "time": "18:48",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:01:41.548Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-01-09T08:58:37.073Z",
+        "date": "09/01/2015",
+        "objectId": "71UIUIPyca",
+        "time": "06:57",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-09T08:58:37.073Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "247",
+        "createdAt": "2015-01-09T09:45:07.516Z",
+        "date": "09/01/2015",
+        "objectId": "vdPApTZrH3",
+        "time": "07:43",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T09:45:07.516Z"
+    },
+    {
+        
+        "bus_com": "A",
+        "bus_id": "C39656",
+        "bus_num": "959",
+        "createdAt": "2015-01-09T11:39:00.660Z",
+        "date": "09/01/2015",
+        "objectId": "0j1KMlAG7Q",
+        "time": "09:38",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-09T11:39:00.660Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "c47801",
+        "bus_num": "368",
+        "createdAt": "2015-01-09T14:07:10.121Z",
+        "date": "09/01/2015",
+        "objectId": "zOxrWlqdge",
+        "time": "12:06",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-09T14:07:10.121Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "b63010",
+        "bus_num": "920",
+        "createdAt": "2015-01-10T11:45:46.841Z",
+        "date": "10/01/2015",
+        "objectId": "OHqslCx8FO",
+        "time": "09:44",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-10T11:45:46.841Z"
+    },
+    {
+        
+        "bus_id": "",
+        "bus_num": "612",
+        "createdAt": "2015-01-26T18:52:30.120Z",
+        "date": "26/01/2015",
+        "objectId": "ZYiTg7S8rt",
+        "time": "16:52",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-26T18:52:30.120Z"
+    },
+    {
+        
+        "bus_id": "86824",
+        "bus_num": "86824",
+        "createdAt": "2015-01-26T21:56:34.553Z",
+        "date": "26/01/2015",
+        "objectId": "IyY0kuW5Eb",
+        "time": "19:50",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-26T21:56:34.553Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "226",
+        "createdAt": "2014-12-31T12:56:10.698Z",
+        "date": "31/12/2014",
+        "objectId": "ocLE7ByJEP",
+        "time": "10:55",
+        "type": "está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-01-09T02:30:11.630Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "b51504",
+        "bus_num": "917",
+        "createdAt": "2014-12-19T13:32:03.859Z",
+        "date": "19/12/2014",
+        "objectId": "bUMz4h5XSI",
+        "time": "11:31",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:06:16.653Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "485",
+        "createdAt": "2014-12-11T23:10:17.227Z",
+        "date": "11/12/2014",
+        "objectId": "h0k89dzryy",
+        "time": "20:10",
+        "type": "está com falhas técnicas",
+        "type_id": 9,
+        "updatedAt": "2015-01-09T02:06:38.408Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "b32654",
+        "bus_num": "298",
+        "createdAt": "2014-12-19T13:31:45.026Z",
+        "date": "19/12/2014",
+        "objectId": "Tsb4cRKFF9",
+        "time": "11:32",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:06:18.194Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "b51517",
+        "bus_num": "917",
+        "createdAt": "2014-12-11T21:52:47.975Z",
+        "date": "11/12/2014",
+        "objectId": "dI4eeD7IDO",
+        "time": "19:51",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:06:42.690Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "b51617",
+        "bus_num": "917",
+        "createdAt": "2014-12-11T21:53:05.732Z",
+        "date": "11/12/2014",
+        "objectId": "Olv8Fad7vw",
+        "time": "19:52",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:06:41.699Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "58138",
+        "bus_num": "621",
+        "createdAt": "2014-12-01T11:20:07.357Z",
+        "date": "01/12/2014",
+        "objectId": "74g8gZ5ejZ",
+        "time": "09:19",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:06:43.391Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "221",
+        "createdAt": "2014-11-29T14:13:50.897Z",
+        "date": "29/11/2014",
+        "objectId": "N95WGIV8nO",
+        "time": "12:13",
+        "type": "atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-01-09T02:06:57.413Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "585",
+        "createdAt": "2014-11-27T15:42:46.986Z",
+        "date": "27/11/2014",
+        "objectId": "BKzCFoL1nX",
+        "time": "13:41",
+        "type": "atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-01-09T02:07:07.508Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "A52658",
+        "bus_num": "226",
+        "createdAt": "2014-11-29T13:30:44.945Z",
+        "date": "29/11/2014",
+        "objectId": "9PO9lODzbz",
+        "time": "11:30",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:04.429Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "332",
+        "createdAt": "2014-11-26T05:13:34.591Z",
+        "date": "26/11/2014",
+        "objectId": "loIQ3nxzSD",
+        "time": "03:13",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:21.884Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "112",
+        "createdAt": "2014-11-26T05:00:40.165Z",
+        "date": "26/11/2014",
+        "objectId": "56h7zh7XeX",
+        "time": "03:00",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:26.029Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "332",
+        "createdAt": "2014-11-26T04:33:53.711Z",
+        "date": "26/11/2014",
+        "objectId": "szZe5gTmdD",
+        "time": "02:33",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:31.238Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "226",
+        "createdAt": "2014-11-26T04:45:03.281Z",
+        "date": "26/11/2014",
+        "objectId": "jFbeImrvFD",
+        "time": "02:44",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:27.401Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "1234",
+        "createdAt": "2014-11-25T21:06:10.994Z",
+        "date": "25/10/2014",
+        "objectId": "yVFSruBi2c",
+        "time": "19:04",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:41.227Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "1237",
+        "createdAt": "2014-11-25T21:04:45.066Z",
+        "date": "03/11/2014",
+        "objectId": "NPpdQ5lL8E",
+        "time": "19:03",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:41.964Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "1237",
+        "createdAt": "2014-11-25T21:03:32.499Z",
+        "date": "25/10/2014",
+        "objectId": "ePRBjOj8jj",
+        "time": "19:03",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:43.326Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "123",
+        "createdAt": "2014-11-25T21:03:09.974Z",
+        "date": "25/10/2014",
+        "objectId": "ufaRbDLFkQ",
+        "time": "04:01",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:46.392Z"
+    },
+    {
+        
+        "bus_com": "699335u",
+        "bus_id": "36641",
+        "bus_num": "3588",
+        "createdAt": "2014-11-25T21:01:38.917Z",
+        "date": "29/05/2021",
+        "image": {
+            "__type": "File",
+            "name": "tfss-ace36181-82a3-4b42-ac7a-682b284e868b-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-ace36181-82a3-4b42-ac7a-682b284e868b-image.png"
+        },
+        "objectId": "6kztd6lBdN",
+        "time": "12:53",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:01:34.218Z"
+    },
+    {
+        
+        "bus_com": "parador",
+        "bus_id": "12345",
+        "bus_num": "1234",
+        "createdAt": "2014-11-25T20:56:18.148Z",
+        "date": "25/10/2015",
+        "image": {
+            "__type": "File",
+            "name": "tfss-85053e86-3276-44be-ba56-cdb30af9a998-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-85053e86-3276-44be-ba56-cdb30af9a998-image.png"
+        },
+        "objectId": "9QZlZy9iz5",
+        "time": "00:00",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:01:38.273Z"
+    },
+    {
+        
+        "bus_com": "expresso ",
+        "bus_id": "58852",
+        "bus_num": "455",
+        "createdAt": "2014-11-24T20:33:34.613Z",
+        "date": "24/11/2014",
+        "image": {
+            "__type": "File",
+            "name": "tfss-4ece7e5b-aa75-4121-ba54-079bd4b70597-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-4ece7e5b-aa75-4121-ba54-079bd4b70597-image.png"
+        },
+        "objectId": "NswONBMLnS",
+        "time": "18:32",
+        "type": "atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-01-09T02:08:20.519Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "56248",
+        "bus_num": "328",
+        "createdAt": "2014-11-24T15:26:32.891Z",
+        "date": "24/11/2014",
+        "image": {
+            "__type": "File",
+            "name": "tfss-85ddd652-2f11-4312-84e0-144c0080f61f-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-85ddd652-2f11-4312-84e0-144c0080f61f-image.png"
+        },
+        "objectId": "88MJRVdpbQ",
+        "time": "13:25",
+        "type": "atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-01-09T02:08:29.239Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "483",
+        "createdAt": "2015-01-02T23:18:05.998Z",
+        "date": "02/01/2015",
+        "objectId": "QSPthQM5Ow",
+        "time": "21:00",
+        "type": "foi assaltado",
+        "type_id": 10,
+        "updatedAt": "2015-01-09T02:05:21.348Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "b51520",
+        "bus_num": "917",
+        "createdAt": "2015-01-03T20:54:10.971Z",
+        "date": "03/01/2015",
+        "objectId": "zWgCMgJ5jr",
+        "time": "18:53",
+        "type": "parou fora do ponto",
+        "type_id": 1,
+        "updatedAt": "2015-01-09T02:06:09.573Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "A45088",
+        "bus_num": "410",
+        "createdAt": "2015-01-04T01:40:26.549Z",
+        "date": "03/01/2015",
+        "objectId": "PQOcA7Mpox",
+        "time": "23:39",
+        "type": "está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-01-09T02:05:07.145Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "485",
+        "createdAt": "2015-01-04T13:02:02.813Z",
+        "date": "04/01/2015",
+        "objectId": "RBQhWL9tMr",
+        "time": "10:59",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:04:41.278Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "386",
+        "createdAt": "2015-01-04T14:10:14.911Z",
+        "date": "04/01/2015",
+        "objectId": "tOQ471g5kr",
+        "time": "12:09",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:04:39.863Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "607",
+        "createdAt": "2015-01-05T14:59:32.135Z",
+        "date": "05/01/2015",
+        "objectId": "XIuRPjF1Lp",
+        "time": "12:57",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-09T02:04:36.511Z"
+    },
+    {
+        
+        "bus_com": "direto",
+        "bus_id": "",
+        "bus_num": "585",
+        "createdAt": "2015-01-05T18:37:41.034Z",
+        "date": "05/01/2015",
+        "objectId": "QMTuO3GR4P",
+        "time": "04:35",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-01-09T02:04:32.123Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "746",
+        "createdAt": "2015-01-05T20:33:07.874Z",
+        "date": "05/01/2015",
+        "objectId": "MHhP9VKNff",
+        "time": "15:00",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:01:30.010Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "407",
+        "createdAt": "2015-01-06T02:11:26.431Z",
+        "date": "06/01/2015",
+        "objectId": "jvh1Wx9MeT",
+        "time": "00:09",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:04:23.132Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "2435",
+        "createdAt": "2015-01-06T02:16:42.375Z",
+        "date": "06/01/2015",
+        "objectId": "q8E8n8kZyD",
+        "time": "00:14",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:04:22.120Z"
+    },
+    {
+        
+        "bus_com": "via BR",
+        "bus_id": "246",
+        "bus_num": "422",
+        "createdAt": "2015-01-06T18:52:54.262Z",
+        "date": "06/01/2015",
+        "objectId": "IRZAUiVQ2z",
+        "time": "11:40",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:04:21.000Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "D58817",
+        "bus_num": "383",
+        "createdAt": "2015-01-06T19:36:43.636Z",
+        "date": "06/01/2015",
+        "objectId": "OUhrAtuSZG",
+        "time": "17:34",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:04:19.694Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "A5047",
+        "bus_num": "226",
+        "createdAt": "2015-01-06T20:34:40.291Z",
+        "date": "06/01/2015",
+        "objectId": "FFSXHsLBxW",
+        "time": "18:33",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-09T02:04:13.890Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "A50047",
+        "bus_num": "226",
+        "createdAt": "2015-01-06T20:38:28.567Z",
+        "date": "06/01/2015",
+        "objectId": "Xb4KuQ3A8L",
+        "time": "18:34",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-01-09T02:04:08.652Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "47648",
+        "bus_num": "353",
+        "createdAt": "2015-01-06T20:39:06.190Z",
+        "date": "06/01/2015",
+        "objectId": "X1N1Ddn3xp",
+        "time": "18:34",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-09T02:04:00.244Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "422",
+        "createdAt": "2015-01-07T01:24:00.347Z",
+        "date": "06/01/2015",
+        "objectId": "L2PxPNGYhM",
+        "time": "23:23",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-01-07T01:24:00.347Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "217",
+        "createdAt": "2015-01-07T01:25:17.239Z",
+        "date": "06/01/2015",
+        "objectId": "MbH4mw7Vnc",
+        "time": "23:24",
+        "type": "parou fora do ponto",
+        "type_id": 1,
+        "updatedAt": "2015-01-07T01:25:17.239Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "422",
+        "createdAt": "2015-01-07T11:51:43.638Z",
+        "date": "07/01/2015",
+        "objectId": "9zRnpA4Xgv",
+        "time": "09:51",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-01-07T11:51:43.638Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "712",
+        "createdAt": "2015-01-07T12:16:39.505Z",
+        "date": "06/01/2015",
+        "objectId": "ncoYv9F8o3",
+        "time": "05:40",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:01:26.756Z"
+    },
+    {
+        
+        "bus_com": "Abstrato",
+        "bus_id": "sssssa",
+        "bus_num": "999",
+        "createdAt": "2015-01-07T18:09:17.805Z",
+        "date": "01/05/2028",
+        "objectId": "U5gdvpnHSN",
+        "time": "09:04",
+        "type": "teve seu itinerário alterado sem justificativa",
+        "type_id": 13,
+        "updatedAt": "2015-01-07T18:09:17.805Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "D86100",
+        "bus_num": "864",
+        "createdAt": "2015-01-07T18:41:44.098Z",
+        "date": "07/01/2015",
+        "objectId": "nrM6EDQCYN",
+        "time": "16:30",
+        "type": "teve seu itinerário alterado sem justificativa",
+        "type_id": 13,
+        "updatedAt": "2015-01-08T10:26:04.936Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "D58622",
+        "bus_num": "383",
+        "createdAt": "2015-01-07T22:52:41.554Z",
+        "date": "07/01/2015",
+        "objectId": "KtgYgyinbO",
+        "time": "13:00",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-01-07T22:52:41.554Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "C82613",
+        "bus_num": "363",
+        "createdAt": "2015-01-07T23:30:00.995Z",
+        "date": "07/01/2015",
+        "objectId": "yR36ekrX6N",
+        "time": "06:00",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-07T23:30:00.995Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "C82576",
+        "bus_num": "363",
+        "createdAt": "2015-01-08T08:52:10.797Z",
+        "date": "08/01/2015",
+        "objectId": "aQRHJrwqiZ",
+        "time": "06:30",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-08T08:52:10.797Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "A37675",
+        "bus_num": "584",
+        "createdAt": "2015-01-08T09:38:00.569Z",
+        "date": "08/01/2015",
+        "objectId": "he4QebznkD",
+        "time": "07:37",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-08T09:38:00.569Z"
+    },
+    {
+        
+        "bus_com": "parador",
+        "bus_id": "",
+        "bus_num": "800",
+        "createdAt": "2015-01-08T11:22:00.272Z",
+        "date": "08/01/2015",
+        "objectId": "vNBjKK82L5",
+        "time": "09:17",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:01:23.235Z"
+    },
+    {
+        
+        "bus_com": "parador",
+        "bus_id": "",
+        "bus_num": "800",
+        "createdAt": "2015-01-08T11:22:32.426Z",
+        "date": "08/01/2015",
+        "objectId": "Ql2Z37MPkD",
+        "time": "09:22",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-08T11:22:32.426Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "A48059",
+        "bus_num": "201",
+        "createdAt": "2015-01-08T12:21:23.501Z",
+        "date": "08/01/2015",
+        "objectId": "DgeKcDQAkF",
+        "time": "10:20",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:01:19.839Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "832",
+        "createdAt": "2015-01-08T13:29:16.526Z",
+        "date": "08/01/2015",
+        "objectId": "iUy3FfwLi1",
+        "time": "11:28",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-08T13:29:16.526Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "832",
+        "createdAt": "2015-01-08T13:31:15.259Z",
+        "date": "08/01/2015",
+        "objectId": "IaZB75guT6",
+        "time": "11:29",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:01:15.354Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "a37593",
+        "bus_num": "133",
+        "createdAt": "2015-01-08T14:00:53.412Z",
+        "date": "08/01/2015",
+        "objectId": "qZARGxYU9w",
+        "time": "11:59",
+        "type": "está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-01-08T14:00:53.412Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "b71062",
+        "bus_num": "239",
+        "createdAt": "2015-01-08T14:06:25.988Z",
+        "date": "08/01/2015",
+        "objectId": "wZglDRonZQ",
+        "time": "12:06",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-08T14:06:25.988Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "b71062",
+        "bus_num": "239",
+        "createdAt": "2015-01-08T14:08:32.590Z",
+        "date": "08/01/2015",
+        "objectId": "c0Lz6Cpfja",
+        "time": "12:06",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-08T14:08:32.590Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "C82515",
+        "bus_num": "363",
+        "createdAt": "2015-01-08T15:15:18.356Z",
+        "date": "08/01/2015",
+        "objectId": "I2Xk2vbcrR",
+        "time": "12:00",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-08T15:15:18.356Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "A71520",
+        "bus_num": "217",
+        "createdAt": "2015-01-08T15:21:06.853Z",
+        "date": "08/01/2015",
+        "objectId": "SyZBBHpHa8",
+        "time": "12:55",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-01-08T15:21:06.853Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "c51557",
+        "bus_num": "371",
+        "createdAt": "2015-01-08T17:04:09.591Z",
+        "date": "08/01/2015",
+        "objectId": "SbjUaPE2GX",
+        "time": "15:03",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-08T17:04:09.591Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "58570",
+        "bus_num": "383",
+        "createdAt": "2015-01-08T18:00:44.457Z",
+        "date": "08/01/2015",
+        "objectId": "I3Gf4uFJ28",
+        "time": "15:59",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:01:11.532Z"
+    },
+    {
+        
+        "bus_com": "cascadura",
+        "bus_id": "",
+        "bus_num": "712",
+        "createdAt": "2015-01-09T00:24:31.119Z",
+        "date": "08/01/2015",
+        "objectId": "v8IbmxSGJD",
+        "time": "15:10",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T00:24:31.119Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "217",
+        "createdAt": "2014-12-31T13:28:25.317Z",
+        "date": "31/12/2014",
+        "objectId": "GKYH6UH1VS",
+        "time": "11:28",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:05:25.505Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "775",
+        "createdAt": "2014-12-29T17:41:17.366Z",
+        "date": "29/12/2014",
+        "objectId": "Urjpzv8c0M",
+        "time": "15:31",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:05:31.123Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "331",
+        "createdAt": "2014-12-29T02:13:34.243Z",
+        "date": "29/12/2014",
+        "objectId": "8TJ1iP6jhY",
+        "time": "00:13",
+        "type": "enguiçou",
+        "type_id": 3,
+        "updatedAt": "2015-01-09T02:05:40.953Z"
+    },
+    {
+        
+        "bus_com": "TA",
+        "bus_id": "",
+        "bus_num": "663",
+        "createdAt": "2014-12-29T02:11:45.812Z",
+        "date": "29/12/2014",
+        "objectId": "tzfVDvdESu",
+        "time": "00:10",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:05:42.970Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "217",
+        "createdAt": "2014-12-29T02:10:08.420Z",
+        "date": "29/12/2014",
+        "objectId": "eGsy7ooEHG",
+        "time": "00:09",
+        "type": "parou fora do ponto",
+        "type_id": 1,
+        "updatedAt": "2015-01-09T02:06:14.347Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "229",
+        "createdAt": "2014-11-26T18:54:24.327Z",
+        "date": "26/07/2015",
+        "image": {
+            "__type": "File",
+            "name": "tfss-65b731ac-4463-43e8-b80e-92491affc30c-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-65b731ac-4463-43e8-b80e-92491affc30c-image.png"
+        },
+        "objectId": "oiwQeYIO7S",
+        "time": "16:57",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-01-09T02:07:12.910Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "995",
+        "createdAt": "2014-11-26T05:25:03.353Z",
+        "date": "26/11/2014",
+        "image": {
+            "__type": "File",
+            "name": "tfss-311e42d4-a667-456b-a7fe-a9aea262f35e-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-311e42d4-a667-456b-a7fe-a9aea262f35e-image.png"
+        },
+        "objectId": "Ud78KHnR4M",
+        "time": "03:24",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:19.615Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "322",
+        "createdAt": "2014-11-26T05:16:42.286Z",
+        "date": "26/11/2014",
+        "image": {
+            "__type": "File",
+            "name": "tfss-bffd27f7-d98b-47c2-af62-a1628a38fa01-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-bffd27f7-d98b-47c2-af62-a1628a38fa01-image.png"
+        },
+        "objectId": "KdZ0P3Liih",
+        "time": "03:16",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:21.111Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "226",
+        "createdAt": "2014-11-26T05:03:42.215Z",
+        "date": "26/11/2014",
+        "image": {
+            "__type": "File",
+            "name": "tfss-2e6de62e-a6b3-417f-9068-276899e59981-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-2e6de62e-a6b3-417f-9068-276899e59981-image.png"
+        },
+        "objectId": "qmlZnL9WPx",
+        "time": "03:03",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:22.658Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "223",
+        "createdAt": "2014-11-26T05:01:12.410Z",
+        "date": "26/11/2014",
+        "image": {
+            "__type": "File",
+            "name": "tfss-c9cad92e-3c21-4400-b0b3-9c91c10b7a61-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-c9cad92e-3c21-4400-b0b3-9c91c10b7a61-image.png"
+        },
+        "objectId": "QcSC2XFTiI",
+        "time": "03:00",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:23.320Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "332",
+        "createdAt": "2014-11-26T04:47:35.848Z",
+        "date": "26/11/2014",
+        "image": {
+            "__type": "File",
+            "name": "tfss-e852d606-c32b-4810-b262-b9829e17b916-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-e852d606-c32b-4810-b262-b9829e17b916-image.png"
+        },
+        "objectId": "XATQLHMg0l",
+        "time": "02:47",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-09T02:07:26.749Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "455",
+        "createdAt": "2014-11-25T22:28:28.558Z",
+        "date": "25/11/2014",
+        "objectId": "HvadJ5Tp0j",
+        "time": "20:27",
+        "type": "teve seu itinerário alterado sem justificativa",
+        "type_id": 13,
+        "updatedAt": "2015-01-09T02:07:37.982Z"
+    },
+    {
+        
+        "bus_com": "direto ",
+        "bus_id": "25808",
+        "bus_num": "485",
+        "createdAt": "2014-11-24T15:42:46.027Z",
+        "date": "24/11/2014",
+        "image": {
+            "__type": "File",
+            "name": "tfss-da333850-3e21-4e6c-a1ff-b3c05a7929e4-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-da333850-3e21-4e6c-a1ff-b3c05a7929e4-image.png"
+        },
+        "objectId": "Ii33q9EhxK",
+        "time": "13:41",
+        "type": "enguiçou",
+        "type_id": 3,
+        "updatedAt": "2015-01-09T02:08:26.623Z"
+    },
+    {
+        
+        "bus_com": "Realengo - Tiradentes",
+        "bus_id": "",
+        "bus_num": "383",
+        "createdAt": "2015-01-10T13:04:50.882Z",
+        "date": "10/01/2015",
+        "objectId": "CvQx97u69J",
+        "time": "11:04",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-21T00:00:49.952Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "b27189",
+        "bus_num": "629",
+        "createdAt": "2015-01-10T14:27:30.396Z",
+        "date": "10/01/2015",
+        "objectId": "wdng9vZdKH",
+        "time": "12:27",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-10T14:27:30.396Z"
+    },
+    {
+        
+        "bus_com": "A",
+        "bus_id": "",
+        "bus_num": "910",
+        "createdAt": "2015-01-10T14:40:44.592Z",
+        "date": "10/01/2015",
+        "objectId": "kFxgBMMwZ7",
+        "time": "12:39",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-10T14:40:44.592Z"
+    },
+    {
+        
+        "bus_com": "Cordovil - INTO",
+        "bus_id": "",
+        "bus_num": "334",
+        "createdAt": "2015-01-10T16:54:09.414Z",
+        "date": "10/01/2015",
+        "objectId": "qi9TwOM3EZ",
+        "time": "14:51",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-21T00:00:42.844Z"
+    },
+    {
+        
+        "bus_com": "Realengo - Tiradentes",
+        "bus_id": "",
+        "bus_num": "383",
+        "createdAt": "2015-01-10T16:58:35.864Z",
+        "date": "10/09/2015",
+        "image": {
+            "__type": "File",
+            "name": "tfss-1a47290d-9930-42ea-a801-6dbbd291d0c7-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-1a47290d-9930-42ea-a801-6dbbd291d0c7-image.png"
+        },
+        "objectId": "7kaw4EnzHC",
+        "time": "14:56",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-21T00:00:37.388Z"
+    },
+    {
+        
+        "bus_com": "Grajaú - Carioca",
+        "bus_id": "",
+        "bus_num": "226",
+        "createdAt": "2015-01-10T17:02:33.175Z",
+        "date": "10/01/2015",
+        "image": {
+            "__type": "File",
+            "name": "tfss-b28434c3-239f-4dfb-a0cf-3646cadac913-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-b28434c3-239f-4dfb-a0cf-3646cadac913-image.png"
+        },
+        "objectId": "Hx3xWWFKVQ",
+        "time": "15:02",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-21T00:00:31.558Z"
+    },
+    {
+        
+        "bus_com": "Realengo - Tiradentes",
+        "bus_id": "",
+        "bus_num": "383",
+        "createdAt": "2015-01-10T17:17:10.699Z",
+        "date": "10/01/2015",
+        "image": {
+            "__type": "File",
+            "name": "tfss-35c4a29b-2780-4a37-8cd6-ced083482683-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-35c4a29b-2780-4a37-8cd6-ced083482683-image.png"
+        },
+        "objectId": "ysW2ntkC9m",
+        "time": "15:16",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-21T00:00:26.145Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "a63529",
+        "bus_num": "177",
+        "createdAt": "2015-01-10T17:30:50.676Z",
+        "date": "10/01/2015",
+        "objectId": "EbD2bzrP7n",
+        "time": "15:29",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-10T17:30:50.676Z"
+    },
+    {
+        
+        "bus_com": "Realengo - Tiradentes",
+        "bus_id": "",
+        "bus_num": "383",
+        "createdAt": "2015-01-10T18:19:17.727Z",
+        "date": "10/01/2015",
+        "image": {
+            "__type": "File",
+            "name": "tfss-85c42bbe-270f-4401-81d7-9ecf85c56054-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-85c42bbe-270f-4401-81d7-9ecf85c56054-image.png"
+        },
+        "objectId": "mRRbUcPGkw",
+        "time": "16:18",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-21T00:00:20.329Z"
+    },
+    {
+        
+        "bus_com": "Fundão - General Osório",
+        "bus_id": "",
+        "bus_num": "486",
+        "createdAt": "2015-01-10T18:22:25.658Z",
+        "date": "10/01/2015",
+        "image": {
+            "__type": "File",
+            "name": "tfss-0f08449c-f936-4590-b13d-f480cb4257fa-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-0f08449c-f936-4590-b13d-f480cb4257fa-image.png"
+        },
+        "objectId": "2Q24QwPhIC",
+        "time": "16:22",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-21T00:00:13.126Z"
+    },
+    {
+        
+        "bus_com": "Vila Isabel - Praça Mauá",
+        "bus_id": "",
+        "bus_num": "222",
+        "createdAt": "2015-01-10T18:22:46.303Z",
+        "date": "10/01/2015",
+        "image": {
+            "__type": "File",
+            "name": "tfss-c486a150-2a72-4e23-bdaf-da514d4ed433-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-c486a150-2a72-4e23-bdaf-da514d4ed433-image.png"
+        },
+        "objectId": "VnHhIHlxyD",
+        "time": "16:22",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-21T00:00:07.119Z"
+    },
+    {
+        
+        "bus_com": "Pavuna - Saens Peña",
+        "bus_id": "",
+        "bus_num": "665",
+        "createdAt": "2015-01-10T19:10:20.142Z",
+        "date": "08/01/2015",
+        "objectId": "ovpVEArzYg",
+        "time": "17:11",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:59:59.773Z"
+    },
+    {
+        
+        "bus_com": "Grajaú - Carioca",
+        "bus_id": "A50213",
+        "bus_num": "226",
+        "createdAt": "2015-01-12T11:30:57.539Z",
+        "date": "12/01/2015",
+        "objectId": "KMPZAwVarZ",
+        "time": "09:30",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-02-20T23:49:38.279Z"
+    },
+    {
+        
+        "bus_com": "Rio Centro - Castelo",
+        "bus_id": "C47563",
+        "bus_num": "368",
+        "createdAt": "2015-01-12T13:36:28.688Z",
+        "date": "12/01/2015",
+        "objectId": "umYrFrjBMI",
+        "time": "11:35",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:49:48.451Z"
+    },
+    {
+        
+        "bus_com": "Rodoviária - Engenho de Dentro",
+        "bus_id": "B25546",
+        "bus_num": "606",
+        "createdAt": "2015-01-12T19:38:35.589Z",
+        "date": "12/01/2015",
+        "objectId": "JQgyDCkIhP",
+        "time": "17:38",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:50:01.060Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "C82598",
+        "bus_num": "363",
+        "createdAt": "2015-01-12T20:19:56.193Z",
+        "date": "12/01/2015",
+        "objectId": "ZNB128M7qU",
+        "time": "07:00",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-12T20:19:56.193Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "C82570",
+        "bus_num": "363",
+        "createdAt": "2015-01-12T20:20:51.077Z",
+        "date": "12/01/2015",
+        "objectId": "EDEtUSuekI",
+        "time": "11:00",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-12T20:20:51.077Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "C82576",
+        "bus_num": "363",
+        "createdAt": "2015-01-12T20:21:32.289Z",
+        "date": "12/01/2015",
+        "objectId": "f7OZpBfgdl",
+        "time": "11:53",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-12T20:21:32.289Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "b25563",
+        "bus_num": "606",
+        "createdAt": "2015-01-13T12:06:26.764Z",
+        "date": "13/01/2015",
+        "objectId": "suClENx4E5",
+        "time": "10:05",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-01-13T12:06:26.764Z"
+    },
+    {
+        
+        "bus_com": "Rio Centro - Castelo",
+        "bus_id": "C47511",
+        "bus_num": "368",
+        "createdAt": "2015-01-13T15:37:40.029Z",
+        "date": "13/01/2015",
+        "objectId": "MED6dXlHck",
+        "time": "13:36",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:50:18.918Z"
+    },
+    {
+        
+        "bus_com": "Acari - Castelo",
+        "bus_id": "B27088",
+        "bus_num": "298",
+        "createdAt": "2015-01-13T17:56:49.892Z",
+        "date": "13/01/2015",
+        "objectId": "JJFnEYo7D4",
+        "time": "15:50",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:50:31.014Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "C82562",
+        "bus_num": "363",
+        "createdAt": "2015-01-13T18:44:57.470Z",
+        "date": "13/01/2015",
+        "objectId": "8PiCqhnu59",
+        "time": "06:00",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-13T18:44:57.470Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "C82504",
+        "bus_num": "363",
+        "createdAt": "2015-01-13T18:45:23.704Z",
+        "date": "13/01/2015",
+        "objectId": "1iUClp9mHH",
+        "time": "10:30",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-13T18:45:23.704Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-01-14T09:07:59.249Z",
+        "date": "14/01/2015",
+        "objectId": "hlCNz41RNJ",
+        "time": "07:07",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:50:40.848Z"
+    },
+    {
+        
+        "bus_com": "Grajaú - Carioca",
+        "bus_id": "A50047",
+        "bus_num": "226",
+        "createdAt": "2015-01-14T11:38:22.786Z",
+        "date": "14/01/2015",
+        "image": {
+            "__type": "File",
+            "name": "tfss-4c640e6d-5080-4495-9465-1b9a5507c81d-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-4c640e6d-5080-4495-9465-1b9a5507c81d-image.png"
+        },
+        "objectId": "nejAVE1SRX",
+        "time": "09:37",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:01:07.399Z"
+    },
+    {
+        
+        "bus_id": "E47011",
+        "bus_num": "  888",
+        "createdAt": "2015-01-14T19:34:35.375Z",
+        "date": "14/01/2015",
+        "objectId": "HEwAnYUTWS",
+        "time": "17:32",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:50:58.557Z"
+    },
+    {
+        
+        "bus_id": "B51518",
+        "bus_num": "917",
+        "createdAt": "2015-01-14T22:08:50.683Z",
+        "date": "14/01/2015",
+        "objectId": "pEtKWwGEEf",
+        "time": "19:59",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:51:05.293Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "485",
+        "createdAt": "2015-01-15T12:30:13.090Z",
+        "date": "15/01/2015",
+        "objectId": "oUERibM5El",
+        "time": "10:28",
+        "type": "teve seu itinerário alterado sem justificativa",
+        "type_id": 13,
+        "updatedAt": "2015-01-15T12:30:13.090Z"
+    },
+    {
+        
+        "bus_com": "Praça Seca - Praça da República",
+        "bus_id": "C51577",
+        "bus_num": "371",
+        "createdAt": "2015-01-15T15:08:01.371Z",
+        "date": "15/01/2015",
+        "objectId": "TP7QE4WVKE",
+        "time": "13:07",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:49:24.055Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "D58685",
+        "bus_num": "383",
+        "createdAt": "2015-01-15T16:01:58.385Z",
+        "date": "15/01/2015",
+        "objectId": "oOFULyAdGR",
+        "time": "13:00",
+        "type": "está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-01-15T16:01:58.385Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "C82650",
+        "bus_num": "363",
+        "createdAt": "2015-01-15T16:02:36.304Z",
+        "date": "15/01/2015",
+        "objectId": "5yTSHB9wO1",
+        "time": "06:15",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-15T16:02:36.304Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-01-16T10:23:47.327Z",
+        "date": "16/01/2015",
+        "objectId": "E4w6CjF4P7",
+        "time": "08:23",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:51:26.497Z"
+    },
+    {
+        
+        "bus_id": "154055",
+        "bus_num": "494",
+        "createdAt": "2015-01-18T01:26:57.763Z",
+        "date": "17/01/2015",
+        "objectId": "I2so8f7P6r",
+        "time": "23:00",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-01-18T01:26:57.763Z"
+    },
+    {
+        
+        "bus_com": "Recreio dos Bandeirantes - Carioca",
+        "bus_id": "C47468",
+        "bus_num": "360",
+        "createdAt": "2015-01-19T08:14:29.189Z",
+        "date": "19/01/2015",
+        "objectId": "PLoBNLPb50",
+        "time": "06:13",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:51:36.213Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-01-21T09:02:51.937Z",
+        "date": "21/01/2015",
+        "objectId": "WOLj8eP3Zo",
+        "time": "07:02",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:51:50.151Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-01-21T09:03:35.829Z",
+        "date": "21/01/2015",
+        "objectId": "BhHsxOV0bH",
+        "time": "07:02",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:52:06.673Z"
+    },
+    {
+        
+        "bus_com": "Pavuna - Saens Peña",
+        "bus_id": "",
+        "bus_num": "665",
+        "createdAt": "2015-01-21T14:01:56.867Z",
+        "date": "21/01/2015",
+        "objectId": "5GLAnIIOsr",
+        "time": "12:00",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:52:14.950Z"
+    },
+    {
+        
+        "bus_com": "Taquara - Saens Peña",
+        "bus_id": "",
+        "bus_num": "600",
+        "createdAt": "2015-01-21T17:15:26.897Z",
+        "date": "21/01/2015",
+        "objectId": "BSH5Thue6x",
+        "time": "15:14",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:52:22.425Z"
+    },
+    {
+        
+        "bus_com": "CURICICA - TAQUARA",
+        "bus_id": "",
+        "bus_num": "800A",
+        "createdAt": "2015-01-21T18:33:01.604Z",
+        "date": "21/01/2015",
+        "objectId": "X0abRuzN3C",
+        "time": "16:32",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:52:31.464Z"
+    },
+    {
+        
+        "bus_com": "Penha - General Osório",
+        "bus_id": "",
+        "bus_num": "485",
+        "createdAt": "2015-01-22T11:37:47.660Z",
+        "date": "22/01/2015",
+        "objectId": "riwvlOFmvm",
+        "time": "09:37",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:52:37.817Z"
+    },
+    {
+        
+        "bus_com": "Bananal - Saens Peña",
+        "bus_id": "10175",
+        "bus_num": "634",
+        "createdAt": "2015-01-22T21:21:50.429Z",
+        "date": "22/01/2015",
+        "objectId": "KECs5MKboQ",
+        "time": "07:21",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:01:03.277Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-01-23T11:34:25.330Z",
+        "date": "23/01/2015",
+        "objectId": "sRvJ4NBqAR",
+        "time": "09:33",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:52:52.882Z"
+    },
+    {
+        
+        "bus_com": "Marechal Hermes - Castelo",
+        "bus_id": "B82586",
+        "bus_num": "265",
+        "createdAt": "2015-01-23T14:55:52.533Z",
+        "date": "23/01/2015",
+        "objectId": "DrISfxXwfc",
+        "time": "12:53",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:53:02.031Z"
+    },
+    {
+        
+        "bus_com": "Taquara - Saens Peña",
+        "bus_id": "",
+        "bus_num": "600",
+        "createdAt": "2015-01-23T18:44:34.711Z",
+        "date": "23/01/2015",
+        "objectId": "gScrgRtU94",
+        "time": "16:43",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:00:59.466Z"
+    },
+    {
+        
+        "bus_com": "Taquara - Saens Peña",
+        "bus_id": "",
+        "bus_num": "600",
+        "createdAt": "2015-01-23T18:44:57.592Z",
+        "date": "23/01/2015",
+        "objectId": "ZzSgGIaHFV",
+        "time": "16:44",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:53:16.905Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "337",
+        "createdAt": "2015-01-23T19:44:13.626Z",
+        "date": "23/01/2015",
+        "objectId": "TQNIOQIZIp",
+        "time": "17:43",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:53:23.688Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-01-26T12:37:26.228Z",
+        "date": "26/01/2015",
+        "objectId": "28TGZaYcrd",
+        "time": "10:36",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:53:31.372Z"
+    },
+    {
+        
+        "bus_id": "",
+        "bus_num": "612",
+        "createdAt": "2015-01-26T18:52:07.752Z",
+        "date": "26/01/2015",
+        "objectId": "ulCKdZqLlh",
+        "time": "16:51",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:00:56.176Z"
+    },
+    {
+        
+        "bus_com": "Campo Grande - Mato Alto",
+        "bus_id": "D86304",
+        "bus_num": "854A",
+        "createdAt": "2015-01-26T22:21:57.105Z",
+        "date": "26/01/2015",
+        "objectId": "t1mQU4U10z",
+        "time": "20:21",
+        "type": "está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-02-20T23:53:39.856Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-01-27T09:05:48.116Z",
+        "date": "27/01/2015",
+        "objectId": "5Tt0FOrApO",
+        "time": "07:05",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:53:56.553Z"
+    },
+    {
+        
+        "bus_com": "Penha (Grotão) - Praça Tiradentes",
+        "bus_id": "B58092",
+        "bus_num": "313",
+        "createdAt": "2015-01-27T12:00:24.153Z",
+        "date": "26/01/2015",
+        "objectId": "CwFdpUDeAl",
+        "time": "08:27",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:54:05.188Z"
+    },
+    {
+        
+        "bus_com": "Taquara - Saens Peña",
+        "bus_id": "",
+        "bus_num": "600",
+        "createdAt": "2015-01-27T19:38:44.216Z",
+        "date": "27/01/2015",
+        "objectId": "SDWCMt6HTt",
+        "time": "17:38",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:54:11.759Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-01-27T21:09:24.425Z",
+        "date": "27/01/2015",
+        "objectId": "MoLqpm93G1",
+        "time": "19:08",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:54:17.704Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-01-28T12:07:02.136Z",
+        "date": "03/01/2015",
+        "objectId": "l18cj32OqR",
+        "time": "10:06",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:54:23.465Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "232",
+        "createdAt": "2015-01-28T14:42:24.093Z",
+        "date": "28/01/2015",
+        "objectId": "01x2eqASt8",
+        "time": "12:30",
+        "type": "não parou no ponto",
+        "updatedAt": "2015-01-28T14:42:24.093Z"
+    },
+    {
+        
+        "bus_com": "",
+        "bus_id": "",
+        "bus_num": "232",
+        "createdAt": "2015-01-28T14:42:54.580Z",
+        "date": "28/01/2015",
+        "objectId": "Oa429A5Sa0",
+        "time": "12:41",
+        "type": "não possui ar condicionado",
+        "updatedAt": "2015-01-28T14:42:54.580Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-01-28T18:50:33.080Z",
+        "date": "28/01/2015",
+        "objectId": "t6LF9nmch5",
+        "time": "16:50",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:54:29.944Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-01-29T11:37:58.928Z",
+        "date": "29/01/2015",
+        "objectId": "2gTHiVWpSI",
+        "time": "09:36",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:54:36.487Z"
+    },
+    {
+        
+        "bus_com": "Campo Grande - Carioca",
+        "bus_id": "",
+        "bus_num": "397",
+        "createdAt": "2015-01-29T18:14:20.283Z",
+        "date": "29/01/2015",
+        "objectId": "cZNEYxEedU",
+        "time": "16:13",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:00:52.899Z"
+    },
+    {
+        
+        "bus_com": "Campo Grande - Carioca",
+        "bus_id": "",
+        "bus_num": "397",
+        "createdAt": "2015-01-29T18:35:20.471Z",
+        "date": "29/01/2015",
+        "objectId": "6tBZ5M4OZk",
+        "time": "16:34",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-02-20T23:54:52.494Z"
+    },
+    {
+        
+        "bus_id": "",
+        "bus_num": "612",
+        "createdAt": "2015-01-29T20:44:01.609Z",
+        "date": "29/01/2015",
+        "objectId": "YSqGrOwPAL",
+        "time": "18:43",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:00:49.603Z"
+    },
+    {
+        
+        "bus_id": "",
+        "bus_num": "612",
+        "createdAt": "2015-01-29T20:44:22.558Z",
+        "date": "29/01/2015",
+        "objectId": "2uvOYqqHqH",
+        "time": "18:44",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-29T20:44:22.558Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-01-30T12:06:48.795Z",
+        "date": "30/01/2015",
+        "objectId": "MkrKvLenjR",
+        "time": "10:06",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:00:45.515Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-01-30T12:07:37.196Z",
+        "date": "30/01/2015",
+        "objectId": "MIP20pCgzA",
+        "time": "10:06",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:55:04.523Z"
+    },
+    {
+        
+        "bus_id": "",
+        "bus_num": "612",
+        "createdAt": "2015-01-30T20:09:14.124Z",
+        "date": "30/01/2015",
+        "objectId": "i72xqAemSu",
+        "time": "18:08",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-01-30T20:09:14.124Z"
+    },
+    {
+        
+        "bus_com": "MADUREIRA - MEIER",
+        "bus_id": "B44641",
+        "bus_num": "676A",
+        "createdAt": "2015-01-31T21:19:48.518Z",
+        "date": "31/01/2015",
+        "objectId": "01htQmDg6p",
+        "time": "19:18",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:00:41.481Z"
+    },
+    {
+        
+        "bus_com": "MADUREIRA - MEIER",
+        "bus_id": "",
+        "bus_num": "676A",
+        "createdAt": "2015-01-31T21:20:14.708Z",
+        "date": "31/01/2015",
+        "objectId": "nZsjbJKdFU",
+        "time": "19:08",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:55:17.785Z"
+    },
+    {
+        
+        "bus_com": "Irajá - Passeio",
+        "bus_id": "B73056",
+        "bus_num": "350",
+        "createdAt": "2015-02-04T17:58:39.358Z",
+        "date": "04/02/2015",
+        "objectId": "yDT9eybe7c",
+        "time": "15:57",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:55:24.017Z"
+    },
+    {
+        
+        "bus_com": "Santa Cruz - Carioca",
+        "bus_id": "D90139",
+        "bus_num": "388",
+        "createdAt": "2015-02-04T18:01:19.135Z",
+        "date": "04/02/2015",
+        "objectId": "OsiheqxVaf",
+        "time": "16:00",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:00:38.199Z"
+    },
+    {
+        
+        "bus_id": "",
+        "bus_num": "770",
+        "createdAt": "2015-02-04T23:21:58.304Z",
+        "date": "04/02/2013",
+        "image": {
+            "__type": "File",
+            "name": "tfss-f783dd5c-2ea6-4ff3-a9fb-023a679fd17f-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-f783dd5c-2ea6-4ff3-a9fb-023a679fd17f-image.png"
+        },
+        "objectId": "m2wTDF3Oqj",
+        "time": "14:49",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:00:35.021Z"
+    },
+    {
+        
+        "bus_com": "Gardênia Azul - Saens Peña",
+        "bus_id": "C47574",
+        "bus_num": "636",
+        "createdAt": "2015-02-05T19:56:23.543Z",
+        "date": "05/02/2015",
+        "objectId": "4IEEwZb0A6",
+        "time": "10:15",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:55:38.202Z"
+    },
+    {
+        
+        "bus_com": "CURICICA - TAQUARA",
+        "bus_id": "",
+        "bus_num": "800A",
+        "createdAt": "2015-02-06T09:43:40.783Z",
+        "date": "06/02/2015",
+        "objectId": "T3kb69WZSn",
+        "time": "07:43",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:55:45.490Z"
+    },
+    {
+        
+        "bus_com": "CURICICA - TAQUARA",
+        "bus_id": "",
+        "bus_num": "800A",
+        "createdAt": "2015-02-06T09:47:36.840Z",
+        "date": "06/02/2015",
+        "objectId": "gquQfJ1gjK",
+        "time": "07:43",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:00:31.842Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-02-06T10:54:13.645Z",
+        "date": "06/02/2015",
+        "objectId": "CfoyJtcat7",
+        "time": "08:53",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:55:56.490Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-02-06T10:57:06.329Z",
+        "date": "06/02/2015",
+        "objectId": "qRhzipN9WS",
+        "time": "08:56",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:00:28.275Z"
+    },
+    {
+        
+        "bus_com": "Grajaú - Cosme Velho",
+        "bus_id": "A72080",
+        "bus_num": "422",
+        "createdAt": "2015-02-06T11:14:32.221Z",
+        "date": "06/02/2015",
+        "objectId": "1BVdYwM3ER",
+        "time": "08:13",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-02-20T23:56:07.163Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-02-06T19:34:32.281Z",
+        "date": "06/02/2015",
+        "objectId": "w6dmiotPlT",
+        "time": "17:34",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:00:25.565Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-02-06T19:35:00.868Z",
+        "date": "06/02/2015",
+        "objectId": "PfyLLtukxu",
+        "time": "17:34",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:56:18.049Z"
+    },
+    {
+        
+        "bus_id": "C30511",
+        "bus_num": " ",
+        "createdAt": "2015-02-06T22:08:06.518Z",
+        "date": "06/02/2015",
+        "image": {
+            "__type": "File",
+            "name": "tfss-51d28d1b-5090-4e31-b72a-69872589d5ad-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-51d28d1b-5090-4e31-b72a-69872589d5ad-image.png"
+        },
+        "objectId": "Pd0xXOu8Dg",
+        "time": "20:03",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:00:21.710Z"
+    },
+    {
+        
+        "bus_com": "Saens Peña - Jardim Botânico",
+        "bus_id": "",
+        "bus_num": "409",
+        "createdAt": "2015-02-07T17:34:06.788Z",
+        "date": "07/02/2015",
+        "objectId": "mxDeoCIw5x",
+        "time": "03:33",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:56:24.772Z"
+    },
+    {
+        
+        "bus_com": "Ipanema - Central",
+        "bus_id": "",
+        "bus_num": "154",
+        "createdAt": "2015-02-08T23:33:45.023Z",
+        "date": "04/02/2015",
+        "objectId": "lLzBd1rXsF",
+        "time": "12:45",
+        "type": "parou fora do ponto",
+        "type_id": 1,
+        "updatedAt": "2015-02-20T23:56:33.745Z"
+    },
+    {
+        
+        "bus_com": "Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390",
+        "createdAt": "2015-02-09T09:06:33.704Z",
+        "date": "09/02/2015",
+        "objectId": "sSPbjERB4Z",
+        "time": "07:06",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:56:40.379Z"
+    },
+    {
+        
+        "bus_com": "Taquara - Saens Peña",
+        "bus_id": "",
+        "bus_num": "600",
+        "createdAt": "2015-02-09T20:13:57.541Z",
+        "date": "09/02/2015",
+        "objectId": "qMZVTtLTKt",
+        "time": "18:12",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:00:17.707Z"
+    },
+    {
+        
+        "bus_com": "Taquara - Saens Peña",
+        "bus_id": "",
+        "bus_num": "600",
+        "createdAt": "2015-02-09T20:14:17.909Z",
+        "date": "09/02/2015",
+        "objectId": "dDy6BGqSSS",
+        "time": "18:13",
+        "type": "não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-20T23:56:54.908Z"
+    },
+    {
+        
+        "bus_com": "COLONIA - HOSP. SARAH",
+        "bus_id": "",
+        "bus_num": "832A",
+        "createdAt": "2015-02-09T22:04:35.420Z",
+        "date": "09/02/2015",
+        "objectId": "Vrckiakvm1",
+        "time": "20:04",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:57:01.447Z"
+    },
+    {
+        
+        "bus_com": "Circular da Penha - Cosme Velho",
+        "bus_id": "B31153",
+        "bus_num": "498",
+        "createdAt": "2015-02-10T22:35:07.737Z",
+        "date": "10/02/2015",
+        "device": "Android",
+        "objectId": "PLCgBrMF4g",
+        "time": "20:33",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-02-20T23:57:10.016Z"
+    },
+    {
+        
+        "bus_com": "Recreio dos Bandeirantes - Carioca",
+        "bus_id": "C47474",
+        "bus_num": "360",
+        "createdAt": "2015-02-12T08:12:09.201Z",
+        "date": "12/02/2015",
+        "device": "Android",
+        "objectId": "S34fGaBcRs",
+        "time": "06:10",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-02-20T23:57:19.020Z"
+    },
+    {
+        
+        "bus_com": "Praça Seca - Praça da República",
+        "bus_id": "B51632",
+        "bus_num": "371",
+        "createdAt": "2015-02-12T16:01:36.267Z",
+        "date": "12/02/2015",
+        "device": "Android",
+        "objectId": "tiQbB4U6Km",
+        "time": "13:42",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:57:27.135Z"
+    },
+    {
+        
+        "bus_id": "B73040",
+        "bus_num": "350",
+        "createdAt": "2015-02-12T19:21:23.115Z",
+        "date": "12/02/2015",
+        "device": "Android",
+        "objectId": "Q4w5BwcUsH",
+        "time": "17:20",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-02-20T23:57:31.480Z"
+    },
+    {
+        
+        "bus_id": "D87561",
+        "bus_num": "87561",
+        "createdAt": "2015-02-12T21:22:48.998Z",
+        "date": "12/02/2015",
+        "device": "Android",
+        "objectId": "h69SOey6ON",
+        "time": "19:22",
+        "type": "está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-02-12T21:22:48.998Z"
+    },
+    {
+        
+        "bus_id": "D87561",
+        "bus_num": "87561",
+        "createdAt": "2015-02-12T21:23:08.742Z",
+        "date": "12/02/2015",
+        "device": "Android",
+        "objectId": "f5tmBcMaek",
+        "time": "19:22",
+        "type": "está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-02-12T21:23:08.742Z"
+    },
+    {
+        
+        "bus_id": "D87168",
+        "bus_num": "87168",
+        "createdAt": "2015-02-13T20:12:41.544Z",
+        "date": "13/02/2015",
+        "device": "Android",
+        "objectId": "P7lwXQcZyf",
+        "time": "18:11",
+        "type": "está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T14:00:10.225Z"
+    },
+    {
+        
+        "bus_id": "D87167",
+        "bus_num": "87168",
+        "createdAt": "2015-02-13T20:12:54.083Z",
+        "date": "13/02/2015",
+        "device": "Android",
+        "objectId": "5yo82651hW",
+        "time": "18:12",
+        "type": "está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-02-13T20:12:54.083Z"
+    },
+    {
+        
+        "bus_com": "Ponto Chic - Barro Vermelho",
+        "bus_id": "",
+        "bus_num": "714I",
+        "createdAt": "2015-02-13T22:54:18.667Z",
+        "date": "13/02/2015",
+        "device": "Android",
+        "objectId": "BKC5oreysF",
+        "time": "20:53",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:57:41.432Z"
+    },
+    {
+        
+        "bus_com": "Méier - Copacabana",
+        "bus_id": "B71076",
+        "bus_num": "455",
+        "createdAt": "2015-02-14T00:24:22.347Z",
+        "date": "13/02/2015",
+        "device": "Android",
+        "objectId": "1ET1sFPvq6",
+        "time": "22:23",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-02-20T23:57:51.356Z"
+    },
+    {
+        
+        "bus_com": "Méier - Copacabana",
+        "bus_id": "B71076",
+        "bus_num": "455",
+        "createdAt": "2015-02-14T00:55:14.812Z",
+        "date": "13/02/2015",
+        "device": "Android",
+        "objectId": "XJ2ZzorVJb",
+        "time": "22:24",
+        "type": "tem seu motorista falando no celular enquanto dirige",
+        "type_id": 15,
+        "updatedAt": "2015-02-20T23:57:59.109Z"
+    },
+    {
+        
+        "bus_com": "Lins - Praça XV",
+        "bus_id": "",
+        "bus_num": "232",
+        "createdAt": "2015-02-15T02:51:18.765Z",
+        "date": "14/02/2015",
+        "device": "Android",
+        "objectId": "0HsjtnwtMp",
+        "time": "23:30",
+        "type": "está demorando muito a passar",
+        "type_id": 17,
+        "updatedAt": "2015-02-20T23:58:05.938Z"
+    },
+    {
+        
+        "bus_com": "São Conrado - Central",
+        "bus_id": "A63516",
+        "bus_num": "177",
+        "createdAt": "2015-02-16T08:08:55.575Z",
+        "date": "16/02/2015",
+        "device": "Android",
+        "objectId": "XbgWfSFeDG",
+        "time": "06:06",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-02-20T23:58:11.933Z"
+    },
+    {
+        
+        "bus_com": "Santa Teresa - Castelo",
+        "bus_id": "A72188",
+        "bus_num": "006",
+        "createdAt": "2015-02-19T11:30:05.424Z",
+        "date": "19/02/2015",
+        "device": "Android",
+        "objectId": "KtCFbsdvy0",
+        "time": "09:28",
+        "type": "tem seu motorista falando no celular enquanto dirige",
+        "type_id": 15,
+        "updatedAt": "2015-02-20T23:58:20.720Z"
+    },
+    {
+        
+        "bus_id": "DC2271",
+        "bus_num": "012",
+        "createdAt": "2015-02-19T14:09:46.763Z",
+        "date": "19/02/2015",
+        "device": "Android",
+        "objectId": "xbjeog6kj4",
+        "time": "11:51",
+        "type": "tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-02-19T14:09:46.763Z"
+    },
+    {
+        
+        "bus_com": "Itaguaí - Mangaratiba",
+        "bus_id": "137267",
+        "bus_num": "116T",
+        "createdAt": "2015-02-19T17:29:50.330Z",
+        "date": "19/02/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-614f4753-f5da-4902-abaa-70c9e255c70c-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-614f4753-f5da-4902-abaa-70c9e255c70c-image.png"
+        },
+        "objectId": "kdw2TxmjEq",
+        "time": "13:10",
+        "type": "está demorando muito a passar",
+        "type_id": 17,
+        "updatedAt": "2015-02-20T23:58:28.670Z"
+    },
+    {
+        
+        "bus_com": "Rio Centro - Castelo",
+        "bus_id": "C47582",
+        "bus_num": "352",
+        "createdAt": "2015-02-19T19:21:18.118Z",
+        "date": "19/02/2015",
+        "device": "Android",
+        "objectId": "zkvxOgnKKs",
+        "time": "17:19",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:58:36.519Z"
+    },
+    {
+        
+        "bus_com": "Rio Centro - Castelo",
+        "bus_id": "C47562",
+        "bus_num": "352",
+        "createdAt": "2015-02-19T19:37:53.969Z",
+        "date": "19/02/2015",
+        "device": "Android",
+        "objectId": "e9GyERuFNG",
+        "time": "17:36",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:58:43.418Z"
+    },
+    {
+        
+        "bus_com": "Usina - Candelária",
+        "bus_id": "",
+        "bus_num": "220",
+        "createdAt": "2015-02-19T23:25:41.400Z",
+        "date": "12/02/2013",
+        "device": "Android",
+        "objectId": "iWFEvOUTEZ",
+        "time": "08:24",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:58:49.341Z"
+    },
+    {
+        
+        "bus_com": "Grajaú - Carioca",
+        "bus_id": "",
+        "bus_num": "226",
+        "createdAt": "2015-02-19T23:30:45.461Z",
+        "date": "19/02/2015",
+        "device": "Android",
+        "objectId": "DUkakoQNwP",
+        "time": "21:30",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:58:54.909Z"
+    },
+    {
+        
+        "bus_com": "Grajaú - Carioca",
+        "bus_id": "",
+        "bus_num": "226",
+        "createdAt": "2015-02-20T00:20:42.608Z",
+        "date": "19/02/2015",
+        "device": "Android",
+        "objectId": "0J0tAWlbQc",
+        "time": "22:20",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-02-20T23:59:00.672Z"
+    },
+    {
+        
+        "bus_com": "Silvestre - Central",
+        "bus_id": "",
+        "bus_num": "007",
+        "createdAt": "2015-02-20T00:21:01.733Z",
+        "date": "19/02/2015",
+        "device": "Android",
+        "objectId": "x5qKvau6nJ",
+        "time": "22:20",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-02-20T23:59:07.617Z"
+    },
+    {
+        
+        "bus_com": "Duque de Caxias - Pilares",
+        "bus_id": "159134",
+        "bus_num": "485L",
+        "createdAt": "2015-02-20T00:33:36.722Z",
+        "date": "19/02/2015",
+        "device": "Android",
+        "objectId": "AyoYxu4UJw",
+        "time": "22:32",
+        "type": "não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-20T23:59:15.266Z"
+    },
+    {
+        
+        "bus_com": " Parque União - Castelo",
+        "bus_id": "",
+        "bus_num": "330 ",
+        "createdAt": "2015-02-20T00:38:36.490Z",
+        "date": "19/02/2015",
+        "device": "Android",
+        "objectId": "FnhuLChTKT",
+        "time": "22:38",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-02-20T00:38:36.490Z"
+    },
+    {
+        
+        "bus_com": " Charitas - Galeão",
+        "bus_id": "",
+        "bus_num": "760D ",
+        "createdAt": "2015-02-20T17:16:34.913Z",
+        "date": "09/02/2015",
+        "device": "Android",
+        "objectId": "uyrwqFbhUa",
+        "time": "10:10",
+        "type": "Foi assaltado",
+        "type_id": 10,
+        "updatedAt": "2015-02-20T17:16:34.913Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-02-23T10:11:52.683Z",
+        "date": "23/02/2015",
+        "device": "Android",
+        "objectId": "XsUpH1fgYX",
+        "time": "07:10",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-23T10:11:52.683Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-02-23T10:11:52.927Z",
+        "date": "23/02/2015",
+        "device": "Android",
+        "objectId": "ibstnlyUNX",
+        "time": "07:09",
+        "type": "Está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T13:56:55.283Z"
+    },
+    {
+        
+        "bus_com": " Rio Centro - Castelo",
+        "bus_id": "",
+        "bus_num": "368 ",
+        "createdAt": "2015-02-23T19:55:56.353Z",
+        "date": "23/02/2015",
+        "device": "Android",
+        "objectId": "gw5pKszI4N",
+        "time": "16:55",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-23T19:55:56.353Z"
+    },
+    {
+        
+        "bus_com": " Rio Centro - Castelo",
+        "bus_id": "C47670",
+        "bus_num": "352 ",
+        "createdAt": "2015-02-23T20:22:20.347Z",
+        "date": "23/02/2015",
+        "device": "Android",
+        "objectId": "LiUX70MJCF",
+        "time": "17:18",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-23T20:22:20.347Z"
+    },
+    {
+        
+        "bus_com": " Rio Centro - Castelo",
+        "bus_id": "C47562",
+        "bus_num": "352 ",
+        "createdAt": "2015-02-23T20:29:55.177Z",
+        "date": "23/02/2015",
+        "device": "Android",
+        "objectId": "5LY8xMESLY",
+        "time": "17:28",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-23T20:29:55.177Z"
+    },
+    {
+        
+        "bus_com": " Rio Centro - Castelo",
+        "bus_id": "C47510",
+        "bus_num": "352 ",
+        "createdAt": "2015-02-23T20:43:14.020Z",
+        "date": "23/02/2015",
+        "device": "Android",
+        "objectId": "y9xVTjkkgT",
+        "time": "17:41",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-23T20:43:14.020Z"
+    },
+    {
+        
+        "bus_com": " Rio Centro - Castelo",
+        "bus_id": "",
+        "bus_num": "352 ",
+        "createdAt": "2015-02-23T20:48:14.185Z",
+        "date": "23/02/2015",
+        "device": "Android",
+        "objectId": "OAM2plvL4k",
+        "time": "17:46",
+        "type": "Está demorando muito a passar",
+        "type_id": 17,
+        "updatedAt": "2015-02-23T20:48:14.185Z"
+    },
+    {
+        
+        "bus_com": " Cordovil - Tiradentes",
+        "bus_id": "B63007",
+        "bus_num": "335 ",
+        "createdAt": "2015-02-24T13:13:12.059Z",
+        "date": "24/02/2015",
+        "device": "Android",
+        "objectId": "ZuTSUT9RVu",
+        "time": "10:12",
+        "type": "Teve seu itinerário alterado sem justificativa",
+        "type_id": 13,
+        "updatedAt": "2015-02-24T13:13:12.059Z"
+    },
+    {
+        
+        "bus_com": " Olaria - Saens Peña",
+        "bus_id": "B58198",
+        "bus_num": "625 ",
+        "createdAt": "2015-02-24T13:41:11.834Z",
+        "date": "24/02/2015",
+        "device": "Android",
+        "objectId": "SjxXDLplML",
+        "time": "10:40",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-24T13:41:11.834Z"
+    },
+    {
+        
+        "bus_com": " TRANSOESTE Mato Alto - Alvorada",
+        "bus_id": "D86846",
+        "bus_num": "BRT 5803 ",
+        "createdAt": "2015-02-24T14:55:31.781Z",
+        "date": "24/02/2015",
+        "device": "Android",
+        "objectId": "FAETPUAmhM",
+        "time": "11:51",
+        "type": "Está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-02-24T14:55:31.781Z"
+    },
+    {
+        
+        "bus_com": " Jardim América - Saens Peña",
+        "bus_id": "B27025",
+        "bus_num": "639 ",
+        "createdAt": "2015-02-24T21:02:06.002Z",
+        "date": "24/02/2015",
+        "device": "Android",
+        "objectId": "A3EiyiodZ5",
+        "time": "17:59",
+        "type": "Tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-02-24T21:02:06.002Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-02-25T09:23:17.812Z",
+        "date": "25/02/2015",
+        "device": "Android",
+        "objectId": "rhoGvEFNs1",
+        "time": "06:22",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-25T09:23:17.812Z"
+    },
+    {
+        
+        "bus_com": " Méier - Copacabana",
+        "bus_id": "",
+        "bus_num": "455 ",
+        "createdAt": "2015-02-25T09:23:54.535Z",
+        "date": "25/02/2015",
+        "device": "Android",
+        "objectId": "EP7YrefiEB",
+        "time": "06:23",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-25T09:23:54.535Z"
+    },
+    {
+        
+        "bus_com": " TRANSCARIOCA Fundão - Alvorada",
+        "bus_id": "",
+        "bus_num": "BRT 5704 ",
+        "createdAt": "2015-02-25T10:06:53.883Z",
+        "date": "25/02/2015",
+        "device": "Android",
+        "objectId": "a8VhZQPQrg",
+        "time": "07:02",
+        "type": "Tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-02-25T10:06:53.883Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-02-25T19:14:03.782Z",
+        "date": "25/02/2015",
+        "device": "Android",
+        "objectId": "kImQrCFCoV",
+        "time": "16:13",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-25T19:14:03.782Z"
+    },
+    {
+        
+        "bus_com": " Camarista Méier - Passeio",
+        "bus_id": "B71150",
+        "bus_num": "247 ",
+        "createdAt": "2015-02-25T23:36:14.398Z",
+        "date": "25/02/2015",
+        "device": "Android",
+        "objectId": "wXCUFKSnIF",
+        "time": "20:35",
+        "type": "Tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-02-25T23:36:14.398Z"
+    },
+    {
+        
+        "bus_com": " Taquara - Saens Peña",
+        "bus_id": "",
+        "bus_num": "600 ",
+        "createdAt": "2015-02-26T19:43:20.214Z",
+        "date": "26/02/2015",
+        "device": "Android",
+        "objectId": "su6liqvFw2",
+        "time": "16:42",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-26T19:43:20.214Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-02-27T08:55:46.622Z",
+        "date": "27/02/2015",
+        "device": "Android",
+        "objectId": "H3PJkyWwcg",
+        "time": "05:54",
+        "type": "Está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-02-27T08:55:46.622Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-02-27T08:56:02.248Z",
+        "date": "27/02/2015",
+        "device": "Android",
+        "objectId": "xxBCHJES8F",
+        "time": "05:55",
+        "type": "Está em mau estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-02-28T13:55:35.930Z"
+    },
+    {
+        
+        "bus_com": " TRANSCARIOCA Fundão - Alvorada",
+        "bus_id": "E39812",
+        "bus_num": "BRT 5704 ",
+        "createdAt": "2015-02-27T10:12:41.640Z",
+        "date": "27/02/2015",
+        "device": "Android",
+        "objectId": "S323oOXWOG",
+        "time": "07:09",
+        "type": "Está acima da lotação",
+        "type_id": 16,
+        "updatedAt": "2015-02-27T10:12:41.640Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-02-27T18:03:35.137Z",
+        "date": "27/02/2015",
+        "device": "Android",
+        "objectId": "zVoPuCYbz8",
+        "time": "15:03",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-02-27T18:03:35.137Z"
+    },
+    {
+        
+        "bus_com": " Irajá - Passeio",
+        "bus_id": "B73007",
+        "bus_num": "350 ",
+        "createdAt": "2015-02-27T21:59:51.004Z",
+        "date": "27/02/2015",
+        "device": "Android",
+        "objectId": "Pm1ikZNw3h",
+        "time": "18:58",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-02-27T21:59:51.004Z"
+    },
+    {
+        
+        "bus_com": " Irajá - Passeio",
+        "bus_id": "B73007",
+        "bus_num": "350 ",
+        "createdAt": "2015-02-27T22:00:23.796Z",
+        "date": "27/02/2015",
+        "device": "Android",
+        "objectId": "oNi4pVRoxv",
+        "time": "18:59",
+        "type": "Tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-02-27T22:00:23.796Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-03-02T10:54:08.077Z",
+        "date": "02/03/2015",
+        "device": "Android",
+        "objectId": "1nn9Hpt4B7",
+        "time": "07:53",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-03-02T10:54:08.077Z"
+    },
+    {
+        
+        "bus_com": " Taquara - Candelária",
+        "bus_id": "",
+        "bus_num": "341 ",
+        "createdAt": "2015-03-02T22:09:31.837Z",
+        "date": "02/03/2015",
+        "device": "Android",
+        "objectId": "nc8CYM690d",
+        "time": "19:09",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-03-02T22:09:31.837Z"
+    },
+    {
+        
+        "bus_com": " CURICICA - TAQUARA",
+        "bus_id": "",
+        "bus_num": "800A ",
+        "createdAt": "2015-03-02T22:10:02.124Z",
+        "date": "02/03/2015",
+        "device": "Android",
+        "objectId": "O4lffIiLuT",
+        "time": "19:09",
+        "type": "Está em mal estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-03-02T22:10:02.124Z"
+    },
+    {
+        
+        "bus_com": " CURICICA - TAQUARA",
+        "bus_id": "",
+        "bus_num": "800A ",
+        "createdAt": "2015-03-02T22:10:28.921Z",
+        "date": "02/03/2015",
+        "device": "Android",
+        "objectId": "7F2uQhgEIB",
+        "time": "19:10",
+        "type": "Parou fora do ponto",
+        "type_id": 1,
+        "updatedAt": "2015-03-02T22:10:28.921Z"
+    },
+    {
+        
+        "bus_com": " CURICICA - TAQUARA",
+        "bus_id": "",
+        "bus_num": "800A ",
+        "createdAt": "2015-03-02T22:10:44.625Z",
+        "date": "02/03/2015",
+        "device": "Android",
+        "objectId": "cZyUlVxZh0",
+        "time": "19:10",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-03-02T22:10:44.625Z"
+    },
+    {
+        
+        "bus_com": " Olaria - Candelária",
+        "bus_id": "B58155",
+        "bus_num": "312 ",
+        "createdAt": "2015-03-03T11:50:00.828Z",
+        "date": "03/03/2015",
+        "device": "Android",
+        "objectId": "NxbtW0bhHr",
+        "time": "08:51",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-03-03T11:50:00.828Z"
+    },
+    {
+        
+        "bus_com": " Penha (Grotão) - Praça Tiradentes",
+        "bus_id": "B58164",
+        "bus_num": "313 ",
+        "createdAt": "2015-03-03T11:54:31.806Z",
+        "date": "03/03/2015",
+        "device": "Android",
+        "objectId": "9qoTTKmgpM",
+        "time": "08:56",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-03T11:54:31.806Z"
+    },
+    {
+        
+        "bus_com": " Grajaú - Carioca",
+        "bus_id": "A50053",
+        "bus_num": "226 ",
+        "createdAt": "2015-03-03T11:57:34.403Z",
+        "date": "03/03/2015",
+        "device": "Android",
+        "objectId": "S1xUUz4UcR",
+        "time": "08:56",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-03-03T11:57:34.403Z"
+    },
+    {
+        
+        "bus_com": " Penha - Saens Peña",
+        "bus_id": "B58064",
+        "bus_num": "621 ",
+        "createdAt": "2015-03-03T13:52:26.934Z",
+        "date": "03/03/2015",
+        "device": "Android",
+        "objectId": "J8DlkqL5H2",
+        "time": "10:52",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-03-03T13:52:26.934Z"
+    },
+    {
+        
+        "bus_com": " Alvorada-Leme",
+        "bus_id": "A29036",
+        "bus_num": "535 ",
+        "createdAt": "2015-03-03T17:19:35.284Z",
+        "date": "03/03/2015",
+        "device": "Android",
+        "objectId": "HqTapH1EG7",
+        "time": "14:18",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-03-03T17:19:35.284Z"
+    },
+    {
+        
+        "bus_com": " Água Santa - Carioca",
+        "bus_id": "B25600",
+        "bus_num": "249 ",
+        "createdAt": "2015-03-05T17:01:47.948Z",
+        "date": "05/03/2015",
+        "device": "Android",
+        "objectId": "K0zLiOv33C",
+        "time": "14:01",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-03-05T17:01:47.948Z"
+    },
+    {
+        
+        "bus_com": " Rio Centro - Castelo",
+        "bus_id": "C30030",
+        "bus_num": "368 ",
+        "createdAt": "2015-03-05T17:09:55.068Z",
+        "date": "05/03/2015",
+        "device": "Android",
+        "objectId": "7CM7UytRpI",
+        "time": "14:08",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-03-05T17:09:55.068Z"
+    },
+    {
+        
+        "bus_com": " Rio Centro - Castelo",
+        "bus_id": "",
+        "bus_num": "368 ",
+        "createdAt": "2015-03-05T17:10:41.292Z",
+        "date": "05/03/2015",
+        "device": "Android",
+        "objectId": "AIav9Vsp2S",
+        "time": "14:09",
+        "type": "Está demorando muito a passar",
+        "type_id": 17,
+        "updatedAt": "2015-03-05T17:10:41.292Z"
+    },
+    {
+        
+        "bus_com": " Praça Seca - Castelo",
+        "bus_id": "C47589",
+        "bus_num": "306 ",
+        "createdAt": "2015-03-05T23:58:35.842Z",
+        "date": "05/03/2015",
+        "device": "Android",
+        "objectId": "hFJBKMmiL2",
+        "time": "20:57",
+        "type": "Está demorando muito a passar",
+        "type_id": 17,
+        "updatedAt": "2015-03-05T23:58:35.842Z"
+    },
+    {
+        
+        "bus_com": " Pavuna - Cidade Universitária",
+        "bus_id": "B60076",
+        "bus_num": "945 ",
+        "createdAt": "2015-03-06T03:58:37.087Z",
+        "date": "04/03/2015",
+        "device": "Android",
+        "objectId": "A0XGGJTnq7",
+        "time": "17:05",
+        "type": "Está em mal estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-03-06T03:58:37.087Z"
+    },
+    {
+        
+        "bus_com": " CURICICA - TAQUARA",
+        "bus_id": "",
+        "bus_num": "800A ",
+        "createdAt": "2015-03-06T14:46:38.671Z",
+        "date": "06/03/2015",
+        "device": "Android",
+        "objectId": "jlOyq3PiR0",
+        "time": "11:46",
+        "type": "Está em mal estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-03-06T14:46:38.671Z"
+    },
+    {
+        
+        "bus_com": " CURICICA - TAQUARA",
+        "bus_id": "",
+        "bus_num": "800A ",
+        "createdAt": "2015-03-06T14:46:54.894Z",
+        "date": "06/03/2015",
+        "device": "Android",
+        "objectId": "QeA12AqP6H",
+        "time": "11:46",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-03-06T14:46:54.894Z"
+    },
+    {
+        
+        "bus_com": " COLONIA - HOSP. SARAH",
+        "bus_id": "",
+        "bus_num": "832A ",
+        "createdAt": "2015-03-06T14:47:13.690Z",
+        "date": "06/03/2015",
+        "device": "Android",
+        "objectId": "z90tPkZ52H",
+        "time": "11:46",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-03-06T14:47:13.690Z"
+    },
+    {
+        
+        "bus_com": " São Jorge - Campo Grande",
+        "bus_id": "D90084",
+        "bus_num": "828A ",
+        "createdAt": "2015-03-06T17:38:09.757Z",
+        "date": "06/03/2015",
+        "device": "Android",
+        "objectId": "EW7RSD105W",
+        "time": "14:30",
+        "type": "Está demorando muito a passar",
+        "type_id": 17,
+        "updatedAt": "2015-03-06T17:38:09.757Z"
+    },
+    {
+        
+        "bus_com": " Grajaú - Cosme Velho",
+        "bus_id": "A72075",
+        "bus_num": "422 ",
+        "createdAt": "2015-03-09T12:40:52.424Z",
+        "date": "09/03/2015",
+        "device": "Android",
+        "objectId": "ZeBS88xh4J",
+        "time": "09:40",
+        "type": "Está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-03-09T12:40:52.424Z"
+    },
+    {
+        
+        "bus_com": " Água Santa - Castelo",
+        "bus_id": "B71123",
+        "bus_num": "239 ",
+        "createdAt": "2015-03-10T15:30:29.618Z",
+        "date": "10/03/2015",
+        "device": "Android",
+        "objectId": "7txULEYz6X",
+        "time": "12:14",
+        "type": "Está circulando com suas portas abertas",
+        "type_id": 18,
+        "updatedAt": "2015-03-10T15:30:29.618Z"
+    },
+    {
+        
+        "bus_com": " Água Santa - Castelo",
+        "bus_id": "B71123",
+        "bus_num": "239 ",
+        "createdAt": "2015-03-10T15:30:34.087Z",
+        "date": "10/03/2015",
+        "device": "Android",
+        "objectId": "3ay4tuFbfO",
+        "time": "12:14",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-03-10T15:30:34.087Z"
+    },
+    {
+        
+        "bus_com": " Água Santa - Castelo",
+        "bus_id": "B71123",
+        "bus_num": "239 ",
+        "createdAt": "2015-03-10T15:31:24.519Z",
+        "date": "10/03/2015",
+        "device": "Android",
+        "objectId": "uVaiXZ1QpW",
+        "time": "12:14",
+        "type": "Tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-03-10T15:31:24.519Z"
+    },
+    {
+        
+        "bus_com": " Água Santa - Castelo",
+        "bus_id": "B71123",
+        "bus_num": "239 ",
+        "createdAt": "2015-03-10T15:32:09.630Z",
+        "date": "10/03/2015",
+        "device": "Android",
+        "objectId": "lloZw0Jx5q",
+        "time": "12:14",
+        "type": "Tem seu motorista falando no celular enquanto dirige",
+        "type_id": 15,
+        "updatedAt": "2015-03-10T15:32:09.630Z"
+    },
+    {
+        
+        "bus_com": " São Jorge - Campo Grande",
+        "bus_id": "D90082",
+        "bus_num": "828A ",
+        "createdAt": "2015-03-11T12:46:20.489Z",
+        "date": "11/03/2015",
+        "device": "Android",
+        "objectId": "ARLhg6SN8J",
+        "time": "09:45",
+        "type": "Enguiçou",
+        "type_id": 3,
+        "updatedAt": "2015-03-11T12:46:20.489Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-03-12T23:14:46.322Z",
+        "date": "12/03/2015",
+        "device": "Android",
+        "objectId": "ngt9uqq9Yf",
+        "time": "20:14",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-03-12T23:14:46.322Z"
+    },
+    {
+        
+        "bus_com": " Barra da Tijuca - São João de Meriti",
+        "bus_id": "",
+        "bus_num": "410T ",
+        "createdAt": "2015-03-14T00:12:53.289Z",
+        "date": "13/03/2015",
+        "device": "Android",
+        "objectId": "fGX8D95DcK",
+        "time": "21:12",
+        "type": "Está demorando muito a passar",
+        "type_id": 17,
+        "updatedAt": "2015-03-14T00:12:53.289Z"
+    },
+    {
+        
+        "bus_com": " Praça Seca - Praça da República",
+        "bus_id": "51623",
+        "bus_num": "371 ",
+        "createdAt": "2015-03-16T01:55:08.245Z",
+        "date": "15/03/2015",
+        "device": "Android",
+        "objectId": "KuO0nUDZkC",
+        "time": "20:57",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-03-16T01:55:08.245Z"
+    },
+    {
+        
+        "bus_com": " São Conrado - Central",
+        "bus_id": "A63509",
+        "bus_num": "177 ",
+        "createdAt": "2015-03-16T09:19:03.280Z",
+        "date": "16/03/2015",
+        "device": "Android",
+        "objectId": "ppHniCynzG",
+        "time": "06:18",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-03-16T09:19:03.280Z"
+    },
+    {
+        
+        "bus_com": " Del Castilho - Curicica",
+        "bus_id": "",
+        "bus_num": "611 ",
+        "createdAt": "2015-03-16T16:59:49.043Z",
+        "date": "16/03/2015",
+        "device": "Android",
+        "objectId": "rdkHDnWwL9",
+        "time": "13:58",
+        "type": "Está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-03-16T16:59:49.043Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-03-19T16:12:43.288Z",
+        "date": "19/03/2015",
+        "device": "Android",
+        "objectId": "JpHtFv8O4R",
+        "time": "13:12",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-03-19T16:12:43.288Z"
+    },
+    {
+        
+        "bus_com": " Méier - Copacabana",
+        "bus_id": "B71097",
+        "bus_num": "455 ",
+        "createdAt": "2015-03-19T21:52:57.695Z",
+        "date": "19/03/2015",
+        "device": "Android",
+        "objectId": "MVeAg5MzdF",
+        "time": "18:52",
+        "type": "Tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-03-19T21:52:57.695Z"
+    },
+    {
+        
+        "bus_com": " Barra da Tijuca - São João de Meriti",
+        "bus_id": "",
+        "bus_num": "410T ",
+        "createdAt": "2015-03-20T20:28:33.710Z",
+        "date": "20/03/2015",
+        "device": "Android",
+        "objectId": "6xmhDGaYfu",
+        "time": "16:15",
+        "type": "Está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-03-20T20:28:33.710Z"
+    },
+    {
+        
+        "bus_com": " Abolição - General Osório",
+        "bus_id": "B42665",
+        "bus_num": "457 ",
+        "createdAt": "2015-03-24T13:54:10.388Z",
+        "date": "24/03/2015",
+        "device": "Android",
+        "objectId": "CCFnhrEhv8",
+        "time": "10:53",
+        "type": "Tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-03-24T13:54:10.388Z"
+    },
+    {
+        
+        "bus_com": " TRANSOESTE Mato Alto - Alvorada",
+        "bus_id": "E86810",
+        "bus_num": "BRT 5803 ",
+        "createdAt": "2015-03-25T09:30:21.197Z",
+        "date": "25/03/2015",
+        "device": "Android",
+        "objectId": "V5itwASCdh",
+        "time": "06:27",
+        "type": "Está com falhas técnicas",
+        "type_id": 9,
+        "updatedAt": "2015-03-25T09:30:21.197Z"
+    },
+    {
+        
+        "bus_com": " Andaraí - Carioca",
+        "bus_id": "A71583",
+        "bus_num": "217 ",
+        "createdAt": "2015-03-27T15:31:43.100Z",
+        "date": "27/03/2015",
+        "device": "Android",
+        "objectId": "qJk4IFceYn",
+        "time": "12:30",
+        "type": "Tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-03-27T15:31:43.100Z"
+    },
+    {
+        
+        "bus_com": " Grajaú - Carioca",
+        "bus_id": "",
+        "bus_num": "226 ",
+        "createdAt": "2015-03-28T16:52:24.616Z",
+        "date": "28/03/2015",
+        "device": "Android",
+        "objectId": "AEdLQMVYZP",
+        "time": "13:52",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-28T16:52:24.616Z"
+    },
+    {
+        
+        "bus_com": " Rio das Pedras - Gávea",
+        "bus_id": "",
+        "bus_num": "555 ",
+        "createdAt": "2015-03-28T16:54:26.965Z",
+        "date": "28/03/2015",
+        "device": "Android",
+        "objectId": "3Ro2YR7xQs",
+        "time": "13:51",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-28T16:54:26.965Z"
+    },
+    {
+        
+        "bus_com": " TRANSOESTE Paciência - Recreio",
+        "bus_id": "",
+        "bus_num": "BRT ",
+        "createdAt": "2015-03-28T16:55:41.709Z",
+        "date": "28/03/2015",
+        "device": "Android",
+        "objectId": "eqdsEsQWqG",
+        "time": "13:54",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-28T16:55:41.709Z"
+    },
+    {
+        
+        "bus_com": " Pavuna - Castelo",
+        "bus_id": "",
+        "bus_num": "2295 ",
+        "createdAt": "2015-03-28T16:58:50.348Z",
+        "date": "28/03/2015",
+        "device": "Android",
+        "objectId": "cHxPHLd8ub",
+        "time": "13:58",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-28T16:58:50.348Z"
+    },
+    {
+        
+        "bus_com": " Grajaú - Carioca",
+        "bus_id": "",
+        "bus_num": "226 ",
+        "createdAt": "2015-03-28T17:01:36.427Z",
+        "date": "28/03/2015",
+        "device": "Android",
+        "objectId": "djs5hzWkcr",
+        "time": "14:00",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-28T17:01:36.427Z"
+    },
+    {
+        
+        "bus_com": " Parque União - Castelo",
+        "bus_id": "",
+        "bus_num": "330 ",
+        "createdAt": "2015-03-28T17:04:15.094Z",
+        "date": "28/03/2015",
+        "device": "Android",
+        "objectId": "CGaxPCPhmQ",
+        "time": "14:04",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-28T17:04:15.094Z"
+    },
+    {
+        
+        "bus_com": " Pavuna - Castelo",
+        "bus_id": "",
+        "bus_num": "2295 ",
+        "createdAt": "2015-03-28T17:06:11.999Z",
+        "date": "28/03/2015",
+        "device": "Android",
+        "objectId": "5BLn3xmrFd",
+        "time": "14:06",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-28T17:06:11.999Z"
+    },
+    {
+        
+        "bus_com": " Penha - Copacabana",
+        "bus_id": "",
+        "bus_num": "483 ",
+        "createdAt": "2015-03-29T19:13:59.249Z",
+        "date": "29/03/2015",
+        "device": "Android",
+        "objectId": "HzrpE4cIeS",
+        "time": "16:11",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-29T19:13:59.249Z"
+    },
+    {
+        
+        "bus_com": " Grajaú - Castelo",
+        "bus_id": "",
+        "bus_num": "2203 ",
+        "createdAt": "2015-03-29T19:16:45.312Z",
+        "date": "29/03/2015",
+        "device": "Android",
+        "objectId": "Pnh6l4nGxY",
+        "time": "16:01",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-29T19:16:45.312Z"
+    },
+    {
+        
+        "bus_com": " Rodoviária - Jardim de Alah",
+        "bus_id": "",
+        "bus_num": "110 ",
+        "createdAt": "2015-03-29T19:18:41.484Z",
+        "date": "29/03/2015",
+        "device": "Android",
+        "objectId": "FpjIwPBaO5",
+        "time": "16:16",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-29T19:18:41.484Z"
+    },
+    {
+        
+        "bus_com": " Parque União - Castelo",
+        "bus_id": "",
+        "bus_num": "330 ",
+        "createdAt": "2015-03-29T19:28:08.893Z",
+        "date": "29/03/2015",
+        "device": "Android",
+        "objectId": "kQuIFSEehb",
+        "time": "16:27",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-29T19:28:08.893Z"
+    },
+    {
+        
+        "bus_com": " Gávea - Praça Mauá",
+        "bus_id": "",
+        "bus_num": "2014 ",
+        "createdAt": "2015-03-29T19:30:19.876Z",
+        "date": "29/03/2015",
+        "device": "Android",
+        "objectId": "21DizWz5XK",
+        "time": "16:30",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-29T19:30:19.876Z"
+    },
+    {
+        
+        "bus_com": " Penha - General Osório",
+        "bus_id": "",
+        "bus_num": "485 ",
+        "createdAt": "2015-03-30T03:07:27.199Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-d5de691c-c40e-40dc-94e8-e0be4cb47200-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-d5de691c-c40e-40dc-94e8-e0be4cb47200-image.png"
+        },
+        "objectId": "BEx0osJpUm",
+        "time": "00:06",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T03:07:27.199Z"
+    },
+    {
+        
+        "bus_com": " Grajaú - Carioca",
+        "bus_id": "",
+        "bus_num": "226 ",
+        "createdAt": "2015-03-30T03:10:37.383Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-d2578ee8-c73d-41a3-9549-0ffef4cdbed5-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-d2578ee8-c73d-41a3-9549-0ffef4cdbed5-image.png"
+        },
+        "objectId": "PuXmHrdp44",
+        "time": "00:10",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T03:10:37.383Z"
+    },
+    {
+        
+        "bus_com": " Praça Seca - Castelo",
+        "bus_id": "",
+        "bus_num": "331 ",
+        "createdAt": "2015-03-30T03:17:22.453Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-80d33e9a-8942-47ea-b38e-5f99d9c7466d-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-80d33e9a-8942-47ea-b38e-5f99d9c7466d-image.png"
+        },
+        "objectId": "xLcDWPleK0",
+        "time": "00:16",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T03:17:22.453Z"
+    },
+    {
+        
+        "bus_com": " Praça Seca - Castelo",
+        "bus_id": "",
+        "bus_num": "331 ",
+        "createdAt": "2015-03-30T03:23:56.666Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "objectId": "Yga0cqnIs0",
+        "time": "00:23",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T03:23:56.666Z"
+    },
+    {
+        
+        "bus_com": " Xerém - Candelária",
+        "bus_id": "",
+        "bus_num": "486C ",
+        "createdAt": "2015-03-30T03:25:15.665Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-c84af0d9-2e24-419a-99fa-518632ad1462-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-c84af0d9-2e24-419a-99fa-518632ad1462-image.png"
+        },
+        "objectId": "viOxD2kzLo",
+        "time": "00:23",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T03:25:15.665Z"
+    },
+    {
+        
+        "bus_com": " Vila Isabel - Praça Mauá",
+        "bus_id": "",
+        "bus_num": "222 ",
+        "createdAt": "2015-03-30T03:40:29.982Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-8047dc1f-27cc-45e9-9d6b-e7326bc58fde-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-8047dc1f-27cc-45e9-9d6b-e7326bc58fde-image.png"
+        },
+        "objectId": "YMwVB3SARf",
+        "time": "00:40",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T03:40:29.982Z"
+    },
+    {
+        
+        "bus_com": " Fundão - General Osório",
+        "bus_id": "",
+        "bus_num": "486 ",
+        "createdAt": "2015-03-30T03:46:52.268Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-881ca8f6-7beb-4236-812b-a8df1f3a7c24-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-881ca8f6-7beb-4236-812b-a8df1f3a7c24-image.png"
+        },
+        "objectId": "UHDzwrpdGp",
+        "time": "00:46",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T03:46:52.268Z"
+    },
+    {
+        
+        "bus_com": " Sulacap - Candelária",
+        "bus_id": "",
+        "bus_num": "300 ",
+        "createdAt": "2015-03-30T03:48:29.079Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-de6d3808-5984-4144-95e8-3c7a264284dc-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-de6d3808-5984-4144-95e8-3c7a264284dc-image.png"
+        },
+        "objectId": "zLIN5YqcFZ",
+        "time": "00:46",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T03:48:29.079Z"
+    },
+    {
+        
+        "bus_com": " Sulacap - Candelária",
+        "bus_id": "",
+        "bus_num": "300 ",
+        "createdAt": "2015-03-30T03:50:17.124Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-39aada41-eb7a-4b47-9511-0c918dede4ba-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-39aada41-eb7a-4b47-9511-0c918dede4ba-image.png"
+        },
+        "objectId": "hYdmIzVYVV",
+        "time": "00:48",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T03:50:17.124Z"
+    },
+    {
+        
+        "bus_com": " Penha - General Osório",
+        "bus_id": "",
+        "bus_num": "485 ",
+        "createdAt": "2015-03-30T03:53:22.097Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-c61e306d-bf91-4e95-b87e-bf3099316073-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-c61e306d-bf91-4e95-b87e-bf3099316073-image.png"
+        },
+        "objectId": "19UyRuixuL",
+        "time": "00:50",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T03:53:22.097Z"
+    },
+    {
+        
+        "bus_com": " Cordovil - Tiradentes",
+        "bus_id": "",
+        "bus_num": "335 ",
+        "createdAt": "2015-03-30T03:54:37.397Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-f99a75cc-61a7-48aa-a719-45dcabcbc9f3-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-f99a75cc-61a7-48aa-a719-45dcabcbc9f3-image.png"
+        },
+        "objectId": "JIfSPFLcl3",
+        "time": "00:53",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T03:54:37.397Z"
+    },
+    {
+        
+        "bus_com": " Pavuna - Saens Peña",
+        "bus_id": "",
+        "bus_num": "665 ",
+        "createdAt": "2015-03-30T04:02:08.901Z",
+        "date": "30/03/2012",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-1dc9a537-a345-4f78-a503-16bc56bc94a0-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-1dc9a537-a345-4f78-a503-16bc56bc94a0-image.png"
+        },
+        "objectId": "9IuUMNkVQF",
+        "time": "00:54",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T04:02:08.901Z"
+    },
+    {
+        
+        "bus_com": " Taquara - Saens Peña",
+        "bus_id": "",
+        "bus_num": "600 ",
+        "createdAt": "2015-03-30T04:07:10.513Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-bf1d1ed7-e18e-43d3-8141-d23085ef0588-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-bf1d1ed7-e18e-43d3-8141-d23085ef0588-image.png"
+        },
+        "objectId": "ciNzzNWS1A",
+        "time": "01:06",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T04:07:10.513Z"
+    },
+    {
+        
+        "bus_com": " Taquara - Saens Peña",
+        "bus_id": "",
+        "bus_num": "600 ",
+        "createdAt": "2015-03-30T04:10:26.095Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-4793007b-4785-4f0d-9439-f1de2d7fa82a-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-4793007b-4785-4f0d-9439-f1de2d7fa82a-image.png"
+        },
+        "objectId": "p9uVRlkrTF",
+        "time": "01:10",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T04:10:26.095Z"
+    },
+    {
+        
+        "bus_com": " Itaipu - Castelo",
+        "bus_id": "",
+        "bus_num": "1910D ",
+        "createdAt": "2015-03-30T04:15:26.035Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-44c726c4-6073-42e0-aeb8-11d33591493a-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-44c726c4-6073-42e0-aeb8-11d33591493a-image.png"
+        },
+        "objectId": "LTht3WAA0j",
+        "time": "01:15",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-30T04:15:26.035Z"
+    },
+    {
+        
+        "bus_com": " Niterói - Candelária",
+        "bus_id": "",
+        "bus_num": "100D ",
+        "createdAt": "2015-03-31T02:51:09.476Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "objectId": "BqRHZzcpEn",
+        "time": "23:50",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-31T02:51:09.476Z"
+    },
+    {
+        
+        "bus_com": " Bangu - Tiradentes",
+        "bus_id": "",
+        "bus_num": "369 ",
+        "createdAt": "2015-03-31T03:03:57.018Z",
+        "date": "31/03/2015",
+        "device": "Android",
+        "objectId": "MxCFP6SjiJ",
+        "time": "00:03",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-31T03:03:57.018Z"
+    },
+    {
+        
+        "bus_com": " Duque de Caxias - Central",
+        "bus_id": "",
+        "bus_num": "101C ",
+        "createdAt": "2015-03-31T03:13:50.639Z",
+        "date": "31/03/2015",
+        "device": "Android",
+        "objectId": "ggfyKFWkc6",
+        "time": "00:13",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-31T03:13:50.639Z"
+    },
+    {
+        
+        "bus_com": " Andaraí - Saens Peña",
+        "bus_id": "",
+        "bus_num": "602 ",
+        "createdAt": "2015-03-31T03:34:41.750Z",
+        "date": "31/03/2015",
+        "device": "Android",
+        "objectId": "qBNGkGtSAl",
+        "time": "00:34",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-31T03:34:41.750Z"
+    },
+    {
+        
+        "bus_com": " Pavuna - Cachambi",
+        "bus_id": "",
+        "bus_num": "669 ",
+        "createdAt": "2015-03-31T03:49:45.238Z",
+        "date": "31/03/2015",
+        "device": "Android",
+        "objectId": "QnDI5oPlH1",
+        "time": "00:49",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-31T03:49:45.238Z"
+    },
+    {
+        
+        "bus_com": " Penha - General Osório",
+        "bus_id": "",
+        "bus_num": "485 ",
+        "createdAt": "2015-03-31T03:55:59.199Z",
+        "date": "31/03/2015",
+        "device": "Android",
+        "objectId": "D4Iom0Vk2b",
+        "time": "00:55",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-03-31T03:55:59.199Z"
+    },
+    {
+        
+        "bus_com": " Barra da Tijuca - Nilópolis",
+        "bus_id": "",
+        "bus_num": "420T ",
+        "createdAt": "2015-03-31T10:35:58.373Z",
+        "date": "31/03/2015",
+        "device": "Android",
+        "objectId": "qpnS2iswjt",
+        "time": "06:34",
+        "type": "Está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-03-31T10:35:58.373Z"
+    },
+    {
+        
+        "bus_com": " Barra da Tijuca - São João de Meriti",
+        "bus_id": "",
+        "bus_num": "410T ",
+        "createdAt": "2015-04-01T09:21:47.967Z",
+        "date": "01/04/2015",
+        "device": "Android",
+        "objectId": "L6gQIHopbA",
+        "time": "06:21",
+        "type": "Está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-04-01T09:21:47.967Z"
+    },
+    {
+        
+        "bus_com": " Barra da Tijuca - São João de Meriti",
+        "bus_id": "",
+        "bus_num": "410T ",
+        "createdAt": "2015-04-01T09:22:34.877Z",
+        "date": "01/04/2015",
+        "device": "Android",
+        "objectId": "su33j9RejD",
+        "time": "06:21",
+        "type": "Está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-04-01T09:22:34.877Z"
+    },
+    {
+        
+        "bus_com": " Gávea - Praça Mauá",
+        "bus_id": "41833",
+        "bus_num": "2014 ",
+        "createdAt": "2015-04-01T13:30:16.291Z",
+        "date": "01/04/2015",
+        "device": "Android",
+        "objectId": "PiLyCum8pT",
+        "time": "10:28",
+        "type": "Tem seu motorista imprudente/mal educado",
+        "type_id": 12,
+        "updatedAt": "2015-04-01T13:30:16.291Z"
+    },
+    {
+        
+        "bus_com": " Madureira - Praça Tiradentes",
+        "bus_id": "B75721",
+        "bus_num": "355 ",
+        "createdAt": "2015-04-03T03:14:54.592Z",
+        "date": "30/03/2015",
+        "device": "Android",
+        "objectId": "cTdoz4yIEx",
+        "time": "17:00",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-04-03T03:14:54.592Z"
+    },
+    {
+        
+        "bus_com": " Miguel Couto - Central",
+        "bus_id": "",
+        "bus_num": "490B ",
+        "createdAt": "2015-04-03T11:36:43.775Z",
+        "date": "02/04/2015",
+        "device": "Android",
+        "objectId": "QP4962jiBQ",
+        "time": "06:15",
+        "type": "Parou fora do ponto",
+        "type_id": 1,
+        "updatedAt": "2015-04-03T11:36:43.775Z"
+    },
+    {
+        
+        "bus_com": " CURICICA - TAQUARA",
+        "bus_id": "",
+        "bus_num": "800A ",
+        "createdAt": "2015-04-04T22:41:22.030Z",
+        "date": "03/04/2015",
+        "device": "Android",
+        "objectId": "pIV9KSZIo7",
+        "time": "19:40",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-04-04T22:41:22.030Z"
+    },
+    {
+        
+        "bus_com": " CURICICA - TAQUARA",
+        "bus_id": "",
+        "bus_num": "856A ",
+        "createdAt": "2015-04-04T22:41:49.871Z",
+        "date": "04/04/2015",
+        "device": "Android",
+        "objectId": "HpbOO8CJRT",
+        "time": "19:41",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-04-04T22:41:49.871Z"
+    },
+    {
+        
+        "bus_com": " Taquara - Saens Peña",
+        "bus_id": "",
+        "bus_num": "600 ",
+        "createdAt": "2015-04-07T00:25:42.059Z",
+        "date": "06/04/2015",
+        "device": "Android",
+        "objectId": "9FsLv1Xedi",
+        "time": "21:25",
+        "type": "Está em mal estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-04-07T00:25:42.059Z"
+    },
+    {
+        
+        "bus_com": " Taquara - Saens Peña",
+        "bus_id": "",
+        "bus_num": "600 ",
+        "createdAt": "2015-04-07T00:26:08.076Z",
+        "date": "06/04/2015",
+        "device": "Android",
+        "objectId": "QH70XXKel2",
+        "time": "21:25",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-04-07T00:26:08.076Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-04-07T00:26:34.970Z",
+        "date": "06/04/2015",
+        "device": "Android",
+        "objectId": "iHqyr5Lgmd",
+        "time": "21:26",
+        "type": "Atropelou um pedestre",
+        "type_id": 4,
+        "updatedAt": "2015-04-07T00:26:34.970Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-04-07T00:27:05.540Z",
+        "date": "06/04/2015",
+        "device": "Android",
+        "objectId": "FUUTpwbWdJ",
+        "time": "21:26",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-04-07T00:27:05.540Z"
+    },
+    {
+        
+        "bus_com": " Barra da Tijuca - Nova Iguaçu",
+        "bus_id": "",
+        "bus_num": "405T ",
+        "createdAt": "2015-04-07T08:58:41.515Z",
+        "date": "07/04/2015",
+        "device": "Android",
+        "objectId": "OclZe7DBSJ",
+        "time": "05:57",
+        "type": "Está com o ar condicionado quebrado",
+        "type_id": 8,
+        "updatedAt": "2015-04-07T08:58:41.515Z"
+    },
+    {
+        
+        "bus_com": " Barra da Tijuca - Nova Iguaçu",
+        "bus_id": "",
+        "bus_num": "405T ",
+        "createdAt": "2015-04-07T09:46:28.938Z",
+        "date": "07/04/2015",
+        "device": "Android",
+        "objectId": "EO3HQIfxG1",
+        "time": "06:25",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-04-07T09:46:28.938Z"
+    },
+    {
+        
+        "bus_com": " Barra da Tijuca - São João de Meriti",
+        "bus_id": "103033",
+        "bus_num": "410T ",
+        "createdAt": "2015-04-07T15:00:33.959Z",
+        "date": "07/04/2015",
+        "device": "Android",
+        "objectId": "mkd1Qltnvi",
+        "time": "10:10",
+        "type": "Está em mal estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-04-07T15:00:33.959Z"
+    },
+    {
+        
+        "bus_com": " Barra da Tijuca - São João de Meriti",
+        "bus_id": "",
+        "bus_num": "410T ",
+        "createdAt": "2015-04-07T15:00:37.028Z",
+        "date": "07/04/2015",
+        "device": "Android",
+        "objectId": "XnGXjPe0tW",
+        "time": "10:10",
+        "type": "Está em mal estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-04-07T15:00:37.028Z"
+    },
+    {
+        
+        "bus_com": " Campo Grande - Cidade Universitária",
+        "bus_id": "",
+        "bus_num": "936 ",
+        "createdAt": "2015-04-07T20:16:18.012Z",
+        "date": "06/04/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-1682242d-758f-4bd0-9a4e-5c2f59c66d00-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-1682242d-758f-4bd0-9a4e-5c2f59c66d00-image.png"
+        },
+        "objectId": "5WFGxAm8iS",
+        "time": "12:00",
+        "type": "Está em mal estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-04-07T20:16:18.012Z"
+    },
+    {
+        
+        "bus_com": " Bairro Jabour - Carioca",
+        "bus_id": "",
+        "bus_num": "396 ",
+        "createdAt": "2015-04-07T20:18:56.851Z",
+        "date": "06/04/2015",
+        "device": "Android",
+        "image": {
+            "__type": "File",
+            "name": "tfss-460b2811-1e8f-4a60-a472-23949b4d6ee0-image.png",
+            "url": "http://files.parsetfss.com/f256d4a9-0cc5-491b-b250-efcf644b8de5/tfss-460b2811-1e8f-4a60-a472-23949b4d6ee0-image.png"
+        },
+        "objectId": "NUfM6qtOo6",
+        "time": "13:45",
+        "type": "Está em mal estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-04-07T20:18:56.851Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-04-08T01:35:49.360Z",
+        "date": "07/04/2015",
+        "device": "Android",
+        "objectId": "j6gsRoNIQI",
+        "time": "22:35",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-04-08T01:35:49.360Z"
+    },
+    {
+        
+        "bus_com": " CURICICA - TAQUARA",
+        "bus_id": "",
+        "bus_num": "800A ",
+        "createdAt": "2015-04-10T13:16:38.494Z",
+        "date": "10/04/2015",
+        "device": "Android",
+        "objectId": "uMNKdH3Zn9",
+        "time": "10:15",
+        "type": "Está em mal estado de conservação",
+        "type_id": 14,
+        "updatedAt": "2015-04-10T13:16:38.494Z"
+    },
+    {
+        
+        "bus_com": " CURICICA - TAQUARA",
+        "bus_id": "",
+        "bus_num": "800A ",
+        "createdAt": "2015-04-10T13:17:09.228Z",
+        "date": "10/04/2015",
+        "device": "Android",
+        "objectId": "zGU683uA9A",
+        "time": "10:16",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-04-10T13:17:09.228Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-04-10T13:17:34.620Z",
+        "date": "10/04/2015",
+        "device": "Android",
+        "objectId": "cnp6LemNq9",
+        "time": "10:17",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-04-10T13:17:34.620Z"
+    },
+    {
+        
+        "bus_com": " Rodoviária - Cidade de Deus",
+        "bus_id": "C47703",
+        "bus_num": "353 ",
+        "createdAt": "2015-04-10T18:36:12.981Z",
+        "date": "10/04/2015",
+        "device": "Android",
+        "objectId": "fhGr51JeNo",
+        "time": "15:29",
+        "type": "Parou fora do ponto",
+        "type_id": 1,
+        "updatedAt": "2015-04-10T18:36:12.981Z"
+    },
+    {
+        
+        "bus_com": " Jardim América - Saens Peña",
+        "bus_id": "B27180",
+        "bus_num": "639 ",
+        "createdAt": "2015-04-10T21:12:31.576Z",
+        "date": "10/04/2015",
+        "device": "Android",
+        "objectId": "B1FmhLCoNO",
+        "time": "18:09",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-04-10T21:12:31.576Z"
+    },
+    {
+        
+        "bus_com": " Pavuna - Cascadura",
+        "bus_id": "B11678",
+        "bus_num": "778 ",
+        "createdAt": "2015-04-11T18:20:53.790Z",
+        "date": "11/04/2015",
+        "device": "Android",
+        "objectId": "3rfm2gg1Pn",
+        "time": "15:18",
+        "type": "Não parou no ponto",
+        "type_id": 0,
+        "updatedAt": "2015-04-11T18:20:53.790Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "390 ",
+        "createdAt": "2015-04-11T18:56:10.481Z",
+        "date": "11/04/2015",
+        "device": "Android",
+        "objectId": "9nbBhEfflC",
+        "time": "15:55",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-04-11T18:56:10.481Z"
+    },
+    {
+        
+        "bus_com": " Curicica - Praça XV",
+        "bus_id": "",
+        "bus_num": "337 ",
+        "createdAt": "2015-04-11T18:56:41.556Z",
+        "date": "11/04/2015",
+        "device": "Android",
+        "objectId": "z2ZCY9n8qe",
+        "time": "15:56",
+        "type": "Não possui ar condicionado",
+        "type_id": 7,
+        "updatedAt": "2015-04-11T18:56:41.556Z"
+    }
+] }
