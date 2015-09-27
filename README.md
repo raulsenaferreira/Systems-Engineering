@@ -14,6 +14,6 @@ Data Mining = Data Mining (Tough translation, =P)
 
 Estrutura de Dados e Algoritmos = Data Structures and Algorithms
 
-TEBD VI = Machine Learning (Recommendation Systems)
-
 Redes Complexas = Complex Networks
+
+TEBD VI = Machine Learning (Recommendation Systems)
