@@ -14,12 +14,17 @@ println(M)
 
 
 # Question 3
-#using StatsBase
-#usar zscore
-M = ceil(1*rand(4,4))
-M2 = vcat(M, zeros(1,4), flipud(-M))
-println(std(M2[:,1]))
-println(mean(M2[:,1]))
+using StatsBase
+# Jeito 1 com matriz toda retornando desvio padrão 1 e média 0
+M=zscore(M)
+println(std(M))
+println(mean(M))
+
+# Jeito 2 com coluna retornando desvio padrão 1 e média 0
+#M = ceil(1*rand(4,4))
+#M2 = vcat(M, zeros(1,4), flipud(-M))
+#println(std(M2[:,1]))
+#println(mean(M2[:,1]))
 
 
 # Question 4
