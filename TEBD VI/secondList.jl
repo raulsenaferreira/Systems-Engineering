@@ -8,3 +8,11 @@ plot(x=qtyPerUser[:,2], y=qtyPerUser[:,1], Geom.line)
 
 #Question 2
 plot(x=1:5, y=hist(array[:,3], 0:5.9)[2], Geom.line)
+
+#Question 3
+numLines=size(array, 1)
+randomBase = array[randperm(numLines), :]
+training = randomBase[1:(numLines*0.8), :]
+test = randomBase[(numLines*0.8+1):end, :]
+
+globalMean = mean(randomBase[:,3])
