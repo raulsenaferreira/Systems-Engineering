@@ -4,3 +4,5 @@
 ######Professor: PhD. Daniel Ratton Figueiredo
 
 ####References:
+[Graph Tool](https://graph-tool.skewed.de/)
+[SNAP](http://snap.stanford.edu/)
