@@ -32,10 +32,12 @@ print("MAE = ", mean(err[2:end]))
 
 
 #Question 4
-globalMean = mean(training[!isnan(training[:,3])])
 itemAverages = [mean(training[find(x->(x==i), training[:,2]), 3]) for i=1:1682]
 itemAverages[find(x->(isnan(x)), itemAverages)]=globalMean
-MAE = [mean(abs(itemAverages[i]-test[find(x->(x==i), test[:,2]), 3])) for i=1:1682]
+MAE = [abs(itemAverages[i]-test[find(x->(x==i), test[:,2]), 3]) for i=1:1682]
+err = zeros(1)
+for e in MAE  append!(err, e) end
+print("MAE = ", mean(err[2:end]))
 
 
 #Question 5
