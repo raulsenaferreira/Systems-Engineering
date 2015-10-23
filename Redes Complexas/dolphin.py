@@ -34,7 +34,7 @@ print count/len(NIdToDistH)
 #%%
 #dolphin graph
 ug = Graph(directed=False)
-ug = GraphView(ug, vfilt=lambda v: v.out_degree() > 4)
+#ug = GraphView(ug, vfilt=lambda v: v.out_degree() > 4)
 ug = load_graph("/home/filipebraida/workspace/dolphins/dolphins.gml")
 #%%
 
@@ -110,8 +110,23 @@ dist
 gt = graph_tool
 ug = gt.GraphView(ug, vfilt=gt.topology.label_largest_component(ug))
 pr = gt.centrality.pagerank(ug)
-print(pr)
-#graph_draw(ug, vertex_fill_color=pr, vorder=pr, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/dolphins_pagerank.png")
+
+a=[]
+for p in range(0, 62):
+    a.append(pr[p])
+
+#10 mais centrais
+a = sorted(a, reverse=True)
+for i in range(0, 10):
+    print(a[i])
+    
+#10 menos centrais
+a = sorted(a, reverse=False)
+for i in range(0, 10):
+    print(a[i])
+
+#grafo da metrica
+graph_draw(ug, vertex_fill_color=pr, vorder=pr, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/dolphins_pagerank.png")
 #%%
 
 #Betweeness
@@ -119,6 +134,22 @@ print(pr)
 gt = graph_tool
 ug = gt.GraphView(ug, vfilt=gt.topology.label_largest_component(ug))
 vb, eb = gt.centrality.betweenness(ug)
+
+a=[]
+for p in range(0, 62):
+    a.append(vb[p])
+
+#10 mais centrais
+a = sorted(a, reverse=True)
+for i in range(0, 10):
+    print(a[i])
+    
+#10 menos centrais
+a = sorted(a, reverse=False)
+for i in range(0, 10):
+    print(a[i])
+
+#metrica
 graph_draw(ug, vertex_fill_color=vb, vorder=vb, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/dolphins_betweeness.png")
 #%%
 
@@ -127,7 +158,22 @@ graph_draw(ug, vertex_fill_color=vb, vorder=vb, vcmap=matplotlib.cm.gist_heat, o
 gt = graph_tool
 ug = gt.GraphView(ug, vfilt=gt.topology.label_largest_component(ug))
 cl = gt.centrality.closeness(ug)
-graph_draw(ug, vertex_fill_color=cl, vorder=cl, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/dolphins_closeness.png")
+
+a=[]
+for p in range(0, 62):
+    a.append(cl[p])
+
+#10 mais centrais
+a = sorted(a, reverse=True)
+for i in range(0, 10):
+    print(a[i])
+    
+#10 menos centrais
+a = sorted(a, reverse=False)
+for i in range(0, 10):
+    print(a[i])
+#grafo da metrica
+#graph_draw(ug, vertex_fill_color=cl, vorder=cl, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/dolphins_closeness.png")
 #%%
 
 #Katz
@@ -135,6 +181,21 @@ graph_draw(ug, vertex_fill_color=cl, vorder=cl, vcmap=matplotlib.cm.gist_heat, o
 gt = graph_tool
 ug = gt.GraphView(ug, vfilt=gt.topology.label_largest_component(ug))
 k = gt.centrality.closeness(ug)
+
+a=[]
+for p in range(0, 62):
+    a.append(k[p])
+
+#10 mais centrais
+a = sorted(a, reverse=True)
+for i in range(0, 10):
+    print(a[i])
+    
+#10 menos centrais
+a = sorted(a, reverse=False)
+for i in range(0, 10):
+    print(a[i])
+#grafo da metrica
 graph_draw(ug, vertex_fill_color=k, vorder=k, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/dolphins_katz.png")
 #%%
 
@@ -217,7 +278,22 @@ print average(gt.topology.shortest_distance(ug)[1])
 gt = graph_tool
 ug = gt.GraphView(ug, vfilt=gt.topology.label_largest_component(ug))
 pr = gt.centrality.pagerank(ug)
-print(pr)
+
+a=[]
+for p in range(0, 62):
+    a.append(pr[p])
+
+#10 mais centrais
+a = sorted(a, reverse=True)
+for i in range(0, 10):
+    print(a[i])
+    
+#10 menos centrais
+a = sorted(a, reverse=False)
+for i in range(0, 10):
+    print(a[i])
+
+#grafo da metrica    
 graph_draw(ug, vertex_fill_color=pr, vorder=pr, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/politics_pagerank.png")
 #%%
 
@@ -226,6 +302,22 @@ graph_draw(ug, vertex_fill_color=pr, vorder=pr, vcmap=matplotlib.cm.gist_heat, o
 gt = graph_tool
 ug = gt.GraphView(ug, vfilt=gt.topology.label_largest_component(ug))
 vb, eb = gt.centrality.betweenness(ug)
+
+a=[]
+for p in range(0, 62):
+    a.append(vb[p])
+
+#10 mais centrais
+a = sorted(a, reverse=True)
+for i in range(0, 10):
+    print(a[i])
+    
+#10 menos centrais
+a = sorted(a, reverse=False)
+for i in range(0, 10):
+    print(a[i])
+    
+#grafo da metrica
 graph_draw(ug, vertex_fill_color=vb, vorder=vb, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/politics_betweeness.png")
 #%%
 
@@ -234,6 +326,22 @@ graph_draw(ug, vertex_fill_color=vb, vorder=vb, vcmap=matplotlib.cm.gist_heat, o
 gt = graph_tool
 ug = gt.GraphView(ug, vfilt=gt.topology.label_largest_component(ug))
 cl = gt.centrality.closeness(ug)
+
+a=[]
+for p in range(0, 62):
+    a.append(cl[p])
+
+#10 mais centrais
+a = sorted(a, reverse=True)
+for i in range(0, 10):
+    print(a[i])
+    
+#10 menos centrais
+a = sorted(a, reverse=False)
+for i in range(0, 10):
+    print(a[i])
+    
+#grafo da metrica
 graph_draw(ug, vertex_fill_color=cl, vorder=cl, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/politics_closeness.png")
 #%%
 
@@ -242,6 +350,22 @@ graph_draw(ug, vertex_fill_color=cl, vorder=cl, vcmap=matplotlib.cm.gist_heat, o
 gt = graph_tool
 ug = gt.GraphView(ug, vfilt=gt.topology.label_largest_component(ug))
 k = gt.centrality.closeness(ug)
+
+a=[]
+for p in range(0, 62):
+    a.append(k[p])
+
+#10 mais centrais
+a = sorted(a, reverse=True)
+for i in range(0, 10):
+    print(a[i])
+    
+#10 menos centrais
+a = sorted(a, reverse=False)
+for i in range(0, 10):
+    print(a[i])
+    
+#grafo da metrica
 graph_draw(ug, vertex_fill_color=k, vorder=k, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/politics_katz.png")
 #%%
 
@@ -325,7 +449,22 @@ print average(gt.topology.shortest_distance(ug, directed=True)[0])
 gt = graph_tool
 ug = gt.GraphView(ug, vfilt=gt.topology.label_largest_component(ug))
 pr = gt.centrality.pagerank(ug)
-print(pr)
+
+a=[]
+for p in range(0, 62):
+    a.append(pr[p])
+
+#10 mais centrais
+a = sorted(a, reverse=True)
+for i in range(0, 10):
+    print(a[i])
+    
+#10 menos centrais
+a = sorted(a, reverse=False)
+for i in range(0, 10):
+    print(a[i])
+    
+#grafo da metrica
 graph_draw(ug, vertex_fill_color=pr, vorder=pr, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/politicalBlogs_pagerank.png")
 #%%
 
@@ -334,6 +473,22 @@ graph_draw(ug, vertex_fill_color=pr, vorder=pr, vcmap=matplotlib.cm.gist_heat, o
 gt = graph_tool
 ug = gt.GraphView(ug, vfilt=gt.topology.label_largest_component(ug))
 vb, eb = gt.centrality.betweenness(ug)
+
+a=[]
+for p in range(0, 62):
+    a.append(vb[p])
+
+#10 mais centrais
+a = sorted(a, reverse=True)
+for i in range(0, 10):
+    print(a[i])
+    
+#10 menos centrais
+a = sorted(a, reverse=False)
+for i in range(0, 10):
+    print(a[i])
+    
+#grafo da metrica
 graph_draw(ug, vertex_fill_color=vb, vorder=vb, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/politicalBlogs_betweeness.png")
 #%%
 
@@ -342,7 +497,22 @@ graph_draw(ug, vertex_fill_color=vb, vorder=vb, vcmap=matplotlib.cm.gist_heat, o
 gt = graph_tool
 ug = gt.GraphView(ug, vfilt=gt.topology.label_largest_component(ug))
 cl = gt.centrality.closeness(ug)
-graph_draw(ug, vertex_fill_color=cl, vorder=cl, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/politicalBlogs_closeness.png")
+
+a=[]
+for p in range(0, 62):
+    a.append(cl[p])
+
+#10 mais centrais
+a = sorted(a, reverse=True)
+for i in range(0, 10):
+    print(a[i])
+    
+#10 menos centrais
+a = sorted(a, reverse=False)
+for i in range(0, 10):
+    print(a[i])
+#grafo da metrica
+#graph_draw(ug, vertex_fill_color=cl, vorder=cl, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/politicalBlogs_closeness.png")
 #%%
 
 #Katz
@@ -350,5 +520,20 @@ graph_draw(ug, vertex_fill_color=cl, vorder=cl, vcmap=matplotlib.cm.gist_heat, o
 gt = graph_tool
 ug = gt.GraphView(ug, vfilt=gt.topology.label_largest_component(ug))
 k = gt.centrality.closeness(ug)
-graph_draw(ug, vertex_fill_color=k, vorder=k, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/politicalBlogs_katz.png")
+
+a=[]
+for p in range(0, 62):
+    a.append(k[p])
+
+#10 mais centrais
+a = sorted(a, reverse=True)
+for i in range(0, 10):
+    print(a[i])
+    
+#10 menos centrais
+a = sorted(a, reverse=False)
+for i in range(0, 10):
+    print(a[i])
+#grafo da metrica
+#graph_draw(ug, vertex_fill_color=k, vorder=k, vcmap=matplotlib.cm.gist_heat, output="/home/filipebraida/workspace/politicalBlogs_katz.png")
 #%%
