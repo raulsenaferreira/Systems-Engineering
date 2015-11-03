@@ -1,15 +1,16 @@
 #%%
+from __future__ import print_function
 from graph_tool.all import *
 import snap;
 #%%
 #Google graph
-googleGraph = snap.LoadEdgeList(snap.PNGraph, "/home/filipebraida/workspace/web-Google.txt", 0, 1)
+googleGraph = snap.LoadEdgeList(snap.PNGraph, "/home/raul/workspace/web-Google.txt", 0, 1)
 #snap.PrintInfo(googleGraph, "Python type PUNGraph", "/home/filipebraida/workspace/info-pungraph.txt")
 
 #num de componentes conexas
 ComponentDist = snap.TIntPrV()
 sz = snap.GetWccSzCnt(googleGraph, ComponentDist)
-print size(ComponentDist)
+print (size(ComponentDist))
 #snap.DrawGViz(googleGraph, snap.gvlDot, "/home/filipebraida/workspace/google.png", "Google graph")
 #%%
 #%%
