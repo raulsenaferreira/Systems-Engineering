@@ -4,7 +4,7 @@ using Gadfly
 array = readdlm("u.data")
 qtyPerUser = hcat(hist(array[:,1], 0.1:943.9)[2], 1:943)
 qtyPerUser = sortrows(qtyPerUser,by=x->(x[1]), rev=true)
-plot(x=qtyPerUser[:,2], y=qtyPerUser[:,1], Geom.line)
+plot(x=1:size(qtyPerUser)[1], y=qtyPerUser[:,1], Geom.bar)
 
 
 #Question 2
