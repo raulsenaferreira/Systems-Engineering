@@ -8,7 +8,7 @@ plot(x=1:size(qtyPerUser)[1], y=qtyPerUser[:,1], Geom.bar)
 
 
 #Question 2
-plot(x=1:5, y=hist(array[:,3], 0:5.9)[2], Geom.line)
+plot(x=1:5, y=hist(array[:,3], 0:5.9)[2], Geom.bar)
 
 
 #Question 3
