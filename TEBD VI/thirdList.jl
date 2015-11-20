@@ -1,12 +1,11 @@
 #Implementing K-NN and Improved Regularized SVD algorithms for Recommender systems
-
-#K-NN
 using DataFrames
+using DataArrays
 
 # Initial variables
 recomendationType = "item"
 K = 10
-dataPath = "/home/filipebraida/workspace/Systems-Engineering/u.data"
+dataPath = "../Data Mining/Work_1/data/ml-100k/u.data"
 dataTable = readtable(dataPath, separator='\t', header=false)
 metric = "cosine"
 
@@ -47,7 +46,6 @@ function processSimilarities(metric, sims)
     for j = (i+1):col
       vec2 = trainM[:,j]
       indexes = intersect(find(x -> x != 0, vec1), find(x -> x != 0, vec2))
-      #sims[i,j] = metrics(metric, vec1[indexes], vec2[indexes])
       sims[j,i] = sims[i,j] = metrics(metric, vec1[indexes], vec2[indexes])
     end
   end
@@ -62,8 +60,44 @@ function KNNRecommender(K, avgs, simsAvg, similarities)
   return similarities
 end
 
+function IRSVDRecommender(predictions, trainM, K, epsilon, lrate, lambda, lambda2)
+  u, e, v = svd(DataArray(trainM), K)
 
-# Main code
+  c = zeros(length(unique(users)))
+  d = zeros(length(unique(movies)))
+  globalMean = mean(train[:,3])
+
+  previous_error = Inf
+  errors = zeros(length(train[:,1]))
+  stop=false
+  while (stop==false)
+    for i=1:length(train[:,1])
+      user = train[i,1]
+      item = train[i,2]
+
+      errors[i] = (trainM[user, item]) - (c[user] + d[item] + dot(u[user,:][:,1], v[item,:][:,1]))
+
+      u[user, :] += lrate * (errors[i] * v[item, :] - lambda * u[user, :])
+      v[item, :] += lrate * (errors[i] * u[user, :] - lambda * v[item, :])
+
+      c[user] += lrate * (errors[i] - lambda2*(c[user] + d[item] - globalMean))
+      d[item] += lrate * (errors[i] - lambda2*(c[user] + d[item] - globalMean))
+    end
+    if (mean(abs(errors)) > previous_error || (previous_error - mean(abs(errors))) < epsilon)
+      stop = true
+    else
+      previous_error = mean(abs(errors))
+    end
+  end
+
+  for i=1:length(test[:,1])
+    user = train[i,1]
+    item = train[i,2]
+    predictions[i] = c[user] + d[item] + dot(u[user,:][:,1], v[item,:][:,1])
+  end
+end
+
+# Main code... You can use this for KNN and for IRSVD too
 users, movies, ratings = array(dataTable)[:,1], array(dataTable)[:,2], array(dataTable)[:,3]
 
 train, test = holdOut(hcat(users, movies, ratings), 80)
@@ -72,6 +106,8 @@ trainM = zeros(length(unique(users)), length(unique(movies)))
 
 trainM = trainMatrix(trainM, train, recomendationType)
 
+
+#preparing use of KNN
 col = size(trainM, 2)
 sims = zeros(col,col)
 avgs = zeros(col)
@@ -82,13 +118,23 @@ processSimilarities(metric, sims)
 simsAvg = hcat(avgs, sims)
 simsAvg[find(x -> isnan(x), simsAvg)] = -1
 
-similarities = KNNRecommender(K, avgs, sims_avg, similarities)
+#K-NN
+similarities = KNNRecommender(K, avgs, simsAvg, similarities)
 
 predictions = testMatrix(similarities, Float64[], recomendationType)
 
 print (mean(abs(predictions - test[:,3]))) #MAE
 
 
-
-
+#Preparing use of IRSVD
+# IRSVD parameters based on this article -> https://www.cs.uic.edu/~liub/KDD-cup-2007/proceedings/Regular-Paterek.pdf
+epsilon = 0.001 # minimum error tolerance
+lrate = 0.001
+lambda = 0.02
+lambda2 = 0.05
+K = 96
+predictions = zeros(length(test[:,1]))
 #IRSVD
+IRSVDRecommender(predictions, trainM, K, epsilon, lrate, lambda, lambda2)
+
+print (mean(abs(predictions - test[:,3]))) #MAE
