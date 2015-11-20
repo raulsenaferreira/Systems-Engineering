@@ -69,8 +69,8 @@ function IRSVDRecommender(predictions, trainM, K, epsilon, lrate, lambda, lambda
 
   previous_error = Inf
   errors = zeros(length(train[:,1]))
-  stop=false
-  while (stop==false)
+  mae = mean(abs(errors))
+  while (mae > previous_error || (previous_error - mae) < epsilon)
     for i=1:length(train[:,1])
       user = train[i,1]
       item = train[i,2]
@@ -83,11 +83,12 @@ function IRSVDRecommender(predictions, trainM, K, epsilon, lrate, lambda, lambda
       c[user] += lrate * (errors[i] - lambda2*(c[user] + d[item] - globalMean))
       d[item] += lrate * (errors[i] - lambda2*(c[user] + d[item] - globalMean))
     end
-    if (mean(abs(errors)) > previous_error || (previous_error - mean(abs(errors))) < epsilon)
-      stop = true
-    else
-      previous_error = mean(abs(errors))
-    end
+    mae = mean(abs(errors))
+    #if ()
+      #stop = true
+    #else
+      previous_error = mae
+    #end
   end
 
   for i=1:length(test[:,1])
