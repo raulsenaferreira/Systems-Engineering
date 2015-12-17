@@ -273,11 +273,16 @@ def genGraph_Murderer():
     ug = graph_tool.GraphView(ug,vfilt=lambda v: (v.out_degree() > 0) )
     ug.purge_vertices()
 
-    calculateDistributions(ug)
+    #calculateDistributions(ug)
     #calculateMetrics(ug)
     #graph_draw(ug, edge_color = ug.edge_properties['edge_color'], vertex_fill_color=ug.vertex_properties['vertex_color'], vertex_color=ug.vertex_properties['vertex_color'])#,vertex_text=ug.vertex_index, vertex_font_size=10, output="UF_corDaPele.png"
-
-
+    #detectando B blocos (comunidades) no grafo
+    #ug = graph_tool.GraphView(ug, vfilt=graph_tool.topology.label_largest_component(graph_tool.GraphView(ug, directed=False)))
+    #state = graph_tool.community.BlockState(ug, B=ug.num_vertices(), deg_corr=True)
+    #state = graph_tool.community.multilevel_minimize(state, B=2)
+    #graph_draw(ug,  vertex_fill_color=state.get_blocks(), output="community.png")
+    #numero de blocos maximos que podem ser construidos a partir do grafo dado
+    print(graph_tool.community.get_max_B(N=ug.num_vertices(), E=ug.num_edges()))
 
 # Perfis de pessoas que costumam ser exploradas sexualmente ou vitima de trafico de pessoas
 def genGraph_Sexual_Exploitation():
@@ -336,7 +341,7 @@ def genGraph_Sexual_Exploitation():
     graph_draw(ug, edge_color = ug.edge_properties['edge_color'], vertex_fill_color=ug.vertex_properties['vertex_color'], vertex_color=ug.vertex_properties['vertex_color'])#,vertex_text=ug.vertex_index, vertex_font_size=10, output="UF_corDaPele.png"
 
 
-
+#grafo completo com os principais atributos como propriedade dos vertices
 def genGraph():
     a =0
     ug = Graph()
@@ -405,5 +410,5 @@ def genGraph():
 
 
 genGraph_Murderer()
-#genGraph_Feminino_Sudeste()
+#genGraph_Sexual_Exploitation()
 #genGraph()
