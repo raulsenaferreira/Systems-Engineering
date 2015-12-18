@@ -17,38 +17,54 @@ def calculateDistributions(ug):
     ccdf_patch = mpatches.Patch(color='green', label='CCDF')
     d = ug.degree_property_map("out")
     in_hist = vertex_hist(ug, d)
-
+    
     y = in_hist[0]
     err = sqrt(in_hist[0])
     err[err >= y] = y[err >= y] - 1e-2
 
     a = sorted(in_hist[0][1:], reverse=True)
     b = sorted(in_hist[1][1:-1], reverse=False)
-
-    figure(figsize=(6,4))
+    
+    values, base = np.histogram(b, bins=max(a))
+    #figure(figsize=(6,4))
     errorbar(b, a, fmt="o")
+    #plot(b, a, c='blue')
     gca().set_yscale("log")
     gca().set_xscale("log")
-    gca().set_ylim(0, 1e4)
-    gca().set_xlim(0, 1e4)
-    subplots_adjust(left=0.2, bottom=0.2)
-    xlabel("$k_{out}$")
-    ylabel("$NP(k_{out})$")
+    #gca().set_ylim(-0.1, 1e3)
+    #gca().set_xlim(-0.1, 1e2)
+    #subplots_adjust(left=0.2, bottom=0.2)
+    xlabel("$Vertices$")
+    ylabel("$Grau$")
     tight_layout()
-    savefig("graph_degree_distribution.png")
-    values, base = np.histogram(a, bins=max(b))
-    cumulative = np.cumsum(values)
+    #plt.show()
+    #savefig("graph_degree_distribution.png")
 
+    values, base = np.histogram(b, bins=max(a))
+    cumulative = np.cumsum(values)
+    gca().set_yscale("log")
+    gca().set_xscale("log")
+    tight_layout()
     plt.legend(handles=[ccdf_patch])
     plt.plot(base[:-1], len(a)-cumulative, c='green')
     #plt.show()
-    savefig("graph_degree_distribution_and_ccdf.png")
+    savefig("Distribuicao_de_grau_ccdf.png")
+    
 
 def calculateMetrics(ug):
     print('Iniciando calculo das metricas...')
     gt = graph_tool
     lim = gt.topology.GraphView(ug).num_vertices()
     ug.degree_property_map("out")
+
+    #assortatividade do grafo
+    coef_assort, variancia = graph_tool.correlations.assortativity(ug, "out")
+    print('Coef. de assortatividade da rede: {0}     variancia: {1}'.format(coef_assort, variancia))
+
+    #arvore geradora minima do grafo
+    tree = graph_tool.topology.min_spanning_tree(ug)
+    ug = graph_tool.GraphView(ug, efilt = tree)
+    graph_draw(ug, output='min_spanning_tree.png')
 
     # Grau minimo e maximo
     minimum = graph_tool.incident_edges_op(ug, "out", "min", ug.edge_index)
@@ -184,6 +200,16 @@ def calculateMetrics(ug):
     
     print('Fim do calculo das metricas!')
 
+def detectingCommunities(ug, b):
+    #numero de blocos maximos que podem ser construidos a partir do grafo dado
+    print(graph_tool.community.get_max_B(N=ug.num_vertices(), E=ug.num_edges()))
+
+    #detectando B blocos (comunidades) no grafo
+    ug = graph_tool.GraphView(ug, vfilt=graph_tool.topology.label_largest_component(graph_tool.GraphView(ug, directed=False)))
+    state = graph_tool.community.BlockState(ug, B=ug.num_vertices(), deg_corr=True)
+    state = graph_tool.community.multilevel_minimize(state, B=b)
+    graph_draw(ug,  vertex_fill_color=state.get_blocks(), output="community.png")
+    pp(state)
 
 # Campos do banco
 # ID, nome, imagem, sexo, olhos, cor_da_pele, cabelo, peso_aproximado, altura_aproximada, tipo_fisico, transtorno_mental, idade, data_nascimento, dias_desaparecido 
@@ -209,7 +235,7 @@ def genGraph_Murderer():
     conn = psycopg2.connect(conn_string)
     cursor = conn.cursor()
     
-    query = "SELECT ID, idade, sexo, uf_desaparecimento, cor_da_pele FROM registro where idade not like '';"
+    query = "SELECT ID, idade, sexo, uf_desaparecimento, cor_da_pele FROM registro;"
     cursor.execute(query)
     rows = cursor.fetchall()
     
@@ -225,7 +251,12 @@ def genGraph_Murderer():
         u = rows[i]
         for j in range(i+1, len(rows)):
             v = rows[j]
-            if int(u[1]) < 29 and int(v[1]) < 29:
+            if (u[1] == '' and v[1]!='') or ([1]!='' and v[1]==''):
+                ug.add_edge(u[0], v[0])
+                vertex_color[ug.vertex(v[0])] = (195.0/255.0, 144.0/255.0, 212.0/255.0, 100)#lilas
+                vertex_color[ug.vertex(v[0])] = (195.0/255.0, 144.0/255.0, 212.0/255.0, 100)#lilas
+                edge_color[ug.edge(u[0], v[0])] = (224.0/255.0, 83.0/255.0, 127.0/255.0, alpha) #laranja
+            elif int(u[1]) < 29 and int(v[1]) < 29:
                 if bool(m.match(u[2].lower())) and bool(m.match(v[2].lower())): #masculino
                     #if (u[3] == 'RJ' or u[3] == 'SP') and (v[3] == 'RJ' or v[3] == 'SP'):   
                     if (bool(n.match(u[4].lower())) or bool(m.match(u[4].lower())) or bool(p.match(u[4].lower())) ) and (bool(n.match(v[4].lower())) or bool(m.match(v[4].lower())) or bool(p.match(v[4].lower())) ): #preto, pardo, moreno e mulato
@@ -269,20 +300,21 @@ def genGraph_Murderer():
                         vertex_color[ug.vertex(v[0])] = (195.0/255.0, 144.0/255.0, 212.0/255.0, 100)#lilas
                         vertex_color[ug.vertex(v[0])] = (195.0/255.0, 144.0/255.0, 212.0/255.0, 100)#lilas
                         edge_color[ug.edge(u[0], v[0])] = (224.0/255.0, 83.0/255.0, 127.0/255.0, alpha) #laranja
+    #realizando estudo em cima do grafo
+    calculateDistributions(ug)
+    # retirando arestas sem grau
+    #ug = graph_tool.GraphView(ug,vfilt=lambda v: (v.out_degree() > 0) )
+    #ug.purge_vertices()
+    calculateMetrics(ug)
+    detectingCommunities(ug, 3)
+    #pp(ug.num_vertices())
+    #pp(ug.num_edges())
+    
 
-    ug = graph_tool.GraphView(ug,vfilt=lambda v: (v.out_degree() > 0) )
-    ug.purge_vertices()
 
-    #calculateDistributions(ug)
-    #calculateMetrics(ug)
-    #graph_draw(ug, edge_color = ug.edge_properties['edge_color'], vertex_fill_color=ug.vertex_properties['vertex_color'], vertex_color=ug.vertex_properties['vertex_color'])#,vertex_text=ug.vertex_index, vertex_font_size=10, output="UF_corDaPele.png"
-    #detectando B blocos (comunidades) no grafo
-    #ug = graph_tool.GraphView(ug, vfilt=graph_tool.topology.label_largest_component(graph_tool.GraphView(ug, directed=False)))
-    #state = graph_tool.community.BlockState(ug, B=ug.num_vertices(), deg_corr=True)
-    #state = graph_tool.community.multilevel_minimize(state, B=2)
-    #graph_draw(ug,  vertex_fill_color=state.get_blocks(), output="community.png")
-    #numero de blocos maximos que podem ser construidos a partir do grafo dado
-    print(graph_tool.community.get_max_B(N=ug.num_vertices(), E=ug.num_edges()))
+    #figura do grafo
+    graph_draw(ug, edge_color = ug.edge_properties['edge_color'], vertex_fill_color=ug.vertex_properties['vertex_color'], vertex_color=ug.vertex_properties['vertex_color'])#,vertex_text=ug.vertex_index, vertex_font_size=10, output="UF_corDaPele.png"
+
 
 # Perfis de pessoas que costumam ser exploradas sexualmente ou vitima de trafico de pessoas
 def genGraph_Sexual_Exploitation():
@@ -362,7 +394,7 @@ def genGraph():
     conn = psycopg2.connect(conn_string)
     cursor = conn.cursor()
 
-    query = "SELECT  ID, idade, uf_desaparecimento FROM registro where sexo ilike 'M%' and idade not like '' and (uf_desaparecimento like 'RJ' or  uf_desaparecimento like 'SP') limit 100"
+    query = "SELECT ID, nome, imagem, sexo, olhos, cor_da_pele, cabelo, transtorno_mental, idade, uf_desaparecimento FROM registro"
     cursor.execute(query)
     rows = cursor.fetchall()
     
@@ -408,6 +440,34 @@ def genGraph():
     
     graph_draw(ug, edge_color = ug.edge_properties['edge_color'], vertex_fill_color=ug.vertex_properties['vertex_color'], vertex_color=ug.vertex_properties['vertex_color'])#,edge_text = ug.edge_properties['edge_weights'], vertex_text=ug.vertex_index, vertex_font_size=10, output="UF_corDaPele.png"
 
+def network():
+    import networkx as nx
+    import matplotlib.pyplot as plt
+    G = nx.gnp_random_graph(100,0.02)
+
+    degree_sequence=sorted(nx.degree(G).values(),reverse=True) # degree sequence
+    #print "Degree sequence", degree_sequence
+    dmax=max(degree_sequence)
+
+    plt.loglog(degree_sequence,'b-',marker='o')
+    plt.title("Degree rank plot")
+    plt.ylabel("degree")
+    plt.xlabel("rank")
+
+    # draw graph in inset
+    plt.axes([0.45,0.45,0.45,0.45])
+    Gcc=sorted(nx.connected_component_subgraphs(G), key = len, reverse=True)[0]
+    pos=nx.spring_layout(Gcc)
+    plt.axis('off')
+    nx.draw_networkx_nodes(Gcc,pos,node_size=20)
+    nx.draw_networkx_edges(Gcc,pos,alpha=0.4)
+
+    plt.savefig("degree_histogram.png")
+    plt.show()
+
+    
+
+#network()
 
 genGraph_Murderer()
 #genGraph_Sexual_Exploitation()
