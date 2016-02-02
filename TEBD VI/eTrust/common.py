@@ -25,11 +25,11 @@ print("Ready for load ratings")
 O_train, O_test, R, U, I, T, tui = reader.load_ratings_data()
 print("Ratings loaded")
 print("Ready for load trust data")
-Trust, N = reader.load_trust_data()
+Trust, Nit, Tit = reader.load_trust_data()
 print("Trust loaded")
 
 eta = random.random_sample(U.shape[0])
-
+	
 def sivkt(pikt, pvkt):
 	s = np.zeros(L)
 	s[0] = pikt
@@ -93,13 +93,14 @@ def EPQijt(i, j, t, b, p, q, w, eta):
 	
 	pq = dot(transpose(q[j]), p[t][i])
 	
-	for v in N[(i,t)]:
-		if (v,j) in R:
-			for k in range(K):
-				tvj = R[(v,j)][0]
-				rvj = R[(v,j)][1]
-				Qijt += f_of(w, p[t][i,k], p[t][v,k], b[i]) * q[j,k]
-				Pijt += f_of(w, p[t][i,k], p[t][v,k], b[i]) * q[j,k] * rating_decay(t, tvj, eta[i], rvj)
+	if (i,t) in Nit:
+		for v in Nit[(i,t)]:
+			if (v,j) in R:
+				for k in range(K):
+					tvj = R[(v,j)][0]
+					rvj = R[(v,j)][1]
+					Qijt += f_of(w, p[t][i,k], p[t][v,k], b[i]) * q[j,k]
+					Pijt += f_of(w, p[t][i,k], p[t][v,k], b[i]) * q[j,k] * rating_decay(t, tvj, eta[i], rvj)
 	if Qijt != 0:
 		rating_prediction_by_trust = Pijt/Qijt
 	else:
@@ -108,3 +109,14 @@ def EPQijt(i, j, t, b, p, q, w, eta):
 	Eijt = (rijt - (alpha*pq) - ((1-alpha) * rating_prediction_by_trust))
 	
 	return Eijt, Pijt, Qijt
+	
+def Hitk(i, t, k, p):
+	
+	if t == tui[i]:
+		return (-lmbda) * diff_c_of_partial_pitk(p[t+1][i,k], p[t][i,k])
+	elif t == len(O_train) - 1:
+		return lmbda * diff_c_of_partial_pitk(p[t][i,k], p[t-1][i,k])
+	elif tui[i] < t and t < len(O_train) - 1:
+		return lmbda * (diff_c_of_partial_pitk(p[t][i,k], p[t-1][i,k]) - diff_c_of_partial_pitk(p[t+1][i,k], p[t][i,k]))
+	
+	return None

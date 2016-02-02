@@ -4,7 +4,7 @@ Created on Tue Jan 19 19:25:23 2016
 
 @author: ygorc
 """
-from common import O_train, N, R, K, U, sivkt, f_of, c_of, alpha, beta, lmbda, rating_decay, euclidean_norm, tui
+from common import O_train, Nit, R, K, U, f_of, c_of, alpha, beta, lmbda, rating_decay, euclidean_norm, tui
 from numpy import dot, transpose
 
 def g_sum(b, p, q, w, eta):
@@ -15,8 +15,8 @@ def g_sum(b, p, q, w, eta):
 
 			dividend = 0
 			divisor = 0
-			if (i,t) in N:
-				for v in N[(i,t)]:
+			if (i,t) in Nit:
+				for v in Nit[(i,t)]:
 					if (v,j) in R:
 						for k in range(K):
 							tvj = R[(v,j)][0]

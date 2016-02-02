@@ -58,7 +58,7 @@ def load_ratings_data():
 	ratings_data[:,1] = le.fit_transform(ratings_data[:,1])
 	
 	le = LabelEncoder()
-	ratings_data[:,5] = le.fit_transform(ratings_data[:,5])
+	ratings_data[:,5] = ratings_data[:,5] - 1
 	
 	U = np.sort(np.unique(ratings_data[:,0]))
 	I = np.sort(np.unique(ratings_data[:,1]))
@@ -78,10 +78,10 @@ def load_ratings_data():
 		rijt = line[3]
 		
 		if i in tui:
-			if rijt < tui[i]:
-				tui[i] = rijt
+			if t < tui[i]:
+				tui[i] = t
 		else:
-			tui[i] = rijt
+			tui[i] = t
 		
 		O[t][(i, j)] = rijt
 		R[(i, j)] = (t, rijt)
@@ -98,16 +98,22 @@ def load_trust_data():
 	#n_items = np.unique(items).shape[0]
 	#n_times = np.unique(times).shape[0]
 	Trust = {}
-	N = {}
+	Nit = {}
+	Tit = {}
 	for line in trust_data:
 		truster = line[0]
 		trustee = line[1]
 		timestamp = line[2]
 		
 		Trust[(truster, trustee, timestamp)] = 1
-		if (truster, timestamp) not in N:  		
-			N[(truster, timestamp)] = []
-		N[(truster, timestamp)].append(trustee)
+		
+		if (truster, timestamp) not in Nit:  		
+			Nit[(truster, timestamp)] = []
+		Nit[(truster, timestamp)].append(trustee)
+		
+		if (trustee, timestamp) not in Tit:  		
+			Tit[(trustee, timestamp)] = []
+		Tit[(trustee, timestamp)].append(truster)
 		
 		
-	return Trust, N
+	return Trust, Nit, Tit
