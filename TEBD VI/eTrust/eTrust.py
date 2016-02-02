@@ -10,7 +10,7 @@ from objective_functions import g_of_b, g_of_p, g_of_q, g_of_w, g_of_eta
 from numpy import random, transpose, dot
 
 n_iter = 10
-epsilon = 0.1#random.uniform(0, 0.5)
+epsilon = 0.01#random.uniform(0, 0.5)
 rho = 1/10
 
 w = random.random_sample(L)
@@ -35,7 +35,7 @@ def search_gamma_with_goldstein_conditions(parameters, nablas, objective_functio
 		x = parameter.copy()
 		while True:
 			old_x = x
-			x = x - gamma * nabla_x(x, parameters)
+			x = back_to_the_bounded_feasible_region(x - gamma * nabla_x(x, parameters))
 			z = x - old_x
 			gamma = rho * gamma
 			lower_value = g_of_x(old_x, parameters) + (1 - epsilon)*gamma*dot(transpose(nabla_x(old_x, parameters)), z)
@@ -69,15 +69,11 @@ def projected_gradient(b, p, q, w, eta):
 		old_eta = eta.copy()
 		
 		parameters = [old_b,old_p,old_q,old_w,old_eta]
-		w = back_to_the_bounded_feasible_region(old_w - gamma_w*nabla_w(old_w,parameters))
-		b = back_to_the_bounded_feasible_region(old_b - gamma_b*nabla_b(old_b,parameters))
+		w = old_w - gamma_w*nabla_w(old_w,parameters)
+		b = old_b - gamma_b*nabla_b(old_b,parameters)
 		p = old_p - gamma_p*nabla_p(old_p,parameters)
-		
-		for i in range(len(p)):
-			p[i] = back_to_the_bounded_feasible_region(p[i])
-			
-		q = back_to_the_bounded_feasible_region(old_q - gamma_q*nabla_q(old_q,parameters))
-		eta = back_to_the_bounded_feasible_region(old_eta - gamma_eta*nabla_eta(old_eta,parameters))
+		q = old_q - gamma_q*nabla_q(old_q,parameters)
+		eta = old_eta - gamma_eta*nabla_eta(old_eta,parameters)
 	return b, p, q, w, eta
 
 	
