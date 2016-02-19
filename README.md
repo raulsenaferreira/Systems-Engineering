@@ -17,3 +17,5 @@ Estrutura de Dados e Algoritmos = Data Structures and Algorithms
 Redes Complexas = Complex Networks
 
 TEBD VI = Machine Learning (Recommendation Systems)
+
+Dissertation = Masters dissertation
