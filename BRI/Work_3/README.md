@@ -4,6 +4,9 @@ The objective of this work is make the same exercises made previously but now wi
 
 This work also is processed in memory, and makes uses of Stemmer. Next, we compare new results with previous work results.
 
+#### Dependences:
+Install PyLucene http://lucene.apache.org/pylucene/install.html
+
 ####Instructions:
 Delete all files in index directory and execute main.py file
 
