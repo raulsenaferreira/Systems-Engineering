@@ -17,7 +17,7 @@ from Indexer import indexer
 from Retriever import retriever
 
 #globals
-PATH = os.path.dirname(__file__)
+PATH = os.path.dirname(os.path.abspath(__file__))
 luceneSearcher = ''
 def main():
     results={}
