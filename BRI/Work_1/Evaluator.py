@@ -25,13 +25,13 @@ def executeEvaluator(path, pathVector, expectedResultsString, resultsStr, use_mo
     log('evaluator', logPath)
     evaluatorLog = logging.getLogger('evaluator')
     evaluatorLog.info('Processing Evaluator module...')
-    
+
     expectedResults = strToDictExpectedResults(expectedResultsString)
-    
+
     results = strToDictResults(resultsStr)
-    
+
     relevanceList = selectRelevantDocs(expectedResults)
-    
+
     PK={}
     F1={}
     AVP=[]
@@ -39,29 +39,29 @@ def executeEvaluator(path, pathVector, expectedResultsString, resultsStr, use_mo
     for query in expectedResults.keys():
         if precisionK(results[query], relevanceList[query]) is not None:
             PK.update({query: precisionK(results[query], relevanceList[query])})#k=10 documents
-            
-        
+
+
         AVP.append(averagePrecision(results[query], relevanceList[query]))
-        
+
         F1.update({query: f1Measure(results[query], relevanceList[query])})
-    
+
     G11Pts=graphic11points(results, relevanceList, expectedResults)
-    
+
     MAP=meanAveragePrecision(AVP)
-   
+
     DCG=discountedCumulativeGain(results, expectedResults, range(4,8))
 
     NDCG=normalizedDiscountedCumulativeGain(DCG, results, expectedResults, range(4,8))
-    
+
     writeReport(PK, MAP, DCG, NDCG, F1, use_mode, path, pathVector[3][1])
-    
+
     writeGraphic(path+'/Evaluator/'+use_mode+'/interpolated-precision-recall-11pts.pdf', G11Pts)
     writeMetricsOnFile(path, '/Evaluator/'+use_mode+'/precicionk.csv', PK, use_mode)
     writeMetricsOnFile(path, '/Evaluator/'+use_mode+'/mean-average-precision.csv', MAP, use_mode, False)
     writeMetricsOnFile(path, '/Evaluator/'+use_mode+'/discount-cumulative-gain.csv', DCG, use_mode)
     writeMetricsOnFile(path, '/Evaluator/'+use_mode+'/normalized-discount-cumulative-gain.csv', NDCG, use_mode)
     writeMetricsOnFile(path, '/Evaluator/'+use_mode+'/f1-measure.csv', F1, use_mode)
-    
+
     end = time.time() - begin
     evaluatorLog.info('End of Evaluator Module. Total of %s elapsed.' % str(end))
 
@@ -76,10 +76,10 @@ def graphic11points(results, relevanceList, expectedResults):
         sizeRelevants=len(relevanceList[query])
         bucket = math.ceil(sizeRelevants/10)
         kRels=bucket
-        
+
         j=1
         for i in range(0, sizeRelevants):
-            
+
             precision = precisionK(results[query], relevanceList[query], kRels)
             if precision is not None:
                 vetAux.append(precision)
@@ -90,12 +90,12 @@ def graphic11points(results, relevanceList, expectedResults):
                     vetAux=[]
                     kRels+=bucket
                     j+=1
-                    
+
         if(len(vetAux)>0):
             num=arrayPoints[j]
             num+=sum(vetAux)
             arrayPoints.insert(j,num)
-    
+
     N = math.ceil(len(arrayPoints)/10)
     lenAvg=N
     for i in range(0, len(arrayPoints)):
@@ -106,14 +106,14 @@ def graphic11points(results, relevanceList, expectedResults):
             lenAvg+=N
     if len(vet) > 0:
         interpolatedArray.append(max(vet)/10)
-    
+
     return interpolatedArray
-    
+
 
 
 def selectRelevantDocs(expectedResults, minRelevanceScore=4):
     relevantsByQuery = {}
-    
+
     for query in expectedResults.keys():
         relevants=[]
         for doc in expectedResults[query]:
@@ -128,23 +128,24 @@ def selectRelevantDocs(expectedResults, minRelevanceScore=4):
 def precisionK(results, relevants, k=10):
     numDocs=k
     rels=0
-    
+
     for doc in results:
         if k > 0:
             k-=1
             if doc[1] in relevants:
                 rels+=1
         else:
-            return rels/numDocs
+            if numDocs>0:
+                return rels/numDocs
 
 
 
 def averagePrecision(results, relevants):
-    
+
     relevantsOfK=[]
     total=0
     p=0
-    
+
     for docResults in results:
         total+=1
         if docResults[1] in relevants:
@@ -156,59 +157,59 @@ def averagePrecision(results, relevants):
         return p
     else:
         return 0
-        
-        
-    
+
+
+
 def meanAveragePrecision(avgPrecisionVector):
     return sum(avgPrecisionVector)/len(avgPrecisionVector)
-    
-    
-    
+
+
+
 def discountedCumulativeGain(results, expectedResults, relevanceScale=range(4,8)):
     arrayDCG = {}
     for query in expectedResults.keys():
         relevants={}
-        
+
         for doc in expectedResults[query]:
             if doc[1] in relevanceScale:
                 relevants.update({doc[0]: doc[1]})
-        
+
         DCG=0
         for doc in results[query]:
-            
+
             if doc[1] in relevants:
                 rank = float(doc[0])
                 if rank > 1:
                     logRank = math.log(rank, 2)
                 else:
                     logRank = 1
-                
+
                 scale = float(relevants[doc[1]])
                 DCG += scale/logRank
         arrayDCG.update({query: DCG})
     return arrayDCG
-    
-    
-    
+
+
+
 def normalizedDiscountedCumulativeGain(dcg, results, expectedResults, relevanceScale=range(0,8)):
     arrayIDCG = {}
     for query in expectedResults.keys():
         relevants={}
-        
+
         for doc in expectedResults[query]:
             if doc[1] in relevanceScale:
                 relevants.update({doc[0]: doc[1]})
         sorted(relevants.items(),key=operator.itemgetter(1), reverse=True)
-        
+
         IDCG=0
-        
+
         for k in relevants.keys():
             rank = float(relevants[k])
             if rank > 1:
                 logRank = math.log(rank, 2)
             else:
                 logRank = 1
-                    
+
             IDCG += rank/logRank
         arrayIDCG.update({query: dcg[query]/(IDCG+1)})
     return arrayIDCG
@@ -221,23 +222,23 @@ def f1Measure(results, relevants):
     rel=0
     nDoc=0
     nRel=len(relevants)
-    
+
     for doc in results:
         nDoc+=1
         if doc[1] in relevants:
             rel+=1
-            
-    if rel > 0:
+
+    if rel > 0 and precision+recall > 0:
         precision=rel/nDoc
         recall=rel/nRel
         return 2 * ((precision*recall)/(precision+recall))
     else:
         return 0
 
-    
-    
+
+
 def writeMetricsOnFile(path, filename, metric, use_mode, isDict=True):
-    
+
     f = open(path+filename, 'w+')
     if isDict == True:
         for key in metric.keys():
@@ -250,7 +251,7 @@ def writeMetricsOnFile(path, filename, metric, use_mode, isDict=True):
 
 def writeReport(PK, MAP, DCG, NDCG, F1, use_mode, path, pathVector):
     evaluatorLog.info('Writing evaluator results on file report...')
-    
+
     f = open(path+pathVector, 'w+')
     f.write("########################    REPORT OF METRICS    -    "+use_mode+" MODE    ########################\n\n\n")
     f.write("########################    Precision@10 - "+use_mode+"    ########################\n")
@@ -268,7 +269,7 @@ def writeReport(PK, MAP, DCG, NDCG, F1, use_mode, path, pathVector):
     for key in F1.keys():
         f.write(key+";%s\n" % F1[key])
     f.close()
-    
+
 
 
 def compareResults(results, expectedResults):
@@ -282,11 +283,11 @@ def writeGraphic(filepath, arrayPoints):
     plt.ylabel('Precision')
     plt.axis([1, 10, 0.1, 1.0])
     figure(1, figsize=(10,10))
-    
+
     savefig(filepath, bbox_inches='tight')
-    
-    
-    
+
+
+
 #utils
 def strToDictResults(resultsStr):
     results = {}
@@ -297,17 +298,17 @@ def strToDictResults(resultsStr):
             lst.append(l.replace(' ','').split(','))
         results.update({r[0]: lst})
     return results
-    
-    
-    
+
+
+
 def strToDictExpectedResults(expResStr):
     expectedResults = {}
     for e in expResStr:
         expectedResults.update({e[0]: ast.literal_eval(e[1])})
     return expectedResults
-    
-    
-    
+
+
+
 def log(name, logFile):
     logger = logging.getLogger(name)
     logger.setLevel(logging.INFO)
@@ -322,9 +323,9 @@ def log(name, logFile):
     # add the handlers to the logger
     logger.addHandler(handler)
     logger.addHandler(streamHandler)
-    
-    
-'''    
+
+
+'''
 if __name__ == '__main__':
     main()
 '''
