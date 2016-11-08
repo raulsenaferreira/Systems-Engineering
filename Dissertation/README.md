@@ -6,4 +6,8 @@ Orientador: Geraldo Zimbrão da Silva
 Coorientadores: Filipe Braida, Leandro Alvim
 
 ##Database
-[NOAA Weather data](ftp://ftp.ncdc.noaa.gov/pub/data/gsod)
+50 years of data from NOAA Weather: ftp://ftp.ncdc.noaa.gov/pub/data/gsod
+
+##Dependencies
+*numpy
+*scipy
