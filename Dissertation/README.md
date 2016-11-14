@@ -1,9 +1,9 @@
-#Semi-supervised approach for learning on environments with gradual drift and extreme label latency
-Dissertação para o curso de Engenharia de Sistemas e Computação
+#Semi-supervised approach for learning on environments with gradual drift and extreme verification latency
+Dissertation for Masters in Systems Engineering and Computing
 
-Orientador: Geraldo Zimbrão da Silva
+Supervisor: Geraldo Zimbrão da Silva
 
-Coorientadores: Filipe Braida, Leandro Alvim
+Co-supervisors: Filipe Braida, Leandro Alvim
 
 ##Database
 50 years of data from NOAA Weather: ftp://ftp.ncdc.noaa.gov/pub/data/gsod
