@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
 from sklearn import mixture
 from sklearn.neighbors.kde import KernelDensity
+import pandas as pd
+
 '''
 Eight  features  (temperature,  dew  point,
 sea-level  pressure,  visibility,  average  wind  speed,  max  sus-
@@ -10,6 +12,8 @@ tained wind speed, and minimum and maximum temperature)
 are  used  to  determine  whether  each  day  experienced  rain  or
 no rain.
 '''
+data = pd.read_csv('C:\\Users\\user\\Documents\\Dissertacao\\gsod_2017\\007026-99999-2017.op',sep = "\t")
+print(data)
 n_samples = 30#300
 
 # generate random sample, two components
