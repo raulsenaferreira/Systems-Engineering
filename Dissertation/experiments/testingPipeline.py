@@ -12,6 +12,10 @@ tained wind speed, and minimum and maximum temperature)
 are  used  to  determine  whether  each  day  experienced  rain  or
 no rain.
 '''
+#Example of reading NOAA dataset with pandas
+#data = pd.read_csv('C:\\Users\\user\\Documents\\Dissertacao\\gsod_2017\\007026-99999-2017.op',sep = "\t")
+#print(data)
+
 n_samples = 30#300
 n_dimensions = 3
 # generate random sample
