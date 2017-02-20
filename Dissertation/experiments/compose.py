@@ -1,9 +1,9 @@
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib.colors import LogNorm
 from sklearn import mixture
 from sklearn.neighbors.kde import KernelDensity
-import pandas as pd
+from sklearn.cluster import KMeans
 
 '''
 Eight  features  (temperature,  dew  point,
@@ -33,34 +33,35 @@ randd = np.random.randn(10, 3)
 #X_train = np.vstack([shifted_gaussian, stretched_gaussian])
 X_train = np.vstack(randd)
 
+#K-means
+kmeans = KMeans(n_clusters=2).fit(X_train)
+clusters = kmeans.labels_
+
+#Slicing instances according to their inferred clusters
+label1 = 0
+label2 = 1
+trainClasses = {}
+trainClasses[label1]=[X_train[i] for i in range(0,len(clusters)) if clusters[i] == label1]
+trainClasses[label2]=[X_train[i] for i in range(0,len(clusters)) if clusters[i] == label2]
+
 # fit a Gaussian Mixture Model with two components
-clf = mixture.GaussianMixture(n_components=2, covariance_type='full')
-clf.fit(X_train)
-'''
-# display predicted scores by the model as a contour plot
-x = np.linspace(-20., 30.)
-y = np.linspace(-20., 40.)
-X, Y = np.meshgrid(x, y)
-XX = np.array([X.ravel(), Y.ravel()]).T
-Z = -clf.score_samples(XX)
-Z = Z.reshape(X.shape)
-
-CS = plt.contour(X, Y, Z, norm=LogNorm(vmin=1.0, vmax=1000.0),
-                 levels=np.logspace(0, 3, 10))
-CB = plt.colorbar(CS, shrink=0.8, extend='both')
-plt.scatter(X_train[:, 0], X_train[:, 1], .8)
-
-plt.title('log-likelihood predicted by a GMM')
-plt.axis('tight')
-plt.show()
-'''
+gmm = {}
+for c, points in trainClasses.items():
+    clf = mixture.GaussianMixture(n_components=2, covariance_type='full')
+    clf.fit(points)
+    gmm[c] = clf.score_samples(points)
 
 #Kernel density estimation
-kde = KernelDensity(kernel='gaussian', bandwidth=0.2).fit(X_train)
-kde = -kde.score_samples(X_train)
+kde={}
+for c, points in trainClasses.items():
+    kernel = KernelDensity(kernel='gaussian', bandwidth=0.2).fit(points)
+    kde[c] = kernel.score_samples(points)
 
-gmm = -clf.score_samples(X_train)
-
-print("Dados originais: ",X_train, "\n")
-print("PDF gerado pelo GMM: ", gmm, "\n")
-print("PDF gerado pelo KDE: ", kde)
+#print("Original data: ",X_train, "\n")
+#print("K-Means clusters: ", clusters, "\n")
+#print("Points from Cluster", label1, ": ", trainClasses[label1], "\n")
+#print("Points from Cluster", label2, ": ", trainClasses[label2], "\n")
+#print("PDF for class", label1, "using GMM: ", gmm[label1], "\n")
+#print("PDF for class", label2, "using GMM: ", gmm[label2], "\n")
+#print("PDF for class", label1, "using KDE: ", kde[label1], "\n")
+#print("PDF for class", label2, "using KDE: ", kde[label2], "\n")
