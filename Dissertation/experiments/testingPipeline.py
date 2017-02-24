@@ -76,13 +76,13 @@ def main():
     dataLabels = pd.read_csv(path+'\\noaa_label.csv',sep = ",")
 
 
-    #Test 0: Predicting 10 instances
-    unlabeledData = dataValues[initialDataLength:initialDataLength+10]
+    #Test 0: Predicting 10 instances. Starting labeled data with 5%
+    initialDataLength = round((0.05)*len(dataValues))
+    unlabeledData = dataValues[initialDataLength:initialDataLength+10].as_matrix()
 
     # ***** Box 0 *****
-    #starting labeled data with 5%
-    initialDataLength = round((0.05)*len(dataValues))
-    X_train = np.hstack((dataValues[:initialDataLength].as_matrix(), dataLabels[:initialDataLength].as_matrix()))
+    #X_train = np.hstack((dataValues[:initialDataLength].as_matrix(), dataLabels[:initialDataLength].as_matrix()))
+    X_train = dataValues[:initialDataLength].as_matrix()
 
     #Starting the process
     for t in range(len(unlabeledData)):
@@ -97,7 +97,7 @@ def main():
         clusters = kmeans.labels_
         predicted = baseClassifier(Ut, kmeans)
 
-        instances = slicingClusteredData(X_train, np.vstack([clusters, predicted]), classes)
+        instances = slicingClusteredData(X_train, np.hstack([clusters, predicted]), classes)
 
         # ***** Box 3 *****
         #Testing with two different methods
