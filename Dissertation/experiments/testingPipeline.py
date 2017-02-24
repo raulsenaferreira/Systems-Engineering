@@ -97,16 +97,16 @@ def main():
         clusters = kmeans.labels_
         predicted = baseClassifier(Ut, kmeans)
 
-        instances = slicingClusteredData(X_train, np.hstack([clusters, predicted]), classes)
+        instances = slicingClusteredData(np.vstack([X_train, unlabeledData[t]]), np.hstack([clusters, predicted]), classes)
 
         # ***** Box 3 *****
         #Testing with two different methods
-        gmm = gmm(instances)
-        #kde = kde(instances)
+        pdfGmm = gmm(instances)
+        #pdfKde = kde(instances)
         
         # ***** Box 4 *****
-        instancesGMM = compactingDataDensityBased(instances, gmm, criteria)
-        #instancesKDE = compactingDataDensityBased(instances, kde, criteria)
+        instancesGMM = compactingDataDensityBased(instances, pdfGmm, criteria)
+        #instancesKDE = compactingDataDensityBased(instances, pdfKde, criteria)
         
         # ***** Box 5 *****
         X_train = instancesGMM
