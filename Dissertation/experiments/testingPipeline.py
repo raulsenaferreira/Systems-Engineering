@@ -23,19 +23,28 @@ def svm(X, y):
         max_iter=-1, probability=False, random_state=None, shrinking=True,
         tol=0.001, verbose=False)
     
-    return SVM
+    return clf
     
 
-def gmm(instances):
-    gmm = {}
-    for c, points in instances.items():
-        clf = mixture.GaussianMixture(n_components=6, covariance_type='full')
-        clf.fit(points)
-        gmm[c] = clf.score_samples(points)
-    return gmm
+def gmm(points):
+    clf = mixture.GaussianMixture(n_components=6, covariance_type='full')
+    pdfs = clf.fit(points).score_samples(points)
+        
+    return pdfs
 
+def loadGmmByClass(instances, indexesByClass):
+    pdfs = [None] * len(instances)
+    for c, indexes in indexesByClass.items():
+        points = instances[indexes]
+        pdfsByClass = gmm(points)
+        a = 0
+        for i in indexes:
+            pdfs[i]=pdfsByClass[a]
+            a+=1
+        
+    return pdfs  
 
-def kde(instances):
+def kde(instances, indexes):
     kde={}
     for c, points in instances.items():
         kernel = KernelDensity(kernel='gaussian', bandwidth=0.2).fit(points)
@@ -48,17 +57,18 @@ def baseClassifier(instancesToPredict, classifier):
 
 
 #Slicing instances according to their inferred clusters
-def slicingClusteredData(X_train, clusters, classes):
-    instances = {}
+def slicingClusteredData(clusters, classes):
+    indexes = {}
     for c in range(numClasses):
-        instances[classes[c]]=[X_train[i] for i in range(len(clusters)) if clusters[i] == c]
+        indexes[classes[c]]=[i for i in range(len(clusters)) if clusters[i] == c]
     
-    return instances
+    return indexes
 
 
 #Cutting data for next iteration
-def compactingDataDensityBased(data, instances, criteria):
-    
+def compactingDataDensityBased(instances, densities, criteria):
+    maxPDF = max(densities)*criteria
+    selectedInstances = [instances[i] for i in range(len(densities)) if densities[i] >= maxPDF]
     return selectedInstances
     
     
@@ -77,41 +87,46 @@ def main():
 
 
     #Test 0: Predicting 10 instances. Starting labeled data with 5%
-    initialDataLength = round((0.05)*len(dataValues))
-    unlabeledData = dataValues[initialDataLength:initialDataLength+10].as_matrix()
+    initialDataLength = round((0.001)*len(dataValues))
+    U = dataValues.loc[initialDataLength:(initialDataLength+10)].copy()
+    U = U.values
 
     # ***** Box 0 *****
-    #X_train = np.hstack((dataValues[:initialDataLength].as_matrix(), dataLabels[:initialDataLength].as_matrix()))
-    X_train = dataValues[:initialDataLength].as_matrix()
-
+    X = dataValues.loc[:initialDataLength].copy()
+    X = X.values
+    
     #Starting the process
-    for t in range(len(unlabeledData)):
+    for t in range(len(U)):
         print("Step ",t)
-        
+        print("Length: ", len(X))
+        print("Selected data: ", X)
+       
         # ***** Box 1 *****
-        Ut = unlabeledData[t]
+        Ut = U[t]
+        print("Selected unlabeled data: ", Ut)
         classes=[0, 1]
 
         # ***** Box 2 *****
-        kmeans = kMeans(X_train, classes)
+        kmeans = kMeans(X, classes)
         clusters = kmeans.labels_
         predicted = baseClassifier(Ut, kmeans)
 
-        instances = slicingClusteredData(np.vstack([X_train, unlabeledData[t]]), np.hstack([clusters, predicted]), classes)
-
+        indexesByClass = slicingClusteredData(np.hstack([clusters, predicted]), classes)
+        instances = np.vstack([X, Ut])
+        
         # ***** Box 3 *****
         #Testing with two different methods
-        pdfGmm = gmm(instances)
-        #pdfKde = kde(instances)
+        pdfGmm = loadGmmByClass(instances, indexesByClass)
+        #pdfKde = kde(instances, indexes)
         
         # ***** Box 4 *****
-        instancesGMM = compactingDataDensityBased(instances, pdfGmm, criteria)
+        instancesGMM = compactingDataDensityBased(instances, pdfGmm, 0.8)
         #instancesKDE = compactingDataDensityBased(instances, pdfKde, criteria)
         
         # ***** Box 5 *****
-        X_train = instancesGMM
-        #X_train = instancesKDE
-        print("Selected data: ", X_train)
+        X = instancesGMM
+        #X = instancesKDE
+        
         
         
 main()
