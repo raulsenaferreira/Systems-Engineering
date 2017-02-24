@@ -32,7 +32,7 @@ def gmm(points):
         
     return pdfs
 
-def loadGmmByClass(instances, indexesByClass):
+def loadDensitiesByClass(instances, indexesByClass):
     pdfs = [None] * len(instances)
     for c, indexes in indexesByClass.items():
         points = instances[indexes]
@@ -44,12 +44,12 @@ def loadGmmByClass(instances, indexesByClass):
         
     return pdfs  
 
-def kde(instances, indexes):
-    kde={}
-    for c, points in instances.items():
-        kernel = KernelDensity(kernel='gaussian', bandwidth=0.2).fit(points)
-        kde[c] = kernel.score_samples(points)
-    return kde
+
+def kde(points):
+    kernel = KernelDensity(kernel='gaussian', bandwidth=0.2).fit(points)
+    pdfs = kernel.score_samples(points)
+    
+    return pdfs
 
 
 def baseClassifier(instancesToPredict, classifier):
@@ -101,6 +101,7 @@ def main():
         print("Length: ", len(X))
         print("Selected data: ", X)
        
+        
         # ***** Box 1 *****
         Ut = U[t]
         print("Selected unlabeled data: ", Ut)
@@ -116,16 +117,16 @@ def main():
         
         # ***** Box 3 *****
         #Testing with two different methods
-        pdfGmm = loadGmmByClass(instances, indexesByClass)
-        #pdfKde = kde(instances, indexes)
+        #pdfGmm = loadDensitiesByClass(instances, indexesByClass)
+        pdfKde = loadDensitiesByClass(instances, indexesByClass)
         
         # ***** Box 4 *****
-        instancesGMM = compactingDataDensityBased(instances, pdfGmm, 0.8)
-        #instancesKDE = compactingDataDensityBased(instances, pdfKde, criteria)
+        #instancesGMM = compactingDataDensityBased(instances, pdfGmm, 0.8)
+        instancesKDE = compactingDataDensityBased(instances, pdfKde, 0.8)
         
         # ***** Box 5 *****
-        X = instancesGMM
-        #X = instancesKDE
+        #X = instancesGMM
+        X = instancesKDE
         
         
         
