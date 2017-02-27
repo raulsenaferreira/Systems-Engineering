@@ -6,7 +6,17 @@ from sklearn import mixture
 from sklearn.neighbors.kde import KernelDensity
 from sklearn.cluster import KMeans
 from sklearn import svm
+from sklearn.decomposition import PCA
 
+
+def pca(X, numComponents):
+    pca = PCA(n_components=numComponents)
+    pca.fit(X)
+    PCA(copy=True, iterated_power='auto', n_components=numComponents, random_state=None, svd_solver='auto', tol=0.0, whiten=False)
+    
+    return pca.transform(X)
+       
+    
 def kMeans(X, classes):  
     numClasses = len(classes)
     kmeans = KMeans(n_clusters=numClasses).fit(X)
@@ -28,26 +38,14 @@ def svm(X, y):
 
 def gmm(points):
     clf = mixture.GaussianMixture(n_components=6, covariance_type='full')
-    pdfs = clf.fit(points).score_samples(points)
+    pdfs = np.exp(clf.fit(points).score_samples(points))
         
     return pdfs
-
-def loadDensitiesByClass(instances, indexesByClass):
-    pdfs = [None] * len(instances)
-    for c, indexes in indexesByClass.items():
-        points = instances[indexes]
-        pdfsByClass = gmm(points)
-        a = 0
-        for i in indexes:
-            pdfs[i]=pdfsByClass[a]
-            a+=1
-        
-    return pdfs  
 
 
 def kde(points):
     kernel = KernelDensity(kernel='gaussian', bandwidth=0.2).fit(points)
-    pdfs = kernel.score_samples(points)
+    pdfs = np.exp(kernel.score_samples(points))
     
     return pdfs
 
@@ -56,10 +54,37 @@ def baseClassifier(instancesToPredict, classifier):
     return classifier.predict(instancesToPredict)
 
 
+def initializingData(X, y):
+    c1=[]
+    c2=[]
+    for i in range(len(y)):
+        if y[i]==0:
+            c1.append(X[i])
+        else:
+            c2.append(X[i])
+    
+    return c1, c2
+    
+    
+def loadDensitiesByClass(instances, indexesByClass, densityFunction):
+    pdfsByClass = {}
+    for c, indexes in indexesByClass.items():
+        pdfs = [-1] * len(instances)
+        points = instances[indexes]
+        pdfsByPoints = densityFunction(points)
+        a = 0
+        for i in indexes:
+            pdfs[i]=pdfsByPoints[a]
+            a+=1
+        pdfsByClass[c] = pdfs
+        
+    return pdfsByClass
+
+
 #Slicing instances according to their inferred clusters
 def slicingClusteredData(clusters, classes):
     indexes = {}
-    for c in range(numClasses):
+    for c in range(len(classes)):
         indexes[classes[c]]=[i for i in range(len(clusters)) if clusters[i] == c]
     
     return indexes
@@ -67,9 +92,57 @@ def slicingClusteredData(clusters, classes):
 
 #Cutting data for next iteration
 def compactingDataDensityBased(instances, densities, criteria):
-    maxPDF = max(densities)*criteria
-    selectedInstances = [instances[i] for i in range(len(densities)) if densities[i] >= maxPDF]
+    selectedInstances=[]
+    
+    for k in densities:
+        arrPdf = densities[k]
+        maxPDF = max(arrPdf)*criteria
+        minPDF = min(arrPdf)*criteria
+        selectedInstances.append([instances[i] for i in range(len(arrPdf)) if arrPdf[i] != -1 and (arrPdf[i] >= maxPDF or arrPdf[i] <= minPDF)])
     return selectedInstances
+    
+
+def plotDistributions(distributions):
+    i=0
+    #ploting
+    fig = plt.figure()
+    handles = []
+    colors = ['magenta', 'cyan']
+    classes = ['cluster 1', 'cluster 2']
+    ax = fig.add_subplot(121)
+    
+    for X in distributions:
+        #reducing to 2-dimensional data
+        x=pca(X, 2)
+        
+        handles.append(ax.scatter(x[:, 0], x[:, 1], color=colors[i], s=5, edgecolor='none'))
+        i+=1
+    
+    ax.legend(handles, classes)
+    
+    plt.show()
+    
+    
+def plotDistributionByClass(instances, indexesByClass):
+    i=0
+    #ploting
+    fig = plt.figure()
+    handles = []
+    colors = ['magenta', 'cyan']
+    classes = ['cluster 1', 'cluster 2']
+    ax = fig.add_subplot(121)
+    
+    for c, indexes in indexesByClass.items():
+        X = instances[indexes]
+        #reducing to 2-dimensional data
+        x=pca(X, 2)
+        
+        handles.append(ax.scatter(x[:, 0], x[:, 1], color=colors[i], s=5, edgecolor='none'))
+        i+=1
+    
+    ax.legend(handles, classes)
+    
+    plt.show()
     
     
 def main():
@@ -86,47 +159,63 @@ def main():
     dataLabels = pd.read_csv(path+'\\noaa_label.csv',sep = ",")
 
 
-    #Test 0: Predicting 10 instances. Starting labeled data with 5%
-    initialDataLength = round((0.001)*len(dataValues))
-    U = dataValues.loc[initialDataLength:(initialDataLength+10)].copy()
-    U = U.values
+    ''' Test 0: 
+    Predicting 365 instances by step. 50 steps. Starting labeled data with 5%. Two classes.
+    '''
+    excludingPercentage = 0.5
+    batches = 50
+    sizeOfBatch = 365
+    sizeOfLabeledData = round((0.05)*sizeOfBatch)
+    initialDataLength = sizeOfLabeledData
+    finalDataLength = sizeOfBatch
+    
 
     # ***** Box 0 *****
     X = dataValues.loc[:initialDataLength].copy()
     X = X.values
+    y = dataLabels.loc[:initialDataLength].copy()
+    y = y.values
+    X_class1, X_class2 = initializingData(X, y)
     
     #Starting the process
-    for t in range(len(U)):
-        print("Step ",t)
-        print("Length: ", len(X))
-        print("Selected data: ", X)
-       
+    for t in range(batches):
+        print("Step ",t+1)
+        print(len(X), " Points")
         
+        plotDistributions([X_class1, X_class2])
+
         # ***** Box 1 *****
-        Ut = U[t]
-        print("Selected unlabeled data: ", Ut)
+        X = np.vstack([X_class1, X_class2])
+        U = dataValues.loc[initialDataLength:finalDataLength].copy()
+        Ut = U.values
+        #Ut = [U[t], U[t+1]]
+        #print("Selected unlabeled data: ", Ut)
         classes=[0, 1]
 
         # ***** Box 2 *****
-        kmeans = kMeans(X, classes)
+        kmeans = kMeans(pca(X, 2), classes)
         clusters = kmeans.labels_
-        predicted = baseClassifier(Ut, kmeans)
-
-        indexesByClass = slicingClusteredData(np.hstack([clusters, predicted]), classes)
+        predicted = baseClassifier(pca(Ut, 2), kmeans)
         instances = np.vstack([X, Ut])
+        indexesByClass = slicingClusteredData(np.hstack([clusters, predicted]), classes)
         
         # ***** Box 3 *****
         #Testing with two different methods
-        #pdfGmm = loadDensitiesByClass(instances, indexesByClass)
-        pdfKde = loadDensitiesByClass(instances, indexesByClass)
+        #pdfGmmByClass = loadDensitiesByClass(instances, indexesByClass, gmm)
+        pdfKdeByClass = loadDensitiesByClass(instances, indexesByClass, kde)
+        # Plotting data distribution by class
+        #plotDistributionByClass(instances, indexesByClass)
         
         # ***** Box 4 *****
-        #instancesGMM = compactingDataDensityBased(instances, pdfGmm, 0.8)
-        instancesKDE = compactingDataDensityBased(instances, pdfKde, 0.8)
+        #instancesGMM = compactingDataDensityBased(instances, pdfGmmByClass, excludingPercentage)
+        instancesKDE = compactingDataDensityBased(instances, pdfKdeByClass, excludingPercentage)
         
         # ***** Box 5 *****
         #X = instancesGMM
-        X = instancesKDE
+        X_class1 = instancesKDE[0]
+        X_class2 = instancesKDE[1]
+        initialDataLength=finalDataLength+1
+        finalDataLength+=sizeOfBatch
         
         
         
