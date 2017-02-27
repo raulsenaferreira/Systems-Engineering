@@ -158,7 +158,6 @@ def main():
     dataValues = pd.read_csv(path+'\\noaa_data.csv',sep = ",")
     dataLabels = pd.read_csv(path+'\\noaa_label.csv',sep = ",")
 
-
     ''' Test 0: 
     Predicting 365 instances by step. 50 steps. Starting labeled data with 5%. Two classes.
     '''
@@ -169,7 +168,6 @@ def main():
     initialDataLength = sizeOfLabeledData
     finalDataLength = sizeOfBatch
     
-
     # ***** Box 0 *****
     X = dataValues.loc[:initialDataLength].copy()
     X = X.values
@@ -180,10 +178,7 @@ def main():
     #Starting the process
     for t in range(batches):
         print("Step ",t+1)
-        print(len(X), " Points")
         
-        plotDistributions([X_class1, X_class2])
-
         # ***** Box 1 *****
         X = np.vstack([X_class1, X_class2])
         U = dataValues.loc[initialDataLength:finalDataLength].copy()
@@ -198,6 +193,9 @@ def main():
         predicted = baseClassifier(pca(Ut, 2), kmeans)
         instances = np.vstack([X, Ut])
         indexesByClass = slicingClusteredData(np.hstack([clusters, predicted]), classes)
+        #Ploting some info
+        print(len(instances), " Points")
+        plotDistributions([X_class1, X_class2])
         
         # ***** Box 3 *****
         #Testing with two different methods
@@ -211,7 +209,8 @@ def main():
         instancesKDE = compactingDataDensityBased(instances, pdfKdeByClass, excludingPercentage)
         
         # ***** Box 5 *****
-        #X = instancesGMM
+        #X_class1 = instancesGMM[0]
+        #X_class2 = instancesGMM[1]
         X_class1 = instancesKDE[0]
         X_class2 = instancesKDE[1]
         initialDataLength=finalDataLength+1
