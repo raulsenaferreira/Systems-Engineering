@@ -8,6 +8,7 @@ from sklearn.cluster import KMeans
 from sklearn import svm
 from sklearn.decomposition import PCA
 from sklearn.metrics import mean_squared_error
+from sklearn.metrics import accuracy_score
 from math import sqrt
 
 
@@ -39,7 +40,7 @@ def svmClassifier(X, y):
     
 
 def gmm(points):
-    clf = mixture.GaussianMixture(n_components=6, covariance_type='full')
+    clf = mixture.GaussianMixture(n_components=2, covariance_type='full')
     pdfs = np.exp(clf.fit(points).score_samples(points))
         
     return pdfs
@@ -99,8 +100,8 @@ def compactingDataDensityBased(instances, densities, criteria):
     for k in densities:
         arrPdf = densities[k]
         maxPDF = max(arrPdf)*criteria
-        minPDF = min(arrPdf)*criteria
-        selectedInstances.append([instances[i] for i in range(len(arrPdf)) if arrPdf[i] != -1 and (arrPdf[i] >= maxPDF or arrPdf[i] <= minPDF)])
+        selectedInstances.append([instances[i] for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= maxPDF ])
+    
     return selectedInstances
     
 
@@ -149,17 +150,29 @@ def plotDistributionByClass(instances, indexesByClass):
     
 def evaluate(y_actual, y_predicted):
     rmse = sqrt(mean_squared_error(y_actual, y_predicted))
+    acc = accuracy_score(y_actual, y_predicted)
     #print("RMSE: ", rmse)
-    return rmse
+    return [rmse, acc]
     
     
+def plotAccuracy(arr, label):
+    c = range(len(arr))
+    fig = plt.figure()
+    fig.add_subplot(122)
+    ax = plt.axes()
+    
+    ax.legend(ax.plot(c, arr, 'k'), label)
+    plt.show()
+
+
 def test0(dataValues, dataLabels, densityFunction='gmm', excludingPercentage = 0.5, batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05):
-    
+    print(">>>>> STARTING TEST 0 <<<<<")
     sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
     initialDataLength = sizeOfLabeledData
     finalDataLength = sizeOfBatch
-    classes=[0, 1]
-    arrRmse=[]
+    classes = [0, 1]
+    arrRmse = []
+    arrAcc = []
     
     # ***** Box 0 *****
     X = dataValues.loc[:initialDataLength].copy()
@@ -170,7 +183,7 @@ def test0(dataValues, dataLabels, densityFunction='gmm', excludingPercentage = 0
     
     #Starting the process
     for t in range(batches):
-        print("Step ",t+1)
+        #print("Step ",t+1)
         
         # ***** Box 1 *****
         X = np.vstack([X_class1, X_class2])
@@ -185,10 +198,11 @@ def test0(dataValues, dataLabels, densityFunction='gmm', excludingPercentage = 0
         instances = np.vstack([X, Ut])
         indexesByClass = slicingClusteredData(np.hstack([clusters, predicted]), classes)       
         #Evaluating
-        print(len(instances), " Points")
+        #print(len(instances), " Points")
         yt = dataLabels.loc[initialDataLength:finalDataLength].copy()
         yt = yt.values
-        arrRmse.append(evaluate(yt, predicted))
+        arrRmse.append(evaluate(yt, predicted)[0])
+        arrAcc.append(evaluate(yt, predicted)[1])
         #plotDistributions([X_class1, X_class2])
         
         # ***** Box 3 *****
@@ -215,7 +229,9 @@ def test0(dataValues, dataLabels, densityFunction='gmm', excludingPercentage = 0
         X_class2 = instancesByDensity[1]
         initialDataLength=finalDataLength+1
         finalDataLength+=sizeOfBatch
-    
+        
+    plotAccuracy(arrRmse, 'RMSE')
+    plotAccuracy(arrAcc, 'Accuracy')
     print("Average RMSE: ", np.mean(arrRmse))
     print("Standard Deviation: ", np.std(arrRmse))
     print("Variance: ", np.std(arrRmse)**2)
@@ -223,7 +239,7 @@ def test0(dataValues, dataLabels, densityFunction='gmm', excludingPercentage = 0
         
 
 def test1(dataValues, dataLabels, classifier='kmeans', batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05):
-    
+    print(">>>>> STARTING TEST 1 <<<<<")
     sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
     initialDataLength = sizeOfLabeledData
     finalDataLength = sizeOfBatch
@@ -235,9 +251,10 @@ def test1(dataValues, dataLabels, classifier='kmeans', batches = 50, sizeOfBatch
     y = y.values
     
     arrRmse = []
+    arrAcc = []
     
     for t in range(batches):
-        print("Step ",t+1)
+        #print("Step ",t+1)
         
         U = dataValues.loc[initialDataLength:finalDataLength].copy()
         Ut = U.values
@@ -254,13 +271,16 @@ def test1(dataValues, dataLabels, classifier='kmeans', batches = 50, sizeOfBatch
         else:
             return
         
-        arrRmse.append(evaluate(yt, predicted))
+        arrRmse.append(evaluate(yt, predicted)[0])
+        arrAcc.append(evaluate(yt, predicted)[1])
         initialDataLength=finalDataLength+1
         finalDataLength+=sizeOfBatch
         # keep a percentage from former distribution to train in next step 
-        X = Ut
-        y = yt
+        #X = Ut
+        #y = yt
     
+    plotAccuracy(arrRmse, 'RMSE')
+    plotAccuracy(arrAcc, 'Accuracy')
     print("Average RMSE: ", np.mean(arrRmse))
     print("Standard Deviation: ", np.std(arrRmse))
     print("Variance: ", np.std(arrRmse)**2)
@@ -288,7 +308,7 @@ def main():
     Two classes.
     K-Means + GMM / KDE
     '''
-    test0(dataValues, dataLabels, 'kde')
+    test0(dataValues, dataLabels, 'gmm')
     '''
     Test 1:
     Two classes.
