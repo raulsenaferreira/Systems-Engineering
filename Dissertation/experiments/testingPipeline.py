@@ -7,6 +7,8 @@ from sklearn.neighbors.kde import KernelDensity
 from sklearn.cluster import KMeans
 from sklearn import svm
 from sklearn.decomposition import PCA
+from sklearn.metrics import mean_squared_error
+from math import sqrt
 
 
 def pca(X, numComponents):
@@ -24,7 +26,7 @@ def kMeans(X, classes):
     return kmeans
 
 
-def svm(X, y):
+def svmClassifier(X, y):
     clf = svm.SVC()
     clf.fit(X, y)
     
@@ -145,28 +147,19 @@ def plotDistributionByClass(instances, indexesByClass):
     plt.show()
     
     
-def main():
-    #current directory
-    path = os.getcwd() 
-
-    '''
-    Reading NOAA dataset:
-    Eight  features  (average temperature, minimum temperature, maximum temperature, dew
-    point,  sea  level  pressure,  visibility,  average wind speed, maximum  wind  speed)
-    are  used  to  determine  whether  each  day  experienced  rain  or no rain.
-    '''
-    dataValues = pd.read_csv(path+'\\noaa_data.csv',sep = ",")
-    dataLabels = pd.read_csv(path+'\\noaa_label.csv',sep = ",")
-
-    ''' Test 0: 
-    Predicting 365 instances by step. 50 steps. Starting labeled data with 5%. Two classes.
-    '''
-    excludingPercentage = 0.5
-    batches = 50
-    sizeOfBatch = 365
-    sizeOfLabeledData = round((0.05)*sizeOfBatch)
+def evaluate(y_actual, y_predicted):
+    rmse = sqrt(mean_squared_error(y_actual, y_predicted))
+    #print("RMSE: ", rmse)
+    return rmse
+    
+    
+def test0(dataValues, dataLabels, densityFunction='gmm', excludingPercentage = 0.5, batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05):
+    
+    sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
     initialDataLength = sizeOfLabeledData
     finalDataLength = sizeOfBatch
+    classes=[0, 1]
+    arrRmse=[]
     
     # ***** Box 0 *****
     X = dataValues.loc[:initialDataLength].copy()
@@ -183,39 +176,126 @@ def main():
         X = np.vstack([X_class1, X_class2])
         U = dataValues.loc[initialDataLength:finalDataLength].copy()
         Ut = U.values
-        #Ut = [U[t], U[t+1]]
         #print("Selected unlabeled data: ", Ut)
-        classes=[0, 1]
 
         # ***** Box 2 *****
         kmeans = kMeans(pca(X, 2), classes)
         clusters = kmeans.labels_
         predicted = baseClassifier(pca(Ut, 2), kmeans)
         instances = np.vstack([X, Ut])
-        indexesByClass = slicingClusteredData(np.hstack([clusters, predicted]), classes)
-        #Ploting some info
+        indexesByClass = slicingClusteredData(np.hstack([clusters, predicted]), classes)       
+        #Evaluating
         print(len(instances), " Points")
-        plotDistributions([X_class1, X_class2])
+        yt = dataLabels.loc[initialDataLength:finalDataLength].copy()
+        yt = yt.values
+        arrRmse.append(evaluate(yt, predicted))
+        #plotDistributions([X_class1, X_class2])
         
         # ***** Box 3 *****
-        #Testing with two different methods
-        #pdfGmmByClass = loadDensitiesByClass(instances, indexesByClass, gmm)
-        pdfKdeByClass = loadDensitiesByClass(instances, indexesByClass, kde)
-        # Plotting data distribution by class
+        pdfByClass=''
+        if densityFunction == 'gmm':
+            pdfByClass = loadDensitiesByClass(instances, indexesByClass, gmm)
+        elif densityFunction == 'kde':
+            pdfByClass = loadDensitiesByClass(instances, indexesByClass, kde)
+        else:
+            print ("Choose between 'gmm' or 'kde' function. Wrong name given: ", densityFunction)
+            return 
+        #Plotting data distribution by class
         #plotDistributionByClass(instances, indexesByClass)
         
         # ***** Box 4 *****
-        #instancesGMM = compactingDataDensityBased(instances, pdfGmmByClass, excludingPercentage)
-        instancesKDE = compactingDataDensityBased(instances, pdfKdeByClass, excludingPercentage)
+        instancesByDensity = []
+        if densityFunction == 'gmm':
+            instancesByDensity = compactingDataDensityBased(instances, pdfByClass, excludingPercentage)
+        elif densityFunction == 'kde':
+            instancesByDensity = compactingDataDensityBased(instances, pdfByClass, excludingPercentage)
         
         # ***** Box 5 *****
-        #X_class1 = instancesGMM[0]
-        #X_class2 = instancesGMM[1]
-        X_class1 = instancesKDE[0]
-        X_class2 = instancesKDE[1]
+        X_class1 = instancesByDensity[0]
+        X_class2 = instancesByDensity[1]
         initialDataLength=finalDataLength+1
         finalDataLength+=sizeOfBatch
+    
+    print("Average RMSE: ", np.mean(arrRmse))
+    print("Standard Deviation: ", np.std(arrRmse))
+    print("Variance: ", np.std(arrRmse)**2)
+    print(">>>>> END OF TEST 0 <<<<<")
         
+
+def test1(dataValues, dataLabels, classifier='kmeans', batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05):
+    
+    sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
+    initialDataLength = sizeOfLabeledData
+    finalDataLength = sizeOfBatch
+    classes=[0, 1]
+    
+    X = dataValues.loc[:initialDataLength].copy()
+    X = X.values
+    y = dataLabels.loc[:initialDataLength].copy()
+    y = y.values
+    
+    arrRmse = []
+    
+    for t in range(batches):
+        print("Step ",t+1)
         
+        U = dataValues.loc[initialDataLength:finalDataLength].copy()
+        Ut = U.values
+        yt = dataLabels.loc[initialDataLength:finalDataLength].copy()
+        yt = yt.values
+        predicted=[]
         
+        if classifier == 'kmeans':
+            kmeans = kMeans(pca(X, 2), classes)
+            predicted = baseClassifier(pca(Ut, 2), kmeans)
+        elif classifier == 'svm':
+            svmClf = svmClassifier(pca(X, 2), y)
+            predicted = baseClassifier(pca(Ut, 2), svmClf)
+        else:
+            return
+        
+        arrRmse.append(evaluate(yt, predicted))
+        initialDataLength=finalDataLength+1
+        finalDataLength+=sizeOfBatch
+        # keep a percentage from former distribution to train in next step 
+        X = Ut
+        y = yt
+    
+    print("Average RMSE: ", np.mean(arrRmse))
+    print("Standard Deviation: ", np.std(arrRmse))
+    print("Variance: ", np.std(arrRmse)**2)
+    print(">>>>> END OF TEST 1 <<<<<")
+
+    
+def test2(dataValues, dataLabels):
+    pass
+    
+    
+def main():
+    #current directory
+    path = os.getcwd() 
+    '''
+    Reading NOAA dataset:
+    Eight  features  (average temperature, minimum temperature, maximum temperature, dew
+    point,  sea  level  pressure,  visibility,  average wind speed, maximum  wind  speed)
+    are  used  to  determine  whether  each  day  experienced  rain  or no rain.
+    '''
+    dataValues = pd.read_csv(path+'\\noaa_data.csv',sep = ",")
+    dataLabels = pd.read_csv(path+'\\noaa_label.csv',sep = ",")
+    #Test sets: Predicting 365 instances by step. 50 steps. Starting labeled data with 5% of 365 instances.
+    ''' 
+    Test 0: 
+    Two classes.
+    K-Means + GMM / KDE
+    '''
+    test0(dataValues, dataLabels, 'kde')
+    '''
+    Test 1:
+    Two classes.
+    K-Means / SVM
+    '''
+    test1(dataValues, dataLabels, 'svm')
+    
+    
+    
 main()
