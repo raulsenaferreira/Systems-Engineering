@@ -292,16 +292,16 @@ def test2(dataValues, dataLabels):
     
     
 def main():
-    #current directory
-    path = os.getcwd() 
+    os.chdir('..')
+    path = os.getcwd()+'\\datasets\\'
     '''
     Reading NOAA dataset:
     Eight  features  (average temperature, minimum temperature, maximum temperature, dew
     point,  sea  level  pressure,  visibility,  average wind speed, maximum  wind  speed)
     are  used  to  determine  whether  each  day  experienced  rain  or no rain.
     '''
-    dataValues = pd.read_csv(path+'\\noaa_data.csv',sep = ",")
-    dataLabels = pd.read_csv(path+'\\noaa_label.csv',sep = ",")
+    dataValues = pd.read_csv(path+'noaa_data.csv',sep = ",")
+    dataLabels = pd.read_csv(path+'noaa_label.csv',sep = ",")
     #Test sets: Predicting 365 instances by step. 50 steps. Starting labeled data with 5% of 365 instances.
     ''' 
     Test 0: 
