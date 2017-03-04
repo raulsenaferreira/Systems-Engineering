@@ -4,6 +4,8 @@ from sklearn.neighbors.kde import KernelDensity
 from sklearn.cluster import KMeans
 from sklearn import svm
 from sklearn.decomposition import PCA
+from collections import Counter
+from source import util
 
 def pca(X, numComponents):
     pca = PCA(n_components=numComponents)
@@ -66,7 +68,7 @@ def clusterAndLabel(X, y, ut, K):
     for k in range(2, K+2):
         kmeans = kMeans(pca(X, 2), k)
         clusters = kmeans.labels_
-        clusteredData = baseClassifier(pca(ut, 2), kmeans)
+        clusteredData = util.baseClassifier(pca(ut, 2), kmeans)
         arrPredicted=np.vstack([arrPredicted, majorityVote(clusteredData, clusters, y)])
     
     labels=[]

@@ -3,6 +3,10 @@ from sklearn.metrics import mean_squared_error
 from math import sqrt
 
 
+def baseClassifier(instancesToPredict, classifier):
+    return classifier.predict(instancesToPredict)
+
+
 def initializingData(X, y):
     c1=[]
     c2=[]
