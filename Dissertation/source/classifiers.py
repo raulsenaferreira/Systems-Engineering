@@ -31,8 +31,8 @@ def svmClassifier(X, y):
     return clf
     
 
-def gmm(points):
-    clf = mixture.GaussianMixture(n_components=2, covariance_type='full')
+def gmm(points, n_classes):
+    clf = mixture.GaussianMixture(n_components=n_classes, covariance_type='full')
     pdfs = np.exp(clf.fit(points).score_samples(points))
         
     return pdfs

@@ -21,10 +21,12 @@ def initializingData(X, y):
     
 def loadDensitiesByClass(instances, indexesByClass, densityFunction):
     pdfsByClass = {}
+    numClasses = len(indexesByClass)
+   
     for c, indexes in indexesByClass.items():
         pdfs = [-1] * len(instances)
         points = instances[indexes]
-        pdfsByPoints = densityFunction(points)
+        pdfsByPoints = densityFunction(points, numClasses)
         a = 0
         for i in indexes:
             pdfs[i]=pdfsByPoints[a]
