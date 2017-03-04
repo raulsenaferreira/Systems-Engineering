@@ -1,0 +1,103 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "def test0(dataValues, dataLabels, densityFunction='gmm', excludingPercentage = 0.2, batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05):\n",
+    "    print(\">>>>> STARTING TEST 0 <<<<<\")\n",
+    "    sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)\n",
+    "    initialDataLength = sizeOfLabeledData\n",
+    "    finalDataLength = sizeOfBatch\n",
+    "    K = 5\n",
+    "    classes = [0,1]\n",
+    "    arrRmse = []\n",
+    "    arrAcc = []\n",
+    "    \n",
+    "    # ***** Box 1 *****\n",
+    "    X = dataValues.loc[:initialDataLength].copy()\n",
+    "    X = X.values\n",
+    "    y = dataLabels.loc[:initialDataLength].copy()\n",
+    "    y = y.values[: , 0]\n",
+    "    \n",
+    "    #Starting the process\n",
+    "    for t in range(batches):\n",
+    "        #print(\"Step \",t+1)\n",
+    "        \n",
+    "        # ***** Box 2 *****\n",
+    "        U = dataValues.loc[initialDataLength:finalDataLength].copy()\n",
+    "        Ut = U.values\n",
+    "\n",
+    "        # ***** Box 3 *****\n",
+    "        predicted = clusterAndLabel(X, y, Ut, K)\n",
+    "        instances = np.vstack([X, Ut])\n",
+    "        labelsInstances = np.hstack([y, predicted])\n",
+    "        # ***** Evaluating *****\n",
+    "        #print(len(instances), \" Points\")\n",
+    "        yt = dataLabels.loc[initialDataLength:finalDataLength].copy()\n",
+    "        yt = yt.values\n",
+    "        arrRmse.append(evaluate(yt, predicted)[0])\n",
+    "        arrAcc.append(evaluate(yt, predicted)[1])\n",
+    "        \n",
+    "        # ***** Box 4 *****\n",
+    "        indexesByClass = slicingClusteredData(labelsInstances, classes)\n",
+    "        \n",
+    "        pdfByClass=''\n",
+    "        if densityFunction == 'gmm':\n",
+    "            pdfByClass = loadDensitiesByClass(instances, indexesByClass, gmm)\n",
+    "        elif densityFunction == 'kde':\n",
+    "            pdfByClass = loadDensitiesByClass(instances, indexesByClass, kde)\n",
+    "        else:\n",
+    "            print (\"Choose between 'gmm' or 'kde' function. Wrong name given: \", densityFunction)\n",
+    "            return \n",
+    "        \n",
+    "        #Plotting data distribution by class\n",
+    "        #plotDistributionByClass(instances, indexesByClass)\n",
+    "        \n",
+    "        # ***** Box 5 *****\n",
+    "        selectedIndexes = compactingDataDensityBased(instances, pdfByClass, excludingPercentage)\n",
+    "        #X_class1 = selectedIndexes[0]\n",
+    "        #X_class2 = selectedIndexes[1]\n",
+    "        selectedIndexes = np.hstack([selectedIndexes[0],selectedIndexes[1]])\n",
+    "        \n",
+    "        # ***** Box 6 *****\n",
+    "        instances = np.array(instances)\n",
+    "        labelsInstances = np.array(labelsInstances)            \n",
+    "        X = instances[selectedIndexes]\n",
+    "        y = labelsInstances[selectedIndexes]      \n",
+    "        #updating indexes\n",
+    "        initialDataLength=finalDataLength+1\n",
+    "        finalDataLength+=sizeOfBatch\n",
+    "        \n",
+    "        \n",
+    "    finalEvaluation(arrRmse, arrAcc)\n",
+    "    print(\">>>>> END OF TEST 0 <<<<<\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

@@ -1,3 +1,4 @@
+import numpy as np
 from sklearn import mixture
 from sklearn.neighbors.kde import KernelDensity
 from sklearn.cluster import KMeans
@@ -12,11 +13,8 @@ def pca(X, numComponents):
     return pca.transform(X)
        
     
-def kMeans(X, classes):  
-    numClasses = len(classes)
-    kmeans = KMeans(n_clusters=numClasses).fit(X)
-    
-    return kmeans
+def kMeans(X, k):
+    return KMeans(n_clusters=k).fit(X)
 
 
 def svmClassifier(X, y):
@@ -43,3 +41,36 @@ def kde(points):
     pdfs = np.exp(kernel.score_samples(points))
     
     return pdfs
+
+
+def majorityVote(clusteredData, clusters, y):
+    kPredicted = []
+    
+    for i in range(len(clusteredData)):
+        group = clusteredData[i]
+        #print("Grupo: ", group)
+        ind = np.where(clusters==group)
+        #print("Indices: ", ind)
+        label = y[ind]
+        #print("labels: ",label)
+        voting = Counter(label).most_common(1)[0][0]
+        #print(voting)
+        kPredicted.append(voting)
+    
+    return kPredicted
+
+
+def clusterAndLabel(X, y, ut, K):
+    arrPredicted=[-1]*len(ut)
+    
+    for k in range(2, K+2):
+        kmeans = kMeans(pca(X, 2), k)
+        clusters = kmeans.labels_
+        clusteredData = baseClassifier(pca(ut, 2), kmeans)
+        arrPredicted=np.vstack([arrPredicted, majorityVote(clusteredData, clusters, y)])
+    
+    labels=[]
+    for j in range(len(ut)):
+        labels.append(Counter(arrPredicted[:, j]).most_common(1)[0][0])
+    
+    return labels
