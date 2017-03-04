@@ -38,7 +38,7 @@ def gmm(points, n_classes):
     return pdfs
 
 
-def kde(points):
+def kde(points, n_classes):
     kernel = KernelDensity(kernel='gaussian', bandwidth=0.2).fit(points)
     pdfs = np.exp(kernel.score_samples(points))
     
