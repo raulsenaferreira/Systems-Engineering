@@ -4,7 +4,7 @@ from source import metrics
 from source import util
 
 
-def kmeans_svm(dataValues, dataLabels, classifier='kmeans', batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05, classes=[0, 1]):
+def kmeans_svm(dataValues, dataLabels, usePCA=True, classifier='kmeans', batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05, classes=[0, 1]):
     
     print(">>>>> STARTING TEST with ", classifier, " classifier <<<<<")
     sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
@@ -27,12 +27,16 @@ def kmeans_svm(dataValues, dataLabels, classifier='kmeans', batches = 50, sizeOf
         yt = yt.values
         predicted=[]
         
+        if usePCA:
+            X = classifiers.pca(X, 2)
+            Ut = classifiers.pca(Ut, 2)
+
         if classifier == 'kmeans':
-            kmeans = classifiers.kMeans(classifiers.pca(X, 2), len(classes))
-            predicted = util.baseClassifier(classifiers.pca(Ut, 2), kmeans)
+            kmeans = classifiers.kMeans(X, len(classes))
+            predicted = util.baseClassifier(Ut, kmeans)
         elif classifier == 'svm':
-            svmClf = classifiers.svmClassifier(classifiers.pca(X, 2), y)
-            predicted = util.baseClassifier(classifiers.pca(Ut, 2), svmClf)
+            svmClf = classifiers.svmClassifier(X, y)
+            predicted = util.baseClassifier(Ut, svmClf)
         else:
             return
         

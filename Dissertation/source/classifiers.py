@@ -20,6 +20,7 @@ def kMeans(X, k):
 
 
 def svmClassifier(X, y):
+    #clf = svm.LinearSVC()
     clf = svm.SVC()
     clf.fit(X, y)
     
@@ -27,7 +28,12 @@ def svmClassifier(X, y):
         decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
         max_iter=-1, probability=False, random_state=None, shrinking=True,
         tol=0.001, verbose=False)
-    
+    '''
+    svm.LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
+     intercept_scaling=1, loss='squared_hinge', max_iter=1000,
+     multi_class='ovr', penalty='l2', random_state=None, tol=0.0001,
+     verbose=0)
+    '''
     return clf
     
 
@@ -95,7 +101,7 @@ def clusterAndLabel(X, y, Ut, K):
     
     for k in range(2, K+2):
         if lenPoints >= k:
-            kmeans = kMeans(pca(X, 2), k)
+            kmeans = kMeans(X, k)
             clusters = kmeans.labels_
             clusteredData = util.baseClassifier(pca(Ut, 2), kmeans)
             arrPredicted=np.vstack([arrPredicted, majorityVote(clusteredData, clusters, y)])

@@ -49,13 +49,23 @@ def slicingClusteredData(clusters, classes):
 
 #Cutting data for next iteration
 def compactingDataDensityBased(instances, densities, criteria):
-    selectedIndexes=[]
-    for k in densities:
-        arrPdf = densities[k]
-        cutLine = max(arrPdf)*criteria
-        selectedIndexes.append([i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine ])
-    #if len(selectedIndexes) < 30:
+    
+    def cutData(criteria):
+        s=[]
+        for k in densities:
+            arrPdf = densities[k]
+            cutLine = max(arrPdf)*criteria
+            s.append([i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine ])
 
+        if len(s[0]) < 2 or len(s[1]) < 2:
+            #print(len(s[0]))
+            #print(len(s[1]))
+            return cutData(criteria/2) 
+        else:
+            return s
+
+    selectedIndexes=cutData(criteria)    
+    
     return selectedIndexes
 
 
@@ -100,8 +110,9 @@ def mahalanobisCoreSupportExtraction(Ut, indexesPredictedByClass, bestModelSelec
             i = vals.argmin()
             selectedMinIndexesByClass[c][pointIndexes[j]] = distsByComponent[i][j]
 
-        p = floor(excludingPercentage*np.max(selectedMinIndexesByClass[c])) 
-        p = 70 #20% smallest distances per classs, based on paper
+        #20% smallest distances per class, based on paper
+        p = floor(excludingPercentage*len(selectedMinIndexesByClass[c])) 
+        #p = 70 
         selectedMinIndexesByClass[c] = np.array(selectedMinIndexesByClass[c])
         selectedMinIndexesByClass[c] = selectedMinIndexesByClass[c].argsort()[:p]
     #print(selectedMinIndexesByClass)

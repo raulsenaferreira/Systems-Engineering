@@ -3,7 +3,7 @@ from experiments.composeGMM import box1, box2, box3, box4, box5, box6
 from source import metrics
 
 
-def start(dataValues, dataLabels, densityFunction='gmmBIC', excludingPercentage = 0.2, distanceMetric = 'mahalanobis', batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05, classes = [0,1], K = 5):
+def start(dataValues, dataLabels, usePCA=True, densityFunction='gmmBIC', classifier='cluster_and_label', excludingPercentage = 0.2, distanceMetric = 'mahalanobis', batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05, classes = [0,1], K = 5):
     
     print(">>>>> STARTING TEST with K-Means, Cluster and label as classifier and ", densityFunction, " as cutting data <<<<<")
     
@@ -21,7 +21,7 @@ def start(dataValues, dataLabels, densityFunction='gmmBIC', excludingPercentage 
         Ut = box2.process(dataValues, initialDataLength, finalDataLength)
 
         # ***** Box 3 *****
-        predicted = box3.classify(X, y, Ut, K)
+        predicted = box3.classify(X, y, Ut, K, classifier, usePCA)
         instances, labelsInstances = box3.stack(X, Ut, y, predicted)
         # Evaluating classification
         yt = dataLabels.loc[initialDataLength:finalDataLength].copy()

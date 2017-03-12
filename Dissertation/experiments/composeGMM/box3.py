@@ -1,10 +1,20 @@
 import numpy as np
 from source import classifiers
+from source import util
 
 
-def classify(X, y, Ut, K):
-    predicted = classifiers.clusterAndLabel(X, y, Ut, K)
-    return predicted
+def classify(X, y, Ut, K, classifier, usePCA):
+	if usePCA:
+		X = classifiers.pca(X, 2)
+		Ut = classifiers.pca(Ut, 2)
+
+	if classifier == 'cluster_and_label':
+		return classifiers.clusterAndLabel(X, y, Ut, K)
+	elif classifier == 'svm':
+		svmClf = classifiers.svmClassifier(X, y)
+		return util.baseClassifier(Ut, svmClf)
+	else:
+		return
     
 
 def stack(X, Ut, y, predicted):
