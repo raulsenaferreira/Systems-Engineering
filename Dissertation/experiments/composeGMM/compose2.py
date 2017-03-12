@@ -3,7 +3,7 @@ from experiments.composeGMM import box1, box2, box3, box4, box5, box6
 from source import metrics
 
 
-def start(dataValues, dataLabels, densityFunction='gmm', excludingPercentage = 0.2, batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05, classes = [0,1], K = 5):
+def start(dataValues, dataLabels, densityFunction='gmmBIC', excludingPercentage = 0.2, distanceMetric = 'mahalanobis', batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05, classes = [0,1], K = 5):
     
     print(">>>>> STARTING TEST with K-Means, Cluster and label as classifier and ", densityFunction, " as cutting data <<<<<")
     
@@ -29,11 +29,12 @@ def start(dataValues, dataLabels, densityFunction='gmm', excludingPercentage = 0
         arrAcc.append(metrics.evaluate(yt, predicted))
         
         # ***** Box 4 *****
-        pdfByClass = box4.pdfByClass(instances, labelsInstances, classes, densityFunction)
+        bestModelSelectedByClass = box4.bestModelSelectedByClass(X, y, classes, densityFunction)
         
         # ***** Box 5 *****
-        selectedIndexes = box5.cuttingDataByPercentage(instances, pdfByClass, excludingPercentage)
-        
+        #instances = Ut
+        #labelsInstances = predicted
+        selectedIndexes = box5.cuttingDataByDistance(instances, labelsInstances, bestModelSelectedByClass, excludingPercentage)
         
         # ***** Box 6 *****
         X, y = box6.selectedData(instances, labelsInstances, selectedIndexes)

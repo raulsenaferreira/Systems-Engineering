@@ -31,12 +31,39 @@ def svmClassifier(X, y):
     return clf
     
 
-def gmm(points, n_classes):
-    clf = mixture.GaussianMixture(n_components=n_classes, covariance_type='full')
+def gmmWithBIC(X):
+    ctype = 'full' #'spherical', 'tied', 'diag', 'full'
+    best_gmm = False
+    lowest_bic = np.infty
+    bic = []
+    n_components_range = [1, 2, 3, 5, 10, 15, 20]
+    lenPoints = len(X)
+    numComponentsChosen = 0
+
+    for numComponents in n_components_range:
+        if lenPoints >= numComponents:
+            GMM = mixture.GaussianMixture(n_components=numComponents, covariance_type=ctype)
+            GMM.fit(X)
+            bic.append(GMM.bic(X))
+
+            if bic[-1] < lowest_bic:
+                lowest_bic = bic[-1]
+                best_gmm = GMM
+                numComponentsChosen = numComponents
+    #return pdfs of best GMM model
+    if best_gmm != False:
+        #print("Best number of components: ",numComponentsChosen)
+        return best_gmm
+    else:
+        print("gmmWithBIC: Error to choose the best GMM model")
+
+
+def gmm(points, numComponents):
+    clf = mixture.GaussianMixture(n_components=numComponents, covariance_type='full')
     pdfs = np.exp(clf.fit(points).score_samples(points))
         
     return pdfs
-
+    
 
 def kde(points, n_classes):
     kernel = KernelDensity(kernel='gaussian', bandwidth=0.2).fit(points)
@@ -62,17 +89,19 @@ def majorityVote(clusteredData, clusters, y):
     return kPredicted
 
 
-def clusterAndLabel(X, y, ut, K):
-    arrPredicted=[-1]*len(ut)
+def clusterAndLabel(X, y, Ut, K):
+    arrPredicted=[-1]*len(Ut)
+    lenPoints = len(X)
     
     for k in range(2, K+2):
-        kmeans = kMeans(pca(X, 2), k)
-        clusters = kmeans.labels_
-        clusteredData = util.baseClassifier(pca(ut, 2), kmeans)
-        arrPredicted=np.vstack([arrPredicted, majorityVote(clusteredData, clusters, y)])
+        if lenPoints >= k:
+            kmeans = kMeans(pca(X, 2), k)
+            clusters = kmeans.labels_
+            clusteredData = util.baseClassifier(pca(Ut, 2), kmeans)
+            arrPredicted=np.vstack([arrPredicted, majorityVote(clusteredData, clusters, y)])
     
     labels=[]
-    for j in range(len(ut)):
+    for j in range(len(Ut)):
         labels.append(Counter(arrPredicted[:, j]).most_common(1)[0][0])
     
     return labels

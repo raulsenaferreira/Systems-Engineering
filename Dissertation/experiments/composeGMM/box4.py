@@ -12,3 +12,9 @@ def pdfByClass(instances, labelsInstances, classes, densityFunction):
     else:
         print ("Choose between 'gmm' or 'kde' function. Wrong name given: ", densityFunction)
         return
+
+
+def bestModelSelectedByClass(X, y, classes, densityFunction):
+	indexesByClass = util.slicingClusteredData(y, classes)
+	if densityFunction == 'gmmBIC':
+		return util.loadBestModelByClass(X, indexesByClass, classifiers.gmmWithBIC)
