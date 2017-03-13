@@ -53,3 +53,23 @@ def plotAccuracy(arr, label):
     
     plt.grid()
     plt.show()
+
+
+def plotDistributionss(distributions):
+    i=0
+    #ploting
+    fig = plt.figure()
+    handles = []
+    colors = ['magenta', 'cyan']
+    classes = ['Class 1', 'Class 2']
+    ax = fig.add_subplot(121)
+    
+    for k, v in distributions.items():
+        points = distributions[k]
+        
+        handles.append(ax.scatter(points[:, 0], points[:, 1], color=colors[i], s=5, edgecolor='none'))
+        i+=1
+    
+    ax.legend(handles, classes)
+    
+    plt.show()

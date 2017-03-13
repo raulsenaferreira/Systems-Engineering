@@ -69,6 +69,13 @@ def gmm(points, numComponents):
     pdfs = np.exp(clf.fit(points).score_samples(points))
         
     return pdfs
+
+
+def gmmPure(points, numComponents):
+    clf = mixture.GaussianMixture(n_components=numComponents, covariance_type='full')
+    clf.fit(points)
+        
+    return clf
     
 
 def kde(points, n_classes):

@@ -18,3 +18,9 @@ def bestModelSelectedByClass(X, y, classes, densityFunction):
 	indexesByClass = util.slicingClusteredData(y, classes)
 	if densityFunction == 'gmmBIC':
 		return util.loadBestModelByClass(X, indexesByClass, classifiers.gmmWithBIC)
+
+def intersection(X, y, Ut, predicted, classes, densityFunction):
+	indexesByClass = util.slicingClusteredData(y, classes)
+	predictedByClass = util.slicingClusteredData(predicted, classes)
+	if densityFunction == 'gmm':
+		return util.getDistributionIntersection(X, Ut, indexesByClass, predictedByClass, classifiers.gmmPure)

@@ -29,6 +29,7 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier
         arrAcc.append(metrics.evaluate(yt, predicted))
         
         # ***** Box 4 *****
+        box4.intersection(X, y, Ut, predicted, classes, densityFunction)
         pdfByClass = box4.pdfByClass(instances, labelsInstances, classes, densityFunction)
         
         # ***** Box 5 *****

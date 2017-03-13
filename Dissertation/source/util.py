@@ -3,6 +3,28 @@ from sklearn.metrics import mean_squared_error
 from scipy.spatial.distance import mahalanobis
 from math import sqrt
 from math import floor
+import matplotlib.pyplot as plt
+
+
+def plotDistributionss(distributions):
+    i=0
+    #ploting
+    fig = plt.figure()
+    handles = []
+    colors = ['magenta', 'cyan']
+    classes = ['Class 1', 'Class 2']
+    ax = fig.add_subplot(121)
+    
+    for k, v in distributions.items():
+        points = distributions[k]
+        points = np.array(points)
+        print(points)
+        handles.append(ax.scatter(points[:, 0], points[:, 1], color=colors[i], s=5, edgecolor='none'))
+        i+=1
+    
+    ax.legend(handles, classes)
+    
+    plt.show()
 
 
 def baseClassifier(instancesToPredict, classifier):
@@ -67,6 +89,37 @@ def compactingDataDensityBased(instances, densities, criteria):
     selectedIndexes=cutData(criteria)    
     
     return selectedIndexes
+
+
+def getDistributionIntersection(X, Ut, indexesByClass, predictedByClass, densityFunction):
+    pdfX = {}
+    pdfUt = {}
+    nComponents = 2
+
+    for c, indexes in indexesByClass.items():
+        arrX = []
+        arrU = []
+        oldPoints = X[indexes]
+        newPoints = Ut[predictedByClass[c]]
+        GMMX = densityFunction(oldPoints, nComponents)
+        GMMU = densityFunction(newPoints, nComponents)
+
+        for i in range(len(newPoints)):
+            x = GMMX.predict_proba(newPoints[i])[0]
+            x = np.array(x)
+            x = x.reshape(1,-1)
+            arrU.append(x)
+        for i in range(len(oldPoints)):
+            u = GMMU.predict_proba(oldPoints[i])[0]
+            u = np.array(u)
+            u = u.reshape(1, -1)
+            arrX.append(u)
+        
+        pdfUt[c] = arrU
+        pdfX[c] = arrX
+
+    plotDistributionss(pdfX)
+    plotDistributionss(pdfUt)
 
 
 def loadBestModelByClass(X, indexesByClass, densityFunction):
