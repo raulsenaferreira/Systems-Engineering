@@ -12,6 +12,18 @@ def pdfByClass(instances, labelsInstances, classes, densityFunction):
     else:
         print ("Choose between 'gmm' or 'kde' function. Wrong name given: ", densityFunction)
         return
+    
+    
+def pdfByClass2(instances, labelsInstances, allInstances, classes, densityFunction):
+    indexesByClass = util.slicingClusteredData(labelsInstances, classes)
+
+    if densityFunction == 'gmm':
+        return util.loadDensitiesByClass2(instances, allInstances, indexesByClass, classifiers.gmm)
+    elif densityFunction == 'kde':
+        return util.loadDensitiesByClass2(instances, allInstances, indexesByClass, classifiers.kde)
+    else:
+        print ("Choose between 'gmm' or 'kde' function. Wrong name given: ", densityFunction)
+        return
 
 
 def bestModelSelectedByClass(X, y, classes, densityFunction):

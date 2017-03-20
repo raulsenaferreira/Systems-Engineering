@@ -6,6 +6,12 @@ from math import floor
 import matplotlib.pyplot as plt
 
 
+def solve(m1,m2,s1,s2):
+    x1 = (s1*s2*np.sqrt((-2*np.log(s1/s2)*s2**2)+2*s1**2*np.log(s1/s2)+m2**2-2*m1*m2+m1**2)+m1*s2**2-m2*s1**2)/(s2**2-s1**2)
+    x2 = -(s1*s2*np.sqrt((-2*np.log(s1/s2)*s2**2)+2*s1**2*np.log(s1/s2)+m2**2-2*m1*m2+m1**2)-m1*s2**2+m2*s1**2)/(s2**2-s1**2)
+    return x1,x2
+
+
 def plotDistributionss(distributions):
     i=0
     #ploting
@@ -60,6 +66,23 @@ def loadDensitiesByClass(instances, indexesByClass, densityFunction):
     return pdfsByClass
 
 
+def loadDensitiesByClass2(instances, allInstances, indexesByClass, densityFunction):
+    pdfsByClass = {}
+    numClasses = len(indexesByClass)
+   
+    for c, indexes in indexesByClass.items():
+        pdfs = [-1] * len(instances)
+        points = instances[indexes]
+        pdfsByPoints = densityFunction(points, allInstances, numClasses)
+        a = 0
+        for i in indexes:
+            pdfs[i]=pdfsByPoints[a]
+            a+=1
+        pdfsByClass[c] = pdfs
+        
+    return pdfsByClass
+
+
 #Slicing instances according to their inferred clusters
 def slicingClusteredData(clusters, classes):
     indexes = {}
@@ -79,7 +102,7 @@ def compactingDataDensityBased(instances, densities, criteria):
             cutLine = max(arrPdf)*criteria
             s.append([i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine ])
 
-        if len(s[0]) < 2 or len(s[1]) < 2:
+        if len(s[0]) < 30 or len(s[1]) < 30:
             #print(len(s[0]))
             #print(len(s[1]))
             return cutData(criteria/2) 
