@@ -8,12 +8,14 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier
     print(">>>>> STARTING TEST with ",classifier," as classifier and ", densityFunction, " as cutting data <<<<<")
     
     sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
-    initialDataLength = sizeOfLabeledData
-    finalDataLength = sizeOfBatch
+    initialDataLength = 0
+    finalDataLength = sizeOfLabeledData
     arrAcc = []
     
     # ***** Box 1 *****
-    X, y = box1.process(dataValues, dataLabels, initialDataLength)
+    X, y = box1.process(dataValues, dataLabels, initialDataLength, finalDataLength)
+    initialDataLength=finalDataLength
+    finalDataLength+=sizeOfBatch
     
     #Starting the process
     for t in range(batches):
@@ -27,8 +29,9 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier
         yt = dataLabels.loc[initialDataLength:finalDataLength].copy()
         yt = yt.values
         arrAcc.append(metrics.evaluate(yt, predicted))
-        
-        if len(X) <= sizeOfLabeledData:
+        print(len(y))
+        print(sizeOfLabeledData)
+        if len(y) <= sizeOfLabeledData+1:
             #Just unifies the two distributions and goes to next time t
             print("step ", t, ": unifying distributions...")
             X, y = instances, labelsInstances
@@ -49,7 +52,7 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier
             X = np.vstack([selectedX[0], selectedX[1]])
             y = np.hstack([selectedY[0], selectedY[1]])
             
-        initialDataLength=finalDataLength+1
+        initialDataLength=finalDataLength
         finalDataLength+=sizeOfBatch
            
     metrics.finalEvaluation(arrAcc)

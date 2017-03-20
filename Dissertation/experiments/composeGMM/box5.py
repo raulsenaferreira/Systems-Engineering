@@ -44,7 +44,8 @@ def cuttingDataByIntersection(previousX, currentX, previousLabels, currentLabels
         indX2 = x2[:,0]>r
     
         selectedPoints.append(np.vstack([x[indX], x2[indX2]]))
-        print(len(selectedPoints[0]))
+        print("Intersection points: ",len(selectedPoints[0]))
+        print(y)
         selectedLabels.append(np.vstack([y[indX], y2[indX2]]))
         
     return selectedPoints, selectedLabels
