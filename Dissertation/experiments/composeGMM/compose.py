@@ -8,25 +8,25 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier
     print(">>>>> STARTING TEST with ",classifier," as classifier and ", densityFunction, " as cutting data <<<<<")
     
     sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
-    initialDataLength = sizeOfLabeledData
-    finalDataLength = sizeOfBatch
+    initialDataLength = 0
+    finalDataLength = sizeOfLabeledData
     arrAcc = []
     
     # ***** Box 1 *****
-    X, y = box1.process(dataValues, dataLabels, initialDataLength, finalDataLength)
+    X, y = box1.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
     
     #Starting the process
     for t in range(batches):
-        
+        #print("Step: ", t)
         # ***** Box 2 *****
-        Ut = box2.process(dataValues, initialDataLength, finalDataLength)
+        initialDataLength=finalDataLength
+        finalDataLength+=sizeOfBatch
+        Ut, yt = box2.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
 
         # ***** Box 3 *****
-        predicted = box3.classify(X, y, Ut, K, classifier, usePCA)
+        predicted = box3.classify(X, y, Ut, K, classifier)
         instances, labelsInstances = box3.stack(X, Ut, y, predicted)
         # Evaluating classification
-        yt = dataLabels.loc[initialDataLength:finalDataLength].copy()
-        yt = yt.values
         arrAcc.append(metrics.evaluate(yt, predicted))
         
         # ***** Box 4 *****
@@ -39,8 +39,6 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier
         
         # ***** Box 6 *****
         X, y = box6.selectedSlicedData(instances, labelsInstances, selectedIndexes)
-        initialDataLength=finalDataLength+1
-        finalDataLength+=sizeOfBatch
            
     metrics.finalEvaluation(arrAcc)
     

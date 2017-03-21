@@ -73,7 +73,7 @@ def loadDensitiesByClass(oldInstances, newInstances, allInstances, oldIndexesByC
         oldPdfs = [-1] * len(oldInstances)
         newPdfs = [-1] * len(newInstances)
         
-        oldPoints = newInstances[oldIndexesByClass[c]]
+        oldPoints = oldInstances[oldIndexesByClass[c]]
         newPoints = newInstances[newIndexesByClass[c]]
         
         clf = densityFunction(allInstances, numClasses)

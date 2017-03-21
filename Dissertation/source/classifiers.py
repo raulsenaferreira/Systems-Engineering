@@ -104,7 +104,7 @@ def clusterAndLabel(X, y, Ut, K):
         if lenPoints >= k:
             kmeans = kMeans(X, k)
             clusters = kmeans.labels_
-            clusteredData = util.baseClassifier(pca(Ut, 2), kmeans)
+            clusteredData = util.baseClassifier(Ut, kmeans)
             arrPredicted=np.vstack([arrPredicted, majorityVote(clusteredData, clusters, y)])
     
     labels=[]

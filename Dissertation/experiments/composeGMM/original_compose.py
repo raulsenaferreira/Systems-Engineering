@@ -8,8 +8,8 @@ def start(dataValues, dataLabels, usePCA=True, classifier='cluster_and_label', C
     print(">>>>> STARTING TEST with ",classifier," as classifier and alpha-shape as cutting data <<<<<")
     
     sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
-    initialDataLength = sizeOfLabeledData
-    finalDataLength = sizeOfBatch
+    initialDataLength = 0
+    finalDataLength = sizeOfLabeledData
     arrAcc = []
     
     # ***** Box 1 *****
@@ -19,6 +19,8 @@ def start(dataValues, dataLabels, usePCA=True, classifier='cluster_and_label', C
     for t in range(batches):
         #print("Step: ", t)
         # ***** Box 2 *****
+        initialDataLength=finalDataLength
+        finalDataLength+=sizeOfBatch
         Ut, yt = box2.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
 
         # ***** Box 3 *****
@@ -33,8 +35,6 @@ def start(dataValues, dataLabels, usePCA=True, classifier='cluster_and_label', C
         
         # ***** Box 6 *****
         X, y = box6.gettingSelectedData(selectedPointsByClass, selectedIndexesByClass, labelsInstances)
-        initialDataLength=finalDataLength+1
-        finalDataLength+=sizeOfBatch
            
     metrics.finalEvaluation(arrAcc)
     
