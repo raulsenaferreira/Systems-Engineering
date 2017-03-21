@@ -43,6 +43,7 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier
             X = np.vstack([selectedX[0], selectedX[1]])
             y = np.hstack([selectedY[0], selectedY[1]])
            
-    metrics.finalEvaluation(arrAcc)
-    
+    #metrics.finalEvaluation(arrAcc)
     print(">>>>> END OF TEST <<<<<")
+    
+    return np.mean(arrAcc)

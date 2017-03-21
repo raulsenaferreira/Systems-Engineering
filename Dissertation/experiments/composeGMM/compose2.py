@@ -38,6 +38,7 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmmBIC', classif
         # ***** Box 6 *****
         X, y = box6.selectedSlicedData(instances, labelsInstances, selectedIndexes)
            
-    metrics.finalEvaluation(arrAcc)
-    
+    #metrics.finalEvaluation(arrAcc)
     print(">>>>> END OF TEST <<<<<")
+    
+    return np.mean(arrAcc)
