@@ -13,10 +13,11 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier
     arrAcc = []
     
     # ***** Box 1 *****
-    X, y = box1.process(dataValues, dataLabels, initialDataLength)
+    X, y = box1.process(dataValues, dataLabels, initialDataLength, finalDataLength)
     
     #Starting the process
     for t in range(batches):
+        
         # ***** Box 2 *****
         Ut = box2.process(dataValues, initialDataLength, finalDataLength)
 
@@ -29,13 +30,17 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier
         arrAcc.append(metrics.evaluate(yt, predicted))
         
         # ***** Box 4 *****
-        pdfByClass = box4.pdfByClass(instances, labelsInstances, classes, densityFunction)
+        #pdfByClass = box4.pdfByClass(instances, labelsInstances, classes, densityFunction)
+        previousPdfByClass = box4.pdfByClass(X, y, instances, classes, densityFunction)
+        currentPdfByClass = box4.pdfByClass(Ut, predicted, instances, classes, densityFunction)
         
         # ***** Box 5 *****
-        selectedIndexes = box5.cuttingDataByPercentage(instances, pdfByClass, excludingPercentage)
+        selectedIndexesOld = box5.cuttingDataByPercentage(instances, previousPdfByClass, excludingPercentage)
+        selectedIndexesNew = box5.cuttingDataByPercentage(instances, currentPdfByClass, excludingPercentage)
+        selectedIndexes = np.hstack([selectedIndexesOld, selectedIndexesNew])
         
         # ***** Box 6 *****
-        X, y = box6.selectedData(instances, labelsInstances, selectedIndexes)
+        X, y = box6.selectedSlicedData(instances, labelsInstances, selectedIndexes)
         initialDataLength=finalDataLength+1
         finalDataLength+=sizeOfBatch
            

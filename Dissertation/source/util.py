@@ -4,6 +4,7 @@ from scipy.spatial.distance import mahalanobis
 from math import sqrt
 from math import floor
 import matplotlib.pyplot as plt
+import random
 
 
 def solve(m1,m2,s1,s2):
@@ -49,14 +50,14 @@ def initializingData(X, y):
     return c1, c2
     
     
-def loadDensitiesByClass(instances, indexesByClass, densityFunction):
+def loadDensitiesByClass(instances, allInstances, indexesByClass, densityFunction):
     pdfsByClass = {}
     numClasses = len(indexesByClass)
    
     for c, indexes in indexesByClass.items():
         pdfs = [-1] * len(instances)
         points = instances[indexes]
-        pdfsByPoints = densityFunction(points, numClasses)
+        pdfsByPoints = densityFunction(points, allInstances, numClasses)
         a = 0
         for i in indexes:
             pdfs[i]=pdfsByPoints[a]
@@ -88,6 +89,9 @@ def slicingClusteredData(clusters, classes):
     indexes = {}
     for c in range(len(classes)):
         indexes[classes[c]]=[i for i in range(len(clusters)) if clusters[i] == c]
+        if len(indexes[classes[c]]) == 0:
+            #choose one index randomly if the array is empty
+            indexes[classes[c]] = [random.randint(0,len(clusters))]
     
     return indexes
 
@@ -101,13 +105,15 @@ def compactingDataDensityBased(instances, densities, criteria):
             arrPdf = densities[k]
             cutLine = max(arrPdf)*criteria
             s.append([i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine ])
-
+        '''
         if len(s[0]) < 30 or len(s[1]) < 30:
             #print(len(s[0]))
             #print(len(s[1]))
             return cutData(criteria/2) 
         else:
             return s
+        '''
+        return s
 
     selectedIndexes=cutData(criteria)    
     

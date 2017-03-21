@@ -23,15 +23,16 @@ def cuttingDataByIntersection(previousX, currentX, previousLabels, currentLabels
     
     indexesByClassOld = util.slicingClusteredData(previousLabels, classes)
     indexesByClassNew = util.slicingClusteredData(currentLabels, classes)
-    
+    #print(previousLabels)
+    #print(currentLabels)
     for c in indexesByClassOld:
         oldInd = indexesByClassOld[c]
         newInd = indexesByClassNew[c]
         
         x = previousX[oldInd]
-        y = previousLabels[c]
+        y = previousLabels[oldInd]
         x2 = currentX[newInd]
-        y2 = currentLabels[c]
+        y2 = currentLabels[newInd]
         
         #getting intersection
         m1 = np.mean(previousX[oldInd])
@@ -40,12 +41,12 @@ def cuttingDataByIntersection(previousX, currentX, previousLabels, currentLabels
         std2 = np.std(currentX[newInd])
         r = util.solve(m1,m2,std1,std2)[0]
         
-        indX = x[:,0]<r
-        indX2 = x2[:,0]>r
+        indX = x[:,0]>r
+        indX2 = x2[:,0]<r
     
         selectedPoints.append(np.vstack([x[indX], x2[indX2]]))
-        print("Intersection points: ",len(selectedPoints[0]))
-        print(y)
-        selectedLabels.append(np.vstack([y[indX], y2[indX2]]))
+        #print("Intersection points: ",len(selectedPoints[0]))
+        #print(y)
+        selectedLabels.append(np.hstack([y[indX], y2[indX2]]))
         
     return selectedPoints, selectedLabels

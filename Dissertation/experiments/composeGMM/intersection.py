@@ -29,15 +29,14 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier
         yt = dataLabels.loc[initialDataLength:finalDataLength].copy()
         yt = yt.values
         arrAcc.append(metrics.evaluate(yt, predicted))
-        print(len(y))
-        print(sizeOfLabeledData)
+        
         if len(y) <= sizeOfLabeledData+1:
             #Just unifies the two distributions and goes to next time t
-            print("step ", t, ": unifying distributions...")
+            #print("step ", t, ": unifying distributions...")
             X, y = instances, labelsInstances
         else:
             #Make the extraction of intersection process
-            print("step ", t, ": making intersection process...")
+            #print("step ", t, ": making intersection process...")
             # ***** Box 4 *****
             #pdfByClass = box4.pdfByClass(instances, labelsInstances, classes, densityFunction)
             #previousPdfByClass = box4.pdfByClass2(X, y, classes, instances, densityFunction)
@@ -45,7 +44,7 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier
 
             # ***** Box 5 *****
             #selectedIndexes = box5.cuttingDataByPercentage(instances, pdfByClass, excludingPercentage)
-            selectedX, selectedY = box5.cuttingDataByIntersection(X, Ut, y, predicted, classes)
+            selectedX, selectedY = box5.cuttingDataByIntersection(X, Ut, y, np.array(predicted), classes)
             
             # ***** Box 6 *****
             #X, y = box6.selectedSlicedData(instances, labelsInstances, selectedIndexes)
