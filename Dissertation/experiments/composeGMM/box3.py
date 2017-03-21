@@ -3,10 +3,7 @@ from source import classifiers
 from source import util
 
 
-def classify(X, y, Ut, K, classifier, usePCA):
-	if usePCA:
-		X = classifiers.pca(X, 2)
-		Ut = classifiers.pca(Ut, 2)
+def classify(X, y, Ut, K, classifier):
 
 	if classifier == 'cluster_and_label':
 		return classifiers.clusterAndLabel(X, y, Ut, K)

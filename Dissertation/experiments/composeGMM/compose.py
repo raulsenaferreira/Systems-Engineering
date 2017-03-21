@@ -30,9 +30,7 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier
         arrAcc.append(metrics.evaluate(yt, predicted))
         
         # ***** Box 4 *****
-        #pdfByClass = box4.pdfByClass(instances, labelsInstances, classes, densityFunction)
-        previousPdfByClass = box4.pdfByClass(X, y, instances, classes, densityFunction)
-        currentPdfByClass = box4.pdfByClass(Ut, predicted, instances, classes, densityFunction)
+        previousPdfByClass, currentPdfByClass = box4.pdfByClass(X, y, Ut, predicted, instances, classes, densityFunction)
         
         # ***** Box 5 *****
         selectedIndexesOld = box5.cuttingDataByPercentage(instances, previousPdfByClass, excludingPercentage)

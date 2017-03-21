@@ -5,6 +5,20 @@ from math import sqrt
 from math import floor
 import matplotlib.pyplot as plt
 import random
+from source import alpha_shape
+
+
+def loadGeometricCoreExtractionByClass(instances, indexesByClass, alpha, threshold):
+    selectedPointsByClass = {}
+    selectedIndexesByClass = {}
+    
+    for c in indexesByClass:
+        points = instances[indexesByClass[c]]
+        inst, indexes, edge_points = alpha_shape.alpha_compaction(points, alpha, threshold)
+        selectedPointsByClass[c] = inst
+        selectedIndexesByClass[c] = indexes
+        
+    return selectedPointsByClass, selectedIndexesByClass
 
 
 def solve(m1,m2,s1,s2):
@@ -50,21 +64,35 @@ def initializingData(X, y):
     return c1, c2
     
     
-def loadDensitiesByClass(instances, allInstances, indexesByClass, densityFunction):
-    pdfsByClass = {}
-    numClasses = len(indexesByClass)
+def loadDensitiesByClass(oldInstances, newInstances, allInstances, oldIndexesByClass, newIndexesByClass, densityFunction):
+    previousPdfByClass = {}
+    currentPdfByClass = {}
+    numClasses = len(newIndexesByClass)
    
-    for c, indexes in indexesByClass.items():
-        pdfs = [-1] * len(instances)
-        points = instances[indexes]
-        pdfsByPoints = densityFunction(points, allInstances, numClasses)
-        a = 0
-        for i in indexes:
-            pdfs[i]=pdfsByPoints[a]
-            a+=1
-        pdfsByClass[c] = pdfs
+    for c in newIndexesByClass:
+        oldPdfs = [-1] * len(oldInstances)
+        newPdfs = [-1] * len(newInstances)
         
-    return pdfsByClass
+        oldPoints = newInstances[oldIndexesByClass[c]]
+        newPoints = newInstances[newIndexesByClass[c]]
+        
+        clf = densityFunction(allInstances, numClasses)
+        oldPdfsByPoints = np.exp(clf.score_samples(oldPoints))
+        newPdfsByPoints = np.exp(clf.score_samples(newPoints))
+        
+        a = 0
+        for i in oldIndexesByClass[c]:
+            oldPdfs[i]=oldPdfsByPoints[a]
+            a+=1
+        previousPdfByClass[c] = oldPdfs
+        
+        a = 0
+        for i in newIndexesByClass[c]:
+            newPdfs[i]=newPdfsByPoints[a]
+            a+=1
+        currentPdfByClass[c] = newPdfs
+        
+    return previousPdfByClass, currentPdfByClass
 
 
 def loadDensitiesByClass2(instances, allInstances, indexesByClass, densityFunction):

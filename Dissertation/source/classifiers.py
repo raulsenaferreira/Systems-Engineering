@@ -64,18 +64,12 @@ def gmmWithBIC(X):
         print("gmmWithBIC: Error to choose the best GMM model")
 
 
-def gmm(points, allPoints, numComponents):
-    clf = mixture.GaussianMixture(n_components=numComponents, covariance_type='full')
-    pdfs = np.exp(clf.fit(allPoints).score_samples(points))
-        
-    return pdfs
-
-
-def gmmPure(points, numComponents):
+def gmm(points, numComponents):
     clf = mixture.GaussianMixture(n_components=numComponents, covariance_type='full')
     clf.fit(points)
-        
     return clf
+    #pdfs = np.exp(clf.fit(allPoints).score_samples(points))   
+    #return pdfs
     
 
 def kde(points, n_classes):
