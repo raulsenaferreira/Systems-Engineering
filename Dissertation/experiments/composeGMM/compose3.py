@@ -3,9 +3,19 @@ from experiments.composeGMM import box1, box2, box3, box4, box5, box6
 from source import metrics
 
 
-def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier='cluster_and_label', excludingPercentage = 0.2, batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05, classes = [0,1], K = 5):
-    
-    print(">>>>> STARTING TEST with ",classifier," as classifier and ", densityFunction, " as cutting data <<<<<")
+def start(**kwargs):
+    dataValues = kwargs["dataValues"]
+    dataLabels = kwargs["dataLabels"]
+    initialLabeledDataPerc = kwargs["initialLabeledDataPerc"]
+    sizeOfBatch = kwargs["sizeOfBatch"]
+    usePCA = kwargs["usePCA"]
+    classes = kwargs["classes"]
+    batches = kwargs["batches"]
+    sizeOfBatch = kwargs["sizeOfBatch"]
+    excludingPercentage = kwargs["excludingPercentage"]
+    classifier = kwargs["classifier"]
+    K = kwargs["K"]
+    densityFunction=kwargs["densityFunction"]
     
     sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
     initialDataLength = 0
@@ -23,7 +33,7 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier
         Ut, yt = box2.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
 
         # ***** Box 3 *****
-        predicted = box3.classify(X, y, Ut, K, classifier, usePCA)
+        predicted = box3.classify(X, y, Ut, K, classifier)
         instances, labelsInstances = box3.stack(X, Ut, y, predicted)
         # Evaluating classification
         arrAcc.append(metrics.evaluate(yt, predicted))
@@ -38,6 +48,6 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmm', classifier
         # ***** Box 6 *****
         X, y = box6.selectedData(instances, labelsInstances, selectedIndexes)
            
-    metrics.finalEvaluation(arrAcc)
+    #metrics.finalEvaluation(arrAcc)
     
-    print(">>>>> END OF TEST <<<<<")
+    return arrAcc

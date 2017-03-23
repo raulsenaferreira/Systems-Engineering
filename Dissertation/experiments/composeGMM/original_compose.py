@@ -3,9 +3,20 @@ from experiments.composeGMM import box1, box2, box3, box4, box5, box6
 from source import metrics
 
 
-def start(dataValues, dataLabels, usePCA=True, classifier='cluster_and_label', CP=0.65, alpha=0.5, batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05, classes = [0,1], K = 5):
-    
-    print(">>>>> STARTING TEST with ",classifier," as classifier and alpha-shape as cutting data <<<<<")
+def start(**kwargs):
+    dataValues = kwargs["dataValues"]
+    dataLabels = kwargs["dataLabels"]
+    initialLabeledDataPerc = kwargs["initialLabeledDataPerc"]
+    sizeOfBatch = kwargs["sizeOfBatch"]
+    usePCA = kwargs["usePCA"]
+    classes = kwargs["classes"]
+    batches = kwargs["batches"]
+    sizeOfBatch = kwargs["sizeOfBatch"]
+    excludingPercentage = kwargs["excludingPercentage"]
+    classifier = kwargs["classifier"]
+    K = kwargs["K"]
+    CP=kwargs["CP"]
+    alpha=kwargs["alpha"]
     
     sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
     initialDataLength = 0
@@ -37,6 +48,5 @@ def start(dataValues, dataLabels, usePCA=True, classifier='cluster_and_label', C
         X, y = box6.gettingSelectedData(selectedPointsByClass, selectedIndexesByClass, labelsInstances)
            
     #metrics.finalEvaluation(arrAcc)
-    print(">>>>> END OF TEST <<<<<")
     
-    return np.mean(arrAcc)
+    return arrAcc

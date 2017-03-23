@@ -5,9 +5,14 @@ from source import util
 from experiments.composeGMM import box1, box2
 
 
-def start(dataValues, dataLabels, usePCA=True, classifier='svm', batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05, classes=[0, 1]):
-    
-    print(">>>>> STARTING TEST with ", classifier, " classifier <<<<<")
+def start(dataValues, dataLabels, **kwargs):
+    initialLabeledDataPerc = kwargs["initialLabeledDataPerc"]
+    sizeOfBatch = kwargs["sizeOfBatch"]
+    usePCA = kwargs["usePCA"]
+    classes = kwargs["classes"]
+    batches = kwargs["batches"]
+    sizeOfBatch = kwargs["sizeOfBatch"]
+    classifier='svm'
     
     sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
     initialDataLength = 0
@@ -39,6 +44,5 @@ def start(dataValues, dataLabels, usePCA=True, classifier='svm', batches = 50, s
         #y = yt
     
     #print(metrics.finalEvaluation(arrAcc))
-    print(">>>>> END OF TEST with ", classifier, " classifier <<<<<")
     
-    return np.mean(arrAcc)
+    return arrAcc

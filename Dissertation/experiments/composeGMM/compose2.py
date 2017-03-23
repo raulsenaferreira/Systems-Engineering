@@ -3,9 +3,20 @@ from experiments.composeGMM import box1, box2, box3, box4, box5, box6
 from source import metrics
 
 
-def start(dataValues, dataLabels, usePCA=True, densityFunction='gmmBIC', classifier='cluster_and_label', excludingPercentage = 0.2, distanceMetric = 'mahalanobis', batches = 50, sizeOfBatch = 365, initialLabeledDataPerc=0.05, classes = [0,1], K = 5):
-    
-    print(">>>>> STARTING TEST with K-Means, Cluster and label as classifier and ", densityFunction, " as cutting data <<<<<")
+def start(**kwargs):
+    dataValues = kwargs["dataValues"]
+    dataLabels = kwargs["dataLabels"]
+    initialLabeledDataPerc = kwargs["initialLabeledDataPerc"]
+    sizeOfBatch = kwargs["sizeOfBatch"]
+    usePCA = kwargs["usePCA"]
+    classes = kwargs["classes"]
+    batches = kwargs["batches"]
+    sizeOfBatch = kwargs["sizeOfBatch"]
+    excludingPercentage = kwargs["excludingPercentage"]
+    K = kwargs["K"]
+    classifier = kwargs["classifier"]
+    densityFunction='gmmBIC'
+    distanceMetric = 'mahalanobis'
     
     sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
     initialDataLength = 0
@@ -39,6 +50,5 @@ def start(dataValues, dataLabels, usePCA=True, densityFunction='gmmBIC', classif
         X, y = box6.selectedSlicedData(instances, labelsInstances, selectedIndexes)
            
     #metrics.finalEvaluation(arrAcc)
-    print(">>>>> END OF TEST <<<<<")
     
-    return np.mean(arrAcc)
+    return arrAcc
