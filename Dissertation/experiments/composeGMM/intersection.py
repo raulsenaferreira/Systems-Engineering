@@ -4,6 +4,9 @@ from source import metrics
 
 
 def start(**kwargs):
+    
+    "Algorithm flow: 1)Verifies if X% of labeled data is above the minimum. If yes, does the steps 2 up to 4. If not, does step 5 or 6; 2)Train with X% of labeled data and classifies the other part of the database (Dt); 3)Takes the intersection between two distributions D(t) x D(t+1) = D(t)'; 4)D(t)' will be used to train and classify D(t+1) on next phase; 5)Takes data from D(t-1)' + X% of greatest pdfs values from GMM(D(t)); 6)Takes the X% greatest from GMM(D(t-1) and GMM(D(t)))"
+    
     dataValues = kwargs["dataValues"]
     dataLabels = kwargs["dataLabels"]
     initialLabeledDataPerc = kwargs["initialLabeledDataPerc"]
