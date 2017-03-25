@@ -22,6 +22,7 @@ def start(**kwargs):
     initialDataLength = 0
     finalDataLength = sizeOfLabeledData
     arrAcc = []
+    isStep1=True
     
     # ***** Box 1 *****
     X, y = box1.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
@@ -31,7 +32,11 @@ def start(**kwargs):
         #print("Step: ", t)
         # ***** Box 2 *****
         initialDataLength=finalDataLength
-        finalDataLength+=sizeOfBatch
+        if isStep1:
+            finalDataLength=sizeOfBatch
+            isStep1 = False
+        else:
+            finalDataLength+=sizeOfBatch
         Ut, yt = box2.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
 
         # ***** Box 3 *****

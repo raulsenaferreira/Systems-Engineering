@@ -132,7 +132,10 @@ def compactingDataDensityBased(instances, densities, criteria):
         for k in densities:
             arrPdf = densities[k]
             cutLine = max(arrPdf)*criteria
-            s.append([i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine ])
+            a = [i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine ]
+            if len(a) < 0.05*len(arrPdf):
+                a=[i for i in range(len(arrPdf)) if arrPdf[i] != -1]
+            s.append(a)
         '''
         if len(s[0]) < 30 or len(s[1]) < 30:
             #print(len(s[0]))

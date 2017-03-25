@@ -26,7 +26,7 @@ def pdfByClass2(instances, labelsInstances, allInstances, classes, densityFuncti
     indexesByClass = util.slicingClusteredData(labelsInstances, classes)
 
     if densityFunction == 'gmm':
-        return util.loadDensitiesByClass2(instances, allInstances, indexesByClass, classifiers.gmm)
+        return util.loadDensitiesByClass2(instances, allInstances, indexesByClass, classifiers.gmmWithPDF)
     elif densityFunction == 'kde':
         return util.loadDensitiesByClass2(instances, allInstances, indexesByClass, classifiers.kde)
     else:
@@ -34,6 +34,11 @@ def pdfByClass2(instances, labelsInstances, allInstances, classes, densityFuncti
         return
 
 
+def pdfByClass3(instances, labelsInstances, allInstances, classes, densityFunction):
+    indexesByClass = util.slicingClusteredData(labelsInstances, classes)
+    return util.loadDensitiesByClass2(instances, allInstances, indexesByClass, classifiers.gmm)
+    
+    
 def bestModelSelectedByClass(X, y, classes, densityFunction):
 	indexesByClass = util.slicingClusteredData(y, classes)
 	if densityFunction == 'gmmBIC':

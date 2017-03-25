@@ -20,21 +20,23 @@ def kMeans(X, k):
 
 
 def svmClassifier(X, y):
-    #clf = svm.LinearSVC()
-    clf = svm.SVC()
-    clf.fit(X, y)
+    clf = svm.SVC(C=1.0, cache_size=200, kernel='linear', class_weight='balanced', coef0=0.0,
+        decision_function_shape=None, degree=3, gamma='auto', max_iter=-1, probability=False, random_state=None, shrinking=True,
+        tol=0.001, verbose=False)#svm.SVC()
     
-    svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+    '''
+    clf = svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
         decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
         max_iter=-1, probability=False, random_state=None, shrinking=True,
         tol=0.001, verbose=False)
+    '''
     '''
     svm.LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
      intercept_scaling=1, loss='squared_hinge', max_iter=1000,
      multi_class='ovr', penalty='l2', random_state=None, tol=0.0001,
      verbose=0)
     '''
-    return clf
+    return clf.fit(X, y)
     
 
 def gmmWithBIC(X):
@@ -68,8 +70,11 @@ def gmm(points, numComponents):
     clf = mixture.GaussianMixture(n_components=numComponents, covariance_type='full')
     clf.fit(points)
     return clf
-    #pdfs = np.exp(clf.fit(allPoints).score_samples(points))   
-    #return pdfs
+
+
+def gmmWithPDF(points, allPoints, numComponents):
+    clf = gmm(allPoints, numComponents)
+    return np.exp(clf.score_samples(points))   
     
 
 def kde(points, n_classes):

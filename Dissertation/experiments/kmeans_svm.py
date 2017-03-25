@@ -18,13 +18,18 @@ def start(dataValues, dataLabels, **kwargs):
     initialDataLength = 0
     finalDataLength = sizeOfLabeledData
     arrAcc = []
+    isStep1 = True
     
     X, y = box1.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
     
     for t in range(batches):
         #print("Step ",t+1)
         initialDataLength=finalDataLength
-        finalDataLength+=sizeOfBatch
+        if isStep1:
+            finalDataLength=sizeOfBatch
+            isStep1 = False
+        else:
+            finalDataLength+=sizeOfBatch
         Ut, yt = box2.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
         predicted=[]
 
