@@ -43,12 +43,12 @@ def cuttingDataByIntersection(previousX, currentX, previousLabels, currentLabels
         
         if np.min(x) < np.min(x2):
         #print("D1 < D2")
-        indX = x[:,0]>r
-        indX2 = x2[:,0]<r
-    else:
-        #print("D2 < D1")
-        indX = x[:,0]<r
-        indX2 = x2[:,0]>r
+            indX = x[:,0]>r
+            indX2 = x2[:,0]<r
+        else:
+            #print("D2 < D1")
+            indX = x[:,0]<r
+            indX2 = x2[:,0]>r
     
         selectedPoints.append(np.vstack([x[indX], x2[indX2]]))
         #print("Intersection points: ",len(selectedPoints[0]))

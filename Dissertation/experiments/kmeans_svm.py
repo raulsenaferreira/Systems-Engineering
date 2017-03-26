@@ -13,6 +13,7 @@ def start(dataValues, dataLabels, **kwargs):
     batches = kwargs["batches"]
     sizeOfBatch = kwargs["sizeOfBatch"]
     classifier='svm'
+    isImbalanced=False
     
     sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
     initialDataLength = 0
@@ -37,7 +38,7 @@ def start(dataValues, dataLabels, **kwargs):
             kmeans = classifiers.kMeans(X, len(classes))
             predicted = util.baseClassifier(Ut, kmeans)
         elif classifier == 'svm':
-            svmClf = classifiers.svmClassifier(X, y)
+            svmClf = classifiers.svmClassifier(X, y, isImbalanced)
             predicted = util.baseClassifier(Ut, svmClf)
         else:
             return

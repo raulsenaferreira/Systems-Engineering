@@ -19,23 +19,18 @@ def kMeans(X, k):
     return KMeans(n_clusters=k).fit(X)
 
 
-def svmClassifier(X, y):
-    clf = svm.SVC(C=1.0, cache_size=200, kernel='linear', class_weight='balanced', coef0=0.0,
-        decision_function_shape=None, degree=3, gamma='auto', max_iter=-1, probability=False, random_state=None, shrinking=True,
-        tol=0.001, verbose=False)#svm.SVC()
+def svmClassifier(X, y, isImbalanced):
+    cfl=svm.SVC()
     
-    '''
-    clf = svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
-        decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
-        max_iter=-1, probability=False, random_state=None, shrinking=True,
-        tol=0.001, verbose=False)
-    '''
-    '''
-    svm.LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
-     intercept_scaling=1, loss='squared_hinge', max_iter=1000,
-     multi_class='ovr', penalty='l2', random_state=None, tol=0.0001,
-     verbose=0)
-    '''
+    if isImbalanced:
+        clf = svm.SVC(C=1.0, cache_size=200, kernel='linear', class_weight='balanced', coef0=0.0,
+            decision_function_shape=None, degree=3, gamma='auto', max_iter=-1, probability=False, random_state=None, shrinking=True, tol=0.001, verbose=False)
+    else:
+        clf = svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+            decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+            max_iter=-1, probability=False, random_state=None, shrinking=True,
+            tol=0.001, verbose=False)
+    
     return clf.fit(X, y)
     
 
@@ -93,7 +88,6 @@ def majorityVote(clusteredData, clusters, y):
         ind = np.where(clusters==group)
         #print("Indices: ", ind)
         label = y[ind]
-        #print("labels: ",label)
         voting = Counter(label).most_common(1)[0][0]
         #print(voting)
         kPredicted.append(voting)

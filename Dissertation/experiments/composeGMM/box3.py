@@ -3,12 +3,12 @@ from source import classifiers
 from source import util
 
 
-def classify(X, y, Ut, K, classifier):
+def classify(X, y, Ut, K, classifier, isImbalanced=True):
 
 	if classifier == 'cluster_and_label':
 		return classifiers.clusterAndLabel(X, y, Ut, K)
 	elif classifier == 'svm':
-		svmClf = classifiers.svmClassifier(X, y)
+		svmClf = classifiers.svmClassifier(X, y, isImbalanced)
 		return util.baseClassifier(Ut, svmClf)
 	else:
 		return
