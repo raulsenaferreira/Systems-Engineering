@@ -20,7 +20,7 @@ class Experiment():
         self.dataValues = X
         self.dataLabels = y
         self.description = d
-        self.batches = 50
+        self.batches = 40
         self.sizeOfBatch = 365
         self.initialLabeledDataPerc=0.1
         self.classes=[0, 1]
@@ -63,7 +63,7 @@ def doExperiments(experiments, numberOfTimes):
         
 
 def main():  
-          
+    path = os.getcwd()+'\\data\\'      
     #Test sets: Predicting 365 instances by step. 50 steps. Two classes.
     '''
     NOAA dataset:
@@ -71,24 +71,22 @@ def main():
     point,  sea  level  pressure,  visibility,  average wind speed, maximum  wind  speed)
     are  used  to  determine  whether  each  day  experienced  rain  or no rain.
     '''
-    path = os.getcwd()+'\\data\\'
     dataValues = pd.read_csv(path+'noaa_data.csv',sep = ",")
     dataValues = pd.DataFrame.as_matrix(dataValues)
     dataLabels = pd.read_csv(path+'noaa_label.csv',sep = ",")
     dataLabels = pd.DataFrame.as_matrix(dataLabels)
 
-    experiments = {}
     
 
-    #Test sets: Predicting 365 instances by step. 50 steps. Two classes.
+    #Test sets: Predicting N instances by step. T steps. Two classes.
+    '''
+    Rotated checkerboard dataset. Rotating 2*PI
+    '''
     T = 50 #time steps
     N = 365 #instances
     a = np.linspace(0,2*np.pi,T)
     side = 0.25
     
-    '''
-    Rotated checkerboard dataset. Rotating 2*PI
-    '''
     auxV, auxL = checkerboard.generateData(side, a, N, T)
     #print(dV[2][0])#tempo 2 da classe 0
     dataLabels = auxL[0]
@@ -100,7 +98,20 @@ def main():
     
     
     
+    #Test set: 
+    '''
+    Artificial One Class Diagonal Translation. 2 Dimensional data
+    '''
+    dataValues = pd.read_csv(path+'1CDT.txt',sep = ",")
+    dataValues = pd.DataFrame.as_matrix(dataValues)
+    dataLabels = dataValues[:, 2]
+    dataLabels = dataLabels-1
+    dataValues = dataValues[:,0:2]
+    #print(dataValues)
     
+    
+    
+    experiments = {}
     
     '''
     Paper: Core  Support  Extraction  for  Learning  from  Initially  Labeled Nonstationary  Environments  using  COMPOSE
@@ -119,7 +130,7 @@ def main():
     experiments[2] = Experiment(kmeans_svm, dataValues, dataLabels, "STARTING TEST K-Means / SVM alone as classifier")
     
     ''' Proposed Method 1 (GMM) '''
-    experiments[3] = Experiment(compose, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
+    #experiments[3] = Experiment(compose, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
     
     ''' Proposed Method 2 (Alvim) '''
     ##experiments[4] = Experiment(compose3, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
