@@ -55,3 +55,48 @@ def loadCDT(path):
     #print(dataValues)
     
     return dataValues, dataLabels
+
+
+def loadCHT(path):
+    #Test set: One Class Horizontal Translation. 2 Dimensional data
+    '''
+    Artificial One Class Horizontal Translation. 2 Dimensional data
+    '''
+    dataValues = pd.read_csv(path+'1CHT.txt',sep = ",")
+    dataValues = pd.DataFrame.as_matrix(dataValues)
+    dataLabels = dataValues[:, 2]
+    dataLabels = dataLabels-1
+    dataValues = dataValues[:,0:2]
+    #print(dataValues)
+    
+    return dataValues, dataLabels
+
+
+def load2CDT(path):
+    #Test set: Two Classes Diagonal Translation. 2 Dimensional data
+    '''
+    Artificial Two Classes Diagonal Translation. 2 Dimensional data
+    '''
+    dataValues = pd.read_csv(path+'2CDT.txt',sep = ",")
+    dataValues = pd.DataFrame.as_matrix(dataValues)
+    dataLabels = dataValues[:, 2]
+    dataLabels = dataLabels-1
+    dataValues = dataValues[:,0:2]
+    #print(dataValues)
+    
+    return dataValues, dataLabels
+
+
+def load2CHT(path):
+    #Test set: Two Classes Horizontal Translation. 2 Dimensional data
+    '''
+    Artificial Two Classes Horizontal Translation. 2 Dimensional data
+    '''
+    dataValues = pd.read_csv(path+'2CHT.txt',sep = ",")
+    dataValues = pd.DataFrame.as_matrix(dataValues)
+    dataLabels = dataValues[:, 2]
+    dataLabels = dataLabels-1
+    dataValues = dataValues[:,0:2]
+    #print(dataValues)
+    
+    return dataValues, dataLabels

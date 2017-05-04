@@ -49,7 +49,7 @@ def start(dataValues, dataLabels, **kwargs):
     #print data distribution in step t
     title = "Data distribution. Step {}".format(t+1)
     
-    plt.scatter(class1[:,0], class1[:,1], c="b")
+    plt.scatter(Ut[:,0], Ut[:,1], c="b")
     plt.title(title)
     plt.show()
         

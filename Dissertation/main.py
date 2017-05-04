@@ -78,7 +78,7 @@ def main():
     path = os.getcwd()+sep+'data'+sep     
                     
     #loading a dataset
-    dataValues, dataLabels = setup.loadCDT(path)
+    dataValues, dataLabels = setup.load2CHT(path)
     
     experiments = {}
     
