@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+from math import sqrt
+import numpy as np
 
 
 def plotDistributions(distributions):
@@ -73,3 +75,10 @@ def plotDistributionss(distributions):
     ax.legend(handles, classes)
     
     plt.show()
+    
+    
+def finalEvaluation(arrAcc):
+    print("Average Accuracy: ", np.mean(arrAcc))
+    print("Standard Deviation: ", np.std(arrAcc))
+    print("Variance: ", np.std(arrAcc)**2)
+    plotAccuracy(arrAcc, 'Accuracy')

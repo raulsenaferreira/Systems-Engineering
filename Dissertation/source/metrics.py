@@ -5,7 +5,7 @@ sys.path.append(os.getcwd()+"\\source")
 from sklearn.metrics import accuracy_score
 from math import sqrt
 import numpy as np
-from plotFunctions import plotAccuracy
+from source.plotFunctions import plotAccuracy
 
 
 def evaluate(y_actual, y_predicted):

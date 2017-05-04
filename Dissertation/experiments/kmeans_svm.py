@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 from source import classifiers
 from source import metrics
 from source import util
@@ -44,6 +45,13 @@ def start(dataValues, dataLabels, **kwargs):
             return
         
         arrAcc.append(metrics.evaluate(yt, predicted))
+        
+    #print data distribution in step t
+    title = "Data distribution. Step {}".format(t+1)
+    
+    plt.scatter(class1[:,0], class1[:,1], c="b")
+    plt.title(title)
+    plt.show()
         
         # keep a percentage from former distribution to train in next step 
         #X = Ut
