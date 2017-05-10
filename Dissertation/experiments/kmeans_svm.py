@@ -23,23 +23,27 @@ def start(dataValues, dataLabels, **kwargs):
     isStep1 = True
     
     X, y = box1.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
-    
+    svmClf = classifiers.svmClassifier(X, y, isImbalanced)
     for t in range(batches):
         #print("Step ",t+1)
         initialDataLength=finalDataLength
+        
         if isStep1:
             finalDataLength=sizeOfBatch
             isStep1 = False
         else:
             finalDataLength+=sizeOfBatch
+            
         Ut, yt = box2.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+        #print("inicial= ", initialDataLength)
+        #print("final= ", finalDataLength)
         predicted=[]
 
         if classifier == 'kmeans':
-            kmeans = classifiers.kMeans(X, len(classes))
+            #kmeans = classifiers.kMeans(X, len(classes))
             predicted = util.baseClassifier(Ut, kmeans)
         elif classifier == 'svm':
-            svmClf = classifiers.svmClassifier(X, y, isImbalanced)
+            
             predicted = util.baseClassifier(Ut, svmClf)
         else:
             return
