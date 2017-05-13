@@ -39,7 +39,8 @@ class Experiment():
         self.isImbalanced=False
 
 
-def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches, sizeOfBatch):
+def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
+    sizeOfBatch = int(len(dataLabels)/batches)
     #print data distribution in step t
     initial = (batches*sizeOfBatch)-sizeOfBatch
     final = initial + sizeOfBatch
@@ -67,7 +68,8 @@ def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches, s
             elapsedTime.append(end - start)
             
             accTotal.append(averageAccuracy)
-        print("Total of ", numberOfTimes, " experiment iterations with an average accuracy of ", np.mean(accTotal))
+        #print("Total of ", numberOfTimes, " experiment iterations with an average accuracy of ", np.mean(accTotal))
+        print("{} batches of {} instances".format(batches, sizeOfBatch))
         print("Average execution time: ", np.mean(elapsedTime))
         metrics.finalEvaluation(accuracies)
         print("\n\n")
@@ -121,8 +123,8 @@ def main():
     '''
     #experiments[6] = Experiment(improved_intersection, dataValues, dataLabels, "Improved Intersection")
                                 
-    #params: X, y, method, num of experiment repetitions, num of batches, size of each batch
-    doExperiments(dataValues, dataLabels, experiments, 1, 40, 365)
+    #params: X, y, method, num of experiment repetitions, num of batches
+    doExperiments(dataValues, dataLabels, experiments, 1, 40)
     
 
     
