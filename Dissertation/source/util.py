@@ -23,6 +23,13 @@ def loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, 
     return X, y
 
 
+def selectedSlicedData(instances, labelsInstances, selectedIndexes):
+    instances = np.array(instances)
+    labelsInstances = np.array(labelsInstances)            
+    X = instances[selectedIndexes]
+    y = labelsInstances[selectedIndexes]
+    
+    return X, y
 
 
 def loadGeometricCoreExtractionByClass(instances, indexesByClass, alpha, threshold):
@@ -143,21 +150,22 @@ def slicingClusteredData(clusters, classes):
 
 #Cutting data for next iteration
 def compactingDataDensityBased(instances, densities, criteria):
+    selectedIndexes=[]
     
-    def cutData(criteria):
-        s=[]
-        for k in densities:
-            arrPdf = densities[k]
-            cutLine = max(arrPdf)*criteria
-            a = [i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine ]
-            if len(a) < criteria*len(arrPdf):
-                a=[i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine*criteria]
-            s.append(a)
-        return s
-
-    selectedIndexes=cutData(criteria)    
+    for k in densities:
+        arrPdf = densities[k]
+        cutLine = max(arrPdf)*criteria
+        a = [i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine ]
+        if len(a) < criteria*len(arrPdf):
+            a=[i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine*criteria]
+        selectedIndexes.append(a)
+   
+    stackedIndexes=selectedIndexes[0]
     
-    return selectedIndexes
+    for i in range(1, len(selectedIndexes)):
+        stackedIndexes = np.hstack([stackedIndexes,selectedIndexes[i]])
+    
+    return stackedIndexes
 
 
 def getDistributionIntersection(X, Ut, indexesByClass, predictedByClass, densityFunction):
@@ -193,7 +201,6 @@ def getDistributionIntersection(X, Ut, indexesByClass, predictedByClass, density
 
 def loadBestModelByClass(X, indexesByClass, densityFunction):
     bestModelForClass = {}
-    numClasses = len(indexesByClass)
 
     for c, indexes in indexesByClass.items():
         points = X[indexes]
@@ -239,3 +246,16 @@ def mahalanobisCoreSupportExtraction(Ut, indexesPredictedByClass, bestModelSelec
         selectedMinIndexesByClass[c] = selectedMinIndexesByClass[c].argsort()[:p]
     #print(selectedMinIndexesByClass)
     return selectedMinIndexesByClass
+
+
+def pdfByClass(oldInstances, oldLabels, newInstances, newLabels, allInstances, classes, densityFunction):
+    oldIndexesByClass = slicingClusteredData(oldLabels, classes)
+    newIndexesByClass = slicingClusteredData(newLabels, classes)
+    
+    if densityFunction == 'gmm':
+        return loadDensitiesByClass(oldInstances, newInstances, allInstances, oldIndexesByClass, newIndexesByClass, classifiers.gmm)
+    elif densityFunction == 'kde':
+        return loadDensitiesByClass(oldInstances, newInstances, allInstances, oldIndexesByClass, newIndexesByClass, classifiers.kde)
+    else:
+        print ("Choose between 'gmm' or 'kde' function. Wrong name given: ", densityFunction)
+        return

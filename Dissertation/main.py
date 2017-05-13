@@ -5,12 +5,14 @@ import numpy as np
 from experiments import setup
 from source import metrics
 from experiments.methods import kmeans_svm
-from experiments.methods import compose
+from experiments.methods import proposed_gmm_core_extraction
 '''
 from experiments.methods import compose2
 from experiments.methods import compose3
 from experiments.methods import intersection
-from experiments.methods import original_compose
+'''
+from experiments.methods import compose
+'''
 from experiments.methods import improved_intersection
 '''
 
@@ -36,7 +38,7 @@ class Experiment():
         self.CP=0.65
         self.alpha=0.5
         #used in kmeans_svm and composeonly
-        self.useSVM=True
+        self.useSVM=False
         self.isImbalanced=False
 
 
@@ -91,15 +93,15 @@ def main():
     '''
     Original compose (alpha-shape version)
     '''
-    #experiments[1] = Experiment(original_compose, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and alpha-shape as cutting data")
+    experiments[1] = Experiment(compose, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and alpha-shape as cutting data")
     
     '''
     K-Means / SVM
     '''
-    experiments[2] = Experiment(kmeans_svm, dataValues, dataLabels, "STARTING TEST K-Means / SVM alone as classifier")
+    #experiments[2] = Experiment(kmeans_svm, dataValues, dataLabels, "STARTING TEST K-Means / SVM alone as classifier")
     
-    ''' Proposed Method 1 (GMM) '''
-    #experiments[3] = Experiment(compose, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
+    ''' Proposed Method 1 (GMM core extraction) '''
+    #experiments[3] = Experiment(proposed_gmm_core_extraction, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
     
     ''' Proposed Method 2 (Alvim) '''
     ##experiments[4] = Experiment(compose3, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
