@@ -1,11 +1,28 @@
 import numpy as np
-from sklearn.metrics import mean_squared_error
 from scipy.spatial.distance import mahalanobis
-from math import sqrt
 from math import floor
 import matplotlib.pyplot as plt
 import random
-from source import alpha_shape
+from experiments.methods import alpha_shape
+from source import classifiers
+
+
+
+def loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA):
+    '''
+    X = dataValues.loc[initialDataLength:finalDataLength-1].copy()
+    X = X.values
+    y = dataLabels.loc[initialDataLength:finalDataLength-1].copy()
+    y = y.values[: , 0]
+    '''
+    X = np.copy(dataValues[initialDataLength:finalDataLength])
+    y = np.copy(dataLabels[initialDataLength:finalDataLength])
+    if usePCA:
+        X = classifiers.pca(X, 2)
+    
+    return X, y
+
+
 
 
 def loadGeometricCoreExtractionByClass(instances, indexesByClass, alpha, threshold):

@@ -2,21 +2,17 @@ import sys
 import os
 from timeit import default_timer as timer
 import numpy as np
-import pandas as pd
-import setup
+from experiments import setup
 from source import metrics
-from experiments import kmeans_svm
-from experiments import checkerboard
-from experiments.composeGMM import compose
-from experiments.composeGMM import compose2
-from experiments.composeGMM import compose3
-from experiments.composeGMM import intersection
-from experiments.composeGMM import original_compose
-from experiments.composeGMM import improved_intersection
-from ipywidgets import interact, interactive, fixed, interact_manual
-import ipywidgets as widgets
-from ipywidgets import interactive
-from IPython.display import Audio, display
+from experiments.methods import kmeans_svm
+'''
+from experiments.methods import compose
+from experiments.methods import compose2
+from experiments.methods import compose3
+from experiments.methods import intersection
+from experiments.methods import original_compose
+from experiments.methods import improved_intersection
+'''
 
 
 class Experiment():
@@ -30,7 +26,7 @@ class Experiment():
         self.sizeOfBatch = 365
         self.initialLabeledDataPerc=0.05
         self.classes=[0, 1]
-        self.usePCA=True
+        self.usePCA=False
         #used only by gmm and cluster-label process
         self.densityFunction='gmm'
         self.excludingPercentage = 0.3
@@ -39,21 +35,24 @@ class Experiment():
         #used in alpha-shape version only
         self.CP=0.65
         self.alpha=0.5
+        #used in kmeans_svm only
+        self.svmOrKmeans='svm'
 
 
-def doExperiments(experiments, numberOfTimes):
+def doExperiments(experiments, numberOfTimes, sizeOfBatch):
     
     for name, e in experiments.items():
         elapsedTime = []
         accTotal = []
         accuracies=[]
+        e.batches = sizeOfBatch
         
         print(e.description)
         
         for i in range(numberOfTimes):
             start = timer()
             #accuracy per step
-            accuracies = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=e.classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledDataPerc=e.initialLabeledDataPerc, excludingPercentage=e.excludingPercentage, K=e.K, CP=e.CP, alpha=e.alpha)
+            accuracies = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=e.classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledDataPerc=e.initialLabeledDataPerc, excludingPercentage=e.excludingPercentage, K=e.K, CP=e.CP, alpha=e.alpha, svmOrKmeans=e.svmOrKmeans)
             end = timer()
             averageAccuracy = np.mean(accuracies)
             
@@ -69,18 +68,18 @@ def doExperiments(experiments, numberOfTimes):
         
 
 def main():
+    experiments = {}
     is_windows = sys.platform.startswith('win')
     sep = '\\'
-
+    
     if is_windows == False:
         sep = '/'
 
-    path = os.getcwd()+sep+'data'+sep     
-                    
-    #loading a dataset
-    dataValues, dataLabels = setup.load2CHT(path)
+    path = os.getcwd()+sep+'experiments/data'+sep
     
-    experiments = {}
+    #loading a dataset
+    dataValues, dataLabels = setup.load2CDT(path)
+    
     
     '''
     Paper: Core  Support  Extraction  for  Learning  from  Initially  Labeled Nonstationary  Environments  using  COMPOSE
@@ -112,9 +111,10 @@ def main():
     '''
     Proposed method 4 (Intersection between two distributions + GMM)
     '''
-    experiments[6] = Experiment(improved_intersection, dataValues, dataLabels, "Improved Intersection")
+    #experiments[6] = Experiment(improved_intersection, dataValues, dataLabels, "Improved Intersection")
                                 
-    doExperiments(experiments, 1)
+    doExperiments(experiments, 1, 40)
+    
 
     
 if __name__ == "__main__":
