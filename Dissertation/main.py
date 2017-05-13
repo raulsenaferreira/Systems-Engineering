@@ -5,8 +5,8 @@ import numpy as np
 from experiments import setup
 from source import metrics
 from experiments.methods import kmeans_svm
-'''
 from experiments.methods import compose
+'''
 from experiments.methods import compose2
 from experiments.methods import compose3
 from experiments.methods import intersection
@@ -35,8 +35,9 @@ class Experiment():
         #used in alpha-shape version only
         self.CP=0.65
         self.alpha=0.5
-        #used in kmeans_svm only
-        self.svmOrKmeans='svm'
+        #used in kmeans_svm and composeonly
+        self.useSVM=True
+        self.isImbalanced=False
 
 
 def doExperiments(experiments, numberOfTimes, sizeOfBatch):
@@ -52,7 +53,7 @@ def doExperiments(experiments, numberOfTimes, sizeOfBatch):
         for i in range(numberOfTimes):
             start = timer()
             #accuracy per step
-            accuracies = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=e.classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledDataPerc=e.initialLabeledDataPerc, excludingPercentage=e.excludingPercentage, K=e.K, CP=e.CP, alpha=e.alpha, svmOrKmeans=e.svmOrKmeans)
+            accuracies = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=e.classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledDataPerc=e.initialLabeledDataPerc, excludingPercentage=e.excludingPercentage, K=e.K, CP=e.CP, alpha=e.alpha, useSVM=e.useSVM, isImbalanced=e.isImbalanced)
             end = timer()
             averageAccuracy = np.mean(accuracies)
             

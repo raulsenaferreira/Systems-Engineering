@@ -1,6 +1,9 @@
 import numpy as np
 from experiments.methods import box3, box4, box5, box6
+from source import classifiers
 from source import metrics
+from source import util
+
 
 
 def start(**kwargs):
@@ -15,35 +18,34 @@ def start(**kwargs):
     excludingPercentage = kwargs["excludingPercentage"]
     classifier = kwargs["classifier"]
     K = kwargs["K"]
-    densityFunction=kwargs["densityFunction"]
-    classifier = "svm"
-    
-    sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
-    initialDataLength = 0
-    finalDataLength = sizeOfLabeledData
+    densityFunction=kwargs["densityFunction"] 
+    useSVM = kwargs["useSVM"]
+    isImbalanced=kwargs["isImbalanced"]
+    clf=''
     arrAcc = []
-    isStep1 = True
+    initialDataLength = 0
+    finalDataLength = round((initialLabeledDataPerc)*sizeOfBatch)
     
-    # ***** Box 1 *****
-    X, y = box1.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+    #Initial labeled data
+    X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
     
-    #Starting the process
+    initialDataLength=finalDataLength
+    finalDataLength=sizeOfBatch
+    
+    XGMM = X.copy()
+    yGMM = y.copy()
+    
     for t in range(batches):
-        #print("Step: ", t)
-        # ***** Box 2 *****
-        initialDataLength=finalDataLength
-        if isStep1:
-            finalDataLength=sizeOfBatch
-            XGMM = X.copy()
-            yGMM = y.copy()
-            isStep1 = False
-        else:
-            finalDataLength+=sizeOfBatch
-            
-        Ut, yt = box2.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+        # ***** Box 2 *****            
+        Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
 
         # ***** Box 3 *****
-        predicted = box3.classify(XGMM, yGMM, Ut, K, classifier)#isImbalanced=True when using SVM
+        if useSVM:
+            clf = classifiers.svmClassifier(X, y, isImbalanced)
+            predicted = util.baseClassifier(Ut, clf)
+        else:
+            predicted = classifiers.clusterAndLabel(XGMM, yGMM, Ut, K)
+ 
         allInstances, allLabelsInstances = box3.stack(X, Ut, y, predicted)
         
         # ***** Box 4 *****
@@ -59,7 +61,6 @@ def start(**kwargs):
         X, y = Ut, predicted
            
         # Evaluating classification
-        #print("Acc: ", metrics.evaluate(yt, predicted))
         arrAcc.append(metrics.evaluate(yt, predicted))
     
     return arrAcc
