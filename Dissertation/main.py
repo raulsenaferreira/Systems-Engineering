@@ -1,5 +1,6 @@
 import sys
 import os
+import matplotlib.pyplot as plt
 from source import plotFunctions
 from timeit import default_timer as timer
 import numpy as np
@@ -41,12 +42,10 @@ class Experiment():
 
 def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
     sizeOfBatch = int(len(dataLabels)/batches)
-    #print data distribution in step t
-    initial = (batches*sizeOfBatch)-sizeOfBatch
-    final = initial + sizeOfBatch
-    plotFunctions.plot(dataValues[initial:final], dataLabels[initial:final], batches)
-    
+        
     for name, e in experiments.items():
+        CoreX = []
+        CoreY = []
         elapsedTime = []
         accTotal = []
         accuracies=[]
@@ -60,7 +59,7 @@ def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
         for i in range(numberOfTimes):
             start = timer()
             #accuracy per step
-            accuracies = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=e.classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledDataPerc=e.initialLabeledDataPerc, excludingPercentage=e.excludingPercentage, K=e.K, CP=e.CP, alpha=e.alpha, useSVM=e.useSVM, isImbalanced=e.isImbalanced)
+            accuracies, CoreX, CoreY = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=e.classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledDataPerc=e.initialLabeledDataPerc, excludingPercentage=e.excludingPercentage, K=e.K, CP=e.CP, alpha=e.alpha, useSVM=e.useSVM, isImbalanced=e.isImbalanced)
             end = timer()
             averageAccuracy = np.mean(accuracies)
             
@@ -73,7 +72,10 @@ def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
         print("Average execution time: ", np.mean(elapsedTime))
         metrics.finalEvaluation(accuracies)
         print("\n\n")
-        
+        #print data distribution in step t
+        initial = (batches*sizeOfBatch)-sizeOfBatch
+        final = initial + sizeOfBatch
+        plotFunctions.plot(dataValues[initial:final], dataLabels[initial:final], CoreX, CoreY, batches)
         
 
 def main():
@@ -108,7 +110,7 @@ def main():
     experiments[2] = Experiment(kmeans_svm, "STARTING TEST K-Means / SVM alone as classifier")
     
     ''' Proposed Method 1 (GMM core extraction) '''
-    #experiments[3] = Experiment(proposed_gmm_core_extraction, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
+    #experiments[3] = Experiment(proposed_gmm_core_extraction, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
     
     ''' Proposed Method 2 (Alvim) '''
     ##experiments[4] = Experiment(compose3, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")

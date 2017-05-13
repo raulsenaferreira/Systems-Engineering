@@ -43,4 +43,4 @@ def start(dataValues, dataLabels, **kwargs):
     
     #print(metrics.finalEvaluation(arrAcc))
     
-    return arrAcc
+    return arrAcc, X, y

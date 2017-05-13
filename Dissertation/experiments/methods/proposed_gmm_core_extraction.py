@@ -31,6 +31,7 @@ def start(**kwargs):
     finalDataLength=sizeOfBatch
     
     for t in range(batches):
+        #print(t)
         # ***** Box 2 *****            
         Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
 
@@ -51,13 +52,11 @@ def start(**kwargs):
         selectedIndexesOld = util.compactingDataDensityBased(X, previousPdfByClass, excludingPercentage)
         selectedIndexesNew = util.compactingDataDensityBased(Ut, currentPdfByClass, excludingPercentage)
         selectedIndexes = np.hstack([selectedIndexesOld, selectedIndexesNew])
-        #print selected core points
-        
         
         # ***** Box 6 *****
         X, y = util.selectedSlicedData(allInstances, allLabelsInstances, selectedIndexes)
            
         # Evaluating classification
         arrAcc.append(metrics.evaluate(yt, predicted))
-    
-    return arrAcc
+    # returns accuracy array and last selected points
+    return arrAcc, X, y

@@ -88,6 +88,6 @@ def loadData(dataValues):
     dataValues = dataValues[:,0:2]
     
     dataLabels = dataLabels.astype(int) - 1
-    dataLabels = dataLabels.reshape(len(dataLabels), 1)
+    #dataLabels = dataLabels.reshape(len(dataLabels), 1)
     
     return dataValues, dataLabels

@@ -76,25 +76,29 @@ def plotDistributionss(distributions):
     plt.show()
     
     
-def plot(X, y, t):
-    #print data distribution in step t
-    title = "Data distribution. Step {}".format(t+1)
+def plot(X, y, coreX, coreY, t):
+    fig = plt.figure()
+    handles = []
+    classes = ['Class 1', 'Core 1', 'Class 2', 'Core 2']
+    ax = fig.add_subplot(111)
+    
     class0 = X[np.where(y==0)[0]]
-    #print(len(X[np.where(y==0)]))
-    #print(X[np.where(y==0)[0]])
     class1 = X[np.where(y==1)[0]]
+    coreClass0 = coreX[np.where(coreY==0)[0]]
+    coreClass1 = coreX[np.where(coreY==1)[0]]
+    '''
     ax1 = plt.subplot(111)
     ax2 = plt.subplot(111)
-    #ax3 = plt.subplot(111)
-    ax1.scatter(class0[:, 0], class0[:, 1], c="b")
-    ax2.scatter(class1[:, 0], class1[:, 1], c="r")
-    #ax3.scatter(X[:, 0], X[:, 1], c="g")
+    ax3 = plt.subplot(111)
+    ax4 = plt.subplot(111)
     '''
-    ax1.set_xlim([np.amin(class0[:, 0]), np.amax(class0[:, 0])])
-    ax1.set_ylim([np.amin(class0[:, 1]), np.amax(class0[:, 1])])
-    ax2.set_xlim([np.amin(class1[:, 0]), np.amax(class1[:, 0])])
-    ax2.set_ylim([np.amin(class1[:, 1]), np.amax(class1[:, 1])])
-    '''
+    handles.append(ax.scatter(class0[:, 0], class0[:, 1], c = 'r'))
+    handles.append(ax.scatter(coreClass0[:, 0], coreClass0[:, 1], c = 'g'))
+    handles.append(ax.scatter(class1[:, 0], class1[:, 1], c = 'b'))
+    handles.append(ax.scatter(coreClass1[:, 0], coreClass1[:, 1], c = 'y'))
+    
+    ax.legend(handles, classes)
+    title = "Data distribution. Step {}".format(t)
     plt.title(title)
     plt.show()
     
