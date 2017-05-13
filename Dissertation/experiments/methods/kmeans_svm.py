@@ -4,6 +4,7 @@ from source import metrics
 from source import util
 
 
+
 def start(dataValues, dataLabels, **kwargs):
     initialLabeledDataPerc = kwargs["initialLabeledDataPerc"]
     sizeOfBatch = kwargs["sizeOfBatch"]
@@ -39,12 +40,6 @@ def start(dataValues, dataLabels, **kwargs):
         
         initialDataLength=finalDataLength
         finalDataLength+=sizeOfBatch
-        
-    #print data distribution in step t
-    title = "Data distribution. Step {}".format(t+1)
-    plt.scatter(Ut[:,0], Ut[:,1], c="b")
-    plt.title(title)
-    plt.show()
     
     #print(metrics.finalEvaluation(arrAcc))
     

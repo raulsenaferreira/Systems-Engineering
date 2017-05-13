@@ -1,5 +1,6 @@
 import sys
 import os
+from source import plotFunctions
 from timeit import default_timer as timer
 import numpy as np
 from experiments import setup
@@ -11,21 +12,17 @@ from experiments.methods import compose2
 from experiments.methods import compose3
 from experiments.methods import intersection
 '''
-from experiments.methods import compose
+#from experiments.methods import compose
 '''
 from experiments.methods import improved_intersection
 '''
 
 
 class Experiment():
-    def __init__(self, method, X, y, d):
+    def __init__(self, method, d):
         #commom for all experiments
         self.method = method
-        self.dataValues = X
-        self.dataLabels = y
         self.description = d
-        self.batches = 40
-        self.sizeOfBatch = 365
         self.initialLabeledDataPerc=0.05
         self.classes=[0, 1]
         self.usePCA=False
@@ -38,17 +35,24 @@ class Experiment():
         self.CP=0.65
         self.alpha=0.5
         #used in kmeans_svm and composeonly
-        self.useSVM=False
+        self.useSVM=True
         self.isImbalanced=False
 
 
-def doExperiments(experiments, numberOfTimes, sizeOfBatch):
+def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches, sizeOfBatch):
+    #print data distribution in step t
+    initial = (batches*sizeOfBatch)-sizeOfBatch
+    final = initial + sizeOfBatch
+    plotFunctions.plot(dataValues[initial:final], dataLabels[initial:final], batches)
     
     for name, e in experiments.items():
         elapsedTime = []
         accTotal = []
         accuracies=[]
-        e.batches = sizeOfBatch
+        e.sizeOfBatch = sizeOfBatch
+        e.batches = batches
+        e.dataLabels = dataLabels
+        e.dataValues = dataValues
         
         print(e.description)
         
@@ -81,6 +85,7 @@ def main():
     path = os.getcwd()+sep+'experiments/data'+sep
     
     #loading a dataset
+    #dataValues, dataLabels = setup.loadNOAADataset(path)
     dataValues, dataLabels = setup.load2CDT(path)
     
     
@@ -93,12 +98,12 @@ def main():
     '''
     Original compose (alpha-shape version)
     '''
-    experiments[1] = Experiment(compose, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and alpha-shape as cutting data")
+    #experiments[1] = Experiment(compose, "STARTING TEST with Cluster and label as classifier and alpha-shape as cutting data")
     
     '''
     K-Means / SVM
     '''
-    #experiments[2] = Experiment(kmeans_svm, dataValues, dataLabels, "STARTING TEST K-Means / SVM alone as classifier")
+    experiments[2] = Experiment(kmeans_svm, "STARTING TEST K-Means / SVM alone as classifier")
     
     ''' Proposed Method 1 (GMM core extraction) '''
     #experiments[3] = Experiment(proposed_gmm_core_extraction, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
@@ -116,7 +121,8 @@ def main():
     '''
     #experiments[6] = Experiment(improved_intersection, dataValues, dataLabels, "Improved Intersection")
                                 
-    doExperiments(experiments, 1, 40)
+    #params: X, y, method, num of experiment repetitions, num of batches, size of each batch
+    doExperiments(dataValues, dataLabels, experiments, 1, 40, 365)
     
 
     

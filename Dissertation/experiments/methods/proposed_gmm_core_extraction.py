@@ -51,6 +51,8 @@ def start(**kwargs):
         selectedIndexesOld = util.compactingDataDensityBased(X, previousPdfByClass, excludingPercentage)
         selectedIndexesNew = util.compactingDataDensityBased(Ut, currentPdfByClass, excludingPercentage)
         selectedIndexes = np.hstack([selectedIndexesOld, selectedIndexesNew])
+        #print selected core points
+        
         
         # ***** Box 6 *****
         X, y = util.selectedSlicedData(allInstances, allLabelsInstances, selectedIndexes)

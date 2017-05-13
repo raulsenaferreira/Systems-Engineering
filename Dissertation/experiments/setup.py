@@ -44,119 +44,50 @@ def loadCheckerBoard(path):
 
 def loadCDT(path):
     #Test set: One Class Diagonal Translation. 2 Dimensional data
-    '''
-    Artificial One Class Diagonal Translation. 2 Dimensional data
-    '''
-    dataValues = pd.read_csv(path+'1CDT.txt',sep = ",")
-    dataValues = pd.DataFrame.as_matrix(dataValues)
-    dataLabels = dataValues[:, 2]
-    dataLabels = dataLabels-1
-    dataValues = dataValues[:,0:2]
-    #print(dataValues)
-    
-    return dataValues, dataLabels
+    return loadData(pd.read_csv(path+'1CDT.txt',sep = ","))
 
 
 def loadCHT(path):
     #Test set: One Class Horizontal Translation. 2 Dimensional data
-    '''
-    Artificial One Class Horizontal Translation. 2 Dimensional data
-    '''
-    dataValues = pd.read_csv(path+'1CHT.txt',sep = ",")
-    dataValues = pd.DataFrame.as_matrix(dataValues)
-    dataLabels = dataValues[:, 2]
-    dataLabels = dataLabels-1
-    dataValues = dataValues[:,0:2]
-    #print(dataValues)
-    
-    return dataValues, dataLabels
+    return loadData(pd.read_csv(path+'1CHT.txt',sep = ","))
 
 
 def load2CDT(path):
     #Test set: Two Classes Diagonal Translation. 2 Dimensional data
-    '''
-    Artificial Two Classes Diagonal Translation. 2 Dimensional data
-    '''
-    dataValues = pd.read_csv(path+'2CDT.txt',sep = ",")
-    dataValues = pd.DataFrame.as_matrix(dataValues)
-    dataLabels = dataValues[:, 2]
-    dataLabels = dataLabels-1
-    dataValues = dataValues[:,0:2]
-    #print(dataValues)
-    
-    return dataValues, dataLabels
+    return loadData(pd.read_csv(path+'2CDT.txt',sep = ","))
 
 
 def load2CHT(path):
     #Test set: Two Classes Horizontal Translation. 2 Dimensional data
-    '''
-    Artificial Two Classes Horizontal Translation. 2 Dimensional data
-    '''
-    dataValues = pd.read_csv(path+'2CHT.txt',sep = ",")
+    return loadData(pd.read_csv(path+'2CHT.txt',sep = ","))
+
+
+def loadUG_2C_2D(path):
+    #Test set: Bidimensional Unimodal Gaussian with Two Classes 
+    return loadData(pd.read_csv(path+'UG_2C_2D.txt',sep = ","))
+
+
+def loadUG_2C_3D(path):
+    #Test set: Artificial 3-dimensional Unimodal Gaussian with Two Classes
+    return loadData(pd.read_csv(path+'UG_2C_3D.txt',sep = ","))
+
+
+def loadUG_2C_5D(path):
+    #Test set: 5-dimensional Unimodal Gaussian with Two Classes
+    return loadData(pd.read_csv(path+'UG_2C_5D.txt',sep = ","))
+
+
+def loadMG_2C_2D(path):
+    #Test set: Bidimensional Mulitimodal Gaussian with Two Classes
+    return loadData(pd.read_csv(path+'MG_2C_2D.txt',sep = ","))
+
+
+def loadData(dataValues):
     dataValues = pd.DataFrame.as_matrix(dataValues)
     dataLabels = dataValues[:, 2]
-    dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
-    #print(dataValues)
     
-    return dataValues, dataLabels
-
-
-def loadUnimodal_2C_2D(path):
-    #Test set: Two Bidimensional Unimodal Gaussian Classes 
-    '''
-    Artificial Two Bidimensional Unimodal Gaussian Classes 
-    '''
-    dataValues = pd.read_csv(path+'UG_2C_2D.txt',sep = ",")
-    dataValues = pd.DataFrame.as_matrix(dataValues)
-    dataLabels = dataValues[:, 2]
-    dataLabels = dataLabels-1
-    dataValues = dataValues[:,0:2]
-    #print(dataValues)
-    
-    return dataValues, dataLabels
-
-
-def loadUnimodal_2C_3D(path):
-    #Test set: Artificial Two 3-dimensional Unimodal Gaussian Classes
-    '''
-    Artificial Two 3-dimensional Unimodal Gaussian Classes
-    '''
-    dataValues = pd.read_csv(path+'UG_2C_3D.txt',sep = ",")
-    dataValues = pd.DataFrame.as_matrix(dataValues)
-    dataLabels = dataValues[:, 3]
-    dataLabels = dataLabels-1
-    dataValues = dataValues[:,0:3]
-    #print(dataValues)
-    
-    return dataValues, dataLabels
-
-
-def loadUnimodal_2C_5D(path):
-    #Test set: Two 5-dimensional Unimodal Gaussian Classes
-    '''
-    Artificial Two 5-dimensional Unimodal Gaussian Classes
-    '''
-    dataValues = pd.read_csv(path+'UG_2C_5D.txt',sep = ",")
-    dataValues = pd.DataFrame.as_matrix(dataValues)
-    dataLabels = dataValues[:, 5]
-    dataLabels = dataLabels-1
-    dataValues = dataValues[:,0:5]
-    #print(dataValues)
-    
-    return dataValues, dataLabels
-
-
-def loadMultimodal_2C_2D(path):
-    #Test set: Two Bidimensional Mulitimodal Gaussian Classes
-    '''
-    Artificial Two Bidimensional Mulitimodal Gaussian Classes
-    '''
-    dataValues = pd.read_csv(path+'MG_2C_2D.txt',sep = ",")
-    dataValues = pd.DataFrame.as_matrix(dataValues)
-    dataLabels = dataValues[:, 2]
-    dataLabels = dataLabels-1
-    dataValues = dataValues[:,0:2]
-    #print(dataValues)
+    dataLabels = dataLabels.astype(int) - 1
+    dataLabels = dataLabels.reshape(len(dataLabels), 1)
     
     return dataValues, dataLabels
