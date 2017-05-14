@@ -19,11 +19,15 @@ def start(**kwargs):
     densityFunction=kwargs["densityFunction"] 
     useSVM = kwargs["useSVM"]
     isImbalanced=kwargs["isImbalanced"]
-    clf=''
+    
+    clf='Cluster and label'
+    if useSVM:
+        clf='SVM'
+    print("STARTING TEST with {} as classifier and {} as cutting data".format(clf, densityFunction))    
+    
     arrAcc = []
     initialDataLength = 0
     finalDataLength = round((initialLabeledDataPerc)*sizeOfBatch)
-    
     #Initial labeled data
     X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
     
@@ -58,5 +62,6 @@ def start(**kwargs):
            
         # Evaluating classification
         arrAcc.append(metrics.evaluate(yt, predicted))
+        #print(X, " --- " ,y)
     # returns accuracy array and last selected points
     return arrAcc, X, y

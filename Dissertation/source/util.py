@@ -168,6 +168,29 @@ def compactingDataDensityBased(instances, densities, criteria):
     return stackedIndexes
 
 
+def cuttingDataByIntersection3(x, x2, y):
+    
+    #getting intersection
+    m1 = np.mean(x)
+    std1 = np.std(x)
+    m2 = np.mean(x2)
+    std2 = np.std(x2)
+
+    r = solve(m1,m2,std1,std2)[0]
+    
+    if np.min(x) < np.min(x2):
+        #print("D1 < D2")
+        indX = x[:,0]>r
+        indX2 = x2[:,0]<r
+    else:
+        #print("D2 < D1")
+        indX = x[:,0]<r
+        indX2 = x2[:,0]>r
+        
+    y=np.array(y) 
+    return x[indX], y[indX]
+
+
 def getDistributionIntersection(X, Ut, indexesByClass, predictedByClass, densityFunction):
     pdfX = {}
     pdfUt = {}

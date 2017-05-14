@@ -1,6 +1,5 @@
 import sys
 import os
-import matplotlib.pyplot as plt
 from source import plotFunctions
 from timeit import default_timer as timer
 import numpy as np
@@ -8,22 +7,19 @@ from experiments import setup
 from source import metrics
 from experiments.methods import kmeans_svm
 from experiments.methods import proposed_gmm_core_extraction
+from experiments.methods import improved_intersection
+#from experiments.methods import compose
 '''
 from experiments.methods import compose2
 from experiments.methods import compose3
 from experiments.methods import intersection
 '''
-#from experiments.methods import compose
-'''
-from experiments.methods import improved_intersection
-'''
 
 
 class Experiment():
-    def __init__(self, method, d):
+    def __init__(self, method):
         #commom for all experiments
         self.method = method
-        self.description = d
         self.initialLabeledDataPerc=0.05
         self.classes=[0, 1]
         self.usePCA=False
@@ -41,7 +37,7 @@ class Experiment():
 
 
 def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
-    sizeOfBatch = int(len(dataLabels)/batches)
+    sizeOfBatch = 100#int(len(dataLabels)/batches)
         
     for name, e in experiments.items():
         CoreX = []
@@ -53,8 +49,6 @@ def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
         e.batches = batches
         e.dataLabels = dataLabels
         e.dataValues = dataValues
-        
-        print(e.description)
         
         for i in range(numberOfTimes):
             start = timer()
@@ -107,7 +101,7 @@ def main():
     '''
     K-Means / SVM
     '''
-    experiments[2] = Experiment(kmeans_svm, "STARTING TEST K-Means / SVM alone as classifier")
+    #experiments[2] = Experiment(kmeans_svm, "STARTING TEST K-Means / SVM alone as classifier")
     
     ''' Proposed Method 1 (GMM core extraction) '''
     #experiments[3] = Experiment(proposed_gmm_core_extraction, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
@@ -123,10 +117,10 @@ def main():
     '''
     Proposed method 4 (Intersection between two distributions + GMM)
     '''
-    #experiments[6] = Experiment(improved_intersection, dataValues, dataLabels, "Improved Intersection")
+    experiments[6] = Experiment(improved_intersection)
                                 
     #params: X, y, method, num of experiment repetitions, num of batches
-    doExperiments(dataValues, dataLabels, experiments, 1, 40)
+    doExperiments(dataValues, dataLabels, experiments, 1, 10)
     
 
     

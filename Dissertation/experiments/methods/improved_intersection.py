@@ -1,12 +1,11 @@
 import numpy as np
-from experiments.composeGMM import box1, box2, box3, box4, box5, box6
 from source import metrics
 from source import classifiers
 from source import util
 
 
 def start(**kwargs):
-    
+    print("Intersection between two distributions + GMM")
     "Algorithm flow: 1)Verifies if X% of labeled data is above the minimum. If yes, does the steps 2 up to 4. If not, does step 5 or 6; 2)Train with X% of labeled data and classifies the other part of the database (Dt); 3)Takes the intersection between two distributions D(t) x D(t+1) = D(t)'; 4)D(t)' will be used to train and classify D(t+1) on next phase; 5)Takes data from D(t-1)' + X% of greatest pdfs values from GMM(D(t)); 6)Takes the X% greatest from GMM(D(t-1) and GMM(D(t)))"
     
     dataValues = kwargs["dataValues"]
@@ -21,17 +20,25 @@ def start(**kwargs):
     classifier = kwargs["classifier"]
     K = kwargs["K"]
     densityFunction=kwargs["densityFunction"]
-    #classifier = "svm"
-    #isImbalanced=True
+    useSVM = kwargs["useSVM"]
+    isImbalanced=kwargs["isImbalanced"]
+    
+    def classify(X, y, Ut, K, classifier, isImbalanced):
+        if useSVM:
+            clf = classifiers.svmClassifier(X, y, isImbalanced)
+            return util.baseClassifier(Ut, clf)
+        else:
+            return classifiers.clusterAndLabel(X, y, Ut, K)
+    
     
     sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
     initialDataLength = 0
     finalDataLength = sizeOfLabeledData
     arrAcc = []
-    experimentType = 2
     
     # ***** Box 1 *****
-    X, y = box1.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+    #Initial labeled data
+    X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
     isStep0=True
     
     predicted=[]
@@ -46,36 +53,39 @@ def start(**kwargs):
             finalDataLength=sizeOfBatch
         else:
             finalDataLength+=sizeOfBatch
-        Ut, yt = box2.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+        Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
 
         # ***** Box 3 *****
         if isStep0:
             isStep0=False
             XIntersec = X.copy()
             yIntersec = y.copy()
-            predicted = box3.classify(XIntersec, yIntersec, Ut, K, classifier)
-            X, y = box3.stack(X, Ut, y, predicted)
+            predicted = classify(XIntersec, yIntersec, Ut, K, classifier, isImbalanced)
+            
+            X = np.vstack([X, Ut])
+            y = np.hstack([y, predicted])
         else:
-            XIntersec, yIntersec = box5.cuttingDataByIntersection3(X, Ut, y)
+            XIntersec, yIntersec = util.cuttingDataByIntersection3(X, Ut, y)
 
             if len(yIntersec[yIntersec==0]) <= sizeOfLabeledData or len(yIntersec[yIntersec==1]) <= sizeOfLabeledData:
                 allInstances = np.vstack([X, Ut])
 
                 if len(yIntersec) < 1:
                     y=np.array(y)
-                    predicted = box3.classify(X, y, Ut, K, classifier)
+                    predicted = classify(X, y, Ut, K, classifier, isImbalanced)
                 else:
-                    predicted = box3.classify(XIntersec, yIntersec, Ut, K, classifier)
+                    predicted = classify(XIntersec, yIntersec, Ut, K, classifier, isImbalanced)
 
-                previousPdfByClass, currentPdfByClass = box4.pdfByClass(X, y, Ut, predicted, allInstances, classes, densityFunction)
+                previousPdfByClass, currentPdfByClass = util.pdfByClass(X, y, Ut, predicted, allInstances, classes, densityFunction)
                 #excludingPercentage = 1 - initialLabeledDataPerc
 
-                selectedIndexesOld = box5.cuttingDataByPercentage(X, previousPdfByClass, excludingPercentage)
-                selectedIndexesNew = box5.cuttingDataByPercentage(Ut, currentPdfByClass, excludingPercentage)
+                selectedIndexesOld = util.compactingDataDensityBased(X, previousPdfByClass, excludingPercentage)
+                selectedIndexesNew = util.compactingDataDensityBased(Ut, currentPdfByClass, excludingPercentage)
                 selectedIndexes = np.hstack([selectedIndexesOld, selectedIndexesNew])
                 
-                instances, labelsInstances = box3.stack(X, Ut, y, predicted)
-                newXIntersec, newyIntersec = box6.selectedSlicedData(instances, labelsInstances, selectedIndexes)
+                instances = np.vstack([X, Ut])
+                labelsInstances = np.hstack([y, predicted])
+                newXIntersec, newyIntersec = util.selectedSlicedData(instances, labelsInstances, selectedIndexes)
                 #Discard previous intersection
                 #XIntersec, yIntersec = newXIntersec, newyIntersec
 
@@ -84,11 +94,11 @@ def start(**kwargs):
 
                 X, y = Ut, predicted
             else:
-                predicted = box3.classify(XIntersec, yIntersec, Ut, K, classifier)
+                predicted = classify(XIntersec, yIntersec, Ut, K, classifier, isImbalanced)
                 X, y = Ut, predicted
 
         # Evaluating classification
         #print("Acc: ", metrics.evaluate(yt, predicted))
         arrAcc.append(metrics.evaluate(yt, predicted))
                 
-    return arrAcc
+    return arrAcc, XIntersec, yIntersec

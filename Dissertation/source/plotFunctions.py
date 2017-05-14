@@ -86,12 +86,7 @@ def plot(X, y, coreX, coreY, t):
     class1 = X[np.where(y==1)[0]]
     coreClass0 = coreX[np.where(coreY==0)[0]]
     coreClass1 = coreX[np.where(coreY==1)[0]]
-    '''
-    ax1 = plt.subplot(111)
-    ax2 = plt.subplot(111)
-    ax3 = plt.subplot(111)
-    ax4 = plt.subplot(111)
-    '''
+    
     handles.append(ax.scatter(class0[:, 0], class0[:, 1], c = 'r'))
     handles.append(ax.scatter(coreClass0[:, 0], coreClass0[:, 1], c = 'g'))
     handles.append(ax.scatter(class1[:, 0], class1[:, 1], c = 'b'))
