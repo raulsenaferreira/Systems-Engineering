@@ -282,3 +282,23 @@ def pdfByClass(oldInstances, oldLabels, newInstances, newLabels, allInstances, c
     else:
         print ("Choose between 'gmm' or 'kde' function. Wrong name given: ", densityFunction)
         return
+    
+    
+def pdfByClass2(instances, labels, classes):
+    indexesByClass = slicingClusteredData(labels, classes)
+    
+    pdfsByClass = {}
+    numClasses = len(indexesByClass)
+   
+    for c, indexes in indexesByClass.items():
+        pdfs = [-1] * len(instances)
+        points = instances[indexes]
+        #points from a class, all points, number of components
+        pdfsByPoints = classifiers.gmmWithPDF(points, instances, numClasses)
+        a = 0
+        for i in indexes:
+            pdfs[i]=pdfsByPoints[a]
+            a+=1
+        pdfsByClass[c] = pdfs
+        
+    return pdfsByClass

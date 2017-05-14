@@ -68,7 +68,8 @@ def gmm(points, numComponents):
 
 
 def gmmWithPDF(points, allPoints, numComponents):
-    clf = gmm(allPoints, numComponents)
+    clf = mixture.GaussianMixture(n_components=numComponents, covariance_type='full')
+    clf.fit(allPoints)
     return np.exp(clf.score_samples(points))   
     
 

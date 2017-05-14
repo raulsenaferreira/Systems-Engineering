@@ -32,12 +32,12 @@ class Experiment():
         self.CP=0.65
         self.alpha=0.5
         #used in kmeans_svm and composeonly
-        self.useSVM=True
+        self.useSVM=False
         self.isImbalanced=False
 
 
 def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
-    sizeOfBatch = 100#int(len(dataLabels)/batches)
+    sizeOfBatch = 200#int(len(dataLabels)/batches)
         
     for name, e in experiments.items():
         CoreX = []
@@ -104,7 +104,7 @@ def main():
     #experiments[2] = Experiment(kmeans_svm, "STARTING TEST K-Means / SVM alone as classifier")
     
     ''' Proposed Method 1 (GMM core extraction) '''
-    #experiments[3] = Experiment(proposed_gmm_core_extraction, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
+    experiments[3] = Experiment(proposed_gmm_core_extraction)
     
     ''' Proposed Method 2 (Alvim) '''
     ##experiments[4] = Experiment(compose3, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
@@ -117,10 +117,10 @@ def main():
     '''
     Proposed method 4 (Intersection between two distributions + GMM)
     '''
-    experiments[6] = Experiment(improved_intersection)
+    #experiments[6] = Experiment(improved_intersection)
                                 
     #params: X, y, method, num of experiment repetitions, num of batches
-    doExperiments(dataValues, dataLabels, experiments, 1, 10)
+    doExperiments(dataValues, dataLabels, experiments, 1, 40)
     
 
     

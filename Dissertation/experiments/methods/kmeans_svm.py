@@ -12,7 +12,6 @@ def start(dataValues, dataLabels, **kwargs):
     classes = kwargs["classes"]
     batches = kwargs["batches"]
     sizeOfBatch = kwargs["sizeOfBatch"]
-    useSVM = kwargs["useSVM"]
     isImbalanced=kwargs["isImbalanced"]
     clf=''
     arrAcc = []
@@ -24,11 +23,8 @@ def start(dataValues, dataLabels, **kwargs):
     
     initialDataLength=finalDataLength
     finalDataLength=sizeOfBatch
-    
-    if useSVM:
-        clf = classifiers.svmClassifier(X, y, isImbalanced)
-    else:
-        clf = classifiers.kMeans(X, len(classes))
+
+    clf = classifiers.svmClassifier(X, y, isImbalanced)
     
     for t in range(batches):
         

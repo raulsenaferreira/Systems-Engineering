@@ -16,26 +16,23 @@ def start(**kwargs):
     sizeOfBatch = kwargs["sizeOfBatch"]
     excludingPercentage = kwargs["excludingPercentage"]
     K = kwargs["K"]
-    densityFunction=kwargs["densityFunction"] 
     useSVM = kwargs["useSVM"]
     isImbalanced=kwargs["isImbalanced"]
     
     clf='Cluster and label'
     if useSVM:
         clf='SVM'
-    print("STARTING TEST with {} as classifier and {} as cutting data".format(clf, densityFunction))    
+    print("STARTING TEST with {} as classifier and GMM as cutting data".format(clf))    
     
     arrAcc = []
     initialDataLength = 0
     finalDataLength = round((initialLabeledDataPerc)*sizeOfBatch)
     #Initial labeled data
     X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
-    
     initialDataLength=finalDataLength
     finalDataLength=sizeOfBatch
     
     for t in range(batches):
-        #print(t)
         # ***** Box 2 *****            
         Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
 
@@ -50,16 +47,25 @@ def start(**kwargs):
         allLabelsInstances = np.hstack([y, predicted])
         
         # ***** Box 4 *****
-        previousPdfByClass, currentPdfByClass = util.pdfByClass(X, y, Ut, predicted, allInstances, classes, densityFunction)
+        #previousPdfByClass, currentPdfByClass = util.pdfByClass(X, y, Ut, predicted, allInstances, classes, densityFunction)
+        #pdfs from each class applied on entire data
+        pdfsByClass = util.pdfByClass2(allInstances, allLabelsInstances, classes)
+        #pdfs from each new points from each class applied on new arrived points
+        pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
         
         # ***** Box 5 *****
-        selectedIndexesOld = util.compactingDataDensityBased(X, previousPdfByClass, excludingPercentage)
-        selectedIndexesNew = util.compactingDataDensityBased(Ut, currentPdfByClass, excludingPercentage)
-        selectedIndexes = np.hstack([selectedIndexesOld, selectedIndexesNew])
+        #selectedIndexesOld = util.compactingDataDensityBased(X, previousPdfByClass, excludingPercentage)
+        #selectedIndexesNew = util.compactingDataDensityBased(Ut, currentPdfByClass, excludingPercentage)
+        #selectedIndexes = np.hstack([selectedIndexesOld, selectedIndexesNew])
+        selectedIndexes = util.compactingDataDensityBased(allInstances, pdfsByClass, excludingPercentage)
+        selectedIndexes = util.compactingDataDensityBased(Ut, pdfsByClass, excludingPercentage)
         
         # ***** Box 6 *****
         X, y = util.selectedSlicedData(allInstances, allLabelsInstances, selectedIndexes)
-           
+        X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
+        
+        initialDataLength=finalDataLength
+        finalDataLength+=sizeOfBatch
         # Evaluating classification
         arrAcc.append(metrics.evaluate(yt, predicted))
         #print(X, " --- " ,y)
