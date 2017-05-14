@@ -1,6 +1,9 @@
 import numpy as np
-from experiments.composeGMM import box1, box2, box3, box4, box5, box6
+from source import util
+from experiments.methods import box4, box6
 from source import metrics
+from source import classifiers
+
 
 
 def start(**kwargs):
@@ -12,36 +15,27 @@ def start(**kwargs):
     classes = kwargs["classes"]
     batches = kwargs["batches"]
     sizeOfBatch = kwargs["sizeOfBatch"]
-    excludingPercentage = kwargs["excludingPercentage"]
-    classifier = kwargs["classifier"]
-    K = kwargs["K"]
     CP=kwargs["CP"]
     alpha=kwargs["alpha"]
     
-    sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
     initialDataLength = 0
-    finalDataLength = sizeOfLabeledData
+    finalDataLength = round((initialLabeledDataPerc)*sizeOfBatch)
     arrAcc = []
-    isStep1=True
     
     # ***** Box 1 *****
-    X, y = box1.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
-    
+    X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+    initialDataLength=finalDataLength
+    finalDataLength=sizeOfBatch
     #Starting the process
     for t in range(batches):
         #print("Step: ", t)
         # ***** Box 2 *****
-        initialDataLength=finalDataLength
-        if isStep1:
-            finalDataLength=sizeOfBatch
-            isStep1 = False
-        else:
-            finalDataLength+=sizeOfBatch
-        Ut, yt = box2.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+        Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
 
         # ***** Box 3 *****
-        predicted = box3.classify(X, y, Ut, K, classifier)
-        instances, labelsInstances = box3.stack(X, Ut, y, predicted)
+        predicted = classifiers.clusterAndLabel(X, y, Ut)
+        instances = np.vstack([X, Ut])
+        labelsInstances = np.hstack([y, predicted])
         # Evaluating classification
         arrAcc.append(metrics.evaluate(yt, predicted))
         
@@ -50,8 +44,11 @@ def start(**kwargs):
         selectedPointsByClass, selectedIndexesByClass = box4.geometricCoreExtraction(instances, labelsInstances, classes, alpha, threshold)
         
         # ***** Box 6 *****
-        X, y = box6.gettingSelectedData(selectedPointsByClass, selectedIndexesByClass, labelsInstances)
-           
+        X = np.vstack([selectedPointsByClass[0], selectedPointsByClass[1]])
+        y = np.hstack([labelsInstances[selectedIndexesByClass[0]], labelsInstances[selectedIndexesByClass[1]]])
+        #X, y = util.selectedSlicedData(selectedPointsByClass, selectedIndexesByClass, labelsInstances)
+        initialDataLength=finalDataLength
+        finalDataLength+=sizeOfBatch   
     #metrics.finalEvaluation(arrAcc)
     
-    return arrAcc
+    return arrAcc, X, y

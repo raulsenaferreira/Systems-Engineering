@@ -41,7 +41,7 @@ def loadGeometricCoreExtractionByClass(instances, indexesByClass, alpha, thresho
         inst, indexes, edge_points = alpha_shape.alpha_compaction(points, alpha, threshold)
         selectedPointsByClass[c] = inst
         selectedIndexesByClass[c] = indexes
-        
+
     return selectedPointsByClass, selectedIndexesByClass
 
 

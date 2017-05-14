@@ -8,7 +8,7 @@ from source import metrics
 from experiments.methods import kmeans_svm
 from experiments.methods import proposed_gmm_core_extraction
 from experiments.methods import improved_intersection
-#from experiments.methods import compose
+from experiments.methods import compose
 '''
 from experiments.methods import compose2
 from experiments.methods import compose3
@@ -96,15 +96,15 @@ def main():
     '''
     Original compose (alpha-shape version)
     '''
-    #experiments[1] = Experiment(compose, "STARTING TEST with Cluster and label as classifier and alpha-shape as cutting data")
+    experiments[1] = Experiment(compose)
     
     '''
     K-Means / SVM
     '''
-    #experiments[2] = Experiment(kmeans_svm, "STARTING TEST K-Means / SVM alone as classifier")
+    #experiments[2] = Experiment(kmeans_svm)
     
     ''' Proposed Method 1 (GMM core extraction) '''
-    experiments[3] = Experiment(proposed_gmm_core_extraction)
+    #experiments[3] = Experiment(proposed_gmm_core_extraction)
     
     ''' Proposed Method 2 (Alvim) '''
     ##experiments[4] = Experiment(compose3, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")

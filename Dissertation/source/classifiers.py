@@ -96,11 +96,13 @@ def majorityVote(clusteredData, clusters, y):
     return kPredicted
 
 
-def clusterAndLabel(X, y, Ut, K):
+def clusterAndLabel(X, y, Ut):
+    K = 5
+    initK = 2
     arrPredicted=[-1]*len(Ut)
     lenPoints = len(X)
     
-    for k in range(2, K+2):
+    for k in range(initK, K+initK):
         if lenPoints >= k:
             kmeans = kMeans(X, k)
             clusters = kmeans.labels_
