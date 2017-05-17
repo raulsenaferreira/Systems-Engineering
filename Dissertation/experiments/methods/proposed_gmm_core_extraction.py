@@ -27,14 +27,19 @@ def start(**kwargs):
     initialDataLength = 0
     finalDataLength = round((initialLabeledDataPerc)*sizeOfBatch)
     #Initial labeled data
-    X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+    #X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+    X = np.copy(dataValues[initialDataLength:finalDataLength])
+    y = np.copy(dataLabels[initialDataLength:finalDataLength])
+    
     initialDataLength=finalDataLength
     finalDataLength=sizeOfBatch
     
     for t in range(batches):
         # ***** Box 2 *****            
-        Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
-
+        #Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+        Ut = np.copy(dataValues[initialDataLength:finalDataLength])
+        yt = np.copy(dataLabels[initialDataLength:finalDataLength])
+    
         # ***** Box 3 *****
         if useSVM:
             clf = classifiers.svmClassifier(X, y, isImbalanced)
@@ -52,7 +57,7 @@ def start(**kwargs):
         pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
         
         # ***** Box 5 *****
-        selectedIndexes = util.compactingDataDensityBased(allInstances, pdfsByClass, excludingPercentage)
+        #selectedIndexes = util.compactingDataDensityBased(allInstances, pdfsByClass, excludingPercentage)
         selectedIndexes = util.compactingDataDensityBased(Ut, pdfsByClass, excludingPercentage)
         
         # ***** Box 6 *****
@@ -62,7 +67,7 @@ def start(**kwargs):
         initialDataLength=finalDataLength
         finalDataLength+=sizeOfBatch
         # Evaluating classification
-        arrAcc.append(metrics.evaluate(yt, predicted))
+        arrAcc.append(metrics.evaluate(yt, predicted)*100)
  
     # returns accuracy array and last selected points
     return arrAcc, X, y

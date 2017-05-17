@@ -51,7 +51,7 @@ def plotAccuracy(arr, label):
     fig.add_subplot(122)
     ax = plt.axes()
     ax.legend(ax.plot(c, arr, 'k'), label)
-    
+    ax.set_ylim([0, 100])
     plt.grid()
     plt.show()
 

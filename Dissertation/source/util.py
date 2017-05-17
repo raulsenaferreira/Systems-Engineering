@@ -3,7 +3,7 @@ from scipy.spatial.distance import mahalanobis
 from math import floor
 import matplotlib.pyplot as plt
 import random
-from experiments.methods import alpha_shape
+#from experiments.methods import alpha_shape
 from source import classifiers
 
 

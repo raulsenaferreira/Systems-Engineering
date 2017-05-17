@@ -25,7 +25,7 @@ class Experiment():
         self.usePCA=False
         #used only by gmm and cluster-label process
         self.densityFunction='gmm'
-        self.excludingPercentage = 0.3
+        self.excludingPercentage = 0.95
         self.K = 5
         self.classifier='cluster_and_label'
         #used in alpha-shape version only
@@ -37,7 +37,7 @@ class Experiment():
 
 
 def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
-    sizeOfBatch = 200#int(len(dataLabels)/batches)
+    sizeOfBatch = int(len(dataLabels)/batches)
         
     for name, e in experiments.items():
         CoreX = []
@@ -62,11 +62,11 @@ def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
             
             accTotal.append(averageAccuracy)
         #print("Total of ", numberOfTimes, " experiment iterations with an average accuracy of ", np.mean(accTotal))
-        print("{} batches of {} instances".format(batches, sizeOfBatch))
+        print("{} batches of {} instances".format(e.batches, e.sizeOfBatch))
         print("Average execution time: ", np.mean(elapsedTime))
         metrics.finalEvaluation(accuracies)
         print("\n\n")
-        #print data distribution in step t
+        #print data distribution in step t  
         initial = (batches*sizeOfBatch)-sizeOfBatch
         final = initial + sizeOfBatch
         plotFunctions.plot(dataValues[initial:final], dataLabels[initial:final], CoreX, CoreY, batches)
@@ -91,12 +91,12 @@ def main():
     Paper: Core  Support  Extraction  for  Learning  from  Initially  Labeled Nonstationary  Environments  using  COMPOSE
     link: http://s3.amazonaws.com/academia.edu.documents/45784667/2014_-_Core_Support_Extraction_for_Learning_from_Initially_Labeled_NSE_using_COMPOSE_-_IJCNN.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1489296600&Signature=9Z5DQZeDxcCtHUw7445uELSkgBg%3D&response-content-disposition=inline%3B%20filename%3DCore_support_extraction_for_learning_fro.pdf
     '''
-    #experiments[0] = Experiment(compose2, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM with BIC and Mahalanobis as cutting data")
+    #experiments[0] = Experiment(compose2)
     
     '''
     Original compose (alpha-shape version)
     '''
-    experiments[1] = Experiment(compose)
+    #experiments[1] = Experiment(compose)
     
     '''
     K-Means / SVM
@@ -104,7 +104,7 @@ def main():
     #experiments[2] = Experiment(kmeans_svm)
     
     ''' Proposed Method 1 (GMM core extraction) '''
-    #experiments[3] = Experiment(proposed_gmm_core_extraction)
+    experiments[3] = Experiment(proposed_gmm_core_extraction)
     
     ''' Proposed Method 2 (Alvim) '''
     ##experiments[4] = Experiment(compose3, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
@@ -120,7 +120,7 @@ def main():
     #experiments[6] = Experiment(improved_intersection)
                                 
     #params: X, y, method, num of experiment repetitions, num of batches
-    doExperiments(dataValues, dataLabels, experiments, 1, 40)
+    doExperiments(dataValues, dataLabels, experiments, 1, 100)
     
 
     

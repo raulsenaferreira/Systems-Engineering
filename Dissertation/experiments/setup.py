@@ -61,6 +61,10 @@ def load2CHT(path):
     #Test set: Two Classes Horizontal Translation. 2 Dimensional data
     return loadData(pd.read_csv(path+'2CHT.txt',sep = ","))
 
+def loadFG_2C_2D(path):
+    #Test set: Bidimensional Unimodal Gaussian with Two Classes 
+    return loadData(pd.read_csv(path+'FG_2C_2D.txt',sep = ","))
+
 
 def loadUG_2C_2D(path):
     #Test set: Bidimensional Unimodal Gaussian with Two Classes 
@@ -80,6 +84,11 @@ def loadUG_2C_5D(path):
 def loadMG_2C_2D(path):
     #Test set: Bidimensional Mulitimodal Gaussian with Two Classes
     return loadData(pd.read_csv(path+'MG_2C_2D.txt',sep = ","))
+
+
+def loadGEARS_2C_2D(path):
+    #Test set: Bidimensional Mulitimodal Gaussian with Two Classes
+    return loadData(pd.read_csv(path+'GEARS_2C_2D.txt',sep = ","))
 
 
 def loadData(dataValues):
