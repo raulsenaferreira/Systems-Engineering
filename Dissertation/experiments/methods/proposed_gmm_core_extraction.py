@@ -12,6 +12,7 @@ def start(**kwargs):
     sizeOfBatch = kwargs["sizeOfBatch"]
     usePCA = kwargs["usePCA"]
     classes = kwargs["classes"]
+    K = kwargs["K"]
     batches = kwargs["batches"]
     sizeOfBatch = kwargs["sizeOfBatch"]
     excludingPercentage = kwargs["excludingPercentage"]
@@ -45,7 +46,7 @@ def start(**kwargs):
             clf = classifiers.svmClassifier(X, y, isImbalanced)
             predicted = util.baseClassifier(Ut, clf)
         else:
-            predicted = classifiers.clusterAndLabel(X, y, Ut)
+            predicted = classifiers.clusterAndLabel(X, y, Ut, K)
             
         allInstances = np.vstack([X, Ut])
         #allLabelsInstances = np.hstack([y, predicted])

@@ -96,8 +96,7 @@ def majorityVote(clusteredData, clusters, y):
     return kPredicted
 
 
-def clusterAndLabel(X, y, Ut):
-    K = 5
+def clusterAndLabel(X, y, Ut, K):
     initK = 2
     arrPredicted=[-1]*len(Ut)
     lenPoints = len(X)
