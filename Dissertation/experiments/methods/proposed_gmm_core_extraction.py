@@ -28,18 +28,18 @@ def start(**kwargs):
     initialDataLength = 0
     finalDataLength = round((initialLabeledDataPerc)*sizeOfBatch)
     #Initial labeled data
-    #X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
-    X = np.copy(dataValues[initialDataLength:finalDataLength])
-    y = np.copy(dataLabels[initialDataLength:finalDataLength])
+    X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+    #X = np.copy(dataValues[initialDataLength:finalDataLength])
+    #y = np.copy(dataLabels[initialDataLength:finalDataLength])
     
     initialDataLength=finalDataLength
     finalDataLength=sizeOfBatch
     
     for t in range(batches):
         # ***** Box 2 *****            
-        #Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
-        Ut = np.copy(dataValues[initialDataLength:finalDataLength])
-        yt = np.copy(dataLabels[initialDataLength:finalDataLength])
+        Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+        #Ut = np.copy(dataValues[initialDataLength:finalDataLength])
+        #yt = np.copy(dataLabels[initialDataLength:finalDataLength])
     
         # ***** Box 3 *****
         if useSVM:
@@ -48,7 +48,7 @@ def start(**kwargs):
         else:
             predicted = classifiers.clusterAndLabel(X, y, Ut, K)
             
-        allInstances = np.vstack([X, Ut])
+        #allInstances = np.vstack([X, Ut])
         #allLabelsInstances = np.hstack([y, predicted])
         
         # ***** Box 4 *****

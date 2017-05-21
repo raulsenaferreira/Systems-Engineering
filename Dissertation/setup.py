@@ -12,12 +12,12 @@ def loadNOAADataset(path):
     point,  sea  level  pressure,  visibility,  average wind speed, maximum  wind  speed)
     are  used  to  determine  whether  each  day  experienced  rain  or no rain.
     '''
-    dataValues = pd.read_csv(path+'noaa_data.csv',sep = ",")
-    dataValues = pd.DataFrame.as_matrix(dataValues)
-    dataLabels = pd.read_csv(path+'noaa_label.csv',sep = ",")
-    dataLabels = pd.DataFrame.as_matrix(dataLabels)
+    #dataValues = pd.read_csv(path+'noaa_data.csv',sep = ",")
+    #dataValues = pd.DataFrame.as_matrix(dataValues)
+    #dataLabels = pd.read_csv(path+'noaa_label.csv',sep = ",")
+    #dataLabels = pd.DataFrame.as_matrix(dataLabels)
     
-    return dataValues, dataLabels
+    return 
 
 
 def loadCheckerBoard(path):
@@ -25,8 +25,8 @@ def loadCheckerBoard(path):
     '''
     Rotated checkerboard dataset. Rotating 2*PI
     '''
-    T = 50 #time steps
-    N = 365 #instances
+    T = 100 #time steps
+    N = 200 #instances
     a = np.linspace(0,2*np.pi,T)
     side = 0.25
     
@@ -102,7 +102,7 @@ def load2CHT(path):
     return dataValues, dataLabels
 
 
-def loadUnimodal_2C_2D(path):
+def loadUG_2C_2D(path):
     #Test set: Two Bidimensional Unimodal Gaussian Classes 
     '''
     Artificial Two Bidimensional Unimodal Gaussian Classes 
@@ -117,7 +117,7 @@ def loadUnimodal_2C_2D(path):
     return dataValues, dataLabels
 
 
-def loadUnimodal_2C_3D(path):
+def loadUG_2C_3D(path):
     #Test set: Artificial Two 3-dimensional Unimodal Gaussian Classes
     '''
     Artificial Two 3-dimensional Unimodal Gaussian Classes
@@ -132,7 +132,7 @@ def loadUnimodal_2C_3D(path):
     return dataValues, dataLabels
 
 
-def loadUnimodal_2C_5D(path):
+def loadUG_2C_5D(path):
     #Test set: Two 5-dimensional Unimodal Gaussian Classes
     '''
     Artificial Two 5-dimensional Unimodal Gaussian Classes
@@ -147,7 +147,7 @@ def loadUnimodal_2C_5D(path):
     return dataValues, dataLabels
 
 
-def loadMultimodal_2C_2D(path):
+def loadMG_2C_2D(path):
     #Test set: Two Bidimensional Mulitimodal Gaussian Classes
     '''
     Artificial Two Bidimensional Mulitimodal Gaussian Classes
@@ -157,6 +157,50 @@ def loadMultimodal_2C_2D(path):
     dataLabels = dataValues[:, 2]
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
+    #print(dataValues)
+    
+    return dataValues, dataLabels
+
+
+def loadFG_2C_2D(path):
+    dataValues = pd.read_csv(path+'FG_2C_2D.txt',sep = ",")
+    dataValues = pd.DataFrame.as_matrix(dataValues)
+    dataLabels = dataValues[:, 2]
+    dataLabels = dataLabels-1
+    dataValues = dataValues[:,0:2]
+    #print(dataValues)
+    
+    return dataValues, dataLabels
+
+
+def loadGEARS_2C_2D(path):
+    dataValues = pd.read_csv(path+'GEARS_2C_2D.txt',sep = ",")
+    dataValues = pd.DataFrame.as_matrix(dataValues)
+    dataLabels = dataValues[:, 2]
+    dataLabels = dataLabels-1
+    dataValues = dataValues[:,0:2]
+    #print(dataValues)
+    
+    return dataValues, dataLabels
+
+
+def loadCSurr(path):
+    dataValues = pd.read_csv(path+'1CSurr.txt',sep = ",")
+    dataValues = pd.DataFrame.as_matrix(dataValues)
+    dataLabels = dataValues[:, 2]
+    dataLabels = dataLabels-1
+    dataValues = dataValues[:,0:2]
+    #print(dataValues)
+    
+    return dataValues, dataLabels
+
+
+def loadKeystroke(path):
+    dataValues = pd.read_csv(path+'keystroke.txt',sep = ",")
+    dataValues = pd.DataFrame.as_matrix(dataValues)
+    dataLabels = dataValues[:, 10]
+    dataLabels = dataLabels-1
+    dataValues = dataValues[:,0:10]
     #print(dataValues)
     
     return dataValues, dataLabels

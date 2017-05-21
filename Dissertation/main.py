@@ -25,7 +25,7 @@ class Experiment():
         self.usePCA=False
         #used only by gmm and cluster-label process
         self.densityFunction='gmm'
-        self.excludingPercentage = 0.95
+        self.excludingPercentage = 0.65
         self.K = 5
         self.classifier='cluster_and_label'
         #used in alpha-shape version only
@@ -83,9 +83,10 @@ def main():
     path = os.getcwd()+sep+'experiments/data'+sep
     
     #loading a dataset
-    #dataValues, dataLabels = setup.loadNOAADataset(path)
-    dataValues, dataLabels = setup.load2CDT(path)
-    
+    dataValues, dataLabels = setup.loadNOAADataset(path)
+    #dataValues, dataLabels = setup.loadCheckerBoard(path)
+    print(dataValues)
+    print(dataLabels)
     
     '''
     Paper: Core  Support  Extraction  for  Learning  from  Initially  Labeled Nonstationary  Environments  using  COMPOSE
@@ -120,7 +121,7 @@ def main():
     #experiments[6] = Experiment(improved_intersection)
                                 
     #params: X, y, method, num of experiment repetitions, num of batches
-    doExperiments(dataValues, dataLabels, experiments, 1, 100)
+    doExperiments(dataValues, dataLabels, experiments, 1, 1)
     
 
     
