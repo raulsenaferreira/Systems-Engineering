@@ -85,12 +85,11 @@ def majorityVote(clusteredData, clusters, y):
     
     for i in range(len(clusteredData)):
         group = clusteredData[i]
-        #print("Grupo: ", group)
-        ind = np.where(clusters==group)
-        #print("Indices: ", ind)
-        label = y[ind]
+        ind = np.where(clusters==group)[0]
+        #label = np.squeeze(np.asarray(y[ind]))
+        #print(ind)
+        label=y[ind]
         voting = Counter(label).most_common(1)[0][0]
-        #print(voting)
         kPredicted.append(voting)
     
     return kPredicted

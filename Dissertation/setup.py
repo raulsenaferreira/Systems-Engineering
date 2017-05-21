@@ -12,12 +12,13 @@ def loadNOAADataset(path):
     point,  sea  level  pressure,  visibility,  average wind speed, maximum  wind  speed)
     are  used  to  determine  whether  each  day  experienced  rain  or no rain.
     '''
-    #dataValues = pd.read_csv(path+'noaa_data.csv',sep = ",")
-    #dataValues = pd.DataFrame.as_matrix(dataValues)
-    #dataLabels = pd.read_csv(path+'noaa_label.csv',sep = ",")
-    #dataLabels = pd.DataFrame.as_matrix(dataLabels)
+    dataValues = pd.read_csv(path+'noaa_data.csv',sep = ",")
+    dataValues = pd.DataFrame.as_matrix(dataValues)
+    dataLabels = pd.read_csv(path+'noaa_label.csv',sep = ",")
+    dataLabels = pd.DataFrame.as_matrix(dataLabels)
+    #dataLabels = np.squeeze(np.asarray(dataLabels))
     
-    return 
+    return dataValues, dataLabels[:,0]
 
 
 def loadCheckerBoard(path):

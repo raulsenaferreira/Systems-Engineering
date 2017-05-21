@@ -12,8 +12,8 @@ def evaluate(y_actual, y_predicted):
     return accuracy_score(y_actual, y_predicted)
     
 
-def finalEvaluation(arrAcc):
+def finalEvaluation(arrAcc, batches):
     print("Average Accuracy: ", np.mean(arrAcc))
     print("Standard Deviation: ", np.std(arrAcc))
     print("Variance: ", np.std(arrAcc)**2)
-    plotAccuracy(arrAcc, 'Accuracy')
+    plotAccuracy(arrAcc, 'Accuracy', batches)

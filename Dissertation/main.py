@@ -26,7 +26,7 @@ class Experiment():
         #used only by gmm and cluster-label process
         self.densityFunction='gmm'
         self.excludingPercentage = 0.65
-        self.K = 5
+        self.K = 7
         self.classifier='cluster_and_label'
         #used in alpha-shape version only
         self.CP=0.65
@@ -64,7 +64,7 @@ def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
         #print("Total of ", numberOfTimes, " experiment iterations with an average accuracy of ", np.mean(accTotal))
         print("{} batches of {} instances".format(e.batches, e.sizeOfBatch))
         print("Average execution time: ", np.mean(elapsedTime))
-        metrics.finalEvaluation(accuracies)
+        metrics.finalEvaluation(accuracies, batches)
         print("\n\n")
         #print data distribution in step t  
         initial = (batches*sizeOfBatch)-sizeOfBatch
@@ -84,9 +84,8 @@ def main():
     
     #loading a dataset
     dataValues, dataLabels = setup.loadNOAADataset(path)
-    #dataValues, dataLabels = setup.loadCheckerBoard(path)
-    print(dataValues)
-    print(dataLabels)
+    #dataValues, dataLabels = setup.loadCDT(path)
+ 
     
     '''
     Paper: Core  Support  Extraction  for  Learning  from  Initially  Labeled Nonstationary  Environments  using  COMPOSE
@@ -121,7 +120,7 @@ def main():
     #experiments[6] = Experiment(improved_intersection)
                                 
     #params: X, y, method, num of experiment repetitions, num of batches
-    doExperiments(dataValues, dataLabels, experiments, 1, 1)
+    doExperiments(dataValues, dataLabels, experiments, 1, 50)
     
 
     

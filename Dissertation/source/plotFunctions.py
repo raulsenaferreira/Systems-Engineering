@@ -45,13 +45,14 @@ def plotDistributionByClass(instances, indexesByClass):
     plt.show()
     
     
-def plotAccuracy(arr, label):
+def plotAccuracy(arr, label, steps):
     c = range(len(arr))
     fig = plt.figure()
     fig.add_subplot(122)
     ax = plt.axes()
     ax.legend(ax.plot(c, arr, 'k'), label)
-    ax.set_ylim([0, 100])
+    plt.yticks(range(0, 101, 10))#[0,10,20,30,40,50,60,70,80,90,100])
+    plt.xticks(range(0, steps+1, 10))
     plt.grid()
     plt.show()
 
@@ -98,8 +99,8 @@ def plot(X, y, coreX, coreY, t):
     plt.show()
     
     
-def finalEvaluation(arrAcc):
+def finalEvaluation(arrAcc, steps):
     print("Average Accuracy: ", np.mean(arrAcc))
     print("Standard Deviation: ", np.std(arrAcc))
     print("Variance: ", np.std(arrAcc)**2)
-    plotAccuracy(arrAcc, 'Accuracy')
+    plotAccuracy(arrAcc, 'Accuracy', steps)
