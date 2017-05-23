@@ -45,7 +45,7 @@ def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
         elapsedTime = []
         accTotal = []
         accuracies=[]
-        e.classes = list(set(dataLabels))#getting all possible classes existent in data
+        classes = list(set(dataLabels))#getting all possible classes existent in data
         e.sizeOfBatch = sizeOfBatch
         e.batches = batches
         e.dataLabels = dataLabels
@@ -54,7 +54,7 @@ def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
         for i in range(numberOfTimes):
             start = timer()
             #accuracy per step
-            accuracies, CoreX, CoreY = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=e.classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledDataPerc=e.initialLabeledDataPerc, excludingPercentage=e.excludingPercentage, K_variation=e.K_variation, CP=e.CP, alpha=e.alpha, useSVM=e.useSVM, isImbalanced=e.isImbalanced)
+            accuracies, CoreX, CoreY = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledDataPerc=e.initialLabeledDataPerc, excludingPercentage=e.excludingPercentage, K_variation=e.K_variation, CP=e.CP, alpha=e.alpha, useSVM=e.useSVM, isImbalanced=e.isImbalanced)
             end = timer()
             averageAccuracy = np.mean(accuracies)
 
