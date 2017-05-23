@@ -294,7 +294,7 @@ def pdfByClass2(instances, labels, classes):
         pdfs = [-1] * len(instances)
         points = instances[indexes]
         #points from a class, all points, number of components
-        pdfsByPoints = classifiers.gmmWithPDF(points, instances, numClasses)
+        pdfsByPoints = classifiers.gmmWithPDF(points, points, numClasses)#(points, instances, numClasses)
         a = 0
         for i in indexes:
             pdfs[i]=pdfsByPoints[a]

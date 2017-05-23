@@ -20,18 +20,19 @@ def kMeans(X, k):
 
 
 def svmClassifier(X, y, isImbalanced):
-    clf=svm.SVC()
+    #clf=svm.SVC()
     
     if isImbalanced:
         clf = svm.SVC(C=1.0, cache_size=200, kernel='linear', class_weight='balanced', coef0=0.0,
             decision_function_shape=None, degree=3, gamma='auto', max_iter=-1, probability=False, random_state=None, shrinking=True, tol=0.001, verbose=False)
+        return clf.fit(X, y)
     else:
         clf = svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
-            decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+            decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
             max_iter=-1, probability=False, random_state=None, shrinking=True,
             tol=0.001, verbose=False)
-    
-    return clf.fit(X, y)
+        #clf = svm.SVC(gamma=2, C=1)
+        return clf.fit(X, y)
     
 
 def gmmWithBIC(X):
@@ -107,9 +108,9 @@ def clusterAndLabel(X, y, Ut, K, classes):
             arrPredicted=np.vstack([arrPredicted, majorityVote(clusteredData, clusters, y)])
     
     labels=[]
-    #print(arrPredicted)
+    print(arrPredicted)
     for j in range(len(Ut)):
-        #print(arrPredicted[:, j])
+        print(arrPredicted[:, j])
         labels.append(Counter(arrPredicted[:, j]).most_common(1)[0][0])
     
     return labels

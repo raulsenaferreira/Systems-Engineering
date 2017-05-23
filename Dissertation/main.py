@@ -85,7 +85,7 @@ def main():
 
     #loading a dataset
     #dataValues, dataLabels = setup.loadNOAADataset(path)
-    dataValues, dataLabels = setup.loadCDT(path, sep)
+    dataValues, dataLabels = setup.loadKeystroke(path, sep)
 
 
     '''
@@ -105,7 +105,7 @@ def main():
     #experiments[2] = Experiment(kmeans_svm)
 
     ''' Proposed Method 1 (GMM core extraction) '''
-    #experiments[3] = Experiment(proposed_gmm_core_extraction)
+    experiments[3] = Experiment(proposed_gmm_core_extraction)
 
     ''' Proposed Method 2 (Alvim) '''
     ##experiments[4] = Experiment(compose3, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
@@ -118,7 +118,7 @@ def main():
     '''
     Proposed method 4 (Intersection between two distributions + GMM)
     '''
-    experiments[6] = Experiment(improved_intersection)
+    #experiments[6] = Experiment(improved_intersection)
 
     #params: X, y, method, num of experiment repetitions, num of batches
     doExperiments(dataValues, dataLabels, experiments, 1, 100)
