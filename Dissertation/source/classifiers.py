@@ -20,7 +20,7 @@ def kMeans(X, k):
 
 
 def svmClassifier(X, y, isImbalanced):
-    cfl=svm.SVC()
+    clf=svm.SVC()
     
     if isImbalanced:
         clf = svm.SVC(C=1.0, cache_size=200, kernel='linear', class_weight='balanced', coef0=0.0,
@@ -55,7 +55,7 @@ def gmmWithBIC(X):
                 numComponentsChosen = numComponents
     #return pdfs of best GMM model
     if best_gmm != False:
-        #print("Best number of components: ",numComponentsChosen)
+        print("Best number of components: ",numComponentsChosen)
         return best_gmm
     else:
         print("gmmWithBIC: Error to choose the best GMM model")
@@ -87,7 +87,6 @@ def majorityVote(clusteredData, clusters, y):
         group = clusteredData[i]
         ind = np.where(clusters==group)[0]
         #label = np.squeeze(np.asarray(y[ind]))
-        #print(ind)
         label=y[ind]
         voting = Counter(label).most_common(1)[0][0]
         kPredicted.append(voting)
@@ -95,8 +94,8 @@ def majorityVote(clusteredData, clusters, y):
     return kPredicted
 
 
-def clusterAndLabel(X, y, Ut, K):
-    initK = 2
+def clusterAndLabel(X, y, Ut, K, classes):
+    initK = len(classes)
     arrPredicted=[-1]*len(Ut)
     lenPoints = len(X)
     
@@ -108,7 +107,17 @@ def clusterAndLabel(X, y, Ut, K):
             arrPredicted=np.vstack([arrPredicted, majorityVote(clusteredData, clusters, y)])
     
     labels=[]
+    #print(arrPredicted)
     for j in range(len(Ut)):
+        #print(arrPredicted[:, j])
         labels.append(Counter(arrPredicted[:, j]).most_common(1)[0][0])
     
     return labels
+
+
+def classify(X, y, Ut, K, classifier, useSVM, isImbalanced):
+        if useSVM:
+            clf = svmClassifier(X, y, isImbalanced)
+            return util.baseClassifier(Ut, clf)
+        else:
+            return clusterAndLabel(X, y, Ut, K)

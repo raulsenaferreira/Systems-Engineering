@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
+import matplotlib.cm as cm
 import numpy as np
+from source import classifiers
 
 
 def plotDistributions(distributions):
@@ -13,7 +15,7 @@ def plotDistributions(distributions):
     
     for X in distributions:
         #reducing to 2-dimensional data
-        x=pca(X, 2)
+        x=classifiers.pca(X, 2)
         
         handles.append(ax.scatter(x[:, 0], x[:, 1], color=colors[i], s=5, edgecolor='none'))
         i+=1
@@ -35,7 +37,7 @@ def plotDistributionByClass(instances, indexesByClass):
     for c, indexes in indexesByClass.items():
         X = instances[indexes]
         #reducing to 2-dimensional data
-        x=pca(X, 2)
+        x=classifiers.pca(X, 2)
         
         handles.append(ax.scatter(x[:, 0], x[:, 1], color=colors[i], s=5, edgecolor='none'))
         i+=1
@@ -77,23 +79,33 @@ def plotDistributionss(distributions):
     plt.show()
     
     
-def plot(X, y, coreX, coreY, t):
+def plot(X, y, coreX, coreY, t, classes):
     fig = plt.figure()
     handles = []
-    classes = ['Class 1', 'Core 1', 'Class 2', 'Core 2']
+    classLabels = []
+    cmx = plt.get_cmap('Paired')
+    colors = cmx(np.linspace(0, 1, (len(classes)*2)+1))
+    #classLabels = ['Class 1', 'Core 1', 'Class 2', 'Core 2']
     ax = fig.add_subplot(111)
+    color=0
+    for cl in classes:
+        #points
+        points = X[np.where(y==cl)[0]]
+        x1 = points[:,0]
+        x2 = points[:,1]
+        handles.append(ax.scatter(x1, x2, c = colors[color]))
+        #core support points
+        color+=1
+        corePoints = coreX[np.where(coreY==cl)[0]]
+        coreX1 = corePoints[:,0]
+        coreX2 = corePoints[:,1]
+        handles.append(ax.scatter(coreX1, coreX2, c = colors[color]))
+        #labels
+        classLabels.append('Class {}'.format(cl))
+        classLabels.append('Core {}'.format(cl))
+        color+=1
     
-    class0 = X[np.where(y==0)[0]]
-    class1 = X[np.where(y==1)[0]]
-    coreClass0 = coreX[np.where(coreY==0)[0]]
-    coreClass1 = coreX[np.where(coreY==1)[0]]
-    
-    handles.append(ax.scatter(class0[:, 0], class0[:, 1], c = 'r'))
-    handles.append(ax.scatter(coreClass0[:, 0], coreClass0[:, 1], c = 'g'))
-    handles.append(ax.scatter(class1[:, 0], class1[:, 1], c = 'b'))
-    handles.append(ax.scatter(coreClass1[:, 0], coreClass1[:, 1], c = 'y'))
-    
-    ax.legend(handles, classes)
+    ax.legend(handles, classLabels)
     title = "Data distribution. Step {}".format(t)
     plt.title(title)
     plt.show()

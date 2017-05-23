@@ -1,11 +1,11 @@
-import numpy as np
-from source import metrics
 from source import classifiers
+from source import metrics
 from source import util
+import numpy as np
+
 
 
 def start(**kwargs):
-    print("Intersection between two distributions + GMM")
     '''Algorithm flow: X% data are labeled at beginning
     1)Verifies if labeled data is above the minimum (labeldData >= X%). 
         If yes, does the steps 2 up to 4. If not, does step 5 or 6; 
@@ -21,91 +21,54 @@ def start(**kwargs):
     sizeOfBatch = kwargs["sizeOfBatch"]
     usePCA = kwargs["usePCA"]
     classes = kwargs["classes"]
+    K = kwargs["K_variation"]
     batches = kwargs["batches"]
     sizeOfBatch = kwargs["sizeOfBatch"]
     excludingPercentage = kwargs["excludingPercentage"]
-    classifier = kwargs["classifier"]
-    K = kwargs["K"]
-    densityFunction=kwargs["densityFunction"]
-    useSVM = kwargs["useSVM"]
-    isImbalanced=kwargs["isImbalanced"]
+    #densityFunction = kwargs["densityFunction"]
     
-    def classify(X, y, Ut, K, classifier, isImbalanced):
-        if useSVM:
-            clf = classifiers.svmClassifier(X, y, isImbalanced)
-            return util.baseClassifier(Ut, clf)
-        else:
-            return classifiers.clusterAndLabel(X, y, Ut, K)
+    print("STARTING TEST with cluster and label as classifier and GMM + intersection as cutting data")
     
-    
-    sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
-    initialDataLength = 0
-    finalDataLength = sizeOfLabeledData
     arrAcc = []
-    
+    initialDataLength = 0
+    sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
+    finalDataLength = sizeOfLabeledData
     # ***** Box 1 *****
     #Initial labeled data
-    X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
-    isStep0=True
+    XIntersec, yIntersec = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+    initialDataLength=finalDataLength
+    finalDataLength=sizeOfBatch
     
-    predicted=[]
-    
-    #Starting the process
     for t in range(batches):
-        
-        #print("Step: ", t)
         # ***** Box 2 *****
-        initialDataLength=finalDataLength
-        if isStep0:
-            finalDataLength=sizeOfBatch
-        else:
-            finalDataLength+=sizeOfBatch
         Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
 
         # ***** Box 3 *****
-        if isStep0:
-            isStep0=False
-            XIntersec = X.copy()
-            yIntersec = y.copy()
-            predicted = classify(XIntersec, yIntersec, Ut, K, classifier, isImbalanced)
-            
-            X = np.vstack([X, Ut])
-            y = np.hstack([y, predicted])
-        else:
-            XIntersec, yIntersec = util.cuttingDataByIntersection3(X, Ut, y)
+        predicted = classifiers.clusterAndLabel(XIntersec, yIntersec, Ut, K, classes)
+        X = np.vstack([XIntersec, Ut])
+        y = np.hstack([yIntersec, predicted])
+    
+        XIntersec, yIntersec = util.cuttingDataByIntersection3(X, Ut, y)
 
-            if len(yIntersec[yIntersec==0]) <= sizeOfLabeledData or len(yIntersec[yIntersec==1]) <= sizeOfLabeledData:
-                allInstances = np.vstack([X, Ut])
-
-                if len(yIntersec) < 1:
-                    y=np.array(y)
-                    predicted = classify(X, y, Ut, K, classifier, isImbalanced)
-                else:
-                    predicted = classify(XIntersec, yIntersec, Ut, K, classifier, isImbalanced)
-
-                previousPdfByClass, currentPdfByClass = util.pdfByClass(X, y, Ut, predicted, allInstances, classes, densityFunction)
-                #excludingPercentage = 1 - initialLabeledDataPerc
-
-                selectedIndexesOld = util.compactingDataDensityBased(X, previousPdfByClass, excludingPercentage)
-                selectedIndexesNew = util.compactingDataDensityBased(Ut, currentPdfByClass, excludingPercentage)
-                selectedIndexes = np.hstack([selectedIndexesOld, selectedIndexesNew])
-                
-                instances = np.vstack([X, Ut])
-                labelsInstances = np.hstack([y, predicted])
-                newXIntersec, newyIntersec = util.selectedSlicedData(instances, labelsInstances, selectedIndexes)
-                #Discard previous intersection
-                #XIntersec, yIntersec = newXIntersec, newyIntersec
-
-                #preserve previous intersection
-                XIntersec, yIntersec = np.vstack([newXIntersec, XIntersec]), np.hstack([newyIntersec, yIntersec])
-
-                X, y = Ut, predicted
+        if len(yIntersec[yIntersec==0]) <= sizeOfLabeledData or len(yIntersec[yIntersec==1]) <= sizeOfLabeledData:
+            if len(yIntersec) < 1:
+                y=np.array(y)
+                predicted = classifiers.clusterAndLabel(X, y, Ut, K, classes)
             else:
-                predicted = classify(XIntersec, yIntersec, Ut, K, classifier, isImbalanced)
-                X, y = Ut, predicted
+                predicted = classifiers.clusterAndLabel(XIntersec, yIntersec, Ut, K, classes)
 
+            pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
+            selectedIndexes = util.compactingDataDensityBased(Ut, pdfsByClass, excludingPercentage)
+            newXIntersec, newyIntersec = util.selectedSlicedData(Ut, predicted, selectedIndexes)
+            #preserve previous intersection
+            XIntersec, yIntersec = np.vstack([newXIntersec, XIntersec]), np.hstack([newyIntersec, yIntersec])
+        else:
+            predicted = classifiers.clusterAndLabel(XIntersec, yIntersec, Ut, K, classes)
+        
+        X, y = Ut, predicted
+        initialDataLength=finalDataLength
+        finalDataLength+=sizeOfBatch
         # Evaluating classification
-        #print("Acc: ", metrics.evaluate(yt, predicted))
-        arrAcc.append(metrics.evaluate(yt, predicted))
+        arrAcc.append(metrics.evaluate(yt, predicted)*100)
                 
     return arrAcc, XIntersec, yIntersec
