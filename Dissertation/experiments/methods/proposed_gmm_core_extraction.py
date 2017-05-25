@@ -1,3 +1,4 @@
+import numpy as np
 from source import classifiers
 from source import metrics
 from source import util
@@ -32,6 +33,11 @@ def start(**kwargs):
         Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
 
         # ***** Box 3 *****
+        #Adding intersection points, if exists, to train set
+        XIntersec, yIntersec = util.cuttingDataByIntersection3(X, Ut, y)
+        if len(XIntersec)>0:
+            X, y = np.vstack([X, XIntersec]), np.hstack([y, yIntersec])
+            
         predicted = classifiers.clusterAndLabel(X, y, Ut, K, classes)
 
         # ***** Box 4 *****
@@ -39,7 +45,7 @@ def start(**kwargs):
         pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
 
         # ***** Box 5 *****
-        selectedIndexes = util.compactingDataDensityBased(Ut, pdfsByClass, excludingPercentage)
+        selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
 
         # ***** Box 6 *****
         X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
@@ -47,7 +53,7 @@ def start(**kwargs):
         initialDataLength=finalDataLength
         finalDataLength+=sizeOfBatch
         # Evaluating classification
-        arrAcc.append(metrics.evaluate(yt, predicted)*100)
+        arrAcc.append(metrics.evaluate(yt, predicted))
 
     # returns accuracy array and last selected points
     return arrAcc, X, y

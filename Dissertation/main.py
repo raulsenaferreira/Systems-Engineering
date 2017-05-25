@@ -20,7 +20,7 @@ class Experiment():
     def __init__(self, method):
         #commom for all experiments
         self.method = method
-        self.initialLabeledDataPerc=0.05
+        self.initialLabeledDataPerc=0.95
         #self.classes=[0, 1]
         self.usePCA=False
         #used only by gmm and cluster-label process
@@ -70,7 +70,7 @@ def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
         #print data distribution in step t
         initial = (batches*sizeOfBatch)-sizeOfBatch
         final = initial + sizeOfBatch
-        plotFunctions.plot(dataValues[initial:final], dataLabels[initial:final], CoreX, CoreY, batches, e.classes)
+        plotFunctions.plot(dataValues[initial:final], dataLabels[initial:final], CoreX, CoreY, batches, classes)
 
 
 def main():
@@ -86,7 +86,7 @@ def main():
     #loading a dataset
     #dataValues, dataLabels = setup.loadNOAADataset(path)
     dataValues, dataLabels = setup.loadKeystroke(path, sep)
-
+    #dataValues, dataLabels = setup.loadCDT(path, sep)
 
     '''
     Paper: Core  Support  Extraction  for  Learning  from  Initially  Labeled Nonstationary  Environments  using  COMPOSE
@@ -102,10 +102,10 @@ def main():
     '''
     K-Means / SVM
     '''
-    #experiments[2] = Experiment(kmeans_svm)
+    experiments[2] = Experiment(kmeans_svm)
 
     ''' Proposed Method 1 (GMM core extraction) '''
-    experiments[3] = Experiment(proposed_gmm_core_extraction)
+    #experiments[3] = Experiment(proposed_gmm_core_extraction)
 
     ''' Proposed Method 2 (Alvim) '''
     ##experiments[4] = Experiment(compose3, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
@@ -121,7 +121,7 @@ def main():
     #experiments[6] = Experiment(improved_intersection)
 
     #params: X, y, method, num of experiment repetitions, num of batches
-    doExperiments(dataValues, dataLabels, experiments, 1, 100)
+    doExperiments(dataValues, dataLabels, experiments, 1, 8)
 
 
 

@@ -265,6 +265,6 @@ def loadElecData(path, sep):
     dataValues = pd.DataFrame.as_matrix(dataValues)
     dataLabels = pd.read_csv(path+'elecdata'+sep+'elec2_label.dat',sep = ",")
     dataLabels = pd.DataFrame.as_matrix(dataLabels)
-    dataLabels = dataLabels-1
-    
+    #dataLabels = dataLabels-1
+    print(dataLabels)
     return dataValues, dataLabels[:,0]
