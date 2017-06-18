@@ -25,15 +25,16 @@ class raulClassifier(BaseEstimator, ClassifierMixin):
     def set_params(self, **parameters):
         for parameter, value in parameters.items():
             setattr(self, parameter, value)
-        return self
-            
+        return self 
+
     def fit(self, dataValues, dataLabels=None):
         text = 'Using {} as classifier and excluding percentage = {}'.format(self.clfName, self.excludingPercentage)
-        print(text)
+        #print(text)
         classes = list(set(dataLabels))
         arrAcc = []
         initialDataLength = 0
         finalDataLength = round((self.initialLabeledDataPerc)*self.sizeOfBatch)
+        print('>>> ',self.batches)
         # ***** Box 1 *****
         #Initial labeled data
         X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
