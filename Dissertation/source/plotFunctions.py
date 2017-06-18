@@ -48,13 +48,14 @@ def plotDistributionByClass(instances, indexesByClass):
     
     
 def plotAccuracy(arr, label, steps):
+    arr = np.array(arr)*100
     c = range(len(arr))
     fig = plt.figure()
     fig.add_subplot(122)
     ax = plt.axes()
     ax.legend(ax.plot(c, arr, 'k'), label)
     plt.yticks(range(0, 101, 10))#[0,10,20,30,40,50,60,70,80,90,100])
-    plt.xticks(range(0, steps+1, 10))
+    plt.xticks(range(1, steps+1, 10))
     plt.grid()
     plt.show()
 
@@ -104,6 +105,37 @@ def plot(X, y, coreX, coreY, t, classes):
         classLabels.append('Class {}'.format(cl))
         classLabels.append('Core {}'.format(cl))
         color+=1
+    
+    ax.legend(handles, classLabels)
+    title = "Data distribution. Step {}".format(t)
+    plt.title(title)
+    plt.show()
+    
+    
+def plot2(X, y, t, classes):
+    X = classifiers.pca(X, 2)
+    fig = plt.figure()
+    handles = []
+    classLabels = []
+    cmx = plt.get_cmap('Paired')
+    colors = cmx(np.linspace(0, 1, (len(classes)*2)+1))
+    #classLabels = ['Class 1', 'Core 1', 'Class 2', 'Core 2']
+    ax = fig.add_subplot(111)
+    color=0
+    for cl in classes:
+        #points
+        points = X[np.where(y==cl)[0]]
+        x1 = points[:,0]
+        x2 = points[:,1]
+        handles.append(ax.scatter(x1, x2, c = colors[color]))
+        #core support points
+        color+=1
+        
+        
+        #labels
+        classLabels.append('Class {}'.format(cl))
+        
+       
     
     ax.legend(handles, classLabels)
     title = "Data distribution. Step {}".format(t)

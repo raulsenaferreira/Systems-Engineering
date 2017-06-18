@@ -54,21 +54,21 @@ def start(**kwargs):
             if len(yIntersec) < 1:
                 y=np.array(y)
                 predicted = classifiers.clusterAndLabel(X, y, Ut, K, classes)
-            else:
-                predicted = classifiers.clusterAndLabel(XIntersec, yIntersec, Ut, K, classes)
+            #else:
+                #predicted = classifiers.clusterAndLabel(XIntersec, yIntersec, Ut, K, classes)
 
             pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
-            selectedIndexes = util.compactingDataDensityBased(Ut, pdfsByClass, excludingPercentage)
+            selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
             newXIntersec, newyIntersec = util.selectedSlicedData(Ut, predicted, selectedIndexes)
             #preserve previous intersection
             XIntersec, yIntersec = np.vstack([newXIntersec, XIntersec]), np.hstack([newyIntersec, yIntersec])
-        else:
-            predicted = classifiers.clusterAndLabel(XIntersec, yIntersec, Ut, K, classes)
+        #else:
+            #predicted = classifiers.clusterAndLabel(XIntersec, yIntersec, Ut, K, classes)
         
         X, y = Ut, predicted
         initialDataLength=finalDataLength
         finalDataLength+=sizeOfBatch
         # Evaluating classification
-        arrAcc.append(metrics.evaluate(yt, predicted)*100)
+        arrAcc.append(metrics.evaluate(yt, predicted))
                 
     return arrAcc, XIntersec, yIntersec

@@ -141,7 +141,7 @@ def slicingClusteredData(clusters, classes):
     indexes = {}
     for c in range(len(classes)):
         indexes[classes[c]]=[i for i in range(len(clusters)) if clusters[i] == c]
-        if len(indexes[classes[c]]) == 0:
+        if len(indexes[classes[c]]) < 1:
             #choose one index randomly if the array is empty
             indexes[classes[c]] = [random.randint(0,len(clusters))]
     
@@ -149,15 +149,17 @@ def slicingClusteredData(clusters, classes):
 
 
 #Cutting data for next iteration
-def compactingDataDensityBased(instances, densities, criteria):
+def compactingDataDensityBased(densities, criteria):
     selectedIndexes=[]
     
     for k in densities:
         arrPdf = densities[k]
         cutLine = max(arrPdf)*criteria
-        a = [i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine ]
+        #a = [i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine ]
+        a = [i for i in range(len(arrPdf)) if arrPdf[i] >= cutLine ]
         if len(a) < criteria*len(arrPdf):
-            a=[i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine*criteria]
+            #a=[i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine*criteria]
+            a=[i for i in range(len(arrPdf)) if arrPdf[i] >= cutLine*criteria]
         selectedIndexes.append(a)
    
     stackedIndexes=selectedIndexes[0]
@@ -289,16 +291,38 @@ def pdfByClass2(instances, labels, classes):
     
     pdfsByClass = {}
     numClasses = len(indexesByClass)
-   
+    #print("{} instances".format(len(instances)))
     for c, indexes in indexesByClass.items():
-        pdfs = [-1] * len(instances)
-        points = instances[indexes]
-        #points from a class, all points, number of components
-        pdfsByPoints = classifiers.gmmWithPDF(points, instances, numClasses)
-        a = 0
-        for i in indexes:
-            pdfs[i]=pdfsByPoints[a]
-            a+=1
-        pdfsByClass[c] = pdfs
+        if len(indexes) > 0:
+            pdfs = [-1] * len(instances)
+            #print("class {} = {} points".format(c, len(indexes)))
+            #print(indexes)
+            points = instances[indexes]
+            #points from a class, all points, number of components
+            pdfsByPoints = classifiers.gmmWithPDF(points, points, numClasses)#(points, instances, numClasses)
+            a = 0
+            for i in indexes:
+                pdfs[i]=pdfsByPoints[a]
+                a+=1
+            pdfsByClass[c] = pdfs
         
     return pdfsByClass
+
+
+#Cutting data for next iteration
+def compactingDataDensityBased2(densities, criteria):
+    cut = 1-criteria
+    selectedIndexes=[]
+    
+    for k in densities:
+        arrPdf = np.array(densities[k])
+        numSelected = int(np.ceil(cut*len(arrPdf)))
+        ind = (-arrPdf).argsort()[:numSelected]
+        selectedIndexes.append(ind)
+   
+    stackedIndexes=selectedIndexes[0]
+    
+    for i in range(1, len(selectedIndexes)):
+        stackedIndexes = np.hstack([stackedIndexes,selectedIndexes[i]])
+    
+    return stackedIndexes

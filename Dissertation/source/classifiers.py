@@ -6,6 +6,8 @@ from sklearn import svm
 from sklearn.decomposition import PCA
 from collections import Counter
 from source import util
+#import xgboost as xgb
+from sklearn.ensemble import RandomForestClassifier
 
 def pca(X, numComponents):
     pca = PCA(n_components=numComponents)
@@ -20,19 +22,32 @@ def kMeans(X, k):
 
 
 def svmClassifier(X, y, isImbalanced):
-    clf=svm.SVC()
+    #clf=svm.SVC()
     
     if isImbalanced:
         clf = svm.SVC(C=1.0, cache_size=200, kernel='linear', class_weight='balanced', coef0=0.0,
             decision_function_shape=None, degree=3, gamma='auto', max_iter=-1, probability=False, random_state=None, shrinking=True, tol=0.001, verbose=False)
+        return clf.fit(X, y)
     else:
         clf = svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
-            decision_function_shape=None, degree=3, gamma='auto', kernel='linear',
+            decision_function_shape=None, degree=4, gamma='auto', kernel='linear',
             max_iter=-1, probability=False, random_state=None, shrinking=True,
             tol=0.001, verbose=False)
+        #clf = svm.SVC(gamma=2, C=1)
+        return clf.fit(X, y)
     
-    return clf.fit(X, y)
+
+def xgboost(train_X, train_y, test_X):
+    gbm = xgb.XGBClassifier(max_depth=3, n_estimators=300, learning_rate=0.05).fit(train_X, train_y)    
+    return gbm.predict(test_X)
     
+
+def randomForest(X, y, Ut):
+    num_trees = 100
+    max_features = np.ndim(X)
+    model = RandomForestClassifier(n_estimators=num_trees, max_features=max_features).fit(X, y)
+    return model.predict(Ut)
+
 
 def gmmWithBIC(X):
     ctype = 'full' #'spherical', 'tied', 'diag', 'full'
@@ -68,6 +83,8 @@ def gmm(points, numComponents):
 
 
 def gmmWithPDF(points, allPoints, numComponents):
+    if len(allPoints) < numComponents:
+        numComponents=len(allPoints)
     clf = mixture.GaussianMixture(n_components=numComponents, covariance_type='full')
     clf.fit(allPoints)
     return np.exp(clf.score_samples(points))   
@@ -95,23 +112,29 @@ def majorityVote(clusteredData, clusters, y):
 
 
 def clusterAndLabel(X, y, Ut, K, classes):
+    labels=[]
     initK = len(classes)
-    arrPredicted=[-1]*len(Ut)
+    #arrPredicted=np.array([-1]*len(Ut))
+    arrPredicted = []
     lenPoints = len(X)
-    
+    #print(X)
     for k in range(initK, K+initK):
+        #print(lenPoints)
         if lenPoints >= k:
+            #print("lllll")
             kmeans = kMeans(X, k)
             clusters = kmeans.labels_
             clusteredData = util.baseClassifier(Ut, kmeans)
-            arrPredicted=np.vstack([arrPredicted, majorityVote(clusteredData, clusters, y)])
+            #arrPredicted=np.vstack([arrPredicted, majorityVote(clusteredData, clusters, y)])
+            arrPredicted.append(majorityVote(clusteredData, clusters, y))
     
-    labels=[]
-    #print(arrPredicted)
+    arrPredicted = np.array(arrPredicted)
+    print(arrPredicted)
+    #print(len(Ut))
     for j in range(len(Ut)):
         #print(arrPredicted[:, j])
         labels.append(Counter(arrPredicted[:, j]).most_common(1)[0][0])
-    
+    #print(labels)
     return labels
 
 
