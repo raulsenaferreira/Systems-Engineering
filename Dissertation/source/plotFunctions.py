@@ -80,7 +80,8 @@ def plotDistributionss(distributions):
     plt.show()
     
     
-def plot(X, y, coreX, coreY, t, classes):
+def plot(X, y, coreX, coreY, t):
+    classes = list(set(y))
     fig = plt.figure()
     handles = []
     classLabels = []
@@ -130,12 +131,8 @@ def plot2(X, y, t, classes):
         handles.append(ax.scatter(x1, x2, c = colors[color]))
         #core support points
         color+=1
-        
-        
         #labels
         classLabels.append('Class {}'.format(cl))
-        
-       
     
     ax.legend(handles, classLabels)
     title = "Data distribution. Step {}".format(t)
@@ -144,7 +141,7 @@ def plot2(X, y, t, classes):
     
     
 def finalEvaluation(arrAcc, steps):
-    print("Average Accuracy: ", np.mean(arrAcc))
+    print("Average Accuracy: ", np.mean(arrAcc)*100)
     print("Standard Deviation: ", np.std(arrAcc))
     print("Variance: ", np.std(arrAcc)**2)
     plotAccuracy(arrAcc, 'Accuracy', steps)

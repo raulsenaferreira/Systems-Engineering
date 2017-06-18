@@ -42,7 +42,7 @@ class raulClassifier(BaseEstimator, ClassifierMixin):
         finalDataLength=self.sizeOfBatch
         
         for t in range(self.batches):
-            #print(t)
+            print(t)
             # ***** Box 2 *****            
             Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
             
