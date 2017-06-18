@@ -15,6 +15,7 @@ def start(**kwargs):
     batches = kwargs["batches"]
     sizeOfBatch = kwargs["sizeOfBatch"]
     excludingPercentage = kwargs["excludingPercentage"]
+    clfName = kwargs["clfName"]
     
     print("STARTING TEST with Cluster and label as classifier and GMM as cutting data")
 
@@ -36,15 +37,15 @@ def start(**kwargs):
         #XIntersec, yIntersec = util.cuttingDataByIntersection3(X, Ut, y)
         #if len(XIntersec)>0:
         #    X, y = np.vstack([X, XIntersec]), np.hstack([y, yIntersec])
-            
-        predicted = classifiers.clusterAndLabel(X, y, Ut, K, classes)
+        predicted = classifiers.classify(X, y, Ut, K, classes, clfName)   
+        #predicted = classifiers.clusterAndLabel(X, y, Ut, K, classes)
 
         # ***** Box 4 *****
         #pdfs from each new points from each class applied on new arrived points
         pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
 
         # ***** Box 5 *****
-        selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
+        selectedIndexes = util.compactingDataDensityBased(pdfsByClass, excludingPercentage)
 
         # ***** Box 6 *****
         X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)

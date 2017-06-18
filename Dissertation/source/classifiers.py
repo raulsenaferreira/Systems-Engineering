@@ -37,12 +37,11 @@ def svmClassifier(X, y):
     return clf.fit(X, y)
     
 
-def randomForest(X, y, Ut):
+def randomForest(X, y):
     num_trees = 100
     max_features = np.ndim(X)
-    model = RandomForestClassifier(n_estimators=num_trees, max_features=max_features).fit(X, y)
-    return model.predict(Ut)
-
+    return RandomForestClassifier(n_estimators=num_trees, max_features=max_features).fit(X, y)
+    
 
 def gmmWithBIC(X):
     ctype = 'full' #'spherical', 'tied', 'diag', 'full'
@@ -137,10 +136,11 @@ def classify(X, y, Ut, K, classes, clf='rf'):
         if clf=='svm':
             #print("Using SVM")
             clf = svmClassifier(X, y)
-            return util.baseClassifier(Ut, clf)
+            return clf.predict(Ut)
         elif clf=='cl':
             #print("Using cluster and label")
             return clusterAndLabel(X, y, Ut, K, classes)
         elif clf=='rf':
             #print("Using Random Forest")
-            return randomForest(X, y, Ut)
+            clf = randomForest(X, y)
+            return clf.predict(Ut)
