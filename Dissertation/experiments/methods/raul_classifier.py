@@ -34,7 +34,7 @@ class raulClassifier(BaseEstimator, ClassifierMixin):
         arrAcc = []
         initialDataLength = 0
         finalDataLength = round((self.initialLabeledDataPerc)*self.sizeOfBatch)
-        print('>>> ',self.batches)
+        #print('>>> ',self.batches)
         # ***** Box 1 *****
         #Initial labeled data
         X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
