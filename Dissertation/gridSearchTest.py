@@ -54,7 +54,7 @@ def main():
     print( estim.best_model() )
     '''
     #testing grid search
-    tuned_params = {"excludingPercentage" : [0.9, 0.75, 0.70]}
+    tuned_params = {"excludingPercentage" : [0.9, 0.75, 0.70], "clfName":['cl']}
     gs = GridSearchCV(raul_classifier.raulClassifier(tuned_params), tuned_params)
     gs.fit(dataValues, dataLabels)
     print(gs.best_score_)

@@ -21,25 +21,20 @@ def kMeans(X, k):
     return KMeans(n_clusters=k).fit(X)
 
 
-def svmClassifier(X, y, isImbalanced):
+def svmClassifier(X, y):
     #clf=svm.SVC()
-    
+    '''
     if isImbalanced:
         clf = svm.SVC(C=1.0, cache_size=200, kernel='linear', class_weight='balanced', coef0=0.0,
             decision_function_shape=None, degree=3, gamma='auto', max_iter=-1, probability=False, random_state=None, shrinking=True, tol=0.001, verbose=False)
         return clf.fit(X, y)
-    else:
-        clf = svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
-            decision_function_shape=None, degree=4, gamma='auto', kernel='linear',
-            max_iter=-1, probability=False, random_state=None, shrinking=True,
-            tol=0.001, verbose=False)
-        #clf = svm.SVC(gamma=2, C=1)
-        return clf.fit(X, y)
-    
-
-def xgboost(train_X, train_y, test_X):
-    gbm = xgb.XGBClassifier(max_depth=3, n_estimators=300, learning_rate=0.05).fit(train_X, train_y)    
-    return gbm.predict(test_X)
+    else:'''
+    clf = svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+        decision_function_shape=None, degree=4, gamma='auto', kernel='linear',
+        max_iter=-1, probability=False, random_state=None, shrinking=True,
+        tol=0.001, verbose=False)
+    #clf = svm.SVC(gamma=2, C=1)
+    return clf.fit(X, y)
     
 
 def randomForest(X, y, Ut):
@@ -129,7 +124,7 @@ def clusterAndLabel(X, y, Ut, K, classes):
             arrPredicted.append(majorityVote(clusteredData, clusters, y))
     
     arrPredicted = np.array(arrPredicted)
-    print(arrPredicted)
+    #print(arrPredicted)
     #print(len(Ut))
     for j in range(len(Ut)):
         #print(arrPredicted[:, j])
@@ -138,9 +133,14 @@ def clusterAndLabel(X, y, Ut, K, classes):
     return labels
 
 
-def classify(X, y, Ut, K, classifier, useSVM, isImbalanced):
-        if useSVM:
-            clf = svmClassifier(X, y, isImbalanced)
+def classify(X, y, Ut, K, classes, clf='rf'):
+        if clf=='svm':
+            #print("Using SVM")
+            clf = svmClassifier(X, y)
             return util.baseClassifier(Ut, clf)
-        else:
-            return clusterAndLabel(X, y, Ut, K)
+        elif clf=='cl':
+            #print("Using cluster and label")
+            return clusterAndLabel(X, y, Ut, K, classes)
+        elif clf=='rf':
+            #print("Using Random Forest")
+            return randomForest(X, y, Ut)

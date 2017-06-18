@@ -1,10 +1,11 @@
 from source import metrics
 from source import util
+from source import classifiers
 from sklearn.base import BaseEstimator, ClassifierMixin
 
 class raulClassifier(BaseEstimator, ClassifierMixin):
 
-    def __init__(self, classifier, excludingPercentage=0.05, sizeOfBatch=200, batches=50):
+    def __init__(self, clfName='rf', excludingPercentage=0.5, sizeOfBatch=200, batches=50):
         
         self.sizeOfBatch = sizeOfBatch
         self.batches = batches
@@ -15,18 +16,20 @@ class raulClassifier(BaseEstimator, ClassifierMixin):
         self.densityFunction='gmm'
         self.excludingPercentage = excludingPercentage
         self.K_variation = 5
-        self.classifier=classifier
+        self.clfName=clfName
         #print("{} excluding percecntage".format(excludingPercentage))    
-    '''
+    
     def get_params(self, deep=True):
-        return {"excludingPercentage" : self.excludingPercentage}
+        return {"excludingPercentage" : self.excludingPercentage, "clfName": self.clfName}
 
     def set_params(self, **parameters):
         for parameter, value in parameters.items():
             setattr(self, parameter, value)
         return self
-    '''        
+            
     def fit(self, dataValues, dataLabels=None):
+        text = 'Using {} as classifier and excluding percentage = {}'.format(self.clfName, self.excludingPercentage)
+        print(text)
         classes = list(set(dataLabels))
         arrAcc = []
         initialDataLength = 0
@@ -43,14 +46,14 @@ class raulClassifier(BaseEstimator, ClassifierMixin):
             Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
             
             # ***** Box 3 *****
-            predicted = self.classifier(X, y, Ut, self.K_variation, classes)
+            predicted = classifiers.classify(X, y, Ut, self.K_variation, classes, self.clfName)
             
             # ***** Box 4 *****
             #pdfs from each new points from each class applied on new arrived points
             pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
             
             # ***** Box 5 *****
-            selectedIndexes = util.compactingDataDensityBased(Ut, pdfsByClass, self.excludingPercentage)
+            selectedIndexes = util.compactingDataDensityBased(pdfsByClass, self.excludingPercentage)
             
             # ***** Box 6 *****
             X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
