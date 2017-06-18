@@ -20,7 +20,7 @@ def start(dataValues, dataLabels, **kwargs):
     
     for t in range(batches):
         Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
-        predicted = clf.predict(Ut)#util.baseClassifier(Ut, clf)
+        predicted = clf.predict(Ut)
         arrAcc.append(metrics.evaluate(yt, predicted))
         
         initialDataLength=finalDataLength

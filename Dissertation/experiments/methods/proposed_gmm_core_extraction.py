@@ -4,7 +4,6 @@ from source import metrics
 from source import util
 
 
-
 def start(**kwargs):
     dataValues = kwargs["dataValues"]
     dataLabels = kwargs["dataLabels"]
@@ -12,7 +11,7 @@ def start(**kwargs):
     sizeOfBatch = kwargs["sizeOfBatch"]
     usePCA = kwargs["usePCA"]
     classes = kwargs["classes"]
-    K = kwargs["K_variation"]
+    K = kwargs["K"]
     batches = kwargs["batches"]
     sizeOfBatch = kwargs["sizeOfBatch"]
     excludingPercentage = kwargs["excludingPercentage"]
@@ -34,9 +33,9 @@ def start(**kwargs):
 
         # ***** Box 3 *****
         #Adding intersection points, if exists, to train set
-        XIntersec, yIntersec = util.cuttingDataByIntersection3(X, Ut, y)
-        if len(XIntersec)>0:
-            X, y = np.vstack([X, XIntersec]), np.hstack([y, yIntersec])
+        #XIntersec, yIntersec = util.cuttingDataByIntersection3(X, Ut, y)
+        #if len(XIntersec)>0:
+        #    X, y = np.vstack([X, XIntersec]), np.hstack([y, yIntersec])
             
         predicted = classifiers.clusterAndLabel(X, y, Ut, K, classes)
 
