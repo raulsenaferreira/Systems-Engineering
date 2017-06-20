@@ -8,7 +8,7 @@ from experiments import setup
 from source import classifiers
 from source import metrics
 from source import util
-from experiments.methods import kmeans_svm
+from experiments.methods import svm
 from experiments.methods import proposed_gmm_core_extraction
 from experiments.methods import improved_intersection
 from experiments.methods import compose
@@ -34,7 +34,7 @@ def main():
     #loading a dataset
     #dataValues, dataLabels = setup.loadNOAADataset(path)
     #dataValues = pd.read_csv(path+'keystroke'+sep+'keystroke.txt',sep = ",")
-    dataValues = pd.read_csv(path+'sinthetic'+sep+'1CDT.txt',sep = ",")
+    dataValues = pd.read_csv(path+'sinthetic'+sep+'2CDT.txt',sep = ",")
     dataValues = pd.DataFrame.as_matrix(dataValues)
     dataLabels = dataValues[:, 2]
     dataLabels = dataLabels-1
@@ -54,7 +54,9 @@ def main():
     print( estim.best_model() )
     '''
     #testing grid search
-    tuned_params = {"excludingPercentage" : [0.9, 0.75, 0.70], "clfName":['cl']}
+    sizes=[200]
+    batches=[80]
+    tuned_params = {"excludingPercentage" : [0.95], "clfName":['cl'], "sizeOfBatch":[sizes[0]], "batches":[batches[0]]}
     gs = GridSearchCV(raul_classifier.raulClassifier(tuned_params), tuned_params)
     gs.fit(dataValues, dataLabels)
     print(gs.best_score_)

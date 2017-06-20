@@ -1,29 +1,9 @@
 import numpy as np
 import pandas as pd
-from experiments import checkerboard
+#from experiments import checkerboard
  
 
 #artificial datasets                
-def loadCheckerBoard(path, sep, T=300, N=2000):
-    #Test sets: Predicting N instances by step. T steps. Two classes.
-    '''
-    Same parameters from original work
-    '''
-    a = np.linspace(0,2*np.pi,T)
-    side = 0.25
-    
-    auxV, auxL = checkerboard.generateData(side, a, N, T)
-    #print(dV[2][0])#tempo 2 da classe 0
-    dataLabels = auxL[0]
-    dataValues = auxV[0]
-    
-    for i in range(1, T):
-        dataLabels = np.hstack([dataLabels, auxL[i]])
-        dataValues = np.vstack([dataValues, auxV[i]])
-    
-    return dataValues, dataLabels, 'Rotated checkerboard dataset. Rotating 2*PI.'
-
-
 def loadCDT(path, sep):
     #Test set: One Class Diagonal Translation. 2 Dimensional data
     
@@ -213,6 +193,25 @@ def load4CE1CF(path, sep):
     #print(dataValues)
     
     return dataValues, dataLabels.astype(int), 'Four Classes Expanding and One Class Fixed. Bidimensional.'
+
+def loadCheckerBoard(path, sep, T=300, N=2000):
+    #Test sets: Predicting N instances by step. T steps. Two classes.
+    '''
+    Same parameters from original work
+    '''
+    a = np.linspace(0,2*np.pi,T)
+    side = 0.25
+    
+    auxV, auxL = checkerboard.generateData(side, a, N, T)
+    #print(dV[2][0])#tempo 2 da classe 0
+    dataLabels = auxL[0]
+    dataValues = auxV[0]
+    
+    for i in range(1, T):
+        dataLabels = np.hstack([dataLabels, auxL[i]])
+        dataValues = np.vstack([dataValues, auxV[i]])
+    
+    return dataValues, dataLabels, 'Rotated checkerboard dataset. Rotating 2*PI.'
 
 #real datasets
 def loadKeystroke(path, sep):

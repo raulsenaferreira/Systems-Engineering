@@ -111,14 +111,14 @@ def clusterAndLabel(X, y, Ut, K, classes):
     #arrPredicted=np.array([-1]*len(Ut))
     arrPredicted = []
     lenPoints = len(X)
-    #print(X)
+    #print(len(Ut))
+    #print(lenPoints)
     for k in range(initK, K+initK):
-        #print(lenPoints)
         if lenPoints >= k:
             #print("lllll")
             kmeans = kMeans(X, k)
             clusters = kmeans.labels_
-            clusteredData = util.baseClassifier(Ut, kmeans)
+            clusteredData = kmeans.predict(Ut)
             #arrPredicted=np.vstack([arrPredicted, majorityVote(clusteredData, clusters, y)])
             arrPredicted.append(majorityVote(clusteredData, clusters, y))
     

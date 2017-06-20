@@ -5,7 +5,7 @@ from sklearn.base import BaseEstimator, ClassifierMixin
 
 class raulClassifier(BaseEstimator, ClassifierMixin):
 
-    def __init__(self, clfName='rf', excludingPercentage=0.5, sizeOfBatch=200, batches=50):
+    def __init__(self, clfName='rf', excludingPercentage=0, sizeOfBatch=1, batches=1):
         
         self.sizeOfBatch = sizeOfBatch
         self.batches = batches
@@ -15,7 +15,7 @@ class raulClassifier(BaseEstimator, ClassifierMixin):
         #used only by gmm and cluster-label process
         self.densityFunction='gmm'
         self.excludingPercentage = excludingPercentage
-        self.K_variation = 5
+        self.K_variation = 2
         self.clfName=clfName
         #print("{} excluding percecntage".format(excludingPercentage))    
     
@@ -42,27 +42,30 @@ class raulClassifier(BaseEstimator, ClassifierMixin):
         finalDataLength=self.sizeOfBatch
         
         for t in range(self.batches):
-            #print(t)
+            print(t)
+
             # ***** Box 2 *****            
             Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
-            
-            # ***** Box 3 *****
-            predicted = classifiers.classify(X, y, Ut, self.K_variation, classes, self.clfName)
-            
-            # ***** Box 4 *****
-            #pdfs from each new points from each class applied on new arrived points
-            pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
-            
-            # ***** Box 5 *****
-            selectedIndexes = util.compactingDataDensityBased(pdfsByClass, self.excludingPercentage)
-            
-            # ***** Box 6 *****
-            X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
-            
-            initialDataLength=finalDataLength
-            finalDataLength+=self.sizeOfBatch
-            # Evaluating classification
-            arrAcc.append(metrics.evaluate(yt, predicted))
+            if len(Ut) > self.sizeOfBatch:
+                #print('inicio=',initialDataLength,' fim=',finalDataLength)
+                print(Ut)
+                # ***** Box 3 *****
+                predicted = classifiers.classify(X, y, Ut, self.K_variation, classes, self.clfName)
+                
+                # ***** Box 4 *****
+                #pdfs from each new points from each class applied on new arrived points
+                pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
+                
+                # ***** Box 5 *****
+                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
+                
+                # ***** Box 6 *****
+                X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
+                
+                initialDataLength=finalDataLength
+                finalDataLength+=self.sizeOfBatch
+                # Evaluating classification
+                arrAcc.append(metrics.evaluate(yt, predicted))
      
         # returns accuracy array and last selected points
         self.threshold_ = arrAcc
