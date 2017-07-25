@@ -7,6 +7,7 @@ import setup
 from source import metrics
 from methods import sliding_svm
 from methods import static_svm
+from methods import static_rf
 from methods import proposed_gmm_core_extraction
 from methods import improved_intersection
 from methods import compose
@@ -105,6 +106,7 @@ def main():
     dataValues, dataLabels, description = setup.loadCheckerBoard(path, sep)
     dataValues, dataLabels, description = setup.loadNOAADataset(path, sep)
     dataValues, dataLabels, description = setup.loadKeystroke(path, sep)
+    '''dataValues, dataLabels, description = setup.loadElecData(path, sep)'''
     
 
     '''
@@ -119,9 +121,10 @@ def main():
     #experiments[1] = Experiment(compose)
 
     '''
-    SVM
+    SVM / Random Forest
     '''
-    #experiments[2] = Experiment(sliding_svm)
+    #experiments[2] = Experiment(static_svm)
+    experiments[2] = Experiment(static_rf)
 
     ''' Proposed Method 1 (GMM core extraction) '''
     experiments[3] = Experiment(proposed_gmm_core_extraction)

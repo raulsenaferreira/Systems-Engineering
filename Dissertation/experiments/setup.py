@@ -232,7 +232,7 @@ def loadElecData(path, sep):
     dataLabels = pd.read_csv(path+'real'+sep+'elecdata'+sep+'elec2_label.dat',sep = ",")
     dataLabels = pd.DataFrame.as_matrix(dataLabels)
     #dataLabels = dataLabels-1
-    print(dataLabels)
+    #print(dataLabels)
     return dataValues, dataLabels[:,0], 'Electricity data. 10 features. 2 classes.'
 
 
