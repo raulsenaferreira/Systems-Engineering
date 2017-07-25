@@ -1,6 +1,6 @@
 import numpy as np
 from source import util
-from experiments.methods import box4, box6
+from methods import box4, box6
 from source import metrics
 from source import classifiers
 

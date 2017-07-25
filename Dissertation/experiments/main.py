@@ -3,12 +3,12 @@ import os
 from source import plotFunctions
 from timeit import default_timer as timer
 import numpy as np
-from experiments import setup
+import setup
 from source import metrics
-from experiments.methods import kmeans_svm
-from experiments.methods import proposed_gmm_core_extraction
-from experiments.methods import improved_intersection
-from experiments.methods import compose
+from methods import svm
+from methods import proposed_gmm_core_extraction
+from methods import improved_intersection
+from methods import compose
 '''
 from experiments.methods import compose2
 from experiments.methods import compose3
@@ -70,7 +70,7 @@ def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
         #print data distribution in step t
         initial = (batches*sizeOfBatch)-sizeOfBatch
         final = initial + sizeOfBatch
-        plotFunctions.plot(dataValues[initial:final], dataLabels[initial:final], CoreX, CoreY, batches, classes)
+        plotFunctions.plot(dataValues[initial:final], dataLabels[initial:final], CoreX, CoreY, batches)
 
 
 def main():
@@ -81,12 +81,29 @@ def main():
     if is_windows == False:
         sep = '/'
 
-    path = os.getcwd()+sep+'experiments'+sep+'data'+sep
-
-    #loading a dataset
-    #dataValues, dataLabels = setup.loadNOAADataset(path)
-    dataValues, dataLabels = setup.loadKeystroke(path, sep)
-    #dataValues, dataLabels = setup.loadCDT(path, sep)
+    path = os.getcwd()+sep+'data'+sep
+    #sinthetic
+    dataValues, dataLabels, description = setup.loadCDT(path, sep)
+    dataValues, dataLabels, description = setup.loadCHT(path, sep)
+    dataValues, dataLabels, description = setup.load2CDT(path, sep)
+    dataValues, dataLabels, description = setup.load2CHT(path, sep)
+    dataValues, dataLabels, description = setup.loadUG_2C_2D(path, sep)
+    dataValues, dataLabels, description = setup.loadUG_2C_3D(path, sep)
+    dataValues, dataLabels, description = setup.loadUG_2C_5D(path, sep)
+    dataValues, dataLabels, description = setup.loadMG_2C_2D(path, sep)
+    dataValues, dataLabels, description = setup.loadFG_2C_2D(path, sep)
+    dataValues, dataLabels, description = setup.loadGEARS_2C_2D(path, sep)
+    dataValues, dataLabels, description = setup.loadCSurr(path, sep)
+    dataValues, dataLabels, description = setup.load5CVT(path, sep)
+    dataValues, dataLabels, description = setup.load4CR(path, sep)
+    dataValues, dataLabels, description = setup.load4CRE_V1(path, sep)
+    dataValues, dataLabels, description = setup.load4CRE_V2(path, sep)
+    dataValues, dataLabels, description = setup.load4CE1CF(path, sep)
+    #real
+    dataValues, dataLabels, description = setup.loadCheckerBoard(path, sep)
+    dataValues, dataLabels, description = setup.loadNOAADataset(path, sep)
+    dataValues, dataLabels, description = setup.loadKeystroke(path, sep)
+    
 
     '''
     Paper: Core  Support  Extraction  for  Learning  from  Initially  Labeled Nonstationary  Environments  using  COMPOSE
@@ -100,9 +117,9 @@ def main():
     #experiments[1] = Experiment(compose)
 
     '''
-    K-Means / SVM
+    SVM
     '''
-    experiments[2] = Experiment(kmeans_svm)
+    experiments[2] = Experiment(svm)
 
     ''' Proposed Method 1 (GMM core extraction) '''
     #experiments[3] = Experiment(proposed_gmm_core_extraction)

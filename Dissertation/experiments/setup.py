@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-#from experiments import checkerboard
+import checkerboard
  
 
 #artificial datasets                
@@ -215,7 +215,7 @@ def loadCheckerBoard(path, sep, T=300, N=2000):
 
 #real datasets
 def loadKeystroke(path, sep):
-    dataValues = pd.read_csv(path+'keystroke'+sep+'keystroke.txt',sep = ",")
+    dataValues = pd.read_csv(path+'real'+sep+'keystroke'+sep+'keystroke.txt',sep = ",")
     dataValues = pd.DataFrame.as_matrix(dataValues)
     dataLabels = dataValues[:, 10]
     dataLabels = dataLabels-1
@@ -227,9 +227,9 @@ def loadKeystroke(path, sep):
 
 def loadElecData(path, sep):
     #dataValues = pd.read_csv(path+'elecdata/elec2.data',sep = ",")
-    dataValues = pd.read_csv(path+'elecdata'+sep+'elec2_data.dat',sep = ",")
+    dataValues = pd.read_csv(path+'real'+sep+'elecdata'+sep+'elec2_data.dat',sep = ",")
     dataValues = pd.DataFrame.as_matrix(dataValues)
-    dataLabels = pd.read_csv(path+'elecdata'+sep+'elec2_label.dat',sep = ",")
+    dataLabels = pd.read_csv(path+'real'+sep+'elecdata'+sep+'elec2_label.dat',sep = ",")
     dataLabels = pd.DataFrame.as_matrix(dataLabels)
     #dataLabels = dataLabels-1
     print(dataLabels)
@@ -244,9 +244,9 @@ def loadNOAADataset(path, sep):
     point,  sea  level  pressure,  visibility,  average wind speed, maximum  wind  speed)
     are  used  to  determine  whether  each  day  experienced  rain  or no rain.
     '''
-    dataValues = pd.read_csv(path+'noaa'+sep+'noaa_data.csv',sep = ",")
+    dataValues = pd.read_csv(path+'real'+sep+'noaa'+sep+'noaa_data.csv',sep = ",")
     dataValues = pd.DataFrame.as_matrix(dataValues)
-    dataLabels = pd.read_csv(path+'noaa'+sep+'noaa_label.csv',sep = ",")
+    dataLabels = pd.read_csv(path+'real'+sep+'noaa'+sep+'noaa_label.csv',sep = ",")
     dataLabels = pd.DataFrame.as_matrix(dataLabels)
     #dataLabels = np.squeeze(np.asarray(dataLabels))
     
