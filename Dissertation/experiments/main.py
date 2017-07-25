@@ -5,7 +5,8 @@ from timeit import default_timer as timer
 import numpy as np
 import setup
 from source import metrics
-from methods import svm
+from methods import sliding_svm
+from methods import static_svm
 from methods import proposed_gmm_core_extraction
 from methods import improved_intersection
 from methods import compose
@@ -50,11 +51,12 @@ def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
         e.batches = batches
         e.dataLabels = dataLabels
         e.dataValues = dataValues
+        e.clfName = 'rf'
 
         for i in range(numberOfTimes):
             start = timer()
             #accuracy per step
-            accuracies, CoreX, CoreY = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledDataPerc=e.initialLabeledDataPerc, excludingPercentage=e.excludingPercentage, K_variation=e.K_variation, CP=e.CP, alpha=e.alpha, useSVM=e.useSVM, isImbalanced=e.isImbalanced)
+            accuracies, CoreX, CoreY = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledDataPerc=e.initialLabeledDataPerc, excludingPercentage=e.excludingPercentage, K_variation=e.K_variation, CP=e.CP, alpha=e.alpha, clfName=e.clfName , useSVM=e.useSVM, isImbalanced=e.isImbalanced)
             end = timer()
             averageAccuracy = np.mean(accuracies)
 
@@ -119,10 +121,10 @@ def main():
     '''
     SVM
     '''
-    experiments[2] = Experiment(svm)
+    #experiments[2] = Experiment(sliding_svm)
 
     ''' Proposed Method 1 (GMM core extraction) '''
-    #experiments[3] = Experiment(proposed_gmm_core_extraction)
+    experiments[3] = Experiment(proposed_gmm_core_extraction)
 
     ''' Proposed Method 2 (Alvim) '''
     ##experiments[4] = Experiment(compose3, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
