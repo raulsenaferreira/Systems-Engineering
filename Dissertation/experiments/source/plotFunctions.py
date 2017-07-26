@@ -12,19 +12,19 @@ def plotDistributions(distributions):
     colors = ['magenta', 'cyan']
     classes = ['cluster 1', 'cluster 2']
     ax = fig.add_subplot(121)
-    
+
     for X in distributions:
         #reducing to 2-dimensional data
         x=classifiers.pca(X, 2)
-        
+
         handles.append(ax.scatter(x[:, 0], x[:, 1], color=colors[i], s=5, edgecolor='none'))
         i+=1
-    
+
     ax.legend(handles, classes)
-    
+
     plt.show()
-    
-    
+
+
 def plotDistributionByClass(instances, indexesByClass):
     i=0
     #ploting
@@ -33,20 +33,20 @@ def plotDistributionByClass(instances, indexesByClass):
     colors = ['magenta', 'cyan']
     classes = ['cluster 1', 'cluster 2']
     ax = fig.add_subplot(121)
-    
+
     for c, indexes in indexesByClass.items():
         X = instances[indexes]
         #reducing to 2-dimensional data
         x=classifiers.pca(X, 2)
-        
+
         handles.append(ax.scatter(x[:, 0], x[:, 1], color=colors[i], s=5, edgecolor='none'))
         i+=1
-    
+
     ax.legend(handles, classes)
-    
+
     plt.show()
-    
-    
+
+
 def plotAccuracy(arr, label, steps):
     arr = np.array(arr)*100
     c = range(len(arr))
@@ -68,18 +68,18 @@ def plotDistributionss(distributions):
     colors = ['magenta', 'cyan']
     classes = ['Class 1', 'Class 2']
     ax = fig.add_subplot(121)
-    
+
     for k, v in distributions.items():
         points = distributions[k]
-        
+
         handles.append(ax.scatter(points[:, 0], points[:, 1], color=colors[i], s=5, edgecolor='none'))
         i+=1
-    
+
     ax.legend(handles, classes)
-    
+
     plt.show()
-    
-    
+
+
 def plot(X, y, coreX, coreY, t):
     classes = list(set(y))
     fig = plt.figure()
@@ -106,13 +106,13 @@ def plot(X, y, coreX, coreY, t):
         classLabels.append('Class {}'.format(cl))
         classLabels.append('Core {}'.format(cl))
         color+=1
-    
+
     ax.legend(handles, classLabels)
     title = "Data distribution. Step {}".format(t)
     plt.title(title)
     plt.show()
-    
-    
+
+
 def plot2(X, y, t, classes):
     X = classifiers.pca(X, 2)
     fig = plt.figure()
@@ -133,15 +133,19 @@ def plot2(X, y, t, classes):
         color+=1
         #labels
         classLabels.append('Class {}'.format(cl))
-    
+
     ax.legend(handles, classLabels)
     title = "Data distribution. Step {}".format(t)
     plt.title(title)
     plt.show()
-    
-    
+
+
 def finalEvaluation(arrAcc, steps):
     print("Average Accuracy: ", np.mean(arrAcc)*100)
     print("Standard Deviation: ", np.std(arrAcc))
     print("Variance: ", np.std(arrAcc)**2)
     plotAccuracy(arrAcc, 'Accuracy', steps)
+
+
+def plotBoxplot(arrAcc):
+    plt.boxplot(arrAcc)
