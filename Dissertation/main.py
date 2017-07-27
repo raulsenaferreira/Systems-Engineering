@@ -47,6 +47,7 @@ class Experiment():
 def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
     sizeOfBatch = int(len(dataLabels)/batches)
     listOfAccuracies = []
+
     for name, e in experiments.items():
         CoreX = []
         CoreY = []
@@ -84,6 +85,7 @@ def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
     plotBoxplot(listOfAccuracies)
 
 
+
 def main():
     experiments = {}
     is_windows = sys.platform.startswith('win')
@@ -96,7 +98,7 @@ def main():
     #sinthetic
     dataValues, dataLabels, description = setup.loadCDT(path, sep)
     dataValues, dataLabels, description = setup.loadCHT(path, sep)
-    dataValues, dataLabels, description = setup.load2CDT(path, sep)
+    '''dataValues, dataLabels, description = setup.load2CDT(path, sep)
     dataValues, dataLabels, description = setup.load2CHT(path, sep)
     dataValues, dataLabels, description = setup.loadUG_2C_2D(path, sep)
     dataValues, dataLabels, description = setup.loadUG_2C_3D(path, sep)
@@ -114,7 +116,7 @@ def main():
     dataValues, dataLabels, description = setup.loadCheckerBoard(path, sep)
     dataValues, dataLabels, description = setup.loadNOAADataset(path, sep)
     dataValues, dataLabels, description = setup.loadKeystroke(path, sep)
-    '''dataValues, dataLabels, description = setup.loadElecData(path, sep)'''
+    dataValues, dataLabels, description = setup.loadElecData(path, sep)'''
     
 
     '''
@@ -132,6 +134,7 @@ def main():
     SVM / Random Forest
     '''
     #experiments[2] = Experiment(static_svm)
+
     #experiments[2] = Experiment(static_rf)
 
     ''' Proposed Method 1 (GMM core extraction) '''

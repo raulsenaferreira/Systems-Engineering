@@ -19,23 +19,23 @@ def loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, 
     y = np.copy(dataLabels[initialDataLength:finalDataLength])
     if usePCA:
         X = classifiers.pca(X, 2)
-    
+
     return X, y
 
 
 def selectedSlicedData(instances, labelsInstances, selectedIndexes):
     instances = np.array(instances)
-    labelsInstances = np.array(labelsInstances)            
+    labelsInstances = np.array(labelsInstances)
     X = instances[selectedIndexes]
     y = labelsInstances[selectedIndexes]
-    
+
     return X, y
 
 
 def loadGeometricCoreExtractionByClass(instances, indexesByClass, alpha, threshold):
     selectedPointsByClass = {}
     selectedIndexesByClass = {}
-    
+
     for c in indexesByClass:
         points = instances[indexesByClass[c]]
         inst, indexes, edge_points = alpha_shape.alpha_compaction(points, alpha, threshold)
@@ -59,16 +59,16 @@ def plotDistributionss(distributions):
     colors = ['magenta', 'cyan']
     classes = ['Class 1', 'Class 2']
     ax = fig.add_subplot(121)
-    
+
     for k, v in distributions.items():
         points = distributions[k]
         points = np.array(points)
         print(points)
         handles.append(ax.scatter(points[:, 0], points[:, 1], color=colors[i], s=5, edgecolor='none'))
         i+=1
-    
+
     ax.legend(handles, classes)
-    
+
     plt.show()
 
 
@@ -84,45 +84,45 @@ def initializingData(X, y):
             c1.append(X[i])
         else:
             c2.append(X[i])
-    
+
     return c1, c2
-    
-    
+
+
 def loadDensitiesByClass(oldInstances, newInstances, allInstances, oldIndexesByClass, newIndexesByClass, densityFunction):
     previousPdfByClass = {}
     currentPdfByClass = {}
     numClasses = len(newIndexesByClass)
-   
+
     for c in newIndexesByClass:
         oldPdfs = [-1] * len(oldInstances)
         newPdfs = [-1] * len(newInstances)
-        
+
         oldPoints = oldInstances[oldIndexesByClass[c]]
         newPoints = newInstances[newIndexesByClass[c]]
-        
+
         clf = densityFunction(allInstances, numClasses)
         oldPdfsByPoints = np.exp(clf.score_samples(oldPoints))
         newPdfsByPoints = np.exp(clf.score_samples(newPoints))
-        
+
         a = 0
         for i in oldIndexesByClass[c]:
             oldPdfs[i]=oldPdfsByPoints[a]
             a+=1
         previousPdfByClass[c] = oldPdfs
-        
+
         a = 0
         for i in newIndexesByClass[c]:
             newPdfs[i]=newPdfsByPoints[a]
             a+=1
         currentPdfByClass[c] = newPdfs
-        
+
     return previousPdfByClass, currentPdfByClass
 
 
 def loadDensitiesByClass2(instances, allInstances, indexesByClass, densityFunction):
     pdfsByClass = {}
     numClasses = len(indexesByClass)
-   
+
     for c, indexes in indexesByClass.items():
         pdfs = [-1] * len(instances)
         points = instances[indexes]
@@ -132,7 +132,7 @@ def loadDensitiesByClass2(instances, allInstances, indexesByClass, densityFuncti
             pdfs[i]=pdfsByPoints[a]
             a+=1
         pdfsByClass[c] = pdfs
-        
+
     return pdfsByClass
 
 
@@ -144,14 +144,14 @@ def slicingClusteredData(clusters, classes):
         if len(indexes[classes[c]]) < 1:
             #choose one index randomly if the array is empty
             indexes[classes[c]] = [random.randint(0,len(clusters))]
-    
+
     return indexes
 
 
 #Cutting data for next iteration
 def compactingDataDensityBased(densities, criteria):
     selectedIndexes=[]
-    
+
     for k in densities:
         arrPdf = densities[k]
         cutLine = max(arrPdf)*criteria
@@ -161,17 +161,17 @@ def compactingDataDensityBased(densities, criteria):
             #a=[i for i in range(len(arrPdf)) if arrPdf[i] != -1 and arrPdf[i] >= cutLine*criteria]
             a=[i for i in range(len(arrPdf)) if arrPdf[i] >= cutLine*criteria]
         selectedIndexes.append(a)
-   
+
     stackedIndexes=selectedIndexes[0]
-    
+
     for i in range(1, len(selectedIndexes)):
         stackedIndexes = np.hstack([stackedIndexes,selectedIndexes[i]])
-    
+
     return stackedIndexes
 
 
 def cuttingDataByIntersection3(x, x2, y):
-    
+
     #getting intersection
     m1 = np.mean(x)
     std1 = np.std(x)
@@ -179,7 +179,7 @@ def cuttingDataByIntersection3(x, x2, y):
     std2 = np.std(x2)
 
     r = solve(m1,m2,std1,std2)[0]
-    
+
     if np.min(x) < np.min(x2):
         #print("D1 < D2")
         indX = x[:,0]>r
@@ -188,8 +188,8 @@ def cuttingDataByIntersection3(x, x2, y):
         #print("D2 < D1")
         indX = x[:,0]<r
         indX2 = x2[:,0]>r
-        
-    y=np.array(y) 
+
+    y=np.array(y)
     return x[indX], y[indX]
 
 
@@ -216,7 +216,7 @@ def getDistributionIntersection(X, Ut, indexesByClass, predictedByClass, density
             u = np.array(u)
             u = u.reshape(1, -1)
             arrX.append(u)
-        
+
         pdfUt[c] = arrU
         pdfX[c] = arrX
 
@@ -243,7 +243,7 @@ def mahalanobisCoreSupportExtraction(Ut, indexesPredictedByClass, bestModelSelec
         precisions = bestModelSelectedByClass[c].precisions_ #inverse of covariance matrix
         means = bestModelSelectedByClass[c].means_
         pointIndexes = indexesPredictedByClass[c]
-        
+
         for i in range(len(means)):
             dists = []
             v = means[i]
@@ -265,8 +265,8 @@ def mahalanobisCoreSupportExtraction(Ut, indexesPredictedByClass, bestModelSelec
             selectedMinIndexesByClass[c][pointIndexes[j]] = distsByComponent[i][j]
 
         #20% smallest distances per class, based on paper
-        p = floor(excludingPercentage*len(selectedMinIndexesByClass[c])) 
-        #p = 70 
+        p = floor(excludingPercentage*len(selectedMinIndexesByClass[c]))
+        #p = 70
         selectedMinIndexesByClass[c] = np.array(selectedMinIndexesByClass[c])
         selectedMinIndexesByClass[c] = selectedMinIndexesByClass[c].argsort()[:p]
     #print(selectedMinIndexesByClass)
@@ -276,7 +276,7 @@ def mahalanobisCoreSupportExtraction(Ut, indexesPredictedByClass, bestModelSelec
 def pdfByClass(oldInstances, oldLabels, newInstances, newLabels, allInstances, classes, densityFunction):
     oldIndexesByClass = slicingClusteredData(oldLabels, classes)
     newIndexesByClass = slicingClusteredData(newLabels, classes)
-    
+
     if densityFunction == 'gmm':
         return loadDensitiesByClass(oldInstances, newInstances, allInstances, oldIndexesByClass, newIndexesByClass, classifiers.gmm)
     elif densityFunction == 'kde':
@@ -284,11 +284,11 @@ def pdfByClass(oldInstances, oldLabels, newInstances, newLabels, allInstances, c
     else:
         print ("Choose between 'gmm' or 'kde' function. Wrong name given: ", densityFunction)
         return
-    
-    
+
+
 def pdfByClass2(instances, labels, classes):
     indexesByClass = slicingClusteredData(labels, classes)
-    
+
     pdfsByClass = {}
     numClasses = len(indexesByClass)
     #print("{} instances".format(len(instances)))
@@ -305,7 +305,7 @@ def pdfByClass2(instances, labels, classes):
                 pdfs[i]=pdfsByPoints[a]
                 a+=1
             pdfsByClass[c] = pdfs
-        
+
     return pdfsByClass
 
 
@@ -313,16 +313,16 @@ def pdfByClass2(instances, labels, classes):
 def compactingDataDensityBased2(densities, criteria):
     cut = 1-criteria
     selectedIndexes=[]
-    
+
     for k in densities:
         arrPdf = np.array(densities[k])
         numSelected = int(np.ceil(cut*len(arrPdf)))
         ind = (-arrPdf).argsort()[:numSelected]
         selectedIndexes.append(ind)
-   
+
     stackedIndexes=selectedIndexes[0]
-    
+
     for i in range(1, len(selectedIndexes)):
         stackedIndexes = np.hstack([stackedIndexes,selectedIndexes[i]])
-    
+
     return stackedIndexes
