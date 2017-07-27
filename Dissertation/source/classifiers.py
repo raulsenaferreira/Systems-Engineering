@@ -64,7 +64,7 @@ def gmmWithBIC(X):
                 numComponentsChosen = numComponents
     #return pdfs of best GMM model
     if best_gmm != False:
-        print("Best number of components: ",numComponentsChosen)
+        #print("Best number of components: ",numComponentsChosen)
         return best_gmm
     else:
         print("gmmWithBIC: Error to choose the best GMM model")

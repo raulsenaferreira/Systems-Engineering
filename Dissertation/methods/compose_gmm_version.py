@@ -1,6 +1,7 @@
 import numpy as np
-from experiments.composeGMM import box1, box2, box3, box4, box5, box6
+from source import classifiers
 from source import metrics
+from source import util
 
 
 def start(**kwargs):
@@ -13,49 +14,50 @@ def start(**kwargs):
     batches = kwargs["batches"]
     sizeOfBatch = kwargs["sizeOfBatch"]
     excludingPercentage = kwargs["excludingPercentage"]
-    K = kwargs["K"]
+    K = kwargs["K_variation"]
+    clfName = kwargs["clfName"]
     classifier = kwargs["classifier"]
     densityFunction='gmmBIC'
     distanceMetric = 'mahalanobis'
 
     print("METHOD: Cluster and label as classifier and GMM with BIC and Mahalanobis as core support extraction")
     
-    sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
-    initialDataLength = 0
-    finalDataLength = sizeOfLabeledData
     arrAcc = []
-    isStep1=True
-    
+    initialDataLength = 0
+    finalDataLength = round((initialLabeledDataPerc)*sizeOfBatch)
     # ***** Box 1 *****
-    X, y = box1.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+    #Initial labeled data
+    X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+    initialDataLength=finalDataLength
+    finalDataLength=sizeOfBatch
     
     #Starting the process
     for t in range(batches):
         #print("Step: ", t)
         # ***** Box 2 *****
-        initialDataLength=finalDataLength
-        if isStep1:
-            finalDataLength=sizeOfBatch
-            isStep1 = False
-        else:
-            finalDataLength+=sizeOfBatch
-        Ut, yt = box2.process(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+        Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
 
         # ***** Box 3 *****
-        predicted = box3.classify(X, y, Ut, K, classifier)
-        instances, labelsInstances = box3.stack(X, Ut, y, predicted)
-        # Evaluating classification
-        arrAcc.append(metrics.evaluate(yt, predicted))
+        predicted = classifiers.classify(X, y, Ut, K, classes, clfName) 
+        instances = np.vstack([X, Ut])
+        labelsInstances = np.hstack([y, predicted])
         
         # ***** Box 4 *****
-        bestModelSelectedByClass = box4.bestModelSelectedByClass(X, y, classes, densityFunction)
+        indexesByClass = util.slicingClusteredData(y, classes)
+        bestModelSelectedByClass = util.loadBestModelByClass(X, indexesByClass, classifiers.gmmWithBIC)
         
         # ***** Box 5 *****
-        selectedIndexes = box5.cuttingDataByDistance(instances, labelsInstances, bestModelSelectedByClass, excludingPercentage)
+        predictedByClass = util.slicingClusteredData(predicted, [0,1])
+        selectedIndexes = util.mahalanobisCoreSupportExtraction(Ut, predictedByClass, bestModelSelectedByClass, excludingPercentage)
+        selectedIndexes = np.hstack([selectedIndexes[0],selectedIndexes[1]])
         
         # ***** Box 6 *****
-        X, y = box6.selectedSlicedData(instances, labelsInstances, selectedIndexes)
-           
+        X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
+
+        initialDataLength=finalDataLength
+        finalDataLength+=sizeOfBatch
+        # Evaluating classification
+        arrAcc.append(metrics.evaluate(yt, predicted))   
     #metrics.finalEvaluation(arrAcc)
     
-    return arrAcc
+    return arrAcc, X, y
