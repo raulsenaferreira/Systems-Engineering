@@ -145,3 +145,9 @@ def finalEvaluation(arrAcc, steps):
     print("Standard Deviation: ", np.std(arrAcc))
     print("Variance: ", np.std(arrAcc)**2)
     plotAccuracy(arrAcc, 'Accuracy', steps)
+
+
+def plotBoxplot(data):
+    fig = plt.figure()
+    fig.add_subplot(122)
+    plt.boxplot(data)

@@ -8,6 +8,9 @@ def start(dataValues, dataLabels, **kwargs):
     usePCA = kwargs["usePCA"]
     batches = kwargs["batches"]
     sizeOfBatch = kwargs["sizeOfBatch"]
+
+    print("METHOD: SVM as classifier (STATIC)")
+
     arrAcc = []
     initialDataLength = 0
     finalDataLength = round((initialLabeledDataPerc)*sizeOfBatch)

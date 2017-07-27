@@ -8,29 +8,25 @@ def start(dataValues, dataLabels, **kwargs):
     usePCA = kwargs["usePCA"]
     batches = kwargs["batches"]
     sizeOfBatch = kwargs["sizeOfBatch"]
-    K = kwargs["K_variation"]
-    clfName = kwargs["clfName"]
-    classes = kwargs["classes"]
+
+    print("METHOD: Random Forest as classifier (STATIC)")
+    
     arrAcc = []
     initialDataLength = 0
     finalDataLength = round((initialLabeledDataPerc)*sizeOfBatch)
     
     #Initial labeled data
     X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+    clf = classifiers.randomForest(X, y)
     initialDataLength=finalDataLength
     finalDataLength=sizeOfBatch
     
     for t in range(batches):
-        #print(t)
-        #clf = classifiers.svmClassifier(X, y)
         Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
-        #predicted = clf.predict(Ut)
-        predicted = classifiers.classify(X, y, Ut, K, classes, clfName)  
+        predicted = clf.predict(Ut)
         arrAcc.append(metrics.evaluate(yt, predicted))
         
         initialDataLength=finalDataLength
         finalDataLength+=sizeOfBatch
-        X = Ut
-        y = predicted
     
     return arrAcc, X, y

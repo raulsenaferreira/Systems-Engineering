@@ -1,5 +1,6 @@
 import sys
 import os
+import matplotlib.pyplot as plt
 from source import plotFunctions
 from timeit import default_timer as timer
 import numpy as np
@@ -16,6 +17,11 @@ from experiments.methods import compose2
 from experiments.methods import compose3
 from experiments.methods import intersection
 '''
+
+
+
+def plotBoxplot(data):
+    plt.boxplot(data)
 
 
 class Experiment():
@@ -40,7 +46,7 @@ class Experiment():
 
 def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
     sizeOfBatch = int(len(dataLabels)/batches)
-
+    listOfAccuracies = []
     for name, e in experiments.items():
         CoreX = []
         CoreY = []
@@ -63,7 +69,7 @@ def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
 
             #elapsed time per step
             elapsedTime.append(end - start)
-
+            listOfAccuracies.append(accuracies)
             accTotal.append(averageAccuracy)
         #print("Total of ", numberOfTimes, " experiment iterations with an average accuracy of ", np.mean(accTotal))
         print("{} batches of {} instances".format(e.batches, e.sizeOfBatch))
@@ -74,6 +80,8 @@ def doExperiments(dataValues, dataLabels, experiments, numberOfTimes, batches):
         initial = (batches*sizeOfBatch)-sizeOfBatch
         final = initial + sizeOfBatch
         plotFunctions.plot(dataValues[initial:final], dataLabels[initial:final], CoreX, CoreY, batches)
+    #plotFunctions.plotBoxplot(listOfAccuracies)
+    plotBoxplot(listOfAccuracies)
 
 
 def main():
@@ -124,7 +132,7 @@ def main():
     SVM / Random Forest
     '''
     #experiments[2] = Experiment(static_svm)
-    experiments[2] = Experiment(static_rf)
+    #experiments[2] = Experiment(static_rf)
 
     ''' Proposed Method 1 (GMM core extraction) '''
     experiments[3] = Experiment(proposed_gmm_core_extraction)

@@ -17,7 +17,7 @@ def start(**kwargs):
     excludingPercentage = kwargs["excludingPercentage"]
     clfName = kwargs["clfName"]
     
-    print("STARTING TEST with Cluster and label as classifier and GMM as cutting data")
+    print("METHOD: Cluster and label / Random Forest as classifier and GMM as core support extraction with cutting data method")
 
     arrAcc = []
     initialDataLength = 0

@@ -13,10 +13,12 @@ def start(**kwargs):
     batches = kwargs["batches"]
     sizeOfBatch = kwargs["sizeOfBatch"]
     excludingPercentage = kwargs["excludingPercentage"]
-    classifier = kwargs["classifier"]
     K = kwargs["K"]
-    CP=kwargs["CP"]
-    alpha=kwargs["alpha"]
+    classifier = kwargs["classifier"]
+    densityFunction='gmmBIC'
+    distanceMetric = 'mahalanobis'
+
+    print("METHOD: Cluster and label as classifier and GMM with BIC and Mahalanobis as core support extraction")
     
     sizeOfLabeledData = round((initialLabeledDataPerc)*sizeOfBatch)
     initialDataLength = 0
@@ -45,12 +47,14 @@ def start(**kwargs):
         # Evaluating classification
         arrAcc.append(metrics.evaluate(yt, predicted))
         
-        # ***** Box 4 & Box 5 *****
-        threshold = int( len(instances)*(1-CP) )
-        selectedPointsByClass, selectedIndexesByClass = box4.geometricCoreExtraction(instances, labelsInstances, classes, alpha, threshold)
+        # ***** Box 4 *****
+        bestModelSelectedByClass = box4.bestModelSelectedByClass(X, y, classes, densityFunction)
+        
+        # ***** Box 5 *****
+        selectedIndexes = box5.cuttingDataByDistance(instances, labelsInstances, bestModelSelectedByClass, excludingPercentage)
         
         # ***** Box 6 *****
-        X, y = box6.gettingSelectedData(selectedPointsByClass, selectedIndexesByClass, labelsInstances)
+        X, y = box6.selectedSlicedData(instances, labelsInstances, selectedIndexes)
            
     #metrics.finalEvaluation(arrAcc)
     

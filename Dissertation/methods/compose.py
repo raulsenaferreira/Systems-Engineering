@@ -1,6 +1,5 @@
 import numpy as np
 from source import util
-from methods import box4, box6
 from source import metrics
 from source import classifiers
 
@@ -17,7 +16,10 @@ def start(**kwargs):
     sizeOfBatch = kwargs["sizeOfBatch"]
     CP=kwargs["CP"]
     alpha=kwargs["alpha"]
+    K = kwargs["K_variation"]
     
+    print("METHOD: Cluster and label as classifier and Alpha-Shape as core support extraction")
+
     initialDataLength = 0
     finalDataLength = round((initialLabeledDataPerc)*sizeOfBatch)
     arrAcc = []
@@ -33,7 +35,7 @@ def start(**kwargs):
         Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
 
         # ***** Box 3 *****
-        predicted = classifiers.clusterAndLabel(X, y, Ut)
+        predicted = classifiers.clusterAndLabel(X, y, Ut, K, classes)
         instances = np.vstack([X, Ut])
         labelsInstances = np.hstack([y, predicted])
         # Evaluating classification
@@ -41,7 +43,8 @@ def start(**kwargs):
         
         # ***** Box 4 & Box 5 *****
         threshold = int( len(instances)*(1-CP) )
-        selectedPointsByClass, selectedIndexesByClass = box4.geometricCoreExtraction(instances, labelsInstances, classes, alpha, threshold)
+        indexesByClass = util.slicingClusteredData(labelsInstances, classes)
+        selectedPointsByClass, selectedIndexesByClass = util.loadGeometricCoreExtractionByClass(instances, indexesByClass, alpha, threshold)
         
         # ***** Box 6 *****
         X = np.vstack([selectedPointsByClass[0], selectedPointsByClass[1]])

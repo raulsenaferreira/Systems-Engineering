@@ -3,7 +3,7 @@ from scipy.spatial.distance import mahalanobis
 from math import floor
 import matplotlib.pyplot as plt
 import random
-#from experiments.methods import alpha_shape
+from methods import alpha_shape
 from source import classifiers
 
 
@@ -297,7 +297,7 @@ def pdfByClass2(instances, labels, classes):
             pdfs = [-1] * len(instances)
             #print("class {} = {} points".format(c, len(indexes)))
             #print(indexes)
-            points = instances[indexes-1]
+            points = instances[indexes]
             #points from a class, all points, number of components
             pdfsByPoints = classifiers.gmmWithPDF(points, instances, numClasses)#(points, instances, numClasses)
             a = 0
