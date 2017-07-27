@@ -71,4 +71,4 @@ def start(**kwargs):
         # Evaluating classification
         arrAcc.append(metrics.evaluate(yt, predicted))
                 
-    return arrAcc, XIntersec, yIntersec
+    return "GMM + Intersection", arrAcc, XIntersec, yIntersec

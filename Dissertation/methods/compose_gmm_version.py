@@ -60,4 +60,4 @@ def start(**kwargs):
         arrAcc.append(metrics.evaluate(yt, predicted))   
     #metrics.finalEvaluation(arrAcc)
     
-    return arrAcc, X, y
+    return "GMM + BIC + Mahalanobis", arrAcc, X, y

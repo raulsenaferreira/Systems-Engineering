@@ -54,4 +54,4 @@ def start(**kwargs):
         finalDataLength+=sizeOfBatch   
     #metrics.finalEvaluation(arrAcc)
     
-    return arrAcc, X, y
+    return "COMPOSE", arrAcc, X, y

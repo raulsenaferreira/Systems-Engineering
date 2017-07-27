@@ -36,4 +36,4 @@ def start(dataValues, dataLabels, **kwargs):
         X = Ut
         y = predicted
     
-    return arrAcc, X, y
+    return "Sliding SVM", arrAcc, X, y

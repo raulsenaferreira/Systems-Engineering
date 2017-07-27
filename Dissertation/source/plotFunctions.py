@@ -148,6 +148,9 @@ def finalEvaluation(arrAcc, steps):
 
 
 def plotBoxplot(data):
+    print("Boxplots from all methods")
     fig = plt.figure()
     fig.add_subplot(122)
-    plt.boxplot(data)
+    plt.boxplot(data, labels=titles)
+    plt.xticks(rotation=60)
+    plt.show()

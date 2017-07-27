@@ -33,4 +33,4 @@ def start(dataValues, dataLabels, **kwargs):
         X = Ut
         y = predicted
         
-    return arrAcc, Ut, predicted
+    return "Sliding RF", arrAcc, Ut, predicted

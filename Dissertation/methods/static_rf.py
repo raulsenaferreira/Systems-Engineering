@@ -29,4 +29,4 @@ def start(dataValues, dataLabels, **kwargs):
         initialDataLength=finalDataLength
         finalDataLength+=sizeOfBatch
     
-    return arrAcc, X, y
+    return "Static RF", arrAcc, X, y

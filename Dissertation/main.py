@@ -13,7 +13,7 @@ from methods import static_rf
 from methods import proposed_gmm_core_extraction
 from methods import improved_intersection
 from methods import compose
-from experiments.methods import compose_gmm_version
+from methods import compose_gmm_version
 '''
 from experiments.methods import compose3
 from experiments.methods import intersection
@@ -41,15 +41,18 @@ class Experiment():
         self.isImbalanced=False
 
 
-def plotBoxplot(data):
-    print("All methods")
+def plotBoxplot(data, titles):
+    print("Boxplots from all methods")
     fig = plt.figure()
     fig.add_subplot(122)
-    plt.boxplot(data)
+    plt.boxplot(data, labels=titles)
+    plt.xticks(rotation=60)
+    plt.show()
 
 
 def doExperiments(dataValues, dataLabels, datasetDescription, experiments, numberOfTimes, batches):
     listOfAccuracies = []
+    listOfMethods = []
     sizeOfBatch = int(len(dataLabels)/batches)
     
     print(datasetDescription)
@@ -72,7 +75,7 @@ def doExperiments(dataValues, dataLabels, datasetDescription, experiments, numbe
         for i in range(numberOfTimes):
             start = timer()
             #accuracy per step
-            accuracies, CoreX, CoreY = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledDataPerc=e.initialLabeledDataPerc, excludingPercentage=e.excludingPercentage, K_variation=e.K_variation, CP=e.CP, alpha=e.alpha, clfName=e.clfName , useSVM=e.useSVM, isImbalanced=e.isImbalanced)
+            algorithmName, accuracies, CoreX, CoreY = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledDataPerc=e.initialLabeledDataPerc, excludingPercentage=e.excludingPercentage, K_variation=e.K_variation, CP=e.CP, alpha=e.alpha, clfName=e.clfName , useSVM=e.useSVM, isImbalanced=e.isImbalanced)
             end = timer()
             averageAccuracy = np.mean(accuracies)
 
@@ -82,6 +85,7 @@ def doExperiments(dataValues, dataLabels, datasetDescription, experiments, numbe
             accTotal.append(averageAccuracy)
         
         listOfAccuracies.append(accuracies)
+        listOfMethods.append(algorithmName)
         #print("Total of ", numberOfTimes, " experiment iterations with an average accuracy of ", np.mean(accTotal))
         print("Average execution time: ", np.mean(elapsedTime))
         metrics.finalEvaluation(accuracies, batches)
@@ -91,7 +95,7 @@ def doExperiments(dataValues, dataLabels, datasetDescription, experiments, numbe
         plotFunctions.plot(dataValues[initial:final], dataLabels[initial:final], CoreX, CoreY, batches)
         print("\n\n")
     #plotFunctions.plotBoxplot(listOfAccuracies)
-    plotBoxplot(listOfAccuracies)
+    plotBoxplot(listOfAccuracies, listOfMethods)
 
 
 def main():
@@ -130,37 +134,37 @@ def main():
     Paper: Core  Support  Extraction  for  Learning  from  Initially  Labeled Nonstationary  Environments  using  COMPOSE
     link: http://s3.amazonaws.com/academia.edu.documents/45784667/2014_-_Core_Support_Extraction_for_Learning_from_Initially_Labeled_NSE_using_COMPOSE_-_IJCNN.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1489296600&Signature=9Z5DQZeDxcCtHUw7445uELSkgBg%3D&response-content-disposition=inline%3B%20filename%3DCore_support_extraction_for_learning_fro.pdf
     '''
-    experiments[0] = Experiment(compose_gmm_version)
+    #experiments[0] = Experiment(compose_gmm_version)
 
     '''
     Original compose (alpha-shape version)
     '''
-    experiments[1] = Experiment(compose)
+    #experiments[1] = Experiment(compose)
 
     '''
     SVM / Random Forest
     '''
-    experiments[2] = Experiment(static_svm)
-    experiments[3] = Experiment(static_rf)
+    #experiments[2] = Experiment(static_svm)
+    #experiments[3] = Experiment(static_rf)
 
     ''' Proposed Method 1 (GMM core extraction) '''
-    experiments[4] = Experiment(proposed_gmm_core_extraction)
+    #experiments[4] = Experiment(proposed_gmm_core_extraction)
 
-    ''' Proposed Method 2 (Alvim) '''
+    '''
+    Proposed method 2 (Intersection between two distributions + GMM)
+    '''
+    experiments[5] = Experiment(improved_intersection)
+    
+    ''' Proposed Method 3 (Alvim) '''
     ##experiments[4] = Experiment(compose3, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
 
     '''
-    Proposed method 3 (Intersection between two distributions)
+    Proposed method 4 (Intersection between two distributions)
     '''
-    ##experiments[5] = Experiment(intersection, dataValues, dataLabels, "STARTING TEST Cluster and label as classifier and Intersection between two distributions")
-
-    '''
-    Proposed method 4 (Intersection between two distributions + GMM)
-    '''
-    #experiments[6] = Experiment(improved_intersection)
+    ##experiments[5] = Experiment(intersection")
 
     #params: X, y, method, num of experiment repetitions, num of batches
-    doExperiments(dataValues, dataLabels, description, experiments, 1, 8)
+    doExperiments(dataValues, dataLabels, description, experiments, 1, 80)
 
 
 

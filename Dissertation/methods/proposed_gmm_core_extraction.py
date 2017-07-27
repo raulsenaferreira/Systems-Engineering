@@ -57,4 +57,4 @@ def start(**kwargs):
         arrAcc.append(metrics.evaluate(yt, predicted))
 
     # returns accuracy array and last selected points
-    return arrAcc, X, y
+    return "GMM + cutting data percentage", arrAcc, X, y
