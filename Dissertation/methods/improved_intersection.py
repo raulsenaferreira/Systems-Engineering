@@ -24,6 +24,7 @@ def start(**kwargs):
     K = kwargs["K_variation"]
     batches = kwargs["batches"]
     sizeOfBatch = kwargs["sizeOfBatch"]
+    clfName = kwargs["clfName"]
     excludingPercentage = kwargs["excludingPercentage"]
     #densityFunction = kwargs["densityFunction"]
     
@@ -44,7 +45,7 @@ def start(**kwargs):
         Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
 
         # ***** Box 3 *****
-        predicted = classifiers.clusterAndLabel(XIntersec, yIntersec, Ut, K, classes)
+        predicted = classifiers.classify(XIntersec, yIntersec, Ut, K, classes, clfName)
         X = np.vstack([XIntersec, Ut])
         y = np.hstack([yIntersec, predicted])
     
@@ -53,7 +54,7 @@ def start(**kwargs):
         if len(yIntersec[yIntersec==0]) <= sizeOfLabeledData or len(yIntersec[yIntersec==1]) <= sizeOfLabeledData:
             if len(yIntersec) < 1:
                 y=np.array(y)
-                predicted = classifiers.clusterAndLabel(X, y, Ut, K, classes)
+                predicted = classifiers.classify(X, y, Ut, K, classes, clfName)
             #else:
                 #predicted = classifiers.clusterAndLabel(XIntersec, yIntersec, Ut, K, classes)
 
