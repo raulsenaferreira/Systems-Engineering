@@ -4,22 +4,22 @@ from source import plotFunctions
 from timeit import default_timer as timer
 import pandas as pd
 import numpy as np
-from experiments import setup
+import setup
 from source import classifiers
 from source import metrics
 from source import util
-from experiments.methods import svm
-from experiments.methods import proposed_gmm_core_extraction
-from experiments.methods import improved_intersection
-from experiments.methods import compose
-from experiments.methods import raul_classifier
+from methods import svm
+from methods import proposed_gmm_core_extraction
+from methods import improved_intersection
+from methods import compose
+from methods import grid_selection_classifier
 from sklearn.grid_search import GridSearchCV
 #from hpsklearn import HyperoptEstimator, any_classifier
 #from hyperopt import tpe
 '''
-from experiments.methods import compose2
-from experiments.methods import compose3
-from experiments.methods import intersection
+from methods import compose2
+from methods import compose3
+from methods import intersection
 '''
 
 def main():
@@ -29,7 +29,7 @@ def main():
     if is_windows == False:
         sep = '/'
 
-    path = os.getcwd()+sep+'experiments'+sep+'data'+sep
+    path = os.getcwd()+sep+'data'+sep
     
     #loading a dataset
     #dataValues, dataLabels = setup.loadNOAADataset(path)
