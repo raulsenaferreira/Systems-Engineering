@@ -148,7 +148,7 @@ def loadCSurr(path, sep):
 
 
 def load5CVT(path, sep):
-    description = Five Classes Vertical Translation. Bidimensional
+    description = "Five Classes Vertical Translation. Bidimensional."
 
     dataValues = pd.read_csv(path+'sinthetic'+sep+'5CVT.txt',sep = ",")
     dataValues = pd.DataFrame.as_matrix(dataValues)
@@ -260,7 +260,7 @@ def loadElecData(path, sep):
 
 def loadNOAADataset(path, sep):
     description = 'NOAA dataset. Eight  features. Two classes.'
-    
+
     #Test sets: Predicting 365 instances by step. 50 steps. Two classes.
     '''
     NOAA dataset:

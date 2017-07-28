@@ -147,10 +147,10 @@ def finalEvaluation(arrAcc, steps):
     plotAccuracy(arrAcc, 'Accuracy', steps)
 
 
-def plotBoxplot(data):
+def plotBoxplot(data, titles):
     print("Boxplots from all methods")
     fig = plt.figure()
-    fig.add_subplot(122)
+    fig.add_subplot(111)
     plt.boxplot(data, labels=titles)
-    plt.xticks(rotation=60)
+    plt.xticks(rotation=90)
     plt.show()
