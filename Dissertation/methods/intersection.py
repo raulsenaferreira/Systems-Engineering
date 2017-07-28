@@ -1,5 +1,5 @@
 import numpy as np
-from experiments.composeGMM import box1, box2, box3, box4, box5, box6
+from source import util
 from source import metrics
 
 

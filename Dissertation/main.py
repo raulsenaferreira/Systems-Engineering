@@ -14,10 +14,8 @@ from methods import proposed_gmm_core_extraction
 from methods import improved_intersection
 from methods import compose
 from methods import compose_gmm_version
-'''
-from experiments.methods import compose3
-from experiments.methods import intersection
-'''
+from methods import fast_compose
+from methods import intersection
 
 
 
@@ -44,9 +42,9 @@ class Experiment():
 def plotBoxplot(data, titles):
     print("Boxplots from all methods")
     fig = plt.figure()
-    fig.add_subplot(122)
+    fig.add_subplot(111)
     plt.boxplot(data, labels=titles)
-    plt.xticks(rotation=60)
+    plt.xticks(rotation=90)
     plt.show()
 
 
@@ -108,63 +106,44 @@ def main():
 
     path = os.getcwd()+sep+'data'+sep
     #sinthetic
-    dataValues, dataLabels, description = setup.loadCDT(path, sep)
-    '''dataValues, dataLabels, description = setup.loadCHT(path, sep)
-    dataValues, dataLabels, description = setup.load2CDT(path, sep)
-    dataValues, dataLabels, description = setup.load2CHT(path, sep)
-    dataValues, dataLabels, description = setup.loadUG_2C_2D(path, sep)
-    dataValues, dataLabels, description = setup.loadUG_2C_3D(path, sep)
-    dataValues, dataLabels, description = setup.loadUG_2C_5D(path, sep)
-    dataValues, dataLabels, description = setup.loadMG_2C_2D(path, sep)
-    dataValues, dataLabels, description = setup.loadFG_2C_2D(path, sep)
-    dataValues, dataLabels, description = setup.loadGEARS_2C_2D(path, sep)
     dataValues, dataLabels, description = setup.loadCSurr(path, sep)
-    dataValues, dataLabels, description = setup.load5CVT(path, sep)
-    dataValues, dataLabels, description = setup.load4CR(path, sep)
-    dataValues, dataLabels, description = setup.load4CRE_V1(path, sep)
-    dataValues, dataLabels, description = setup.load4CRE_V2(path, sep)
-    dataValues, dataLabels, description = setup.load4CE1CF(path, sep)
-    #real
-    dataValues, dataLabels, description = setup.loadCheckerBoard(path, sep)
-    dataValues, dataLabels, description = setup.loadNOAADataset(path, sep)
-    dataValues, dataLabels, description = setup.loadKeystroke(path, sep)
-    dataValues, dataLabels, description = setup.loadElecData(path, sep)'''
+    
 
     '''
     Paper: Core  Support  Extraction  for  Learning  from  Initially  Labeled Nonstationary  Environments  using  COMPOSE
     link: http://s3.amazonaws.com/academia.edu.documents/45784667/2014_-_Core_Support_Extraction_for_Learning_from_Initially_Labeled_NSE_using_COMPOSE_-_IJCNN.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1489296600&Signature=9Z5DQZeDxcCtHUw7445uELSkgBg%3D&response-content-disposition=inline%3B%20filename%3DCore_support_extraction_for_learning_fro.pdf
     '''
-    #experiments[0] = Experiment(compose_gmm_version)
+    experiments[0] = Experiment(compose_gmm_version)
 
     '''
     Original compose (alpha-shape version)
     '''
-    #experiments[1] = Experiment(compose)
+    experiments[1] = Experiment(compose)
+    
+    ''' fast compose '''
+    ##experiments[2] = Experiment(fast_compose)
 
     '''
     SVM / Random Forest
     '''
-    #experiments[2] = Experiment(static_svm)
-    #experiments[3] = Experiment(static_rf)
+    experiments[3] = Experiment(static_svm)
+    experiments[4] = Experiment(static_rf)
 
     ''' Proposed Method 1 (GMM core extraction) '''
-    #experiments[4] = Experiment(proposed_gmm_core_extraction)
+    experiments[5] = Experiment(proposed_gmm_core_extraction)
 
     '''
     Proposed method 2 (Intersection between two distributions + GMM)
     '''
-    experiments[5] = Experiment(improved_intersection)
+    experiments[6] = Experiment(improved_intersection)
     
-    ''' Proposed Method 3 (Alvim) '''
-    ##experiments[4] = Experiment(compose3, dataValues, dataLabels, "STARTING TEST with Cluster and label as classifier and GMM / KDE as cutting data")
-
     '''
-    Proposed method 4 (Intersection between two distributions)
+    Proposed method 3 (Intersection between two distributions)
     '''
-    ##experiments[5] = Experiment(intersection")
-
+    ##experiments[7] = Experiment(intersection")
+    
     #params: X, y, method, num of experiment repetitions, num of batches
-    doExperiments(dataValues, dataLabels, description, experiments, 1, 80)
+    doExperiments(dataValues, dataLabels, description, experiments, 1, 100)
 
 
 
