@@ -58,7 +58,7 @@ def start(**kwargs):
             #else:
                 #predicted = classifiers.clusterAndLabel(XIntersec, yIntersec, Ut, K, classes)
 
-            pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
+            pdfsByClass = util.pdfByClass(Ut, predicted, classes)
             selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
             newXIntersec, newyIntersec = util.selectedSlicedData(Ut, predicted, selectedIndexes)
             #preserve previous intersection

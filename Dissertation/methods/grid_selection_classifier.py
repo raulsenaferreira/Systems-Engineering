@@ -3,9 +3,9 @@ from source import util
 from source import classifiers
 from sklearn.base import BaseEstimator, ClassifierMixin
 
-class raulClassifier(BaseEstimator, ClassifierMixin):
+class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
 
-    def __init__(self, clfName='rf', excludingPercentage=0, sizeOfBatch=1, batches=1):
+    def __init__(self, classifier, excludingPercentage=0.05, sizeOfBatch=200, batches=50):
         
         self.sizeOfBatch = sizeOfBatch
         self.batches = batches
@@ -15,26 +15,22 @@ class raulClassifier(BaseEstimator, ClassifierMixin):
         #used only by gmm and cluster-label process
         self.densityFunction='gmm'
         self.excludingPercentage = excludingPercentage
-        self.K_variation = 2
-        self.clfName=clfName
+        self.K_variation = 5
+        self.classifier=classifier
         #print("{} excluding percecntage".format(excludingPercentage))    
-    
+    '''
     def get_params(self, deep=True):
-        return {"excludingPercentage" : self.excludingPercentage, "clfName": self.clfName}
-
+        return {"excludingPercentage" : self.excludingPercentage}
     def set_params(self, **parameters):
         for parameter, value in parameters.items():
             setattr(self, parameter, value)
-        return self 
-
+        return self
+    '''        
     def fit(self, dataValues, dataLabels=None):
-        text = 'Using {} as classifier and excluding percentage = {}'.format(self.clfName, self.excludingPercentage)
-        #print(text)
         classes = list(set(dataLabels))
         arrAcc = []
         initialDataLength = 0
         finalDataLength = round((self.initialLabeledDataPerc)*self.sizeOfBatch)
-        #print('>>> ',self.batches)
         # ***** Box 1 *****
         #Initial labeled data
         X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
@@ -42,30 +38,27 @@ class raulClassifier(BaseEstimator, ClassifierMixin):
         finalDataLength=self.sizeOfBatch
         
         for t in range(self.batches):
-            print(t)
-
+            #print(t)
             # ***** Box 2 *****            
             Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
-            if len(Ut) > self.sizeOfBatch:
-                #print('inicio=',initialDataLength,' fim=',finalDataLength)
-                print(Ut)
-                # ***** Box 3 *****
-                predicted = classifiers.classify(X, y, Ut, self.K_variation, classes, self.clfName)
-                
-                # ***** Box 4 *****
-                #pdfs from each new points from each class applied on new arrived points
-                pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
-                
-                # ***** Box 5 *****
-                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
-                
-                # ***** Box 6 *****
-                X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
-                
-                initialDataLength=finalDataLength
-                finalDataLength+=self.sizeOfBatch
-                # Evaluating classification
-                arrAcc.append(metrics.evaluate(yt, predicted))
+            
+            # ***** Box 3 *****
+            predicted = classifiers.classify(X, y, Ut, self.K_variation, classes)
+            
+            # ***** Box 4 *****
+            #pdfs from each new points from each class applied on new arrived points
+            pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
+            
+            # ***** Box 5 *****
+            selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
+            
+            # ***** Box 6 *****
+            X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
+            
+            initialDataLength=finalDataLength
+            finalDataLength+=self.sizeOfBatch
+            # Evaluating classification
+            arrAcc.append(metrics.evaluate(yt, predicted)*100)
      
         # returns accuracy array and last selected points
         self.threshold_ = arrAcc

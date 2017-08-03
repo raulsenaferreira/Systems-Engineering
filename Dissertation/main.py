@@ -106,19 +106,19 @@ def main():
 
     path = os.getcwd()+sep+'data'+sep
     #sinthetic
-    dataValues, dataLabels, description = setup.loadCSurr(path, sep)
+    dataValues, dataLabels, description = setup.load2CDT(path, sep)
     
 
     '''
     Paper: Core  Support  Extraction  for  Learning  from  Initially  Labeled Nonstationary  Environments  using  COMPOSE
     link: http://s3.amazonaws.com/academia.edu.documents/45784667/2014_-_Core_Support_Extraction_for_Learning_from_Initially_Labeled_NSE_using_COMPOSE_-_IJCNN.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1489296600&Signature=9Z5DQZeDxcCtHUw7445uELSkgBg%3D&response-content-disposition=inline%3B%20filename%3DCore_support_extraction_for_learning_fro.pdf
     '''
-    experiments[0] = Experiment(compose_gmm_version)
+    #experiments[0] = Experiment(compose_gmm_version)
 
     '''
     Original compose (alpha-shape version)
     '''
-    experiments[1] = Experiment(compose)
+    #experiments[1] = Experiment(compose)
     
     ''' fast compose '''
     ##experiments[2] = Experiment(fast_compose)
@@ -126,8 +126,8 @@ def main():
     '''
     SVM / Random Forest
     '''
-    experiments[3] = Experiment(static_svm)
-    experiments[4] = Experiment(static_rf)
+    #experiments[3] = Experiment(static_svm)
+    #experiments[4] = Experiment(static_rf)
 
     ''' Proposed Method 1 (GMM core extraction) '''
     experiments[5] = Experiment(proposed_gmm_core_extraction)
@@ -135,12 +135,12 @@ def main():
     '''
     Proposed method 2 (Intersection between two distributions + GMM)
     '''
-    experiments[6] = Experiment(improved_intersection)
+    #experiments[6] = Experiment(improved_intersection)
     
     '''
     Proposed method 3 (Intersection between two distributions)
     '''
-    ##experiments[7] = Experiment(intersection")
+    #experiments[7] = Experiment(intersection)
     
     #params: X, y, method, num of experiment repetitions, num of batches
     doExperiments(dataValues, dataLabels, description, experiments, 1, 100)

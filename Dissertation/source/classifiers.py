@@ -8,6 +8,8 @@ from collections import Counter
 from source import util
 #import xgboost as xgb
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.cluster import DBSCAN
+from sklearn.mixture import BayesianGaussianMixture
 
 def pca(X, numComponents):
     pca = PCA(n_components=numComponents)
@@ -83,6 +85,18 @@ def gmmWithPDF(points, allPoints, numComponents):
     clf.fit(allPoints)
     return np.exp(clf.score_samples(points))   
     
+
+def bayesianGMM(points, allPoints, numComponents):
+    if len(allPoints) < numComponents:
+        numComponents=len(allPoints)
+    clf = BayesianGaussianMixture(
+        weight_concentration_prior_type="dirichlet_process", weight_concentration_prior=100000,
+        n_components=2 * numComponents, reg_covar=0, init_params='random',
+        max_iter=1500, mean_precision_prior=.8,
+        random_state=2)
+    clf.fit(allPoints)
+    return np.exp(clf.score_samples(points))
+
 
 def kde(points, n_classes):
     kernel = KernelDensity(kernel='gaussian', bandwidth=0.2).fit(points)

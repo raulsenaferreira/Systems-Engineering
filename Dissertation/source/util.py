@@ -9,12 +9,6 @@ from source import classifiers
 
 
 def loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA):
-    '''
-    X = dataValues.loc[initialDataLength:finalDataLength-1].copy()
-    X = X.values
-    y = dataLabels.loc[initialDataLength:finalDataLength-1].copy()
-    y = y.values[: , 0]
-    '''
     X = np.copy(dataValues[initialDataLength:finalDataLength])
     y = np.copy(dataLabels[initialDataLength:finalDataLength])
     if usePCA:
@@ -273,25 +267,11 @@ def mahalanobisCoreSupportExtraction(Ut, indexesPredictedByClass, bestModelSelec
     return selectedMinIndexesByClass
 
 
-def pdfByClass(oldInstances, oldLabels, newInstances, newLabels, allInstances, classes, densityFunction):
-    oldIndexesByClass = slicingClusteredData(oldLabels, classes)
-    newIndexesByClass = slicingClusteredData(newLabels, classes)
-
-    if densityFunction == 'gmm':
-        return loadDensitiesByClass(oldInstances, newInstances, allInstances, oldIndexesByClass, newIndexesByClass, classifiers.gmm)
-    elif densityFunction == 'kde':
-        return loadDensitiesByClass(oldInstances, newInstances, allInstances, oldIndexesByClass, newIndexesByClass, classifiers.kde)
-    else:
-        print ("Choose between 'gmm' or 'kde' function. Wrong name given: ", densityFunction)
-        return
-
-
-def pdfByClass2(instances, labels, classes):
+def pdfByClass(instances, labels, classes):
     indexesByClass = slicingClusteredData(labels, classes)
-
     pdfsByClass = {}
-    numClasses = len(indexesByClass)
-    #print("{} instances".format(len(instances)))
+    numClasses = len(classes)
+    
     for c, indexes in indexesByClass.items():
         if len(indexes) > 0:
             pdfs = [-1] * len(instances)
@@ -299,7 +279,9 @@ def pdfByClass2(instances, labels, classes):
             #print(indexes)
             points = instances[indexes]
             #points from a class, all points, number of components
-            pdfsByPoints = classifiers.gmmWithPDF(points, instances, numClasses)#(points, instances, numClasses)
+            pdfsByPoints = classifiers.gmmWithPDF(points, instances, numClasses)
+            #print("Bayesian")
+            #pdfsByPoints = classifiers.bayesianGMM(points, instances, numClasses)
             a = 0
             for i in indexes:
                 pdfs[i]=pdfsByPoints[a]
@@ -307,6 +289,20 @@ def pdfByClass2(instances, labels, classes):
             pdfsByClass[c] = pdfs
 
     return pdfsByClass
+
+
+def pdfByClass3(arrInstances, classes):
+    points = []
+    numClasses = len(classes)
+    c = 0
+    instances = arrInstances.sort(key = lambda c: c.label)
+
+    for instance in instances:
+        if instance.label == c:
+            points.add(instance.feature_list)
+        else:
+            c+=1
+            pdfsByClass = classifiers.gmmWithPDF(points, instances, numClasses)
 
 
 #Cutting data for next iteration
@@ -326,3 +322,71 @@ def compactingDataDensityBased2(densities, criteria):
         stackedIndexes = np.hstack([stackedIndexes,selectedIndexes[i]])
 
     return stackedIndexes
+
+
+def bhattacharyya (h1, h2):
+    def normalize(h):
+        for i in range(len(h)):
+            if h[i]<0:
+                h[i]=h[i]*-1+100
+                
+        h = h / np.sum(h)
+        #print(h)
+        return h
+
+    return 1 - np.sum(np.sqrt(np.multiply(normalize(h1), normalize(h2))))
+
+
+def getBhattacharyyaScores(instancesByClass):
+    scoresByClass = {}
+    for c, instances in instancesByClass.items():
+        # generate and output scores
+        scores = [];
+        for i in range(len(instances)):
+            score = [];
+            for j in range(len(instances)):
+                score.append( bhattacharyya(instances[i], instances[j]) );
+            scores.append(score);
+        scoresByClass[c]=scores
+    return scoresByClass
+
+
+def compactingDataScoreBased(scores, criteria):
+    cut = 1-criteria
+    selectedIndexes=[]
+    i=0
+    for k in scores:
+        arrScores = np.array(scores[k])
+        numSelected = int(np.ceil(cut*len(arrScores)))
+        numSelected = 10
+        ind = (arrScores).argsort()[:numSelected]
+        ind = np.delete(ind, i)
+        selectedIndexes.append(ind)
+        i+=1
+
+    stackedIndexes=selectedIndexes[0]
+    print(selectedIndexes[0])
+    print(selectedIndexes[1])
+    for i in range(1, len(selectedIndexes)):
+        stackedIndexes = np.hstack([stackedIndexes,selectedIndexes[i]])
+
+    return stackedIndexes
+
+
+def unifyInstancesByClass(X, y, Ut, yt, classes):
+    allInstancesByClass = {}
+    indexesYByClass = slicingClusteredData(y, classes)
+    indexesYtByClass = slicingClusteredData(yt, classes)
+    instancesXByClass = {}
+    instancesUtByClass = {}
+    numClasses = len(classes)
+    #print("{} instances".format(len(instances)))
+    for c, indexes in indexesYByClass.items():
+        instancesXByClass[c] = X[indexesYByClass[c]]
+    for c, indexes in indexesYtByClass.items():
+        instancesUtByClass[c] = Ut[indexesYtByClass[c]]
+    '''for c in range(numClasses):
+        allInstancesByClass[c] = np.vstack([instancesXByClass[c], instancesUtByClass[c]])
+    return allInstancesByClass
+    '''
+    return instancesXByClass, instancesUtByClass

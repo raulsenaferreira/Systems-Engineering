@@ -31,19 +31,13 @@ def start(**kwargs):
     for t in range(batches):
         # ***** Box 2 *****
         Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
-        #if len(Ut) > sizeOfBatch:
         #print(len(Ut))
         # ***** Box 3 *****
-        #Adding intersection points, if exists, to train set
-        #XIntersec, yIntersec = util.cuttingDataByIntersection3(X, Ut, y)
-        #if len(XIntersec)>0:
-        #    X, y = np.vstack([X, XIntersec]), np.hstack([y, yIntersec])
         predicted = classifiers.classify(X, y, Ut, K, classes, clfName)   
-        #predicted = classifiers.clusterAndLabel(X, y, Ut, K, classes)
 
         # ***** Box 4 *****
         #pdfs from each new points from each class applied on new arrived points
-        pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
+        pdfsByClass = util.pdfByClass(Ut, predicted, classes)
 
         # ***** Box 5 *****
         selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
