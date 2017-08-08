@@ -259,11 +259,11 @@ def mahalanobisCoreSupportExtraction(Ut, indexesPredictedByClass, bestModelSelec
             selectedMinIndexesByClass[c][pointIndexes[j]] = distsByComponent[i][j]
 
         #20% smallest distances per class, based on paper
-        p = floor(excludingPercentage*len(selectedMinIndexesByClass[c]))
-        #p = 70
+        #p = floor(0.2*len(selectedMinIndexesByClass[c]))
+        p = 70
         selectedMinIndexesByClass[c] = np.array(selectedMinIndexesByClass[c])
         selectedMinIndexesByClass[c] = selectedMinIndexesByClass[c].argsort()[:p]
-    #print(selectedMinIndexesByClass)
+    #print(len(selectedMinIndexesByClass))
     return selectedMinIndexesByClass
 
 
@@ -307,12 +307,11 @@ def pdfByClass3(arrInstances, classes):
 
 #Cutting data for next iteration
 def compactingDataDensityBased2(densities, criteria):
-    cut = 1-criteria
     selectedIndexes=[]
 
     for k in densities:
         arrPdf = np.array(densities[k])
-        numSelected = int(np.ceil(cut*len(arrPdf)))
+        numSelected = int(np.floor(criteria*len(arrPdf)))
         ind = (-arrPdf).argsort()[:numSelected]
         selectedIndexes.append(ind)
 
@@ -339,6 +338,7 @@ def bhattacharyya (h1, h2):
 
 def getBhattacharyyaScores(instancesByClass):
     scoresByClass = {}
+    means= []
     for c, instances in instancesByClass.items():
         # generate and output scores
         scores = [];
@@ -348,7 +348,11 @@ def getBhattacharyyaScores(instancesByClass):
                 score.append( bhattacharyya(instances[i], instances[j]) );
             scores.append(score);
         scoresByClass[c]=scores
-    return scoresByClass
+        #print(np.mean(scores))
+        means.append(np.mean(scores))
+    #print(np.mean(means))
+    #return scoresByClass
+    return np.mean(means)
 
 
 def compactingDataScoreBased(scores, criteria):
@@ -365,8 +369,8 @@ def compactingDataScoreBased(scores, criteria):
         i+=1
 
     stackedIndexes=selectedIndexes[0]
-    print(selectedIndexes[0])
-    print(selectedIndexes[1])
+    #print(selectedIndexes[0])
+    #print(selectedIndexes[1])
     for i in range(1, len(selectedIndexes)):
         stackedIndexes = np.hstack([stackedIndexes,selectedIndexes[i]])
 

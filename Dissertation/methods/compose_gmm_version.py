@@ -47,7 +47,7 @@ def start(**kwargs):
         bestModelSelectedByClass = util.loadBestModelByClass(X, indexesByClass, classifiers.gmmWithBIC)
         
         # ***** Box 5 *****
-        predictedByClass = util.slicingClusteredData(predicted, [0,1])
+        predictedByClass = util.slicingClusteredData(predicted, classes)
         selectedIndexes = util.mahalanobisCoreSupportExtraction(Ut, predictedByClass, bestModelSelectedByClass, excludingPercentage)
         selectedIndexes = np.hstack([selectedIndexes[0],selectedIndexes[1]])
         

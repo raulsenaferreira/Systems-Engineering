@@ -14,10 +14,10 @@ def start(**kwargs):
     K = kwargs["K_variation"]
     batches = kwargs["batches"]
     sizeOfBatch = kwargs["sizeOfBatch"]
-    excludingPercentage = kwargs["excludingPercentage"]
+    #excludingPercentage = kwargs["excludingPercentage"]
     clfName = kwargs["clfName"]
     
-    print("METHOD: Cluster and label / Random Forest as classifier and Battacharyya distance")
+    print("METHOD: Random Forest as classifier, GMM as core support extraction and mean of Battacharyya coefficient as excluding percentage")
 
     arrAcc = []
     initialDataLength = 0
@@ -36,12 +36,15 @@ def start(**kwargs):
         predicted = classifiers.classify(X, y, Ut, K, classes, clfName)   
 
         # ***** Box 4 *****
+        pdfsByClass = util.pdfByClass(Ut, predicted, classes)
         #allInstancesByClass = util.unifyInstancesByClass(X, y, Ut, predicted, classes)
         instancesXByClass, instancesUtByClass = util.unifyInstancesByClass(X, y, Ut, predicted, classes)
 
         # ***** Box 5 *****
-        scoresByClass = util.getBhattacharyyaScores(allInstancesByClass)
-        selectedIndexes = util.compactingDataScoreBased(scoresByClass, excludingPercentage)
+        keepPercentage = util.getBhattacharyyaScores(instancesUtByClass)
+        #selectedIndexes = util.compactingDataScoreBased(scoresByClass, excludingPercentage)
+        print("Excluding percentage: ",1-keepPercentage)
+        selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, keepPercentage)
 
         # ***** Box 6 *****
         X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)

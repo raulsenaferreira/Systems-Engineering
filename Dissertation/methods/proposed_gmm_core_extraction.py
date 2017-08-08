@@ -21,6 +21,7 @@ def start(**kwargs):
 
     arrAcc = []
     initialDataLength = 0
+    excludingPercentage = 1-excludingPercentage
     finalDataLength = round((initialLabeledDataPerc)*sizeOfBatch)
     # ***** Box 1 *****
     #Initial labeled data
