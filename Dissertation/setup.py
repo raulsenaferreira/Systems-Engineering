@@ -181,7 +181,7 @@ def load4CRE_V1(path, sep):
     dataLabels = dataValues[:, 2]
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
-    #print(dataValues)
+    #print(dataLabels)
     
     return dataValues, dataLabels.astype(int), description
 
@@ -210,7 +210,7 @@ def load4CE1CF(path, sep):
     
     return dataValues, dataLabels.astype(int), description
 
-def loadCheckerBoard(path, sep, T=300, N=2000):
+def loadCheckerBoard(path, sep, T=100, N=2000):
     description = 'Rotated checkerboard dataset. Rotating 2*PI.'
 
     #Test sets: Predicting N instances by step. T steps. Two classes.
@@ -246,15 +246,14 @@ def loadKeystroke(path, sep):
 
 
 def loadElecData(path, sep):
-    description = 'Electricity data. 10 features. 2 classes.'
+    description = 'Electricity data. 7 features. 2 classes.'
 
-    #dataValues = pd.read_csv(path+'elecdata/elec2.data',sep = ",")
-    dataValues = pd.read_csv(path+'real'+sep+'elecdata'+sep+'elec2_data.dat',sep = ",")
+    dataValues = pd.read_csv(path+'real'+sep+'elecdata'+sep+'elec_data.csv',sep = ",")
     dataValues = pd.DataFrame.as_matrix(dataValues)
-    dataLabels = pd.read_csv(path+'real'+sep+'elecdata'+sep+'elec2_label.dat',sep = ",")
+    dataLabels = pd.read_csv(path+'real'+sep+'elecdata'+sep+'elec_label.csv',sep = ",")
     dataLabels = pd.DataFrame.as_matrix(dataLabels)
-    #dataLabels = dataLabels-1
-    #print(dataLabels)
+    
+    #print(dataValues)
     return dataValues, dataLabels[:,0], description
 
 
@@ -274,4 +273,19 @@ def loadNOAADataset(path, sep):
     dataLabels = pd.DataFrame.as_matrix(dataLabels)
     #dataLabels = np.squeeze(np.asarray(dataLabels))
     
+    return dataValues, dataLabels[:,0], description
+
+
+def loadSCARGCBoxplotResults(path, sep):
+    description = 'Results from SCARGC algorithm (for boxplot and accuracy timelime).'
+    path = path+'results_scargc'+sep+'setting_1'+sep
+    arrFiles = ['1CDT', '1CHT', '1CSurr', '2CDT', '2CHT', '4CE1CF', '4CR', '4CRE-V1', '4CRE-V2', '5CVT', 'FG_2C_2D', 'GEARS_2C_2D', 'MG_2C_2D', 'UG_2C_2D', 'UG_2C_3D', 'UG_2C_5D', 'keystroke']
+    for i in range(len(arrFiles)):
+        
+    dataValues = pd.read_csv(+'elec_data.csv',sep = ",")
+    dataValues = pd.DataFrame.as_matrix(dataValues)
+    dataLabels = pd.read_csv(path+'real'+sep+'elecdata'+sep+'elec_label.csv',sep = ",")
+    dataLabels = pd.DataFrame.as_matrix(dataLabels)
+    
+    #print(dataValues)
     return dataValues, dataLabels[:,0], description

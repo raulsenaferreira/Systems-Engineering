@@ -7,7 +7,8 @@ from source import util
 def start(**kwargs):
     dataValues = kwargs["dataValues"]
     dataLabels = kwargs["dataLabels"]
-    initialLabeledDataPerc = kwargs["initialLabeledDataPerc"]
+    #initialLabeledDataPerc = kwargs["initialLabeledDataPerc"]
+    initialLabeledData = kwargs["initialLabeledData"]
     sizeOfBatch = kwargs["sizeOfBatch"]
     usePCA = kwargs["usePCA"]
     classes = kwargs["classes"]
@@ -16,18 +17,19 @@ def start(**kwargs):
     sizeOfBatch = kwargs["sizeOfBatch"]
     excludingPercentage = kwargs["excludingPercentage"]
     clfName = kwargs["clfName"]
+    densityFunction = kwargs["densityFunction"]
     
-    print("METHOD: Cluster and label / Random Forest as classifier and GMM as core support extraction with cutting data method")
+    print("METHOD: Random Forest as classifier and {} as core support extraction with cutting data method".format(densityFunction))
 
     arrAcc = []
     initialDataLength = 0
     excludingPercentage = 1-excludingPercentage
-    finalDataLength = round((initialLabeledDataPerc)*sizeOfBatch)
+    finalDataLength = initialLabeledData #round((initialLabeledDataPerc)*sizeOfBatch)
     # ***** Box 1 *****
     #Initial labeled data
     X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
     initialDataLength=finalDataLength
-    finalDataLength=sizeOfBatch
+    finalDataLength=finalDataLength+sizeOfBatch
 
     for t in range(batches):
         # ***** Box 2 *****
@@ -35,21 +37,31 @@ def start(**kwargs):
         #print(len(Ut))
         # ***** Box 3 *****
         predicted = classifiers.classify(X, y, Ut, K, classes, clfName)   
-
+        # Evaluating classification
+        arrAcc.append(metrics.evaluate(yt, predicted))
         # ***** Box 4 *****
         #pdfs from each new points from each class applied on new arrived points
-        pdfsByClass = util.pdfByClass(Ut, predicted, classes)
+        pdfsByClass = util.pdfByClass(Ut, predicted, classes, densityFunction)
+        #pdfsByClassX = util.pdfByClass(X, y, classes, densityFunction)
 
         # ***** Box 5 *****
         selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
+        #selectedIndexesX = util.compactingDataDensityBased2(pdfsByClassX, excludingPercentage)
+        #selectedIndexesl = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage, True)
 
         # ***** Box 6 *****
         X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
-
+        #Ut, predicted = util.selectedSlicedData(X, y, selectedIndexesX)
+        #Xl, yl = util.selectedSlicedData(Ut, predicted, selectedIndexesl)
+        '''
+        X = np.vstack([X, Ut])
+        y = np.hstack([y, predicted])
+        '''
+        #X = np.vstack([X, Xl])
+        #y = np.hstack([y, yl])
         initialDataLength=finalDataLength
         finalDataLength+=sizeOfBatch
-        # Evaluating classification
-        arrAcc.append(metrics.evaluate(yt, predicted))
+        
 
     # returns accuracy array and last selected points
     return "GMM + cutting data percentage", arrAcc, X, y

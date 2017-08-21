@@ -10,6 +10,7 @@ from source import util
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.cluster import DBSCAN
 from sklearn.mixture import BayesianGaussianMixture
+from sklearn.neighbors import KNeighborsClassifier
 
 def pca(X, numComponents):
     pca = PCA(n_components=numComponents)
@@ -44,6 +45,10 @@ def randomForest(X, y):
     max_features = np.ndim(X)
     return RandomForestClassifier(n_estimators=num_trees, max_features=max_features).fit(X, y)
     
+
+def knn(X, y, K):
+    return KNeighborsClassifier(n_neighbors=K, algorithm = 'brute').fit(X, y)
+
 
 def gmmWithBIC(X):
     ctype = 'full' #'spherical', 'tied', 'diag', 'full'
@@ -98,8 +103,8 @@ def bayesianGMM(points, allPoints, numComponents):
     return np.exp(clf.score_samples(points))
 
 
-def kde(points, n_classes):
-    kernel = KernelDensity(kernel='gaussian', bandwidth=0.2).fit(points)
+def kde(points, allPoints):
+    kernel = KernelDensity(kernel='gaussian', bandwidth=0.4).fit(allPoints)
     pdfs = np.exp(kernel.score_samples(points))
     
     return pdfs
@@ -146,7 +151,7 @@ def clusterAndLabel(X, y, Ut, K, classes):
     return labels
 
 
-def classify(X, y, Ut, K, classes, clf='rf'):
+def classify(X, y, Ut, K, classes, clf):
         if clf=='svm':
             #print("Using SVM")
             clf = svmClassifier(X, y)
@@ -157,4 +162,7 @@ def classify(X, y, Ut, K, classes, clf='rf'):
         elif clf=='rf':
             #print("Using Random Forest")
             clf = randomForest(X, y)
+            return clf.predict(Ut)
+        elif clf=='knn':
+            clf = knn(X, y, K)
             return clf.predict(Ut)
