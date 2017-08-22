@@ -9,11 +9,11 @@ from source.plotFunctions import plotAccuracy
 
 
 def evaluate(y_actual, y_predicted):
-    return accuracy_score(y_actual, y_predicted)
+    return accuracy_score(y_actual, y_predicted)*100
     
 
 def finalEvaluation(arrAcc, batches):
-    print("Average Accuracy: ", np.mean(arrAcc)*100)
+    print("Average Accuracy: ", np.mean(arrAcc))
     print("Standard Deviation: ", np.std(arrAcc))
     print("Variance: ", np.std(arrAcc)**2)
     plotAccuracy(arrAcc, 'Accuracy', batches)

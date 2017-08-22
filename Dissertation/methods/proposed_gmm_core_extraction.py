@@ -19,7 +19,7 @@ def start(**kwargs):
     clfName = kwargs["clfName"]
     densityFunction = kwargs["densityFunction"]
     
-    print("METHOD: Random Forest as classifier and {} as core support extraction with cutting data method".format(densityFunction))
+    print("METHOD: K-NN as classifier and {} as core support extraction with cutting data method".format(densityFunction))
 
     arrAcc = []
     initialDataLength = 0

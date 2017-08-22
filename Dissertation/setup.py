@@ -277,15 +277,20 @@ def loadNOAADataset(path, sep):
 
 
 def loadSCARGCBoxplotResults(path, sep):
-    description = 'Results from SCARGC algorithm (for boxplot and accuracy timelime).'
-    path = path+'results_scargc'+sep+'setting_1'+sep
-    arrFiles = ['1CDT', '1CHT', '1CSurr', '2CDT', '2CHT', '4CE1CF', '4CR', '4CRE-V1', '4CRE-V2', '5CVT', 'FG_2C_2D', 'GEARS_2C_2D', 'MG_2C_2D', 'UG_2C_2D', 'UG_2C_3D', 'UG_2C_5D', 'keystroke']
+    print('Results from SCARGC algorithm (for boxplot and accuracy timelime).')
+    path1 = path+'results_scargc'+sep+'setting_1'+sep
+    path2 = path+'results_scargc'+sep+'setting_2'+sep
+    arrFiles = ['1CDT', '2CDT', '1CHT', '2CHT', '4CR', '4CRE-V1', '4CRE-V2', '5CVT', '1CSurr', '4CE1CF', 'UG_2C_2D', 'MG_2C_2D', 'FG_2C_2D', 'UG_2C_3D', 'UG_2C_5D', 'GEARS_2C_2D', 'keystroke']
+    accuracies_1={}
+    accuracies_2={}
+
     for i in range(len(arrFiles)):
-        
-    dataValues = pd.read_csv(+'elec_data.csv',sep = ",")
-    dataValues = pd.DataFrame.as_matrix(dataValues)
-    dataLabels = pd.read_csv(path+'real'+sep+'elecdata'+sep+'elec_label.csv',sep = ",")
-    dataLabels = pd.DataFrame.as_matrix(dataLabels)
+        accuracies_1[arrFiles[i]] = np.loadtxt(path1+arrFiles[i]+'.txt')
+        accuracies_2[arrFiles[i]] = np.loadtxt(path2+arrFiles[i]+'.txt')
     
-    #print(dataValues)
-    return dataValues, dataLabels[:,0], description
+    accuracies_1['noaa'] = np.loadtxt(path1+'noaa_data_matlab.csv')
+    accuracies_1['elec2'] = np.loadtxt(path1+'elec2_matlab.csv')
+    accuracies_2['noaa'] = np.loadtxt(path2+'noaa_data_matlab.txt')
+    accuracies_2['elec2'] = np.loadtxt(path2+'elec2_matlab.txt')
+
+    return accuracies_1, accuracies_2

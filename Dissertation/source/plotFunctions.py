@@ -48,7 +48,7 @@ def plotDistributionByClass(instances, indexesByClass):
 
 
 def plotAccuracy(arr, label, steps):
-    arr = np.array(arr)*100
+    arr = np.array(arr)
     c = range(len(arr))
     fig = plt.figure()
     fig.add_subplot(122)
@@ -141,7 +141,7 @@ def plot2(X, y, t, classes):
 
 
 def finalEvaluation(arrAcc, steps):
-    print("Average Accuracy: ", np.mean(arrAcc)*100)
+    print("Average Accuracy: ", np.mean(arrAcc))
     print("Standard Deviation: ", np.std(arrAcc))
     print("Variance: ", np.std(arrAcc)**2)
     plotAccuracy(arrAcc, 'Accuracy', steps)

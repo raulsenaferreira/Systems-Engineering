@@ -16,7 +16,7 @@ def start(dataValues, dataLabels, **kwargs):
     clfName = kwargs["clfName"]
     densityFunction = kwargs["densityFunction"]
 
-    print("METHOD: K-NN as classifier (STATIC)")
+    print("METHOD: K-NN as classifier (Updating)")
 
     arrAcc = []
     initialDataLength = 0
@@ -38,4 +38,4 @@ def start(dataValues, dataLabels, **kwargs):
         finalDataLength+=sizeOfBatch
         X = Ut
         y = predicted
-    return "Static SVM", arrAcc, X, y
+    return "Siding KNN", arrAcc, X, y
