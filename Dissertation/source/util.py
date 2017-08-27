@@ -137,7 +137,8 @@ def slicingClusteredData(clusters, classes):
         indexes[classes[c]]=[i for i in range(len(clusters)) if clusters[i] == c]
         if len(indexes[classes[c]]) < 1:
             #choose one index randomly if the array is empty
-            indexes[classes[c]] = [random.randint(0,len(clusters)-1)]
+            #indexes[classes[c]] = [random.randint(0,len(clusters)-1)]
+            print("Empty array for class ", c)
 
     return indexes
 
@@ -372,9 +373,11 @@ def compactingDataDensityBased2(densities, criteria, reverse=False):
         selectedIndexes.append(ind)
 
     stackedIndexes=selectedIndexes[0]
+    print(0 ,len(selectedIndexes[0]))
 
     for i in range(1, len(selectedIndexes)):
         stackedIndexes = np.hstack([stackedIndexes,selectedIndexes[i]])
+        print(i, len(selectedIndexes[i]))
 
     return stackedIndexes
 

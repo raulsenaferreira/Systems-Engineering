@@ -1,7 +1,16 @@
 import numpy as np
 import pandas as pd
 import checkerboard
+from source import util
  
+
+
+def countInstances(datasetID, dataLabels):
+    classes = list(set(dataLabels))
+    inst = util.slicingClusteredData(dataLabels, classes)
+    for i in range(len(inst)):
+        print("{}: class {} -> {} instances.".format(datasetID, i, len(inst[i])))
+
 
 #artificial datasets                
 def loadCDT(path, sep):
@@ -13,7 +22,7 @@ def loadCDT(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
     #print(dataValues)
-    
+    #countInstances("1CDT", dataLabels)
     return dataValues, dataLabels, description
 
 
@@ -26,7 +35,7 @@ def loadCHT(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
     #print(dataValues)
-    
+    #countInstances("1CHT", dataLabels)
     return dataValues, dataLabels, description
 
 
@@ -39,7 +48,7 @@ def load2CDT(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
     #print(dataValues)
-    
+    #countInstances("2CDT", dataLabels)
     return dataValues, dataLabels, description
 
 
@@ -52,7 +61,7 @@ def load2CHT(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
     #print(dataValues)
-    
+    #countInstances("2CHT", dataLabels)
     return dataValues, dataLabels, description
 
 
@@ -65,7 +74,7 @@ def loadUG_2C_2D(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
     #print(dataValues)
-    
+    #countInstances("UG_2C_2D", dataLabels)
     return dataValues, dataLabels, description
 
 
@@ -78,7 +87,7 @@ def loadUG_2C_3D(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:3]
     #print(dataValues)
-    
+    #countInstances("UG_2C_3D", dataLabels)
     return dataValues, dataLabels, description
 
 
@@ -91,7 +100,7 @@ def loadUG_2C_5D(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:5]
     #print(dataValues)
-    
+    #countInstances("UG_2C_5D", dataLabels)
     return dataValues, dataLabels, description
 
 
@@ -104,7 +113,7 @@ def loadMG_2C_2D(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
     #print(dataValues)
-    
+    #countInstances("MG_2C_2D", dataLabels)
     return dataValues, dataLabels, description
 
 
@@ -117,7 +126,7 @@ def loadFG_2C_2D(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
     #print(dataValues)
-    
+    #countInstances("FG_2C_2D", dataLabels)
     return dataValues, dataLabels, description
 
 
@@ -130,7 +139,7 @@ def loadGEARS_2C_2D(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
     #print(dataValues)
-    
+    #countInstances("GEARS_2C_2D", dataLabels)
     return dataValues, dataLabels, description
 
 
@@ -143,7 +152,7 @@ def loadCSurr(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
     #print(dataValues)
-    
+    #countInstances("1CSurr", dataLabels)
     return dataValues, dataLabels, description
 
 
@@ -156,7 +165,7 @@ def load5CVT(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
     #print(dataValues)
-    
+    #countInstances("5CVT", dataLabels)
     return dataValues, dataLabels.astype(int), description
 
 
@@ -169,7 +178,7 @@ def load4CR(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
     #print(dataValues)
-    
+    #countInstances("4CR", dataLabels)
     return dataValues, dataLabels.astype(int), description
 
 
@@ -182,7 +191,7 @@ def load4CRE_V1(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
     #print(dataLabels)
-    
+    #countInstances("4CRE-V1", dataLabels)
     return dataValues, dataLabels.astype(int), description
 
 
@@ -195,7 +204,7 @@ def load4CRE_V2(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
     #print(dataValues)
-    
+    #countInstances("4CRE-V2", dataLabels)
     return dataValues, dataLabels.astype(int), description
 
 def load4CE1CF(path, sep):
@@ -207,7 +216,7 @@ def load4CE1CF(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:2]
     #print(dataValues)
-    
+    #countInstances("4CE1CF", dataLabels)
     return dataValues, dataLabels.astype(int), description
 
 def loadCheckerBoard(path, sep, T=100, N=2000):
@@ -228,7 +237,8 @@ def loadCheckerBoard(path, sep, T=100, N=2000):
     for i in range(1, T):
         dataLabels = np.hstack([dataLabels, auxL[i]])
         dataValues = np.vstack([dataValues, auxV[i]])
-    
+
+    #countInstances("checkerboard", dataLabels)
     return dataValues, dataLabels, description
 
 #real datasets
@@ -241,20 +251,20 @@ def loadKeystroke(path, sep):
     dataLabels = dataLabels-1
     dataValues = dataValues[:,0:10]
     #print(dataValues)
-    
+    #countInstances("keystroke", dataLabels)
     return dataValues, dataLabels.astype(int), description
 
 
 def loadElecData(path, sep):
     description = 'Electricity data. 7 features. 2 classes.'
 
-    dataValues = pd.read_csv(path+'real'+sep+'elecdata'+sep+'elec_data.csv',sep = ",", header=None)
+    dataValues = pd.read_csv(path+'real'+sep+'elecdata'+sep+'electricity_dataset.csv',sep = ",", header=None)
     dataValues = pd.DataFrame.as_matrix(dataValues)
-    dataLabels = pd.read_csv(path+'real'+sep+'elecdata'+sep+'elec_label.csv',sep = ",", header=None)
-    dataLabels = pd.DataFrame.as_matrix(dataLabels)
-    
+    dataLabels = dataValues[:, 7]
+    dataValues = dataValues[:, 0:7]
     #print(dataValues)
-    return dataValues, dataLabels[:,0], description
+    #countInstances("elecdata", dataLabels)
+    return dataValues, dataLabels.astype(int), description
 
 
 def loadNOAADataset(path, sep):
@@ -267,13 +277,13 @@ def loadNOAADataset(path, sep):
     point,  sea  level  pressure,  visibility,  average wind speed, maximum  wind  speed)
     are  used  to  determine  whether  each  day  experienced  rain  or no rain.
     '''
-    dataValues = pd.read_csv(path+'real'+sep+'noaa'+sep+'noaa_data.csv',sep = ",", header=None)
+    dataValues = pd.read_csv(path+'real'+sep+'noaa'+sep+'noaa_dataset.csv',sep = ",", header=None)
     dataValues = pd.DataFrame.as_matrix(dataValues)
-    dataLabels = pd.read_csv(path+'real'+sep+'noaa'+sep+'noaa_label.csv',sep = ",", header=None)
-    dataLabels = pd.DataFrame.as_matrix(dataLabels)
+    dataLabels = dataValues[:, 8]
+    dataValues = dataValues[:,0:8]
     #dataLabels = np.squeeze(np.asarray(dataLabels))
-    
-    return dataValues, dataLabels[:,0], description
+    #countInstances("NOAA", dataLabels)
+    return dataValues, dataLabels.astype(int), description
 
 
 def loadSCARGCBoxplotResults(path, sep):
