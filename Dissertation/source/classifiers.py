@@ -165,4 +165,5 @@ def classify(X, y, Ut, K, classes, clf):
             return clf.predict(Ut)
         elif clf=='knn':
             clf = knn(X, y, K)
+            #print(len(Ut))
             return clf.predict(Ut)

@@ -5,60 +5,67 @@ from sklearn.base import BaseEstimator, ClassifierMixin
 
 class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
 
-    def __init__(self, classifier, excludingPercentage=0.05, sizeOfBatch=200, batches=50):
-        
+    def __init__(self, excludingPercentage=0.05, K=1, sizeOfBatch=100, batches=50):
+        #super(proposed_gmm_core_extraction,self).__init__()
         self.sizeOfBatch = sizeOfBatch
         self.batches = batches
-        self.initialLabeledDataPerc=0.05
+        self.initialLabeledData=50
         #self.classes=[0, 1]
         self.usePCA=False
         #used only by gmm and cluster-label process
         self.densityFunction='gmm'
         self.excludingPercentage = excludingPercentage
-        self.K_variation = 5
-        self.classifier=classifier
+        self.K = K
+        self.clfName = 'knn'
+        '''print(excludingPercentage)
+        print(K)
+        print(sizeOfBatch)
+        print(batches)'''
+        
         #print("{} excluding percecntage".format(excludingPercentage))    
-    '''
+    
     def get_params(self, deep=True):
-        return {"excludingPercentage" : self.excludingPercentage}
+        return {"excludingPercentage" : self.excludingPercentage, "K":self.K, "sizeOfBatch":self.sizeOfBatch, "batches":self.batches}
+    
     def set_params(self, **parameters):
         for parameter, value in parameters.items():
             setattr(self, parameter, value)
         return self
-    '''        
+            
     def fit(self, dataValues, dataLabels=None):
-        classes = list(set(dataLabels))
         arrAcc = []
+        classes = list(set(dataLabels))
         initialDataLength = 0
-        finalDataLength = round((self.initialLabeledDataPerc)*self.sizeOfBatch)
+        finalDataLength = self.initialLabeledData
         # ***** Box 1 *****
         #Initial labeled data
         X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
-        initialDataLength=finalDataLength
-        finalDataLength=self.sizeOfBatch
         
         for t in range(self.batches):
-            #print(t)
+            #print("passo: ",t)
+            initialDataLength=finalDataLength
+            finalDataLength=finalDataLength+self.sizeOfBatch
+            #print(initialDataLength)
+            #print(finalDataLength)
             # ***** Box 2 *****            
             Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
             
             # ***** Box 3 *****
-            predicted = classifiers.classify(X, y, Ut, self.K_variation, classes)
+            predicted = classifiers.classify(X, y, Ut, self.K, classes, self.clfName)
             
             # ***** Box 4 *****
             #pdfs from each new points from each class applied on new arrived points
-            pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
+            #pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
+            pdfsByClass = util.pdfByClass(Ut, predicted, classes, self.densityFunction)
             
             # ***** Box 5 *****
-            selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
+            selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, 1-self.excludingPercentage)
             
             # ***** Box 6 *****
             X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
-            
-            initialDataLength=finalDataLength
-            finalDataLength+=self.sizeOfBatch
+           
             # Evaluating classification
-            arrAcc.append(metrics.evaluate(yt, predicted)*100)
+            arrAcc.append(metrics.evaluate(yt, predicted))
      
         # returns accuracy array and last selected points
         self.threshold_ = arrAcc
@@ -74,4 +81,5 @@ class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
     def score(self, X, y=None):
         accuracies = self.predict()
         N = len(accuracies)
+        #print(self.K, self.excludingPercentage, sum(accuracies)/N)
         return sum(accuracies)/N

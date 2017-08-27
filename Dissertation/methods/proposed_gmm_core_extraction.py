@@ -28,15 +28,15 @@ def start(**kwargs):
     # ***** Box 1 *****
     #Initial labeled data
     X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
-    initialDataLength=finalDataLength
-    finalDataLength=finalDataLength+sizeOfBatch
-
+    
     for t in range(batches):
+        initialDataLength=finalDataLength
+        finalDataLength=finalDataLength+sizeOfBatch
         # ***** Box 2 *****
         Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
         #print(len(Ut))
         # ***** Box 3 *****
-        predicted = classifiers.classify(X, y, Ut, K, classes, clfName)   
+        predicted = classifiers.classify(X, y, Ut, K, classes, clfName)
         # Evaluating classification
         arrAcc.append(metrics.evaluate(yt, predicted))
         # ***** Box 4 *****
@@ -59,8 +59,7 @@ def start(**kwargs):
         '''
         #X = np.vstack([X, Xl])
         #y = np.hstack([y, yl])
-        initialDataLength=finalDataLength
-        finalDataLength+=sizeOfBatch
+        
         
 
     # returns accuracy array and last selected points
