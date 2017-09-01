@@ -32,35 +32,24 @@ def start(**kwargs):
     for t in range(batches):
         initialDataLength=finalDataLength
         finalDataLength=finalDataLength+sizeOfBatch
+
         # ***** Box 2 *****
         Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
-        #print(len(Ut))
+        
         # ***** Box 3 *****
         predicted = classifiers.classify(X, y, Ut, K, classes, clfName)
         # Evaluating classification
         arrAcc.append(metrics.evaluate(yt, predicted))
+
         # ***** Box 4 *****
         #pdfs from each new points from each class applied on new arrived points
         pdfsByClass = util.pdfByClass(Ut, predicted, classes, densityFunction)
-        #pdfsByClassX = util.pdfByClass(X, y, classes, densityFunction)
 
         # ***** Box 5 *****
         selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
-        #selectedIndexesX = util.compactingDataDensityBased2(pdfsByClassX, excludingPercentage)
-        #selectedIndexesl = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage, True)
 
         # ***** Box 6 *****
         X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
-        #Ut, predicted = util.selectedSlicedData(X, y, selectedIndexesX)
-        #Xl, yl = util.selectedSlicedData(Ut, predicted, selectedIndexesl)
-        '''
-        X = np.vstack([X, Ut])
-        y = np.hstack([y, predicted])
-        '''
-        #X = np.vstack([X, Xl])
-        #y = np.hstack([y, yl])
-        
-        
 
     # returns accuracy array and last selected points
-    return "GMM + cutting data percentage", arrAcc, X, y
+    return "KNN + Fixed cutting data percentage", arrAcc, X, y

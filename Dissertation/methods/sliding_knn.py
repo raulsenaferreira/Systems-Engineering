@@ -16,11 +16,10 @@ def start(dataValues, dataLabels, **kwargs):
     clfName = kwargs["clfName"]
     densityFunction = kwargs["densityFunction"]
 
-    print("METHOD: K-NN as classifier (Updating)")
+    print("METHOD: K-NN as classifier")
 
     arrAcc = []
     initialDataLength = 0
-    excludingPercentage = 1-excludingPercentage
     finalDataLength = initialLabeledData #round((initialLabeledDataPerc)*sizeOfBatch)
     # ***** Box 1 *****
     #Initial labeled data
@@ -28,14 +27,16 @@ def start(dataValues, dataLabels, **kwargs):
     initialDataLength=finalDataLength
     finalDataLength=finalDataLength+sizeOfBatch
     
+    clf = classifiers.knn(X, y, K)
+
     for t in range(batches):
-        clf = classifiers.knn(X, y, K)
+        
         Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
         predicted = clf.predict(Ut)
         arrAcc.append(metrics.evaluate(yt, predicted))
         
         initialDataLength=finalDataLength
         finalDataLength+=sizeOfBatch
-        X = Ut
-        y = predicted
-    return "Siding KNN", arrAcc, X, y
+        #X = Ut
+        #y = predicted
+    return "Static KNN", arrAcc, X, y

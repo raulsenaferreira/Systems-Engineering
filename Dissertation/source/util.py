@@ -57,7 +57,7 @@ def plotDistributionss(distributions):
     for k, v in distributions.items():
         points = distributions[k]
         points = np.array(points)
-        print(points)
+        #print(points)
         handles.append(ax.scatter(points[:, 0], points[:, 1], color=colors[i], s=5, edgecolor='none'))
         i+=1
 
@@ -373,11 +373,11 @@ def compactingDataDensityBased2(densities, criteria, reverse=False):
         selectedIndexes.append(ind)
 
     stackedIndexes=selectedIndexes[0]
-    print(0 ,len(selectedIndexes[0]))
+    #print(0 ,len(selectedIndexes[0]))
 
     for i in range(1, len(selectedIndexes)):
         stackedIndexes = np.hstack([stackedIndexes,selectedIndexes[i]])
-        print(i, len(selectedIndexes[i]))
+        #print(i, len(selectedIndexes[i]))
 
     return stackedIndexes
 
