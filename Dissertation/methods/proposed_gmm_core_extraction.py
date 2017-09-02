@@ -30,9 +30,11 @@ def start(**kwargs):
     X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
     
     for t in range(batches):
+        #print("passo: ",t)
         initialDataLength=finalDataLength
         finalDataLength=finalDataLength+sizeOfBatch
-
+        #print(initialDataLength)
+        #print(finalDataLength)
         # ***** Box 2 *****
         Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
         

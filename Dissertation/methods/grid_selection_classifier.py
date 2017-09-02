@@ -1,3 +1,4 @@
+import numpy as np
 from source import metrics
 from source import util
 from source import classifiers
@@ -36,6 +37,7 @@ class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
         arrAcc = []
         classes = list(set(dataLabels))
         initialDataLength = 0
+        self.excludingPercentage=1-self.excludingPercentage
         finalDataLength = self.initialLabeledData
         # ***** Box 1 *****
         #Initial labeled data
@@ -52,20 +54,21 @@ class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
             
             # ***** Box 3 *****
             predicted = classifiers.classify(X, y, Ut, self.K, classes, self.clfName)
-            
+            # Evaluating classification
+            arrAcc.append(metrics.evaluate(yt, predicted))
+
             # ***** Box 4 *****
             #pdfs from each new points from each class applied on new arrived points
             #pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
             pdfsByClass = util.pdfByClass(Ut, predicted, classes, self.densityFunction)
             
             # ***** Box 5 *****
-            selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, 1-self.excludingPercentage)
+            selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
             
             # ***** Box 6 *****
             X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
            
-            # Evaluating classification
-            arrAcc.append(metrics.evaluate(yt, predicted))
+            
      
         # returns accuracy array and last selected points
         self.threshold_ = arrAcc
