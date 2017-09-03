@@ -4,9 +4,9 @@ from source import util
 from source import classifiers
 from sklearn.base import BaseEstimator, ClassifierMixin
 
-class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
+class proposed_gmm_core_extraction_bathacharyya(BaseEstimator, ClassifierMixin):
 
-    def __init__(self, excludingPercentage=0.05, K=1, sizeOfBatch=100, batches=50):
+    def __init__(self, K=1, sizeOfBatch=100, batches=50):
         #super(proposed_gmm_core_extraction,self).__init__()
         self.sizeOfBatch = sizeOfBatch
         self.batches = batches
@@ -14,8 +14,7 @@ class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
         #self.classes=[0, 1]
         self.usePCA=False
         #used only by gmm and cluster-label process
-        self.densityFunction='kde'
-        self.excludingPercentage = excludingPercentage
+        self.densityFunction='gmm'
         self.K = K
         self.clfName = 'knn'
         '''print(excludingPercentage)
@@ -26,7 +25,7 @@ class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
         #print("{} excluding percecntage".format(excludingPercentage))    
     
     def get_params(self, deep=True):
-        return {"excludingPercentage" : self.excludingPercentage, "K":self.K, "sizeOfBatch":self.sizeOfBatch, "batches":self.batches}
+        return {"K":self.K, "sizeOfBatch":self.sizeOfBatch, "batches":self.batches}
     
     def set_params(self, **parameters):
         for parameter, value in parameters.items():
@@ -37,7 +36,6 @@ class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
         arrAcc = []
         classes = list(set(dataLabels))
         initialDataLength = 0
-        self.excludingPercentage=1-self.excludingPercentage
         finalDataLength = self.initialLabeledData
         # ***** Box 1 *****
         #Initial labeled data
@@ -61,9 +59,11 @@ class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
             #pdfs from each new points from each class applied on new arrived points
             #pdfsByClass = util.pdfByClass2(Ut, predicted, classes)
             pdfsByClass = util.pdfByClass(Ut, predicted, classes, self.densityFunction)
-            
+            instancesXByClass, instancesUtByClass = util.unifyInstancesByClass(X, y, Ut, predicted, classes)
+
             # ***** Box 5 *****
-            selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
+            keepPercentage = util.getBhattacharyyaScores(instancesUtByClass)
+            selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, keepPercentage)
             
             # ***** Box 6 *****
             X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)

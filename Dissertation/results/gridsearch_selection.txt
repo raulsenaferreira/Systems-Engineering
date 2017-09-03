@@ -1,3 +1,4 @@
+Proposed method 1 with GMM
 One Class Diagonal Translation. 2 Dimensional data.: 99.87421383647798 using {'K': 9, 'batches': 100, 'excludingPercentage': 0.65, 'sizeOfBatch': 159} 
 One Class Horizontal Translation. 2 Dimensional data.: 99.37735849056605 using {'K': 3, 'batches': 100, 'excludingPercentage': 0.75, 'sizeOfBatch': 159} 
 Two Classes Diagonal Translation. 2 Dimensional data: 94.9622641509434 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 159} 
@@ -14,3 +15,17 @@ Two Bidimensional Classes as Four Gaussians.: 79.943971985993 using {'K': 4, 'ba
 Artificial Two 3-dimensional Unimodal Gaussian Classes.: 94.70985492746372 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 1999} 
 Two 5-dimensional Unimodal Gaussian Classes.: 92.58229114557278 using {'K': 11, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 1999} 
 Two Rotating Gears (Two classes. Bidimensional).: 97.06103051525761 using {'K': 11, 'batches': 100, 'excludingPercentage': 0.65, 'sizeOfBatch': 1999} 
+
+Proposed method 1 with KDE
+One Class Diagonal Translation. 2 Dimensional data.: 99.85534591194968 using {'K': 9, 'batches': 100, 'excludingPercentage': 0.65, 'sizeOfBatch': 159} 
+One Class Horizontal Translation. 2 Dimensional data.: 99.33333333333334 using {'K': 3, 'batches': 100, 'excludingPercentage': 0.65, 'sizeOfBatch': 159} 
+Two Classes Diagonal Translation. 2 Dimensional data: 94.66666666666669 using {'K': 9, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 159} 
+Two Classes Horizontal Translation. 2 Dimensional data.: 85.59119496855348 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 159} 
+Four Classes Rotating Separated. Bidimensional.: 99.98683298683298 using {'K': 3, 'batches': 100, 'excludingPercentage': 0.85, 'sizeOfBatch': 1443} 
+Four Classes Rotating with Expansion V1. Bidimensional.: 33.20576461168935 using {'K': 3, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 1249} 
+Four Classes Rotating with Expansion V2. Bidimensional.: 27.46364133406233 using {'K': 3, 'batches': 100, 'excludingPercentage': 0.75, 'sizeOfBatch': 1829} 
+Five Classes Vertical Translation. Bidimensional.: 58.46025104602511 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 239} 
+One Class Surrounding another Class. Bidimensional.: 92.3804347826087 using {'K': 10, 'batches': 100, 'excludingPercentage': 0.8, 'sizeOfBatch': 552} 
+Four Classes Expanding and One Class Fixed. Bidimensional.: 97.98556581986142 using {'K': 11, 'batches': 100, 'excludingPercentage': 0.8, 'sizeOfBatch': 1732} 
+Two Bidimensional Unimodal Gaussian Classes.: 95.50150150150152 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.8, 'sizeOfBatch': 999} 
+Two Bidimensional Multimodal Gaussian Classes.: 82.01950975487743 using {'K': 3, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 1999} 
