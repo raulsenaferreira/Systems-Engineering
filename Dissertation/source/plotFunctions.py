@@ -113,6 +113,39 @@ def plot(X, y, coreX, coreY, t):
     plt.show()
 
 
+def plotAnimation(i):
+    classes = list(set(arrY[i]))
+    fig = plt.figure()
+    handles = []
+    classLabels = []
+    cmx = plt.get_cmap('Paired')
+    colors = cmx(np.linspace(0, 1, (len(classes)*2)+1))
+    #classLabels = ['Class 1', 'Core 1', 'Class 2', 'Core 2']
+    ax = fig.add_subplot(111)
+    color=0
+    for cl in classes:
+        #points
+        points = arrX[i][np.where(y==cl)[0]]
+        x1 = points[:,0]
+        x2 = points[:,1]
+        handles.append(ax.scatter(x1, x2, c = colors[color]))
+        #core support points
+        color+=1
+        corePoints = coreX[np.where(coreY==cl)[0]]
+        coreX1 = corePoints[:,0]
+        coreX2 = corePoints[:,1]
+        handles.append(ax.scatter(coreX1, coreX2, c = colors[color]))
+        #labels
+        classLabels.append('Class {}'.format(cl))
+        classLabels.append('Core {}'.format(cl))
+        color+=1
+
+    ax.legend(handles, classLabels)
+    title = "Data distribution. Step {}".format(t)
+    plt.title(title)
+    plt.show()
+
+
 def plot2(X, y, t, classes):
     X = classifiers.pca(X, 2)
     fig = plt.figure()

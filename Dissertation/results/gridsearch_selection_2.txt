@@ -1,0 +1,7 @@
+One Class Diagonal Translation. 2 Dimensional data.: 99.811320754717 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.7, 'sizeOfBatch': 159} 
+One Class Diagonal Translation. 2 Dimensional data.: 99.8301886792453 using {'K': 9, 'batches': 100, 'excludingPercentage': 0.75, 'sizeOfBatch': 159} 
+One Class Horizontal Translation. 2 Dimensional data.: 99.29559748427675 using {'K': 11, 'batches': 100, 'excludingPercentage': 0.75, 'sizeOfBatch': 159} 
+Two Classes Diagonal Translation. 2 Dimensional data: 0 using {} 
+Two Classes Horizontal Translation. 2 Dimensional data.: 0 using {} 
+Four Classes Rotating Separated. Bidimensional.: 99.95911295911296 using {'K': 11, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 1443} 
+Four Classes Rotating with Expansion V1. Bidimensional.: 27.743795036028825 using {'K': 10, 'batches': 100, 'excludingPercentage': 0.55, 'sizeOfBatch': 1249} 

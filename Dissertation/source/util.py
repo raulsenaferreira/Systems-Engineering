@@ -328,10 +328,10 @@ def pdfByClass3(X, y, Ut, predicted, classes, criteria):
         #print("Size of Class and points inside X: ", c, len(indexesX))
         #print("Size of Class and points inside Ut: ", c, len(indexesUt))
         #choose one index randomly if the array is empty
-        if len(indexesX) < 1:
+        '''if len(indexesX) < 1:
             indexesX = [random.randint(0,len(y)-1)]
         if len(indexesUt) < 1:
-            indexesUt = [random.randint(0,len(predicted)-1)]
+            indexesUt = [random.randint(0,len(predicted)-1)]'''
 
         XByClass = X[indexesX]
         UtByClass = Ut[indexesUt]
