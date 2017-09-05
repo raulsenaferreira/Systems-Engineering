@@ -160,7 +160,8 @@ def startAnimation(arrX, arrY, arrUt, arrYt, arrClf):
         Z = Z.reshape(xx.shape)
         
         contour = plt.contourf(xx, yy, Z, alpha=0.4)
-        scatter = plt.scatter(Ut[:, 0], Ut[:, 1], c=yt, s=20, edgecolor='k')
+        scatter = plt.scatter(Ut[:, 0], Ut[:, 1], c=yt, s=30)
+        cores = plt.scatter(X[:, 0], X[:, 1], c=y, s=50, marker ='v', edgecolor='k')
         plt.title("Step {}".format(i+1))
         #plt.show()
         return scatter,
