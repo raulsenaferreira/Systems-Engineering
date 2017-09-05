@@ -51,6 +51,8 @@ def doExperiments(dataValues, dataLabels, datasetDescription, arrAccSCARGC, fina
     arrX = []
     arrClf = []
     arrY = []
+    arrUt = [] 
+    arrYt = []
     
     print(datasetDescription)
     print("{} batches of {} instances".format(batches, sizeOfBatch))
@@ -72,7 +74,7 @@ def doExperiments(dataValues, dataLabels, datasetDescription, arrAccSCARGC, fina
         for i in range(numberOfTimes):
             start = timer()
             #accuracy per step
-            algorithmName, accuracies, CoreX, CoreY, arrX, arrY, arrClf = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledData=labeledData, excludingPercentage=e.excludingPercentage, K_variation=e.K_variation, CP=e.CP, alpha=e.alpha, clfName=e.clfName , useSVM=e.useSVM, isImbalanced=e.isImbalanced)
+            algorithmName, accuracies, CoreX, CoreY, arrX, arrY, arrUt, arrYt, arrClf = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledData=labeledData, excludingPercentage=e.excludingPercentage, K_variation=e.K_variation, CP=e.CP, alpha=e.alpha, clfName=e.clfName , useSVM=e.useSVM, isImbalanced=e.isImbalanced)
             end = timer()
             averageAccuracy = np.mean(accuracies)
 
@@ -99,7 +101,7 @@ def doExperiments(dataValues, dataLabels, datasetDescription, arrAccSCARGC, fina
     listOfMethods.append("SCARGC")
     
     plotFunctions.plotBoxplot(listOfAccuracies, listOfMethods)'''
-    startAnimation(arrX, arrY, arrClf)
+    startAnimation(arrX, arrY, arrUt, arrYt, arrClf)
     
         
 def accSCARGC(path, sep, key, steps):
@@ -117,7 +119,7 @@ def accSCARGC(path, sep, key, steps):
 
 
 
-def startAnimation(arrX, arrY, arrClf):
+def startAnimation(arrX, arrY, arrUt, arrYt, arrClf):
     # First set up the figure, the axis, and the plot element we want to animate
     fig = plt.figure()
     #ax = plt.axes(xlim=(0, 2), ylim=(-2, 2))
@@ -147,15 +149,18 @@ def startAnimation(arrX, arrY, arrClf):
         X = arrX[i]
         y = arrY[i]
         clf = arrClf[i]
+        Ut = arrUt[i]
+        yt = arrYt[i] #gabarito
+        
         #decision boundaries
-        x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
-        y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+        x_min, x_max = Ut[:, 0].min() - 1, Ut[:, 0].max() + 1
+        y_min, y_max = Ut[:, 1].min() - 1, Ut[:, 1].max() + 1
         xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.1), np.arange(y_min, y_max, 0.1))
         Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])
         Z = Z.reshape(xx.shape)
         
         contour = plt.contourf(xx, yy, Z, alpha=0.4)
-        scatter = plt.scatter(X[:, 0], X[:, 1], c=y, s=20, edgecolor='k')
+        scatter = plt.scatter(Ut[:, 0], Ut[:, 1], c=yt, s=20, edgecolor='k')
         plt.title("Step {}".format(i+1))
         #plt.show()
         return scatter,

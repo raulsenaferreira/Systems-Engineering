@@ -27,6 +27,8 @@ def start(**kwargs):
     arrAcc = []
     arrX = []
     arrY = []
+    arrUt = []
+    arrYt = []
     arrClf = []
     arrDecisionBoundaries = []
     initialDataLength = 0
@@ -50,6 +52,8 @@ def start(**kwargs):
         arrClf.append(clf)
         arrX.append(X)
         arrY.append(y)
+        arrUt.append(np.array(Ut))
+        arrYt.append(yt)
         '''#decision boundaries
         x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
         y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
@@ -77,4 +81,4 @@ def start(**kwargs):
 
         
     # returns accuracy array and last selected points
-    return "KNN + Fixed cutting data percentage", arrAcc, X, y, arrX, arrY, arrClf
+    return "KNN + Fixed cutting data percentage", arrAcc, X, y, arrX, arrY, arrUt, arrYt, arrClf
