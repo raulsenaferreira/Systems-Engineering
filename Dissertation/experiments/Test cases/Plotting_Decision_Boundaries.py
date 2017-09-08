@@ -13,7 +13,7 @@ from source import metrics
 from methods import sliding_svm
 from methods import sliding_knn
 from methods import sliding_random_forest
-from methods import static_rf
+from methods import proposed_gmm_core_svm_boundaries_extraction
 from methods import proposed_gmm_decision_boundaries
 from methods import improved_intersection
 from methods import compose
@@ -25,16 +25,17 @@ from methods import testing
 
 
 class Experiment():
-    def __init__(self, method, densityFunction='gmm'):
+    def __init__(self, method, densityFunction=None, poolSize=None, isBatchMode=None):
         #commom for all experiments
         self.method = method
         #self.initialLabeledDataPerc=0.05 #150 instances for keystroke database and 0.05 % for artificial databases
-        #self.classes=[0, 1]
+        self.isBatchMode = isBatchMode
+        self.poolSize = poolSize
         self.usePCA=False
         #used only by gmm / kde process
         self.densityFunction=densityFunction
-        self.excludingPercentage = 0.75
-        self.K_variation = 3
+        self.excludingPercentage = 0.85
+        self.K_variation = 6
         self.classifier='cluster_and_label'
         #used in alpha-shape version only
         self.CP=0.65
@@ -74,7 +75,7 @@ def doExperiments(dataValues, dataLabels, datasetDescription, arrAccSCARGC, fina
         for i in range(numberOfTimes):
             start = timer()
             #accuracy per step
-            algorithmName, accuracies, CoreX, CoreY, arrX, arrY, arrUt, arrYt, arrClf = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledData=labeledData, excludingPercentage=e.excludingPercentage, K_variation=e.K_variation, CP=e.CP, alpha=e.alpha, clfName=e.clfName , useSVM=e.useSVM, isImbalanced=e.isImbalanced)
+            algorithmName, accuracies, CoreX, CoreY = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledData=labeledData, excludingPercentage=e.excludingPercentage, K_variation=e.K_variation, CP=e.CP, alpha=e.alpha, clfName=e.clfName , useSVM=e.useSVM, isImbalanced=e.isImbalanced, poolSize=e.poolSize, isBatchMode=e.isBatchMode)
             end = timer()
             averageAccuracy = np.mean(accuracies)
 
@@ -105,7 +106,7 @@ def doExperiments(dataValues, dataLabels, datasetDescription, arrAccSCARGC, fina
     
         
 def accSCARGC(path, sep, key, steps):
-    steps = 8
+    steps = 100
     resultsSCARGC_1, resultsSCARGC_2 = setup.loadSCARGCBoxplotResults(path, sep)
     res = resultsSCARGC_1[key]
     res = [ res[i::steps] for i in range(steps) ]
@@ -167,8 +168,8 @@ def startAnimation(arrX, arrY, arrUt, arrYt, arrClf):
         return scatter,
     
     anim = animation.FuncAnimation(fig, animate, init_func=init,
-                               frames=8, interval=2000, blit=True)
-    anim.save('results/keystroke_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+                               frames=100, interval=2000, blit=True)
+    anim.save('results/CSurr_SVM_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
     plt.show()
     
     
@@ -184,10 +185,10 @@ def main():
     path = os.getcwd()+sep+'data'+sep
     
     steps = 100
-    arrAccSCARGC, finalAccSCARGC = accSCARGC(path, sep, 'keystroke', steps)
+    arrAccSCARGC, finalAccSCARGC = accSCARGC(path, sep, '1CSurr', steps)
     
     #sinthetic
-    dataValues, dataLabels, description = setup.loadKeystroke(path, sep)
+    dataValues, dataLabels, description = setup.loadCSurr(path, sep)
     
 
     '''
@@ -208,7 +209,7 @@ def main():
     #experiments[3] = Experiment(sliding_knn)
 
     ''' Proposed Method 1 (density function core extraction) '''
-    experiments[2] = Experiment(proposed_gmm_decision_boundaries, "gmm", 159, True))
+    #experiments[2] = Experiment(proposed_gmm_decision_boundaries, "gmm")
     #experiments[4] = Experiment(proposed_gmm_core_extraction, "kde")
 
     '''
@@ -217,13 +218,10 @@ def main():
     #experiments[5] = Experiment(intersection, "gmm")
     #experiments[6] = Experiment(intersection, "kde")
     
-    '''
-    Proposed method 3 (GMM All instances)
-    '''
-    #experiments[6] = Experiment(testing)
+    experiments[7] = Experiment(proposed_gmm_core_svm_boundaries_extraction, "gmm", 159, True)
 
     #params: X, y, method, num of experiment repetitions, num of batches
-    doExperiments(dataValues, dataLabels, description, arrAccSCARGC, finalAccSCARGC, experiments, 1, steps, 150)
+    doExperiments(dataValues, dataLabels, description, arrAccSCARGC, finalAccSCARGC, experiments, 1, steps, 50)
 
 
 

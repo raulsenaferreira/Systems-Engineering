@@ -1,0 +1,4 @@
+
+One Class Surrounding another Class. Bidimensional.: 91.88203266787659 using {'K': 6, 'batches': 100, 'excludingPercentage': 0.85, 'sizeOfBatch': 551} 
+Two Classes Horizontal Translation. 2 Dimensional data.: 87.9746835443038 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 158} 
+Two Bidimensional Unimodal Gaussian Classes.: 92.03507014028058 using {'K': 4, 'batches': 100, 'excludingPercentage': 0.85, 'sizeOfBatch': 998} 

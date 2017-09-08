@@ -4,7 +4,7 @@ from source import util
 from source import classifiers
 from sklearn.base import BaseEstimator, ClassifierMixin
 
-class proposed_gmm_core_extraction_allInstances(BaseEstimator, ClassifierMixin):
+class proposed_gmm_core_svm_boundaries_extraction(BaseEstimator, ClassifierMixin):
 
     def __init__(self, excludingPercentage=0.05, K=1, sizeOfBatch=100, batches=50):
         #super(proposed_gmm_core_extraction,self).__init__()
@@ -14,8 +14,9 @@ class proposed_gmm_core_extraction_allInstances(BaseEstimator, ClassifierMixin):
         #self.classes=[0, 1]
         self.usePCA=False
         #used only by gmm and cluster-label process
-        self.densityFunction='kde'
+        self.densityFunction='gmm'
         self.excludingPercentage = excludingPercentage
+        #self.C = C
         self.K = K
         self.clfName = 'knn'
         '''print(excludingPercentage)
@@ -53,11 +54,25 @@ class proposed_gmm_core_extraction_allInstances(BaseEstimator, ClassifierMixin):
             Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
             
             # ***** Box 3 *****
+            clf = classifiers.svmClassifier(X, y)
+            #predicted = clf.predict(Ut)
             predicted = classifiers.classify(X, y, Ut, self.K, classes, self.clfName)
             # Evaluating classification
             arrAcc.append(metrics.evaluate(yt, predicted))
 
-            X, y = util.pdfByClass3(X, y, Ut, predicted, classes, self.excludingPercentage)
+            # ***** Box 4 *****
+            #removing boundaryPoints for the next batch
+            Ut, predicted = util.removeBoundaryPoints(clf.support_, Ut, predicted)
+            #pdfs from each new points from each class applied on new arrived points
+            pdfsByClass = util.pdfByClass(Ut, predicted, classes, self.densityFunction)
+            
+            # ***** Box 5 *****
+            selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
+            
+            # ***** Box 6 *****
+            X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
+           
+            
      
         # returns accuracy array and last selected points
         self.threshold_ = arrAcc

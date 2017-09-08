@@ -483,3 +483,9 @@ def getIntersection(X, y, Ut, predicted, classes):
         intersectionByClass[c] = return_intersection(instancesXByClass, instancesUtByClass)
     return intersectionByClass
 
+
+def removeBoundaryPoints(supportIndexes, X, y):
+    dif = [i for i in range(0,len(X))]
+    dif = np.setdiff1d(dif, supportIndexes)
+    
+    return X[dif], y[dif]
