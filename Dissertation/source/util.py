@@ -296,6 +296,7 @@ def pdfByClass(instances, labels, classes, densityFunction):
             pdfs = [-1] * len(instances)
             #print("class {} = {} points".format(c, len(indexes)))
             #print(indexes)
+            #print(instances)
             points = instances[indexes]
             #points from a class, all points, number of components
             if densityFunction=='gmm':
