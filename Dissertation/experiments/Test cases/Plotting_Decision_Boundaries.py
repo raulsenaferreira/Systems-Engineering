@@ -105,7 +105,7 @@ def doExperiments(dataValues, dataLabels, datasetDescription, arrAccSCARGC, fina
     
         
 def accSCARGC(path, sep, key, steps):
-    steps = 100
+    steps = 8
     resultsSCARGC_1, resultsSCARGC_2 = setup.loadSCARGCBoxplotResults(path, sep)
     res = resultsSCARGC_1[key]
     res = [ res[i::steps] for i in range(steps) ]
@@ -167,8 +167,8 @@ def startAnimation(arrX, arrY, arrUt, arrYt, arrClf):
         return scatter,
     
     anim = animation.FuncAnimation(fig, animate, init_func=init,
-                               frames=100, interval=2000, blit=True)
-    anim.save('results/UG_2C_2D_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+                               frames=8, interval=2000, blit=True)
+    anim.save('results/keystroke_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
     plt.show()
     
     
@@ -184,10 +184,10 @@ def main():
     path = os.getcwd()+sep+'data'+sep
     
     steps = 100
-    arrAccSCARGC, finalAccSCARGC = accSCARGC(path, sep, 'UG_2C_2D', steps)
+    arrAccSCARGC, finalAccSCARGC = accSCARGC(path, sep, 'keystroke', steps)
     
     #sinthetic
-    dataValues, dataLabels, description = setup.loadUG_2C_2D(path, sep)
+    dataValues, dataLabels, description = setup.loadKeystroke(path, sep)
     
 
     '''
@@ -208,7 +208,7 @@ def main():
     #experiments[3] = Experiment(sliding_knn)
 
     ''' Proposed Method 1 (density function core extraction) '''
-    experiments[2] = Experiment(proposed_gmm_decision_boundaries, "gmm")
+    experiments[2] = Experiment(proposed_gmm_decision_boundaries, "gmm", 159, True))
     #experiments[4] = Experiment(proposed_gmm_core_extraction, "kde")
 
     '''
@@ -223,7 +223,7 @@ def main():
     #experiments[6] = Experiment(testing)
 
     #params: X, y, method, num of experiment repetitions, num of batches
-    doExperiments(dataValues, dataLabels, description, arrAccSCARGC, finalAccSCARGC, experiments, 1, steps, 50)
+    doExperiments(dataValues, dataLabels, description, arrAccSCARGC, finalAccSCARGC, experiments, 1, steps, 150)
 
 
 

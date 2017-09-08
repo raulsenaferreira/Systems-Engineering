@@ -10,11 +10,11 @@ class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
         #super(proposed_gmm_core_extraction,self).__init__()
         self.sizeOfBatch = sizeOfBatch
         self.batches = batches
-        self.initialLabeledData=50
+        self.initialLabeledData=150
         #self.classes=[0, 1]
         self.usePCA=False
         #used only by gmm and cluster-label process
-        self.densityFunction='kde'
+        self.densityFunction='gmm'
         self.excludingPercentage = excludingPercentage
         self.K = K
         self.clfName = 'knn'
