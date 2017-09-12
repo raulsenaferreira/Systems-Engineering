@@ -47,6 +47,11 @@ def start(**kwargs):
     print("METHOD: K-NN as classifier and {} as core support extraction with cutting data method".format(densityFunction))
 
     arrAcc = []
+    arrX = []
+    arrY = []
+    arrUt = []
+    arrYt = []
+    arrClf = []
     initialDataLength = 0
     excludingPercentage = 1-excludingPercentage
     finalDataLength = initialLabeledData #round((initialLabeledDataPerc)*sizeOfBatch)
@@ -64,10 +69,20 @@ def start(**kwargs):
             Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
             
             # ***** Box 3 *****
-            predicted = classifiers.classify(X, y, Ut, K, classes, clfName)
+            #predicted = classifiers.classify(X, y, Ut, K, classes, clfName)
+            clf = classifiers.labelPropagation(X, y)
+
+            # for decision boundaries plot
+            arrClf.append(clf)
+            arrX.append(X)
+            arrY.append(y)
+            arrUt.append(np.array(Ut))
+            arrYt.append(yt)
+            predicted = clf.predict(Ut)
+
             # Evaluating classification
             arrAcc.append(metrics.evaluate(yt, predicted))
-
+            
             # ***** Box 4 *****
             #pdfs from each new points from each class applied on new arrived points
             pdfsByClass = util.pdfByClass(Ut, predicted, classes, densityFunction)
@@ -98,8 +113,8 @@ def start(**kwargs):
                 inst = []
                 labels = []
             
-        arrAcc = split_list(arrAcc, 100)
+        arrAcc = split_list(arrAcc, batches)
         arrAcc = makeAccuracy(arrAcc, remainingY)
 
     # returns accuracy array and last selected points
-    return "KNN + Fixed cutting data percentage", arrAcc, X, y
+    return "KNN + Fixed cutting data percentage", arrAcc, X, y, arrX, arrY, arrUt, arrYt, arrClf

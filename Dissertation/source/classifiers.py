@@ -6,7 +6,7 @@ from sklearn import svm
 from sklearn.decomposition import PCA
 from collections import Counter
 from source import util
-#import xgboost as xgb
+from sklearn.semi_supervised import label_propagation
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.cluster import DBSCAN
 from sklearn.mixture import BayesianGaussianMixture
@@ -22,6 +22,10 @@ def pca(X, numComponents):
     
 def kMeans(X, k):
     return KMeans(n_clusters=k).fit(X)
+
+
+def labelPropagation(X, y):
+    return label_propagation.LabelSpreading(kernel='knn', alpha=1).fit(X, y)
 
 
 def svmClassifier(X, y):
@@ -166,4 +170,7 @@ def classify(X, y, Ut, K, classes, clf):
         elif clf=='knn':
             clf = knn(X, y, K)
             #print(len(Ut))
+            return clf.predict(Ut)
+        elif clf == 'label':
+            clf = labelPropagation(X, y)
             return clf.predict(Ut)

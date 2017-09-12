@@ -2,3 +2,11 @@
 One Class Surrounding another Class. Bidimensional.: 91.88203266787659 using {'K': 6, 'batches': 100, 'excludingPercentage': 0.85, 'sizeOfBatch': 551} 
 Two Classes Horizontal Translation. 2 Dimensional data.: 87.9746835443038 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 158} 
 Two Bidimensional Unimodal Gaussian Classes.: 92.03507014028058 using {'K': 4, 'batches': 100, 'excludingPercentage': 0.85, 'sizeOfBatch': 998} 
+NOAA dataset. Eight  features. Two classes.: 0 using {} 
+NOAA dataset. Eight  features. Two classes.: 0 using {} 
+NOAA dataset. Eight  features. Two classes.: 0 using {} 
+NOAA dataset. Eight  features. Two classes.: 68.61477748770567 using {'K': 2, 'batches': 50, 'excludingPercentage': 0.9, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 362} 
+NOAA dataset. Eight  features. Two classes.: 68.61477748770567 using {'K': 2, 'batches': 50, 'excludingPercentage': 0.9, 'initialLabeledData': 10, 'isBatchMode': False, 'poolSize': 30, 'sizeOfBatch': 362} 
+Electricity data. 7 features. 2 classes.: 70.99156785243741 using {'K': 3, 'batches': 100, 'excludingPercentage': 0.7, 'initialLabeledData': 50, 'isBatchMode': False, 'poolSize': 275, 'sizeOfBatch': 275} 
+Electricity data. 7 features. 2 classes.: 67.04249011857708 using {'K': 11, 'batches': 100, 'excludingPercentage': 0.75, 'initialLabeledData': 50, 'isBatchMode': False, 'poolSize': 275, 'sizeOfBatch': 275} 
+Electricity data. 7 features. 2 classes.: 69.25056403450564 using {'K': 3, 'batches': 100, 'excludingPercentage': 0.65, 'initialLabeledData': 150, 'isBatchMode': False, 'poolSize': 275, 'sizeOfBatch': 274} 
