@@ -24,8 +24,8 @@ def kMeans(X, k):
     return KMeans(n_clusters=k).fit(X)
 
 
-def labelPropagation(X, y):
-    return label_propagation.LabelSpreading(kernel='knn', alpha=1).fit(X, y)
+def labelPropagation(X, y, K):
+    return label_propagation.LabelSpreading(kernel='knn', n_neighbors=K, alpha=0).fit(X, y)
 
 
 def svmClassifier(X, y):
@@ -172,5 +172,5 @@ def classify(X, y, Ut, K, classes, clf):
             #print(len(Ut))
             return clf.predict(Ut)
         elif clf == 'label':
-            clf = labelPropagation(X, y)
+            clf = labelPropagation(X, y, K)
             return clf.predict(Ut)

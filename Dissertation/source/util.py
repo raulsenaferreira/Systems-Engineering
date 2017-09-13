@@ -135,10 +135,10 @@ def slicingClusteredData(clusters, classes):
     indexes = {}
     for c in range(len(classes)):
         indexes[classes[c]]=[i for i in range(len(clusters)) if clusters[i] == c]
-        if len(indexes[classes[c]]) < 1:
+        #if len(indexes[classes[c]]) < 1:
             #choose one index randomly if the array is empty
             #indexes[classes[c]] = [random.randint(0,len(clusters)-1)]
-            print("Empty array for class ", c)
+            #print("Empty array for class ", c)
 
     return indexes
 
@@ -387,7 +387,9 @@ def bhattacharyya (h1, h2):
     def normalize(h):
         for i in range(len(h)):
             if h[i]<0:
-                h[i]=h[i]*-1+100
+                h[i]=(h[i]*-1)+10
+            else:
+                h[i]=h[i]+10
                 
         h = h / np.sum(h)
         #print(h)
@@ -415,8 +417,10 @@ def getBhattacharyyaScores(instancesByClass):
     return np.mean(means)
 
 
-def getBhattacharyyaScoresByClass(X, y, Ut, predicted, classes):
+def getBhattacharyyaScoresByClass(X, Ut, classes):
+#def getBhattacharyyaScoresByClass(X, y, Ut, predicted, classes):
     scoresByClass = {}
+    '''
     means= []
     for c, instances in instancesByClass.items():
         # generate and output scores
@@ -432,6 +436,24 @@ def getBhattacharyyaScoresByClass(X, y, Ut, predicted, classes):
     #print(np.mean(means))
     #return scoresByClass
     return np.mean(means)
+    '''
+    penalty = 0.3
+    for c in classes:
+        limit = min(len(X[c]),len(Ut[c]))
+        score = []
+        for i in range(limit):
+            score.append( bhattacharyya(X[c][i], Ut[c][i]) )
+
+        mean = 1-np.mean(score)-penalty
+        
+        if mean > 0.95:
+            scoresByClass[c] = 0.95
+        #elif mean < 0.7:
+            #scoresByClass[c] = 0.7
+        else:
+            scoresByClass[c] = mean
+        print(c, scoresByClass[c])
+    return scoresByClass
 
 
 def compactingDataScoreBased(scores, criteria):
