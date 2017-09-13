@@ -7,3 +7,12 @@ One Class Surrounding another Class. Bidimensional.: 0 using {}
 One Class Surrounding another Class. Bidimensional.: 0 using {} 
 One Class Surrounding another Class. Bidimensional.: 0 using {} 
 One Class Surrounding another Class. Bidimensional.: 95.3822463768116 using {'K': 7, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 275, 'sizeOfBatch': 552} 
+Keyboard patterns database. 10 features. 4 classes.: 89.08839779005525 using {'K': 3, 'batches': 8, 'excludingPercentage': 0.9, 'initialLabeledData': 150, 'isBatchMode': True, 'poolSize': 275, 'sizeOfBatch': 181} 
+Keyboard patterns database. 10 features. 4 classes.: 85.84254143646409 using {'K': 3, 'batches': 8, 'initialLabeledData': 150, 'isBatchMode': True, 'poolSize': 275, 'sizeOfBatch': 181} 
+Keyboard patterns database. 10 features. 4 classes.: 87.01657458563537 using {'K': 2, 'batches': 8, 'initialLabeledData': 150, 'isBatchMode': True, 'poolSize': 275, 'sizeOfBatch': 181} 
+One Class Surrounding another Class. Bidimensional.: 0 using {} 
+One Class Surrounding another Class. Bidimensional.: 91.77355072463766 using {'K': 8, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 275, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 92.1086956521739 using {'K': 8, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 275, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 90.40398550724638 using {'K': 6, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 275, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 91.77355072463766 using {'K': 8, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 275, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 95.04347826086956 using {'K': 11, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 275, 'sizeOfBatch': 552} 

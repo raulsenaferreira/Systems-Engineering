@@ -61,14 +61,14 @@ def start(**kwargs):
         instancesXByClass, instancesUtByClass = util.unifyInstancesByClass(X, y, Ut, predicted, classes)
 
         # ***** Box 5 *****
-        #keepPercentage = util.getBhattacharyyaScores(instancesUtByClass)
-        keepPercentageByClass = util.getBhattacharyyaScoresByClass(instancesXByClass, instancesUtByClass, classes)
+        keepPercentage = util.getBhattacharyyaScores(X, Ut, classes)
+        #keepPercentageByClass = util.getBhattacharyyaScoresByClass(instancesXByClass, instancesUtByClass, classes)
 
         #print("Step: {} Excluding percentage for class 0: {}".format(t, keepPercentageByClass[0]))
         #print("Step: {} Excluding percentage for class 1: {}".format(t, keepPercentageByClass[1]))
 
-        #selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, keepPercentage)
-        selectedIndexes = util.compactingDataDensityBased3(pdfsByClass, keepPercentageByClass)
+        selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, 1-keepPercentage)
+        #selectedIndexes = util.compactingDataDensityBased3(pdfsByClass, keepPercentageByClass)
 
         # ***** Box 6 *****
         X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
