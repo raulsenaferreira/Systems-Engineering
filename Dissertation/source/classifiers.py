@@ -11,6 +11,9 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.cluster import DBSCAN
 from sklearn.mixture import BayesianGaussianMixture
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neighbors import NearestNeighbors
+from sklearn.neighbors.nearest_centroid import NearestCentroid
+
 
 def pca(X, numComponents):
     pca = PCA(n_components=numComponents)
