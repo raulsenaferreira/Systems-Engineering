@@ -1,0 +1,20 @@
+Proposed method 1 with GMM
+One Class Diagonal Translation. 2 Dimensional data.: 99.87421383647798 using {'K': 9, 'batches': 100, 'excludingPercentage': 0.65, 'sizeOfBatch': 159} 
+One Class Horizontal Translation. 2 Dimensional data.: 99.37735849056605 using {'K': 3, 'batches': 100, 'excludingPercentage': 0.75, 'sizeOfBatch': 159} 
+Two Classes Diagonal Translation. 2 Dimensional data: 94.9622641509434 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 159} 
+Two Classes Horizontal Translation. 2 Dimensional data.: 88.0 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 159} 
+Four Classes Rotating Separated. Bidimensional.: 99.98752598752597 using {'K': 11, 'batches': 100, 'excludingPercentage': 0.85, 'sizeOfBatch': 1443} 
+Four Classes Rotating with Expansion V1. Bidimensional.: 33.13210568454764 using {'K': 3, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 1249} 
+Four Classes Rotating with Expansion V2. Bidimensional.: 32.63860032804811 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 1829} 
+Five Classes Vertical Translation. Bidimensional.: 55.251046025104586 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 239} 
+One Class Surrounding another Class. Bidimensional.: 91.6141304347826 using {'K': 9, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 552} 
+Four Classes Expanding and One Class Fixed. Bidimensional.: 98.06120092378755 using {'K': 11, 'batches': 100, 'excludingPercentage': 0.8, 'sizeOfBatch': 1732} 
+Two Bidimensional Unimodal Gaussian Classes.: 92.84284284284286 using {'K': 3, 'batches': 100, 'excludingPercentage': 0.75, 'sizeOfBatch': 999} 
+Two Bidimensional Multimodal Gaussian Classes.: 80.56828414207104 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.5, 'sizeOfBatch': 1999} 
+Two Bidimensional Classes as Four Gaussians.: 79.943971985993 using {'K': 4, 'batches': 100, 'excludingPercentage': 0.5, 'sizeOfBatch': 1999} 
+Artificial Two 3-dimensional Unimodal Gaussian Classes.: 94.70985492746372 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 1999} 
+Two 5-dimensional Unimodal Gaussian Classes.: 92.58229114557278 using {'K': 11, 'batches': 100, 'excludingPercentage': 0.9, 'sizeOfBatch': 1999} 
+Two Rotating Gears (Two classes. Bidimensional).: 97.06103051525761 using {'K': 11, 'batches': 100, 'excludingPercentage': 0.65, 'sizeOfBatch': 1999} 
+Keyboard patterns database. 10 features. 4 classes.: 88.88121546961327 using {'K': 4, 'batches': 8, 'excludingPercentage': 0.8, 'sizeOfBatch': 181} 
+Electricity data. 7 features. 2 classes.: 67.73722627737226 using {'K': 5, 'batches': 100, 'excludingPercentage': 0.75, 'sizeOfBatch': 274} 
+NOAA dataset. Eight  features. Two classes.: 69.02222222222221 using {'K': 7, 'batches': 50, 'excludingPercentage': 0.6, 'sizeOfBatch': 360} 
