@@ -40,7 +40,7 @@ class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
         self.densityFunction='kde'
         self.excludingPercentage = excludingPercentage
         self.K = K
-        self.clfName = 'knn'
+        self.clfName = 'label'
         self.poolSize = poolSize
         self.isBatchMode = isBatchMode
         
@@ -85,7 +85,7 @@ class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
                 pdfsByClass = util.pdfByClass(Ut, predicted, classes, self.densityFunction)
                 
                 # ***** Box 5 *****
-                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
+                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, 1-self.excludingPercentage)
                 
                 # ***** Box 6 *****
                 X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)

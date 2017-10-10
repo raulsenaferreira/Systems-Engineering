@@ -10,11 +10,11 @@ from timeit import default_timer as timer
 import numpy as np
 import setup
 from source import metrics
-from methods import sliding_svm
+from methods import static_labelpropagation
 from methods import sliding_knn
 from methods import sliding_random_forest
 from methods import proposed_gmm_core_svm_boundaries_extraction
-from methods import proposed_gmm_decision_boundaries
+from methods import proposed_gmm_core_extraction
 from methods import improved_intersection
 from methods import compose
 from methods import compose_gmm_version
@@ -25,7 +25,7 @@ from methods import testing
 
 
 class Experiment():
-    def __init__(self, method, densityFunction=None, poolSize=None, isBatchMode=None):
+     def __init__(self, method, K=None, densityFunction=None, poolSize=None, isBatchMode=None):
         #commom for all experiments
         self.method = method
         #self.initialLabeledDataPerc=0.05 #150 instances for keystroke database and 0.05 % for artificial databases
@@ -34,8 +34,8 @@ class Experiment():
         self.usePCA=False
         #used only by gmm / kde process
         self.densityFunction=densityFunction
-        self.excludingPercentage = 0.85
-        self.K_variation = 6
+        self.excludingPercentage = 0.7
+        self.K_variation = K
         self.classifier='cluster_and_label'
         #used in alpha-shape version only
         self.CP=0.65
@@ -49,11 +49,6 @@ def doExperiments(dataValues, dataLabels, datasetDescription, arrAccSCARGC, fina
     listOfAccuracies = []
     listOfMethods = []
     sizeOfBatch = int((len(dataLabels)-labeledData)/batches)#int(len(dataLabels)/batches)
-    arrX = []
-    arrClf = []
-    arrY = []
-    arrUt = [] 
-    arrYt = []
     
     print(datasetDescription)
     print("{} batches of {} instances".format(batches, sizeOfBatch))
@@ -70,12 +65,12 @@ def doExperiments(dataValues, dataLabels, datasetDescription, arrAccSCARGC, fina
         e.batches = batches
         e.dataLabels = dataLabels
         e.dataValues = dataValues
-        e.clfName = 'knn' #rf = random forests, cl = cluster and label, knn = k-nn, svm = svm
+        e.clfName = 'cl' #rf = random forests, cl = cluster and label, knn = k-nn, svm = svm
 
         for i in range(numberOfTimes):
             start = timer()
             #accuracy per step
-            algorithmName, accuracies, CoreX, CoreY = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledData=labeledData, excludingPercentage=e.excludingPercentage, K_variation=e.K_variation, CP=e.CP, alpha=e.alpha, clfName=e.clfName , useSVM=e.useSVM, isImbalanced=e.isImbalanced, poolSize=e.poolSize, isBatchMode=e.isBatchMode)
+            algorithmName, accuracies, CoreX, CoreY, arrX, arrY, arrUt, arrYt, arrClf = e.method.start(dataValues=e.dataValues, dataLabels=e.dataLabels, usePCA=e.usePCA, classes=classes, classifier=e.classifier, densityFunction=e.densityFunction, batches=e.batches, sizeOfBatch = e.sizeOfBatch, initialLabeledData=labeledData, excludingPercentage=e.excludingPercentage, K_variation=e.K_variation, CP=e.CP, alpha=e.alpha, clfName=e.clfName , useSVM=e.useSVM, isImbalanced=e.isImbalanced, poolSize=e.poolSize, isBatchMode=e.isBatchMode)
             end = timer()
             averageAccuracy = np.mean(accuracies)
 
@@ -87,21 +82,22 @@ def doExperiments(dataValues, dataLabels, datasetDescription, arrAccSCARGC, fina
         listOfAccuracies.append(accuracies)
         listOfMethods.append(algorithmName)
         #print("Total of ", numberOfTimes, " experiment iterations with an average accuracy of ", np.mean(accTotal))
-        print("Average execution time: ", np.mean(elapsedTime))
+        print("Execution time: ", elapsedTime)
         metrics.finalEvaluation(accuracies, batches)
     
         #print data distribution in step t
         initial = (batches*sizeOfBatch)-sizeOfBatch
         final = initial + sizeOfBatch
-        plotFunctions.plot(dataValues[initial:final], dataLabels[initial:final], CoreX, CoreY, batches)
+        #plotFunctions.plot(dataValues[initial:final], dataLabels[initial:final], CoreX, CoreY, batches)
         print("\n\n")
-    '''
+    
     print("SCARGC")
     metrics.finalEvaluation(arrAccSCARGC, batches)
     listOfAccuracies.append(arrAccSCARGC)
     listOfMethods.append("SCARGC")
     
-    plotFunctions.plotBoxplot(listOfAccuracies, listOfMethods)'''
+    plotFunctions.plotBoxplot(listOfAccuracies, listOfMethods)
+    #plotFunctions.plotAccuracyCurves(listOfAccuracies, listOfMethods)
     startAnimation(arrX, arrY, arrUt, arrYt, arrClf)
     
         
@@ -169,11 +165,11 @@ def startAnimation(arrX, arrY, arrUt, arrYt, arrClf):
     
     anim = animation.FuncAnimation(fig, animate, init_func=init,
                                frames=100, interval=2000, blit=True)
-    anim.save('results/CSurr_SVM_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+    anim.save('results/UG_2C_2D_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
     plt.show()
-    
-    
-    
+
+
+
 def main():
     experiments = {}
     is_windows = sys.platform.startswith('win')
@@ -185,10 +181,12 @@ def main():
     path = os.getcwd()+sep+'data'+sep
     
     steps = 100
-    arrAccSCARGC, finalAccSCARGC = accSCARGC(path, sep, '1CSurr', steps)
+    labeledData = 50
+    poolSize = 100
+    arrAccSCARGC, finalAccSCARGC = accSCARGC(path, sep, 'UG_2C_2D', steps)
     
     #sinthetic
-    dataValues, dataLabels, description = setup.loadCSurr(path, sep)
+    dataValues, dataLabels, description = setup.loadUG_2C_2D(path, sep)
     
 
     '''
@@ -206,22 +204,26 @@ def main():
     SVM / Random Forest
     '''
     #experiments[2] = Experiment(static_svm)
-    #experiments[3] = Experiment(sliding_knn)
+    experiments[3] = Experiment(static_labelpropagation, 11)
 
-    ''' Proposed Method 1 (density function core extraction) '''
-    #experiments[2] = Experiment(proposed_gmm_decision_boundaries, "gmm")
-    #experiments[4] = Experiment(proposed_gmm_core_extraction, "kde")
+    ''' Proposed Method 1 (KDE core extraction) '''
+    experiments[4] = Experiment(proposed_gmm_core_extraction, 11, "kde", poolSize, True)
 
     '''
-    Proposed method 2 (Intersection between two distributions with Batacharrya distance + density function)
+    Proposed method 2 (Intersection between two distributions + GMM)
     '''
-    #experiments[5] = Experiment(intersection, "gmm")
-    #experiments[6] = Experiment(intersection, "kde")
+    #experiments[5] = Experiment(intersection)
     
-    experiments[7] = Experiment(proposed_gmm_core_svm_boundaries_extraction, "gmm", 159, True)
+    '''Proposed method 4 (classifying and removing boundaries points with SVM)'''
+    #experiments[7] = Experiment(proposed_gmm_core_svm_boundaries_extraction, "kde", poolSize, True)
+    
+    '''
+    Proposed method 4 (GMM All instances)
+    '''
+    #experiments[6] = Experiment(testing)
 
     #params: X, y, method, num of experiment repetitions, num of batches
-    doExperiments(dataValues, dataLabels, description, arrAccSCARGC, finalAccSCARGC, experiments, 1, steps, 50)
+    doExperiments(dataValues, dataLabels, description, arrAccSCARGC, finalAccSCARGC, experiments, 1, steps, labeledData)
 
 
 

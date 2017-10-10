@@ -11,6 +11,9 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.cluster import DBSCAN
 from sklearn.mixture import BayesianGaussianMixture
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neighbors import NearestNeighbors
+from sklearn.neighbors.nearest_centroid import NearestCentroid
+
 
 def pca(X, numComponents):
     pca = PCA(n_components=numComponents)
@@ -43,6 +46,53 @@ def svmClassifier(X, y):
     #clf = svm.SVC(gamma=2, C=1)
     return clf.fit(X, y)
     
+
+def kmeans_matlab(X, k, mode='auto', centroids=[]):
+    if mode=='auto':
+        return KMeans(n_clusters=k).fit(X).cluster_centers_
+    elif mode=='start':
+        return KMeans(n_clusters=k, init=centroids).fit(X).cluster_centers_
+
+
+def knn_classify(training_data, labels, test_instance):
+    predicted_label = nearest = None
+    best_distance = np.inf
+    tam = np.shape(training_data)[1] # number of cols
+    for i in range(tam):
+        compare_data = training_data[i, :]
+        distance = np.sqrt(np.sum(np.power((test_instance - compare_data), 2))) #euclidean distance
+        if distance < best_distance:
+            best_distance = distance
+            predicted_label = labels[i]
+            nearest = compare_data
+    #print(nearest)
+    return predicted_label, best_distance, nearest
+
+
+def knn_scargc(X, y, Ut):
+    '''clf = KNeighborsClassifier(n_neighbors=1).fit(X, y)
+    predicted_label = clf.predict(Ut.reshape(1, -1))'''
+    best_distance, ind = NearestNeighbors(n_neighbors=1).fit(X).kneighbors(Ut.reshape(1, -1))
+    nearest = X[ind]
+    clf = NearestCentroid(metric='euclidean').fit(X, y)
+    predicted_label = clf.predict(Ut.reshape(1, -1))
+    #print(clf.centroids_) #exemplo [[ 0.25940611 -0.02868181] [ 5.450457    5.40674248]]
+    return predicted_label, best_distance, nearest[0]
+
+
+def libsvmtrain(y, X):
+    #based on libsvm lib for matlab: https://www.csie.ntu.edu.tw/~cjlin/libsvm/
+    '-t 2 -g 1 -r 10 -b 1 -q' # parameters from original matlab implementation
+    clf = svm.SVC(C=1.0, cache_size=100, class_weight=None, coef0=10, degree=3, gamma=1, kernel='rbf',
+        probability=True, shrinking=True, tol=0.001, verbose=False)
+    return clf.fit(X, y)
+
+
+def libsvmpredict(Ut, clf):
+    #based on libsvm lib for matlab: https://www.csie.ntu.edu.tw/~cjlin/libsvm/
+    '-b 1 -q' # parameters from original matlab implementation
+    return clf.predict(Ut)
+
 
 def randomForest(X, y):
     num_trees = 100

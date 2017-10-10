@@ -70,7 +70,7 @@ def start(**kwargs):
             
             # ***** Box 3 *****
             #predicted = classifiers.classify(X, y, Ut, K, classes, clfName)
-            clf = classifiers.labelPropagation(X, y)
+            clf = classifiers.labelPropagation(X, y, K)
 
             # for decision boundaries plot
             arrClf.append(clf)
