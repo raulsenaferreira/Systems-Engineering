@@ -7,7 +7,7 @@ from scipy.stats import itemfreq
 def start(dataValues, dataLabels, **kwargs):
     #initialLabeledDataPerc = kwargs["initialLabeledDataPerc"]
     initialLabeledData = kwargs["initialLabeledData"]
-    sizeOfBatch = kwargs["sizeOfBatch"]
+    poolSize = kwargs["poolSize"]
     usePCA = kwargs["usePCA"]
     classes = kwargs["classes"]
     K = kwargs["K_variation"]
@@ -41,7 +41,7 @@ def start(dataValues, dataLabels, **kwargs):
     
     nClass = len(classes)
     nK = K
-    max_pool_length = sizeOfBatch
+    max_pool_length = poolSize
 
     centroids_ant = []
     tmp_cent = []
@@ -63,15 +63,16 @@ def start(dataValues, dataLabels, **kwargs):
       centroids_ant = classifiers.kmeans_matlab(initial_labeled_DATA, nK)
       #associate labels for first centroids
       centroids_ant_lab = []
-      
       centroids_ant_lab, a, b = classifiers.knn_classify(initial_labeled_DATA, initial_labeled_LABELS, centroids_ant[0,:])
-      
+      #centroids_ant_lab, a, b = classifiers.knn_scargc(initial_labeled_DATA, initial_labeled_LABELS, centroids_ant[0,:])
+
       for core in range(1,centroids_ant.shape[0]):
         pred_lab, a, b = classifiers.knn_classify(initial_labeled_DATA, initial_labeled_LABELS, centroids_ant[core,:])
+        #pred_lab, a, b = classifiers.knn_scargc(initial_labeled_DATA, initial_labeled_LABELS, centroids_ant[core,:])
         centroids_ant_lab = np.vstack([centroids_ant_lab, pred_lab])
       
       centroids_ant = np.hstack([centroids_ant, centroids_ant_lab])
-
+      print("centroids_ant", centroids_ant[:,-1])
     cluster_labels = []
     pool_data = []
     vet_bin_acc = []
@@ -79,8 +80,15 @@ def start(dataValues, dataLabels, **kwargs):
     updt=0
 
     test_instance = unlabeled_DATA[0,:]
+    actual_label = unlabeled_LABELS[0]
     predicted_label, a, b = classifiers.knn_classify(labeled_DATA, labeled_LABELS, test_instance)
+    #predicted_label, a, b = classifiers.knn_scargc(labeled_DATA, labeled_LABELS, test_instance)
     pool_data = np.hstack([test_instance, predicted_label])
+
+    if predicted_label == actual_label:
+      vet_bin_acc.append(1)
+    else:
+      vet_bin_acc.append(0)
 
     for i in range(1,len(unlabeled_LABELS)):
       test_instance = unlabeled_DATA[i,:]
@@ -88,18 +96,22 @@ def start(dataValues, dataLabels, **kwargs):
 
       #classify each stream's instance with 1NN classifier
       predicted_label, a, b = classifiers.knn_classify(labeled_DATA, labeled_LABELS, test_instance)
+      #predicted_label, a, b = classifiers.knn_scargc(labeled_DATA, labeled_LABELS, test_instance)
       #print("pool: ", pool_data)
       #print("test+predicted: ", np.hstack([test_instance, predicted_label]))
       aux = np.hstack([test_instance, predicted_label])
       pool_data = np.vstack([pool_data, aux]) if len(pool_data) > 0 else aux
       
       if pool_data.shape[0] == max_pool_length:
+        #print("entrou no pool!!")
+        #print("centroids_ant",centroids_ant[nK:,:-1])
+        #print("centroids_ant[-nK:,:-1]", centroids_ant[-nK:,:-1])
+        #print("pool_data[:,0:-1] ", pool_data[:,0:-1])
         #FOR NOAA DATASET, COMMENT NEXT LINE
-        print("centroids_ant: ", centroids_ant)
-        print("centroid: ",centroids_ant[-nK:,:-1])
         centroids_cur = classifiers.kmeans_matlab(pool_data[:,0:-1], nK, 'start', centroids_ant[-nK:,:-1])         
+        #centroids_cur = classifiers.kmeans_matlab(pool_data[:,0:-1], nK)
         #FOR NOAA DATASET, REMOVE THE COMMENT OF THE NEXT LINE
-        #[~, centroids_cur] = kmeans(pool_data(:,1:end-1), nK)        
+        #[~, centroids_cur] = kmeans(pool_data(:,0:-1), nK)        
 
         intermed = []
         cent_labels = []
@@ -118,28 +130,33 @@ def start(dataValues, dataLabels, **kwargs):
           cent_labels = np.vstack([cent_labels, clab])
          
         centroids_cur = np.hstack([centroids_cur, cent_labels])
-
+        '''
         #checks if any label is not associated with some cluster
-        labelsIntermed = np.unique(intermed[:,-1])
-        
-        if all(labelsIntermed == classes) == 0:
+        print(len(intermed[:,-1]))
+        labelsIntermed = set(intermed[:,-1])
+        #print("labelsIntermed",labelsIntermed)
+        #print("classes",classes)
+        if labelsIntermed < set(classes):
+          print("intermed begin",intermed[:,-1])
           atribuicoes = itemfreq(intermed[:,-1])
           print("atribuicoes: ", atribuicoes)
-          posMax = int(np.max(atribuicoes[:,1]))
-          posMin = int(np.min(atribuicoes[:,1]))
-          labelFault = atribuicoes[posMin,0]
-          intermed[posMin,-1] = labelFault               
-           
+          posMax = np.argmax(atribuicoes[:,1])#int(np.max(atribuicoes[:,1])) #np.argmax(intermed[:,-1])
+          posMin = np.argmin(atribuicoes[:,1])#int(np.min(atribuicoes[:,1])) #np.argmin(intermed[:,-1])
+          labelFault = atribuicoes[posMin,0] #intermed[posMin,-1]
+          intermed[posMin,-1] = labelFault
+          print("intermed end",intermed[:,-1])             
+        '''   
         centroids_ant = intermed
         new_pool = []
-        
-        #pred, a, b = classifiers.knn_classify(np.vstack([centroids_cur[:,:-1], centroids_ant[:,:-1]]), np.vstack([centroids_cur[:,-1], centroids_ant[:,-1]]), pool_data[0,0:-1])
-        pred, a, b = classifiers.knn_scargc(np.vstack([centroids_cur[:,:-1], centroids_ant[:,:-1]]), np.hstack([centroids_cur[:,-1], centroids_ant[:,-1]]), pool_data[0,0:-1])
+        #print("labels", len(np.hstack([centroids_cur[:,-1], centroids_ant[:,-1]])))
+        #print("len", len(np.vstack([centroids_cur[:,:-1], centroids_ant[:,:-1]])))
+        pred, a, b = classifiers.knn_classify(np.vstack([centroids_cur[:,:-1], centroids_ant[:,:-1]]), np.hstack([centroids_cur[:,-1], centroids_ant[:,-1]]), pool_data[0,0:-1])
+        #pred, a, b = classifiers.knn_scargc(np.vstack([centroids_cur[:,:-1], centroids_ant[:,:-1]]), np.hstack([centroids_cur[:,-1], centroids_ant[:,-1]]), pool_data[0,0:-1])
         new_pool = np.hstack([pool_data[0,0:-1] ,pred])
 
         for p in range(1, pool_data.shape[0]):
-          #pred, a, b = classifiers.knn_classify(np.vstack([centroids_cur[:,:-1], centroids_ant[:,:-1]]), np.vstack([centroids_cur[:,-1], centroids_ant[:,-1]]), pool_data[p,0:-1])
-          pred, a, b = classifiers.knn_scargc(np.vstack([centroids_cur[:,:-1], centroids_ant[:,:-1]]), np.hstack([centroids_cur[:,-1], centroids_ant[:,-1]]), pool_data[p,0:-1])
+          pred, a, b = classifiers.knn_classify(np.vstack([centroids_cur[:,:-1], centroids_ant[:,:-1]]), np.hstack([centroids_cur[:,-1], centroids_ant[:,-1]]), pool_data[p,0:-1])
+          #pred, a, b = classifiers.knn_scargc(np.vstack([centroids_cur[:,:-1], centroids_ant[:,:-1]]), np.hstack([centroids_cur[:,-1], centroids_ant[:,-1]]), pool_data[p,0:-1])
           new_pool = np.vstack([new_pool, np.hstack([pool_data[p,0:-1], pred])])
           
         concordant_labels = np.nonzero(pool_data[:,-1] == new_pool[:,-1])[0]
