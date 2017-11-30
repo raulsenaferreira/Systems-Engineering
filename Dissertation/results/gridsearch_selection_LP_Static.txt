@@ -1,0 +1,20 @@
+One Class Diagonal Translation. 2 Dimensional data.: 99.47169811320757 using {'K': 2, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 159} 
+One Class Horizontal Translation. 2 Dimensional data.: 97.20125786163524 using {'K': 2, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 159} 
+Two Classes Diagonal Translation. 2 Dimensional data: 55.29559748427673 using {'K': 2, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 159} 
+Two Classes Horizontal Translation. 2 Dimensional data.: 56.65408805031447 using {'K': 3, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 159} 
+Four Classes Rotating Separated. Bidimensional.: 25.1981981981982 using {'K': 4, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1443} 
+Four Classes Rotating with Expansion V1. Bidimensional.: 26.144915932746198 using {'K': 7, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1249} 
+Four Classes Rotating with Expansion V2. Bidimensional.: 27.11864406779661 using {'K': 5, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1829} 
+Five Classes Vertical Translation. Bidimensional.: 43.62761506276151 using {'K': 2, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 239} 
+One Class Surrounding another Class. Bidimensional.: 65.30434782608695 using {'K': 3, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 552} 
+Four Classes Expanding and One Class Fixed. Bidimensional.: 96.67725173210161 using {'K': 2, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1732} 
+Two Bidimensional Unimodal Gaussian Classes.: 46.61461461461463 using {'K': 11, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 999} 
+Two Bidimensional Multimodal Gaussian Classes.: 53.936468234117065 using {'K': 2, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1999} 
+Two Bidimensional Classes as Four Gaussians.: 76.4367183591796 using {'K': 2, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1999} 
+Artificial Two 3-dimensional Unimodal Gaussian Classes.: 61.15907953976989 using {'K': 3, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1999} 
+Two 5-dimensional Unimodal Gaussian Classes.: 70.45222611305653 using {'K': 3, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1999} 
+Two Rotating Gears (Two classes. Bidimensional).: 95.12406203101551 using {'K': 3, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1999} 
+Keyboard patterns database. 10 features. 4 classes.: 72.23756906077348 using {'K': 2, 'batches': 8, 'initialLabeledData': 150, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 181} 
+NOAA dataset. Eight  features. Two classes.: 68.57458563535913 using {'K': 2, 'batches': 50, 'initialLabeledData': 10, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 362} 
+Electricity data. 7 features. 2 classes.: 72.47272727272727 using {'K': 3, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 275} 
+Rotated checkerboard dataset. Rotating 2*PI.: 49.99747474747473 using {'K': 2, 'batches': 100, 'initialLabeledData': 2000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1980} 

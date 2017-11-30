@@ -1,0 +1,2 @@
+One Class Surrounding another Class. Bidimensional.: 91.2626811594203 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.5, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 91.2626811594203 using {'K': 12, 'batches': 100, 'excludingPercentage': 0.5, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 552} 

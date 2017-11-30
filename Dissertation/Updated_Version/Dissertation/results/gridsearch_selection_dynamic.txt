@@ -1,0 +1,35 @@
+One Class Surrounding another Class. Bidimensional.: 0 using {} 
+One Class Surrounding another Class. Bidimensional.: 91.93115942028986 using {'K': 7, 'batches': 100, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 91.93115942028986 using {'K': 7, 'batches': 100, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 91.93115942028986 using {'K': 7, 'batches': 100, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 91.93115942028986 using {'K': 7, 'batches': 100, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 91.93115942028986 using {'K': 7, 'batches': 100, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 91.95652173913044 using {'K': 7, 'batches': 100, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 91.93115942028986 using {'K': 7, 'batches': 100, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 92.34782608695652 using {'K': 7, 'batches': 100, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 0 using {} 
+One Class Surrounding another Class. Bidimensional.: 0 using {} 
+One Class Surrounding another Class. Bidimensional.: 0 using {} 
+One Class Surrounding another Class. Bidimensional.: 0 using {} 
+One Class Surrounding another Class. Bidimensional.: 92.34782608695652 using {'K': 7, 'batches': 100, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 92.34782608695652 using {'K': 7, 'batches': 100, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 0 using {} 
+One Class Surrounding another Class. Bidimensional.: 88.96014492753626 using {'K': 2, 'batches': 100, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 91.80072463768116 using {'K': 7, 'batches': 100, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 92.68659420289855 using {'K': 7, 'batches': 100, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 92.07789855072463 using {'K': 6, 'batches': 100, 'sizeOfBatch': 552} 
+One Class Surrounding another Class. Bidimensional.: 93.34963768115942 using {'K': 8, 'batches': 100, 'sizeOfBatch': 552} 
+Keyboard patterns database. 10 features. 4 classes.: 65.74585635359117 using {'K': 2, 'batches': 8, 'sizeOfBatch': 181} 
+Keyboard patterns database. 10 features. 4 classes.: 58.83977900552486 using {'K': 2, 'batches': 8, 'sizeOfBatch': 181} 
+Keyboard patterns database. 10 features. 4 classes.: 65.74585635359117 using {'K': 2, 'batches': 8, 'sizeOfBatch': 181} 
+Keyboard patterns database. 10 features. 4 classes.: 65.74585635359117 using {'K': 2, 'batches': 8, 'sizeOfBatch': 181} 
+Keyboard patterns database. 10 features. 4 classes.: 67.95580110497238 using {'K': 2, 'batches': 8, 'sizeOfBatch': 181} 
+Keyboard patterns database. 10 features. 4 classes.: 0 using {} 
+Keyboard patterns database. 10 features. 4 classes.: 0 using {} 
+Keyboard patterns database. 10 features. 4 classes.: 64.64088397790056 using {'K': 2, 'batches': 8, 'sizeOfBatch': 181} 
+Keyboard patterns database. 10 features. 4 classes.: 48.89502762430939 using {'K': 2, 'batches': 8, 'sizeOfBatch': 181} 
+Keyboard patterns database. 10 features. 4 classes.: 48.89502762430939 using {'K': 2, 'batches': 8, 'sizeOfBatch': 181} 
+Keyboard patterns database. 10 features. 4 classes.: 0 using {} 
+Keyboard patterns database. 10 features. 4 classes.: 64.50276243093923 using {'K': 2, 'batches': 8, 'sizeOfBatch': 181} 
+Keyboard patterns database. 10 features. 4 classes.: 65.33149171270719 using {'K': 2, 'batches': 8, 'sizeOfBatch': 181} 
+Keyboard patterns database. 10 features. 4 classes.: 65.33149171270719 using {'K': 2, 'batches': 8, 'sizeOfBatch': 181} 
