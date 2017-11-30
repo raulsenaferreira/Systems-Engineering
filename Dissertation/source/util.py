@@ -237,17 +237,17 @@ def getDistributionIntersection(X, Ut, indexesByClass, predictedByClass, density
     plotDistributionss(pdfUt)
 
 
-def loadBestModelByClass(X, indexesByClass, densityFunction):
+def loadBestModelByClass(X, indexesByClass):
     bestModelForClass = {}
 
     for c, indexes in indexesByClass.items():
         points = X[indexes]
-        bestModelForClass[c] = densityFunction(points)
+        bestModelForClass[c] = classifiers.gmmWithBIC(points)
 
     return bestModelForClass
 
 
-def mahalanobisCoreSupportExtraction(Ut, indexesPredictedByClass, bestModelSelectedByClass, excludingPercentage):
+def mahalanobisCoreSupportExtraction(Ut, indexesPredictedByClass, bestModelSelectedByClass):
     inf = 1e6
     selectedMinIndexesByClass={}
 
@@ -278,8 +278,8 @@ def mahalanobisCoreSupportExtraction(Ut, indexesPredictedByClass, bestModelSelec
             selectedMinIndexesByClass[c][pointIndexes[j]] = distsByComponent[i][j]
 
         #20% smallest distances per class, based on paper
-        #p = floor(0.2*len(selectedMinIndexesByClass[c]))
-        p = 70
+        p = floor(0.2*len(selectedMinIndexesByClass[c]))
+        #p = 70
         selectedMinIndexesByClass[c] = np.array(selectedMinIndexesByClass[c])
         selectedMinIndexesByClass[c] = selectedMinIndexesByClass[c].argsort()[:p]
     #print(len(selectedMinIndexesByClass))
@@ -307,6 +307,38 @@ def pdfByClass(instances, labels, classes, densityFunction):
                 pdfsByPoints = classifiers.kde(points, instances)
             a = 0
             for i in indexes:
+                pdfs[i]=pdfsByPoints[a]
+                a+=1
+            pdfsByClass[c] = pdfs
+
+    return pdfsByClass
+
+
+def pdfByClass2(pastInstances, pastLabels, instances, labels, classes, densityFunction):
+    indexesByClass = slicingClusteredData(labels, classes)
+    pastIndexesByClass = slicingClusteredData(pastLabels, classes)
+
+    pdfsByClass = {}
+    numClasses = len(classes)
+    
+    for c in classes:
+        allIndexesByClass = np.hstack([pastIndexesByClass[c], indexesByClass[c]])
+        if len(allIndexesByClass) > 0:
+            pdfs = [-1] * len(allIndexesByClass)
+            #print("class {} = {} points".format(c, len(indexes)))
+            #print(indexes)
+            #print(instances)
+            XByClass = pastInstances[pastIndexesByClass[c]]
+            UtByClass = instances[indexesByClass[c]]
+            print(len(indexesByClass[c]))
+            allInstancesByClass = np.vstack([XByClass, UtByClass])
+            #points from a class, all points, number of components
+            if densityFunction=='kde':
+                pdfsByPointsX = classifiers.kde(XByClass, allInstancesByClass)
+                pdfsByPointsUt = classifiers.kde(UtByClass, allInstancesByClass)
+                pdfsByPoints = np.hstack([pdfsByPointsX, pdfsByPointsUt])
+            a = 0
+            for i in range(len(allIndexesByClass)):
                 pdfs[i]=pdfsByPoints[a]
                 a+=1
             pdfsByClass[c] = pdfs
@@ -363,7 +395,7 @@ def compactingDataDensityBased(arrPdf, criteria):
 #Cutting data for next iteration
 def compactingDataDensityBased2(densities, criteria, reverse=False):
     selectedIndexes=[]
-    #print(criteria)
+
     for k in densities:
         arrPdf = np.array(densities[k])
         numSelected = int(np.floor(criteria*len(arrPdf)))
@@ -385,24 +417,75 @@ def compactingDataDensityBased2(densities, criteria, reverse=False):
 
 def bhattacharyya (h1, h2):
     def normalize(h):
-        h = np.sqrt(np.power(h, 2))
+        for i in range(len(h)):
+            if h[i]<0:
+                h[i]=(h[i]*-1)+10
+            else:
+                h[i]=h[i]+10
+                
         h = h / np.sum(h)
         #print(h)
         return h
 
-    return np.sqrt(np.multiply(normalize(h1), normalize(h2)))
+    return 1 - np.sum(np.sqrt(np.multiply(normalize(h1), normalize(h2))))
 
 
-def getBhattacharyyaScores(X, Ut, classes):
-    penalty = 0.2
-    score = []
-    limit = len(Ut)
-    if len(X) != len(Ut):
-        limit = min(len(X),len(Ut))
-    score.append( bhattacharyya(X[0:limit], Ut[0:limit]) )
-    res = np.sum(score)-penalty 
-    #print(res)
-    return res
+def getBhattacharyyaScores(instancesByClass):
+    scoresByClass = {}
+    means= []
+    for c, instances in instancesByClass.items():
+        # generate and output scores
+        scores = [];
+        for i in range(len(instances)):
+            score = [];
+            for j in range(len(instances)):
+                score.append( bhattacharyya(instances[i], instances[j]) );
+            scores.append(score);
+        scoresByClass[c]=scores
+        #print(np.mean(scores))
+        means.append(np.mean(scores))
+    #print(np.mean(means))
+    #return scoresByClass
+    return np.mean(means)
+
+
+def getBhattacharyyaScoresByClass(X, Ut, classes):
+#def getBhattacharyyaScoresByClass(X, y, Ut, predicted, classes):
+    scoresByClass = {}
+    '''
+    means= []
+    for c, instances in instancesByClass.items():
+        # generate and output scores
+        scores = [];
+        for i in range(len(instances)):
+            score = [];
+            for j in range(len(instances)):
+                score.append( bhattacharyya(instances[i], instances[j]) );
+            scores.append(score);
+        scoresByClass[c]=scores
+        #print(np.mean(scores))
+        means.append(np.mean(scores))
+    #print(np.mean(means))
+    #return scoresByClass
+    return np.mean(means)
+    '''
+    penalty = 0.3
+    for c in classes:
+        limit = min(len(X[c]),len(Ut[c]))
+        score = []
+        for i in range(limit):
+            score.append( bhattacharyya(X[c][i], Ut[c][i]) )
+
+        mean = 1-np.mean(score)-penalty
+        
+        if mean > 0.95:
+            scoresByClass[c] = 0.95
+        #elif mean < 0.7:
+            #scoresByClass[c] = 0.7
+        else:
+            scoresByClass[c] = mean
+        print(c, scoresByClass[c])
+    return scoresByClass
 
 
 def compactingDataScoreBased(scores, criteria):

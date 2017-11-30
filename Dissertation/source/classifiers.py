@@ -13,6 +13,8 @@ from sklearn.mixture import BayesianGaussianMixture
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neighbors import NearestNeighbors
 from sklearn.neighbors.nearest_centroid import NearestCentroid
+from sklearn.cluster import Birch
+
 
 
 def pca(X, numComponents):
@@ -28,7 +30,7 @@ def kMeans(X, k):
 
 
 def labelPropagation(X, y, K):
-    return label_propagation.LabelSpreading(kernel='knn', n_neighbors=K, alpha=0).fit(X, y)
+    return label_propagation.LabelSpreading(kernel='knn', n_neighbors=K, alpha=1).fit(X, y)
 
 
 def svmClassifier(X, y):
@@ -57,15 +59,17 @@ def kmeans_matlab(X, k, mode='auto', centroids=[]):
 def knn_classify(training_data, labels, test_instance):
     predicted_label = nearest = None
     best_distance = np.inf
-    tam = np.shape(training_data)[1] # number of cols
+    tam = np.shape(training_data)[0]
     for i in range(tam):
         compare_data = training_data[i, :]
+        
         distance = np.sqrt(np.sum(np.power((test_instance - compare_data), 2))) #euclidean distance
         if distance < best_distance:
             best_distance = distance
             predicted_label = labels[i]
             nearest = compare_data
-    #print(nearest)
+    #print("nearest manually",nearest)
+    #print("predicted manually",predicted_label)
     return predicted_label, best_distance, nearest
 
 
@@ -77,6 +81,8 @@ def knn_scargc(X, y, Ut):
     clf = NearestCentroid(metric='euclidean').fit(X, y)
     predicted_label = clf.predict(Ut.reshape(1, -1))
     #print(clf.centroids_) #exemplo [[ 0.25940611 -0.02868181] [ 5.450457    5.40674248]]
+    #print("nearest scikit",nearest[0][0])
+    #print("predicted scikit",predicted_label)
     return predicted_label, best_distance, nearest[0]
 
 
@@ -92,6 +98,13 @@ def libsvmpredict(Ut, clf):
     #based on libsvm lib for matlab: https://www.csie.ntu.edu.tw/~cjlin/libsvm/
     '-b 1 -q' # parameters from original matlab implementation
     return clf.predict(Ut)
+
+
+def mClassification(X, y, threshold, K=None):
+    brc = Birch(n_clusters=K, threshold=threshold,compute_labels=True)
+    return brc.partial_fit(X)
+    #brc = Birch(threshold=0.1, n_clusters=None)
+    #return brc.fit(X)
 
 
 def randomForest(X, y):
@@ -178,7 +191,7 @@ def majorityVote(clusteredData, clusters, y):
     return kPredicted
 
 
-def clusterAndLabel(X, y, Ut, K, classes):
+def clusterAndLabel(X, y, Ut, classes):
     labels=[]
     initK = len(classes)
     #arrPredicted=np.array([-1]*len(Ut))
@@ -186,7 +199,8 @@ def clusterAndLabel(X, y, Ut, K, classes):
     lenPoints = len(X)
     #print(len(Ut))
     #print(lenPoints)
-    for k in range(initK, K+initK):
+    #K varies in 5 values
+    for k in range(initK, 5+initK):
         if lenPoints >= k:
             #print("lllll")
             kmeans = kMeans(X, k)
@@ -212,7 +226,7 @@ def classify(X, y, Ut, K, classes, clf):
             return clf.predict(Ut)
         elif clf=='cl':
             #print("Using cluster and label")
-            return clusterAndLabel(X, y, Ut, K, classes)
+            return clusterAndLabel(X, y, Ut, classes)
         elif clf=='rf':
             #print("Using Random Forest")
             clf = randomForest(X, y)
