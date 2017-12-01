@@ -58,4 +58,4 @@ def start(**kwargs):
         # Evaluating classification
         arrAcc.append(metrics.evaluate(yt, predicted))
     
-    return "Static LP", arrAcc, X, y, arrX, arrY, arrUt, arrYt, arrClf, arrPredicted
+    return "Static SSL", arrAcc, X, y, arrX, arrY, arrUt, arrYt, arrClf, arrPredicted
