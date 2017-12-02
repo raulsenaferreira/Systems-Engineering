@@ -184,6 +184,22 @@ def finalEvaluation(arrAcc, steps, label):
     plotAccuracy(arrAcc, steps, label)
 
 
+def plotF1(arrF1, steps, label):
+    arrF1 = np.array(arrF1)
+    c = range(len(arrF1))
+    fig = plt.figure()
+    fig.add_subplot(122)
+    ax = plt.axes()
+    ax.plot(c, arrF1, 'k')
+    plt.yticks([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
+    plt.xticks(range(1, steps+1))
+    plt.title(label)
+    plt.ylabel("F1")
+    plt.xlabel("Step")
+    plt.grid()
+    plt.show()
+
+
 def plotBoxplot(mode, data, labels):
     fig = plt.figure()
     fig.add_subplot(111)
@@ -248,6 +264,38 @@ def plotBars2(listOfTimes, listOfMethods):
     plt.ylabel("Accuracy")
     plt.yticks(range(0, 101, 10))
     plt.xticks(range(len(listOfTimes)), listOfMethods)
+    plt.xticks(rotation=90)
+    plt.grid()
+    plt.show()
+
+
+def plotBars3(listOfAccuracies, listOfMethods):
+    
+    for l in range(len(listOfAccuracies)):    
+        ax = plt.axes()
+        ax.bar(l, 100-listOfAccuracies[l])
+
+    plt.title("Average Error")
+    plt.xlabel("Methods")
+    plt.ylabel("Error")
+    #plt.yticks(range(0, 101, 10))
+    plt.xticks(range(len(listOfAccuracies)), listOfMethods)
+    plt.xticks(rotation=90)
+    plt.grid()
+    plt.show()
+
+
+def plotBars4(baseline, listOfAccuracies, listOfMethods):
+    
+    for l in range(1,len(listOfAccuracies)):    
+        ax = plt.axes()
+        ax.bar(l, (listOfAccuracies[l]-baseline)/listOfAccuracies[l])
+
+    plt.title("Reduction Percentage Error")
+    plt.xlabel("Methods")
+    plt.ylabel("% Error under baseline (Static SSL)")
+    #plt.yticks(range(0, 101, 10))
+    plt.xticks(range(1, len(listOfAccuracies)), listOfMethods[1:])
     plt.xticks(rotation=90)
     plt.grid()
     plt.show()
