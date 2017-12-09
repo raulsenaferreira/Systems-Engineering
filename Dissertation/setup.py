@@ -304,3 +304,31 @@ def loadSCARGCBoxplotResults(path, sep):
     accuracies_2['elec2'] = np.loadtxt(path2+'elec2_matlab.txt')
 
     return accuracies_1, accuracies_2
+
+
+def loadLevelIwBoxplotResults(path, sep):
+    print('Results from Level IW algorithm (for boxplot and accuracy timelime).')
+    pathAcc = path+'results_level_iw'+sep+'acc'+sep
+    pathF1 = path+'results_level_iw'+sep+'f1'+sep
+    arrFiles = ['1CDT', '2CDT', '1CHT', '2CHT', '4CR', '4CRE-V1', '4CRE-V2', '5CVT', '1CSurr', '4CE1CF', 'UG_2C_2D', 'MG_2C_2D', 'FG_2C_2D', 'UG_2C_3D', 'UG_2C_5D', 'GEARS_2C_2D', 'keystroke']
+    accuracies={}
+    F1s={}
+    time={}
+
+    for i in range(len(arrFiles)):
+        accuracies[arrFiles[i]] = np.loadtxt(pathAcc+arrFiles[i]+'.txt')
+        F1s[arrFiles[i]] = np.loadtxt(pathF1+arrFiles[i]+'.txt')
+    
+    accuracies['noaa'] = np.loadtxt(pathAcc+'noaa_data_matlab.csv')
+    accuracies['elec2'] = np.loadtxt(pathAcc+'elec2_matlab3.csv')
+    F1s['noaa'] = np.loadtxt(pathF1+'noaa_data_matlab.csv')
+    F1s['elec2'] = np.loadtxt(pathF1+'elec2_matlab3.csv')
+
+    databaseNames = ['keystroke', 'noaa', 'elec2', '1CDT', '2CDT', '1CHT', '2CHT', '4CR', '4CRE-V1', '4CRE-V2', '5CVT', '1CSurr', '4CE1CF', 'UG_2C_2D', 'MG_2C_2D', 'FG_2C_2D', 'UG_2C_3D', 'UG_2C_5D', 'GEARS_2C_2D']
+    file = np.loadtxt(path+'results_level_iw'+sep+'processingTimes.txt')
+    
+    for i in range(len(file)):
+        time[databaseNames[i]] = file[i]
+
+    #print("1CDT ==> Acc:{}; F1:{}; Time:{}".format(np.mean(accuracies['1CDT']), np.mean(F1s['1CDT']), time['1CDT']))
+    return accuracies, F1s, time

@@ -34,7 +34,7 @@ class Experiment():
         self.usePCA=False
         #used only by gmm / kde process
         self.densityFunction=densityFunction
-        self.excludingPercentage = 0.7
+        self.excludingPercentage = 0.9
         self.K_variation = K
         self.classifier='cluster_and_label'
         #used in alpha-shape version only
@@ -165,7 +165,7 @@ def startAnimation(arrX, arrY, arrUt, arrYt, arrClf):
     
     anim = animation.FuncAnimation(fig, animate, init_func=init,
                                frames=100, interval=2000, blit=True)
-    anim.save('results/UG_2C_2D_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+    anim.save('results/2CHT_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
     plt.show()
 
 
@@ -183,10 +183,10 @@ def main():
     steps = 100
     labeledData = 50
     poolSize = 100
-    arrAccSCARGC, finalAccSCARGC = accSCARGC(path, sep, 'UG_2C_2D', steps)
+    arrAccSCARGC, finalAccSCARGC = accSCARGC(path, sep, '2CHT', steps)
     
     #sinthetic
-    dataValues, dataLabels, description = setup.loadUG_2C_2D(path, sep)
+    dataValues, dataLabels, description = setup.load2CHT(path, sep)
     
 
     '''
@@ -204,10 +204,10 @@ def main():
     SVM / Random Forest
     '''
     #experiments[2] = Experiment(static_svm)
-    experiments[3] = Experiment(static_labelpropagation, 11)
+    experiments[3] = Experiment(static_labelpropagation, 3)
 
     ''' Proposed Method 1 (KDE core extraction) '''
-    experiments[4] = Experiment(proposed_gmm_core_extraction, 11, "kde", poolSize, True)
+    experiments[4] = Experiment(proposed_gmm_core_extraction, 4, "kde", poolSize, True)
 
     '''
     Proposed method 2 (Intersection between two distributions + GMM)

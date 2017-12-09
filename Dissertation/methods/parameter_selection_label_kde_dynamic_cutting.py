@@ -85,11 +85,11 @@ class batthacharyya(BaseEstimator, ClassifierMixin):
                 instancesXByClass, instancesUtByClass = util.unifyInstancesByClass(X, y, Ut, predicted, classes)
 
                 # ***** Box 5 *****
-                #keepPercentageByClass = util.getBhattacharyyaScoresByClass(instancesXByClass, instancesUtByClass, classes)
-                keepPercentage = util.getBhattacharyyaScores(X, Ut, classes)
+                keepPercentageByClass = util.getBhattacharyyaScoresByClass(instancesXByClass, instancesUtByClass, classes)
+                #keepPercentage = util.getBhattacharyyaScores(instancesUtByClass)
 
-                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, 1-keepPercentage)
-                #selectedIndexes = util.compactingDataDensityBased3(pdfsByClass, keepPercentageByClass)
+                #selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, keepPercentage)
+                selectedIndexes = util.compactingDataDensityBased3(pdfsByClass, keepPercentageByClass)
                 # ***** Box 6 *****
                 X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
         else:

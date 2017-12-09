@@ -117,7 +117,7 @@ def knn(X, y, K):
     return KNeighborsClassifier(n_neighbors=K, algorithm = 'brute').fit(X, y)
 
 
-def gmmWithBIC(X):
+def gmmWithBIC(X, allPoints):
     ctype = 'full' #'spherical', 'tied', 'diag', 'full'
     best_gmm = False
     lowest_bic = np.infty
@@ -127,13 +127,15 @@ def gmmWithBIC(X):
     numComponentsChosen = 0
 
     for numComponents in n_components_range:
+        #print(lenPoints)
         if lenPoints >= numComponents:
             GMM = mixture.GaussianMixture(n_components=numComponents, covariance_type=ctype)
-            GMM.fit(X)
-            bic.append(GMM.bic(X))
+            GMM.fit(allPoints)
+            actualBIC = GMM.bic(X)
+            bic.append(actualBIC)
 
-            if bic[-1] < lowest_bic:
-                lowest_bic = bic[-1]
+            if actualBIC < lowest_bic:
+                lowest_bic = actualBIC
                 best_gmm = GMM
                 numComponentsChosen = numComponents
     #return pdfs of best GMM model

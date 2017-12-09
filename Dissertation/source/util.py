@@ -242,7 +242,7 @@ def loadBestModelByClass(X, indexesByClass):
 
     for c, indexes in indexesByClass.items():
         points = X[indexes]
-        bestModelForClass[c] = classifiers.gmmWithBIC(points)
+        bestModelForClass[c] = classifiers.gmmWithBIC(points, X)
 
     return bestModelForClass
 
@@ -330,7 +330,7 @@ def pdfByClass2(pastInstances, pastLabels, instances, labels, classes, densityFu
             #print(instances)
             XByClass = pastInstances[pastIndexesByClass[c]]
             UtByClass = instances[indexesByClass[c]]
-            print(len(indexesByClass[c]))
+            #print(len(indexesByClass[c]))
             allInstancesByClass = np.vstack([XByClass, UtByClass])
             #points from a class, all points, number of components
             if densityFunction=='kde':
@@ -385,11 +385,26 @@ def pdfByClass3(X, y, Ut, predicted, classes, criteria):
     return resultingX, resultingY
 
 
-def compactingDataDensityBased(arrPdf, criteria):
-    numSelected = 150
-    if len(arrPdf) > 100:
-        numSelected = int(np.floor(criteria*len(arrPdf)))
-    return (-arrPdf).argsort()[:numSelected]
+def compactingDataDensityBased(densities, criteriaByClass, reverse=False):
+    selectedIndexes=[]
+
+    for k in densities:
+        arrPdf = np.array(densities[k])
+        numSelected = int(np.floor((1-criteriaByClass[k])*len(arrPdf)))
+        if reverse:
+            ind = (arrPdf).argsort()[:numSelected]
+        else:
+            ind = (-arrPdf).argsort()[:numSelected]
+        selectedIndexes.append(ind)
+
+    stackedIndexes=selectedIndexes[0]
+    #print(0 ,len(selectedIndexes[0]))
+
+    for i in range(1, len(selectedIndexes)):
+        stackedIndexes = np.hstack([stackedIndexes,selectedIndexes[i]])
+        #print(i, len(selectedIndexes[i]))
+
+    return stackedIndexes
 
 
 #Cutting data for next iteration
@@ -484,7 +499,7 @@ def getBhattacharyyaScoresByClass(X, Ut, classes):
             #scoresByClass[c] = 0.7
         else:
             scoresByClass[c] = mean
-        print(c, scoresByClass[c])
+        #print(c, scoresByClass[c])
     return scoresByClass
 
 

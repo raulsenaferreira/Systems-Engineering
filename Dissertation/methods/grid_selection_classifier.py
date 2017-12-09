@@ -85,14 +85,14 @@ class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
                 pdfsByClass = util.pdfByClass(Ut, predicted, classes, self.densityFunction)
                 
                 # ***** Box 5 *****
-                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, 1-self.excludingPercentage)
+                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
                 
                 # ***** Box 6 *****
                 X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
         else:
             inst = []
             labels = []
-            clf = classifiers.knn(X, y, self.K)
+            clf = classifiers.labelPropagation(X, y, self.K)
             remainingX , remainingY = util.loadLabeledData(dataValues, dataLabels, finalDataLength, len(dataValues), self.usePCA)
             
             for Ut, yt in zip(remainingX, remainingY):
@@ -106,11 +106,11 @@ class proposed_gmm_core_extraction(BaseEstimator, ClassifierMixin):
                     pdfsByClass = util.pdfByClass(inst, labels, classes, self.densityFunction)
                     selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
                     X, y = util.selectedSlicedData(inst, labels, selectedIndexes)
-                    clf = classifiers.knn(X, y, self.K)
+                    clf = classifiers.labelPropagation(X, y, self.K)
                     inst = []
                     labels = []
                 
-            arrAcc = split_list(arrAcc, 100)
+            arrAcc = split_list(arrAcc, self.batches)
             arrAcc = makeAccuracy(arrAcc, remainingY)   
             
      
