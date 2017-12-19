@@ -261,7 +261,7 @@ def loadElecData(path, sep):
     dataValues = pd.read_csv(path+'real'+sep+'elecdata'+sep+'electricity_dataset.csv',sep = ",", header=None)
     dataValues = pd.DataFrame.as_matrix(dataValues)
     dataLabels = dataValues[:, 7]
-    dataValues = dataValues[:, 0:7]
+    dataValues = dataValues[:, 2:7]
     #print(dataValues)
     #countInstances("elecdata", dataLabels)
     return dataValues, dataLabels.astype(int), description

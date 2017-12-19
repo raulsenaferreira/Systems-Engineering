@@ -73,7 +73,14 @@ class run(BaseEstimator, ClassifierMixin):
                 Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
                 
                 # ***** Box 3 *****
-                clf = classifiers.labelPropagation(X, y, self.K)
+                #clf = classifiers.labelPropagation(X, y, self.K)
+                #clf = classifiers.randomForest(X, y)
+                #clf = classifiers.SGDClassifier(X, y)
+                #clf = classifiers.naiveBayes(X, y, 'gaussian')
+                #clf = classifiers.knn(X, y, self.K)
+                
+                clf = classifiers.SAG(X, y)
+                
                 predicted = clf.predict(Ut)
                 # Evaluating classification
                 arrAcc.append(metrics.evaluate(yt, predicted))

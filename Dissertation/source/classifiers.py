@@ -14,6 +14,11 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neighbors import NearestNeighbors
 from sklearn.neighbors.nearest_centroid import NearestCentroid
 from sklearn.cluster import Birch
+from sklearn import linear_model
+from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import GaussianNB 
+from sklearn.naive_bayes import MultinomialNB 
+from sklearn.naive_bayes import BernoulliNB
 
 
 
@@ -25,12 +30,29 @@ def pca(X, numComponents):
     return pca.transform(X)
        
     
+def naiveBayes(X, y, t):
+    if t=="gaussian":
+        return GaussianNB().fit(X, y)
+    elif t=="multinomial":
+        return MultinomialNB().fit(X, y)
+    elif t=="bernoulli":
+        return BernoulliNB().fit(X, y)
+
+
 def kMeans(X, k):
     return KMeans(n_clusters=k).fit(X)
 
 
 def labelPropagation(X, y, K):
     return label_propagation.LabelSpreading(kernel='knn', n_neighbors=K, alpha=1).fit(X, y)
+
+
+def SGDClassifier(X, y):
+    return linear_model.SGDClassifier().fit(X, y)
+
+
+def SAG(X, y):
+    return LogisticRegression(solver='sag', tol=1e-1, C=1.e4 / X.shape[0]).fit(X, y)
 
 
 def svmClassifier(X, y):
@@ -41,11 +63,12 @@ def svmClassifier(X, y):
             decision_function_shape=None, degree=3, gamma='auto', max_iter=-1, probability=False, random_state=None, shrinking=True, tol=0.001, verbose=False)
         return clf.fit(X, y)
     else:'''
-    clf = svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+    '''clf = svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
         decision_function_shape=None, degree=4, gamma='auto', kernel='rbf',
         max_iter=-1, probability=False, random_state=None, shrinking=True,
         tol=0.001, verbose=False)
-    #clf = svm.SVC(gamma=2, C=1)
+    '''
+    clf = svm.SVC(gamma=2, C=1)
     return clf.fit(X, y)
     
 

@@ -1,0 +1,20 @@
+One Class Diagonal Translation. 2 Dimensional data.: 99.17 using {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240} 
+One Class Horizontal Translation. 2 Dimensional data.: 94.17 using {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240} 
+Two Classes Diagonal Translation. 2 Dimensional data: 95.42 using {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240} 
+Two Classes Horizontal Translation. 2 Dimensional data.: 84.58 using {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240} 
+Four Classes Rotating Separated. Bidimensional.: 99.91 using {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 5054, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2166} 
+Four Classes Rotating with Expansion V1. Bidimensional.: 42.08 using {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 4375, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1875} 
+Four Classes Rotating with Expansion V2. Bidimensional.: 73.83999999999999 using {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 6405, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2745} 
+Five Classes Vertical Translation. Bidimensional.: 86.11 using {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 840, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 360} 
+One Class Surrounding another Class. Bidimensional.: 98.67 using {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 1934, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 830} 
+Four Classes Expanding and One Class Fixed. Bidimensional.: 99.42 using {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 6063, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2599} 
+Two Bidimensional Unimodal Gaussian Classes.: 99.53 using {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 3500, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1500} 
+Two Bidimensional Multimodal Gaussian Classes.: 99.57000000000001 using {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000} 
+Two Bidimensional Classes as Four Gaussians.: 96.77 using {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000} 
+Artificial Two 3-dimensional Unimodal Gaussian Classes.: 100.0 using {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000} 
+Two 5-dimensional Unimodal Gaussian Classes.: 99.72999999999999 using {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000} 
+Two Rotating Gears (Two classes. Bidimensional).: 95.67 using {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000} 
+Rotated checkerboard dataset. Rotating 2*PI.: 62.3 using {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000} 
+Electricity data. 7 features. 2 classes.: 75.12 using {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 963, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 414} 
+Keyboard patterns database. 10 features. 4 classes.: 100.0 using {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 56, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 24} 
+NOAA dataset. Eight  features. Two classes.: 84.61999999999999 using {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 634, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 273} 

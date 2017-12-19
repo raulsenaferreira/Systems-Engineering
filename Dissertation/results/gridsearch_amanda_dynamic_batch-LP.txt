@@ -1,0 +1,4 @@
+One Class Diagonal Translation. 2 Dimensional data.: 99.94720000000001 using {'K': 2, 'batches': 100, 'initialLabeledData': 800, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 152} 
+One Class Horizontal Translation. 2 Dimensional data.: 99.53269999999996 using {'K': 5, 'batches': 100, 'initialLabeledData': 800, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 152} 
+Two Classes Diagonal Translation. 2 Dimensional data: 51.6447 using {'K': 6, 'batches': 100, 'initialLabeledData': 800, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 152} 
+Two Classes Horizontal Translation. 2 Dimensional data.: 52.328799999999994 using {'K': 5, 'batches': 100, 'initialLabeledData': 800, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 152} 

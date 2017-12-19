@@ -1,5 +1,0 @@
-One Class Surrounding another Class. Bidimensional.: 87.20833333333334 using {'K': 4, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 275, 'sizeOfBatch': 552} 
-One Class Surrounding another Class. Bidimensional.: 90.9836956521739 using {'K': 2, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 275, 'sizeOfBatch': 552} 
-One Class Surrounding another Class. Bidimensional.: 90.23369565217392 using {'K': 2, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 275, 'sizeOfBatch': 552} 
-One Class Surrounding another Class. Bidimensional.: 95.60507246376812 using {'K': 2, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 275, 'sizeOfBatch': 552} 
-One Class Surrounding another Class. Bidimensional.: 95.64492753623188 using {'K': 2, 'batches': 100, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 275, 'sizeOfBatch': 552} 

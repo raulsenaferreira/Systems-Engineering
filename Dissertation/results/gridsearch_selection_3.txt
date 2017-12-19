@@ -1,9 +1,0 @@
-Keyboard patterns database. 10 features. 4 classes.: 90.26243093922652 using {'K': 7, 'batches': 8, 'excludingPercentage': 0.8, 'initialLabeledData': 150, 'isBatchMode': True, 'poolSize': 300, 'sizeOfBatch': 181} 
-One Class Diagonal Translation. 2 Dimensional data.: 99.56603773584906 using {'K': 10, 'batches': 100, 'excludingPercentage': 0.5, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 300, 'sizeOfBatch': 159} 
-One Class Horizontal Translation. 2 Dimensional data.: 98.10691823899371 using {'K': 10, 'batches': 100, 'excludingPercentage': 0.5, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 300, 'sizeOfBatch': 159} 
-Electricity data. 7 features. 2 classes.: 72.98545454545454 using {'K': 4, 'batches': 100, 'excludingPercentage': 0.55, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 300, 'sizeOfBatch': 275} 
-NOAA dataset. Eight  features. Two classes.: 68.57458563535913 using {'K': 2, 'batches': 50, 'excludingPercentage': 0.8, 'initialLabeledData': 10, 'isBatchMode': True, 'poolSize': 300, 'sizeOfBatch': 362} 
-One Class Diagonal Translation. 2 Dimensional data.: 99.56603773584906 using {'K': 10, 'batches': 100, 'excludingPercentage': 0.5, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 300, 'sizeOfBatch': 159} 
-One Class Horizontal Translation. 2 Dimensional data.: 98.10691823899371 using {'K': 10, 'batches': 100, 'excludingPercentage': 0.5, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 300, 'sizeOfBatch': 159} 
-Two Classes Diagonal Translation. 2 Dimensional data: 57.226415094339615 using {'K': 4, 'batches': 100, 'excludingPercentage': 0.6, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 300, 'sizeOfBatch': 159} 
-Two Classes Horizontal Translation. 2 Dimensional data.: 57.90566037735849 using {'K': 6, 'batches': 100, 'excludingPercentage': 0.5, 'initialLabeledData': 50, 'isBatchMode': True, 'poolSize': 300, 'sizeOfBatch': 159} 

@@ -1,0 +1,260 @@
+One Class Diagonal Translation. 2 Dimensional data.: 1 batches of 240 instances
+100.0 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+100.0 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+100.0 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+100.0 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+100.0 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+100.0 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+100.0 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+100.0 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+100.0 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+100.0
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+=======================================================================================================
+One Class Horizontal Translation. 2 Dimensional data.: 1 batches of 240 instances
+95.42 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.42 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.42 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.42 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.42 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.42 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.42 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.42 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.42 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.42
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+=======================================================================================================
+Two Classes Diagonal Translation. 2 Dimensional data: 1 batches of 240 instances
+95.0 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.0 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.0 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.0 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.0 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.0 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.0 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.0 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.0 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+95.0
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+=======================================================================================================
+Two Classes Horizontal Translation. 2 Dimensional data.: 1 batches of 240 instances
+84.58 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+84.58 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+84.58 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+84.58 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+84.58 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+84.58 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+84.58 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+84.58 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+84.58 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+84.58
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 560, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 240}
+=======================================================================================================
+Four Classes Rotating Separated. Bidimensional.: 1 batches of 2166 instances
+99.95 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 5054, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2166}
+99.95 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 5054, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2166}
+99.95 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 5054, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2166}
+99.95 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 5054, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2166}
+99.95 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 5054, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2166}
+99.95 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 5054, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2166}
+99.95 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 5054, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2166}
+99.95 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 5054, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2166}
+99.95 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 5054, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2166}
+99.95
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 5054, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2166}
+=======================================================================================================
+Four Classes Rotating with Expansion V1. Bidimensional.: 1 batches of 1875 instances
+19.25 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 4375, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1875}
+19.25 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 4375, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1875}
+19.25 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 4375, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1875}
+19.25 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 4375, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1875}
+19.25 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 4375, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1875}
+19.25 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 4375, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1875}
+19.25 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 4375, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1875}
+19.25 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 4375, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1875}
+19.25 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 4375, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1875}
+19.25
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 4375, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1875}
+=======================================================================================================
+Four Classes Rotating with Expansion V2. Bidimensional.: 1 batches of 2745 instances
+70.2 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 6405, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2745}
+70.2 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 6405, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2745}
+70.2 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 6405, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2745}
+70.2 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 6405, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2745}
+70.2 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 6405, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2745}
+70.2 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 6405, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2745}
+70.2 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 6405, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2745}
+70.2 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 6405, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2745}
+70.2 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 6405, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2745}
+70.2
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 6405, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2745}
+=======================================================================================================
+Five Classes Vertical Translation. Bidimensional.: 1 batches of 360 instances
+87.22 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 840, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 360}
+87.22 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 840, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 360}
+87.22 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 840, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 360}
+87.22 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 840, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 360}
+87.22 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 840, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 360}
+87.22 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 840, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 360}
+87.22 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 840, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 360}
+87.22 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 840, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 360}
+87.22 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 840, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 360}
+87.22
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 840, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 360}
+=======================================================================================================
+One Class Surrounding another Class. Bidimensional.: 1 batches of 830 instances
+96.87 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 1934, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 830}
+96.87 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 1934, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 830}
+96.87 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 1934, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 830}
+96.87 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 1934, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 830}
+96.87 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 1934, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 830}
+96.87 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 1934, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 830}
+96.87 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 1934, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 830}
+96.87 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 1934, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 830}
+96.87 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 1934, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 830}
+96.87
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 1934, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 830}
+=======================================================================================================
+Four Classes Expanding and One Class Fixed. Bidimensional.: 1 batches of 2599 instances
+96.81 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 6063, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2599}
+96.81 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 6063, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2599}
+96.81 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 6063, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2599}
+96.81 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 6063, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2599}
+96.81 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 6063, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2599}
+96.81 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 6063, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2599}
+96.81 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 6063, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2599}
+96.81 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 6063, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2599}
+96.81 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 6063, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2599}
+96.81
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 6063, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 2599}
+=======================================================================================================
+Two Bidimensional Unimodal Gaussian Classes.: 1 batches of 1500 instances
+99.47 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 3500, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1500}
+99.47 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 3500, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1500}
+99.47 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 3500, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1500}
+99.47 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 3500, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1500}
+99.47 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 3500, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1500}
+99.47 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 3500, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1500}
+99.47 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 3500, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1500}
+99.47 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 3500, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1500}
+99.47 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 3500, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1500}
+99.47
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 3500, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 1500}
+=======================================================================================================
+Two Bidimensional Multimodal Gaussian Classes.: 1 batches of 3000 instances
+99.57 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.57 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.57 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.57 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.57 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.57 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.57 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.57 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.57 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.57
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+=======================================================================================================
+Two Bidimensional Classes as Four Gaussians.: 1 batches of 3000 instances
+96.07 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+96.07 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+96.07 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+96.07 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+96.07 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+96.07 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+96.07 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+96.07 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+96.07 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+96.07
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+=======================================================================================================
+Artificial Two 3-dimensional Unimodal Gaussian Classes.: 1 batches of 3000 instances
+100.0 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+100.0 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+100.0 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+100.0 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+100.0 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+100.0 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+100.0 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+100.0 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+100.0 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+100.0
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+=======================================================================================================
+Two 5-dimensional Unimodal Gaussian Classes.: 1 batches of 3000 instances
+99.83 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.83 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.83 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.83 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.83 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.83 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.83 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.83 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.83 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+99.83
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+=======================================================================================================
+Two Rotating Gears (Two classes. Bidimensional).: 1 batches of 3000 instances
+95.93 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+95.93 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+95.93 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+95.93 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+95.93 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+95.93 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+95.93 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+95.93 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+95.93 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+95.93
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+=======================================================================================================
+Rotated checkerboard dataset. Rotating 2*PI.: 1 batches of 3000 instances
+51.27 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+51.27 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+51.27 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+51.27 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+51.27 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+51.27 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+51.27 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+51.27 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+51.27 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+51.27
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 7000, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 3000}
+=======================================================================================================
+Electricity data. 7 features. 2 classes.: 1 batches of 414 instances
+70.77 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 963, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 414}
+70.77 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 963, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 414}
+70.77 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 963, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 414}
+70.77 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 963, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 414}
+70.77 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 963, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 414}
+70.77 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 963, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 414}
+70.77 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 963, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 414}
+70.77 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 963, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 414}
+70.77 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 963, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 414}
+70.77
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 963, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 414}
+=======================================================================================================
+Keyboard patterns database. 10 features. 4 classes.: 1 batches of 24 instances
+95.83 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 56, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 24}
+95.83 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 56, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 24}
+95.83 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 56, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 24}
+95.83 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 56, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 24}
+95.83 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 56, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 24}
+95.83 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 56, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 24}
+95.83 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 56, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 24}
+95.83 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 56, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 24}
+95.83 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 56, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 24}
+95.83
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 56, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 24}
+=======================================================================================================
+NOAA dataset. Eight  features. Two classes.: 1 batches of 273 instances
+77.29 {'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 634, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 273}
+77.29 {'batches': 1, 'excludingPercentage': 0.85, 'initialLabeledData': 634, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 273}
+77.29 {'batches': 1, 'excludingPercentage': 0.8, 'initialLabeledData': 634, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 273}
+77.29 {'batches': 1, 'excludingPercentage': 0.75, 'initialLabeledData': 634, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 273}
+77.29 {'batches': 1, 'excludingPercentage': 0.7, 'initialLabeledData': 634, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 273}
+77.29 {'batches': 1, 'excludingPercentage': 0.65, 'initialLabeledData': 634, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 273}
+77.29 {'batches': 1, 'excludingPercentage': 0.6, 'initialLabeledData': 634, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 273}
+77.29 {'batches': 1, 'excludingPercentage': 0.55, 'initialLabeledData': 634, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 273}
+77.29 {'batches': 1, 'excludingPercentage': 0.5, 'initialLabeledData': 634, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 273}
+77.29
+{'batches': 1, 'excludingPercentage': 0.9, 'initialLabeledData': 634, 'isBatchMode': True, 'poolSize': None, 'sizeOfBatch': 273}
+=======================================================================================================
