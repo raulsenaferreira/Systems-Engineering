@@ -31,7 +31,7 @@ def makeAccuracy(arrAllAcc, arrTrueY):
 
 class run(BaseEstimator, ClassifierMixin):
 
-    def __init__(self, excludingPercentage=0.05, K=1, sizeOfBatch=100, batches=50, poolSize=100, isBatchMode=True, initialLabeledData=50):
+    def __init__(self, excludingPercentage=0.05, K=1, sizeOfBatch=100, batches=50, poolSize=100, isBatchMode=True, initialLabeledData=50, clfName='lp'):
         self.sizeOfBatch = sizeOfBatch
         self.batches = batches
         self.initialLabeledData=initialLabeledData
@@ -39,14 +39,14 @@ class run(BaseEstimator, ClassifierMixin):
         self.densityFunction='kde'
         self.excludingPercentage = excludingPercentage
         self.K = K
-        self.clfName = 'lp'
+        self.clfName = clfName.lower()
         self.poolSize = poolSize
         self.isBatchMode = isBatchMode
         
         #print("{} excluding percecntage".format(excludingPercentage))    
     
     def get_params(self, deep=True):
-        return {"excludingPercentage" : self.excludingPercentage, "K":self.K, "sizeOfBatch":self.sizeOfBatch, "batches":self.batches, "poolSize":self.poolSize, "isBatchMode":self.isBatchMode}
+        return {"excludingPercentage" : self.excludingPercentage, "K":self.K, "sizeOfBatch":self.sizeOfBatch, "batches":self.batches, "poolSize":self.poolSize, "isBatchMode":self.isBatchMode, "clfName":clfName}
     
     def set_params(self, **parameters):
         for parameter, value in parameters.items():
@@ -73,13 +73,7 @@ class run(BaseEstimator, ClassifierMixin):
                 Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
                 
                 # ***** Box 3 *****
-                #clf = classifiers.labelPropagation(X, y, self.K)
-                #clf = classifiers.randomForest(X, y)
-                #clf = classifiers.SGDClassifier(X, y)
-                #clf = classifiers.naiveBayes(X, y, 'gaussian')
-                #clf = classifiers.knn(X, y, self.K)
-                
-                clf = classifiers.SAG(X, y)
+                clf = classifiers.classifier(X, y, self.K, self.clfName)
                 
                 predicted = clf.predict(Ut)
                 # Evaluating classification
@@ -97,7 +91,7 @@ class run(BaseEstimator, ClassifierMixin):
         else:
             inst = []
             labels = []
-            clf = classifiers.labelPropagation(X, y, self.K)
+            clf = classifiers.classifier(X, y, self.K, self.clfName)
             remainingX , remainingY = util.loadLabeledData(dataValues, dataLabels, finalDataLength, len(dataValues), self.usePCA)
             
             for Ut, yt in zip(remainingX, remainingY):
@@ -111,7 +105,7 @@ class run(BaseEstimator, ClassifierMixin):
                     pdfsByClass = util.pdfByClass(inst, labels, classes, self.densityFunction)
                     selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
                     X, y = util.selectedSlicedData(inst, labels, selectedIndexes)
-                    clf = classifiers.labelPropagation(X, y, self.K)
+                    clf = classifiers.classifier(X, y, self.K, self.clfName)
                     inst = []
                     labels = []
                 

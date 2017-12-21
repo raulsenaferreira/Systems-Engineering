@@ -59,7 +59,7 @@ def start(**kwargs):
     # ***** Box 1 *****
     #Initial labeled data
     X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
-    clf = classifiers.labelPropagation(X, y, K)
+    clf = classifiers.classifier(X, y, K, clfName)
 
     if isBatchMode:
         for t in range(batches):
@@ -101,7 +101,7 @@ def start(**kwargs):
             arrYt.append(yt)
             arrPredicted.append(predicted)
             
-            clf = classifiers.labelPropagation(inst, labels, K)
+            clf = classifiers.classifier(inst, labels, K, clfName)
             
         arrAcc = split_list(arrAcc, batches)
         arrAcc = makeAccuracy(arrAcc, remainingY)

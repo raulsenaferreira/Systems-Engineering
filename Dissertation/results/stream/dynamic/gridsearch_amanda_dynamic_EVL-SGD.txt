@@ -1,0 +1,20 @@
+One Class Diagonal Translation. 2 Dimensional data.: 100.0 using {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240} 
+One Class Horizontal Translation. 2 Dimensional data.: 95.83 using {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240} 
+Two Classes Diagonal Translation. 2 Dimensional data: 95.83 using {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240} 
+Two Classes Horizontal Translation. 2 Dimensional data.: 75.0 using {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240} 
+Four Classes Rotating Separated. Bidimensional.: 0 using {} 
+Four Classes Rotating with Expansion V1. Bidimensional.: 0 using {} 
+Four Classes Rotating with Expansion V2. Bidimensional.: 0 using {} 
+Five Classes Vertical Translation. Bidimensional.: 0 using {} 
+One Class Surrounding another Class. Bidimensional.: 0 using {} 
+Four Classes Expanding and One Class Fixed. Bidimensional.: 0 using {} 
+Two Bidimensional Unimodal Gaussian Classes.: 0 using {} 
+Two Bidimensional Multimodal Gaussian Classes.: 0 using {} 
+Two Bidimensional Classes as Four Gaussians.: 0 using {} 
+Artificial Two 3-dimensional Unimodal Gaussian Classes.: 0 using {} 
+Two 5-dimensional Unimodal Gaussian Classes.: 0 using {} 
+Two Rotating Gears (Two classes. Bidimensional).: 0 using {} 
+Rotated checkerboard dataset. Rotating 2*PI.: 0 using {} 
+Electricity data. 7 features. 2 classes.: 75.12 using {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414} 
+Keyboard patterns database. 10 features. 4 classes.: 70.83 using {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24} 
+NOAA dataset. Eight  features. Two classes.: 77.29 using {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273} 

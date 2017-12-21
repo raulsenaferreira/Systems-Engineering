@@ -4,6 +4,7 @@ from source import metrics
 from source import util
 
 
+
 def split_list(alist, wanted_parts=1):
     length = len(alist)
     return [ alist[i*length // wanted_parts: (i+1)*length // wanted_parts] 
@@ -41,8 +42,8 @@ def start(**kwargs):
     densityFunction = kwargs["densityFunction"]
     poolSize = kwargs["poolSize"]
     isBatchMode = kwargs["isBatchMode"]
-    
-    print("METHOD: {} as classifier and {} as core support extraction with cutting data method".format(clfName, densityFunction))
+
+    print("METHOD: Static {0} as classifier".format(clfName))
     usePCA=False
     arrAcc = []
     arrX = []
@@ -52,11 +53,11 @@ def start(**kwargs):
     arrClf = []
     arrPredicted = []
     initialDataLength = 0
-    excludingPercentage = 1-excludingPercentage
-    finalDataLength = initialLabeledData #round((initialLabeledDataPerc)*sizeOfBatch)
+    finalDataLength = initialLabeledData
     # ***** Box 1 *****
     #Initial labeled data
     X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
+    clf = classifiers.classifier(X, y, K, clfName)
     if isBatchMode:
         for t in range(batches):
             #print("passo: ",t)
@@ -64,12 +65,11 @@ def start(**kwargs):
             finalDataLength=finalDataLength+sizeOfBatch
             #print(initialDataLength)
             #print(finalDataLength)
-            # ***** Box 2 *****
+            # ***** Box 2 *****            
             Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
             
             # ***** Box 3 *****
-            clf = classifiers.classifier(X, y, K, clfName)
-
+            predicted=clf.predict(Ut)
             # for decision boundaries plot
             arrClf.append(clf)
             arrX.append(X)
@@ -80,20 +80,9 @@ def start(**kwargs):
             arrPredicted.append(predicted)
             # Evaluating classification
             arrAcc.append(metrics.evaluate(yt, predicted))
-            
-            # ***** Box 4 *****
-            #pdfs from each new points from each class applied on new arrived points
-            pdfsByClass = util.pdfByClass(Ut, predicted, classes, densityFunction)
-
-            # ***** Box 5 *****
-            selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
-
-            # ***** Box 6 *****
-            X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
     else:
         inst = []
         labels = []
-        clf = classifiers.classifier(X, y, K, clfName)
         remainingX , remainingY = util.loadLabeledData(dataValues, dataLabels, finalDataLength, len(dataValues), usePCA)
         
         for Ut, yt in zip(remainingX, remainingY):
@@ -110,19 +99,9 @@ def start(**kwargs):
             arrYt.append(yt)
             arrPredicted.append(predicted)
             
-            if len(inst) == poolSize:
-                inst = np.asarray(inst)
-                pdfsByClass = util.pdfByClass(inst, labels, classes, densityFunction)
-                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
-                X, y = util.selectedSlicedData(inst, labels, selectedIndexes)
-                clf = classifiers.classifier(X, y, K, clfName)
-                inst = []
-                labels = []
-            
         arrAcc = split_list(arrAcc, batches)
         arrAcc = makeAccuracy(arrAcc, remainingY)
         arrYt = split_list(arrYt, batches)
         arrPredicted = split_list(arrPredicted, batches)
 
-    # returns accuracy array and last selected points
-    return "AMANDA (Fixed)", arrAcc, X, y, arrX, arrY, arrUt, arrYt, arrClf, arrPredicted
+    return "Static SSL", arrAcc, X, y, arrX, arrY, arrUt, arrYt, arrClf, arrPredicted

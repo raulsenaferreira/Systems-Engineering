@@ -64,15 +64,16 @@ def start(**kwargs):
     X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
     
     model = Sequential()  
-    model.add(LSTM(hidden_neurons, input_shape=(1, in_out_neurons)))  
-    model.add(Dense(hidden_neurons, input_shape=(1, in_out_neurons)))  
-    model.add(Activation("linear"))  
+    model.add(LSTM(hidden_neurons, input_shape=(len(X), in_out_neurons)))
+    #model.add(Flatten())
+    model.add(Dense(32))#hidden_neurons, input_shape=(len(X), in_out_neurons)  
+    
     model.compile(loss="mean_squared_error", optimizer="rmsprop")  
 
     if isBatchMode:
         for t in range(batches):
             # sliding 
-            model.fit(X, y, nb_epoch=10, validation_split=0.05)
+            model.fit(X, y, epochs=10, validation_split=0.05)
 
             initialDataLength=finalDataLength
             finalDataLength=finalDataLength+sizeOfBatch
@@ -97,7 +98,7 @@ def start(**kwargs):
         inst = []
         labels = []
         remainingX , remainingY = util.loadLabeledData(dataValues, dataLabels, finalDataLength, len(dataValues), usePCA)
-        model.fit(X, y, nb_epoch=10, validation_split=0.05)
+        model.fit(X, y, epochs=10, validation_split=0.05)
         for Ut, yt in zip(remainingX, remainingY):
             predicted = model.predict(Ut.reshape(1, -1))
             arrAcc.append(predicted)
@@ -114,7 +115,7 @@ def start(**kwargs):
             
             if len(inst) == poolSize:
                 inst = np.asarray(inst)
-                clf = model.fit(inst, labels, nb_epoch=10, validation_split=0.05)
+                clf = model.fit(inst, labels, epochs=10, validation_split=0.05)
                 inst = []
                 labels = []
             

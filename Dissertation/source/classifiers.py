@@ -30,13 +30,8 @@ def pca(X, numComponents):
     return pca.transform(X)
        
     
-def naiveBayes(X, y, t):
-    if t=="gaussian":
-        return GaussianNB().fit(X, y)
-    elif t=="multinomial":
-        return MultinomialNB().fit(X, y)
-    elif t=="bernoulli":
-        return BernoulliNB().fit(X, y)
+def naiveBayes(X, y):
+    return GaussianNB().fit(X, y)
 
 
 def kMeans(X, k):
@@ -244,22 +239,25 @@ def clusterAndLabel(X, y, Ut, classes):
     return labels
 
 
-def classify(X, y, Ut, K, classes, clf):
+def classifier(X, y, K, clf):
         if clf=='svm':
             #print("Using SVM")
-            clf = svmClassifier(X, y)
-            return clf.predict(Ut)
+            return svmClassifier(X, y)
         elif clf=='cl':
             #print("Using cluster and label")
-            return clusterAndLabel(X, y, Ut, classes)
+            return clusterAndLabel(X, y)
         elif clf=='rf':
             #print("Using Random Forest")
-            clf = randomForest(X, y)
-            return clf.predict(Ut)
+            return randomForest(X, y)
         elif clf=='knn':
-            clf = knn(X, y, K)
-            #print(len(Ut))
-            return clf.predict(Ut)
-        elif clf == 'label':
-            clf = labelPropagation(X, y, K)
-            return clf.predict(Ut)
+            #print("Using K-Nearest Neighbors")
+            return knn(X, y, K)
+        elif clf == 'lp':
+            #print("Using Label Propagation")
+            return labelPropagation(X, y, K)
+        elif clf == 'nb':
+            #print("Using Naive Bayes")
+            return naiveBayes(X, y)
+        elif clf == 'sgd':
+            #print("Using Stochastic Gradient Descent")
+            return SGDClassifier(X, y)

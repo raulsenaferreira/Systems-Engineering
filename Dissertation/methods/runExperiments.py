@@ -30,49 +30,54 @@ def run(dataValues, dataLabels, datasetDescription, isBinaryClassification, isIm
         F1Type='micro'
     
     for name, e in experiments.items():
-        CoreX = []
-        CoreY = []
-        accTotal = []
-        accuracies=[]
-        classes = list(set(dataLabels))#getting all possible classes in data
+        try:
+            CoreX = []
+            CoreY = []
+            accTotal = []
+            accuracies=[]
+            classes = list(set(dataLabels))#getting all possible classes in data
 
-        start = timer()
-        #accuracy per step
-        algorithmName, accuracies, CoreX, CoreY, arrX, arrY, arrUt, arrYt, arrClf, arrPredicted = e.method.start(
-            dataValues=dataValues, dataLabels=dataLabels, classes=classes, densityFunction=e.densityFunction, 
-            batches=batches, sizeOfBatch = sizeOfBatch, initialLabeledData=labeledData, excludingPercentage=e.excludingPercentage, 
-            K_variation=e.K_variation, clfName=e.clfName, poolSize=poolSize, isBatchMode=isBatchMode)
-        end = timer()
-        averageAccuracy = np.mean(accuracies)
+            start = timer()
+            #accuracy per step
+            algorithmName, accuracies, CoreX, CoreY, arrX, arrY, arrUt, arrYt, arrClf, arrPredicted = e.method.start(
+                dataValues=dataValues, dataLabels=dataLabels, classes=classes, densityFunction=e.densityFunction, 
+                batches=batches, sizeOfBatch = sizeOfBatch, initialLabeledData=labeledData, excludingPercentage=e.excludingPercentage, 
+                K_variation=e.K_variation, clfName=e.clfName, poolSize=poolSize, isBatchMode=isBatchMode)
+            end = timer()
+            averageAccuracy = np.mean(accuracies)
 
-        #elapsed time per step
-        elapsedTime = end - start
+            #elapsed time per step
+            elapsedTime = end - start
+            
+            accTotal.append(averageAccuracy)
+
+            arrF1 = metrics.F1(arrYt, arrPredicted, F1Type)
+            listOfAccuracies.append(accuracies)
+            listOfMethods.append(algorithmName)
+            listOfF1s.append(arrF1)
+            listOfTimeExecutions.append(elapsedTime)
+            
+            print("Execution time: ", elapsedTime)
+
+            if isBinaryClassification:
+                arrMCC = metrics.mcc(arrYt, arrPredicted)
+                listOfMCCs.append(arrMCC)
+                print("Average MCC: ", np.mean(arrMCC))
+
+            print("Average {}-F1: {}".format(F1Type, np.mean(arrF1)))
+            plotFunctions.finalEvaluation(accuracies, batches, algorithmName)
+            plotFunctions.plotF1(arrF1, batches, algorithmName)
+            avgAccuracies.append(np.mean(accuracies))
+            
+            #print data distribution in step t
+            initial = (batches*sizeOfBatch)-sizeOfBatch
+            final = initial + sizeOfBatch
+            #plotFunctions.plot(dataValues[initial:final], dataLabels[initial:final], CoreX, CoreY, batches)
+            print("\n\n")
+        except Exception as e:
+            print(e)
+            #raise e
         
-        accTotal.append(averageAccuracy)
-
-        arrF1 = metrics.F1(arrYt, arrPredicted, F1Type)
-        listOfAccuracies.append(accuracies)
-        listOfMethods.append(algorithmName)
-        listOfF1s.append(arrF1)
-        listOfTimeExecutions.append(elapsedTime)
-        
-        print("Execution time: ", elapsedTime)
-
-        if isBinaryClassification:
-            arrMCC = metrics.mcc(arrYt, arrPredicted)
-            listOfMCCs.append(arrMCC)
-            print("Average MCC: ", np.mean(arrMCC))
-
-        print("Average {}-F1: {}".format(F1Type, np.mean(arrF1)))
-        plotFunctions.finalEvaluation(accuracies, batches, algorithmName)
-        plotFunctions.plotF1(arrF1, batches, algorithmName)
-        avgAccuracies.append(np.mean(accuracies))
-        
-        #print data distribution in step t
-        initial = (batches*sizeOfBatch)-sizeOfBatch
-        final = initial + sizeOfBatch
-        #plotFunctions.plot(dataValues[initial:final], dataLabels[initial:final], CoreX, CoreY, batches)
-        print("\n\n")
     
     # Beginning of external results plottings
     for extResult in externalResults:

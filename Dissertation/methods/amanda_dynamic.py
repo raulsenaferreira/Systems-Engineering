@@ -146,8 +146,7 @@ def start(**kwargs):
             Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
             
             # ***** Box 3 *****
-            #predicted = classifiers.classify(X, y, Ut, K, classes, clfName)
-            clf = classifiers.labelPropagation(X, y, K)
+            clf = classifiers.classifier(X, y, K, clfName)
 
             # for decision boundaries plot
             arrClf.append(clf)
@@ -190,7 +189,7 @@ def start(**kwargs):
         t=0
         inst = []
         labels = []
-        clf = classifiers.labelPropagation(X, y, K)
+        clf = classifiers.classifier(X, y, K, clfName)
         remainingX , remainingY = util.loadLabeledData(dataValues, dataLabels, finalDataLength, len(dataValues), usePCA)
         reset = False
         for Ut, yt in zip(remainingX, remainingY):
@@ -238,7 +237,7 @@ def start(**kwargs):
                     #Considers the past and actual data (concept-drift like)
                     X, y = util.selectedSlicedData(allInstances, allLabels, selectedIndexes)
 
-                clf = classifiers.labelPropagation(X, y, K)
+                clf = classifiers.classifier(X, y, K, clfName)
                 inst = []
                 labels = []
             

@@ -1,0 +1,928 @@
+**************** BEGIN of SGD results ****************
+One Class Diagonal Translation. 2 Dimensional data.: 1 batches of 240 instances
+100.0 {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+100.0
+{'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+One Class Horizontal Translation. 2 Dimensional data.: 1 batches of 240 instances
+95.83 {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.83
+{'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Two Classes Diagonal Translation. 2 Dimensional data: 1 batches of 240 instances
+95.83 {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.83
+{'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Two Classes Horizontal Translation. 2 Dimensional data.: 1 batches of 240 instances
+75.0 {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+75.0
+{'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Four Classes Rotating Separated. Bidimensional.: 1 batches of 2166 instances
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+0
+{}
+=======================================================================================================
+Four Classes Rotating with Expansion V1. Bidimensional.: 1 batches of 1875 instances
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+0
+{}
+=======================================================================================================
+Four Classes Rotating with Expansion V2. Bidimensional.: 1 batches of 2745 instances
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+0
+{}
+=======================================================================================================
+Five Classes Vertical Translation. Bidimensional.: 1 batches of 360 instances
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+0
+{}
+=======================================================================================================
+C:\Users\raul\Anaconda3\lib\site-packages\sklearn\utils\validation.py:526: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+One Class Surrounding another Class. Bidimensional.: 1 batches of 830 instances
+An error occured in  One Class Surrounding another Class. Bidimensional. {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+0
+{}
+=======================================================================================================
+Four Classes Expanding and One Class Fixed. Bidimensional.: 1 batches of 2599 instances
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+0
+{}
+=======================================================================================================
+Two Bidimensional Unimodal Gaussian Classes.: 1 batches of 1500 instances
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+0
+{}
+=======================================================================================================
+Two Bidimensional Multimodal Gaussian Classes.: 1 batches of 3000 instances
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two Bidimensional Classes as Four Gaussians.: 1 batches of 3000 instances
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Artificial Two 3-dimensional Unimodal Gaussian Classes.: 1 batches of 3000 instances
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two 5-dimensional Unimodal Gaussian Classes.: 1 batches of 3000 instances
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two Rotating Gears (Two classes. Bidimensional).: 1 batches of 3000 instances
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Rotated checkerboard dataset. Rotating 2*PI.: 1 batches of 3000 instances
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Electricity data. 7 features. 2 classes.: 1 batches of 414 instances
+75.12 {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+75.12
+{'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+=======================================================================================================
+Keyboard patterns database. 10 features. 4 classes.: 1 batches of 24 instances
+70.83 {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+70.83
+{'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+=======================================================================================================
+NOAA dataset. Eight  features. Two classes.: 1 batches of 273 instances
+77.29 {'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+77.29
+{'batches': 1, 'clfName': 'SGD', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+=======================================================================================================
+******** END of SGD results ********
+**************** BEGIN of NB results ****************
+One Class Diagonal Translation. 2 Dimensional data.: 1 batches of 240 instances
+100.0 {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+100.0
+{'batches': 1, 'clfName': 'NB', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+One Class Horizontal Translation. 2 Dimensional data.: 1 batches of 240 instances
+95.42 {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.42
+{'batches': 1, 'clfName': 'NB', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Two Classes Diagonal Translation. 2 Dimensional data: 1 batches of 240 instances
+95.0 {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.0
+{'batches': 1, 'clfName': 'NB', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Two Classes Horizontal Translation. 2 Dimensional data.: 1 batches of 240 instances
+84.58 {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+84.58
+{'batches': 1, 'clfName': 'NB', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Four Classes Rotating Separated. Bidimensional.: 1 batches of 2166 instances
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+0
+{}
+=======================================================================================================
+Four Classes Rotating with Expansion V1. Bidimensional.: 1 batches of 1875 instances
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+0
+{}
+=======================================================================================================
+Four Classes Rotating with Expansion V2. Bidimensional.: 1 batches of 2745 instances
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+0
+{}
+=======================================================================================================
+Five Classes Vertical Translation. Bidimensional.: 1 batches of 360 instances
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+0
+{}
+=======================================================================================================
+One Class Surrounding another Class. Bidimensional.: 1 batches of 830 instances
+An error occured in  One Class Surrounding another Class. Bidimensional. {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+0
+{}
+=======================================================================================================
+Four Classes Expanding and One Class Fixed. Bidimensional.: 1 batches of 2599 instances
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+0
+{}
+=======================================================================================================
+Two Bidimensional Unimodal Gaussian Classes.: 1 batches of 1500 instances
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+0
+{}
+=======================================================================================================
+Two Bidimensional Multimodal Gaussian Classes.: 1 batches of 3000 instances
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two Bidimensional Classes as Four Gaussians.: 1 batches of 3000 instances
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Artificial Two 3-dimensional Unimodal Gaussian Classes.: 1 batches of 3000 instances
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two 5-dimensional Unimodal Gaussian Classes.: 1 batches of 3000 instances
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two Rotating Gears (Two classes. Bidimensional).: 1 batches of 3000 instances
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Rotated checkerboard dataset. Rotating 2*PI.: 1 batches of 3000 instances
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Electricity data. 7 features. 2 classes.: 1 batches of 414 instances
+71.5 {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+71.5
+{'batches': 1, 'clfName': 'NB', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+=======================================================================================================
+Keyboard patterns database. 10 features. 4 classes.: 1 batches of 24 instances
+95.83 {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+95.83
+{'batches': 1, 'clfName': 'NB', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+=======================================================================================================
+NOAA dataset. Eight  features. Two classes.: 1 batches of 273 instances
+77.29 {'batches': 1, 'clfName': 'NB', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+77.29
+{'batches': 1, 'clfName': 'NB', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+=======================================================================================================
+******** END of NB results ********
+**************** BEGIN of RF results ****************
+One Class Diagonal Translation. 2 Dimensional data.: 1 batches of 240 instances
+97.5 {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+97.5
+{'batches': 1, 'clfName': 'RF', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+One Class Horizontal Translation. 2 Dimensional data.: 1 batches of 240 instances
+93.75 {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+93.75
+{'batches': 1, 'clfName': 'RF', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Two Classes Diagonal Translation. 2 Dimensional data: 1 batches of 240 instances
+93.75 {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+93.75
+{'batches': 1, 'clfName': 'RF', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Two Classes Horizontal Translation. 2 Dimensional data.: 1 batches of 240 instances
+84.17 {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+84.17
+{'batches': 1, 'clfName': 'RF', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Four Classes Rotating Separated. Bidimensional.: 1 batches of 2166 instances
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+0
+{}
+=======================================================================================================
+Four Classes Rotating with Expansion V1. Bidimensional.: 1 batches of 1875 instances
+C:\Users\raul\Desktop\GITHUB\Systems-Engineering\Dissertation\source\classifiers.py:131: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return RandomForestClassifier(n_estimators=num_trees, max_features=max_features).fit(X, y)
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+0
+{}
+=======================================================================================================
+Four Classes Rotating with Expansion V2. Bidimensional.: 1 batches of 2745 instances
+C:\Users\raul\Desktop\GITHUB\Systems-Engineering\Dissertation\source\classifiers.py:131: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return RandomForestClassifier(n_estimators=num_trees, max_features=max_features).fit(X, y)
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+0
+{}
+=======================================================================================================
+Five Classes Vertical Translation. Bidimensional.: 1 batches of 360 instances
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+0
+{}
+=======================================================================================================
+One Class Surrounding another Class. Bidimensional.: 1 batches of 830 instances
+An error occured in  One Class Surrounding another Class. Bidimensional. {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+0
+{}
+=======================================================================================================
+Four Classes Expanding and One Class Fixed. Bidimensional.: 1 batches of 2599 instances
+C:\Users\raul\Desktop\GITHUB\Systems-Engineering\Dissertation\source\classifiers.py:131: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return RandomForestClassifier(n_estimators=num_trees, max_features=max_features).fit(X, y)
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+0
+{}
+=======================================================================================================
+Two Bidimensional Unimodal Gaussian Classes.: 1 batches of 1500 instances
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+0
+{}
+=======================================================================================================
+Two Bidimensional Multimodal Gaussian Classes.: 1 batches of 3000 instances
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two Bidimensional Classes as Four Gaussians.: 1 batches of 3000 instances
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Artificial Two 3-dimensional Unimodal Gaussian Classes.: 1 batches of 3000 instances
+C:\Users\raul\Desktop\GITHUB\Systems-Engineering\Dissertation\source\classifiers.py:131: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return RandomForestClassifier(n_estimators=num_trees, max_features=max_features).fit(X, y)
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two 5-dimensional Unimodal Gaussian Classes.: 1 batches of 3000 instances
+C:\Users\raul\Desktop\GITHUB\Systems-Engineering\Dissertation\source\classifiers.py:131: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return RandomForestClassifier(n_estimators=num_trees, max_features=max_features).fit(X, y)
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two Rotating Gears (Two classes. Bidimensional).: 1 batches of 3000 instances
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Rotated checkerboard dataset. Rotating 2*PI.: 1 batches of 3000 instances
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Electricity data. 7 features. 2 classes.: 1 batches of 414 instances
+C:\Users\raul\Desktop\GITHUB\Systems-Engineering\Dissertation\source\classifiers.py:131: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return RandomForestClassifier(n_estimators=num_trees, max_features=max_features).fit(X, y)
+75.36 {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+75.36
+{'batches': 1, 'clfName': 'RF', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+=======================================================================================================
+Keyboard patterns database. 10 features. 4 classes.: 1 batches of 24 instances
+91.67 {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+91.67
+{'batches': 1, 'clfName': 'RF', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+=======================================================================================================
+NOAA dataset. Eight  features. Two classes.: 1 batches of 273 instances
+83.15 {'batches': 1, 'clfName': 'RF', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+83.15
+{'batches': 1, 'clfName': 'RF', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+=======================================================================================================
+******** END of RF results ********
+**************** BEGIN of LP results ****************
+One Class Diagonal Translation. 2 Dimensional data.: 1 batches of 240 instances
+98.33 {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+97.92 {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+100.0 {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+99.58 {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+100.0 {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+99.58 {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+99.17 {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+99.17 {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+99.58 {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+99.17 {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+99.58 {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+100.0
+{'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+One Class Horizontal Translation. 2 Dimensional data.: 1 batches of 240 instances
+95.42 {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+96.25 {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+96.25 {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.42 {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.0 {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.0 {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.83 {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.83 {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.83 {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+96.25 {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.83 {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+96.25
+{'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Two Classes Diagonal Translation. 2 Dimensional data: 1 batches of 240 instances
+95.42 {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.83 {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.17 {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.17 {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.17 {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.58 {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.17 {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.17 {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.17 {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.17 {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.17 {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.83
+{'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Two Classes Horizontal Translation. 2 Dimensional data.: 1 batches of 240 instances
+84.58 {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+84.17 {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+84.58 {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+87.5 {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+85.83 {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+85.83 {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+85.42 {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+84.58 {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+84.58 {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+84.17 {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+84.17 {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+87.5
+{'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Four Classes Rotating Separated. Bidimensional.: 1 batches of 2166 instances
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+0
+{}
+=======================================================================================================
+Four Classes Rotating with Expansion V1. Bidimensional.: 1 batches of 1875 instances
+C:\Users\raul\Anaconda3\lib\site-packages\sklearn\utils\validation.py:526: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+0
+{}
+=======================================================================================================
+Four Classes Rotating with Expansion V2. Bidimensional.: 1 batches of 2745 instances
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+0
+{}
+=======================================================================================================
+Five Classes Vertical Translation. Bidimensional.: 1 batches of 360 instances
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+0
+{}
+=======================================================================================================
+One Class Surrounding another Class. Bidimensional.: 1 batches of 830 instances
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+0
+{}
+=======================================================================================================
+Four Classes Expanding and One Class Fixed. Bidimensional.: 1 batches of 2599 instances
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+0
+{}
+=======================================================================================================
+Two Bidimensional Unimodal Gaussian Classes.: 1 batches of 1500 instances
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+0
+{}
+=======================================================================================================
+Two Bidimensional Multimodal Gaussian Classes.: 1 batches of 3000 instances
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two Bidimensional Classes as Four Gaussians.: 1 batches of 3000 instances
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Artificial Two 3-dimensional Unimodal Gaussian Classes.: 1 batches of 3000 instances
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two 5-dimensional Unimodal Gaussian Classes.: 1 batches of 3000 instances
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two Rotating Gears (Two classes. Bidimensional).: 1 batches of 3000 instances
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Rotated checkerboard dataset. Rotating 2*PI.: 1 batches of 3000 instances
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Electricity data. 7 features. 2 classes.: 1 batches of 414 instances
+72.46 {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+74.15 {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+75.12 {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+74.15 {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+73.91 {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+73.43 {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+73.43 {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+73.67 {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+73.43 {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+73.19 {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+73.43 {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+75.12
+{'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+=======================================================================================================
+Keyboard patterns database. 10 features. 4 classes.: 1 batches of 24 instances
+91.67 {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+50.0 {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+50.0 {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+50.0 {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+25.0 {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+25.0 {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+25.0 {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+25.0 {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+25.0 {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+25.0 {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+25.0 {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+91.67
+{'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+=======================================================================================================
+NOAA dataset. Eight  features. Two classes.: 1 batches of 273 instances
+75.82 {'K': 2, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+75.82 {'K': 3, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+76.92 {'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+71.43 {'K': 5, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+71.43 {'K': 6, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+71.43 {'K': 7, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+71.43 {'K': 8, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+71.43 {'K': 9, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+71.43 {'K': 10, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+71.43 {'K': 11, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+71.43 {'K': 12, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+76.92
+{'K': 4, 'batches': 1, 'clfName': 'LP', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+=======================================================================================================
+******** END of LP results ********
+**************** BEGIN of KNN results ****************
+One Class Diagonal Translation. 2 Dimensional data.: 1 batches of 240 instances
+99.17 {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+98.75 {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+100.0 {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+99.58 {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+100.0 {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+99.58 {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+100.0 {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+99.58 {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+99.58 {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+99.58 {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+99.58 {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+100.0
+{'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+One Class Horizontal Translation. 2 Dimensional data.: 1 batches of 240 instances
+95.0 {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+93.75 {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.83 {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.58 {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.42 {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.58 {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.0 {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.0 {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.42 {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.42 {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.42 {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.83
+{'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Two Classes Diagonal Translation. 2 Dimensional data: 1 batches of 240 instances
+96.25 {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.58 {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.42 {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.58 {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.83 {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.0 {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.42 {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.17 {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.0 {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+94.17 {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+95.0 {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+96.25
+{'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Two Classes Horizontal Translation. 2 Dimensional data.: 1 batches of 240 instances
+85.83 {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+83.33 {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+85.83 {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+84.58 {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+85.42 {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+83.75 {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+85.0 {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+84.17 {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+85.0 {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+84.17 {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+83.75 {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+85.83
+{'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 560, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 240}
+=======================================================================================================
+Four Classes Rotating Separated. Bidimensional.: 1 batches of 2166 instances
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+An error occured in  Four Classes Rotating Separated. Bidimensional. {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 5054, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2166}
+0
+{}
+=======================================================================================================
+Four Classes Rotating with Expansion V1. Bidimensional.: 1 batches of 1875 instances
+C:\Users\raul\Desktop\GITHUB\Systems-Engineering\Dissertation\source\classifiers.py:135: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return KNeighborsClassifier(n_neighbors=K, algorithm = 'brute').fit(X, y)
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+An error occured in  Four Classes Rotating with Expansion V1. Bidimensional. {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 4375, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1875}
+0
+{}
+=======================================================================================================
+Four Classes Rotating with Expansion V2. Bidimensional.: 1 batches of 2745 instances
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+An error occured in  Four Classes Rotating with Expansion V2. Bidimensional. {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6405, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2745}
+0
+{}
+=======================================================================================================
+Five Classes Vertical Translation. Bidimensional.: 1 batches of 360 instances
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+An error occured in  Five Classes Vertical Translation. Bidimensional. {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 840, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 360}
+0
+{}
+=======================================================================================================
+One Class Surrounding another Class. Bidimensional.: 1 batches of 830 instances
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+An error occured in  One Class Surrounding another Class. Bidimensional. {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 1934, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 830}
+0
+{}
+=======================================================================================================
+Four Classes Expanding and One Class Fixed. Bidimensional.: 1 batches of 2599 instances
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+An error occured in  Four Classes Expanding and One Class Fixed. Bidimensional. {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 6063, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 2599}
+0
+{}
+=======================================================================================================
+Two Bidimensional Unimodal Gaussian Classes.: 1 batches of 1500 instances
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+An error occured in  Two Bidimensional Unimodal Gaussian Classes. {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 3500, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 1500}
+0
+{}
+=======================================================================================================
+Two Bidimensional Multimodal Gaussian Classes.: 1 batches of 3000 instances
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Multimodal Gaussian Classes. {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two Bidimensional Classes as Four Gaussians.: 1 batches of 3000 instances
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Bidimensional Classes as Four Gaussians. {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Artificial Two 3-dimensional Unimodal Gaussian Classes.: 1 batches of 3000 instances
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Artificial Two 3-dimensional Unimodal Gaussian Classes. {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two 5-dimensional Unimodal Gaussian Classes.: 1 batches of 3000 instances
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two 5-dimensional Unimodal Gaussian Classes. {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Two Rotating Gears (Two classes. Bidimensional).: 1 batches of 3000 instances
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Two Rotating Gears (Two classes. Bidimensional). {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Rotated checkerboard dataset. Rotating 2*PI.: 1 batches of 3000 instances
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+An error occured in  Rotated checkerboard dataset. Rotating 2*PI. {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 7000, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 3000}
+0
+{}
+=======================================================================================================
+Electricity data. 7 features. 2 classes.: 1 batches of 414 instances
+73.43 {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+74.4 {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+74.15 {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+73.91 {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+74.88 {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+75.12 {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+74.64 {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+75.12 {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+75.12 {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+75.12 {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+74.88 {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+75.12
+{'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 963, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 414}
+=======================================================================================================
+Keyboard patterns database. 10 features. 4 classes.: 1 batches of 24 instances
+91.67 {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+91.67 {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+83.33 {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+83.33 {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+79.17 {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+87.5 {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+75.0 {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+79.17 {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+66.67 {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+66.67 {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+66.67 {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+91.67
+{'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 56, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 24}
+=======================================================================================================
+NOAA dataset. Eight  features. Two classes.: 1 batches of 273 instances
+78.75 {'K': 2, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+80.95 {'K': 3, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+83.52 {'K': 4, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+84.25 {'K': 5, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+83.52 {'K': 6, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+85.35 {'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+83.52 {'K': 8, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+83.88 {'K': 9, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+82.78 {'K': 10, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+83.88 {'K': 11, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+85.35 {'K': 12, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+85.35
+{'K': 7, 'batches': 1, 'clfName': 'KNN', 'initialLabeledData': 634, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 273}
+=======================================================================================================
+******** END of KNN results ********

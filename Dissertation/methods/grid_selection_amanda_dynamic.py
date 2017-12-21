@@ -69,7 +69,7 @@ def cuttingPercentage(Xt_1, Xt, t=None):
 
 class run(BaseEstimator, ClassifierMixin):
 
-    def __init__(self, K=1, sizeOfBatch=100, batches=50, poolSize=100, isBatchMode=True, initialLabeledData=50):
+    def __init__(self, K=1, sizeOfBatch=100, batches=50, poolSize=100, isBatchMode=True, initialLabeledData=50, clfName='lp'):
         self.sizeOfBatch = sizeOfBatch
         self.batches = batches
         self.initialLabeledData=initialLabeledData
@@ -77,14 +77,14 @@ class run(BaseEstimator, ClassifierMixin):
         #used only by gmm and cluster-label process
         self.densityFunction='kde'
         self.K = K
-        self.clfName = 'label'
+        self.clfName = clfName.lower()
         self.poolSize = poolSize
         self.isBatchMode = isBatchMode
         
         #print("{} excluding percecntage".format(excludingPercentage))    
     
     def get_params(self, deep=True):
-        return {"K":self.K, "sizeOfBatch":self.sizeOfBatch, "batches":self.batches, "poolSize":self.poolSize, "isBatchMode":self.isBatchMode}
+        return {"K":self.K, "sizeOfBatch":self.sizeOfBatch, "batches":self.batches, "poolSize":self.poolSize, "isBatchMode":self.isBatchMode, "clfName":self.clfName}
     
     def set_params(self, **parameters):
         for parameter, value in parameters.items():
@@ -110,8 +110,7 @@ class run(BaseEstimator, ClassifierMixin):
                 Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
                 
                 # ***** Box 3 *****
-                #predicted = classifiers.classify(X, y, Ut, self.K, classes, self.clfName)
-                clf = classifiers.labelPropagation(X, y, self.K)
+                clf = classifiers.classifier(X, y, self.K, self.clfName)
                 predicted = clf.predict(Ut)
                 # Evaluating classification
                 arrAcc.append(metrics.evaluate(yt, predicted))
@@ -144,7 +143,7 @@ class run(BaseEstimator, ClassifierMixin):
             t=0
             inst = []
             labels = []
-            clf = classifiers.labelPropagation(X, y, self.K)
+            clf = classifiers.classifier(X, y, self.K, self.clfName)
             remainingX , remainingY = util.loadLabeledData(dataValues, dataLabels, finalDataLength, len(dataValues), self.usePCA)
             
             for Ut, yt in zip(remainingX, remainingY):
@@ -175,7 +174,7 @@ class run(BaseEstimator, ClassifierMixin):
                         #Considers the past and actual data (concept-drift like)
                         X, y = util.selectedSlicedData(allInstances, allLabels, selectedIndexes)
 
-                    clf = classifiers.labelPropagation(X, y, self.K)
+                    clf = classifiers.classifier(X, y, self.K, self.clfName)
                     inst = []
                     labels = []
 
