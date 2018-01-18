@@ -44,25 +44,31 @@ def cuttingPercentage(Xt_1, Xt, t=None):
         hP = np.histogram(P+(-np.min(P)), bins=bins)
         hQ = np.histogram(Q+(-np.min(Q)), bins=bins)
         res.append(hellinger(hP[1], hQ[1]))
-    res = np.mean(res)
-    x = np.sqrt(2)
 
-    #similarity = abs((100 - ((100 * res)/x))/100) #ensure non-negativity
-    similarity = 1 - (((100 * res)/x)/100)#(100 - ((100 * res)/x))/100
-    #print(t, res, similarity)
+    H = np.mean(res)
+    lowerBound = np.power(H, 2)
+    upperBound = np.sqrt(2)*H
+
+    similarity = 1-H/upperBound #1 - (((100 * res)/x)/100)#(100 - ((100 * res)/x))/100
+    middle = abs(upperBound - lowerBound)
+    print(t, H, lowerBound, middle, similarity)
       
-    if similarity < 0:
+    if lowerBound > upperBound:
         #print(t, res, similarity)
+        similarity = abs(middle-H)
         reset = True
-    elif similarity > 0:
+    else:
+        similarity = H
         reset = False
 
-    similarity = 0.5+((res / x)/10)
+    #similarity = 0.5+((H / upperBound))
+    
     if similarity > 0.9:
         similarity = 0.9
+    elif similarity < 0.5:
+        similarity = 0.5
     
-    #print(similarity)
-    
+    #print("step {}, similarity = {}, reset = {} ".format(t, similarity, reset))
     return similarity, reset #percentage of similarity
 
 
@@ -175,7 +181,7 @@ def start(**kwargs):
                 allLabels = np.hstack([y, predicted])
                 pdfsByClass = util.pdfByClass(allInstances, allLabels, classes, densityFunction)
                 
-            selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, 1-excludingPercentage)
+            selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
             #selectedIndexes = util.compactingDataDensityBased(pdfsByClass, excludingPercentageByClass)
             
             # ***** Box 6 *****
