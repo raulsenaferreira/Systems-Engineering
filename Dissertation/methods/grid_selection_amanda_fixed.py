@@ -59,6 +59,7 @@ class run(BaseEstimator, ClassifierMixin):
         initialDataLength = 0
         self.excludingPercentage=1-self.excludingPercentage
         finalDataLength = self.initialLabeledData
+        reset = False
 
         # ***** Box 1 *****
         #Initial labeled data
@@ -81,13 +82,34 @@ class run(BaseEstimator, ClassifierMixin):
 
                 # ***** Box 4 *****
                 #pdfs from each new points from each class applied on new arrived points
-                pdfsByClass = util.pdfByClass(Ut, predicted, classes, self.densityFunction)
+                '''pdfsByClass = util.pdfByClass(Ut, predicted, classes, self.densityFunction)
                 
                 # ***** Box 5 *****
                 selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
                 
                 # ***** Box 6 *****
-                X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
+                X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)'''
+
+                allInstances = []
+                allLabels = []
+                if reset == True:
+                    #Considers only the last distribution (time-series like)
+                    pdfsByClass = util.pdfByClass(Ut, predicted, classes, self.densityFunction)
+                else:
+                    #Considers the past and actual data (concept-drift like)
+                    allInstances = np.vstack([X, Ut])
+                    allLabels = np.hstack([y, predicted])
+                    pdfsByClass = util.pdfByClass(allInstances, allLabels, classes, self.densityFunction)
+                    
+                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
+            
+                # ***** Box 6 *****
+                if reset == True:
+                    #Considers only the last distribution (time-series like)
+                    X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
+                else:
+                    #Considers the past and actual data (concept-drift like)
+                    X, y = util.selectedSlicedData(allInstances, allLabels, selectedIndexes)
         else:
             inst = []
             labels = []
@@ -102,9 +124,27 @@ class run(BaseEstimator, ClassifierMixin):
                 
                 if len(inst) == self.poolSize:
                     inst = np.asarray(inst)
-                    pdfsByClass = util.pdfByClass(inst, labels, classes, self.densityFunction)
-                    selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
-                    X, y = util.selectedSlicedData(inst, labels, selectedIndexes)
+                    #pdfsByClass = util.pdfByClass(inst, labels, classes, self.densityFunction)
+                    #selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
+                    #X, y = util.selectedSlicedData(inst, labels, selectedIndexes)
+                    if reset == True:
+                        #Considers only the last distribution (time-series like)
+                        pdfsByClass = util.pdfByClass(inst, labels, classes, self.densityFunction)
+                    else:
+                        #Considers the past and actual data (concept-drift like)
+                        allInstances = np.vstack([X, inst])
+                        allLabels = np.hstack([y, labels])
+                        pdfsByClass = util.pdfByClass(allInstances, allLabels, classes, self.densityFunction)
+                    
+                    selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
+
+                    if reset == True:
+                        #Considers only the last distribution (time-series like)
+                        X, y = util.selectedSlicedData(inst, labels, selectedIndexes)
+                    else:
+                        #Considers the past and actual data (concept-drift like)
+                        X, y = util.selectedSlicedData(allInstances, allLabels, selectedIndexes)
+
                     clf = classifiers.classifier(X, y, self.K, self.clfName)
                     inst = []
                     labels = []

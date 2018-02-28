@@ -292,7 +292,8 @@ def plotBars4(baseline, listOfAccuracies, listOfMethods):
     
     for l in range(1,len(listOfAccuracies)):    
         ax = plt.axes()
-        ax.bar(l, (listOfAccuracies[l]-baseline)/listOfAccuracies[l])
+        #ax.bar(l, (listOfAccuracies[l]-baseline)/listOfAccuracies[l])
+        ax.bar(l, ((listOfAccuracies[l]-baseline)/baseline)*100)
 
     plt.title("Reduction Percentage Error")
     plt.xlabel("Methods")

@@ -37,6 +37,72 @@ def hellinger(p, q):
 
 def cuttingPercentage(Xt_1, Xt, t=None):
     res = []
+    
+    for i in range(Xt_1.shape[1]):
+        P = Xt_1[:, i]
+        Q = Xt[:, i]
+        bins = int(np.sqrt(len(Xt_1)))
+        hP = np.histogram(P+(-np.min(P)), bins=bins)
+        hQ = np.histogram(Q+(-np.min(Q)), bins=bins)
+        res.append(hellinger(hP[1], hQ[1]))
+    
+    H = np.mean(res)
+    #alpha = _SQRT2-H #best results
+    alpha = (_SQRT2-H)/_SQRT2
+    
+    #correcting a bug of negative values
+    if alpha < 0:
+        alpha *= -1
+
+    #print(t, _SQRT2-H, alpha)
+
+    if alpha > 0.9:
+        alpha = 0.9
+    elif alpha < 0.5:
+        alpha = 0.5
+    return 1-alpha #percentage of similarity
+
+
+def cuttingPercentage3(Xt_1, Xt, t=None):
+    res = []
+    reset = False
+    for i in range(Xt_1.shape[1]):
+        P = Xt_1[:, i]
+        Q = Xt[:, i]
+        bins = int(np.sqrt(len(Xt_1)))
+        hP = np.histogram(P+(-np.min(P)), bins=bins)
+        hQ = np.histogram(Q+(-np.min(Q)), bins=bins)
+        res.append(hellinger(hP[1], hQ[1]))
+
+    H = np.mean(res)
+    lowerBound = np.power(H, 2)
+    upperBound = np.sqrt(2)*H
+
+    similarity = 1-H/upperBound #1 - (((100 * res)/x)/100)#(100 - ((100 * res)/x))/100
+    middle = abs(upperBound - lowerBound)
+    #print(t, H, lowerBound, middle, similarity)
+      
+    if lowerBound > upperBound:
+        #print(t, res, similarity)
+        similarity = abs(middle-H)
+        reset = True
+    else:
+        similarity = H
+        reset = False
+
+    #similarity = 0.5+((H / upperBound))
+    
+    if similarity > 0.9:
+        similarity = 0.9
+    elif similarity < 0.5:
+        similarity = 0.5
+    
+    #print("step {}, similarity = {}, reset = {} ".format(t, similarity, reset))
+    return similarity, reset #percentage of similarity
+
+
+def cuttingPercentage2(Xt_1, Xt, t=None):
+    res = []
     reset = False
     for i in range(Xt_1.shape[1]):
         P = Xt_1[:, i]
@@ -116,7 +182,7 @@ class run(BaseEstimator, ClassifierMixin):
                 arrAcc.append(metrics.evaluate(yt, predicted))
 
                 # ***** Box 4 *****
-                excludingPercentage, reset = cuttingPercentage(X, Ut, t)
+                excludingPercentage = cuttingPercentage(X, Ut, t)
                 allInstances = []
                 allLabels = []
                 
@@ -130,7 +196,7 @@ class run(BaseEstimator, ClassifierMixin):
                     allLabels = np.hstack([y, predicted])
                     pdfsByClass = util.pdfByClass(allInstances, allLabels, classes, self.densityFunction)
                     
-                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, 1-excludingPercentage)
+                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
             
                 # ***** Box 6 *****
                 if reset == True:
@@ -147,14 +213,16 @@ class run(BaseEstimator, ClassifierMixin):
             remainingX , remainingY = util.loadLabeledData(dataValues, dataLabels, finalDataLength, len(dataValues), self.usePCA)
             
             for Ut, yt in zip(remainingX, remainingY):
+                allInstances = []
+                allLabels = []
                 predicted = clf.predict(Ut.reshape(1, -1))
-                arrAcc.append(predicted)
+                arrAcc.append(predicted[0])
                 inst.append(Ut)
-                labels.append(predicted)
+                labels.append(predicted[0])
                 
                 if len(inst) == self.poolSize:
                     inst = np.asarray(inst)
-                    excludingPercentage, reset = cuttingPercentage(X, inst, t)
+                    excludingPercentage = cuttingPercentage(X, inst, t)
                     t+=1
                     if reset == True:
                         #Considers only the last distribution (time-series like)
@@ -165,7 +233,7 @@ class run(BaseEstimator, ClassifierMixin):
                         allLabels = np.hstack([y, labels])
                         pdfsByClass = util.pdfByClass(allInstances, allLabels, classes, self.densityFunction)
                     
-                    selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, 1-excludingPercentage)
+                    selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
 
                     if reset == True:
                         #Considers only the last distribution (time-series like)

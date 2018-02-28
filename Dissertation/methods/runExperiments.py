@@ -58,7 +58,7 @@ def run(dataValues, dataLabels, datasetDescription, isBinaryClassification, isIm
             listOfTimeExecutions.append(elapsedTime)
             
             print("Execution time: ", elapsedTime)
-
+            
             if isBinaryClassification:
                 arrMCC = metrics.mcc(arrYt, arrPredicted)
                 listOfMCCs.append(arrMCC)
@@ -83,14 +83,15 @@ def run(dataValues, dataLabels, datasetDescription, isBinaryClassification, isIm
     for extResult in externalResults:
         print("Method: {}".format(extResult['name']))
         print("Execution time: ", elapsedTime)
-
+        
         if isBinaryClassification:
             MCCs = metrics.mcc(arrYt, extResult['predictions'])
             print("Average MCC: ", np.mean(MCCs))
             listOfMCCs.append(MCCs)
 
         arrF1External = metrics.F1(arrYt, extResult['predictions'], F1Type)
-        print("Average F1: ", np.mean(arrF1External))
+        print("Average {}-F1: {}".format(F1Type, np.mean(arrF1External)))
+
         plotFunctions.finalEvaluation(extResult['accuracies'], batches, extResult['name'])
         plotFunctions.plotF1(arrF1External, batches, extResult['name'])
         

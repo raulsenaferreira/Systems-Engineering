@@ -1,0 +1,2 @@
+Electricity data. 7 features. 2 classes.: 71.58239999999999 using {'K': 9, 'batches': 100, 'clfName': 'KNN', 'initialLabeledData': 150, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 274} 
+NOAA dataset. Eight  features. Two classes.: 68.6924 using {'K': 3, 'batches': 50, 'clfName': 'KNN', 'initialLabeledData': 10, 'isBatchMode': False, 'poolSize': 300, 'sizeOfBatch': 362} 

@@ -2,6 +2,7 @@ import numpy as np
 from source import classifiers
 from source import metrics
 from source import util
+from scipy.spatial.distance import euclidean
 
 
 def split_list(alist, wanted_parts=1):
@@ -54,6 +55,8 @@ def start(**kwargs):
     initialDataLength = 0
     excludingPercentage = 1-excludingPercentage
     finalDataLength = initialLabeledData #round((initialLabeledDataPerc)*sizeOfBatch)
+    reset = False
+
     # ***** Box 1 *****
     #Initial labeled data
     X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
@@ -83,13 +86,26 @@ def start(**kwargs):
             
             # ***** Box 4 *****
             #pdfs from each new points from each class applied on new arrived points
-            pdfsByClass = util.pdfByClass(Ut, predicted, classes, densityFunction)
-
-            # ***** Box 5 *****
+            allInstances = []
+            allLabels = []
+            if reset == True:
+                #Considers only the last distribution (time-series like)
+                pdfsByClass = util.pdfByClass(Ut, predicted, classes, densityFunction)
+            else:
+                #Considers the past and actual data (concept-drift like)
+                allInstances = np.vstack([X, Ut])
+                allLabels = np.hstack([y, predicted])
+                pdfsByClass = util.pdfByClass(allInstances, allLabels, classes, densityFunction)
+                
             selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
-
+        
             # ***** Box 6 *****
-            X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
+            if reset == True:
+                #Considers only the last distribution (time-series like)
+                X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
+            else:
+                #Considers the past and actual data (concept-drift like)
+                X, y = util.selectedSlicedData(allInstances, allLabels, selectedIndexes)
     else:
         inst = []
         labels = []
