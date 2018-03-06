@@ -290,7 +290,8 @@ def loadSCARGCBoxplotResults(path, sep):
     print('Results from SCARGC algorithm (for boxplot and accuracy timelime).')
     path1 = path+'results_scargc'+sep+'setting_1'+sep
     path2 = path+'results_scargc'+sep+'setting_2'+sep
-    arrFiles = ['1CDT', '2CDT', '1CHT', '2CHT', '4CR', '4CRE-V1', '4CRE-V2', '5CVT', '1CSurr', '4CE1CF', 'UG_2C_2D', 'MG_2C_2D', 'FG_2C_2D', 'UG_2C_3D', 'UG_2C_5D', 'GEARS_2C_2D', 'keystroke']
+    arrFiles = ['1CDT', '2CDT', '1CHT', '2CHT', '4CR', '4CRE-V1', '4CRE-V2', '5CVT', '1CSurr', 
+    '4CE1CF', 'UG_2C_2D', 'MG_2C_2D', 'FG_2C_2D', 'UG_2C_3D', 'UG_2C_5D', 'GEARS_2C_2D', 'keystroke']
     accuracies_1={}
     accuracies_2={}
 

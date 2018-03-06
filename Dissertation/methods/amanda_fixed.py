@@ -111,9 +111,10 @@ def start(**kwargs):
         labels = []
         clf = classifiers.classifier(X, y, K, clfName)
         remainingX , remainingY = util.loadLabeledData(dataValues, dataLabels, finalDataLength, len(dataValues), usePCA)
+        reset = True
         
         for Ut, yt in zip(remainingX, remainingY):
-            predicted = clf.predict(Ut.reshape(1, -1))
+            predicted = clf.predict(Ut.reshape(1, -1))[0]
             arrAcc.append(predicted)
             inst.append(Ut)
             labels.append(predicted)
@@ -128,9 +129,30 @@ def start(**kwargs):
             
             if len(inst) == poolSize:
                 inst = np.asarray(inst)
-                pdfsByClass = util.pdfByClass(inst, labels, classes, densityFunction)
+                '''pdfsByClass = util.pdfByClass(inst, labels, classes, densityFunction)
                 selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
                 X, y = util.selectedSlicedData(inst, labels, selectedIndexes)
+                clf = classifiers.classifier(X, y, K, clfName)
+                inst = []
+                labels = []'''
+                if reset == True:
+                    #Considers only the last distribution (time-series like)
+                    pdfsByClass = util.pdfByClass(inst, labels, classes, densityFunction)
+                else:
+                    #Considers the past and actual data (concept-drift like)
+                    allInstances = np.vstack([X, inst])
+                    allLabels = np.hstack([y, labels])
+                    pdfsByClass = util.pdfByClass(allInstances, allLabels, classes, densityFunction)
+
+                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
+
+                if reset == True:
+                    #Considers only the last distribution (time-series like)
+                    X, y = util.selectedSlicedData(inst, labels, selectedIndexes)
+                else:
+                    #Considers the past and actual data (concept-drift like)
+                    X, y = util.selectedSlicedData(allInstances, allLabels, selectedIndexes)
+
                 clf = classifiers.classifier(X, y, K, clfName)
                 inst = []
                 labels = []

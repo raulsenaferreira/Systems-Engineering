@@ -64,6 +64,7 @@ def run(dataValues, dataLabels, datasetDescription, isBinaryClassification, isIm
                 listOfMCCs.append(arrMCC)
                 print("Average MCC: ", np.mean(arrMCC))
 
+            print("Average error:", 100-averageAccuracy)
             print("Average {}-F1: {}".format(F1Type, np.mean(arrF1)))
             plotFunctions.finalEvaluation(accuracies, batches, algorithmName)
             plotFunctions.plotF1(arrF1, batches, algorithmName)
@@ -76,7 +77,7 @@ def run(dataValues, dataLabels, datasetDescription, isBinaryClassification, isIm
             print("\n\n")
         except Exception as e:
             print(e)
-            #raise e
+            raise e
         
     
     # Beginning of external results plottings

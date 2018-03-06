@@ -48,6 +48,8 @@ def cuttingPercentage(Xt_1, Xt, t=None):
     H = np.mean(res)
     alpha = _SQRT2-H
     #print(t, H, alpha)
+    #if alpha < 0:
+    #    alpha *= -1
     
     if alpha > 0.9:
         alpha = 0.9
@@ -219,7 +221,7 @@ def start(**kwargs):
         labels = []
         clf = classifiers.classifier(X, y, K, clfName)
         remainingX , remainingY = util.loadLabeledData(dataValues, dataLabels, finalDataLength, len(dataValues), usePCA)
-        reset = False
+        reset = True
         for Ut, yt in zip(remainingX, remainingY):
             predicted = clf.predict(Ut.reshape(1, -1))[0]
             arrAcc.append(predicted)
@@ -238,7 +240,7 @@ def start(**kwargs):
             #new approach
             if len(inst) == poolSize:
                 inst = np.array(inst)
-                excludingPercentage, reset = cuttingPercentage(X, inst, t)
+                excludingPercentage = cuttingPercentage(X, inst, t)
                 t+=1
                 '''if excludingPercentage < 0:
                     #print("negative, reseting points")
@@ -256,7 +258,7 @@ def start(**kwargs):
                     allLabels = np.hstack([y, labels])
                     pdfsByClass = util.pdfByClass(allInstances, allLabels, classes, densityFunction)
                 
-                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, 1-excludingPercentage)
+                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, excludingPercentage)
 
                 if reset == True:
                     #Considers only the last distribution (time-series like)
