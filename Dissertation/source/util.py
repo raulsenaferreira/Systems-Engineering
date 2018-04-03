@@ -247,7 +247,7 @@ def loadBestModelByClass(X, indexesByClass):
     return bestModelForClass
 
 
-def mahalanobisCoreSupportExtraction(Ut, indexesPredictedByClass, bestModelSelectedByClass):
+def mahalanobisCoreSupportExtraction(Ut, indexesPredictedByClass, bestModelSelectedByClass, p):
     inf = 1e6
     selectedMinIndexesByClass={}
 
@@ -277,8 +277,8 @@ def mahalanobisCoreSupportExtraction(Ut, indexesPredictedByClass, bestModelSelec
             i = vals.argmin()
             selectedMinIndexesByClass[c][pointIndexes[j]] = distsByComponent[i][j]
 
-        #20% smallest distances per class, based on paper
-        p = floor(0.2*len(selectedMinIndexesByClass[c]))
+        #p% smallest distances per class, based on paper
+        p = floor(p*len(selectedMinIndexesByClass[c]))
         #p = 70
         selectedMinIndexesByClass[c] = np.array(selectedMinIndexesByClass[c])
         selectedMinIndexesByClass[c] = selectedMinIndexesByClass[c].argsort()[:p]
@@ -307,7 +307,8 @@ def pdfByClass(instances, labels, classes, densityFunction):
                 pdfsByPoints = classifiers.kde(points, instances)
             a = 0
             for i in indexes:
-                pdfs[i]=pdfsByPoints[a]
+                if pdfsByPoints[a] != -1:
+                    pdfs[i]=pdfsByPoints[a]
                 a+=1
             pdfsByClass[c] = pdfs
 

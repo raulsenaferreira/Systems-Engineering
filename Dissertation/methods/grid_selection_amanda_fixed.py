@@ -59,7 +59,7 @@ class run(BaseEstimator, ClassifierMixin):
         initialDataLength = 0
         self.excludingPercentage=1-self.excludingPercentage
         finalDataLength = self.initialLabeledData
-        reset = False
+        reset = True
 
         # ***** Box 1 *****
         #Initial labeled data

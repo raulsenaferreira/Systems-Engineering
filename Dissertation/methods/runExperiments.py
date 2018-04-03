@@ -10,7 +10,8 @@ def run(dataValues, dataLabels, datasetDescription, isBinaryClassification, isIm
     listOfAccuracies = []
     listOfMethods = []
     listOfMCCs = []
-    listOfF1s = []
+    listOfF1sMacro = []
+    listOfF1sMicro = []
     listOfTimeExecutions = []
     avgAccuracies = []
     
@@ -25,9 +26,9 @@ def run(dataValues, dataLabels, datasetDescription, isBinaryClassification, isIm
         print("Stream mode with pool size = {}".format(poolSize))
     print("\n\n")
 
-    F1Type = 'macro' #for balanced datasets with 2 classes
-    if isImbalanced or not isBinaryClassification:
-        F1Type='micro'
+    #F1Type = 'macro' #for balanced datasets with 2 classes
+    #if isImbalanced or not isBinaryClassification:
+    #    F1Type='micro'
     
     for name, e in experiments.items():
         try:
@@ -51,10 +52,12 @@ def run(dataValues, dataLabels, datasetDescription, isBinaryClassification, isIm
             
             accTotal.append(averageAccuracy)
 
-            arrF1 = metrics.F1(arrYt, arrPredicted, F1Type)
+            arrF1Macro = metrics.F1(arrYt, arrPredicted, 'macro')
+            arrF1Micro = metrics.F1(arrYt, arrPredicted, 'micro')
             listOfAccuracies.append(accuracies)
             listOfMethods.append(algorithmName)
-            listOfF1s.append(arrF1)
+            listOfF1sMacro.append(arrF1Macro)
+            listOfF1sMicro.append(arrF1Micro)
             listOfTimeExecutions.append(elapsedTime)
             
             print("Execution time: ", elapsedTime)
@@ -65,9 +68,11 @@ def run(dataValues, dataLabels, datasetDescription, isBinaryClassification, isIm
                 print("Average MCC: ", np.mean(arrMCC))
 
             print("Average error:", 100-averageAccuracy)
-            print("Average {}-F1: {}".format(F1Type, np.mean(arrF1)))
+            print("Average macro-F1: {}".format(np.mean(arrF1Macro)))
+            print("Average micro-F1: {}".format(np.mean(arrF1Micro)))
             plotFunctions.finalEvaluation(accuracies, batches, algorithmName)
-            plotFunctions.plotF1(arrF1, batches, algorithmName)
+            plotFunctions.plotF1(arrF1Macro, batches, algorithmName)
+            plotFunctions.plotF1(arrF1Micro, batches, algorithmName)
             avgAccuracies.append(np.mean(accuracies))
             
             #print data distribution in step t
@@ -90,8 +95,10 @@ def run(dataValues, dataLabels, datasetDescription, isBinaryClassification, isIm
             print("Average MCC: ", np.mean(MCCs))
             listOfMCCs.append(MCCs)
 
-        arrF1External = metrics.F1(arrYt, extResult['predictions'], F1Type)
-        print("Average {}-F1: {}".format(F1Type, np.mean(arrF1External)))
+        arrF1External = metrics.F1(arrYt, extResult['predictions'], 'macro')
+        print("Average macro-F1: {}".format(np.mean(arrF1External)))
+        arrF1External = metrics.F1(arrYt, extResult['predictions'], 'micro')
+        print("Average micro-F1: {}".format(np.mean(arrF1External)))
 
         plotFunctions.finalEvaluation(extResult['accuracies'], batches, extResult['name'])
         plotFunctions.plotF1(arrF1External, batches, extResult['name'])
@@ -99,7 +106,8 @@ def run(dataValues, dataLabels, datasetDescription, isBinaryClassification, isIm
         listOfMethods.append(extResult['name'])
         listOfAccuracies.append(extResult['accuracies'])
         
-        listOfF1s.append(arrF1External)
+        listOfF1sMacro.append(arrF1External)
+        listOfF1sMicro.append(arrF1External)
         listOfTimeExecutions.append(extResult['time'])
         avgAccuracies.append(np.mean(extResult['accuracies']))
     # End of external results plottings
@@ -109,7 +117,8 @@ def run(dataValues, dataLabels, datasetDescription, isBinaryClassification, isIm
     if isBinaryClassification:
         plotFunctions.plotBoxplot('mcc', listOfMCCs, listOfMethods)
 
-    plotFunctions.plotBoxplot('f1', listOfF1s, listOfMethods)
+    plotFunctions.plotBoxplot('macro-f1', listOfF1sMacro, listOfMethods)
+    plotFunctions.plotBoxplot('micro-f1', listOfF1sMicro, listOfMethods)
     plotFunctions.plotAccuracyCurves(listOfAccuracies, listOfMethods)
     plotFunctions.plotBars(listOfTimeExecutions, listOfMethods)
     plotFunctions.plotBars2(avgAccuracies, listOfMethods)

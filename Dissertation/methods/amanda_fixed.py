@@ -55,7 +55,7 @@ def start(**kwargs):
     initialDataLength = 0
     excludingPercentage = 1-excludingPercentage
     finalDataLength = initialLabeledData #round((initialLabeledDataPerc)*sizeOfBatch)
-    reset = False
+    reset = True
 
     # ***** Box 1 *****
     #Initial labeled data
@@ -111,7 +111,7 @@ def start(**kwargs):
         labels = []
         clf = classifiers.classifier(X, y, K, clfName)
         remainingX , remainingY = util.loadLabeledData(dataValues, dataLabels, finalDataLength, len(dataValues), usePCA)
-        reset = True
+        reset = False
         
         for Ut, yt in zip(remainingX, remainingY):
             predicted = clf.predict(Ut.reshape(1, -1))[0]

@@ -161,7 +161,11 @@ def gmmWithBIC(X, allPoints):
         #print("Best number of components: ",numComponentsChosen)
         return best_gmm
     else:
-        print("gmmWithBIC: Error to choose the best GMM model")
+        #print("gmmWithBIC: Error to choose the best GMM model")
+        # Default:  As cited in original article
+        GMM = mixture.GaussianMixture(n_components=2, covariance_type=ctype)
+        GMM.fit(allPoints)
+        return GMM
 
 
 def gmm(points, numComponents):

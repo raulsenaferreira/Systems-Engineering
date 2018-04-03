@@ -6,10 +6,10 @@ from sklearn.base import BaseEstimator, ClassifierMixin
 
 
 
-
 def split_list(alist, wanted_parts=1):
     length = len(alist)
-    return [ alist[i*length // wanted_parts: (i+1)*length // wanted_parts] for i in range(wanted_parts) ]
+    return [ alist[i*length // wanted_parts: (i+1)*length // wanted_parts] 
+             for i in range(wanted_parts) ]
 
 
 def makeAccuracy(arrAllAcc, arrTrueY):
@@ -27,27 +27,22 @@ def makeAccuracy(arrAllAcc, arrTrueY):
         arrAcc.append(metrics.evaluate(yt, predicted))
         
     return arrAcc
-class proposed_kde_allinstances(BaseEstimator, ClassifierMixin):
 
-    def __init__(self, excludingPercentage=0.05, K=1, sizeOfBatch=100, batches=50, poolSize=100, isBatchMode=True, initialLabeledData=50):
-        #super(proposed_gmm_core_extraction,self).__init__()
+
+class run(BaseEstimator, ClassifierMixin):
+
+    def __init__(self, p=0.2, K=1, sizeOfBatch=100, batches=50, initialLabeledData=50):
         self.sizeOfBatch = sizeOfBatch
         self.batches = batches
         self.initialLabeledData=initialLabeledData
-        #self.classes=[0, 1]
         self.usePCA=False
-        #used only by gmm and cluster-label process
-        self.densityFunction='kde'
-        self.excludingPercentage = excludingPercentage
+        self.p = p
         self.K = K
-        self.clfName = 'label'
-        self.poolSize = poolSize
-        self.isBatchMode = isBatchMode
         
         #print("{} excluding percecntage".format(excludingPercentage))    
     
     def get_params(self, deep=True):
-        return {"excludingPercentage" : self.excludingPercentage, "K":self.K, "sizeOfBatch":self.sizeOfBatch, "batches":self.batches, "poolSize":self.poolSize, "isBatchMode":self.isBatchMode}
+        return {"p" : self.p, "K": self.K, "sizeOfBatch":self.sizeOfBatch, "batches":self.batches}
     
     def set_params(self, **parameters):
         for parameter, value in parameters.items():
@@ -58,65 +53,47 @@ class proposed_kde_allinstances(BaseEstimator, ClassifierMixin):
         arrAcc = []
         classes = list(set(dataLabels))
         initialDataLength = 0
-        self.excludingPercentage=1-self.excludingPercentage
         finalDataLength = self.initialLabeledData
 
         # ***** Box 1 *****
         #Initial labeled data
         X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
-        if self.isBatchMode:
-            for t in range(self.batches):
-                #print("passo: ",t)
-                initialDataLength=finalDataLength
-                finalDataLength=finalDataLength+self.sizeOfBatch
-                #print(initialDataLength)
-                #print(finalDataLength)
-                # ***** Box 2 *****            
-                Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
-                
-                # ***** Box 3 *****
-                predicted = classifiers.classify(X, y, Ut, self.K, classes, self.clfName)
-                # Evaluating classification
-                arrAcc.append(metrics.evaluate(yt, predicted))
-
-                # ***** Box 4 *****
-                #pdfs from each new points from each class applied on new arrived points
-                #pdfsByClass = util.pdfByClass2(X, y, Ut, predicted, classes, self.densityFunction)
-                #pdfsByClass = util.pdfByClass(Ut, predicted, classes, self.densityFunction)
-                allInstances = np.vstack([X, Ut])
-                allLabels = np.hstack([y, predicted])
-                pdfsByClass = util.pdfByClass(allInstances, allLabels, classes, self.densityFunction)
-                
-                # ***** Box 5 *****
-                selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
-                
-                # ***** Box 6 *****
-                X, y = util.selectedSlicedData(allInstances, allLabels, selectedIndexes)
-        else:
-            inst = []
-            labels = []
+        
+        for t in range(self.batches):
+            #print("passo: ",t)
+            initialDataLength=finalDataLength
+            finalDataLength=finalDataLength+self.sizeOfBatch
+            
+            # ***** Box 2 *****            
+            Ut, yt = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, self.usePCA)
+            
+            # ***** Box 3 *****
             clf = classifiers.labelPropagation(X, y, self.K)
-            remainingX , remainingY = util.loadLabeledData(dataValues, dataLabels, finalDataLength, len(dataValues), self.usePCA)
+            #classifiers.classifier(X, y, self.K, self.clfName)
             
-            for Ut, yt in zip(remainingX, remainingY):
-                predicted = clf.predict(Ut.reshape(1, -1))
-                arrAcc.append(predicted)
-                inst.append(Ut)
-                labels.append(predicted)
-                
-                if len(inst) == self.poolSize:
-                    inst = np.asarray(inst)
-                    pdfsByClass = util.pdfByClass(inst, labels, classes, self.densityFunction)
-                    selectedIndexes = util.compactingDataDensityBased2(pdfsByClass, self.excludingPercentage)
-                    X, y = util.selectedSlicedData(inst, labels, selectedIndexes)
-                    clf = classifiers.labelPropagation(X, y, self.K)
-                    inst = []
-                    labels = []
-                
-            arrAcc = split_list(arrAcc, self.batches)
-            arrAcc = makeAccuracy(arrAcc, remainingY)   
+            predicted = clf.predict(Ut)
+            # Evaluating classification
+            arrAcc.append(metrics.evaluate(yt, predicted))
+
+            # ***** Box 4 *****
+            #pdfs from each new points from each class applied on new arrived points
+            indexesByClass = util.slicingClusteredData(y, classes)
+            bestModelSelectedByClass = util.loadBestModelByClass(X, indexesByClass)
             
-     
+            # ***** Box 5 *****
+            predictedByClass = util.slicingClusteredData(predicted, classes)
+            #p% smallest distances per class, based on paper
+            selectedIndexes = util.mahalanobisCoreSupportExtraction(Ut, predictedByClass, 
+                bestModelSelectedByClass, self.p)
+            #selectedIndexes = np.hstack([selectedIndexes[0],selectedIndexes[1]])
+            stackedIndexes=selectedIndexes[0]
+            for i in range(1, len(selectedIndexes)):
+                stackedIndexes = np.hstack([stackedIndexes,selectedIndexes[i]])
+            selectedIndexes =  stackedIndexes
+            
+            # ***** Box 6 *****
+            X, y = util.selectedSlicedData(Ut, predicted, selectedIndexes)
+           
         # returns accuracy array and last selected points
         self.threshold_ = arrAcc
         return self

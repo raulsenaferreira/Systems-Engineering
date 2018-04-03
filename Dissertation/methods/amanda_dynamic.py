@@ -164,7 +164,7 @@ def start(**kwargs):
     # ***** Box 1 *****
     #Initial labeled data
     X, y = util.loadLabeledData(dataValues, dataLabels, initialDataLength, finalDataLength, usePCA)
-    reset = False
+    reset = True
     if isBatchMode:
         for t in range(batches):
             #print("passo: ",t)
@@ -221,7 +221,7 @@ def start(**kwargs):
         labels = []
         clf = classifiers.classifier(X, y, K, clfName)
         remainingX , remainingY = util.loadLabeledData(dataValues, dataLabels, finalDataLength, len(dataValues), usePCA)
-        reset = True
+        reset = False
         for Ut, yt in zip(remainingX, remainingY):
             predicted = clf.predict(Ut.reshape(1, -1))[0]
             arrAcc.append(predicted)
